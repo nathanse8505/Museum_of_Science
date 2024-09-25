@@ -8,7 +8,6 @@ float meter = 0.067;
 bool check = LOW;
 
 
-int Number_To_Display = 0;
 int Digit_3_To_Display = 0;// Left (100th) digit to disply - used as 10th
 int Digit_2_To_Display = 0;// Mid right (10th) digit to disply  - used as units 
 int Digit_1_To_Display = 0;// rigth (external unit) digit to disply - not used for winf tunnel
@@ -96,14 +95,33 @@ void loop() {
         delta_time = (timer_2 - timer_1)/1000;
         check = LOW;
         velocity = meter / delta_time;
+
+        Serial.print(velocity,3);
+        Serial.println(" m/s\n");
+       
+        velocity = (int)(velocity * 10);
+        Serial.print(velocity,3);
+        Serial.println(" m/s\n");
+        
         Digits_from_Number(velocity);
-        enable(1);
+        if (velocity<10)
+        {  
+
+            Display_Digit(Digit_1_To_Display);
+            enable(1);
+            Display_Digit(0);
+            enable(2);
+        }
+
         Display_Digit(Digit_1_To_Display);
-        enable(2);
+        enable(1);
         Display_Digit(Digit_2_To_Display);
-        enable(3);
-        Display_Digit(Digit_3_To_Display);
+        enable(2);
     }
+
+      
+
+        
 
 }
 

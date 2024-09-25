@@ -5,9 +5,9 @@
 #define BCD_C (6) // Output to BCD_C (4511)
 #define BCD_D (7) // Output to BCD_D (4511)
 
-#define LE_LEFT (1) // Output Left (100th) digit LE (negative pulse) used as 10th
-#define LE_MIDDLE (2)
-#define LE_RIGHT (3) // Output right (10th) digit LE (negative pulse) used as units 
+#define LE_LEFT (10) // Output Left (100th) digit LE (negative pulse) used as 10th
+#define LE_MIDDLE (8)
+#define LE_RIGHT (9) // Output right (10th) digit LE (negative pulse) used as units 
 
-#define IN_FET 10
-#define OUT_FET 8
+#define IN_FET 3
+#define OUT_FET 2
