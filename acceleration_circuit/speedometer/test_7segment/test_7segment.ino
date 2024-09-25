@@ -70,19 +70,17 @@ void setup() {
   digitalWrite(LE_RIGHT, HIGH);// lock digit
 }
 
-int i = 7;
+int i = 0;
 void loop() {
     Digits_from_Number(i);
-    enable(1);
     Display_Digit(Digit_1_To_Display);
-    delay(500);
-    enable(2);
+    enable(1);
     Display_Digit(Digit_2_To_Display);
+    enable(2);
+    Display_Digit(Digit_3_To_Display);
     enable(3);
     delay(500);
-    Display_Digit(Digit_3_To_Display);
-    delay(500);
-    //i++;
+    i++;
     if(i == 1000)
     {
       i=0;
