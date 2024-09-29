@@ -104,15 +104,6 @@ void loop() {
         Serial.println(" m/s\n");
         
         Digits_from_Number(velocity);
-        if (velocity<10)
-        {  
-
-            Display_Digit(Digit_1_To_Display);
-            enable(1);
-            Display_Digit(0);
-            enable(2);
-        }
-
         Display_Digit(Digit_1_To_Display);
         enable(1);
         Display_Digit(Digit_2_To_Display);
