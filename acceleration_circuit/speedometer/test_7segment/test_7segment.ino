@@ -86,24 +86,25 @@ void setup() {
 int i = 0;
 void loop() {
     Digits_from_Number(i);
-    /*Display_Digit(Digit_1_To_Display);
+    Display_Digit(Digit_1_To_Display);
+    //Display_Digit(2); 
     enable(1);
-    Display_Digit(Digit_2_To_Display);
-    enable(2);*/
-
-    //Display_Digit(Digit_3_To_Display); 
-    Display_Digit(8); 
+    //Display_Digit(5); 
+    /*Display_Digit(Digit_2_To_Display);
+    enable(2);
+    Display_Digit(Digit_3_To_Display); 
     enable(3);
-    Display_Digit(8);
-    //Display_Digit(Digit_4_To_Display);
-    enable(4);
-    delay(1000);
- /* Serial.println(i);
+    //Display_Digit(1);
+    Display_Digit(Digit_4_To_Display);
+    enable(4);*/
+    
+  Serial.println(i);
   Serial.print("centurie ");
   Serial.println(Digit_3_To_Display);
-  Serial.print("Tousand ");
-  Serial.println(Digit_4_To_Display);*/
-    i+=100;
+  Serial.print("Thousand ");
+  Serial.println(Digit_4_To_Display);
+  delay(500);
+    i+=1;
     if(i == 10000){i=0;}
 }
 
