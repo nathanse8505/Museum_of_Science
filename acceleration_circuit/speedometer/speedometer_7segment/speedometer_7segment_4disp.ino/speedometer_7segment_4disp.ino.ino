@@ -21,15 +21,10 @@ void Init_Output(int IO_Pin){
   digitalWrite(IO_Pin, LOW);/* make sure low  output */
 }
 void Digits_from_Number(int in_number){
-   void Digits_from_Number(int in_number){
     Digit_4_To_Display =  in_number / 1000;
     Digit_3_To_Display = (in_number - 1000 *Digit_4_To_Display)/100;// left digit to disply 
-    Digit_2_To_Display = (in_number - 100 * Digit_3_To_Display)/10;// mid digit to disply 
+    Digit_2_To_Display = (in_number - 1000 *Digit_4_To_Display - 100 * Digit_3_To_Display)/10;// mid digit to disply 
     Digit_1_To_Display = in_number % 10 ;// right digit to disply 
-    
-  //Serial.println(Digit_3_To_Display);
-  //Serial.println(Digit_2_To_Display);
-  //Serial.println(Digit_1_To_Display);
 
 }
 void Display_Digit(int digit_to_show) { 
