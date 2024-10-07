@@ -16,8 +16,7 @@ void Init_Output(int IO_Pin){
 void Digits_from_Number(int in_number){
     Digit_4_To_Display =  in_number / 1000;
     Digit_3_To_Display = (in_number - 1000 *Digit_4_To_Display)/100;// left digit to disply 
-    //int Temp_10 = in_number - 100 * Digit_3_To_Display;
-    Digit_2_To_Display = (in_number - 100 * Digit_3_To_Display)/10;// mid digit to disply 
+    Digit_2_To_Display = (in_number - 1000 *Digit_4_To_Display - 100 * Digit_3_To_Display)/10;// mid digit to disply 
     Digit_1_To_Display = in_number % 10 ;// right digit to disply 
   //Serial.println(Digit_3_To_Display);
   //Serial.println(Digit_2_To_Display);
@@ -87,23 +86,24 @@ int i = 0;
 void loop() {
     Digits_from_Number(i);
     Display_Digit(Digit_1_To_Display);
-    //Display_Digit(2); 
-    enable(1);
-    //Display_Digit(5); 
-    /*Display_Digit(Digit_2_To_Display);
+    enable(1); 
+    Display_Digit(Digit_2_To_Display);
     enable(2);
     Display_Digit(Digit_3_To_Display); 
     enable(3);
-    //Display_Digit(1);
     Display_Digit(Digit_4_To_Display);
-    enable(4);*/
+    enable(4);
     
   Serial.println(i);
-  Serial.print("centurie ");
-  Serial.println(Digit_3_To_Display);
+  /*Serial.print("unity ");
+  Serial.println(Digit_1_To_Display);*/
+  Serial.print( "Dozens ");
+  Serial.println(Digit_2_To_Display);
+  /*Serial.print("centurie ");
+  Serial.println(Digit_3_To_Display);*/
   Serial.print("Thousand ");
   Serial.println(Digit_4_To_Display);
-  delay(500);
+  delay(50);
     i+=1;
     if(i == 10000){i=0;}
 }
