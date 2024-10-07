@@ -36,6 +36,34 @@ void Display_Digit(int digit_to_show) {
     
 }
 
+void blank_Digit(int digit_enable){ //blank digit right to the left
+  digitalWrite(BCD_A, HIGH);
+  digitalWrite(BCD_B, HIGH);
+  digitalWrite(BCD_C, HIGH);
+  digitalWrite(BCD_D, HIGH);
+
+  enable(digit_enable);
+
+}
+
+void blank_All_Digit(){
+  for(int j=1 ;j<=4;j++){
+         blank_Digit(j);
+    }
+}
+
+void all_zero_digit()
+{
+  digitalWrite(BCD_A, LOW);
+  digitalWrite(BCD_B, LOW);
+  digitalWrite(BCD_C, LOW);
+  digitalWrite(BCD_D, LOW);
+  for(int j=1 ;j<=4;j++){
+         enable(j);
+    }
+
+}
+
 void enable(int digit_enable){
  switch(digit_enable) {
       case 1: //range 0-9  '00000110'
@@ -82,7 +110,7 @@ void setup() {
 
 }
 
-int i = 0;
+int i = 5855;
 void loop() {
     Digits_from_Number(i);
     Display_Digit(Digit_1_To_Display);
@@ -94,17 +122,19 @@ void loop() {
     Display_Digit(Digit_4_To_Display);
     enable(4);
     
+    
+    
   Serial.println(i);
-  /*Serial.print("unity ");
-  Serial.println(Digit_1_To_Display);*/
+  Serial.print("unity ");
+  Serial.println(Digit_1_To_Display);
   Serial.print( "Dozens ");
   Serial.println(Digit_2_To_Display);
-  /*Serial.print("centurie ");
-  Serial.println(Digit_3_To_Display);*/
+  Serial.print("centurie ");
+  Serial.println(Digit_3_To_Display);
   Serial.print("Thousand ");
   Serial.println(Digit_4_To_Display);
-  delay(50);
-    i+=1;
+  delay(500);
+    //i+=1;
     if(i == 10000){i=0;}
 }
 

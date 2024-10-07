@@ -38,6 +38,7 @@ void Display_Digit(int digit_to_show) {
     if ((digit_to_show & 8) == 8) {digitalWrite(BCD_D, HIGH);}  
 }
 
+
 void enable(int digit_enable){
  switch(digit_enable) {
       case 1: //range 0-9  '00000110'
@@ -56,8 +57,32 @@ void enable(int digit_enable){
        digitalWrite(LE_THOUSANDS, HIGH); 
 
        break;
-      
-      
+    }
+}
+
+void all_zero_digit(){
+  digitalWrite(BCD_A, LOW);
+  digitalWrite(BCD_B, LOW);
+  digitalWrite(BCD_C, LOW);
+  digitalWrite(BCD_D, LOW);
+  for(int j=1 ;j<=4;j++){
+         enable(j);
+    }
+}
+
+void blank_Digit(int digit_enable){ //blank digit right to the left
+  digitalWrite(BCD_A, HIGH);
+  digitalWrite(BCD_B, HIGH);
+  digitalWrite(BCD_C, HIGH);
+  digitalWrite(BCD_D, HIGH);
+
+  enable(digit_enable);
+
+}
+
+void blank_All_Digit(){
+  for(int j=1 ;j<=4;j++){
+         blank_Digit(j);
     }
 }
 
@@ -122,6 +147,13 @@ void loop() {
             Display_Digit(Digit_4_To_Display);
             enable(4);
     }
+
+    if ((millis() - timer_2) > 10000){
+        all_zero_digit();
+        //velocity = 0;
+        //blank_All_Digit();
+    }
+
 
       
 
