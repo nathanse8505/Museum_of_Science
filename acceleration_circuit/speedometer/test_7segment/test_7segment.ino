@@ -110,7 +110,7 @@ void setup() {
 
 }
 
-int i = 5855;
+int i = 8888;
 void loop() {
     Digits_from_Number(i);
     Display_Digit(Digit_1_To_Display);
