@@ -10,7 +10,8 @@
 #define LE_UNITS (9) // Output right (10th) digit LE (negative pulse) used as units 
 
 
-#define SENSOR A2
+#define SENSOR1 A2
+#define SENSOR2 A3
 
 
 

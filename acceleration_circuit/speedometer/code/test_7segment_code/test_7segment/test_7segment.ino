@@ -110,7 +110,7 @@ void setup() {
 
 }
 
-int i = 8888;
+int i = 0;
 void loop() {
     Digits_from_Number(i);
     Display_Digit(Digit_1_To_Display);
@@ -131,10 +131,10 @@ void loop() {
   Serial.println(Digit_2_To_Display);
   Serial.print("centurie ");
   Serial.println(Digit_3_To_Display);
-  Serial.print("Thousand ");
+  Serial.print("Thousand "); 
   Serial.println(Digit_4_To_Display);
-  delay(500);
-    //i+=1;
-    if(i == 10000){i=0;}
+  delay(100);
+    i+=1;
+    if(i == 1000){i=0;}
 }
 

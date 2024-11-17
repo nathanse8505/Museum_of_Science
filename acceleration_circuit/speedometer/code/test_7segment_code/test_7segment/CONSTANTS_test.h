@@ -8,11 +8,8 @@
 #define LE_CENTURIES (7) // Output Left (100th) digit LE (negative pulse) used as 10th
 #define LE_DOZENS (8)
 #define LE_UNITS (9) // Output right (10th) digit LE (negative pulse) used as units 
+#define LE_THOUSANDS (10)
 
 
-#define SENSOR A2
-
-
-
-
+#define SENSOR A0
 

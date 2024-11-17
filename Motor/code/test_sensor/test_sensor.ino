@@ -1,17 +1,5 @@
 #include "CONSTANTS.h"
-
-#define TIME_RESTART 2000
-
-float timer_1 = 0.0;
-float timer_2;
-float delta_time;
-float rpm;
-float velocity=0; 
-float meter = 2 * 3.14 * 0.076;
-int check = 0;
-bool check_zero = HIGH;
-
-
+#define ITERATION 100
 int Digit_3_To_Display = 0;// Left (100th) digit to disply - used as 10th
 int Digit_2_To_Display = 0;// Mid right (10th) digit to disply  - used as units 
 int Digit_1_To_Display = 0;// rigth (external unit) digit to disply - not used for winf tunnel
@@ -91,7 +79,8 @@ void blank_All_Digit(){
 void setup() {
   Serial.begin(SERIAL_BAUD_RATE);
 
-  pinMode(SENSOR,INPUT_PULLUP);
+  pinMode(SENSOR1,INPUT_PULLUP);
+  pinMode(SENSOR2,INPUT_PULLUP);
 
   Init_Output(BCD_A);
   Init_Output(BCD_B);
@@ -111,70 +100,51 @@ void setup() {
 
 }
 
+float average_voltage(){
+  float vec_volt[ITERATION];
+  int counter = 0;
+  for(int i=0;i<ITERATION;i++){
+    vec_volt[i]=(float)(analogRead(SENSOR1)*5)/1023;
+    delay(1);
+    if(vec_volt[i] < 1){
+      counter++;
+    }
+  }
+  if (counter > 80){
+    return 0;
+  }
+    return 5;
+
+}
+float volt_sensor1;
+float volt_sensor2;
+float volt1;
 
 void loop() {
 
-    //Serial.println(check);
-    //Serial.println(analogRead(SENSOR)); 
-    float volt_sensor1=(float)(analogRead(SENSOR)*5)/1023;
+  volt_sensor1=(float)(analogRead(SENSOR1)*5)/1023;
+ // volt_sensor2=(float)analogRead(SENSOR2)*5/1023;
+ // volt1 = average_voltage()*100;
+  volt_sensor1 = volt_sensor1 * 100;
 
-      if (volt_sensor1 < 1 && check == 0){ 
-        Serial.println("we are in a black to white zone start"); 
-        timer_1 = millis();
-        check = 1;
-        
-      }
-      if(check == 1 && volt_sensor1 > 3){
-        Serial.println("we are in a white to black zone"); 
-        check = 2;
-      }
 
-      if(volt_sensor1 < 1 && check == 2){
-         Serial.println("we are in a black to white zone stop");  
+  Serial.print("The voltage of sensor 1 is ");
+  Serial.print(volt_sensor1);
+  Serial.println(" v");
+  /*Serial.print("The voltage of sensor 2 is ");
+  Serial.print(volt_sensor2);
+  Serial.println(" v");*/
+  delay(10);
+  Digits_from_Number(volt_sensor1);
+  Display_Digit(Digit_1_To_Display);
+  enable(1);
+  Display_Digit(Digit_2_To_Display);
+  enable(2);
+  Display_Digit(Digit_3_To_Display);
+  enable(3);
+  
 
-        timer_2 = millis();
-        delta_time = (timer_2 - timer_1)/1000;
-        check = 0;
-        check_zero = HIGH;
-        velocity = meter / delta_time;
-        rpm = 60 / delta_time;
 
-        Serial.print(velocity,3);
-        Serial.println(" m/s");
-         Serial.print(rpm,3);
-        Serial.println(" rpm\n");
-
-      }  
-      
-    if ((millis() - timer_1) > TIME_RESTART && check_zero){
-        //all_zero_digit();
-        velocity = 0;
-        rpm = 0;
-        Serial.print(velocity,3);
-        Serial.println(" m/s");
-        Serial.print(rpm,3);
-        Serial.println(" rpm\n"); 
-        check_zero = LOW;
-        //blank_All_Digit();
-    }
-    
-       
-        /*velocity = (int)(velocity * 1000);
-        Serial.print(velocity,3);
-        Serial.println(" m/s\n");*/
-        
-            Digits_from_Number(rpm);
-            Display_Digit(Digit_1_To_Display);
-            enable(1);
-            Display_Digit(Digit_2_To_Display);
-            enable(2);
-            Display_Digit(Digit_3_To_Display);
-            enable(3);
-          
-    
+  // put your main code here, to run repeatedly:
 
 }
-
-
-      
-

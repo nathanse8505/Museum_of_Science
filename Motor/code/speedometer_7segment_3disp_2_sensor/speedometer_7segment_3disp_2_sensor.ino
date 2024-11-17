@@ -1,14 +1,9 @@
 #include "CONSTANTS.h"
 
-#define TIME_RESTART 2000
-
-float timer_1 = 0.0;
-float timer_2;
-float delta_time;
-float rpm;
-float velocity=0; 
-float meter = 2 * 3.14 * 0.076;
-int check = 0;
+volatile unsigned long dernierTemps1 = 0;
+volatile unsigned long dernierTemps2 = 0;
+volatile float rpm = 0;
+volatile bool sensHoraire = true;
 bool check_zero = HIGH;
 
 
@@ -86,12 +81,32 @@ void blank_All_Digit(){
     }
 }
 
+void ISR_SENSOR1() {
+  Serial.print("enter to the function");
+  unsigned long tempsActuel = millis();
+  if (digitalRead(SENSOR2) == LOW) {
+    sensHoraire = true;  // Détection du sens horaire
+  } else {
+    sensHoraire = false; // Détection du sens antihoraire
+  }
+  rpm = 60000.0 / (tempsActuel - dernierTemps1);  // Calcul du RPM
+  dernierTemps1 = tempsActuel;
+}
+
+void ISR_SENSOR2() {
+  // Rien à faire ici pour le moment, juste pour stabilisation
+}
+
 
 
 void setup() {
   Serial.begin(SERIAL_BAUD_RATE);
 
-  pinMode(SENSOR,INPUT_PULLUP);
+  pinMode(SENSOR1,INPUT_PULLUP);
+  pinMode(SENSOR2,INPUT_PULLUP);
+  
+  attachInterrupt(digitalPinToInterrupt(SENSOR1), ISR_SENSOR1, FALLING);
+  attachInterrupt(digitalPinToInterrupt(SENSOR2), ISR_SENSOR2, FALLING);
 
   Init_Output(BCD_A);
   Init_Output(BCD_B);
@@ -112,64 +127,35 @@ void setup() {
 }
 
 
+
+
 void loop() {
+  noInterrupts();
+  float velocity = rpm;
+  bool sens = sensHoraire;
+  interrupts();
+  
+  Serial.print("Vitesse (RPM) : ");
+  Serial.print(velocity);
+  Serial.print(" | Sens : ");
+  if (sens) {
+    Serial.println("clockwise");
+  } else {
+    Serial.println("unclockwise");
+  }
 
-    //Serial.println(check);
-    //Serial.println(analogRead(SENSOR)); 
-    float volt_sensor1=(float)(analogRead(SENSOR)*5)/1023;
-
-      if (volt_sensor1 < 1 && check == 0){ 
-        Serial.println("we are in a black to white zone start"); 
-        timer_1 = millis();
-        check = 1;
-        
-      }
-      if(check == 1 && volt_sensor1 > 3){
-        Serial.println("we are in a white to black zone"); 
-        check = 2;
-      }
-
-      if(volt_sensor1 < 1 && check == 2){
-         Serial.println("we are in a black to white zone stop");  
-
-        timer_2 = millis();
-        delta_time = (timer_2 - timer_1)/1000;
-        check = 0;
-        check_zero = HIGH;
-        velocity = meter / delta_time;
-        rpm = 60 / delta_time;
-
-        Serial.print(velocity,3);
-        Serial.println(" m/s");
-         Serial.print(rpm,3);
-        Serial.println(" rpm\n");
-
-      }  
-      
-    if ((millis() - timer_1) > TIME_RESTART && check_zero){
-        //all_zero_digit();
-        velocity = 0;
-        rpm = 0;
-        Serial.print(velocity,3);
-        Serial.println(" m/s");
-        Serial.print(rpm,3);
-        Serial.println(" rpm\n"); 
-        check_zero = LOW;
-        //blank_All_Digit();
-    }
-    
        
-        /*velocity = (int)(velocity * 1000);
-        Serial.print(velocity,3);
-        Serial.println(" m/s\n");*/
-        
-            Digits_from_Number(rpm);
-            Display_Digit(Digit_1_To_Display);
-            enable(1);
-            Display_Digit(Digit_2_To_Display);
-            enable(2);
-            Display_Digit(Digit_3_To_Display);
-            enable(3);
+  /*velocity = (int)(velocity * 1000);
+  Serial.print(velocity,3);
+  Serial.println(" m/s\n");*/
+  
+  Digits_from_Number(velocity);
+  Display_Digit(Digit_1_To_Display);
+  enable(1);
+  Display_Digit(Digit_2_To_Display);
+  enable(2);
+  Display_Digit(Digit_3_To_Display);
+  enable(3);
           
     
 
