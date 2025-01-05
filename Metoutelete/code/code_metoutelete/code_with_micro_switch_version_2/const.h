@@ -4,5 +4,5 @@
 #define LED_DELAY 2
 
 const int time_bouncing = 20;
-const float stop_time = 20000;
+const float stop_time = 2000;
 const float motor_delay = 300;

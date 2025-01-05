@@ -4,6 +4,7 @@
 #define P_DIRECTION 5          // Pin to control the positive direction
 #define LED_CONTROL 7          // Pin for the control LED
 
+float DELAY_RELAY = 20;         //delay between relays 
 float cycle_max = 1000;        // Maximum cycle duration in milliseconds
 
 void setup() {
@@ -37,23 +38,28 @@ void loop() {
 
     // Activate positive direction for the duration of the positive signal
     digitalWrite(P_DIRECTION, HIGH);
+    delay(DELAY_RELAY);
     digitalWrite(N_DIRECTION, LOW);
     //delayMicroseconds(time_positive * 100);
     delay(time_positive);
   
     // Activate negative direction for the rest of the cycle
     digitalWrite(P_DIRECTION, LOW);
+    delay(DELAY_RELAY);
     digitalWrite(N_DIRECTION, LOW);
     //delay(cycle_time - time_positive/10);
     delay(cycle_time - time_positive);
 
     digitalWrite(P_DIRECTION, LOW);
+    delay(DELAY_RELAY);
     digitalWrite(N_DIRECTION, HIGH);
     //delayMicroseconds(time_positive * 100);
     delay(time_positive);
   
+  
     // Activate negative direction for the rest of the cycle
     digitalWrite(P_DIRECTION, LOW);
+    delay(DELAY_RELAY);
     digitalWrite(N_DIRECTION, LOW);
     delay(cycle_time - time_positive);
   }
