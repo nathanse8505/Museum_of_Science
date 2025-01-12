@@ -71,75 +71,39 @@ bool check_lang_button() {
 */
 
 
-bool check_ignition_button() {
+bool CHECK_BUTTON(int BUTTON_IO) {
   /*
-   * Check if the ignition button was pressed (with debounce).
-   */
-  
-  bool tempReturn = false;  // Assume the button is not pressed
-  bool reading = digitalRead(IGNITION_BUTTON_IO);  // Read the current button state
-
-  // If the button state has changed
-  if (reading != lastIgnitionButtonState) {
-    // Reset the debounce timer
-    lastDebounceTimeIgnition = millis();
-  }
-
-  // If the debounce time has passed and the state is stable
-  if ((millis() - lastDebounceTimeIgnition) > BOUNCE_TIME) {
-    reset_watchdog();
-    // If the stable state is different from the previous stable state
-    if (reading != currentIgnitionButtonState) {
-      currentIgnitionButtonState = reading;  // Update the stable state
-
-      // If the button is pressed (LOW with INPUT_PULLUP configuration)
-      if (currentIgnitionButtonState == LOW) {
-        tempReturn = true;  // Button press is valid
-      }
-    }
-  }
-
-  // Update the last known state
-  lastIgnitionButtonState = reading;
-
-  return tempReturn;
-}
-
-
-
-
-bool check_lang_button() {
-  /*
-   * Function to check if the language button was pressed,
+   * Function to check if the button was pressed,
    * implementing a debounce mechanism to avoid false triggers.
    */
   
-  bool reading = digitalRead(LANG_BUTTON_IO);  // Read the current state of the button
+  reading = digitalRead(BUTTON_IO);  // Read the current state of the button
 
   // If the button state has changed (bouncing detected)
-  if (reading != lastLangButtonState) {
+  if (reading != last_Button_State) {
     // Reset the debounce timer
-    lastDebounceTime = millis();
+     last_Debounce_Time = millis();
   }
 
   // If the debounce time has passed and the state is stable
-  if ((millis() - lastDebounceTime) > BOUNCE_TIME) {
+  if ((millis() -  last_Debounce_Time) > BOUNCE_TIME) {
     // If the stable state is different from the previously recorded state
-    if (reading != currentLangButtonState) {
-      currentLangButtonState = reading;  // Update the current stable state
+    if (reading != current_Button_State) {
+      current_Button_State = reading;  // Update the current stable state
 
       // If the button was pressed (transition from LOW to HIGH)
-      if (currentLangButtonState == HIGH && lastLangButtonState == LOW) {
-        lastLangButtonState = currentLangButtonState;  // Update the last state
-        return true;  // A valid button press is detected
+      if (current_Button_State == HIGH && last_Button_State == LOW) {
+        last_Button_State = current_Button_State;  // Update the last state
+        return HIGH;  // A valid button press is detected
       }
     }
   }
 
   // Update the last known button state
-  lastLangButtonState = reading;
-  return false;  // No valid button press detected
+  last_Button_State = reading;
+  return LOW;  // No valid button press detected
 }
+
 
 
 

@@ -14,7 +14,7 @@
  *        valve IO  D5-|       |-A4 ,SDA (to Display) 
  *                  D6-|       |-A3
  *                  D7-|       |-A2
- *            SOUND D8-|       |-A1, 
+ *            SOUND D8-|       |-A1,
  *                  D9-|       |-A0,  Current sensor ACS712T-05
  *                 D10-|       |-Ref
  *                 D11-|       |-3.3V   
@@ -75,19 +75,19 @@ float current_value = 0;        // calculated current [A]
 float avg_current_value = 0;        // calculated average current [A]
 float abs_avg_current_value = 0;        // absolute average current [A]
 bool ignited_now = false;  // for serial msg
+
+
 ////////language///////////////
-unsigned long lastDebounceTime = 0;  // Time of the last button state change
-bool lastLangButtonState = HIGH;    // Last stable state of the button
-bool currentLangButtonState = HIGH; // Current stable state of the button
 uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 //bool last_lang_button_state = HIGH;  // used for checking if lang button was released
 //////////////////////////////
 
 
 /////////button ignition//////////
-unsigned long lastDebounceTimeIgnition = 0;  // Time of the last button state change
-bool lastIgnitionButtonState = HIGH;        // Last stable state of the ignition button
-bool currentIgnitionButtonState = HIGH;     // Current stable state of the ignition button
+bool reading;
+unsigned long last_Debounce_Time = 0;  // Time of the last button state change
+bool last_Button_State = HIGH;    // Last stable state of the button
+bool current_Button_State = HIGH; // Current stable state of the button
 //////////////////////////////
 
  #endif

@@ -19,6 +19,7 @@ void setup() {
   pinMode(SOUND, OUTPUT);
 
   init_sount();
+  
   Serial.begin(BAUDRATE);  // initialize serial communications 
   delay (100);  // wait to make sure serial begin
   wdt_enable(WDTO_2S);
@@ -46,13 +47,13 @@ void loop() {
     ignited_now = true;
   }
 
-  if (check_ignition_button() && check_charge()) {  // button pressed
+  if (CHECK_BUTTON(IGNITION_BUTTON_IO) && check_charge()) {  // button pressed
     delay(BOUNCE_TIME);  // wait antibounce time to make sure button release 
-    ignite();
+    IGNITE_WITH_SOUND();
     ignited_now = true;
   }
 
-  if (check_lang_button()) {  // pressed on language button
+  if (CHECK_BUTTON(LANG_BUTTON_IO)) {  // pressed on language button
     lang = lang >= 2 ? 0 : (lang + 1);  // toggle language
   }
   
