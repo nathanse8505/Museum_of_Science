@@ -32,11 +32,11 @@ void reset_charge(){
   //fill_initial_rolling_average_value() ;// clear moving average vector 
 }
 
-
+/*
 bool check_ignition_button(){
   /*
    * check if pressed on ignite button (with bounce check)
-   */
+   
   bool temp_return = false;  // asume button not pressed 
   int button_state = digitalRead(IGNITION_BUTTON_IO); // check button pressed 
    
@@ -49,16 +49,17 @@ bool check_ignition_button(){
     }
   }
   return temp_return;
-}
+}*/
 
-
+/*
 bool check_lang_button() {
   /*
    * check if pressed on language button
-   */
+   
   int button_state = digitalRead(LANG_BUTTON_IO); // check button pressed 
   
   if (button_state == LOW) {
+    delay(BOUNCE_TIME);  // wait antibounce time to make sure 
     last_lang_button_state = button_state;
   }
   if (button_state == HIGH && last_lang_button_state == LOW) {
@@ -67,6 +68,79 @@ bool check_lang_button() {
   }
   return false;
 }
+*/
+
+
+bool check_ignition_button() {
+  /*
+   * Check if the ignition button was pressed (with debounce).
+   */
+  
+  bool tempReturn = false;  // Assume the button is not pressed
+  bool reading = digitalRead(IGNITION_BUTTON_IO);  // Read the current button state
+
+  // If the button state has changed
+  if (reading != lastIgnitionButtonState) {
+    // Reset the debounce timer
+    lastDebounceTimeIgnition = millis();
+  }
+
+  // If the debounce time has passed and the state is stable
+  if ((millis() - lastDebounceTimeIgnition) > BOUNCE_TIME) {
+    reset_watchdog();
+    // If the stable state is different from the previous stable state
+    if (reading != currentIgnitionButtonState) {
+      currentIgnitionButtonState = reading;  // Update the stable state
+
+      // If the button is pressed (LOW with INPUT_PULLUP configuration)
+      if (currentIgnitionButtonState == LOW) {
+        tempReturn = true;  // Button press is valid
+      }
+    }
+  }
+
+  // Update the last known state
+  lastIgnitionButtonState = reading;
+
+  return tempReturn;
+}
+
+
+
+
+bool check_lang_button() {
+  /*
+   * Function to check if the language button was pressed,
+   * implementing a debounce mechanism to avoid false triggers.
+   */
+  
+  bool reading = digitalRead(LANG_BUTTON_IO);  // Read the current state of the button
+
+  // If the button state has changed (bouncing detected)
+  if (reading != lastLangButtonState) {
+    // Reset the debounce timer
+    lastDebounceTime = millis();
+  }
+
+  // If the debounce time has passed and the state is stable
+  if ((millis() - lastDebounceTime) > BOUNCE_TIME) {
+    // If the stable state is different from the previously recorded state
+    if (reading != currentLangButtonState) {
+      currentLangButtonState = reading;  // Update the current stable state
+
+      // If the button was pressed (transition from LOW to HIGH)
+      if (currentLangButtonState == HIGH && lastLangButtonState == LOW) {
+        lastLangButtonState = currentLangButtonState;  // Update the last state
+        return true;  // A valid button press is detected
+      }
+    }
+  }
+
+  // Update the last known button state
+  lastLangButtonState = reading;
+  return false;  // No valid button press detected
+}
+
 
 
 void ignite(){

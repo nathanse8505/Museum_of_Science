@@ -74,9 +74,20 @@ int32_t avg_sensor_value = 0;        // (moving) average value
 float current_value = 0;        // calculated current [A]
 float avg_current_value = 0;        // calculated average current [A]
 float abs_avg_current_value = 0;        // absolute average current [A]
-uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
-bool last_lang_button_state = HIGH;  // used for checking if lang button was released
 bool ignited_now = false;  // for serial msg
+////////language///////////////
+unsigned long lastDebounceTime = 0;  // Time of the last button state change
+bool lastLangButtonState = HIGH;    // Last stable state of the button
+bool currentLangButtonState = HIGH; // Current stable state of the button
+uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
+//bool last_lang_button_state = HIGH;  // used for checking if lang button was released
+//////////////////////////////
 
+
+/////////button ignition//////////
+unsigned long lastDebounceTimeIgnition = 0;  // Time of the last button state change
+bool lastIgnitionButtonState = HIGH;        // Last stable state of the ignition button
+bool currentIgnitionButtonState = HIGH;     // Current stable state of the ignition button
+//////////////////////////////
 
  #endif
