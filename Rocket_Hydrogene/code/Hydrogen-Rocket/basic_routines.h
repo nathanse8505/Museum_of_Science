@@ -71,39 +71,23 @@ bool check_lang_button() {
 */
 
 
-bool CHECK_BUTTON(int BUTTON_IO) {
-  /*
-   * Function to check if the button was pressed,
-   * implementing a debounce mechanism to avoid false triggers.
-   */
-  
-  reading = digitalRead(BUTTON_IO);  // Read the current state of the button
-
-  // If the button state has changed (bouncing detected)
-  if (reading != last_Button_State) {
-    // Reset the debounce timer
-     last_Debounce_Time = millis();
+bool PRESS_BUTTON(int BUTTON_IO) {
+   reset_watchdog();
+  // Check if the button is pressed
+  if (digitalRead(BUTTON_IO) == LOW && check == LOW) {
+     //Serial.println("press :");
+     check = HIGH;         // Mark that the button is being pressed
+    delay(BOUNCE_TIME); // Apply debounce delay
   }
 
-  // If the debounce time has passed and the state is stable
-  if ((millis() -  last_Debounce_Time) > BOUNCE_TIME) {
-    // If the stable state is different from the previously recorded state
-    if (reading != current_Button_State) {
-      current_Button_State = reading;  // Update the current stable state
-
-      // If the button was pressed (transition from LOW to HIGH)
-      if (current_Button_State == HIGH && last_Button_State == LOW) {
-        last_Button_State = current_Button_State;  // Update the last state
-        return HIGH;  // A valid button press is detected
-      }
-    }
+  // Check if the button is released
+  if (digitalRead(BUTTON_IO) == HIGH && check == HIGH) {
+    //Serial.println("unpress");
+    check = LOW;  // Reset the state for the next button press
+    return HIGH;  // Indicate that the button was successfully pressed and released
   }
-
-  // Update the last known button state
-  last_Button_State = reading;
-  return LOW;  // No valid button press detected
+  return LOW; // Return false if the button is not in the desired state
 }
-
 
 
 

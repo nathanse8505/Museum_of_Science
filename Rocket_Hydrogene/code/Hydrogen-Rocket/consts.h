@@ -84,10 +84,7 @@ uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 
 
 /////////button ignition//////////
-bool reading;
-unsigned long last_Debounce_Time = 0;  // Time of the last button state change
-bool last_Button_State = HIGH;    // Last stable state of the button
-bool current_Button_State = HIGH; // Current stable state of the button
+bool check = LOW;
 //////////////////////////////
 
  #endif
