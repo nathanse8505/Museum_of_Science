@@ -22,7 +22,7 @@
  *                      --USB--        
  */
 
-#define CURRENT_INPUT_IO A0 // current densor 
+#define CURRENT_INPUT_IO A0 // current sensor 
 // #define CURRENT_INPUT_IO A6 // simulation potentiometer
 
 #define BAUDRATE (115200)
@@ -83,7 +83,9 @@ uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 //////////////////////////////
 
 
-/////////button ignition//////////
+/////////button ignition//////////88888
+
++
 bool check = LOW;
 //////////////////////////////
 

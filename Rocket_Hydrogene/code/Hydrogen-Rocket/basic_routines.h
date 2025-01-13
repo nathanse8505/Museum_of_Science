@@ -32,44 +32,6 @@ void reset_charge(){
   //fill_initial_rolling_average_value() ;// clear moving average vector 
 }
 
-/*
-bool check_ignition_button(){
-  /*
-   * check if pressed on ignite button (with bounce check)
-   
-  bool temp_return = false;  // asume button not pressed 
-  int button_state = digitalRead(IGNITION_BUTTON_IO); // check button pressed 
-   
-  if (button_state == LOW) {  // button pressed 
-    delay(BOUNCE_TIME);  // wait antibounce time to make sure 
-    button_state = digitalRead(IGNITION_BUTTON_IO);  // check button again  
-    
-    if (button_state == LOW) { // button really pressed
-      temp_return = true;
-    }
-  }
-  return temp_return;
-}*/
-
-/*
-bool check_lang_button() {
-  /*
-   * check if pressed on language button
-   
-  int button_state = digitalRead(LANG_BUTTON_IO); // check button pressed 
-  
-  if (button_state == LOW) {
-    delay(BOUNCE_TIME);  // wait antibounce time to make sure 
-    last_lang_button_state = button_state;
-  }
-  if (button_state == HIGH && last_lang_button_state == LOW) {
-    last_lang_button_state = HIGH;
-    return true;
-  }
-  return false;
-}
-*/
-
 
 bool PRESS_BUTTON(int BUTTON_IO) {
    reset_watchdog();
