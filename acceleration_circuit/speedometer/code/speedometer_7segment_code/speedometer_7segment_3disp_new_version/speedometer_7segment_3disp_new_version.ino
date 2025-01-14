@@ -37,7 +37,9 @@ void loop() {
 
       timer = millis();
       check = LOW;
+      delay(DELAY_BOUNCING);
     }
+    
     
     if(SENSOR_OUT() == HIGH && check == LOW){
       Serial.println("we are in a black to white zone stop");  
@@ -46,34 +48,40 @@ void loop() {
       check = HIGH;
       check_zero = HIGH;
       velocity = meter / delta_time_sec;
+      km_per_h = velocity * 3.6;
       rpm = 60 / delta_time_sec;
-    }
-
-    Reset_Error_Sensor();
-
     Serial.print(velocity,3);
     Serial.println(" m/s");
     Serial.print(rpm,3);
     Serial.println(" rpm\n");
 
-    if ((millis() - timer) > TIME_RESET && check_zero){
-      velocity = 0;
-      rpm = 0;
-      check_zero = LOW;
-      //blank_All_Digit();
-      //all_zero_digit();
-    }
-      
-    /*velocity = (int)(velocity * 1000);
-    Serial.print(velocity,3);
-    Serial.println(" m/s\n");*/
+    km_per_h = km_per_h * CALIBRATION;
 
-    Digits_from_Number(rpm);
+    Digits_from_Number(km_per_h);
     Display_Digit(Digit_1_To_Display);//right digit
     enable(RIGH_DIGIT);
     Display_Digit(Digit_2_To_Display);//middle digit
     enable(MIDDLE_DIGIT);
     Display_Digit(Digit_3_To_Display);//left digit
     enable(LEFT_DIGIT); 
+    }
+
+    //Reset_Error_Sensor();
+    
+    
+
+    if ((millis() - timer) > TIME_RESET && check_zero){
+      Serial.println("reset the speedometer"); 
+      timer = 0; 
+      velocity = 0;
+      km_per_h = 0;
+      rpm = 0;
+      check_zero = LOW;
+
+      //blank_All_Digit();
+      all_zero_digit();
+    }
+      
+   
 
 }

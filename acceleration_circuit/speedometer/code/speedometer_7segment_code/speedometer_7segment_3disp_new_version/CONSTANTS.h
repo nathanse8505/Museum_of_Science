@@ -15,9 +15,10 @@
 #define SENSOR A2 //
 
 
-
-const int32_t TIME_RESET = 2000;
-const float meter = 2 * 3.14 * 0.076;
+const int16_t CALIBRATION = 100;
+const int32_t TIME_RESET = 10000;
+const int16_t DELAY_BOUNCING = 50;
+const float meter = 3.14 *  1.14;
 const int ms_to_sec = 1000;
 const int8_t VREF = 5;
 const int8_t  Number_OF_7SEG = 3;
@@ -30,7 +31,8 @@ const int8_t LEFT_DIGIT = 3;
 
 float timer = 0;
 float velocity = 0; 
-float delta_time_sec;
+float km_per_h = 0;
+float delta_time_sec = 0;
 float rpm;
 
 bool check = HIGH;
