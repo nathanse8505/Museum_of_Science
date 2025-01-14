@@ -2,18 +2,19 @@
 #define FONCTION
 
 #include "CONSTANTS.h"
+#include <avr/wdt.h>
+
 
 void Init_Output(int IO_Pin){
   digitalWrite(IO_Pin, LOW);/* try avoid high output */
   pinMode(IO_Pin, OUTPUT);
   digitalWrite(IO_Pin, LOW);/* make sure low  output */
 }
-
-
 void Digits_from_Number(int in_number){
-    Digit_3_To_Display = in_number / 100;// left digit to display 
-    Digit_2_To_Display = (in_number - 100 * Digit_3_To_Display)/10;// mid digit to display 
-    Digit_1_To_Display = in_number % 10 ;// right digit to display 
+    Digit_4_To_Display =  in_number / 1000;
+    Digit_3_To_Display = (in_number - 1000 *Digit_4_To_Display)/100;// left digit to disply 
+    Digit_2_To_Display = (in_number - 1000 *Digit_4_To_Display - 100 * Digit_3_To_Display)/10;// mid digit to disply 
+    Digit_1_To_Display = in_number % 10 ;// right digit to disply 
 
 }
 void Display_Digit(int digit_to_show) { 
@@ -42,8 +43,19 @@ void enable(int digit_enable){
        digitalWrite(LE_CENTURIES, LOW);
        digitalWrite(LE_CENTURIES, HIGH); 
       
+
        break;
     }
+}
+
+void NUMBER_TO_DISPLAY(float variable){
+  Digits_from_Number(variable);
+  Display_Digit(Digit_1_To_Display);
+  enable(1);
+  Display_Digit(Digit_2_To_Display);
+  enable(2);
+  Display_Digit(Digit_3_To_Display);
+  enable(3);
 }
 
 void all_zero_digit(){
@@ -51,7 +63,7 @@ void all_zero_digit(){
   digitalWrite(BCD_B, LOW);
   digitalWrite(BCD_C, LOW);
   digitalWrite(BCD_D, LOW);
-  for(int j=1; j <=  Number_OF_7SEG; j++){
+  for(int j=1 ;j<=4;j++){
          enable(j);
     }
 }
@@ -67,27 +79,10 @@ void blank_Digit(int digit_enable){ //blank digit right to the left
 }
 
 void blank_All_Digit(){
-  for(int j=1;j <=  Number_OF_7SEG; j++){
+  for(int j=1 ;j<=4;j++){
          blank_Digit(j);
     }
 }
-
-bool SENSOR_OUT(){
-  float volt_sensor=(float)(analogRead(SENSOR) * VREF)/BIT_RESOLUTION;
-  if(volt_sensor < MIN_VOLT){
-    return HIGH;
-  }
-  else if(volt_sensor > MAX_VOLT){
-    return LOW;
-  }
-}
-
-void Reset_Error_Sensor(){
-  if((millis() - timer)/ms_to_sec > (1.8 * delta_time_sec) && check == LOW){
-    check = HIGH;
-  }
-}
-
 
 
 
