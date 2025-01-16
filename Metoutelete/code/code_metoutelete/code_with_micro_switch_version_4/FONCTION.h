@@ -2,7 +2,7 @@
 #define FONCTION
 
 #include "const.h"
-//#include <LowPower.h>
+#include <LowPower.h>
 #include <avr/wdt.h> // Library for the Watchdog Timer
 
 
@@ -37,16 +37,12 @@ bool PRESS_BUTTON() {
 
 
 // Function to immediately stop the motor and put the system into low-power mode
-void IEC() {//Imediately engine cutoff
+void IEC() {//Imediately Engine Cutoff
   
-  Serial.println("Active the watchdog");
   digitalWrite(MOTOR, LOW);// Turn off the motor
-  delay(DELAY_WDT);//delay to activate the watchdog
-
-
-  //Serial.println("The Arduino is entering low power mode");
- // Enter low-power mode indefinitely
-   //LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
+  wdt_disable();
+  Serial.println("The Arduino is entering low power mode");
+  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF); // Enter low-power mode indefinitely until reset
 }
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef BASIC_ROUTINES_H
-#define BASIC_ROUTINES_H
+#ifndef basic_routines
+#define basic_routines
 #include "consts.h"
 #include <MovingAverage.h>  // see https://github.com/careyi3/MovingAverage
 #include <avr/wdt.h>
@@ -16,7 +16,7 @@ void fill_initial_rolling_average_value(){
    */
    for (int i = 0; i <= MOVING_AVG_LENGTH; i++) {  // fill initial rolling average vector 
       sensor_value = analogRead(CURRENT_INPUT_IO);// read the analog in value (the current sensor output):
-//      Serial.println(sensor_value);
+   // Serial.println(sensor_value);
       avg_sensor_value  = filter.addSample(sensor_value);
       reset_watchdog();
   }
@@ -33,19 +33,37 @@ void reset_charge(){
 }
 
 
-bool PRESS_BUTTON(int BUTTON_IO) {
+bool PRESS_BUTTON_IGNITION() {
    reset_watchdog();
   // Check if the button is pressed
-  if (digitalRead(BUTTON_IO) == LOW && check == LOW) {
+  if (digitalRead(IGNITION_BUTTON_IO) == LOW && check_ignit == LOW) {
      //Serial.println("press :");
-     check = HIGH;         // Mark that the button is being pressed
+     check_ignit = HIGH;         // Mark that the button is being pressed
     delay(BOUNCE_TIME); // Apply debounce delay
   }
 
   // Check if the button is released
-  if (digitalRead(BUTTON_IO) == HIGH && check == HIGH) {
+  if (digitalRead(IGNITION_BUTTON_IO) == HIGH && check_ignit == HIGH) {
     //Serial.println("unpress");
-    check = LOW;  // Reset the state for the next button press
+    check_ignit = LOW;  // Reset the state for the next button press
+    return HIGH;  // Indicate that the button was successfully pressed and released
+  }
+  return LOW; // Return false if the button is not in the desired state
+}
+
+bool PRESS_BUTTON_LANG() {
+   reset_watchdog();
+  // Check if the button is pressed
+  if (digitalRead(LANG_BUTTON_IO) == LOW && check_lang == LOW) {
+     //Serial.println("press :");
+     check_lang = HIGH;         // Mark that the button is being pressed
+    delay(BOUNCE_TIME); // Apply debounce delay
+  }
+
+  // Check if the button is released
+  if (digitalRead(LANG_BUTTON_IO) == HIGH && check_lang == HIGH) {
+    //Serial.println("unpress");
+    check_lang = LOW;  // Reset the state for the next button press
     return HIGH;  // Indicate that the button was successfully pressed and released
   }
   return LOW; // Return false if the button is not in the desired state

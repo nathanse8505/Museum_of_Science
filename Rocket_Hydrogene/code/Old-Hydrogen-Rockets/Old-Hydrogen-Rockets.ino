@@ -10,19 +10,15 @@
 #include "basic_routines.h"
 
 void setup() {
-
   pinMode(IGNITION_BUTTON_IO, INPUT_PULLUP);
   pinMode(SPARK_IO, OUTPUT);
   pinMode(HYDROGEN_VALVE_IO, OUTPUT);
   pinMode(CURRENT_INPUT_IO, INPUT);
   pinMode(LANG_BUTTON_IO, INPUT_PULLUP);
-  pinMode(SOUND, OUTPUT);
-
-  init_sount();
   
   Serial.begin(BAUDRATE);  // initialize serial communications 
   delay (100);  // wait to make sure serial begin
-  wdt_enable(WDTO_2S);
+
 //  start_display();  // initialize display
 
   // Serial.println(F(__FILE__ " " __DATE__ " " __TIME__));
@@ -33,30 +29,28 @@ void setup() {
   fill_initial_rolling_average_value();  // fill initial rolling average vector
 
   // ignite on start to clear charge
-  //ignite();
-  IGNITE_WITH_SOUND();
-  
+  ignite();
 }
 
 void loop() {
-  reset_watchdog();
-  
+
   if (charge >= AUTO_EXPLOSION_THRESHOLD) {
-    IGNITE_WITH_SOUND();
+    ignite();
     ignited_now = true;
   }
 
-  if (PRESS_BUTTON_IGNITION() && check_charge()) {  // button pressed
-    IGNITE_WITH_SOUND();
+  if (check_ignition_button() && check_charge()) {  // button pressed
+    delay(BOUNCE_TIME);  // wait antibounce time to make sure button release 
+    ignite();
     ignited_now = true;
   }
-  
-  if (PRESS_BUTTON_LANG()) {  // pressed on language button
+
+  if (check_lang_button()) {  // pressed on language button
     lang = lang >= 2 ? 0 : (lang + 1);  // toggle language
   }
   
   if (millis() - last_measure_time >= MEASURE_INTERVAL_TIME) {
-    sensor_value = analogRead(CURRENT_INPUT_IO);// read the analog in value (the current sensor output):
+    sensor_value = analogRead(CURRENT_INPUT_IO);// read the analog in value (the current semso output):
     avg_sensor_value  = filter.addSample(sensor_value);
     avg_current_value = READ_TO_CURRENT * (avg_sensor_value - ZERO_CURRENT_READ); // calculate current
     abs_avg_current_value = abs(avg_current_value);  // use absolute value
@@ -67,7 +61,6 @@ void loop() {
     
     charge += ((abs_avg_current_value * MEASURE_INTERVAL_TIME) / 1000);  // calulate acumulated charge 
     last_measure_time = millis();  //reset timer
-    
   }
 
   if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {
