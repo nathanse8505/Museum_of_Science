@@ -2,7 +2,7 @@
 #define FONCTION
 
 #include "const.h"
-#include <LowPower.h>
+#include <avr/sleep.h>
 #include <avr/wdt.h> // Library for the Watchdog Timer
 
 
@@ -13,7 +13,7 @@ void resetWatchdog() {
 
 void TURN_ON_MOTOR(){
   digitalWrite(MOTOR, HIGH); // Turn on the motor
-  delay(motor_delay);       // Wait for the defined motor delay
+  delay(MOTOR_DELAY);       // Wait for the defined motor delay
   resetWatchdog(); // Reset the Watchdog Timer after the delay
 }
 
@@ -38,11 +38,13 @@ bool PRESS_BUTTON() {
 
 // Function to immediately stop the motor and put the system into low-power mode
 void IEC() {//Imediately Engine Cutoff
-  
+  Serial.println("MOTOR is OFF");
   digitalWrite(MOTOR, LOW);// Turn off the motor
+  delay(MOTOR_DELAY);
   wdt_disable();
   Serial.println("The Arduino is entering low power mode");
-  LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF); // Enter low-power mode indefinitely until reset
+  delay(DELAY_BEFORE_SLEEP);
+  sleep_mode();
 }
 
 #endif

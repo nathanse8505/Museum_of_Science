@@ -15,7 +15,9 @@ void setup() {
   digitalWrite(MOTOR, LOW);
 
   // Initialize the Watchdog Timer with a timeout period of 2 seconds
-    wdt_enable(WDTO_2S);
+  wdt_enable(WDTO_2S);
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  sleep_enable();
  
   Serial.println("init"); // Print initialization message to the serial monitor
 }
@@ -32,7 +34,7 @@ void loop() {
 
     // If the button was successfully pressed and released
     if (PRESS_BUTTON()) {
-      Serial.println("The motor is ON");
+      //Serial.println("The motor is ON\n");
       TURN_ON_MOTOR();
       time_to_secure = millis();   // Record the start time for safety monitoring
     }
@@ -43,6 +45,8 @@ void loop() {
 
       // Check if the safety time has been exceeded
       if ((millis() - time_to_secure) > RESET_TIME_SECURE) {
+        //Serial.print("time after micro switch: ");
+        //Serial.println(millis() - time_to_secure);
         IEC(); // Trigger Immediate Engine Cutoff
       }
 
@@ -50,6 +54,9 @@ void loop() {
       if (digitalRead(MICRO_SW) == !NO_MICRO_SWITCH) {
         Serial.println("The motor is OFF");
         Serial.println("The micro switch is activated");
+        Serial.print("time before micro switch: ");
+        Serial.println(millis() - time_to_secure);
+        Serial.println(" ");
         
         digitalWrite(MOTOR, LOW); // Turn off the motor
         button_check = LOW;       // Reset the button state

@@ -52,7 +52,7 @@ const int16_t NUM_OF_SPARK = 3;//ms
 const int16_t SPARK_SPACE_TIME = 150;//ms
 const int16_t SPARK_TIME = 50; // ms - Spark time !!! keep as short as possible to avoid HV driver damage
 const int16_t DELAY_SWITCH_SOUND = 100; //ms delay for short press button to activate the sound
-const int16_t DELAY_SOUND = 4000;//ms 2000ms to listen to the sound + 2000ms of silence
+const int16_t DELAY_SOUND = 5000;//ms 2000ms to listen to the sound + 2000ms of silence
 const int16_t TIME_TO_IGNITE = 1000;
 
 
