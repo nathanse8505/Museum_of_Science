@@ -77,6 +77,7 @@ void loop() {
       km_per_h = 0;
       rpm = 0;
       check_zero = LOW;
+      check = HIGH;
 
       //blank_All_Digit();
       all_zero_digit();

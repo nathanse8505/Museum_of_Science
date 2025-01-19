@@ -1,4 +1,4 @@
-#define MICRO_SW 6 
+#define MICRO_SW 6
 #define BUTTON 5
 #define MOTOR 3
 
