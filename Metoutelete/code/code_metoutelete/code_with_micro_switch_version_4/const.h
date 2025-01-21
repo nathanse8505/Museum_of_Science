@@ -14,8 +14,8 @@ const int8_t time_bouncing = 50;
 const int BAUDERATE = 9600;
 const int ACTIVATION_TIME =1000;//ms after pushing the button the motor stop until activation time
 const float RESET_TIME_SECURE = 7000;//if the micoswitch dosent work stop the motor and the arduino
-const int16_t MOTOR_DELAY = 500;
-const int16_t DELAY_BEFORE_SLEEP = 1000;
+const int16_t MOTOR_DELAY = 1000;//ms delay motor to unpress the microswitch
+const int16_t DELAY_BEFORE_SLEEP = 1000;//ms delay before to enter in sleep mode
 
 
 
