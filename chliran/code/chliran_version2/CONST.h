@@ -8,17 +8,17 @@
  *                 RXD-|       |-Gnd  
  *                 RST-|       |-RST
  *                 GND-|       |-+5V  
- *      LatchPin  , D2-|       |-A7  
- *         clokPin  D3-|       |-A6  
- *      Data Serial D4-|       |-A5 
+ *        LatchPin  D2-|       |-A7  
+ *        ClockPin  D3-|       |-A6  
+ *     Data Serial  D4-|       |-A5 
  *   Output enable  D5-|       |-A4 
- *              SW1 D6-|       |-A3
- *              SW2 D7-|       |-A2
- *              SW3 D8-|       |-A1
+ *             SW1  D6-|       |-A3
+ *             SW2  D7-|       |-A2
+ *             SW3  D8-|       |-A1
  *             SW4  D9-|       |-A0  
  *                 D10-|       |-Ref
  *                 D11-|       |-3.3V   
- *         Buzzer  D12-|       |-D13
+ *                 D12-|       |-D13
  *                      --USB-- 
  *===================================================       
  */
@@ -43,8 +43,8 @@ const int NUMBER_OF_SWITCH = 4;
 // Timing constants (in milliseconds)
 const int16_t DELAY_BLINK = 300;
 const int16_t BOUNCE_TIME = 100;        // Debounce delay for switches
-const int16_t TIME_LED_ON = 60000;       // Duration LED stays on
-const int16_t TIME_LED_OFF = 30000;       // Duration LED stays off
+const long int TIME_LED_ON = 30000;       // Duration LED stays on
+const long int TIME_LED_OFF = 60000;       // Duration LED stays off
 const int16_t DELAY_AFTER_SHIFT = 100;  // Delay after shifting LED position
 
 // Global variables
