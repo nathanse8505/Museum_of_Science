@@ -40,7 +40,8 @@
 
 
 const int16_t BOUNCE_TIME = 100;
-const int16_t TIME_LED = 500;
+const int16_t TIME_LED_ON = 2000;
+const int16_t TIME_LED_OFF = 500;
 const int16_t DELAY_AFTER_SHIFT = 100;
 byte out_data = B00000000;
 

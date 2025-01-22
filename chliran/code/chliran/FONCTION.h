@@ -2,12 +2,7 @@
 #define FONCTION
 
 #include "CONST.h"
-#include <avr/wdt.h>
 
-
-void reset_watchdog(){
-  wdt_reset();//reset the watchdog
-}
 
 void init_shift_register(){
   digitalWrite(Output_Enable,LOW);
@@ -18,7 +13,6 @@ void init_shift_register(){
 
 // Dans FONCTION.h
 bool PRESS_BUTTON(uint8_t switchNumber) {  // switchNumber 0 to 3
-    reset_watchdog();
     
     // Check if the button is pressed
     if (digitalRead(SWITCH_PINS[switchNumber]) == LOW && checkStates[switchNumber] == LOW) {
@@ -32,12 +26,6 @@ bool PRESS_BUTTON(uint8_t switchNumber) {  // switchNumber 0 to 3
         return HIGH;
     }
     return LOW;
-}
-
-
-
-void RESET_ALL_LED(){
-   shiftOut(Data_Serial, ClockPin, MSBFIRST, B00000000); 
 }
 
 byte SET_FIRST_SW_LED(){
@@ -58,6 +46,13 @@ byte SHIFT_LEFT(byte data){
    delay(DELAY_AFTER_SHIFT);
    digitalWrite(LatchPin, LOW);
    return data;
+}
+
+void RESET_ALL(){
+  shiftOut(Data_Serial, ClockPin, MSBFIRST, B00000000); 
+   digitalWrite(LatchPin, HIGH); 
+   delay(DELAY_AFTER_SHIFT);
+   digitalWrite(LatchPin, LOW);
 }
 
 
