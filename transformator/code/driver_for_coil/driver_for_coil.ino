@@ -1,6 +1,5 @@
 #include "CONSTANTS.h"
 #include "fonction.h"
-#include <avr/wdt.h>
 
 void setup() {
   Serial.begin(SERIAL_BAUD_RATE);          // Initialize serial communication

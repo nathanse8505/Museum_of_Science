@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../code/Hydrogen-Rocket/consts.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../code/Hydrogen-Rocket/consts.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/CONSTANTS.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/FONCTION.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/FONCTION.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/speedometer_7segment_3disp_new_version.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/speedometer_7segment_3disp_new_version.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/CONST.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/CONST.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/FONCTION.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/FONCTION.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/chliran_version2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/chliran_version2.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/driver_for_coil.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/driver_for_coil.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/fonction.h" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2sB1Sg8nEWwjBu4v1RfxiRonFUz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/natou/Documents/GitHub/Museum_of_Science/Rocket_Hydrogene/graphics/Hydrogen-Rocket-UI&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="arduino" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Hydrogen-Rocket-UI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arduino.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="consts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Hydrogen-Rocket-UI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/consts.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="display" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Hydrogen-Rocket-UI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/display.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Hydrogen-Rocket-UI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.arduino" />
+        <item itemvalue="Python.display" />
+        <item itemvalue="Python.consts" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="" />
+      <created>1737914155206</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737914155206</updated>
+    </task>
+    <servers />
+  </component>
+</project>

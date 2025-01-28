@@ -1,6 +1,7 @@
 #ifndef fonction
 #define fonction
 #include "CONSTANTS.h"
+#include <avr/wdt.h>
 
 void POSITIVE_CURRENT(){
     digitalWrite(P_DIRECTION, HIGH);

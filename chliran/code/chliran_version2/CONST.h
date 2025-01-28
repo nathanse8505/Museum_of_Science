@@ -24,7 +24,7 @@
  */
 
 // Pin definitions for shift register
-#define LatchPin 2        // ST_CP: Storage register clock input
+#define LatchPin 2        // ST_CP: Storage register input
 #define ClockPin 3        // SH_CP: Shift register clock input
 #define Data_Serial 4     // DS: Serial data input
 #define Output_Enable 5   // OE: Output enable (active LOW)
@@ -49,8 +49,8 @@ const int16_t DELAY_AFTER_SHIFT = 100;  // Delay after shifting LED position
 
 // Global variables
 int16_t out_data = 0;                   // Current state of shift register outputs
-bool checkSW[NUMBER_OF_SWITCH];         // Array to track active switch in sequence
 int index_switch = 0;                   // Current switch index in sequence
+bool checkSW[NUMBER_OF_SWITCH];         // Array to track active switch in sequence
 bool checkStates[NUMBER_OF_SWITCH] ;  // Array for switch debounce states
 
 #endif

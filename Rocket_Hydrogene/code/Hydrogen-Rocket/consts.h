@@ -23,7 +23,7 @@
  *                      --USB--        
  */
 
-#define CURRENT_INPUT_IO A0 // current sensor 
+#define CURRENT_INPUT_IO A7 // current sensor 
 // #define CURRENT_INPUT_IO A6 // simulation potentiometer
   
 #define BAUDRATE (115200)
@@ -59,6 +59,7 @@ const int16_t TIME_TO_IGNITE = 1000;
 // display consts
 const int32_t DISPLAY_INTERVAL_TIME = 200;  // ms show/display interval
 char* DISPLAY_TEXTS[] = {"low", "ok", "max"};
+
 
 #define LOW_CHARGE_TEXT 0
 #define CAN_IGNITE_TEXT 1

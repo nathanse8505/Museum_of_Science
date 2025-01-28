@@ -31,11 +31,11 @@ void loop() {
   // Check if current switch is pressed and is active in the sequence
   if(PRESS_BUTTON(index_switch) && (checkSW[index_switch] == HIGH)){
     
-    // Shift LED to next position and create blinking effect
+    // Shift LED to next position 
     out_data = SHIFT_LEFT(out_data);
-    delay(TIME_LED_ON);
+    delay(TIME_LED_ON);//active the chliran to see color
     RESET_ALL(out_data);
-    delay(TIME_LED_OFF);
+    delay(TIME_LED_OFF);//turn off the chliran to disapear the effect
 
     // If not the last switch, shift LED one more position
     if(index_switch < NUMBER_OF_SWITCH - 1){
