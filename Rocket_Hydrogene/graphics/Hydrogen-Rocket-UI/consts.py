@@ -1,13 +1,16 @@
+"""
+Filename: consts.py
+Purpose: Constants for the Hydrogen Rocket UI
+"""
 import os
 import pygame
 
-USE_FULL_SCREEN = True
+FPS = 100
 
 # arduino
 BAUDRATE = 115200
-FORCE_ARDUINO = False  # run the program ONLY if you find arduino successfully - otherwise quit.
-TRY_AGAIN_ARDUINO = True  # try again if arduino is 
 SERIAL_ERROR = -1
+RECONNECT_INTERVAL = 1  # seconds
 
 # languages
 HEBREW = 0
@@ -25,8 +28,12 @@ MIN_CHARGE = 0.0
 MAX_CHARGE = 120.0
 MIN_CURRENT = 0.0
 MAX_CURRENT = 8.0
-SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD = 1
+SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD = 1  # above this current value, the screen will switch to the measure screen
 
+# logging values
+LOG_FOLDER = os.path.join(os.path.dirname(__file__), "logs")  # get the path of the logs folder
+MAX_SIZE_PER_LOG_FILE = 1 * 1024 * 1024  # 1MB
+BACKUP_COUNT = 10  # max number of log files, if all 10 are full, the first one will be deleted, rotating the rest 
 
 # pictures
 pygame.init()
@@ -35,12 +42,12 @@ VIEW_PORT = pygame.display.Info().current_w, pygame.display.Info().current_h  # 
 # VIEW_PORT = (1080, 1920)  # for testing
 
 PICTURES = os.path.join(os.path.dirname(__file__), "pictures")  # get the path of the pictures folder
-OPEN_HEB = os.path.join(PICTURES, "open_heb.png")
-OPEN_ENG = os.path.join(PICTURES, "open_eng.png")
-OPEN_ARB = os.path.join(PICTURES, "open_arb.png")
-MEASURE_HEB = os.path.join(PICTURES, "main_heb.png")
-MEASURE_ENG = os.path.join(PICTURES, "main_eng.png")
-MEASURE_ARB = os.path.join(PICTURES, "main_arb.png")
+OPEN_HEB = os.path.join(PICTURES, "0_heb.png")
+OPEN_ENG = os.path.join(PICTURES, "0_eng.png")
+OPEN_ARB = os.path.join(PICTURES, "0_arb.png")
+MEASURE_HEB = os.path.join(PICTURES, "1_heb.png")
+MEASURE_ENG = os.path.join(PICTURES, "1_eng.png")
+MEASURE_ARB = os.path.join(PICTURES, "1_arb.png")
 BAR_EMPTY = os.path.join(PICTURES, "bar_empty.png")
 BAR_FULL = os.path.join(PICTURES, "bar_full.png")
 NIDDLE = os.path.join(PICTURES, "niddle.png")

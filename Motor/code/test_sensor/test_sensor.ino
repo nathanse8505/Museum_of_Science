@@ -134,7 +134,7 @@ void loop() {
   /*Serial.print("The voltage of sensor 2 is ");
   Serial.print(volt_sensor2);
   Serial.println(" v");*/
-  delay(10);
+  delay(200);
   Digits_from_Number(volt_sensor1);
   Display_Digit(Digit_1_To_Display);
   enable(1);

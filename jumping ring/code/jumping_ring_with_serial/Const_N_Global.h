@@ -27,12 +27,6 @@
  *                      --USB--     
  */
 
-// 7 segments parameters
-const int MAX_NUM_TO_DISPLAY  = 999 ; //the maximum number to display
-const int MIN_NUM_TO_DISPLAY  = 0 ; //the minimum number to display
-/********************************/
-//int const A_CONST = 1;// for ln correction 
-//int const B_CONST = 27;// for ln correction 
 
 int const map_table[ 3 ][ 4 ] = { {0,100,0,100},{101, 590,101 ,130}, { 591,1023,131,360 } };
 
@@ -44,29 +38,28 @@ int const Max_Show_V = 1023; //
 int SensorValue = 0;  // variable to store the value coming from the sensor
 int Pressure_Value = 0;  // variable to store the calculated pressur (KP) 
 int Number_To_Display = 0;// variable to store full number display
+
+/////////////7 seg///////////
+const int MAX_NUM_TO_DISPLAY  = 999 ; //the maximum number to display
+const int MIN_NUM_TO_DISPLAY  = 0 ; //the minimum number to display
 int Digit_3_To_Display = 0;// Left (100th) digit to disply - used as 10th
 int Digit_2_To_Display = 0;// Mid right (10th) digit to disply  - used as units 
 int Digit_1_To_Display = 0;// rigth (external unit) digit to disply - not used for winf tunnel
-
 int const  READ_SENSOR_RATE = 100 ; //mSeconds
 int const  DIGIT_TEST_RATE = 500 ; //mSeconds
 int const  DISPLAY_TEST_RATE = 100 ; //mSeconds
-int const  BLINK_ON = 800 ; //mSeconds
-int const  BLINK_OFF = 200 ; //mSeconds
-int const  BLINK_TIME = 5;// Seconds !!
-int const  BOUNCE_TIME = 50; //ms
+//////////////////////////////
 
+////////////lauguage////////
+int const  BOUNCE_TIME = 50; //ms
 bool check_lang = LOW;
 uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
+//////////////////////////////
 
-
+//////////////display///////////
 int32_t last_display_time = 0;  // ms last time data was display
 const int32_t DISPLAY_INTERVAL_TIME = 200;  // ms show/display 
-bool reset_bar = false;
-
-const float CAPACITY = 0.0047;
-float charge = 0;
-
+///////////////////////////////
 
 #define SERIAL_BAUD_RATE (115200)
 #define Pressure_sensor_IO (A2) // pressure sensor input 

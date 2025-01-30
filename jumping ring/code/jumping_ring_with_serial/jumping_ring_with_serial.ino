@@ -9,6 +9,7 @@
 #include "Fonction.h"
 
 void setup(){
+  
   Serial.begin(SERIAL_BAUD_RATE);
   delay (100);// wait to make sure serial begin
   /*Serial.println(F(__FILE__ " " __DATE__ " " __TIME__));
@@ -29,9 +30,10 @@ void setup(){
 
    pinMode(LANG_BUTTON_IO,INPUT_PULLUP);
   last_display_time = millis();  // reset display timer
+  wdt_enable(WDTO_2S);
 }
 void loop() {
-  
+  wdt_reset();
   if (PRESS_BUTTON_LANG()) {  // pressed on language button
     lang = lang >= 2 ? 0 : (lang + 1);  // toggle language
   }
@@ -40,36 +42,20 @@ void loop() {
   SensorValue = analogRead(Pressure_sensor_IO);  
   if(SensorValue >= map_table[2][0]){
   Pressure_Value = map(SensorValue, map_table[2][0], map_table[2][1], map_table[2][2], map_table[2][3]);
- } 
+  } 
   else if(SensorValue >= map_table[1][0]){
   Pressure_Value = map(SensorValue, map_table[1][0], map_table[1][1], map_table[1][2], map_table[1][3]);
- }  
+  }  
   else if(SensorValue >= map_table[0][0]){
   Pressure_Value = map(SensorValue, map_table[0][0], map_table[0][1], map_table[0][2], map_table[0][3]);
- }
-
- if(Pressure_Value == map_table[2][3]){
-  reset_bar = true;
- }
-
- //Pressure_Value = map(SensorValue, Min_Read_V, Max_Read_V, Min_Show_V, Max_Show_V);
- // Pressure_Value = B_CONST*log(A_CONST*Pressure_Value);
+  }
   Number_To_Display = Pressure_Value;
-//Number_To_Display = Pressure_Value/10;// as only 3 digits
-//  Number_To_Display = analogRead(POT_2);  
-//  Number_To_Display = map(Number_To_Display, 0, 1024, 0, 999); 
-
-  //Display_full_Numnber(Number_To_Display);
-  //delay (READ_SENSOR_RATE); 
-
+  
+ 
    if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {
     Display_full_Numnber(Number_To_Display);
-    
-    charge = CAPACITY * Pressure_Value;
-    Serial.println(String(charge) + " " + String(Pressure_Value) + " " + reset_bar + " " + lang);
+    Serial.println(String(Pressure_Value) + " " + String(SensorValue) + " " + lang);
     last_display_time = millis(); //reset timer
-
-    reset_bar = false;  // reset ignite flag (after sending it 1 time if there has been an ignition)
-  }
+   }
 
 }

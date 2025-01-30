@@ -77,13 +77,13 @@ def read_line(ser=None, logger=None):
 
 def parse_data(raw_data, logger=None):
     """
-    parse the raw data line (<current> <charge> <has_ignited> <language>)
+    parse the raw data line (<voltage> <has_ignited> <language>)
     :param raw_data: the raw data
     """
     try:
         data = raw_data.split(" ")
-        # ---------- current ------- charge --- has_ignited --- language
-        return min(float(data[0]), MAX_CURRENT) , min(float(data[1]), MAX_CHARGE), int(data[2]), int(data[3])
+        # ----------------- voltage ------------------------------ has_ignited --- language
+        return max(min(float(data[0]), MAX_VOLTAGE), MIN_VOLTAGE), int(data[1]), int(data[2])
     
     except:
         print(f"Error parsing data: {raw_data}")

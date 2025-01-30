@@ -2,6 +2,7 @@
 #define FONCTION
 
 #include "Const_N_Global.h"
+#include <avr/wdt.h>
 
 //--------------------------Subroutines ----------------------------//
 // initial IO to be output and set to zero - may not nead
