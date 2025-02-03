@@ -1,6 +1,6 @@
 """
 Filename: consts.py
-Purpose: Constants for the Hydrogen Rocket UI
+Purpose: Constants for the Jumping Ring UI
 """
 import os
 import pygame
@@ -49,6 +49,9 @@ MEASURE_ARB = os.path.join(PICTURES, "1_arb.png")
 BAR_FULL_ENERGY = os.path.join(PICTURES, "bar_full_left.png")
 BAR_FULL_CHARGE = os.path.join(PICTURES, "bar_full_middle.png")
 BAR_FULL_VOLTAGE = os.path.join(PICTURES, "bar_full_right.png")
+BAR_EMPTY_RIGHT = os.path.join(PICTURES, "bar_empty_right.png")
+BAR_EMPTY_MIDDLE = os.path.join(PICTURES, "bar_empty_middle.png")
+BAR_EMPTY_LEFT = os.path.join(PICTURES, "bar_empty_left.png")
 
 
 # load the pictures
@@ -58,6 +61,9 @@ measure_arb = pygame.image.load(MEASURE_ARB)
 bar_full_energy = pygame.image.load(BAR_FULL_ENERGY)
 bar_full_charge = pygame.image.load(BAR_FULL_CHARGE)
 bar_full_voltage = pygame.image.load(BAR_FULL_VOLTAGE)
+bar_empty_right = pygame.image.load(BAR_EMPTY_RIGHT)
+bar_empty_middle = pygame.image.load(BAR_EMPTY_MIDDLE)
+bar_empty_left = pygame.image.load(BAR_EMPTY_LEFT)
 
 
 # transform the pictures to the screen resolution
@@ -67,6 +73,9 @@ measure_arb = pygame.transform.scale(measure_arb, VIEW_PORT)
 bar_full_energy = pygame.transform.scale(bar_full_energy, VIEW_PORT)
 bar_full_charge = pygame.transform.scale(bar_full_charge, VIEW_PORT)
 bar_full_voltage = pygame.transform.scale(bar_full_voltage, VIEW_PORT)
+bar_empty_right = pygame.transform.scale(bar_empty_right , VIEW_PORT)
+bar_empty_middle = pygame.transform.scale(bar_empty_middle , VIEW_PORT)
+bar_empty_left = pygame.transform.scale(bar_empty_left,VIEW_PORT)
 
 # positions - dont ask about the magic numbers
 ENERGY_TEXT_POS = (int(2 / 11.0 * VIEW_PORT[0]), int(0.785 * VIEW_PORT[1]))  # the position of the energy text on the screen

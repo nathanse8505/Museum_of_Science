@@ -13,6 +13,28 @@
 
 #define SENSOR A2 // Analog input for sensor
 
+
+/*
+*==========Arduino Nano pinout====== 
+ *                      _______
+ *                 TXD-|       |-Vin 
+ *                 RXD-|       |-Gnd  
+ *                 RST-|       |-RST
+ *                 GND-|       |-+5V  
+ *                  D2-|       |-A7  
+ *           BCD A  D3-|       |-A6  
+ *           BCD B  D4-|       |-A5  
+ *           BCD C  D5-|       |-A4  
+ *           BCD D  D6-|       |-A3
+ *    LE_CENTURIES  D7-|       |-A2  SENSOR
+ *       LE_DOZENS  D8-|       |-A1
+ *        LE_UNITS  D9-|       |-A0
+ *                 D10-|       |-Ref
+ *                 D11-|       |-3.3V   
+ *                 D12-|       |-D13
+ *                      --USB--        
+ */
+
 const int16_t CALIBRATION = 100; // Calibration factor for measurements
 const int32_t TIME_RESET = 10000; // Time interval for resetting sensor errors (in milliseconds)
 const int16_t DELAY_BOUNCING = 50; // Debounce delay (in milliseconds)

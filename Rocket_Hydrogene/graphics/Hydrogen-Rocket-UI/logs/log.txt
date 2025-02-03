@@ -1,0 +1,5 @@
+2025-02-03_10:45:01 - Starting Hydrogen Rocket UI
+2025-02-03_10:45:01 - Error: Arduino not found
+2025-02-03_10:45:02 - Error: Arduino not found
+2025-02-03_10:45:03 - Error: Arduino not found
+2025-02-03_10:45:04 - Error: Arduino not found

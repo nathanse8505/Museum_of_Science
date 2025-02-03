@@ -1,6 +1,22 @@
 #ifndef CONST_N_GLOBAL_H
 #define CONST_N_GLOBAL_H
 
+
+#define SERIAL_BAUD_RATE (115200)
+
+#define BCD_A (3) // Output to BCD_A (4511)
+#define BCD_B (4) // Output to BCD_B (4511)
+#define BCD_C (5) // Output to BCD_C (4511)
+#define BCD_D (6) // Output to BCD_D (4511)
+
+#define LE_100 (7) // Output Left (100th) digit LE (negative pulse) used as 100th
+#define LE_10 (8) // Output center (10th) digit LE (negative pulse) used as 10th 
+#define LE_1 (9) // Output right (1th) digit LE (negative pulse) used as units 
+
+#define LANG_BUTTON_IO 2
+#define Pressure_sensor_IO (A2) // pressure sensor input 
+//#define POT_2 (A7) // pot input 
+
 /*  IO map
  *  Encoder bits: BIT_0 - D2,   BIT_1 - D3 
  *  BCD bits: A-D3, B-D4, C-D5,  D-D6
@@ -13,17 +29,17 @@
  *                 RXD-|       |-Gnd  
  *                 RST-|       |-RST
  *                 GND-|       |-+5V  
- *         language D2-|       |-A7  pot 2/R2
- *            BCD_A D3-|       |-A6  pot 1/R1
- *            BCD_B D4-|       |-A5 ,SCL (to Display) 
- *            BCD_C D5-|       |-A4 ,SDA (to Display) 
- *            BCD_D D6-|       |-A3, SENS_3 
- *           LE_100 D7-|       |-A2, SENS_2 Sense voltage 
- *            LE_10 D8-|       |-A1, SENS_1
- *             LE_1 D9-|       |-A0, SENS_0                                
- *          PWM_10 D10-|       |-Ref
- *          PWM_11 D11-|       |-3.3V   
- *           DP100 D12-|       |-D13 DP10
+ *   LANG_BUTTON_IO D2-|       |-A7  
+ *            BCD_A D3-|       |-A6 
+ *            BCD_B D4-|       |-A5 
+ *            BCD_C D5-|       |-A4  
+ *            BCD_D D6-|       |-A3 
+ *           LE_100 D7-|       |-A2 SENS_2 Sense voltage 
+ *            LE_10 D8-|       |-A1 
+ *             LE_1 D9-|       |-A0                                 
+ *                 D10-|       |-Ref
+ *                 D11-|       |-3.3V   
+ * DP100(not used) D12-|       |-D13 DP10 (not used)
  *                      --USB--     
  */
 
@@ -51,7 +67,7 @@ int const  DISPLAY_TEST_RATE = 100 ; //mSeconds
 //////////////////////////////
 
 ////////////lauguage////////
-int const  BOUNCE_TIME = 50; //ms
+int const  BOUNCE_TIME = 100; //ms
 bool check_lang = LOW;
 uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 //////////////////////////////
@@ -60,20 +76,5 @@ uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 int32_t last_display_time = 0;  // ms last time data was display
 const int32_t DISPLAY_INTERVAL_TIME = 200;  // ms show/display 
 ///////////////////////////////
-
-#define SERIAL_BAUD_RATE (115200)
-#define Pressure_sensor_IO (A2) // pressure sensor input 
-//#define POT_2 (A7) // pot input 
-#define BCD_A (3) // Output to BCD_A (4511)
-#define BCD_B (4) // Output to BCD_B (4511)
-#define BCD_C (5) // Output to BCD_C (4511)
-#define BCD_D (6) // Output to BCD_D (4511)
-
-#define LE_100 (7) // Output Left (100th) digit LE (negative pulse) used as 100th
-#define LE_10 (8) // Output center (10th) digit LE (negative pulse) used as 10th 
-#define LE_1 (9) // Output right (1th) digit LE (negative pulse) used as units 
-
-#define LANG_BUTTON_IO 2
-
 
 #endif /* CONST_N_GLOBAL_H */

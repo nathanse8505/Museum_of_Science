@@ -2,14 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Metoutelete/code/code_metoutelete/code_with_micro_switch_version_4/const.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Metoutelete/code/code_metoutelete/code_with_micro_switch_version_4/const.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/pythonProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/CONSTANTS.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/CONST.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/CONST.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/chliran_version2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/chliran_version2.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../generator/code/ina219_7seg_3disp_new_version/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../generator/code/ina219_7seg_3disp_new_version/CONSTANTS.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../incondescent vs led/code/ina219_7seg_3disp_new_version/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../incondescent vs led/code/ina219_7seg_3disp_new_version/CONSTANTS.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Const_N_Global.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Const_N_Global.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/jumping_ring_with_serial.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/jumping_ring_with_serial.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_arb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_arb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_eng.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_eng.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_heb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_heb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/מסך 2 שלם.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/CONSTANTS.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/driver_for_coil.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/driver_for_coil.ino" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
@@ -31,7 +59,28 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="arduino (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Hydrogen-Rocket-UI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../jumping ring/graphics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../jumping ring/graphics/arduino.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="arduino" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Hydrogen-Rocket-UI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,6 +144,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Hydrogen-Rocket-UI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../jumping ring/graphics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../jumping ring/graphics/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Hydrogen-Rocket-UI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,6 +188,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.arduino (1)" />
         <item itemvalue="Python.arduino" />
         <item itemvalue="Python.display" />
         <item itemvalue="Python.consts" />
@@ -134,5 +206,16 @@
       <updated>1737914155206</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

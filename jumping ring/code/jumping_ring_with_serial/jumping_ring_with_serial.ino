@@ -33,6 +33,7 @@ void setup(){
   wdt_enable(WDTO_2S);
 }
 void loop() {
+  
   wdt_reset();
   if (PRESS_BUTTON_LANG()) {  // pressed on language button
     lang = lang >= 2 ? 0 : (lang + 1);  // toggle language

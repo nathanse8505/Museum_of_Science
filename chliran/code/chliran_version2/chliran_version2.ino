@@ -2,7 +2,7 @@
 #include "FONCTION.h"
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(Bauderate);
 
   // Initialize output pins for shift register
   pinMode(Data_Serial, OUTPUT);
@@ -67,5 +67,8 @@ void loop() {
     checkSW[index_switch] = HIGH;    // Activate first switch
     out_data = SET_FIRST_SW_LED();   // Turn on first LED
     Serial.println(out_data);
+  }
+  if(out_data == 65536 -1){
+    RESET_ALL(out_data);
   }
 }

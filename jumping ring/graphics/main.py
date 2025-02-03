@@ -72,9 +72,9 @@ def main():
             voltage, has_ignited, language = parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: voltage {voltage} has_ignited {has_ignited} language {language}")
             
-            if has_ignited:
-                logger.info(f"Ring jumped!")
-                print("Ring jumped!")
+            #if has_ignited:
+            #    logger.info(f"Ring jumped!")
+            #   print("Ring jumped!")
 
         screen.fill((0,0,0))  # reset screen
         display_state(screen, state=state, language=language, voltage=voltage)  # render the screen

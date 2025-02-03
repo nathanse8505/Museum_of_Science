@@ -79,14 +79,11 @@ float abs_avg_current_value = 0;        // absolute average current [A]
 bool ignited_now = false;  // for serial msg
 
 /////////////language/////////
-//////
 uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
-//bool last_lang_button_state = HIGH;  // used for checking if lang button was released
+bool check_lang = LOW;// used for checking if lang button was released
 ////////////////////////////////////
 
 /////////button ignition//////////
-//bool check = LOW;
-bool check_lang = LOW;
 bool check_ignit = LOW;
 //////////////////////////////////
 

@@ -1,11 +1,31 @@
 #ifndef const
 #define const
 
-
-#define MICRO_SW 6
-#define BUTTON 5
-#define MOTOR 3
 #define LED_BUTTON 2
+#define MOTOR 3
+#define BUTTON 5
+#define MICRO_SW 6
+
+/*
+*==========Arduino Nano pinout====== 
+ *                      _______
+ *                 TXD-|       |-Vin 
+ *                 RXD-|       |-Gnd  
+ *                 RST-|       |-RST
+ *                 GND-|       |-+5V  
+ *      LED_BUTTON  D2-|       |-A7  
+ *           MOTOR  D3-|       |-A6  
+ *                  D4-|       |-A5  
+ *          BUTTON  D5-|       |-A4  
+ *        MICRO_SW  D6-|       |-A3
+ *                  D7-|       |-A2  
+ *                  D8-|       |-A1
+ *                  D9-|       |-A0
+ *                 D10-|       |-Ref
+ *                 D11-|       |-3.3V   
+ *                 D12-|       |-D13
+ *                      --USB--        
+ */
 
 bool NC_MICRO_SWITCH = LOW;//when the microswitch in normally close its in the gnd
 bool NO_MICRO_SWITCH = HIGH;//when the microswitch in normally open its in the VCC

@@ -28,7 +28,6 @@ void loop() {
     NEGATIVE_CURRENT();
     wdt_reset();
 
-
   }
   
   // Turn off the control LED when the condition is not met

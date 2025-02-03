@@ -12,6 +12,29 @@
 #define LE_UNITS (9) // Output right (10th) digit LE (negative pulse) used as units 
 
 
+/*
+*==========Arduino Nano pinout====== 
+ *                      _______
+ *                 TXD-|       |-Vin 
+ *                 RXD-|       |-Gnd  to Gnd ina219
+ *                 RST-|       |-RST
+ *                 GND-|       |-+5V  to 5V ina219
+ *                  D2-|       |-A7  
+ *           BCD A  D3-|       |-A6  
+ *           BCD B  D4-|       |-A5  SCL to ina219
+ *           BCD C  D5-|       |-A4  SDA to ina219
+ *           BCD D  D6-|       |-A3
+ *    LE_CENTURIES  D7-|       |-A2  
+ *       LE_DOZENS  D8-|       |-A1
+ *        LE_UNITS  D9-|       |-A0
+ *                 D10-|       |-Ref
+ *                 D11-|       |-3.3V   
+ *                 D12-|       |-D13
+ *                      --USB--        
+ */
+
+
+
 ///////////////general variable////////////////
 const int8_t VREF = 5;
 const int16_t BIT_RESOLUTION = 1023;
