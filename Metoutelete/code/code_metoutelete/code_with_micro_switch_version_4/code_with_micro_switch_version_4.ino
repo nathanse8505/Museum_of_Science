@@ -47,12 +47,12 @@ void loop() {
       time_to_secure = millis();   // Record the start time for safety monitoring
       //resetWatchdog(); // Reset the Watchdog Timer after the delay
     }
-      Serial.println("we are after the push");
+      
 
 
     // Keep the motor running until the micro switch is activated
     while (digitalRead(MICRO_SW) ==  NO_MICRO_SWITCH && digitalRead(MOTOR) == HIGH) {
-       Serial.println("we are in the while mode");
+      Serial.println("we are in the while mode");
 
       digitalWrite(LED_BUTTON, LOW); // Turn off the button LED
       //resetWatchdog(); // Reset the Watchdog Timer during the loop

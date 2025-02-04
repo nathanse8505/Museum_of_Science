@@ -5,7 +5,7 @@ Purpose: Display functions for the Jumping Ring UI
 from consts import *
 
 
-def display_state(screen, state=MEASURE, language=HEBREW, voltage=MIN_VOLTAGE):
+def display_state(screen, state=MEASURE, language=HEBREW, horsepower=MIN_HORSEPOWER):
     """
     Display the state screen
     :param screen: the screen to display the state screen on (right now there is only MEASURE state)
@@ -13,10 +13,10 @@ def display_state(screen, state=MEASURE, language=HEBREW, voltage=MIN_VOLTAGE):
     :param state: the state to display
     """
     if state == MEASURE:
-        display_measure(screen, language=language, voltage=voltage)
+        display_measure(screen, language=language, horsepower=horsepower)
 
 
-def display_measure(screen, language=HEBREW, voltage=MIN_VOLTAGE):
+def display_measure(screen, language=HEBREW, horsepower=MIN_HORSEPOWER):
     """
     Display the measurement screen
     :param screen: the screen to display the measurement screen on
@@ -31,25 +31,16 @@ def display_measure(screen, language=HEBREW, voltage=MIN_VOLTAGE):
     elif language == ARABIC:
         screen.blit(measure_arb, (0,0))
 
-    # sub function to calculate the current, charge and energy from the voltage and capacitance
-    calculate_charge_and_energy = lambda voltage: (max(min(voltage * CAPACITANCE, MAX_CHARGE), MIN_CHARGE), max(min(0.5 * CAPACITANCE * voltage ** 2, MAX_ENERGY), MIN_ENERGY))
 
-    screen.blit(bar_empty_left, (ENERGY_TEXT_POS[0] - bar_empty_left.get_width() // 5.5 , BAR_GRAPH_BOTTOM_HEIGHT- bar_empty_middle.get_height()//1.4))
-    screen.blit(bar_empty_middle, (CHARGE_TEXT_POS[0] - bar_empty_middle.get_width() // 2, BAR_GRAPH_BOTTOM_HEIGHT - bar_empty_middle.get_height()//1.4))
-    screen.blit(bar_empty_right, (VOLTAGE_TEXT_POS[0] - bar_empty_right.get_width() //1.22, BAR_GRAPH_BOTTOM_HEIGHT - bar_empty_right.get_height()//1.4))
-
-    charge, energy = calculate_charge_and_energy(voltage)
-    display_bars(screen, voltage, charge, energy)
-    display_text_values(screen, voltage, charge, energy)
+    display_bars(screen, horsepower)
+    display_text_values(screen, horsepower)
 
 
-def display_bars(screen, voltage=MIN_VOLTAGE, charge=MIN_CHARGE, energy=MIN_ENERGY):
+def display_bars(screen, horsepower=MIN_HORSEPOWER):
     """
     Display the bar on the screen according to the values
     :param screen: the screen to display the bar on
     :param voltage: the voltage to display
-    :param charge: the charge to display
-    :param energy: the energy to display
     """
 
     # sub function to reduce code duplication
@@ -63,12 +54,10 @@ def display_bars(screen, voltage=MIN_VOLTAGE, charge=MIN_CHARGE, energy=MIN_ENER
         screen.blit(cropped_bar, (0, BAR_GRAPH_BOTTOM_HEIGHT - height))
 
 
-    display_bar_from_values(screen, voltage, MAX_VOLTAGE, MIN_VOLTAGE, bar_full_voltage)
-    display_bar_from_values(screen, charge, MAX_CHARGE, MIN_CHARGE, bar_full_charge)
-    display_bar_from_values(screen, energy, MAX_ENERGY, MIN_ENERGY, bar_full_energy)
+    display_bar_from_values(screen, horsepower, MAX_HORSEPOWER, MIN_HORSEPOWER, bar_full_horsepower)
 
 
-def display_text_values(screen, voltage=MIN_VOLTAGE, charge=MIN_CHARGE, energy=MIN_ENERGY):
+def display_text_values(screen, horsepower=MIN_HORSEPOWER):
     """
     Display the text values on the screen
     :param screen: the screen to display the text values on
@@ -87,6 +76,5 @@ def display_text_values(screen, voltage=MIN_VOLTAGE, charge=MIN_CHARGE, energy=M
         text_rect = text.get_rect(center=pos)
         screen.blit(text, text_rect)
 
-    display_text(screen, voltage, VOLTAGE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
-    display_text(screen, charge, CHARGE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
-    display_text(screen, energy, ENERGY_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
+    display_text(screen,horsepower, HORSEPOWER_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
+

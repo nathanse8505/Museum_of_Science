@@ -17,7 +17,7 @@ def find_arduino_port(logger=None):
 
     for port in ports:
         # Check if the device description matches an Arduino
-        # print(f"port: {port}")
+        #print(f"port: {port.device}")
         if "Arduino" in port.description or "ttyUSB" in port.device or "ttyACM" in port.device:
             print(f"Found Arduino on port {port.device}")
             if logger:
@@ -82,8 +82,8 @@ def parse_data(raw_data, logger=None):
     """
     try:
         data = raw_data.split(" ")
-        # ----------------- voltage ------------------------------ voltage_analogread --- language
-        return max(min(float(data[0]), MAX_VOLTAGE), MIN_VOLTAGE), int(data[1]), int(data[2])
+        # ----------------- voltage ------------------------------ has_ignited --- language
+        return max(min(float(data[0]), MAX_HORSEPOWER), MIN_HORSEPOWER), int(data[1])
     
     except:
         print(f"Error parsing data: {raw_data}")

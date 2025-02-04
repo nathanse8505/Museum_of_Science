@@ -1,7 +1,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#define SPACE_BUTTON_IO  A0 // Pin connected to the button
+#define SPACE_BUTTON_IO  11 // Pin connected to the button
 
 
 /*
@@ -28,6 +28,7 @@
 /////////////button space///////////
 const int BOUNCE_TIME = 50;
 bool check_space = false;
+int8_t lang =0;
 ///////////////////////////////////
 
 // Physics-related constants
@@ -35,6 +36,7 @@ const float WEIGHT_KG = 7.5;         // Weight in kilograms
 const float WEIGHT_KG_POWER_HORSE = 75;
 const float GRAVITY = 9.81;         // Acceleration due to gravity in m/s^2
 const float HORSEPOWER_CONVERSION = 745.7; // Conversion factor Watt to horsepower
+const float Force = WEIGHT_KG * GRAVITY;
 
 // Sensor-related constants
 const float THRESHOLD = 0.1;       // Threshold to detect lift movement (meters)
@@ -54,6 +56,7 @@ float deltaTime = 0;    // Time when the lift reaches the topmost point
 
 float minDistance = 0.0;      // Tracks the minimum distance to the groune during the lift in meter
 const float maxDistance = 0.5;         // max distance to the ground in meter
+float horsepower = 0;
 
 
 

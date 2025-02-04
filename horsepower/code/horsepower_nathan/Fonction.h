@@ -19,6 +19,7 @@ avg = avg / ITERATION;
 return avg;
 }
 
+
 bool PRESS_BUTTON_SPACE() {
   // Check if the button is pressed
   if (digitalRead(SPACE_BUTTON_IO) == LOW && check_space == LOW) {

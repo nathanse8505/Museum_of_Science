@@ -30,4 +30,3 @@ def get_logger():
 
     logger = logging.getLogger()  # get the logger
     return logger
-
