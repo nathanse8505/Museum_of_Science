@@ -10,17 +10,14 @@ from arduino import *
 from logs import *
 
 class VoltageMonitor:
-    def __init__(self, threshold=20):
+    def __init__(self, threshold=10):
         self.previous_voltage = 0
         self.threshold = threshold
 
     def detect_drop(self, voltage ,logger):
         #print(f"Voltage: {voltage}V")
-
-        if self.previous_voltage > voltage + self.threshold:
-            #print("Chute drastique détectée !")
+        if self.previous_voltage > voltage + self.threshold and voltage<10:
             logger.info(f"Ring jumped!")
-            # logger.info(f"{voltage},{voltage_analogread},{language}")
         self.previous_voltage = voltage
 
 
@@ -67,9 +64,8 @@ def main():
                     voltage = min(voltage + 5, MAX_VOLTAGE)
 
                 if event.key == pygame.K_DOWN:
-                    voltage = max(voltage - 171, MIN_VOLTAGE)
+                    voltage = max(voltage - 5, MIN_VOLTAGE)
 
-        #has_ignited.detect_drop(voltage=voltage,logger= logger)
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
@@ -88,14 +84,14 @@ def main():
             last_time_tried_to_connect = time.time()  # update the last time tried to connect
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
-            while (ser.inWaiting() == 0):  # Wait here until there is data
-                pass  # do nothing
+
             # print(data_from_arduino)
             voltage, voltage_analogread, language = parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: voltage {voltage} voltage_analogread{voltage_analogread} language {language}")
-            has_ignited.detect_drop(voltage=voltage, logger=logger)
-
-        screen.fill((0,0,0))  # reset screen
+            # logger.info(f"{voltage},{voltage_analogread},{language}")
+            #has_ignited.detect_drop(voltage=voltage, logger=logger)
+        has_ignited.detect_drop(voltage=voltage,logger= logger)
+        screen.fill(BLACK)  # reset screen
         display_state(screen, state=state, language=language, voltage=voltage)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)

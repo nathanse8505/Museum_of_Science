@@ -42,7 +42,6 @@ const int16_t DELAY_BEFORE_SLEEP = 1000;//ms delay before to enter in sleep mode
 bool check = LOW;//variable for pushing the button
 float time_start = 0;//start time to disable the button until activation time
 float time_to_secure = 0;//start time to disable the arduino until stop_time_safety
-bool button_check = LOW;//button status
 
 
 

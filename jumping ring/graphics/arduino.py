@@ -2,6 +2,7 @@
 Filename: arduino.py
 Purpose: Arduino functions for the Jumping Ring UI
 """
+import time
 
 import serial
 import serial.tools.list_ports
@@ -44,6 +45,8 @@ def open_serial_connection(port=None, baud_rate=BAUDRATE, timeout=1, logger=None
         print(f"Connected to {port}")
         if logger:
             logger.info(f"Connected to {port}")
+        while (ser.inWaiting() == 0):  # Wait here until there is data
+            time.sleep(0.01)  # do nothing
 
         return ser
     

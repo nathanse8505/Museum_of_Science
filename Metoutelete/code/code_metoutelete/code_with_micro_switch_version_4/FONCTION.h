@@ -46,4 +46,12 @@ void IEC() {//Imediately Engine Cutoff
   sleep_mode();
 }
 
+void printMotorOffInfo(){
+  Serial.println("The motor is OFF");
+  Serial.println("The micro switch is activated");
+  Serial.print("time before micro switch: ");
+  Serial.println(millis() - time_to_secure);
+  Serial.println(" ");
+}
+
 #endif

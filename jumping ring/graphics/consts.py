@@ -76,6 +76,7 @@ BAR_GRAPH_BOTTOM_HEIGHT = int(0.665 * VIEW_PORT[1])  # the bottom of the bar gra
 
 # colors
 BLACK = (0, 0, 0)
+WHITE = (255,255,255)
 TEXT_COLOR = BLACK
 
 # sizes - dont ask about the magic numbers
