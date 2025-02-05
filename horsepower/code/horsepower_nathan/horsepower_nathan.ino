@@ -4,7 +4,7 @@
 void setup()
 {
   Serial.begin(BAUDERATE);
-  pinMode(SPACE_BUTTON_IO,INPUT_PULLUP);
+  pinMode(LANG_BUTTON_IO,INPUT_PULLUP);
   
   Wire.begin();
   
@@ -21,21 +21,25 @@ void setup()
   sensor.setDistanceMode(VL53L1X::Long);
   sensor.setMeasurementTimingBudget(30000);//30ms
   sensor.startContinuous(30); // Continuous readings every 30 ms
+ 
 
   // Read initial distance
   
   initialDistance = read_average_distance();; // Initialize smoothed distance
   //Serial.println("LOG Initial Distance Set: " + String(initialDistance, 4));
   minDistance = initialDistance -  THRESHOLD;
+  
   Serial.println(String(horsepower) + " " + lang);
+  //wdt_enable(WDTO_4S);
 
 }
 
 
 void loop()
 {
+  //wdt_reset();
 
-  if (PRESS_BUTTON_SPACE()){
+  if (PRESS_BUTTON_LANG()){
     //Serial.write(32); // Send ASCII code for space key
     //Serial.println("LOG Button pressed, simulating 'space' key.");
     lang = lang >= 2 ? 0 : (lang +1);
@@ -55,6 +59,7 @@ void loop()
   }
 
   while(Lift_in_motion){
+    //wdt_reset();
     smoothedDistance = sensor.read() / 1000.0; // Convert mm to meters
     //Serial.println(smoothedDistance);
       if( minDistance -  smoothedDistance > maxDistance){
@@ -70,10 +75,8 @@ void loop()
         //Serial.println("time: " + String((millis() - startTime)/1000) + "sec");
 
       }
-
   }
   
-
   if(smoothedDistance > minDistance && first_try){
     first_try = false;
     horsepower = 0;

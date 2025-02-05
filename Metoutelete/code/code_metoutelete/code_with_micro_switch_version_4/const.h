@@ -32,7 +32,7 @@ bool NO_MICRO_SWITCH = HIGH;//when the microswitch in normally open its in the V
 
 const int8_t time_bouncing = 50;
 const int BAUDERATE = 9600;
-const int32_t ACTIVATION_TIME =30000;//ms after pushing the button the motor stop until activation time
+const unsigned int ACTIVATION_TIME =30000;//ms after pushing the button the motor stop until activation time
 const float RESET_TIME_SECURE = 7000;//if the micoswitch dosent work stop the motor and the arduino
 const int16_t MOTOR_DELAY = 1000;//ms delay motor to unpress the microswitch
 const int16_t DELAY_BEFORE_SLEEP = 1000;//ms delay before to enter in sleep mode

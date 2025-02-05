@@ -45,7 +45,7 @@ void loop() {
         IEC(); // Trigger Immediate Engine Cutoff
       }
       time_to_secure = millis();   // Record the start time for safety monitoring
-      //resetWatchdog(); // Reset the Watchdog Timer after the delay
+      //resetWatchdog(); // Reset the Watchdog Timer after the delay+
     }
       
 

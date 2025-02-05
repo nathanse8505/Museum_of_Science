@@ -1,6 +1,6 @@
 """
 Filename: arduino.py
-Purpose: Arduino functions for the Hydrogen Rocket UI
+Purpose: Arduino functions for the HorsePower UI
 """
 
 import serial
@@ -77,12 +77,12 @@ def read_line(ser=None, logger=None):
 
 def parse_data(raw_data, logger=None):
     """
-    parse the raw data line (<voltage> <has_ignited> <language>)
+    parse the raw data line (<voltage> <language>)
     :param raw_data: the raw data
     """
     try:
         data = raw_data.split(" ")
-        # ----------------- voltage ------------------------------ has_ignited --- language
+        # ----------------- voltage ------------------------------------ language
         return max(min(float(data[0]), MAX_HORSEPOWER), MIN_HORSEPOWER), int(data[1])
     
     except:

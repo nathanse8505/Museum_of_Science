@@ -1,6 +1,6 @@
 """
 Filename: arduino.py
-Purpose: Arduino functions for the Hydrogen Rocket UI
+Purpose: Arduino functions for the Jumping Ring UI
 """
 
 import serial
@@ -77,7 +77,7 @@ def read_line(ser=None, logger=None):
 
 def parse_data(raw_data, logger=None):
     """
-    parse the raw data line (<voltage> <has_ignited> <language>)
+    parse the raw data line (<voltage> <voltage_analogread> <language>)
     :param raw_data: the raw data
     """
     try:

@@ -69,10 +69,6 @@ float calculateSmoothedDistance(float newDistance)
   return sum / smoothingWindowSize;
 }
 
-float average(float newDistance){
-  
-}
-
 void loop()
 {
   delay(SENSOR_UPDATE_DELAY);// Amir add

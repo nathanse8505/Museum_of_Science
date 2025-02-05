@@ -4,14 +4,15 @@
 #include "constants.h"
 #include <Wire.h>
 #include <VL53L1X.h>
+//#include<avr/wdt.h>
 
 // Declare sensor object
 VL53L1X sensor;
 
 float read_average_distance(){
-  
   float avg = 0;
   for(int i = 0 ; i < ITERATION;i++){
+    wdt_reset();
     float Current_distance = sensor.read() / 1000.0;
     avg+=Current_distance;
 }
@@ -20,18 +21,18 @@ return avg;
 }
 
 
-bool PRESS_BUTTON_SPACE() {
+bool PRESS_BUTTON_LANG() {
   // Check if the button is pressed
-  if (digitalRead(SPACE_BUTTON_IO) == LOW && check_space == LOW) {
+  if (digitalRead(LANG_BUTTON_IO) == LOW && check_lang == LOW) {
      //Serial.println("press :");
-     check_space = HIGH;         // Mark that the button is being pressed
+     check_lang = HIGH;         // Mark that the button is being pressed
     delay(BOUNCE_TIME); // Apply debounce delay
   }
 
   // Check if the button is released
-  if (digitalRead(SPACE_BUTTON_IO) == HIGH && check_space == HIGH) {
+  if (digitalRead(LANG_BUTTON_IO) == HIGH && check_lang == HIGH) {
     //Serial.println("unpress");
-    check_space = LOW;  // Reset the state for the next button press
+    check_lang = LOW;  // Reset the state for the next button press
     return HIGH;  // Indicate that the button was successfully pressed and released
   }
   return LOW; // Return false if the button is not in the desired state

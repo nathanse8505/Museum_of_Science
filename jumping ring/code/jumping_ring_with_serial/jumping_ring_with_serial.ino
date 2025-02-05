@@ -31,12 +31,14 @@ void setup(){
    pinMode(LANG_BUTTON_IO,INPUT_PULLUP);
   last_display_time = millis();  // reset display timer
   wdt_enable(WDTO_2S);
+  delay(1000);
 }
 void loop() {
   
   wdt_reset();
   if (PRESS_BUTTON_LANG()) {  // pressed on language button
     lang = lang >= 2 ? 0 : (lang + 1);  // toggle language
+    Serial.println(String(Pressure_Value) + " " + String(SensorValue) + " " + lang);
   }
   
 // read the value from the sensor:
@@ -52,10 +54,9 @@ void loop() {
   }
   Number_To_Display = Pressure_Value;
   
- 
    if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {
-    Display_full_Numnber(Number_To_Display);
-    Serial.println(String(Pressure_Value) + " " + String(SensorValue) + " " + lang);
+    //Display_full_Numnber(Number_To_Display);
+    Serial.println(String(Pressure_Value) + " " + String(SensorValue)+ " " + lang);
     last_display_time = millis(); //reset timer
    }
 

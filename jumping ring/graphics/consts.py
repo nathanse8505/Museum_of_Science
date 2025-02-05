@@ -1,6 +1,6 @@
 """
 Filename: consts.py
-Purpose: Constants for the Jumping Ring
+Purpose: Constants for the Jumping Ring UI
 """
 import os
 import pygame

@@ -1,7 +1,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#define SPACE_BUTTON_IO  11 // Pin connected to the button
+#define LANG_BUTTON_IO  2 // Pin connected to the button
 
 
 /*
@@ -11,14 +11,14 @@
  *                 RXD-|       |-Gnd  gnd to sensor
  *                 RST-|       |-RST
  *                 GND-|       |-+5V  5v to sensor
- *                  D2-|       |-A7  
+ * SPACE_BUTTON_IO  D2-|       |-A7  
  *                  D3-|       |-A6  
  *                  D4-|       |-A5  SCL
  *                  D5-|       |-A4  SDA
  *                  D6-|       |-A3  
  *                  D7-|       |-A2  
  *                  D8-|       |-A1
- *                  D9-|       |-A0  SPACE_BUTTON_IO
+ *                  D9-|       |-A0  
  *                 D10-|       |-Ref
  *                 D11-|       |-3.3V   
  *                 D12-|       |-D13
@@ -27,7 +27,7 @@
 
 /////////////button space///////////
 const int BOUNCE_TIME = 50;
-bool check_space = false;
+bool check_lang = false;
 int8_t lang =0;
 ///////////////////////////////////
 
