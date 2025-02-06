@@ -45,9 +45,6 @@ def open_serial_connection(port=None, baud_rate=BAUDRATE, timeout=1, logger=None
         print(f"Connected to {port}")
         if logger:
             logger.info(f"Connected to {port}")
-        while (ser.inWaiting() == 0):  # Wait here until there is data
-            time.sleep(0.01)  # do nothing
-
         return ser
     
     except serial.SerialException as e:
@@ -85,6 +82,7 @@ def parse_data(raw_data, logger=None):
     """
     try:
         data = raw_data.split(" ")
+        previous_data = data
         # ----------------- voltage ------------------------------ voltage_analogread --- language
         return max(min(float(data[0]), MAX_VOLTAGE), MIN_VOLTAGE), int(data[1]), int(data[2])
     
@@ -92,3 +90,4 @@ def parse_data(raw_data, logger=None):
         print(f"Error parsing data: {raw_data}")
         if logger:
             logger.error(f"Error parsing data: {raw_data}")
+        return previous_data

@@ -74,7 +74,7 @@ uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 
 //////////////display///////////
 unsigned long last_display_time = 0;  // ms last time data was display
-const int32_t DISPLAY_INTERVAL_TIME = 300;  // ms show/display 
+const int32_t DISPLAY_INTERVAL_TIME = 200;  // ms show/display 
 ///////////////////////////////
 
 #endif /* CONST_N_GLOBAL_H */

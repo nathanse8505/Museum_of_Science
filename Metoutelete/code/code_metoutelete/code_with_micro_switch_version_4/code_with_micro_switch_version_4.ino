@@ -16,8 +16,8 @@ void setup() {
 
   // Initialize the Watchdog Timer with a timeout period of 2 seconds
   //wdt_enable(WDTO_4S);
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
-  sleep_enable();
+  //set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  //sleep_enable();
  
   Serial.println("init"); // Print initialization message to the serial monitor
 }
@@ -32,23 +32,24 @@ void loop() {
     //resetWatchdog(); // Reset the Watchdog Timer after this condition
 
     // If the button was successfully pressed and released
-    if (PRESS_BUTTON()) {
+    if (PRESS_BUTTON() && flag_first_press) {
       Serial.println("The motor is ON\n");
       TURN_ON_MOTOR();
+      flag_first_press = LOW;
 
       if(digitalRead(MICRO_SW)  == !NO_MICRO_SWITCH){
         Serial.print("the micro switch is pressed all the time: ");
         IEC(); // Trigger Immediate Engine Cutoff
+        BLINK_FLAG(500);
       }
       time_to_secure = millis();   // Record the start time for safety monitoring
       //resetWatchdog(); // Reset the Watchdog Timer after the delay+
     }
-      
-
+    Serial.println("flag first press :" + String(flag_first_press)); 
 
     // Keep the motor running until the micro switch is activated
-    while (digitalRead(MICRO_SW) == NO_MICRO_SWITCH && digitalRead(MOTOR) == HIGH){
-      //Serial.println("we are in the while mode");
+    while (digitalRead(MICRO_SW) == NO_MICRO_SWITCH && digitalRead(MOTOR) == HIGH && flag_first_press == LOW){
+      Serial.println("we are in the while mode");
       digitalWrite(LED_BUTTON, LOW); // Turn off the button LED that turn on the motor
       //resetWatchdog(); // Reset the Watchdog Timer during the loop
 
@@ -57,14 +58,16 @@ void loop() {
         Serial.print("time after micro switch: ");
         Serial.println(millis() - time_to_secure);
         IEC(); // Trigger Immediate Engine Cutoff
+        BLINK_FLAG(2000);
       }
 
       // If the micro switch is activated
       if (digitalRead(MICRO_SW) == !NO_MICRO_SWITCH) {
-        printMotorOffInfo();
         digitalWrite(MOTOR, LOW); // Turn off the motor
+        printMotorOffInfo();
         time_start = millis();    // Reset the activation timer
-        break;                    // Exit the loop
+        flag_first_press = HIGH;
+        //break;                    // Exit the loop
       }
 
     }

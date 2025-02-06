@@ -20,6 +20,8 @@ MAX_CHARGE = 1.645  # in coulombs
 MIN_ENERGY = 0.0  # in joules
 MAX_ENERGY = 250.0  # in joules
 CAPACITANCE = 0.0047  # ~0.00457  # in farads
+NOISE_THRESHOLD = 10 #noise voltage
+VOLTAGE_AFTER_DROP = 10
 
 # languages
 HEBREW = 0

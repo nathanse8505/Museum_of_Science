@@ -2,7 +2,7 @@
 #define FONCTION
 
 #include "const.h"
-#include <avr/sleep.h>
+//#include <avr/sleep.h>
 //#include <avr/wdt.h> // Library for the Watchdog Timer
 
 /*
@@ -41,9 +41,9 @@ void IEC() {//Imediately Engine Cutoff
   digitalWrite(MOTOR, LOW);// Turn off the motor
   delay(MOTOR_DELAY);
   //wdt_disable();
-  Serial.println("The Arduino is entering low power mode");
+  /*Serial.println("The Arduino is entering low power mode");
   delay(DELAY_BEFORE_SLEEP);
-  sleep_mode();
+  sleep_mode();*/
 }
 
 void printMotorOffInfo(){
@@ -52,6 +52,16 @@ void printMotorOffInfo(){
   Serial.print("time before micro switch: ");
   Serial.println(millis() - time_to_secure);
   Serial.println(" ");
+}
+
+void BLINK_FLAG(unsigned int DELAY_BLINK){
+  while(1){
+    digitalWrite(LED_BUTTON, HIGH);
+    delay(DELAY_BLINK);
+    digitalWrite(LED_BUTTON, LOW);
+    delay(DELAY_BLINK);
+
+  }
 }
 
 #endif

@@ -1,0 +1,13 @@
+2025-02-06_13:59:17 - Starting Jumping Ring UI
+2025-02-06_13:59:17 - Error: Arduino not found
+2025-02-06_13:59:19 - Error: Arduino not found
+2025-02-06_13:59:20 - Error: Arduino not found
+2025-02-06_13:59:21 - Error: Arduino not found
+2025-02-06_13:59:22 - Error: Arduino not found
+2025-02-06_13:59:23 - Error: Arduino not found
+2025-02-06_13:59:24 - Error: Arduino not found
+2025-02-06_13:59:25 - Error: Arduino not found
+2025-02-06_13:59:26 - Error: Arduino not found
+2025-02-06_13:59:27 - Error: Arduino not found
+2025-02-06_13:59:28 - Ring jumped!
+2025-02-06_13:59:28 - Error: Arduino not found
