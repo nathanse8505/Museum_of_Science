@@ -2,30 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../Metoutelete/code/code_metoutelete/code_with_micro_switch_version_4/const.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Metoutelete/code/code_metoutelete/code_with_micro_switch_version_4/const.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/pythonProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Hydrogen-Rocket-UI/pythonProject/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/CONSTANTS.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/CONST.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/CONST.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/chliran_version2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/chliran_version2.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../generator/code/ina219_7seg_3disp_new_version/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../generator/code/ina219_7seg_3disp_new_version/CONSTANTS.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../incondescent vs led/code/ina219_7seg_3disp_new_version/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../incondescent vs led/code/ina219_7seg_3disp_new_version/CONSTANTS.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Const_N_Global.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Const_N_Global.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/jumping_ring_with_serial.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/jumping_ring_with_serial.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_arb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_arb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_eng.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_eng.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_heb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/pictures/1_heb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/מסך 2 שלם.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/CONSTANTS.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/CONSTANTS.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/driver_for_coil.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../../transformator/code/driver_for_coil/driver_for_coil.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/arduino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/arduino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/7_Segment_1_0_HV_METER/7_Segment_1_0_HV_METER.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/7_Segment_1_0_HV_METER/Const_N_Global.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/7_Segment_1_0_HV_METER/NOT_USED_BK.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Const_N_Global.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Fonction.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/jumping_ring_with_serial.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/.idea/.name" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -4,7 +4,7 @@
 #include "constants.h"
 #include <Wire.h>
 #include <VL53L1X.h>
-//#include<avr/wdt.h>
+#include<avr/wdt.h>
 
 // Declare sensor object
 VL53L1X sensor;
@@ -13,7 +13,7 @@ float read_average_distance(){
   float avg = 0;
   for(int i = 0 ; i < ITERATION;i++){
     wdt_reset();
-    float Current_distance = sensor.read() / 1000.0;
+    float Current_distance = sensor.read();
     avg+=Current_distance;
 }
 avg = avg / ITERATION;

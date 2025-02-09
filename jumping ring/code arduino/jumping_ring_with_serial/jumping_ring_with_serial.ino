@@ -29,6 +29,7 @@ void setup(){
   digitalWrite(LE_1, HIGH);// lock digit
 
    pinMode(LANG_BUTTON_IO,INPUT_PULLUP);
+   pinMode(LED_CONTROL_IO,OUTPUT);
   last_display_time = millis();  // reset display timer
   wdt_enable(WDTO_2S);
   delay(1000);
@@ -52,10 +53,15 @@ void loop() {
   else if(SensorValue >= map_table[0][0]){
   Pressure_Value = map(SensorValue, map_table[0][0], map_table[0][1], map_table[0][2], map_table[0][3]);
   }
-  Number_To_Display = Pressure_Value;
-  
+  if(Pressure_Value > VOLTAGE_LED_ON){
+    digitalWrite(LED_CONTROL_IO,HIGH);
+  }
+  else{
+    digitalWrite(LED_CONTROL_IO,LOW);
+  }
+
    if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {
-    //Display_full_Numnber(Number_To_Display);
+    //Display_full_Numnber(Pressure_Value);
     Serial.println(String(Pressure_Value) + " " + String(SensorValue)+ " " + lang);
     last_display_time = millis(); //reset timer
    }

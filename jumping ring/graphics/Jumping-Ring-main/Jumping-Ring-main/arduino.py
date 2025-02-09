@@ -1,13 +1,12 @@
 """
 Filename: arduino.py
-Purpose: Arduino functions for the HorsePower UI
+Purpose: Arduino functions for the Jumping Ring UI
 """
 
 import serial
 import serial.tools.list_ports
 import sys
 from consts import *
-
 
 
 def find_arduino_port(logger=None):
@@ -28,8 +27,9 @@ def find_arduino_port(logger=None):
                 find_arduino_port.already_sent_error = False
 
             return port.device
-
+    
     if logger:
+
         # for not spamming the logs
         if not hasattr(find_arduino_port, "already_sent_error"):
             find_arduino_port.already_sent_error = False
@@ -51,6 +51,7 @@ def open_serial_connection(port=None, baud_rate=BAUDRATE, timeout=1, logger=None
 
     try:
         ser = serial.Serial(port, baud_rate, timeout=timeout)
+        
         print(f"Connected to {port}")
         if logger:
             logger.info(f"Connected to {port}")
@@ -87,20 +88,24 @@ def read_line(ser=None, logger=None):
 
 def parse_data(raw_data, logger=None):
     """
-    parse the raw data line (<horsepower> <language>)
+    parse the raw data line (<voltage> <voltage_analogread> <language>)
     :param raw_data: the raw data
     """
     try:
         data = raw_data.split(" ")
-        horsepower_value = max(min(float(data[0]), MAX_HORSEPOWER), MIN_HORSEPOWER)
-        language_value = int(data[1])
+
+        voltage_value = max(min(float(data[0]), MAX_VOLTAGE), MIN_VOLTAGE)
+        voltage_analogread_value = int(data[1])
+        language_value = int(data[2])
+
         if hasattr(parse_data, "already_sent_error"):
             parse_data.already_sent_error = False
-        # ----------------- voltage ------------------------------------ language
-        return horsepower_value, language_value
+            
+        return voltage_value, voltage_analogread_value, language_value, PARSE_VALID
     
     except:
         if logger:
+            # for not spamming the logs
             if not hasattr(parse_data, "already_sent_error"):
                 parse_data.already_sent_error = False
 
@@ -108,4 +113,7 @@ def parse_data(raw_data, logger=None):
                 logger.error(f"Error parsing data: {raw_data}")
                 print(f"Error parsing data: {raw_data}")
                 parse_data.already_sent_error = True
-        return 0,0
+
+        return 0, 0, 0, PARSE_ERROR  # default values for voltage, voltage_analogread, language
+
+

@@ -18,7 +18,9 @@ void setup()
     while (1);
   }
 
-  sensor.setDistanceMode(VL53L1X::Long);
+  //sensor.setDistanceMode(VL53L1X::Long);
+  sensor.setDistanceMode(VL53L1X::Medium);
+
   sensor.setMeasurementTimingBudget(30000);//30ms
   sensor.startContinuous(30); // Continuous readings every 30 ms
  
@@ -30,14 +32,14 @@ void setup()
   minDistance = initialDistance -  THRESHOLD;
   
   Serial.println(String(horsepower) + " " + lang);
-  //wdt_enable(WDTO_4S);
+  wdt_enable(WDTO_4S);
 
 }
 
 
 void loop()
 {
-  //wdt_reset();
+  wdt_reset();
 
   if (PRESS_BUTTON_LANG()){
     //Serial.write(32); // Send ASCII code for space key
@@ -46,7 +48,7 @@ void loop()
     Serial.println(String(horsepower) + " " + lang);
   }
 
-  smoothedDistance = sensor.read() / 1000.0; // Convert mm to meters
+  smoothedDistance = sensor.read(); // Convert mm to meters
   //smoothedDistance = read_average_distance()
   //Serial.println(smoothedDistance);
   //Serial.println(lang);
@@ -59,16 +61,18 @@ void loop()
   }
 
   while(Lift_in_motion){
-    //wdt_reset();
-    smoothedDistance = sensor.read() / 1000.0; // Convert mm to meters
+    wdt_reset();
+    smoothedDistance = sensor.read(); // Convert mm to meters
+
     //Serial.println(smoothedDistance);
       if( minDistance -  smoothedDistance > maxDistance){
-        deltaTime = (millis() - startTime) / 1000;
-        horsepower = ((Force/WEIGHT_KG_POWER_HORSE) * maxDistance) / (deltaTime);
+        deltaTime = (millis() - startTime);
+        horsepower = ((WEIGHT_KG_BALL/WEIGHT_KG_POWER_HORSE) * maxDistance) / (deltaTime);
         //float Watt = horsepower * HORSEPOWER_CONVERSION;
 
         Lift_in_motion = false;
         first_try = true;
+        timer_rst = millis();
 
         //Serial.println("LOG Lift cycle complete. Cooldown started.");
         Serial.println(String(horsepower) + " " + lang);
@@ -77,10 +81,16 @@ void loop()
       }
   }
   
-  if(smoothedDistance > minDistance && first_try){
+  if(smoothedDistance > minDistance && first_try && (millis() - timer_rst >  RST_BOUNCING_BALL)){
     first_try = false;
     horsepower = 0;
+    Serial.println(String(horsepower) + " " + lang);
     //Serial.println("LOG Cooldown complete. Ready for next try.");
+  }
+
+  if(millis() - timer_rst >  RST_DISP){
+    horsepower = 0;
+    Serial.println(String(horsepower) + " " + lang);
   }
   
 

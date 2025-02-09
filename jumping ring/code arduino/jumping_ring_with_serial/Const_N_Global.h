@@ -15,6 +15,7 @@
 
 #define LANG_BUTTON_IO 2
 #define Pressure_sensor_IO (A2) // pressure sensor input 
+#define LED_CONTROL_IO (A3) // pressure sensor input 
 //#define POT_2 (A7) // pot input 
 
 /*  IO map
@@ -76,5 +77,9 @@ uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 unsigned long last_display_time = 0;  // ms last time data was display
 const int32_t DISPLAY_INTERVAL_TIME = 200;  // ms show/display 
 ///////////////////////////////
+
+/////////LED////////////
+const int VOLTAGE_LED_ON = 100;
+
 
 #endif /* CONST_N_GLOBAL_H */
