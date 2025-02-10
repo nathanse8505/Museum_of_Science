@@ -1,6 +1,6 @@
 """
 Filename: display.py
-Purpose: Display functions for the Jumping Ring UI
+Purpose: Display functions for the Horse Power UI
 """
 from consts import *
 

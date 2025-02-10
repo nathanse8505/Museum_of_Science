@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/arduino.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/arduino.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/7_Segment_1_0_HV_METER/7_Segment_1_0_HV_METER.ino" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/7_Segment_1_0_HV_METER/Const_N_Global.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/7_Segment_1_0_HV_METER/NOT_USED_BK.ino" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Const_N_Global.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/Fonction.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/code/jumping_ring_with_serial/jumping_ring_with_serial.ino" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../jumping ring/graphics/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../../../jumping ring/graphics/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/logs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

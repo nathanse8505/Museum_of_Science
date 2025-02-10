@@ -1,6 +1,6 @@
 """
 Filename: consts.py
-Purpose: Constants for the Hydrogen Rocket UI
+Purpose: Constants for the Horse Power UI
 """
 import os
 import pygame

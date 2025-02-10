@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the virtual environment directory
-VENV_DIR="hydrogen_rocket_venv"
+VENV_DIR="Hydrogen_Rocket_venv"
 
 # Function to check if a Python package is installed in the virtual environment
 check_and_install() {
@@ -38,7 +38,7 @@ check_and_install pyserial
 
 # Run the main.py script using the virtual environment's Python interpreter
 echo "Running main.py..."
-$VENV_DIR/bin/python /home/mada/Hydrogen_Rocket_Python-main/main.py
+$VENV_DIR/bin/python /home/mada/Hydrogen_Rocket_py/main.py
 
 # Deactivate the virtual environment after running the script
 deactivate

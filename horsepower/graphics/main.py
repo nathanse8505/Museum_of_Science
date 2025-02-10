@@ -1,6 +1,6 @@
 """
 File: main.py
-Purpose: Main file for the Jumping Ring UI
+Purpose: Main file for the Horse Power UI
 """
 import pygame
 import time
