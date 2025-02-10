@@ -14,7 +14,7 @@ RECONNECT_INTERVAL = 1  # seconds
 
 # voltage, charge, and capacitor values
 MIN_HORSEPOWER = 0.0  # in volts
-MAX_HORSEPOWER = 1.0  # in volts
+MAX_HORSEPOWER = 0.5  # in volts
 
 
 # languages

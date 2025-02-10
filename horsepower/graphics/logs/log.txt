@@ -795,3 +795,5 @@
 2025-02-04_23:48:37 - Error: Arduino not found
 2025-02-04_23:48:38 - Error: Arduino not found
 2025-02-04_23:48:39 - Error: Arduino not found
+2025-02-10_22:26:11 - Starting Horse Power UI
+2025-02-10_22:26:11 - Error: Arduino not found

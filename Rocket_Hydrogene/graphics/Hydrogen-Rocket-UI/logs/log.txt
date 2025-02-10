@@ -30,3 +30,5 @@
 2025-02-10_18:01:38 - Starting Hydrogen Rocket UI
 2025-02-10_18:01:38 - Found Arduino! port: /dev/ttyUSB0
 2025-02-10_18:01:38 - Connected to /dev/ttyUSB0
+2025-02-10_22:27:38 - Starting Hydrogen Rocket UI
+2025-02-10_22:27:38 - Error: Arduino not found

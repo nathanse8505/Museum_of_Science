@@ -2,11 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../code/Hydrogen-Rocket/Hydrogen-Rocket.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/Hydrogen-Rocket/basic_routines.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/Hydrogen-Rocket/consts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/Hydrogen-Rocket/display.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/Old-Hydrogen-Rockets/Old-Hydrogen-Rockets.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/Old-Hydrogen-Rockets/basic_routines.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/Old-Hydrogen-Rockets/consts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/Old-Hydrogen-Rockets/display.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/link_to_GIT.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/~$nk_to_GIT.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../code/~$שור לקוד.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Hydrogen-Rocket-UI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hydrogen-Rocket-UI.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/Start stop NE555 2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/Start stop NE555.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/datasheet fet IPD068N10.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/7segment_amir_code/7segment.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/7segment_amir_code/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/7segment_amir_code/Electrolysis_H2_Generator_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/7segment_amir_code/Electrolysis_H2_Generator_6_PCB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp/speedometer_7segment_3disp.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/FONCTION.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_3disp_new_version/speedometer_7segment_3disp_new_version.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_4disp.ino/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_7segment_4disp.ino/speedometer_7segment_4disp.ino.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_new_version/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_7segment_code/speedometer_new_version/speedometer_new_version.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/7segment_amir_code/7segment.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/7segment_amir_code/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/7segment_amir_code/Electrolysis_H2_Generator_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/7segment_amir_code/Electrolysis_H2_Generator_6_PCB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/speedometer_7segment_code/speedometer_7segment_4disp.ino/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/speedometer_7segment_code/speedometer_7segment_4disp.ino/speedometer_7segment_4disp.ino.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/speedometer_7segment_code/speedometer_new_version/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/speedometer_7segment_code/speedometer_new_version/speedometer_new_version.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/speedometer_oled_code/speedometer_oled.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/test_7segment_code/CONSTANTS_test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/test_7segment_code/test_7segment/CONSTANTS_test.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/speedometer/code/test_7segment_code/test_7segment/test_7segment.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/סליל תחת מתח.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../acceleration_circuit/תרשים מלבני +חיווטים.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/DEKEL_ROBOT_SOLENOIDS_DRIVER_21_JAN_2024/DEKEL_ROBOT_SOLENOIDS_DRIVER_21_JAN_2024.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran/CONST.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran/FONCTION.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran/chliran.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/CONST.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/FONCTION.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/chliran_version2/chliran_version2.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/code illia/CONST_N_GLOBAL.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/code illia/current_code.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../chliran/code/test_shift_register/test_shift_register.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../generator/code/ina219_7seg_3disp_new_version/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../generator/code/ina219_7seg_3disp_new_version/FONCTION.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../generator/code/ina219_7seg_3disp_new_version/ina219_7seg_3disp_new_version.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../generator/code/metah_7seg_3disp/CONSTANTS.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../generator/code/metah_7seg_3disp/metah_7seg_3disp.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/code arduino/horsepower_react_30_DEC_2024_Amir/horsepower_react_30_DEC_2024_Dolev_Amir/constants.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/code arduino/horsepower_react_30_DEC_2024_Amir/horsepower_react_30_DEC_2024_Dolev_Amir/horsepower_react_30_DEC_2024_Dolev_Amir.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/code arduino/horsepower_react_Dolev/horsepower_react/constants.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../horsepower/code arduino/horsepower_react_Dolev/horsepower_react/horsepower_react.ino" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/logs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../horsepower/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../horsepower/graphics/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,15 +91,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/natou/Documents/GitHub/Museum_of_Science/Rocket_Hydrogene/graphics/Hydrogen-Rocket-UI&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/natou/Documents/GitHub/Museum_of_Science/jumping ring/graphics",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
-  <component name="RunManager" selected="Python.main (1)">
+}]]></component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="arduino (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Hydrogen-Rocket-UI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -76,27 +134,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arduino.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="consts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Hydrogen-Rocket-UI" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/consts.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,6 +184,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Hydrogen-Rocket-UI" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../horsepower/graphics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../horsepower/graphics/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Hydrogen-Rocket-UI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,10 +229,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.arduino (1)" />
         <item itemvalue="Python.arduino" />
         <item itemvalue="Python.display" />
-        <item itemvalue="Python.consts" />
       </list>
     </recent_temporary>
   </component>
