@@ -23,6 +23,8 @@ def main():
     language = HEBREW
     horsepower = MIN_HORSEPOWER
     state = MEASURE
+    index_images = 0
+    last_update = pygame.time.get_ticks()  # Temps du dernier changement d'image
 
     # logging setup - log into a file called log.txt in the folder /logs with the format: [TIME] - [MESSAGE], if the file exists, append to it, if not, create it, if it exceeds 1MB, create a new file with a number suffix (before the .txt) and continue logging to it (e.g., log1.txt, log2.txt, etc.)
     logger = get_logger()
@@ -51,6 +53,11 @@ def main():
                 if event.key == pygame.K_DOWN:
                     horsepower = max(horsepower - 0.1, MIN_HORSEPOWER)
 
+                if event.key == pygame.K_RETURN:
+                    state = (state + 1) % len(STATES)  # toggle state from OPENING to MEASURE
+
+
+
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
             print("Arduino disconnected. Trying to reconnect to Arduino...")
@@ -71,9 +78,14 @@ def main():
             # print(data_from_arduino)
             horsepower, language = parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: voltage {voltage} has_ignited {has_ignited} language {language}")
+            state = MEASURE if horsepower > SWITCH_TO_MEASURE_SCREEN else OPENING
 
+        current_time = pygame.time.get_ticks()
+        if state == OPENING and (current_time - last_update) >= DELAY_FRAME_BALL:
+            index_images =(index_images + 1) % len(images_balls)
+            last_update = current_time
         screen.fill(WHITE)  # reset screen
-        display_state(screen, state=state, language=language, horsepower=horsepower)  # render the screen
+        display_state(screen, state=state, language=language, horsepower=horsepower,index_images=index_images)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
 
