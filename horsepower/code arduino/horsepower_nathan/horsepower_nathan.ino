@@ -16,7 +16,8 @@ void setup()
   Wire.setClock(400000);                 // Use 400 kHz I2C
   sensor.setTimeout(500);                // Timeout for sensor operations (in ms)
 
-  Serial.println(String(0.5) + " " + lang);//sensor disconnect
+  //Serial.println(String(0.5) + " " + lang);//sensor disconnect
+  Serial.println(String(0.5) + " " + String(deltaTime) + " " + lang);
 
   // Initialize the VL53L1X sensor
   if (!sensor.init())
@@ -45,7 +46,8 @@ void setup()
   minDistance = initialDistance - THRESHOLD;
 
   // Print the initial horsepower and current language index to Serial
-  Serial.println(String(horsepower) + " " + lang);
+  //Serial.println(String(horsepower) + " " + lang);
+   Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
 
   // Enable the watchdog timer with a 4-second timeout
   wdt_enable(WDTO_4S);
@@ -68,7 +70,8 @@ void loop()
     lang = (lang >= 2) ? 0 : (lang + 1);
 
     // Print updated horsepower and language index
-    Serial.println(String(horsepower) + " " + lang);
+    //Serial.println(String(horsepower) + " " + lang);
+     Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   }
 
   // Read the current distance from the sensor
@@ -111,7 +114,8 @@ void loop()
       bouncingBallTimer = millis();   // Record when cooldown started
 
       // Print the computed horsepower and current language index
-      Serial.println(String(horsepower) + " " + lang);
+      //Serial.println(String(horsepower) + " " + lang);
+      Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
     }
 
     // If it takes too long (exceeding MEAS_RST_MS), reset the measurement
@@ -119,8 +123,13 @@ void loop()
     {
       Lift_in_motion = false;   // Stop the lift
       first_try = false;        // Indicate a full reset
-      horsepower = 0;           // reset to 0
-      Serial.println(String(horsepower) + " " + lang);
+      horsepower = 0;
+      startTime = 0;
+      meas_Tmr_rst = 0;
+      bouncingBallTimer = 0;
+      deltaTime = 0;
+      //Serial.println(String(horsepower) + " " + lang);
+      Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
     }
   }
 
@@ -134,6 +143,11 @@ void loop()
   {
     first_try = false;    // Ready for next measurement
     horsepower = 0;       // Reset horsepower to 0
-    Serial.println(String(horsepower) + " " + lang);
+    startTime = 0;
+    meas_Tmr_rst = 0;
+    bouncingBallTimer = 0;
+    deltaTime = 0;           // reset to 0
+    //Serial.println(String(horsepower) + " " + lang);
+    Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   }
 }

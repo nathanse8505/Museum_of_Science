@@ -22,8 +22,10 @@ def main():
     # initial values for the UI
     language = HEBREW
     horsepower = MIN_HORSEPOWER
+    deltatime = 0
     state = MEASURE
     index_images = 0
+    check_horse_power = True
     last_update = pygame.time.get_ticks()  # Temps du dernier changement d'image
 
     # logging setup - log into a file called log.txt in the folder /logs with the format: [TIME] - [MESSAGE], if the file exists, append to it, if not, create it, if it exceeds 1MB, create a new file with a number suffix (before the .txt) and continue logging to it (e.g., log1.txt, log2.txt, etc.)
@@ -53,6 +55,12 @@ def main():
                 if event.key == pygame.K_DOWN:
                     horsepower = max(horsepower - 0.1, MIN_HORSEPOWER)
 
+                if event.key == pygame.K_LEFT:
+                    deltatime = min(deltatime + 0.3, MAX_DELTATIME)
+
+                if event.key == pygame.K_RIGHT:
+                    deltatime = max(deltatime - 0.3, MIN_DELTATIME)
+
                 if event.key == pygame.K_RETURN:
                     state = (state + 1) % len(STATES)  # toggle state from OPENING to MEASURE
 
@@ -76,7 +84,14 @@ def main():
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            horsepower, language = parse_data(data_from_arduino, logger=logger)
+            horsepower, deltatime, language = parse_data(data_from_arduino, logger=logger)
+            deltatime = deltatime/1000
+            if check_horse_power and horsepower != 0:
+                #print(f"your horsepower is: {horsepower} in {deltatime} second")
+                logger.info(f"your horsepower is: {horsepower}")
+                check_horse_power = False
+            elif horsepower == 0:
+                check_horse_power = True
             # print(f"parsed: voltage {voltage} has_ignited {has_ignited} language {language}")
             state = MEASURE if horsepower > SWITCH_TO_MEASURE_SCREEN else OPENING
 
@@ -84,8 +99,9 @@ def main():
         if state == OPENING and (current_time - last_update) >= DELAY_FRAME_BALL:
             index_images =(index_images + 1) % len(images_balls)
             last_update = current_time
+
         screen.fill(WHITE)  # reset screen
-        display_state(screen, state=state, language=language, horsepower=horsepower,index_images=index_images)  # render the screen
+        display_state(screen, state=state, language=language, horsepower=horsepower, deltatime=deltatime, index_images=index_images)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
 

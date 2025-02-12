@@ -7,7 +7,7 @@ from consts import *
 import time
 
 
-def display_state(screen, state=OPENING, language=HEBREW, horsepower=MIN_HORSEPOWER, index_images = 0 ):
+def display_state(screen, state=OPENING, language=HEBREW, horsepower=MIN_HORSEPOWER, deltatime = 0, index_images = 0 ):
     """
     Display the state screen
     :param screen: the screen to display the state screen on (right now there is only MEASURE state)
@@ -18,7 +18,7 @@ def display_state(screen, state=OPENING, language=HEBREW, horsepower=MIN_HORSEPO
         display_opening(screen, language=language, index_images=index_images)
 
     if state == MEASURE:
-        display_measure(screen, language=language, horsepower=horsepower)
+        display_measure(screen, language=language, horsepower=horsepower,deltatime=deltatime)
 
 
 def display_opening(screen, language, index_images):
@@ -41,24 +41,33 @@ def display_opening(screen, language, index_images):
 
 
 
-def display_measure(screen, language=HEBREW, horsepower=MIN_HORSEPOWER):
+def display_measure(screen, language=HEBREW, horsepower=MIN_HORSEPOWER,deltatime=0):
     """
     Display the measurement screen
     :param screen: the screen to display the measurement screen on
     :param language: the language to display the measurement screen in
     """
+    deltatime_text = 0
+    horsepower_text = 0
+
     if language == HEBREW:
         screen.blit(measure_heb, (0,0))
+        horsepower_text = HORSEPOWER_TEXT_POS
+        deltatime_text = TIME_TEXT_POS
 
     elif language == ENGLISH:
         screen.blit(measure_eng, (0,0))
+        horsepower_text = HORSEPOWER_TEXT_POS_ENG
+        deltatime_text = TIME_TEXT_POS_ENG
 
     elif language == ARABIC:
         screen.blit(measure_arb, (0,0))
+        horsepower_text = HORSEPOWER_TEXT_POS
+        deltatime_text = TIME_TEXT_POS
 
-    screen.blit(horse_empty, HORSEPOWER_POS)
+    screen.blit(horse_empty, (0,0))
     display_bars(screen, horsepower)
-    display_text_values(screen, horsepower)
+    display_text_values(screen, horsepower,deltatime,horsepower_text,deltatime_text)
 
 
 def display_bars(screen, horsepower=MIN_HORSEPOWER):
@@ -90,7 +99,7 @@ def display_bars(screen, horsepower=MIN_HORSEPOWER):
     display_bar_from_values(screen, horsepower, MAX_HORSEPOWER, MIN_HORSEPOWER, bar_full_horsepower)
 
 
-def display_text_values(screen, horsepower=MIN_HORSEPOWER):
+def display_text_values(screen, horsepower=MIN_HORSEPOWER, deltatime=0, horsepower_text=HORSEPOWER_TEXT_POS, deltatime_text=TIME_TEXT_POS):
     """
     Display the text values on the screen
     :param screen: the screen to display the text values on
@@ -109,4 +118,6 @@ def display_text_values(screen, horsepower=MIN_HORSEPOWER):
         text_rect = text.get_rect(center=pos)
         screen.blit(text, text_rect)
 
-    display_text(screen,horsepower, HORSEPOWER_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
+
+    display_text(screen,horsepower, horsepower_text, TEXT_SIZE, TEXT_COLOR)
+    display_text(screen, deltatime, deltatime_text, TEXT_SIZE, TEXT_COLOR)

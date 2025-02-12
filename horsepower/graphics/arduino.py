@@ -93,11 +93,12 @@ def parse_data(raw_data, logger=None):
     try:
         data = raw_data.split(" ")
         horsepower_value = max(min(float(data[0]), MAX_HORSEPOWER), MIN_HORSEPOWER)
-        language_value = int(data[1])
+        deltatime = int(data[1])
+        language_value = int(data[2])
         if hasattr(parse_data, "already_sent_error"):
             parse_data.already_sent_error = False
-        # ----------------- voltage ------------------------------------ language
-        return horsepower_value, language_value
+        # -----horsepower ------deltatime---- language----
+        return horsepower_value,deltatime, language_value
     
     except:
         if logger:
