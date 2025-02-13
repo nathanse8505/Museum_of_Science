@@ -55,10 +55,10 @@ def main():
                 if event.key == pygame.K_DOWN:
                     horsepower = max(horsepower - 0.1, MIN_HORSEPOWER)
 
-                if event.key == pygame.K_LEFT:
+                if event.key == pygame.K_RIGHT:
                     deltatime = min(deltatime + 0.3, MAX_DELTATIME)
 
-                if event.key == pygame.K_RIGHT:
+                if event.key == pygame.K_LEFT:
                     deltatime = max(deltatime - 0.3, MIN_DELTATIME)
 
                 if event.key == pygame.K_RETURN:

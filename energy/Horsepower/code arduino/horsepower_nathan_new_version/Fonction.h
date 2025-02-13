@@ -51,4 +51,35 @@ bool PRESS_BUTTON_LANG()
   return false;                 // Otherwise, no valid press-release detected
 }
 
+/*
+*Reset parameter
+*/
+void rst_parameter(){
+  first_try = false;    // Ready for next measurement
+    startTime = 0;
+    meas_Tmr_rst = 0;
+    bouncingBallTimer = 0;
+    deltaTime = 0;           // reset to 0
+}
+
+void read_ROI_and_center_ROI(){
+  uint8_t x = sensor.readReg(0x0080);
+  uint8_t y = sensor.readReg(0x007F);
+  Serial.println("read ROI coordinate: " + String(x) + " read center ROI: " + String(y));
+
+}
+
+void read_New_ROI_and_center_ROI(){
+  uint8_t x,y,center;
+
+  sensor.getROISize(&x, &y);
+  center = sensor.getROICenter();
+
+  Serial.println("read ROI coordinate X: " + String(x) + " read ROI coordinate Y: " + String(y));
+  Serial.println("read center ROI: " + String(center));
+  
+}
+
+
+
 #endif

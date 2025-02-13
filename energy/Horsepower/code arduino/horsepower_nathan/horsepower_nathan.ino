@@ -16,27 +16,21 @@ void setup()
   Wire.setClock(400000);                 // Use 400 kHz I2C
   sensor.setTimeout(500);                // Timeout for sensor operations (in ms)
 
-  Serial.println(String(SENSOR_DISCONNECT) + " " + lang);//print 200ms = 0.5HP if the sensor is disconect
+  Serial.println(String(0.5) + " " + String(deltaTime) + " " + lang);//sensor disconnect
 
   // Initialize the VL53L1X sensor
   if (!sensor.init())
   {
-    Serial.println("ERROR Sensor initialization failed!");
     while (1); // Stay here if sensor initialization fails
   }
 
-  // Uncomment for Long distance mode if needed
-  // sensor.setDistanceMode(VL53L1X::Long);
-
-  // Set distance measurement mode to Medium
-  sensor.setDistanceMode(VL53L1X::Medium);
-
-  // Set the timing budget (time per measurement in microseconds).
-  // 30000 µs = 30 ms
-  sensor.setMeasurementTimingBudget(30000);
-
-  // Start continuous measurements every 30 ms
-  sensor.startContinuous(30);
+  
+  sensor.setDistanceMode(VL53L1X::Medium);// Set distance measurement mode to Medium
+  sensor.setROISize(4,4);//set minimum Range Of Interest 16x16 to 4x4
+  //sensor.setROICenter(136);//Y=8,X=8--> = 1000 1000 = 136 to center the ROI in the middle
+  sensor.setMeasurementTimingBudget(30000); // Set the timing budget (time per measurement in microseconds).
+  sensor.startContinuous(30); // Start continuous measurements every 30 ms
+  //read_ROI_XY_and_ROI_center();
 
   // Read and set the initial distance (this will be our baseline)
   initialDistance = read_average_distance();
@@ -45,9 +39,8 @@ void setup()
   minDistance = initialDistance - THRESHOLD;
 
   // Print the initial horsepower and current language index to Serial
-  //Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
-  Serial.println(String(RST_DELTA_TIME) + " " + lang);
-
+  Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
+   
   // Enable the watchdog timer with a 4-second timeout
   wdt_enable(WDTO_4S);
 }
@@ -69,8 +62,7 @@ void loop()
     lang = (lang >= 2) ? 0 : (lang + 1);
 
     // Print updated horsepower and language index
-    //Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
-    Serial.println(String(deltaTime) + " " + lang);
+     Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   }
 
   // Read the current distance from the sensor
@@ -113,8 +105,7 @@ void loop()
       bouncingBallTimer = millis();   // Record when cooldown started
 
       // Print the computed horsepower and current language index
-      //Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
-      Serial.println(String(deltaTime) + " " + lang);
+      Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
     }
 
     // If it takes too long (exceeding MEAS_RST_MS), reset the measurement
@@ -122,9 +113,12 @@ void loop()
     {
       Lift_in_motion = false;   // Stop the lift
       first_try = false;        // Indicate a full reset
-      horsepower = 0;           // reset to 0
-      //Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
-      Serial.println(String(RST_DELTA_TIME) + " " + lang);
+      horsepower = 0;
+      startTime = 0;
+      meas_Tmr_rst = 0;
+      bouncingBallTimer = 0;
+      deltaTime = 0;
+      Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
     }
   }
 
@@ -138,7 +132,10 @@ void loop()
   {
     first_try = false;    // Ready for next measurement
     horsepower = 0;       // Reset horsepower to 0
-    //Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
-    Serial.println(String(RST_DELTA_TIME) + " " + lang);
+    startTime = 0;
+    meas_Tmr_rst = 0;
+    bouncingBallTimer = 0;
+    deltaTime = 0;           // reset to 0
+    Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   }
 }

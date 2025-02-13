@@ -47,27 +47,23 @@ def display_measure(screen, language=HEBREW, horsepower=MIN_HORSEPOWER,deltatime
     :param screen: the screen to display the measurement screen on
     :param language: the language to display the measurement screen in
     """
-    deltatime_text = 0
-    horsepower_text = 0
+    horsepower_text_pos = HORSEPOWER_TEXT_POS
+    deltatime_text_pos = TIME_TEXT_POS
 
     if language == HEBREW:
         screen.blit(measure_heb, (0,0))
-        horsepower_text = HORSEPOWER_TEXT_POS
-        deltatime_text = TIME_TEXT_POS
 
     elif language == ENGLISH:
         screen.blit(measure_eng, (0,0))
-        horsepower_text = HORSEPOWER_TEXT_POS_ENG
-        deltatime_text = TIME_TEXT_POS_ENG
+        horsepower_text_pos = HORSEPOWER_TEXT_POS_ENG
+        deltatime_text_pos = TIME_TEXT_POS_ENG
 
     elif language == ARABIC:
         screen.blit(measure_arb, (0,0))
-        horsepower_text = HORSEPOWER_TEXT_POS
-        deltatime_text = TIME_TEXT_POS
 
     screen.blit(horse_empty, (0,0))
     display_bars(screen, horsepower)
-    display_text_values(screen, horsepower,deltatime,horsepower_text,deltatime_text)
+    display_text_values(screen, horsepower,deltatime,horsepower_text_pos,deltatime_text_pos)
 
 
 def display_bars(screen, horsepower=MIN_HORSEPOWER):
@@ -99,7 +95,7 @@ def display_bars(screen, horsepower=MIN_HORSEPOWER):
     display_bar_from_values(screen, horsepower, MAX_HORSEPOWER, MIN_HORSEPOWER, bar_full_horsepower)
 
 
-def display_text_values(screen, horsepower=MIN_HORSEPOWER, deltatime=0, horsepower_text=HORSEPOWER_TEXT_POS, deltatime_text=TIME_TEXT_POS):
+def display_text_values(screen, horsepower=MIN_HORSEPOWER, deltatime=0, horsepower_text_pos=HORSEPOWER_TEXT_POS, deltatime_text_pos=TIME_TEXT_POS):
     """
     Display the text values on the screen
     :param screen: the screen to display the text values on
@@ -119,5 +115,5 @@ def display_text_values(screen, horsepower=MIN_HORSEPOWER, deltatime=0, horsepow
         screen.blit(text, text_rect)
 
 
-    display_text(screen,horsepower, horsepower_text, TEXT_SIZE, TEXT_COLOR)
-    display_text(screen, deltatime, deltatime_text, TEXT_SIZE, TEXT_COLOR)
+    display_text(screen,horsepower, horsepower_text_pos, TEXT_SIZE, TEXT_COLOR)
+    display_text(screen, deltatime, deltatime_text_pos, TEXT_SIZE, TEXT_COLOR)

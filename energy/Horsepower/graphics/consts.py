@@ -106,4 +106,4 @@ WHITE = (255,255,255)
 TEXT_COLOR = BLACK
 
 # sizes - dont ask about the magic numbers
-TEXT_SIZE = int(40 * VIEW_PORT[0] / 1080)
+TEXT_SIZE = int(50 * VIEW_PORT[0] / 1080)

@@ -51,4 +51,9 @@ bool PRESS_BUTTON_LANG()
   return false;                 // Otherwise, no valid press-release detected
 }
 
+void read_ROI_XY_and_ROI_center(){
+  uint8_t x = sensor.readReg(0x0080);
+  uint8_t y = sensor.readReg(0x007F);
+  Serial.println("read ROI coordinate: " + String(x) + " read center ROI: " + String(y));
+}
 #endif
