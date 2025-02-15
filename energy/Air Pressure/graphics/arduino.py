@@ -1,6 +1,6 @@
 """
 Filename: arduino.py
-Purpose: Arduino functions for the Jumping Ring UI
+Purpose: Arduino functions for the Air Pressure UI
 """
 
 import serial
@@ -94,14 +94,14 @@ def parse_data(raw_data, logger=None):
     try:
         data = raw_data.split(" ")
 
-        voltage_value = max(min(float(data[0]), MAX_VOLTAGE), MIN_VOLTAGE)
-        voltage_analogread_value = int(data[1])
+        PressureValue = max(min(float(data[0]), MAX_PRESSURE_VALUE), MIN_PRESSURE_VALUE)
+        Sensor_analogread = int(data[1])
         language_value = int(data[2])
 
         if hasattr(parse_data, "already_sent_error"):
             parse_data.already_sent_error = False
             
-        return voltage_value, voltage_analogread_value, language_value, PARSE_VALID
+        return PressureValue, Sensor_analogread, language_value, PARSE_VALID
     
     except:
         if logger:
@@ -114,6 +114,6 @@ def parse_data(raw_data, logger=None):
                 print(f"Error parsing data: {raw_data}")
                 parse_data.already_sent_error = True
 
-        return 0, 0, 0, PARSE_ERROR  # default values for voltage, voltage_analogread, language
+        return 0, 0, 0, PARSE_ERROR  # default values for Pressure Value, Sensor_analogread, language
 
 

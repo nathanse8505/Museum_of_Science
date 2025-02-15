@@ -12,17 +12,17 @@
  *                 RXD-|       |-Gnd
  *                 RST-|       |-RST
  *                 GND-|       |-+5V
- *   LANG_BUTTON_IO D2-|       |-A7  pot 2/R2
- *            BCD_A D3-|       |-A6  pot 1/R1
- *            BCD_B D4-|       |-A5 ,SCL (to Display)
- *            BCD_C D5-|       |-A4 ,SDA (to Display)
- *            BCD_D D6-|       |-A3, SENS_3
- *           LE_100 D7-|       |-A2, SENS_2
- *            LE_10 D8-|       |-A1, SENS_1
- *             LE_1 D9-|       |-A0, SENS_0   MPXV5010GP pressure sensor
- *          PWM_10 D10-|       |-Ref
- *          PWM_11 D11-|       |-3.3V
- *           DP100 D12-|       |-D13 DP10
+ *   LANG_BUTTON_IO D2-|       |-A7  
+ *            BCD_A D3-|       |-A6  
+ *            BCD_B D4-|       |-A5,
+ *            BCD_C D5-|       |-A4,
+ *            BCD_D D6-|       |-A3, 
+ *           LE_100 D7-|       |-A2, MPXV5010GP pressure sensor
+ *            LE_10 D8-|       |-A1, 
+ *             LE_1 D9-|       |-A0,  
+ *                 D10-|       |-Ref
+ *                 D11-|       |-3.3V
+ * DP100(not used) D12-|       |-D13 DP10 (not used)
  *                      --USB--
  */
 
@@ -32,7 +32,7 @@ const int MIN_NUM_TO_DISPLAY  = 0 ; //the minimum number to display
 /********************************/
 // see for sensor parameter See https://cfsensor.com/wp-content/uploads/2022/11/XGZP6847A-Pressure-Sensor-V2.5.pdf
 // we (probably..) use 0-100KP
-int const Min_Pres_V = 150; //shuld be 246 theoretical for  1.2Volt ) 10 bit A2D
+int const Min_Pres_V = 150; //should be 246 theoretical for  1.2Volt ) 10 bit A2D
 int const Max_Pres_V = 510; // 4.7Volt  10 bit A2D
 int const Min_Pres_P = 0; // 0 Kilopascal
 int const Max_Pres_P = 15; // 11K pascal

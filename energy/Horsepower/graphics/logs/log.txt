@@ -227,3 +227,5 @@
 2025-02-12_17:39:02 - your horsepower is: 0.45
 2025-02-12_17:39:11 - your horsepower is: 0.2
 2025-02-12_17:39:18 - your horsepower is: 0.45
+2025-02-14_14:43:17 - Starting Horse Power UI
+2025-02-14_14:43:17 - Error: Arduino not found

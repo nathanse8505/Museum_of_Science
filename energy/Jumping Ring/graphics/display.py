@@ -86,15 +86,3 @@ def display_text_values(screen, voltage=MIN_VOLTAGE, charge=MIN_CHARGE, energy=M
     display_text(screen, voltage, VOLTAGE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
     display_text(screen, charge, CHARGE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
     display_text(screen, energy, ENERGY_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
-
-
-class VoltageMonitor:
-    def __init__(self, noise_threshold=10):
-        self.previous_voltage = 0
-        self.noise_threshold = noise_threshold
-
-    def detect_drop(self, voltage ,logger):
-        #print(f"Voltage: {voltage}V")
-        if self.previous_voltage > voltage + self.noise_threshold and voltage < VOLTAGE_AFTER_DROP:
-            logger.info(f"Ring jumped!")
-        self.previous_voltage = voltage

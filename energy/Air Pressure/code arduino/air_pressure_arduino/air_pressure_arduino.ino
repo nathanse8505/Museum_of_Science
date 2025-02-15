@@ -37,11 +37,12 @@ void loop() {
   // Serial.print("Original analog value: ");
   // Serial.println(SensorValue);
   Pressure_Value = map(SensorValue, Min_Pres_V, Max_Pres_V, Min_Pres_P, Max_Pres_P);
+////////////////for 7seg/////////////
   Number_To_Display = Pressure_Value;// as only 3 digits
   Number_To_Display = map(Number_To_Display, 0, 1024, 0, 999);
   Number_To_Display = max(Number_To_Display, 0);
-
+//////////////////////////////////////////////////////
   Display_full_Number(Number_To_Display);
-  Serial.println(String(Number_To_Display) + " " + String(SensorValue) + " " + String(lang));
+  Serial.println(String(Pressure_Value) + " " + String(SensorValue) + " " + String(lang));
   delay (READ_SENSOR_RATE);
 }

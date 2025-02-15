@@ -1,6 +1,6 @@
 """
 Filename: logs.py
-Purpose: Logging functions for the Jumping Ring UI
+Purpose: Logging functions for the Air Pressure UI
 """
 import logging
 from logging.handlers import RotatingFileHandler

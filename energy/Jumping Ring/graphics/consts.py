@@ -11,6 +11,8 @@ FPS = 100
 BAUDRATE = 115200
 SERIAL_ERROR = -1
 RECONNECT_INTERVAL = 1  # seconds
+PARSE_ERROR = 1
+PARSE_VALID = 0
 
 # voltage, charge, and capacitor values
 MIN_VOLTAGE = 0.0  # in volts
@@ -20,8 +22,9 @@ MAX_CHARGE = 1.645  # in coulombs
 MIN_ENERGY = 0.0  # in joules
 MAX_ENERGY = 250.0  # in joules
 CAPACITANCE = 0.0047  # ~0.00457  # in farads
-NOISE_THRESHOLD = 10 #noise voltage
-VOLTAGE_AFTER_DROP = 10
+NOISE_THRESHOLD = 10  # voltage noise threshold
+MIN_DROP_DISTANCE = 40  # if the voltage drops (from the max it has been in, not neccesarly last measure) by this amount, this is potentially a drop
+VOLTAGE_AFTER_DROP = 10  # voltage below this value is considered for a drop
 
 # languages
 HEBREW = 0
@@ -71,16 +74,15 @@ bar_full_charge = pygame.transform.scale(bar_full_charge, VIEW_PORT)
 bar_full_voltage = pygame.transform.scale(bar_full_voltage, VIEW_PORT)
 
 # positions - dont ask about the magic numbers
-ENERGY_TEXT_POS = (int(2 / 11 * VIEW_PORT[0]), int(0.725 * VIEW_PORT[1]))  # the position of the energy text on the screen
+ENERGY_TEXT_POS = (int(2 / 11.0 * VIEW_PORT[0]), int(0.725 * VIEW_PORT[1]))  # the position of the energy text on the screen
 CHARGE_TEXT_POS = (int(0.5 * VIEW_PORT[0]), int(0.725 * VIEW_PORT[1]))  # the position of the charge text on the screen
 VOLTAGE_TEXT_POS = (int(9 / 11 * VIEW_PORT[0]), int(0.725 * VIEW_PORT[1]))  # the position of the voltage text on the screen
-BAR_GRAPH_BOTTOM_HEIGHT = int(0.665 * VIEW_PORT[1])  # the bottom of the bar graphs (same for all 3)
+BAR_GRAPH_BOTTOM_HEIGHT = int(0.668 * VIEW_PORT[1])  # the bottom of the bar graphs (same for all 3)
 
 # colors
 BLACK = (0, 0, 0)
-WHITE = (255,255,255)
 TEXT_COLOR = BLACK
 
 # sizes - dont ask about the magic numbers
 TEXT_SIZE = int(50 * VIEW_PORT[0] / 1080)
-BAR_SIZE = (int(187 * VIEW_PORT[0] / 1080), int(540 * VIEW_PORT[1] / 1920))
+BAR_SIZE = (int(781 * VIEW_PORT[0] / 4500), int(540 * VIEW_PORT[1] / 1920))

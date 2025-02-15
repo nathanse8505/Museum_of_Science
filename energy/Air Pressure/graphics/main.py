@@ -1,6 +1,6 @@
 """
 File: main.py
-Purpose: Main file for the Jumping Ring UI
+Purpose: Main file for the Air Pressure UI
 """
 import pygame
 import time
@@ -22,7 +22,7 @@ def main():
 
     # initial values for the UI
     language = HEBREW
-    voltage = MIN_VOLTAGE
+    pressure_value = MIN_PRESSURE_VALUE
     state = MEASURE
     drop_detector = DropDetector()
 
@@ -49,10 +49,15 @@ def main():
                     language = (language + 1) % len(LANGUAGES)  # toggle language
                     
                 if event.key == pygame.K_UP:
-                    voltage = min(voltage + 5, MAX_VOLTAGE)
+                    pressure_value = min(pressure_value + 5, MAX_PRESSURE_VALUE)
+
 
                 if event.key == pygame.K_DOWN:
-                    voltage = max(voltage - 5, MIN_VOLTAGE)
+                    pressure_value = max(pressure_value - 5, MIN_P_ATM)
+
+
+                if event.key == pygame.K_RETURN:
+                    state = (state + 1) % len(STATES)  # toggle state from OPENING to MEASURE
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
@@ -61,7 +66,7 @@ def main():
 
             ser = None
             language = HEBREW
-            voltage = 0.0
+            pressure_value = MIN_PRESSURE_VALUE
             state = MEASURE
 
         # if arduino was connecetd at start, but now failed to read, try to reconnect
@@ -72,14 +77,14 @@ def main():
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            voltage, voltage_analogread, language, error = parse_data(data_from_arduino, logger=logger)
+            pressure_value, voltage_analogread, language, error = parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: voltage {voltage} voltage_analogread {voltage_analogread} language {language}")
             
             if not error:
-                drop_detector.detect_drop(voltage, logger=logger)  # detect if there was a drop in voltage
+                drop_detector.detect_drop(pressure_value, logger=logger)  # detect if there was a drop in voltage
 
         screen.fill(BLACK)  # reset screen
-        display_state(screen, state=state, language=language, voltage=voltage)  # render the screen
+        display_state(screen, state=state, language=language, pressure_value=pressure_value)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
 
