@@ -21,6 +21,7 @@ def main():
 
     # initial values for the UI
     language = HEBREW
+    previous_language = HEBREW
     charge = 0.0
     current = 0.0
     state = OPENING
@@ -84,15 +85,18 @@ def main():
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            current, charge, has_ignited, language = parse_data(data_from_arduino, logger=logger)
+            current, charge, has_ignited, language ,error= parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: current {current} charge {charge} has_ignited {has_ignited} language {language}")
-            
-            if has_ignited:
-                logger.info(f"Rocket has ignited!")
-                print("Rocket has ignited!")
+            if not error:
+                if has_ignited:
+                    logger.info(f"Rocket has ignited!")
+                    print("Rocket has ignited!")
+                if language != previous_language:
+                    logger.info(f"your language is: {dic_lang.get(language)}")
+                    previous_language = language
+
 
             state = MEASURE if current >= SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD else OPENING  # if you got data, change the screen automatically based on the current value
-
 
         screen.fill((0,0,0))  # reset screen
         display_state(screen, state=state, language=language, charge=charge, current=current)  # render the screen

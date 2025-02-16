@@ -12,11 +12,18 @@ BAUDRATE = 115200
 SERIAL_ERROR = -1
 RECONNECT_INTERVAL = 1  # seconds
 
+PARSE_VALID = 0
+PARSE_ERROR = 1
+
 # languages
 HEBREW = 0
 ENGLISH = 1
 ARABIC = 2
 LANGUAGES = [HEBREW, ENGLISH, ARABIC]
+dic_lang = {HEBREW:"hebrew",
+            ENGLISH:"english",
+            ARABIC:"arabic"}
+
 
 #states
 OPENING = 0

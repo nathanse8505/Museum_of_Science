@@ -12,6 +12,8 @@ BAUDRATE = 115200
 SERIAL_ERROR = -1
 RECONNECT_INTERVAL = 1  # seconds
 SWITCH_TO_MEASURE_SCREEN = 0  # above this current value, the screen will switch to the measure screen
+PARSE_VALID = 0
+PARSE_ERROR = 1
 
 # voltage, charge, and capacitor values
 MIN_HORSEPOWER = 0.0  # in HP
@@ -25,6 +27,9 @@ HEBREW = 0
 ENGLISH = 1
 ARABIC = 2
 LANGUAGES = [HEBREW, ENGLISH, ARABIC]
+dic_lang = {HEBREW:"hebrew",
+            ENGLISH:"english",
+            ARABIC:"arabic"}
 
 #state
 OPENING = 0
@@ -55,7 +60,6 @@ OPEN_ARB = os.path.join(PICTURES, "0_arb.png")
 MEASURE_HEB = os.path.join(PICTURES, "1_heb.png")
 MEASURE_ENG = os.path.join(PICTURES, "1_eng.png")
 MEASURE_ARB = os.path.join(PICTURES, "1_arb.png")
-HORSE_EMPTY = os.path.join(PICTURES, "horse_empty.png")
 BAR_FULL_HORSEPOWER = os.path.join(PICTURES, "horse_full.png")
 
 BALL_FRAMES_PATHS = [
@@ -73,7 +77,6 @@ open_arb = pygame.image.load(OPEN_ARB)
 measure_heb = pygame.image.load(MEASURE_HEB)
 measure_eng = pygame.image.load(MEASURE_ENG)
 measure_arb = pygame.image.load(MEASURE_ARB)
-horse_empty = pygame.image.load(HORSE_EMPTY)
 bar_full_horsepower = pygame.image.load(BAR_FULL_HORSEPOWER)
 images_balls = [pygame.image.load(img) for img in BALL_FRAMES_PATHS]
 
@@ -85,8 +88,7 @@ open_arb = pygame.transform.scale(open_arb,VIEW_PORT)
 measure_heb = pygame.transform.scale(measure_heb, VIEW_PORT)
 measure_eng = pygame.transform.scale(measure_eng, VIEW_PORT)
 measure_arb = pygame.transform.scale(measure_arb,VIEW_PORT)
-horse_empty = pygame.transform.scale(horse_empty,VIEW_PORT)
-bar_full_horsepower = pygame.transform.scale(bar_full_horsepower,(int(960 * VIEW_PORT[0] / 1338), int(430*VIEW_PORT[1])/1190))
+bar_full_horsepower = pygame.transform.scale(bar_full_horsepower,VIEW_PORT)
 images_balls = [pygame.transform.scale(img, (BALL_WIDTH, BALL_HEIGHT)) for img in images_balls]
 
 # positions - dont ask about the magic numbers
@@ -94,8 +96,9 @@ HORSEPOWER_TEXT_POS = (int(0.265 * VIEW_PORT[0]), int(0.517 * VIEW_PORT[1]))  # 
 TIME_TEXT_POS = (int(0.265 * VIEW_PORT[0]), int(0.405 * VIEW_PORT[1]))  # the position of the time text on the screen
 HORSEPOWER_TEXT_POS_ENG = (int(0.78 * VIEW_PORT[0]), int(0.517 * VIEW_PORT[1]))  # the position of the horsepower text on the screen
 TIME_TEXT_POS_ENG = (int(0.78 * VIEW_PORT[0]), int(0.405 * VIEW_PORT[1]))  # the position of the time text on the screen
-HORSE_GRAPH_BOTTOM_HEIGHT = int(1150 * VIEW_PORT[1])/1190 # the bottom of the bar graphs (same for all 3)
-HORSE_GRAPH_SHIFT = int(185 * VIEW_PORT[0])/1338 # the bottom of the bar graphs (same for all 3)
+HORSE_GRAPH_BOTTOM_HEIGHT = VIEW_PORT[1] # the bottom of the bar graphs (same for all 3)
+HORSE_GRAPH_SHIFT = 0 # the bottom of the bar graphs (same for all 3)
+HORSE_FULL_SIZE = int(0.39*VIEW_PORT[1])
 # height and position of the animation ball
 BALL_CENTER_X = (VIEW_PORT[0] - BALL_WIDTH) // 2
 BALL_CENTER_Y = (VIEW_PORT[1] - BALL_HEIGHT) // 1.7

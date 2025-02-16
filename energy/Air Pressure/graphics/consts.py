@@ -40,6 +40,9 @@ HEBREW = 0
 ENGLISH = 1
 ARABIC = 2
 LANGUAGES = [HEBREW, ENGLISH, ARABIC]
+dic_lang = {HEBREW:"hebrew",
+            ENGLISH:"english",
+            ARABIC:"arabic"}
 
 #states (only one state for this project)
 MEASURE = 1
@@ -67,6 +70,7 @@ MEASURE_ENG = os.path.join(PICTURES, "1_eng.png")
 MEASURE_ARB = os.path.join(PICTURES, "1_arb.png")
 BAR_FULL_ENERGY = os.path.join(PICTURES, "bar_full_left.png")
 BAR_FULL_CALORIE = os.path.join(PICTURES, "bar_full_right.png")
+NIDDLE = os.path.join(PICTURES,"1_niddle.png")
 
 
 # load the pictures
@@ -78,6 +82,7 @@ measure_eng = pygame.image.load(MEASURE_ENG)
 measure_arb = pygame.image.load(MEASURE_ARB)
 bar_full_energy = pygame.image.load(BAR_FULL_ENERGY)
 bar_full_calorie = pygame.image.load(BAR_FULL_CALORIE)
+niddle = pygame.image.load(NIDDLE)
 
 
 
@@ -90,15 +95,19 @@ measure_eng = pygame.transform.scale(measure_eng, VIEW_PORT)
 measure_arb = pygame.transform.scale(measure_arb, VIEW_PORT)
 bar_full_energy = pygame.transform.scale(bar_full_energy, VIEW_PORT)
 bar_full_calorie = pygame.transform.scale(bar_full_calorie, VIEW_PORT)
+niddle = pygame.transform.scale(niddle, (int(niddle.get_size()[0] * VIEW_PORT[0] / 1080),
+                                         int(niddle.get_size()[1] * VIEW_PORT[1] / 1920)))
 
 
 # positions - dont ask about the magic numbers
 ENERGY_TEXT_POS = (int(3.7 / 11.0 * VIEW_PORT[0]), int(0.935 * VIEW_PORT[1]))  # the position of the energy text on the screen
 CALORIE_TEXT_POS = (int(7.32/11 * VIEW_PORT[0]), int(0.935 * VIEW_PORT[1]))  # the position of the charge text on the screen
 P_ATM_TEXT_POS = (int(0.5 * VIEW_PORT[0]), int(0.5 * VIEW_PORT[1]))  # the position of the voltage text on the screen
+NIDDLE_POS = (int(0.5 * VIEW_PORT[0]), int(0.45 * VIEW_PORT[1]))  # the position of the niddle on the screen
 
-BAR_GRAPH_BOTTOM_HEIGHT = int(1.25*VIEW_PORT[1]) # the bottom of the bar graphs (same for all 2)
+BAR_GRAPH_BOTTOM_HEIGHT = int(VIEW_PORT[1]) # the bottom of the bar graphs (same for all 2)
 BAR_GRAPH_SHIFT = 0
+BAR_SIZE = 0.95*VIEW_PORT[1]
 
 # colors
 BLACK = (0, 0, 0)

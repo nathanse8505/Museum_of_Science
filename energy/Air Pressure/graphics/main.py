@@ -22,6 +22,7 @@ def main():
 
     # initial values for the UI
     language = HEBREW
+    previous_language = HEBREW
     pressure_value = MIN_PRESSURE_VALUE
     state = MEASURE
     drop_detector = DropDetector()
@@ -82,6 +83,9 @@ def main():
             
             if not error:
                 drop_detector.detect_drop(pressure_value, logger=logger)  # detect if there was a drop in voltage
+                if language != previous_language:
+                    logger.info(f"your language is: {dic_lang.get(language)}")
+                    previous_language = language
 
         screen.fill(BLACK)  # reset screen
         display_state(screen, state=state, language=language, pressure_value=pressure_value)  # render the screen

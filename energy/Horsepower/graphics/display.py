@@ -61,7 +61,6 @@ def display_measure(screen, language=HEBREW, horsepower=MIN_HORSEPOWER,deltatime
     elif language == ARABIC:
         screen.blit(measure_arb, (0,0))
 
-    screen.blit(horse_empty, (0,0))
     display_bars(screen, horsepower)
     display_text_values(screen, horsepower,deltatime,horsepower_text_pos,deltatime_text_pos)
 
@@ -82,9 +81,11 @@ def display_bars(screen, horsepower=MIN_HORSEPOWER):
         bar_width = bar_image.get_width()
         bar_height = bar_image.get_height()
 
-        fill_height = int((value - min) / (max - min) * bar_height)
+
+        fill_height = int((value - min) / (max - min) * HORSE_FULL_SIZE)
         crop_rect = pygame.Rect(0, bar_height - fill_height, bar_width, fill_height)
         cropped_bar = bar_image.subsurface(crop_rect).copy()
+
         pos_x = HORSE_GRAPH_SHIFT
         pos_y = int(HORSE_GRAPH_BOTTOM_HEIGHT - fill_height)
 

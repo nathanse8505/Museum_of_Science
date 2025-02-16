@@ -21,6 +21,7 @@ def main():
 
     # initial values for the UI
     language = HEBREW
+    previous_language =HEBREW
     horsepower = MIN_HORSEPOWER
     deltatime = 0
     state = MEASURE
@@ -50,10 +51,10 @@ def main():
                     language = (language + 1) % len(LANGUAGES)  # toggle language
                     
                 if event.key == pygame.K_UP:
-                    horsepower = min(horsepower + 0.1, MAX_HORSEPOWER)
+                    horsepower = min(horsepower + 0.03, MAX_HORSEPOWER)
 
                 if event.key == pygame.K_DOWN:
-                    horsepower = max(horsepower - 0.1, MIN_HORSEPOWER)
+                    horsepower = max(horsepower - 0.03, MIN_HORSEPOWER)
 
                 if event.key == pygame.K_RIGHT:
                     deltatime = min(deltatime + 0.3, MAX_DELTATIME)
@@ -84,16 +85,13 @@ def main():
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            horsepower, deltatime, language = parse_data(data_from_arduino, logger=logger)
-            deltatime = deltatime/1000
-            if check_horse_power and horsepower != 0:
-                #print(f"your horsepower is: {horsepower} in {deltatime} second")
-                logger.info(f"your horsepower is: {horsepower}")
-                check_horse_power = False
-            elif horsepower == 0:
-                check_horse_power = True
+            horsepower, deltatime, language,error = parse_data(data_from_arduino, logger=logger)
+            if not error:
+                deltatime = deltatime/1000
+                check_horse_power,previous_language=log_horsepower(logger,horsepower, check_horse_power, language, previous_language)
             # print(f"parsed: voltage {voltage} has_ignited {has_ignited} language {language}")
             state = MEASURE if horsepower > SWITCH_TO_MEASURE_SCREEN else OPENING
+
 
         current_time = pygame.time.get_ticks()
         if state == OPENING and (current_time - last_update) >= DELAY_FRAME_BALL:

@@ -16,11 +16,12 @@ def get_logger():
     os.makedirs(LOG_FOLDER, exist_ok=True)  # create the logs folder if it doesn't exist
     log_file = os.path.join(LOG_FOLDER, "log.txt")
 
+
     # Configure the logging
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(message)s",  # Format: [TIME] - [MESSAGE]
-        datefmt="%Y-%m-%d_%H:%M:%S",
+        datefmt="%Y-%m-%d %H:%M:%S",
         handlers=[
             RotatingFileHandler(
                 log_file, mode="a", maxBytes=MAX_SIZE_PER_LOG_FILE, backupCount=BACKUP_COUNT

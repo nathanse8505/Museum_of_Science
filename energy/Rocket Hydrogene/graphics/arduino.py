@@ -100,7 +100,7 @@ def parse_data(raw_data, logger=None):
         if hasattr(parse_data, "already_sent_error"):
             parse_data.already_sent_error = False
             
-        return current_value, charge_value, has_ignited_value, language_value
+        return current_value, charge_value, has_ignited_value, language_value,PARSE_VALID
 
     except:        
         if logger:
@@ -113,4 +113,4 @@ def parse_data(raw_data, logger=None):
                 print(f"Error parsing data: {raw_data}")
                 parse_data.already_sent_error = True
         
-        return 0, 0, 0, 0
+        return 0, 0, 0, 0,PARSE_ERROR

@@ -57,6 +57,7 @@ def display_measure(screen, language=HEBREW, pressure_value=MIN_PRESSURE_VALUE):
     calorie = max(min(energy / ENERGY_TO_CAL,MAX_CALORIE),MIN_CALORIE)
 
     display_bars(screen, calorie, energy)
+    display_rotated_niddle(screen, Patm)
     display_text_values(screen, Patm, calorie, energy)
 
 
@@ -77,7 +78,7 @@ def display_bars(screen, calorie=MIN_CALORIE, energy=MIN_ENERGY):
         bar_width = bar_image.get_width()
         bar_height = bar_image.get_height()
 
-        fill_height = int((value - min) / (max - min) * bar_height)
+        fill_height = int((value - min) / (max - min) * BAR_SIZE)
         crop_rect = pygame.Rect(0, bar_height - fill_height, bar_width, fill_height)
         cropped_bar = bar_image.subsurface(crop_rect).copy()
         pos_x = BAR_GRAPH_SHIFT
@@ -112,6 +113,16 @@ def display_text_values(screen, Patm=MIN_P_ATM, calorie=MIN_CALORIE, energy=MIN_
     display_text(screen, calorie, CALORIE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
     display_text(screen, energy, ENERGY_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
 
+def display_rotated_niddle(screen, Patm):
+    """
+    Display the rotated niddle based on the current value
+    :param screen: the screen to display the bar on
+    :param current: the current value
+    """
+    angle = 180 * (Patm - MIN_P_ATM) / (MAX_P_ATM - MIN_P_ATM)
+    rotated_niddle = pygame.transform.rotate(niddle, -angle)
+    rect = rotated_niddle.get_rect(center=NIDDLE_POS)
+    screen.blit(rotated_niddle, rect.topleft)
 
 def calculate_work(pressure_value):
     # Calculate the number of moles of air added

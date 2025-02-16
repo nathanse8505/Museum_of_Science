@@ -5,7 +5,7 @@ Purpose: Logging functions for the Horse Power UI
 import logging
 from logging.handlers import RotatingFileHandler
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER
+from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER,dic_lang
 
 
 def get_logger():
@@ -20,7 +20,7 @@ def get_logger():
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(message)s",  # Format: [TIME] - [MESSAGE]
-        datefmt="%Y-%m-%d_%H:%M:%S",
+        datefmt="%Y-%m-%d %H:%M:%S",
         handlers=[
             RotatingFileHandler(
                 log_file, mode="a", maxBytes=MAX_SIZE_PER_LOG_FILE, backupCount=BACKUP_COUNT
@@ -30,3 +30,16 @@ def get_logger():
 
     logger = logging.getLogger()  # get the logger
     return logger
+
+def log_horsepower(logger,horsepower,check_horse_power,language,previous_language):
+    if check_horse_power and horsepower != 0 and horsepower != 0.5:
+        # print(f"your horsepower is: {horsepower} in {deltatime} second")
+        logger.info(f"your horsepower is: {horsepower}")
+        check_horse_power = False
+    elif horsepower == 0:
+        check_horse_power = True
+
+    if language != previous_language:
+        logger.info(f"your language is: {dic_lang.get(language)}")
+        previous_language = language
+    return check_horse_power, previous_language

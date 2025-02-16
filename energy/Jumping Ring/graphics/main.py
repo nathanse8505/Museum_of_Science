@@ -22,6 +22,7 @@ def main():
 
     # initial values for the UI
     language = HEBREW
+    previous_language = HEBREW
     voltage = MIN_VOLTAGE
     state = MEASURE
     drop_detector = DropDetector()
@@ -74,9 +75,14 @@ def main():
             # print(data_from_arduino)
             voltage, voltage_analogread, language, error = parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: voltage {voltage} voltage_analogread {voltage_analogread} language {language}")
-            
+
             if not error:
                 drop_detector.detect_drop(voltage, logger=logger)  # detect if there was a drop in voltage
+
+                if language != previous_language:
+                    logger.info(f"your language is: {dic_lang.get(language)}")
+                    previous_language = language
+
 
         screen.fill(BLACK)  # reset screen
         display_state(screen, state=state, language=language, voltage=voltage)  # render the screen

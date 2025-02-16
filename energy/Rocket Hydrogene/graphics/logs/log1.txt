@@ -1,0 +1,59 @@
+2025-02-10_14:19:38 - Starting Hydrogen Rocket UI
+2025-02-10_14:19:38 - Found Arduino! port: /dev/ttyUSB0
+2025-02-10_14:19:38 - Connected to /dev/ttyUSB0
+2025-02-10_14:21:39 - Rocket has ignited!
+2025-02-10_14:22:20 - Rocket has ignited!
+2025-02-10_14:22:34 - Rocket has ignited!
+2025-02-10_14:22:55 - Rocket has ignited!
+2025-02-10_14:23:51 - Rocket has ignited!
+2025-02-10_14:24:16 - Rocket has ignited!
+2025-02-10_14:25:50 - Rocket has ignited!
+2025-02-10_14:26:15 - Rocket has ignited!
+2025-02-10_14:28:34 - Rocket has ignited!
+2025-02-10_14:40:04 - Rocket has ignited!
+2025-02-10_15:13:46 - Rocket has ignited!
+2025-02-10_15:15:42 - Rocket has ignited!
+2025-02-10_15:16:48 - Rocket has ignited!
+2025-02-10_15:18:22 - Rocket has ignited!
+2025-02-10_15:48:41 - Rocket has ignited!
+2025-02-10_15:49:12 - Rocket has ignited!
+2025-02-10_15:49:59 - Rocket has ignited!
+2025-02-10_15:53:20 - Rocket has ignited!
+2025-02-10_15:53:58 - Rocket has ignited!
+2025-02-10_15:54:32 - Rocket has ignited!
+2025-02-10_16:13:10 - Rocket has ignited!
+2025-02-10_16:33:02 - Starting Hydrogen Rocket UI
+2025-02-10_16:33:02 - Found Arduino! port: /dev/ttyUSB0
+2025-02-10_16:33:02 - Connected to /dev/ttyUSB0
+2025-02-10_16:43:11 - Rocket has ignited!
+2025-02-10_17:33:36 - Rocket has ignited!
+2025-02-10_18:01:38 - Starting Hydrogen Rocket UI
+2025-02-10_18:01:38 - Found Arduino! port: /dev/ttyUSB0
+2025-02-10_18:01:38 - Connected to /dev/ttyUSB0
+2025-02-10_22:27:38 - Starting Hydrogen Rocket UI
+2025-02-10_22:27:38 - Error: Arduino not found
+2025-02-14_14:32:05 - Starting Hydrogen Rocket UI
+2025-02-14_14:32:05 - Error: Arduino not found
+2025-02-16_17:51:20 - Starting Hydrogen Rocket UI
+2025-02-16_17:51:20 - Error: Arduino not found
+2025-02-16_18:13:18 - Starting Hydrogen Rocket UI
+2025-02-16_18:13:18 - Error: Arduino not found
+2025-02-16 19:31:05 - Starting Hydrogen Rocket UI
+2025-02-16 19:31:05 - Error: Arduino not found
+2025-02-16 19:32:10 - Starting Hydrogen Rocket UI
+2025-02-16 19:32:10 - Error: Arduino not found
+2025-02-16 19:32:10 - your language is: english
+2025-02-16 19:32:11 - your language is: arabic
+2025-02-16 19:32:11 - your language is: hebrew
+2025-02-16 19:32:11 - your language is: english
+2025-02-16 19:32:11 - your language is: arabic
+2025-02-16 19:32:13 - your language is: hebrew
+2025-02-16 19:32:13 - your language is: english
+2025-02-16 19:32:13 - your language is: arabic
+2025-02-16 19:32:13 - your language is: hebrew
+2025-02-16 19:32:46 - Starting Hydrogen Rocket UI
+2025-02-16 19:32:46 - Error: Arduino not found
+2025-02-16 19:32:48 - your language is: english
+2025-02-16 19:32:52 - your language is: arabic
+2025-02-16 20:00:26 - Starting Hydrogen Rocket UI
+2025-02-16 20:00:26 - Error: Arduino not found

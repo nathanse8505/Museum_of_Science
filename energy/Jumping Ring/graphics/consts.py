@@ -31,6 +31,9 @@ HEBREW = 0
 ENGLISH = 1
 ARABIC = 2
 LANGUAGES = [HEBREW, ENGLISH, ARABIC]
+dic_lang = {HEBREW:"hebrew",
+            ENGLISH:"english",
+            ARABIC:"arabic"}
 
 #states (only one state for this project)
 MEASURE = 1

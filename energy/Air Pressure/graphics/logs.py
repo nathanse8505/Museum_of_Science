@@ -20,7 +20,7 @@ def get_logger():
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s - %(message)s",  # Format: [TIME] - [MESSAGE]
-        datefmt="%Y-%m-%d_%H:%M:%S",
+        datefmt="%Y-%m-%d %H:%M:%S",
         handlers=[
             RotatingFileHandler(
                 log_file, mode="a", maxBytes=MAX_SIZE_PER_LOG_FILE, backupCount=BACKUP_COUNT
