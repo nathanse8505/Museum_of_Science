@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/logs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/logs/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/1_arb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/1_arb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/1_eng.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/1_eng.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/1_heb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/1_heb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/bar_full_left.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/bar_full_left.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/bar_full_right.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/pictures/bar_full_right.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/arduino.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/logs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/1_arb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/1_arb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/1_eng.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/1_eng.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/1_heb.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/1_heb.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/horse_full.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/pictures/horse_full.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jumping Ring/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jumping Ring/graphics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/arduino.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/logs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,28 +46,7 @@
       <recent name="C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Horsepower\graphics\logs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="consts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Museum_of_sience_energy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../../horsepower/graphics" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../../horsepower/graphics/consts.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.txt_to_csv">
     <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -201,13 +152,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="txt_to_csv" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Museum_of_sience_energy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Horsepower/graphics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Horsepower/graphics/txt_to_csv.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.txt_to_csv" />
+        <item itemvalue="Python.main (4)" />
         <item itemvalue="Python.main (5)" />
         <item itemvalue="Python.main (3)" />
-        <item itemvalue="Python.main (4)" />
         <item itemvalue="Python.main (2)" />
-        <item itemvalue="Python.consts" />
       </list>
     </recent_temporary>
   </component>
