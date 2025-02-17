@@ -14,7 +14,7 @@ check_and_install() {
     fi
 }
 
-# Check if virtual environment exists, if not, create it
+# Check if the virtual environment exists, if not, create it
 if [ ! -d "$VENV_DIR" ]; then
     echo "Virtual environment not found. Creating a new one..."
     python3 -m venv $VENV_DIR
@@ -30,11 +30,10 @@ source $VENV_DIR/bin/activate
 echo "Upgrading pip..."
 $VENV_DIR/bin/pip install --upgrade pip
 
-# Check and install pygame if necessary
+# Check and install required packages
 check_and_install pygame
-
-# Check and install pyserial if necessary
 check_and_install pyserial
+check_and_install numpy  
 
 # Run the main.py script using the virtual environment's Python interpreter
 echo "Running main.py..."
@@ -42,4 +41,3 @@ $VENV_DIR/bin/python /home/mada/Air_Pressure_py/main.py
 
 # Deactivate the virtual environment after running the script
 deactivate
-

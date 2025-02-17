@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/air_pressure_arduino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/air_pressure_arduino.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/detect_drop.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/detect_drop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/Fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/Fonction.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/consts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/log.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +58,7 @@
       <recent name="C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Horsepower\graphics\logs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.txt_to_csv">
+  <component name="RunManager" selected="Python.main (5)">
     <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,9 +187,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (5)" />
         <item itemvalue="Python.txt_to_csv" />
         <item itemvalue="Python.main (4)" />
-        <item itemvalue="Python.main (5)" />
         <item itemvalue="Python.main (3)" />
         <item itemvalue="Python.main (2)" />
       </list>

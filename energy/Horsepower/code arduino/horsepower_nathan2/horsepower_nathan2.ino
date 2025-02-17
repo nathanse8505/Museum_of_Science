@@ -10,6 +10,7 @@ void setup()
 {
   Serial.begin(BAUDERATE);            // Start serial communication at the specified baud rate
   pinMode(LANG_BUTTON_IO, INPUT_PULLUP); // Configure the language button pin as an input with pull-up
+  pinMode(XSHUT_PIN, OUTPUT);
 
   Wire.begin();                           // Initialize I2C communication
 
@@ -139,10 +140,18 @@ void loop()
     Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   }
 
-if(((millis() - bouncingBallTimer) > SENSOR_FAULTY) && horsepower != 0){
+/*if(((millis() - bouncingBallTimer) > SENSOR_FAULTY) && horsepower != 0){
+  reset_sensor();
   delay(RST_ARDUINO);
-  bouncingBallTimer = 0;
+  
+}*/
+if(!sensor.dataReady()){
+  reset_sensor();
+  delay(RST_ARDUINO);
+  
 }
+
+
 
 }
 

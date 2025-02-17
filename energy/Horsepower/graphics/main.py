@@ -85,11 +85,11 @@ def main():
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            horsepower, deltatime, language,error = parse_data(data_from_arduino, logger=logger)
+            horsepower, deltatime, language, error = parse_data(data_from_arduino, logger=logger)
             if not error:
-                deltatime = deltatime/1000
-                check_horse_power,previous_language=log_horsepower(logger,horsepower, check_horse_power, language, previous_language)
-            # print(f"parsed: voltage {voltage} has_ignited {has_ignited} language {language}")
+                deltatime = deltatime/msec_TO_sec
+                check_horse_power, previous_language = log_horsepower(logger,horsepower, check_horse_power, language, previous_language)
+            # print(f"parsed: horsepower {voltage} deltatime {deltatime} language {language}")
             state = MEASURE if horsepower > SWITCH_TO_MEASURE_SCREEN else OPENING
 
         check_horse_power, previous_language = log_horsepower(logger, horsepower, check_horse_power, language, previous_language)

@@ -33,9 +33,9 @@ const int MIN_NUM_TO_DISPLAY  = 0 ; //the minimum number to display
 // see for sensor parameter See https://cfsensor.com/wp-content/uploads/2022/11/XGZP6847A-Pressure-Sensor-V2.5.pdf
 // we (probably..) use 0-100KP
 int const Min_Pres_V = 100; //should be 246 theoretical for  1.2Volt ) 10 bit A2D
-int const Max_Pres_V = 660; // 4.7Volt  10 bit A2D
+int const Max_Pres_V = 322; // 4.7Volt  10 bit A2D
 int const Min_Pres_P = 0; // 0 Kilopascal
-int const Max_Pres_P = 150; // 150K pascal
+int const Max_Pres_P = 50; // 150K pascal
 
 int SensorValue = 0;  // variable to store the value coming from the sensor
 int Pressure_Value = 0;  // variable to store the calculated pressur (KP)

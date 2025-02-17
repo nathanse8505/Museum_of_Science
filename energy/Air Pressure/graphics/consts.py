@@ -15,25 +15,23 @@ PARSE_ERROR = 1
 PARSE_VALID = 0
 
 # voltage, charge, and capacitor values
-MIN_PRESSURE_VALUE = 0.0  # in KPA
-MAX_PRESSURE_VALUE = 100.0  # in KPA
-MIN_P_ATM = 0.0  # in KPA
-MAX_P_ATM = 1.0  # in KPA
+MIN_PRESSURE_VALUE = 0.0  # in PA
+MAX_PRESSURE_VALUE = 140000.0  # in PA
+MIN_P_ATM = 0.0  # in atm
+MAX_P_ATM = 1.4  # in atm
 MIN_CALORIE = 0.0  # in cal
 MAX_CALORIE = 80.0  # in cal
 MIN_ENERGY = 0.0  # in joules
 MAX_ENERGY = 300.0  # in joules
 
 NOISE_THRESHOLD = 1  # voltage noise threshold
-MIN_DROP_DISTANCE = 0.5  # if the voltage drops (from the max it has been in, not neccesarly last measure) by this amount, this is potentially a drop
-PRESSURE_AFTER_DROP = 0  # voltage below this value is considered for a drop
+MIN_DROP_DISTANCE = 10000  # if the pressure drops (from the max it has been in, not neccesarly last measure) by this amount, this is potentially a drop
+PRESSURE_AFTER_DROP = 50  # pressure in Pa below this value is considered for a drop
 
 ENERGY_TO_CAL = 4.184
-AIR_PRESSURE_TO_P_ATM = 101.325 #in kPA
+ATM_TO_KPa = 101325 #in PA
+kPa_TO_Pa = 1000
 
-R = 8.314  # Ideal gas constant (J/mol·K)
-T = 298  # Ambient temperature (K)
-P_i = 101.325  # Initial pressure (Pa)
 V = 1.5 / 1000  # Volume in m³ (converted from L)
 # languages
 HEBREW = 0
@@ -105,9 +103,9 @@ CALORIE_TEXT_POS = (int(7.32/11 * VIEW_PORT[0]), int(0.935 * VIEW_PORT[1]))  # t
 P_ATM_TEXT_POS = (int(0.5 * VIEW_PORT[0]), int(0.5 * VIEW_PORT[1]))  # the position of the voltage text on the screen
 NIDDLE_POS = (int(0.5 * VIEW_PORT[0]), int(0.45 * VIEW_PORT[1]))  # the position of the niddle on the screen
 
-BAR_GRAPH_BOTTOM_HEIGHT = int(VIEW_PORT[1]) # the bottom of the bar graphs (same for all 2)
+BAR_GRAPH_BOTTOM_HEIGHT = int(0.89 * VIEW_PORT[1]) # the bottom of the bar graphs (same for all 2)
 BAR_GRAPH_SHIFT = 0
-BAR_SIZE = 0.95*VIEW_PORT[1]
+BAR_SIZE = int(0.27 * VIEW_PORT[1])
 
 # colors
 BLACK = (0, 0, 0)

@@ -3,6 +3,9 @@
 
 // Pin assignment for the language selection button
 #define LANG_BUTTON_IO  2
+#define XSHUT_PIN 3 // Modifier selon ta connexion
+
+
 
 /*
  * Arduino Nano pin mapping reference

@@ -56,4 +56,11 @@ void read_ROI_XY_and_ROI_center(){
   uint8_t y = sensor.readReg(0x007F);
   Serial.println("read ROI coordinate: " + String(x) + " read center ROI: " + String(y));
 }
+
+void reset_sensor() {
+  digitalWrite(XSHUT_PIN, LOW);  // Désactive the sensor
+  delay(100);
+  digitalWrite(XSHUT_PIN, HIGH); // active the sensor
+  delay(10);
+}
 #endif

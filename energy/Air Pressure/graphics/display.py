@@ -19,6 +19,7 @@ def display_state(screen, state=MEASURE, language=HEBREW, pressure_value=MIN_PRE
     if state == OPENING:
         display_opening(screen, language=language)
 
+
 def display_opening(screen, language):
     """
     Display the opening screen
@@ -26,13 +27,13 @@ def display_opening(screen, language):
     :param language: the language to display the opening screen in
     """
     if language == HEBREW:
-        screen.blit(open_heb, (0,0))
+        screen.blit(open_heb, (0, 0))
 
     elif language == ENGLISH:
-        screen.blit(open_eng, (0,0))
+        screen.blit(open_eng, (0, 0))
 
     elif language == ARABIC:
-        screen.blit(open_arb, (0,0))
+        screen.blit(open_arb, (0, 0))
 
 
 def display_measure(screen, language=HEBREW, pressure_value=MIN_PRESSURE_VALUE):
@@ -42,19 +43,18 @@ def display_measure(screen, language=HEBREW, pressure_value=MIN_PRESSURE_VALUE):
     :param language: the language to display the measurement screen in
     """
     if language == HEBREW:
-        screen.blit(measure_heb, (0,0))
+        screen.blit(measure_heb, (0, 0))
 
     elif language == ENGLISH:
-        screen.blit(measure_eng, (0,0))
+        screen.blit(measure_eng, (0, 0))
 
     elif language == ARABIC:
-        screen.blit(measure_arb, (0,0))
-
+        screen.blit(measure_arb, (0, 0))
 
     # sub function to calculate the current, charge and energy from the voltage and capacitance
-    Patm = max(min(pressure_value / AIR_PRESSURE_TO_P_ATM , MAX_P_ATM),MIN_P_ATM)
-    energy = max(min(pressure_value * 1000 * V,MAX_ENERGY),MIN_ENERGY)
-    calorie = max(min(energy / ENERGY_TO_CAL,MAX_CALORIE),MIN_CALORIE)
+    Patm = max(min(pressure_value / ATM_TO_KPa, MAX_P_ATM), MIN_P_ATM)
+    energy = max(min(calculate_work(Patm), MAX_ENERGY), MIN_ENERGY)
+    calorie = max(min(energy / ENERGY_TO_CAL, MAX_CALORIE), MIN_CALORIE)
 
     display_bars(screen, calorie, energy)
     display_rotated_niddle(screen, Patm)
@@ -75,16 +75,11 @@ def display_bars(screen, calorie=MIN_CALORIE, energy=MIN_ENERGY):
         """
         sub function to display the bar on the screen according to the value and the max and min values
         """
-        bar_width = bar_image.get_width()
-        bar_height = bar_image.get_height()
-
-        fill_height = int((value - min) / (max - min) * BAR_SIZE)
-        crop_rect = pygame.Rect(0, bar_height - fill_height, bar_width, fill_height)
+        height = int((value - min) / (max - min) * BAR_SIZE)
+        crop_rect = pygame.Rect(0, BAR_GRAPH_BOTTOM_HEIGHT - height, VIEW_PORT[0],
+                                VIEW_PORT[1] - BAR_GRAPH_BOTTOM_HEIGHT + height)
         cropped_bar = bar_image.subsurface(crop_rect).copy()
-        pos_x = BAR_GRAPH_SHIFT
-        pos_y = int(BAR_GRAPH_BOTTOM_HEIGHT - fill_height)
-        screen.blit(cropped_bar, (pos_x, pos_y))
-
+        screen.blit(cropped_bar, (0, BAR_GRAPH_BOTTOM_HEIGHT - height))
 
     display_bar_from_values(screen, calorie, MAX_CALORIE, MIN_CALORIE, bar_full_calorie)
     display_bar_from_values(screen, energy, MAX_ENERGY, MIN_ENERGY, bar_full_energy)
@@ -113,6 +108,7 @@ def display_text_values(screen, Patm=MIN_P_ATM, calorie=MIN_CALORIE, energy=MIN_
     display_text(screen, calorie, CALORIE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
     display_text(screen, energy, ENERGY_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
 
+
 def display_rotated_niddle(screen, Patm):
     """
     Display the rotated niddle based on the current value
@@ -124,12 +120,8 @@ def display_rotated_niddle(screen, Patm):
     rect = rotated_niddle.get_rect(center=NIDDLE_POS)
     screen.blit(rotated_niddle, rect.topleft)
 
-def calculate_work(pressure_value):
-    # Calculate the number of moles of air added
-    n_added = (pressure_value * V) / (R * T) - (P_i * V) / (R * T)
 
+def calculate_work(Patm):
     # Calculate isothermal work in Joules
-    energy = n_added * R * T * np.log(pressure_value / P_i)
-
-
+    energy = ATM_TO_KPa * (Patm + 1) * V * np.log((Patm + 1))
     return energy

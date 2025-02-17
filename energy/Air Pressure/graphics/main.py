@@ -50,11 +50,11 @@ def main():
                     language = (language + 1) % len(LANGUAGES)  # toggle language
                     
                 if event.key == pygame.K_UP:
-                    pressure_value = min(pressure_value + 5, MAX_PRESSURE_VALUE)
+                    pressure_value = min(pressure_value + 5000, MAX_PRESSURE_VALUE)
 
 
                 if event.key == pygame.K_DOWN:
-                    pressure_value = max(pressure_value - 5, MIN_P_ATM)
+                    pressure_value = max(pressure_value - 5000, MIN_P_ATM)
 
 
                 if event.key == pygame.K_RETURN:
@@ -78,8 +78,9 @@ def main():
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            pressure_value, voltage_analogread, language, error = parse_data(data_from_arduino, logger=logger)
-            # print(f"parsed: voltage {voltage} voltage_analogread {voltage_analogread} language {language}")
+            pressure_value, sensor_analogread, language, error = parse_data(data_from_arduino, logger=logger)
+            pressure_value = pressure_value * kPa_TO_Pa
+            # print(f"parsed: pressure {pressure_value} sensor_analogread {sensor_analogread} language {language}")
             
             if not error:
                 drop_detector.detect_drop(pressure_value, logger=logger)  # detect if there was a drop in voltage

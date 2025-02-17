@@ -20,7 +20,7 @@ MIN_HORSEPOWER = 0.0  # in HP
 MAX_HORSEPOWER = 0.5  # in HP
 MAX_DELTATIME = 10  #in sec
 MIN_DELTATIME = 0  #in sec
-
+msec_TO_sec = 1000
 
 # languages
 HEBREW = 0

@@ -98,7 +98,7 @@ def main():
 
             state = MEASURE if current >= SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD else OPENING  # if you got data, change the screen automatically based on the current value
 
-        screen.fill((0,0,0))  # reset screen
+        screen.fill(BLACK)  # reset screen
         display_state(screen, state=state, language=language, charge=charge, current=current)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
