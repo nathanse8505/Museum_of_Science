@@ -88,7 +88,7 @@ def read_line(ser=None, logger=None):
 
 def parse_data(raw_data, logger=None):
     """
-    parse the raw data line (<voltage> <voltage_analogread> <language>)
+    parse the raw data line (<Pressure_Value> <Sensor_analogread> <language>)
     :param raw_data: the raw data
     """
     try:

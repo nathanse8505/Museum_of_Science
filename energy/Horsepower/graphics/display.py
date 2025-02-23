@@ -13,6 +13,7 @@ def display_state(screen, state=OPENING, language=HEBREW, horsepower=MIN_HORSEPO
     :param screen: the screen to display the state screen on (right now there is only MEASURE state)
     :param language: the language to display the state screen in
     :param state: the state to display
+    :param horsepower:to display the horsepower
     """
     if state == OPENING:
         display_opening(screen, language=language, index_images=index_images)

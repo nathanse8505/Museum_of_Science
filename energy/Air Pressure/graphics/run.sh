@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ensure the script is executable
+chmod +x /home/mada/Air_pressure_py/run.sh
+
 # Define the virtual environment directory
 VENV_DIR="Air_Pressure_py_venv"
 

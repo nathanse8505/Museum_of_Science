@@ -61,7 +61,6 @@ def main():
 
                 if event.key == pygame.K_RETURN:
                     state = (state + 1) % len(STATES)  # toggle state from OPENING to MEASURE
-        
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
@@ -82,10 +81,9 @@ def main():
             ser = open_serial_connection(arduino_port, logger=logger)  # Open the serial port
             last_time_tried_to_connect = time.time()  # update the last time tried to connect
 
-
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            current, charge, has_ignited, language ,error= parse_data(data_from_arduino, logger=logger)
+            current, charge, has_ignited, language, error = parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: current {current} charge {charge} has_ignited {has_ignited} language {language}")
             if not error:
                 if has_ignited:
@@ -94,7 +92,6 @@ def main():
                 if language != previous_language:
                     logger.info(f"your language is: {dic_lang.get(language)}")
                     previous_language = language
-
 
             state = MEASURE if current >= SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD else OPENING  # if you got data, change the screen automatically based on the current value
 

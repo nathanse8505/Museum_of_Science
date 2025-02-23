@@ -2,21 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/air_pressure_arduino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/air_pressure_arduino.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/air_pressure_arduino2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/air_pressure_arduino2.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/arduino.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/detect_drop.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/detect_drop.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/logs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/logs/log.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/run.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/Fonction.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/Fonction.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/logs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log_filtered.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log 5s jumping ring.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log correct.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log more ring jump.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/graphics/logs/log1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../~$T_link.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../~$T_link.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../מעודכן 5 לינואר 2025 אנרגיה-חיבור מרחוק.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../מעודכן 5 לינואר 2025 אנרגיה-חיבור מרחוק.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

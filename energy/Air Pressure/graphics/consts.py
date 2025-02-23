@@ -13,6 +13,7 @@ SERIAL_ERROR = -1
 RECONNECT_INTERVAL = 1  # seconds
 PARSE_ERROR = 1
 PARSE_VALID = 0
+SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD = 15000 #in Pa
 
 # voltage, charge, and capacitor values
 MIN_PRESSURE_VALUE = 0.0  # in PA
@@ -25,8 +26,8 @@ MIN_ENERGY = 0.0  # in joules
 MAX_ENERGY = 300.0  # in joules
 
 NOISE_THRESHOLD = 1  # voltage noise threshold
-MIN_DROP_DISTANCE = 10000  # if the pressure drops (from the max it has been in, not neccesarly last measure) by this amount, this is potentially a drop
-PRESSURE_AFTER_DROP = 50  # pressure in Pa below this value is considered for a drop
+MIN_DROP_DISTANCE = 20000  # if the pressure drops (from the max it has been in, not neccesarly last measure) by this amount, this is potentially a drop
+PRESSURE_AFTER_DROP = 5000  # pressure in Pa below this value is considered for a drop
 
 ENERGY_TO_CAL = 4.184
 ATM_TO_KPa = 101325 #in PA

@@ -41,6 +41,7 @@ def display_measure(screen, language=HEBREW, pressure_value=MIN_PRESSURE_VALUE):
     Display the measurement screen
     :param screen: the screen to display the measurement screen on
     :param language: the language to display the measurement screen in
+    :param pressure_value: pressure value to display and calculate the measurement screen in
     """
     if language == HEBREW:
         screen.blit(measure_heb, (0, 0))
@@ -51,10 +52,8 @@ def display_measure(screen, language=HEBREW, pressure_value=MIN_PRESSURE_VALUE):
     elif language == ARABIC:
         screen.blit(measure_arb, (0, 0))
 
-    # sub function to calculate the current, charge and energy from the voltage and capacitance
-    Patm = max(min(pressure_value / ATM_TO_KPa, MAX_P_ATM), MIN_P_ATM)
-    energy = max(min(calculate_work(Patm), MAX_ENERGY), MIN_ENERGY)
-    calorie = max(min(energy / ENERGY_TO_CAL, MAX_CALORIE), MIN_CALORIE)
+    # sub function to calculate the Patm, calorie and energy from the pressure_value in Pa
+    Patm, energy, calorie = calculate_work_and_Patm(pressure_value)
 
     display_bars(screen, calorie, energy)
     display_rotated_niddle(screen, Patm)
@@ -65,8 +64,7 @@ def display_bars(screen, calorie=MIN_CALORIE, energy=MIN_ENERGY):
     """
     Display the bar on the screen according to the values
     :param screen: the screen to display the bar on
-    :param voltage: the voltage to display
-    :param charge: the charge to display
+    :param calorie: the calorie to display
     :param energy: the energy to display
     """
 
@@ -89,8 +87,7 @@ def display_text_values(screen, Patm=MIN_P_ATM, calorie=MIN_CALORIE, energy=MIN_
     """
     Display the text values on the screen
     :param screen: the screen to display the text values on
-    :param voltage: the voltage to display
-    :param charge: the charge to display
+    :param calorie: the calorie to display
     :param energy: the energy to display
     """
 
@@ -113,7 +110,7 @@ def display_rotated_niddle(screen, Patm):
     """
     Display the rotated niddle based on the current value
     :param screen: the screen to display the bar on
-    :param current: the current value
+    :param Patm: the pressure in atm value
     """
     angle = 180 * (Patm - MIN_P_ATM) / (MAX_P_ATM - MIN_P_ATM)
     rotated_niddle = pygame.transform.rotate(niddle, -angle)
@@ -121,7 +118,13 @@ def display_rotated_niddle(screen, Patm):
     screen.blit(rotated_niddle, rect.topleft)
 
 
-def calculate_work(Patm):
+def calculate_work_and_Patm(pressure_value):
     # Calculate isothermal work in Joules
-    energy = ATM_TO_KPa * (Patm + 1) * V * np.log((Patm + 1))
-    return energy
+    Patm = max(min(pressure_value / ATM_TO_KPa, MAX_P_ATM), MIN_P_ATM)
+
+    energy_val = ATM_TO_KPa * (Patm + 1) * V * np.log((Patm + 1))
+    energy = max(min(energy_val, MAX_ENERGY), MIN_ENERGY)
+
+    calorie = max(min(energy / ENERGY_TO_CAL, MAX_CALORIE), MIN_CALORIE)
+
+    return Patm, energy, calorie
