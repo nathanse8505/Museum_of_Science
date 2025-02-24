@@ -34,8 +34,6 @@ void loop() {
  
 // read the value from the sensor:
   SensorValue = analogRead(Pressure_sensor_IO);
-  // Serial.print("Original analog value: ");
-  // Serial.println(SensorValue);
   Pressure_Value = map(SensorValue, Min_Pres_V, Max_Pres_V, Min_Pres_P, Max_Pres_P);
   Serial.println("Sensor value: " + String(SensorValue) + " Pressure_Value: " + String(Pressure_Value));
 ////////////////for 7seg/////////////
