@@ -45,12 +45,12 @@ BACKUP_COUNT = 10  # max number of log files, if all 10 are full, the first one 
 # pictures
 pygame.init()
 VIEW_PORT = pygame.display.Info().current_w, pygame.display.Info().current_h  # get the screen resolution
-# VIEW_PORT = (607.5, 1080)  # for testing
+#VIEW_PORT = (607.5 * 0.7, 1080 * 0.7)  # for testing
 # VIEW_PORT = (1080, 1920)  # for testing
 
 # ======================== CONFIGURATION BALL ANIMATION ====================
 DELAY_FRAME_BALL = 300
-BALL_WIDTH, BALL_HEIGHT = int(660 * VIEW_PORT[0] / 1338), int(660 * VIEW_PORT[1] / 1190)
+BALL_WIDTH, BALL_HEIGHT = VIEW_PORT[0], VIEW_PORT[0]
 
 
 PICTURES = os.path.join(os.path.dirname(__file__), "pictures")  # get the path of the pictures folder

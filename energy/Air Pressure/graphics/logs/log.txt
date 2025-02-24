@@ -1,0 +1,2 @@
+2025-02-24 14:50:03 - Starting Air Pressure UI
+2025-02-24 14:50:03 - Error: Arduino not found
