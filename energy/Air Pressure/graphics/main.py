@@ -18,6 +18,8 @@ def main():
     # pygame setup
     pygame.display.set_caption("Air Pressure")
     screen = pygame.display.set_mode(VIEW_PORT, pygame.FULLSCREEN)
+    #
+    screen = pygame.display.set_mode(VIEW_PORT)
     clock = pygame.time.Clock()  # for fps limit
 
     # initial values for the UI

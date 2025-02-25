@@ -65,7 +65,7 @@ float horsepower = 0;           // Holds the computed horsepower value
 // Timers for resets and cooldowns
 unsigned long bouncingBallTimer = 0;  // Timer for cooldown once max distance is reached
 unsigned long meas_Tmr_rst = 0;       // Timer for measurement reset if max distance is not reached
-const unsigned long MEAS_RST_MS = 5000;      // If lift takes longer than 20s, reset
+const unsigned long MEAS_RST_MS = 5000;      // If lift takes longer than 5s, reset
 const unsigned long RST_BOUNCING_BALL = 4000; // 4s cooldown after reaching max distance
 const unsigned long SENSOR_FAULTY = 15000;
 const unsigned long RST_ARDUINO = 5000;

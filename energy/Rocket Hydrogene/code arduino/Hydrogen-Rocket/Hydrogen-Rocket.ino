@@ -18,7 +18,7 @@ void setup() {
   pinMode(LANG_BUTTON_IO, INPUT_PULLUP);
   pinMode(SOUND, OUTPUT);
 
-  init_sount();
+  init_sound();
   
   Serial.begin(BAUDRATE);  // initialize serial communications 
   delay (100);  // wait to make sure serial begin

@@ -57,7 +57,7 @@ BACKUP_COUNT = 10  # max number of log files, if all 10 are full, the first one 
 # pictures
 pygame.init()
 VIEW_PORT = pygame.display.Info().current_w, pygame.display.Info().current_h  # get the screen resolution
-# VIEW_PORT = (607.5, 1080)  # for testing
+#VIEW_PORT = (607.5, 1080)  # for testing
 # VIEW_PORT = (1080, 1920)  # for testing
 
 PICTURES = os.path.join(os.path.dirname(__file__), "pictures")  # get the path of the pictures folder
@@ -101,7 +101,7 @@ niddle = pygame.transform.scale(niddle, (int(niddle.get_size()[0] * VIEW_PORT[0]
 # positions - dont ask about the magic numbers
 ENERGY_TEXT_POS = (int(3.7 / 11.0 * VIEW_PORT[0]), int(0.935 * VIEW_PORT[1]))  # the position of the energy text on the screen
 CALORIE_TEXT_POS = (int(7.32/11 * VIEW_PORT[0]), int(0.935 * VIEW_PORT[1]))  # the position of the charge text on the screen
-P_ATM_TEXT_POS = (int(0.5 * VIEW_PORT[0]), int(0.5 * VIEW_PORT[1]))  # the position of the voltage text on the screen
+P_ATM_TEXT_POS = (int(0.5 * VIEW_PORT[0]), int(0.514 * VIEW_PORT[1]))  # the position of the voltage text on the screen
 NIDDLE_POS = (int(0.5 * VIEW_PORT[0]), int(0.45 * VIEW_PORT[1]))  # the position of the niddle on the screen
 
 BAR_GRAPH_BOTTOM_HEIGHT = int(0.89 * VIEW_PORT[1]) # the bottom of the bar graphs (same for all 2)

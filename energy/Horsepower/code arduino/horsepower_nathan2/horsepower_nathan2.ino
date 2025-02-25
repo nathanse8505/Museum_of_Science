@@ -140,16 +140,12 @@ void loop()
     Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   }
 
-/*if(((millis() - bouncingBallTimer) > SENSOR_FAULTY) && horsepower != 0){
-  reset_sensor();
-  delay(RST_ARDUINO);
-  
-}*/
-if(!sensor.dataReady()){
+if(((millis() - bouncingBallTimer) > SENSOR_FAULTY) && horsepower != 0){
   reset_sensor();
   delay(RST_ARDUINO);
   
 }
+
 
 
 

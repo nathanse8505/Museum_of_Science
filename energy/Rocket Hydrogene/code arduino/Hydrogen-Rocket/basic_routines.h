@@ -110,7 +110,7 @@ void sound(){
   }
 }
 
-void init_sount(){
+void init_sound(){
   digitalWrite(SOUND,HIGH);
   delay(100);
 }
