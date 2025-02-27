@@ -17,9 +17,9 @@ SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD = 15000 #in Pa
 
 # voltage, charge, and capacitor values
 MIN_PRESSURE_VALUE = 0.0  # in PA
-MAX_PRESSURE_VALUE = 140000.0  # in PA
+MAX_PRESSURE_VALUE = 150000.0  # in PA
 MIN_P_ATM = 0.0  # in atm
-MAX_P_ATM = 1.4  # in atm
+MAX_P_ATM = 1.5  # in atm
 MIN_CALORIE = 0.0  # in cal
 MAX_CALORIE = 80.0  # in cal
 MIN_ENERGY = 0.0  # in joules
