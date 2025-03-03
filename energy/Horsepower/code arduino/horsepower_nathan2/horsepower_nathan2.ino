@@ -11,7 +11,8 @@ void setup()
   Serial.begin(BAUDERATE);            // Start serial communication at the specified baud rate
   pinMode(LANG_BUTTON_IO, INPUT_PULLUP); // Configure the language button pin as an input with pull-up
   pinMode(XSHUT_PIN, OUTPUT);
-
+  digitalWrite(XSHUT_PIN, HIGH); // active the sensor
+  
   Wire.begin();                           // Initialize I2C communication
 
   Wire.setClock(400000);                 // Use 400 kHz I2C

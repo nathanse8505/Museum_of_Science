@@ -3,30 +3,30 @@
 
 // Pin assignment for the language selection button
 #define LANG_BUTTON_IO  2
-#define XSHUT_PIN 3 // Modifier selon ta connexion
+#define XSHUT_PIN 3 // to shutdown the sensor
 
 
 
 /*
  * Arduino Nano pin mapping reference
  * (For reference only; not all pins are used here.)
- *                    ---------
- *                TXD-|       |-Vin 
- *                RXD-|       |-GND
- *                RST-|       |-RST
- *                GND-|       |-+5V
- *  LANG_BUTTON_IO D2-|       |-A7
- *                 D3-|       |-A6
- *                 D4-|       |-A5 (SCL)
- *                 D5-|       |-A4 (SDA)
- *                 D6-|       |-A3
- *                 D7-|       |-A2
- *                 D8-|       |-A1
- *                 D9-|       |-A0
- *                D10-|       |-Ref
- *                D11-|       |-3.3V
- *                D12-|       |-D13
- *                     --USB--
+ *                       ---------
+ *                   TXD-|       |-Vin 
+ *                   RXD-|       |-GND to sensor VL53L1X
+ *                   RST-|       |-RST
+ *                   GND-|       |-+5V to sensor VL53L1X
+ *     LANG_BUTTON_IO D2-|       |-A7
+ *(VL53L1X) XSHUT_PIN D3-|       |-A6
+ *                    D4-|       |-A5 (SCL) VL53L1X
+ *                    D5-|       |-A4 (SDA) VL53L1X
+ *                    D6-|       |-A3
+ *                    D7-|       |-A2
+ *                    D8-|       |-A1
+ *                    D9-|       |-A0
+ *                   D10-|       |-Ref
+ *                   D11-|       |-3.3V
+ *                   D12-|       |-D13
+ *                        --USB--
  */
 
 //////////// BUTTON DEBOUNCE ////////////

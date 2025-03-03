@@ -60,7 +60,5 @@ void read_ROI_XY_and_ROI_center(){
 void reset_sensor() {
   digitalWrite(XSHUT_PIN, LOW);  // Désactive the sensor
   delay(100);
-  digitalWrite(XSHUT_PIN, HIGH); // active the sensor
-  delay(10);
 }
 #endif
