@@ -40,6 +40,27 @@ void setup() {
 
 void loop() {
   reset_watchdog();
+   if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {
+    text = LOW_CHARGE_TEXT;
+
+    Serial.println(String(abs_avg_current_value) + " " + String(charge) + " " + ignited_now + " " + lang);
+    last_display_time = millis(); //reset timer
+
+    ignited_now = false;  // reset ignite flag (after sending it 1 time if there has been an ignition)
+
+    /////////display oled///////////
+    /*
+    if (charge >= MIN_CHARGE) {
+    text = CAN_IGNITE_TEXT;
+    }
+    if (charge >= MAX_CHARGE) {
+     text = MAX_CHARGE_TEXT;  
+    }
+   
+    display_all();  // dispaly all data 
+    */
+    //////////////////////////////////
+  }
   
   if (charge >= AUTO_EXPLOSION_THRESHOLD) {
     IGNITE_WITH_SOUND();
@@ -70,21 +91,5 @@ void loop() {
     
   }
 
-  if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {
-    text = LOW_CHARGE_TEXT;
-
-    if (charge >= MIN_CHARGE) {
-    text = CAN_IGNITE_TEXT;
-   }
-
-   if (charge >= MAX_CHARGE) {
-     text = MAX_CHARGE_TEXT;
-    }
-    
-//    display_all();  // dispaly all data 
-    Serial.println(String(abs_avg_current_value) + " " + String(charge) + " " + ignited_now + " " + lang);
-    last_display_time = millis(); //reset timer
-
-    ignited_now = false;  // reset ignite flag (after sending it 1 time if there has been an ignition)
-  }
+ 
 }

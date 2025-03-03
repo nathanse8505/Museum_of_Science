@@ -23,7 +23,7 @@
  *                      --USB--        
  */
 
-#define CURRENT_INPUT_IO A7 // current sensor 
+#define CURRENT_INPUT_IO A0 // current sensor 
 // #define CURRENT_INPUT_IO A6 // simulation potentiometer
   
 #define BAUDRATE (115200)
@@ -37,7 +37,7 @@
 
 const float AUTO_EXPLOSION_THRESHOLD = 90; // absolute max charge for auto explosion
 
-const float MIN_CHARGE = 20;// Coulomb, minimum charge enable ignition  
+const float MIN_CHARGE = 0;// Coulomb, minimum charge enable ignition  
 const float MAX_CHARGE = 40;// Coulomb, maximum charge have to ignite
 
 const float CURRENT_THRESHOLD = 0.1;  // 0.1 Amp , minimum current to measure (against current noise)

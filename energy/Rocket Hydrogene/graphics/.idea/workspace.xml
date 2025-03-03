@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/air_pressure_arduino2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/air_pressure_arduino2.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/code arduino/air_pressure_arduino2/constants.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/סיכום/~$רט טכני.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Air Pressure/סיכום/מפרט טכני.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/סיכום/מפרט טכני.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Generator/סיכום/דוח סיכום + מפרט טכני.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Generator/סיכום/דוח סיכום + מפרט טכני.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/סיכום/מפרט טכני.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/סיכום/מפרט טכני.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket/consts.h" beforeDir="false" afterPath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket/consts.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
