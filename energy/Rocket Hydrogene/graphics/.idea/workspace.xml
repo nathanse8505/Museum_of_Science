@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Generator/סיכום/דוח סיכום + מפרט טכני.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Generator/סיכום/דוח סיכום + מפרט טכני.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/סיכום/מפרט טכני.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/סיכום/מפרט טכני.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket/consts.h" beforeDir="false" afterPath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket/consts.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Acceleration Circuit/סיכום/מפרט טכני.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../Acceleration Circuit/סיכום/מפרט טכני.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Air Pressure/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Air Pressure/graphics/logs/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/logs/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/electronic/מצמד אופטי לטבעת קופצת.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/סיכום/אמיר/מצמד אופטי לטבעת קופצת.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Jumping Ring/סיכום/אמיר/שינוי התנגדות מצמד אופטי .xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../משימות.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../משימות.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +51,7 @@
       <recent name="C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Horsepower\graphics\logs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (5)">
+  <component name="RunManager" selected="Python.main (4)">
     <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -175,8 +180,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (5)" />
         <item itemvalue="Python.main (4)" />
+        <item itemvalue="Python.main (5)" />
         <item itemvalue="Python.txt_to_csv" />
         <item itemvalue="Python.main (3)" />
         <item itemvalue="Python.main (2)" />

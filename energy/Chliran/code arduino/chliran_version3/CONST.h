@@ -44,11 +44,11 @@ const int NUMBER_OF_SWITCH = 4;
 // Timing constants (in milliseconds)
 const int16_t DELAY_BLINK = 300;
 const int16_t BOUNCE_TIME = 100;        // Debounce delay for switches
-const long int TIME_LED_ON = 60000;       // Duration LED stays on
-const long int TIME_LED_OFF = 30000;       // Duration LED stays off
+const unsigned long  TIME_LED_ON = 60000;       // Duration LED stays on
+const unsigned long  TIME_LED_OFF = 30000;       // Duration LED stays off
 const int16_t DELAY_AFTER_SHIFT = 100;  // Delay after shifting LED position
 unsigned long timer_on = 0;
-unsigned timer_off = 0;
+unsigned long timer_off = 0;
 
 // Global variables
 int16_t out_data = 0;                   // Current state of shift register outputs

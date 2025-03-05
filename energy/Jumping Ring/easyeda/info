@@ -1,0 +1,39 @@
+{
+  "uuid": "74690e4217fae4095e06764e535e8912",
+  "path": "Offline/Jumping%20ring",
+  "name": "Jumping ring",
+  "content": "",
+  "created_at": "2025-03-03 23:51:35",
+  "updated_at": "2025-03-03 23:51:36",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "89c8a4e9ad8d18bd89845792206336f2",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {},
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1741038696,
+      "createTime": 1741038696,
+      "histories": [],
+      "created_at": "2025-03-03 23:51:36",
+      "updated_at": "2025-03-03 23:51:36"
+    }
+  ],
+  "sort": [],
+  "title": "Jumping ring",
+  "foldername": "Jumping ring",
+  "schfilename": "Jumping ring.json",
+  "schfilemtime": 1741038696180
+}

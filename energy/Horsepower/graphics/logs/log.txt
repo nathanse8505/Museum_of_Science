@@ -32,3 +32,6 @@
 2025-02-24 14:45:27 - your language is: english
 2025-02-24 14:45:33 - your language is: arabic
 2025-02-24 14:45:33 - your language is: hebrew
+2025-03-04 21:14:31 - Starting Horse Power UI
+2025-03-04 21:14:31 - Error: Arduino not found
+2025-03-04 21:14:47 - your horsepower is: 0.03

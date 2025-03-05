@@ -20,3 +20,5 @@
 2025-02-25 15:56:35 - Error: Arduino not found
 2025-02-25 15:57:10 - Starting Air Pressure UI
 2025-02-25 15:57:10 - Error: Arduino not found
+2025-03-04 15:49:49 - Starting Air Pressure UI
+2025-03-04 15:49:49 - Error: Arduino not found
