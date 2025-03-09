@@ -193,9 +193,12 @@ while True:
         pass
 
 
-screen_width, screen_height = 720, 640  # the width and height of the window to display the images on
+
 pygame.init()  # initialize pygame
-screen = pygame.display.set_mode((screen_width, screen_height))  # set the window size
+#screen_width, screen_height = 720, 640  # the width and height of the window to display the images on
+#screen = pygame.display.set_mode((screen_width, screen_height))  # set the window size
+screen_width, screen_height = pygame.display.Info().current_w, pygame.display.Info().current_h # the width and height of the window to display the images on
+screen = pygame.display.set_mode((screen_width, screen_height),pygame.FULLSCREEN)  # set the window size
 pygame.display.set_caption("Camera")  # set the window title
 
 # clear Serial buffer
@@ -269,7 +272,7 @@ while(running):
         else:
             camera_working = True
         img = cv2.flip(img, 0)  # flip the image vertically (the camera is upside down)
-        img = cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
+        #img = cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
 
         # Calculate the dimensions of the central region to keep after cropping
         height, width = img.shape[:2]
@@ -297,11 +300,20 @@ while(running):
         screen.fill((0, 0, 0))
         image_display = pygame.image.load(in_path)
         image_bw_display = pygame.image.load(out_path)
-        image_bw_display = pygame.transform.scale(image_bw_display, (screen_width//2, screen_width//2 * output_height // output_width))
-        image_display = pygame.transform.scale(image_display, (screen_width//2, screen_height))
+        
+        #image_bw_display = pygame.transform.scale(image_bw_display, (screen_width//2, screen_width//2 * output_height // output_width))
+        #image_display = pygame.transform.scale(image_display, (screen_width//2, screen_height))
+        #screen.blit(image_display, (0, 0))
+        #screen.blit(image_bw_display, (screen_width//2, 0))
+        #msg_on_screen2()  # display the message on the screen
+        
+        image_bw_display = pygame.transform.rotate(image_bw_display,-90)
+        image_display = pygame.transform.rotate(image_display,-90)
+        image_bw_display = pygame.transform.scale(image_bw_display, (screen_width//2 , screen_height))
+        image_display = pygame.transform.scale(image_display, (screen_width//2 , screen_height,))
         screen.blit(image_display, (0, 0))
         screen.blit(image_bw_display, (screen_width//2, 0))
-        msg_on_screen2()  # display the message on the screen
+        
         pygame.display.flip()  # update the screen
 
         # if the image is not empty (black_percentage > empty_image_threshold), send the image to the arduino
