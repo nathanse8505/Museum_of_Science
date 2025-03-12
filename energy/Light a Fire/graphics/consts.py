@@ -4,6 +4,8 @@ Purpose: Constants for the Light a Fire UI
 """
 import os
 import pygame
+from change_pic import extract_numbers
+
 
 FPS = 100
 #
@@ -36,7 +38,6 @@ BACKUP_COUNT = 10  # max number of log files, if all 10 are full, the first one 
 pygame.init()
 #VIEW_PORT = pygame.display.Info().current_w, pygame.display.Info().current_h  # get the screen resolution
 #VIEW_PORT = (607.5, 1080)  # for testing
-#VIEW_PORT = (1080, 1920)  # for testing
 VIEW_PORT =(1920,1080)
 RESOLUTION_FLAME = (640,360)
 RESOLUTION_SMOKE = (3840,2160)
@@ -45,26 +46,31 @@ SIZE_FLAME = (int(0.4 * RESOLUTION_FLAME[0]),int(0.4 * RESOLUTION_FLAME[1]))
 
 
 PICTURES_SMOKE = os.path.join(os.path.dirname(__file__), "pictures_smoke")  # get the path of the pictures folder
-PICTURES_FLAMES = os.path.join(os.path.dirname(__file__), "pictures_flames")  # get the path of the pictures folder
+PICTURES_FLAMES = os.path.join(os.path.dirname(__file__), "pictures_flame")  # get the path of the pictures folder
 
-SMOKE_FRAMES_PATHS = [os.path.join(PICTURES_SMOKE, i) for i in os.listdir(PICTURES_SMOKE) if os.path.isfile(os.path.join(PICTURES_SMOKE, i))]
-FLAMES_FRAMES_PATHS = [os.path.join(PICTURES_SMOKE, i) for i in os.listdir(PICTURES_FLAMES) if os.path.isfile(os.path.join(PICTURES_FLAMES, i))]
+
+
+
+SMOKE_FRAMES_PATHS = sorted([os.path.join(PICTURES_SMOKE, i) for i in os.listdir(PICTURES_SMOKE) if os.path.isfile(os.path.join(PICTURES_SMOKE, i))],key=extract_numbers)
+FLAMES_FRAMES_PATHS = sorted([os.path.join(PICTURES_FLAMES, i) for i in os.listdir(PICTURES_FLAMES) if os.path.isfile(os.path.join(PICTURES_FLAMES, i))], key=extract_numbers)
 print(SMOKE_FRAMES_PATHS)
+print(FLAMES_FRAMES_PATHS)
 
 
 # load the pictures
-images_fire = [pygame.image.load(img) for img in SMOKE_FRAMES_PATHS]
-
+images_smoke = [pygame.image.load(img) for img in SMOKE_FRAMES_PATHS]
+images_flames = [pygame.image.load(img) for img in FLAMES_FRAMES_PATHS]
 # transform the pictures to the screen resolution
 #images_fire = [pygame.transform.scale(img,SIZE_FLAME) for img in images_fire]
 #images_fire = [pygame.transform.scale(img,RESOLUTION_FLAME) for img in images_fire]
-images_fire = [pygame.transform.scale(img,VIEW_PORT) for img in images_fire]
+images_smoke = [pygame.transform.scale(img, VIEW_PORT) for img in images_smoke]
+images_flames = [pygame.transform.scale(img, RESOLUTION_FLAME) for img in images_flames]
 #images_fire = [pygame.transform.scale(img,RESOLUTION_SMOKE) for img in images_fire]
 
 # positions - dont ask about the magic numbers
-#FIRE_FRAME_POS = (int(0.1 * VIEW_PORT[0]), int(0.5*VIEW_PORT[1]))  # the position of the energy text on the screen
-FIRE_FRAME_POS = (0,0)  # the position of the energy
-FIRE_TEXT_POS = (int(0.35 * VIEW_PORT[0]), int(0.9*VIEW_PORT[1]))  # the position of the energy text on the screen
+FLAME_FRAME_POS = (int(RESOLUTION_FLAME[0]), int(1.65 * RESOLUTION_FLAME[1]))  # the position of the energy text on the screen
+SMOKE_FRAME_POS = (0, 0)  # the position of the energy
+FIRE_TEXT_POS = (int(0.4 * VIEW_PORT[0]), int(0.8*VIEW_PORT[1]))  # the position of the energy text on the screen
 
 # colors
 BLACK = (0, 0, 0)
@@ -73,3 +79,4 @@ TEXT_COLOR = WHITE
 
 # sizes - dont ask about the magic numbers
 TEXT_SIZE = int(50 * VIEW_PORT[0] / 1080)
+

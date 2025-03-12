@@ -31,7 +31,7 @@ def camera_setup(screen,cap):
             return False
 
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) # Convertir l'image BGR (OpenCV) en RGB (Pygame)
-        #frame_rgb = np.rot90(frame_rgb)  # Corriger l'orientation si nécessaire
+        frame_rgb = np.rot90(frame_rgb)  # Corriger l'orientation si nécessaire
         frame_surface = pygame.surfarray.make_surface(frame_rgb)# Convertir l'image en surface Pygame
         frame_surface = pygame.transform.scale(frame_surface, VIEW_PORT)
         screen.blit(frame_surface, (0, 0))
@@ -47,11 +47,16 @@ def display_measure(screen,sensor_analogread,Temperature = MIN_TEMPERATURE_VALUE
 
     # sub function to calculate the Patm, calorie and energy from the pressure_value in Pa
     #Temperature= calculate_Temperature(sensor_analogread)
-    number_of_frame = len(images_fire)
+    number_of_frame = len(images_smoke) + len(images_flames)
     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
+
     #print(index,Temperature,temperatures)
-    screen.blit(images_fire[index],FIRE_FRAME_POS)
+    if index < (len(images_smoke)):
+        screen.blit(images_smoke[index], SMOKE_FRAME_POS)
+    else:
+        screen.blit(images_flames[index - len(images_smoke)], FLAME_FRAME_POS)
+
     display_text_values(screen, Temperature)
 
 
