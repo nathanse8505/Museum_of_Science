@@ -85,7 +85,7 @@ def main():
             
             if not error:
                 check_temperature_value = log_temperature(logger,Temperature,check_temperature_value)
-
+        check_temperature_value = log_temperature(logger, Temperature, check_temperature_value)
         screen.fill(BLACK)  # reset screen
         runing = camera_setup(screen,cap)
         display_measure(screen, sensor_analogread=sensor_analogread, Temperature=Temperature)  # render the screen
