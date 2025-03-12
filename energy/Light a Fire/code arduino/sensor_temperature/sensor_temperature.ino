@@ -16,7 +16,7 @@ void setup() {
 
 void loop() {
 
-  if (PRESS_BUTTON_LANG()) {  // pressed on language button
+  if (PRESS_BUTTON_LANG()) {            // pressed on language button
     lang = lang >= 2 ? 0 : (lang + 1);  // toggle language
   }
   Vout = analogRead(ThermistorPin);
@@ -24,7 +24,6 @@ void loop() {
 
   NUMBER_TO_DISPLAY(temperature_C * UNIT_CALIBRATION);
 
-  Serial.println(String(temperature_C) + " " + lang);   
-
-  delay(100);
+  Serial.println(String(temperature_C) + " " + String(Vout));
+  delay(200);
 }

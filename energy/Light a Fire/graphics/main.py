@@ -22,7 +22,7 @@ def main():
     """
     # camera setup
     cap = None
-    #cap = camera_init()
+    cap = camera_init()
 
     # pygame setup
     pygame.display.set_caption("Light a Fire")

@@ -4,7 +4,7 @@
 
 #include "Const.h"
 
-#include <Adafruit_INA219.h>
+//#include <Adafruit_INA219.h>
 #include <Wire.h>
 #include <avr/wdt.h>
 
