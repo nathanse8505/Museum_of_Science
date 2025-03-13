@@ -1,14 +1,18 @@
-#ifndef const
-#define const
+#ifndef CONST_H
+#define CONST_H
 
+#include <Arduino.h>  // ✅ Ensures compatibility with Arduino functions
+#include <stdint.h>   // (Optional, already included in Arduino.h)
+
+// Pin assignments
 #define LED_BUTTON 2
 #define MOTOR 3
 #define BUTTON 5
 #define MICRO_SW 6
-#define CHIPSELECT 10  // Pin CS pour le module SD (modifiable selon le module)
+#define CHIPSELECT 10  // Chip Select pin for the SD card module
 
 /*
-*==========Arduino Nano pinout====== 
+ *========== Arduino Nano Pinout ====== 
  *                      _______
  *                 TXD-|       |-Vin 
  *                 RXD-|       |-Gnd  
@@ -22,29 +26,28 @@
  *                  D7-|       |-A2  
  *                  D8-|       |-A1
  *                  D9-|       |-A0
- *                 D10-|       |-Ref
- *                 D11-|       |-3.3V   
- *                 D12-|       |-D13
+ *      CHIPSELECT D10-|       |-Ref
+ *            MOSI D11-|       |-3.3V to SDcard  
+ *            MISO D12-|       |-D13  SCK
  *                      --USB--        
  */
 
-bool NC_MICRO_SWITCH = LOW;//when the microswitch in normally close its in the gnd
-bool NO_MICRO_SWITCH = HIGH;//when the microswitch in normally open its in the VCC
+// Micro switch states
+extern bool NC_MICRO_SWITCH;  // Normally closed (NC) micro switch → Connects to GND when unpressed
+extern bool NO_MICRO_SWITCH;  // Normally open (NO) micro switch → Connects to VCC when unpressed
 
-const int8_t time_bouncing = 50;
-const int BAUDERATE = 9600;
-const unsigned long ACTIVATION_TIME =30000;//ms after pushing the button the motor stop until activation time
-const unsigned long RESET_TIME_SECURE = 5000;//if the micoswitch dosent work stop the motor and the arduino
-const int16_t MOTOR_DELAY = 1000;//ms delay motor to unpress the microswitch
-const int16_t DELAY_BEFORE_SLEEP = 1000;//ms delay before to enter in sleep mode
+// Timing and communication settings
+extern int8_t time_bouncing;           // Button debounce delay (ms)
+extern int BAUDERATE;                   // Serial communication baud rate
+extern unsigned long ACTIVATION_TIME;    // Time before the button can be pressed again (ms)
+extern unsigned long RESET_TIME_SECURE;  // Safety timeout: stops motor if micro switch is stuck (ms)
+extern int16_t MOTOR_DELAY;              // Delay to allow micro switch to release after motor stops (ms)
+extern int16_t DELAY_BEFORE_SLEEP;       // Delay before entering low-power mode (ms)
 
-
-
-bool check = LOW;//variable for pushing the button
-unsigned long time_start = 0;//start time to disable the button until activation time
-unsigned long time_to_secure = 0;//start time to disable the arduino until stop_time_safety
-bool flag_first_press = HIGH;
-
+// Variables for button press handling
+extern bool check;               // Flag to detect button press
+extern unsigned long time_start;  // Timer to disable button activation after use
+extern unsigned long time_to_secure; // Timer for motor emergency stop if needed
+extern bool flag_first_press;     // Flag to track the first button press after activation
 
 #endif
-
