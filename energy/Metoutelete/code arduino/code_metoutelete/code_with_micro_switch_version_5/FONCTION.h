@@ -1,7 +1,10 @@
 #ifndef FONCTION
 #define FONCTION
 
+
 #include "const.h"
+
+
 //#include <avr/sleep.h>
 //#include <avr/wdt.h> // Library for the Watchdog Timer
 
@@ -37,7 +40,6 @@ bool PRESS_BUTTON() {
 
 // Function to immediately stop the motor and put the system into low-power mode
 void IEC() {//Imediately Engine Cutoff
-  Serial.println("MOTOR is OFF");
   digitalWrite(MOTOR, LOW);// Turn off the motor
   delay(MOTOR_DELAY);
   //wdt_disable();
@@ -63,5 +65,6 @@ void BLINK_FLAG(unsigned int DELAY_BLINK){
 
   }
 }
+
 
 #endif

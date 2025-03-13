@@ -54,6 +54,7 @@ def main():
                 Quit_pygame(cap)
 
             if event.type == pygame.KEYDOWN:
+
                 if event.key == pygame.K_ESCAPE:
                     Quit_pygame(cap)
 

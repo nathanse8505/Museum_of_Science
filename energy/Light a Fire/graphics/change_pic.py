@@ -5,15 +5,15 @@ import shutil
 
 
 
-def rename_png(path_image_folder):
+def rename_png(source_folder_path):
     # Lister les fichiers image triés par nom
-    image_files = sorted(os.listdir(path_image_folder))
+    image_files = sorted(os.listdir(source_folder_path),key=extract_numbers)
 
     # Renommer les fichiers de frame_0.png à frame_49.png en frame_50.png à frame_99.png
     for i, file_name in enumerate(image_files[:len(image_files)]):
-        old_path = os.path.join(path_image_folder, file_name)
+        old_path = os.path.join(source_folder_path, file_name)
         new_file_name = f"frame_{i + len(image_files)}.png"
-        new_path = os.path.join(path_image_folder, new_file_name)
+        new_path = os.path.join(source_folder_path, new_file_name)
         os.rename(old_path, new_path)
 
     print("Renommage terminé !")

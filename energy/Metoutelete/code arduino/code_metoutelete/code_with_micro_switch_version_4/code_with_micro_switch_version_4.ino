@@ -39,24 +39,25 @@ void loop() {
 
       if(digitalRead(MICRO_SW)  == !NO_MICRO_SWITCH){
         Serial.print("the micro switch is pressed all the time: ");
+        Serial.println("MOTOR is OFF");
         IEC(); // Trigger Immediate Engine Cutoff
         BLINK_FLAG(500);
       }
       time_to_secure = millis();   // Record the start time for safety monitoring
       //resetWatchdog(); // Reset the Watchdog Timer after the delay+
     }
-    Serial.println("flag first press :" + String(flag_first_press)); 
+    //Serial.println("flag first press :" + String(flag_first_press)); 
 
     // Keep the motor running until the micro switch is activated
     while (digitalRead(MICRO_SW) == NO_MICRO_SWITCH && digitalRead(MOTOR) == HIGH && flag_first_press == LOW){
-      Serial.println("we are in the while mode");
+      //Serial.println("we are in the while mode");
       digitalWrite(LED_BUTTON, LOW); // Turn off the button LED that turn on the motor
       //resetWatchdog(); // Reset the Watchdog Timer during the loop
 
       // Check if the motor doesnt stop
       if ((millis() - time_to_secure) > RESET_TIME_SECURE) {
-        Serial.print("time after micro switch: ");
-        Serial.println(millis() - time_to_secure);
+        Serial.println("time after micro switch: " + String(millis() - time_to_secure));
+        Serial.println("MOTOR is OFF");
         IEC(); // Trigger Immediate Engine Cutoff
         BLINK_FLAG(2000);
       }
@@ -64,7 +65,7 @@ void loop() {
       // If the micro switch is activated
       if (digitalRead(MICRO_SW) == !NO_MICRO_SWITCH) {
         digitalWrite(MOTOR, LOW); // Turn off the motor
-        printMotorOffInfo();
+        //printMotorOffInfo();
         time_start = millis();    // Reset the activation timer
         flag_first_press = HIGH;
         //break;                    // Exit the loop

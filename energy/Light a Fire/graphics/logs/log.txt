@@ -1,0 +1,14 @@
+2025-03-13 09:16:46 - Starting Light a Fire UI
+2025-03-13 09:16:46 - Error: Arduino not found
+2025-03-13 09:16:54 - The Bottle flew!
+2025-03-13 09:17:34 - The Bottle flew!
+2025-03-13 12:25:00 - Starting Light a Fire UI
+2025-03-13 12:25:00 - Error: Arduino not found
+2025-03-13 12:25:20 - The Bottle flew!
+2025-03-13 12:26:02 - The Bottle flew!
+2025-03-13 12:28:35 - Starting Light a Fire UI
+2025-03-13 12:28:35 - Error: Arduino not found
+2025-03-13 12:28:40 - The Bottle flew!
+2025-03-13 15:23:37 - Starting Light a Fire UI
+2025-03-13 15:23:37 - Error: Arduino not found
+2025-03-13 15:23:44 - The Bottle flew!
