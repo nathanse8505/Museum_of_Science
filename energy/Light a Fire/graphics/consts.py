@@ -1,10 +1,9 @@
 import os
 import pygame
-import numpy as np
 from change_pic import extract_numbers
 
 # Constantes générales
-FPS = 100
+FPS = 50
 CAMERA_INDEX = 0
 auto_exposure = False
 auto_white_balance = False
@@ -32,7 +31,7 @@ BACKUP_COUNT = 10  # Nombre max de fichiers log en rotation
 
 # Interface graphique
 pygame.init()
-VIEW_PORT = (1920, 1080)
+#VIEW_PORT = (1920, 1080)
 VIEW_PORT = pygame.display.Info().current_w , pygame.display.Info().current_h
 RESOLUTION_FLAME = (640, 360)
 RESOLUTION_SMOKE = (3840, 2160)
@@ -53,7 +52,8 @@ FLAMES_FRAMES_PATHS = sorted(
 )
 
 # Positions des éléments à l'écran
-FLAME_FRAME_POS = (int(RESOLUTION_FLAME[0]), int(1.65 * RESOLUTION_FLAME[1]))
+FLAME_FRAME_POS = int((VIEW_PORT[0] - RESOLUTION_FLAME[0]) // 2), int((VIEW_PORT[1] - RESOLUTION_FLAME[1])*0.8)
+#FLAME_FRAME_POS = (0, 0)
 SMOKE_FRAME_POS = (0, 0)
 FIRE_TEXT_POS = (int(0.4 * VIEW_PORT[0]), int(0.8 * VIEW_PORT[1]))
 
@@ -65,12 +65,6 @@ TEXT_COLOR = WHITE
 # Tailles de texte
 TEXT_SIZE = int(50 * VIEW_PORT[0] / 1080)
 
-# Fonction pour charger une image à la demande
-def load_scaled_image(path, size):
-    """Charge et redimensionne une image uniquement lorsqu'elle est nécessaire."""
-    img = pygame.image.load(path)
-    img = pygame.transform.scale(img, size)
-    return img
 
 
 

@@ -11,6 +11,7 @@ def camera_init():
     while True:
         try:
             cap = cv2.VideoCapture(CAMERA_INDEX)  # open the camera
+            cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)  # Réduit la taille du buffer de la caméra
             #cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)  # disable automatic exposure - IMPORTANT
             #cap.set(cv2.CAP_PROP_AUTO_WB,0 if not auto_white_balance else 1)  # disable automatic white balance - IMPORTANT
             #cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)  # set the exposure to a fixed value - IMPORTANT
@@ -31,28 +32,28 @@ def camera_setup(screen,cap):
             return False
 
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB) # Convertir l'image BGR (OpenCV) en RGB (Pygame)
-        frame_rgb = np.rot90(frame_rgb)  # Corriger l'orientation si nécessaire
-        frame_surface = pygame.surfarray.make_surface(frame_rgb)# Convertir l'image en surface Pygame
+        #frame_rgb = np.rot90(frame_rgb)  # Corriger l'orientation si nécessaire
+        #frame_surface = pygame.surfarray.make_surface(frame_rgb)# Convertir l'image en surface Pygame
+        frame_surface = pygame.image.frombuffer(frame_rgb.tobytes(), frame_rgb.shape[1::-1], "RGB")
         frame_surface = pygame.transform.scale(frame_surface, VIEW_PORT)
         screen.blit(frame_surface, (0, 0))
         return True
 
 
+
+
 def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_VALUE):
     """
     Affiche l'écran de mesure avec une image adaptée à la température.
+    Charge une nouvelle image uniquement si elle est différente de l’actuelle.
     """
+
+    # Trouver l’image correcte en fonction de la température
     number_of_frame = len(SMOKE_FRAMES_PATHS) + len(FLAMES_FRAMES_PATHS)
     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
 
-    if index < len(SMOKE_FRAMES_PATHS):
-        image = load_scaled_image(SMOKE_FRAMES_PATHS[index], VIEW_PORT)
-        screen.blit(image, SMOKE_FRAME_POS)
-    else:
-        image = load_scaled_image(FLAMES_FRAMES_PATHS[index - len(SMOKE_FRAMES_PATHS)], RESOLUTION_FLAME)
-        screen.blit(image, FLAME_FRAME_POS)
-
+    load_and_blit_picture(screen, index)
     display_text_values(screen, Temperature)
 
 
@@ -84,3 +85,58 @@ def calculate_Temperature(sensor_value):
 
     return Temperature
 
+# Fonction pour charger une image à la demande
+def load_scaled_image(path, size):
+    """load and change the scale pf the  image if nessesary."""
+    img = pygame.image.load(path)
+    img = pygame.transform.scale(img, size)
+    return img
+
+def load_and_blit_picture(screen,index):
+
+    # Initialiser les variables statiques si elles n'existent pas
+    if not hasattr(display_measure, "current_image"):
+        display_measure.current_image = None  # Image actuellement affichée
+        display_measure.last_index = -1  # Dernier index d’image affiché
+        display_measure.pos = SMOKE_FRAME_POS
+
+    # Vérifier si l'image affichée doit changer
+    if index != display_measure.last_index:
+        # Supprimer l’ancienne image pour libérer la RAM
+        if display_measure.current_image:
+            del display_measure.current_image
+
+        # Charger la nouvelle image
+        if index < len(SMOKE_FRAMES_PATHS):
+            new_image = load_scaled_image(SMOKE_FRAMES_PATHS[index], VIEW_PORT)
+            display_measure.pos = SMOKE_FRAME_POS
+        else:
+            new_image = load_scaled_image(FLAMES_FRAMES_PATHS[index - len(SMOKE_FRAMES_PATHS)], RESOLUTION_FLAME)
+            display_measure.pos = FLAME_FRAME_POS
+
+        # Mettre à jour l'image actuelle et son index
+        display_measure.current_image = new_image
+        display_measure.last_index = index
+
+    # Blitter uniquement l'image actuelle (sans rechargement inutile)
+    if display_measure.current_image:
+        screen.blit(display_measure.current_image, display_measure.pos)
+
+
+# def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_VALUE):
+#     """
+#     Affiche l'écran de mesure avec une image adaptée à la température.
+#     """
+#
+#     number_of_frame = len(SMOKE_FRAMES_PATHS) + len(FLAMES_FRAMES_PATHS)
+#     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
+#     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
+#
+#     if index < len(SMOKE_FRAMES_PATHS):
+#         current_image = load_scaled_image(SMOKE_FRAMES_PATHS[index], VIEW_PORT)
+#         screen.blit(current_image, SMOKE_FRAME_POS)
+#     else:
+#         current_image = load_scaled_image(FLAMES_FRAMES_PATHS[index - len(SMOKE_FRAMES_PATHS)], RESOLUTION_FLAME)
+#         screen.blit(current_image, FLAME_FRAME_POS)
+#
+#     display_text_values(screen, Temperature)

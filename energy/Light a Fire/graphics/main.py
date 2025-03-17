@@ -2,10 +2,7 @@
 File: main.py
 Purpose: Main file for the Light a Fire UI
 """
-#import pygame
 #import time
-
-from consts import *
 from display import *
 from arduino import *
 from logs import *
@@ -86,7 +83,7 @@ def main():
             
             if not error:
                 check_temperature_value = log_temperature(logger,Temperature,check_temperature_value)
-        check_temperature_value = log_temperature(logger, Temperature, check_temperature_value)
+        #check_temperature_value = log_temperature(logger, Temperature, check_temperature_value)
         screen.fill(BLACK)  # reset screen
         runing = camera_setup(screen,cap)
         display_measure(screen, sensor_analogread=sensor_analogread, Temperature=Temperature)  # render the screen

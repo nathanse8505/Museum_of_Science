@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/consts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/display.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/logs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/logs/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

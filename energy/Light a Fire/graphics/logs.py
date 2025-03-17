@@ -34,7 +34,7 @@ def get_logger():
 
 def log_temperature(logger, temperature, check_temperature_value):
     if check_temperature_value and temperature >= SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD:
-        logger.info(f"The Bottle flew!")
+        logger.info(f"the ember ignites!")
         check_temperature_value = False
     elif temperature < SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD:
         check_temperature_value = True
