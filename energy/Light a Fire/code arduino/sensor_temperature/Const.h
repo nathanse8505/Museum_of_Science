@@ -2,7 +2,7 @@
 #define Const
 
 
-#define SERIAL_BAUD_RATE (9600)
+#define SERIAL_BAUD_RATE (115200)
 #define BCD_A (3) // Output to BCD_A (4511)
 #define BCD_B (4) // Output to BCD_B (4511)
 #define BCD_C (5) // Output to BCD_C (4511)

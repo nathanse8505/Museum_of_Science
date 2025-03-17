@@ -38,27 +38,22 @@ def camera_setup(screen,cap):
         return True
 
 
-def display_measure(screen,sensor_analogread,Temperature = MIN_TEMPERATURE_VALUE):
+def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_VALUE):
     """
-    Display the measurement screen
-    :param screen: the screen to display the measurement screen on
-    :param pressure_value: pressure value to display and calculate the measurement screen in
+    Affiche l'écran de mesure avec une image adaptée à la température.
     """
-
-    # sub function to calculate the Patm, calorie and energy from the pressure_value in Pa
-    #Temperature= calculate_Temperature(sensor_analogread)
-    number_of_frame = len(images_smoke) + len(images_flames)
+    number_of_frame = len(SMOKE_FRAMES_PATHS) + len(FLAMES_FRAMES_PATHS)
     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
 
-    #print(index,Temperature,temperatures)
-    if index < (len(images_smoke)):
-        screen.blit(images_smoke[index], SMOKE_FRAME_POS)
+    if index < len(SMOKE_FRAMES_PATHS):
+        image = load_scaled_image(SMOKE_FRAMES_PATHS[index], VIEW_PORT)
+        screen.blit(image, SMOKE_FRAME_POS)
     else:
-        screen.blit(images_flames[index - len(images_smoke)], FLAME_FRAME_POS)
+        image = load_scaled_image(FLAMES_FRAMES_PATHS[index - len(SMOKE_FRAMES_PATHS)], RESOLUTION_FLAME)
+        screen.blit(image, FLAME_FRAME_POS)
 
     display_text_values(screen, Temperature)
-
 
 
 
