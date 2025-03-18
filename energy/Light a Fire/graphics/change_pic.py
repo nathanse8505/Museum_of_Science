@@ -57,8 +57,17 @@ def remove_black_bg(source_folder_path, output_folder_path):
 
     print("✅ Toutes les images ont été traitées avec succès sans modifier leur nom !")
 
+
 def extraction_pic(input_mp4_path, output_folder_path):
+    """
+    Extrait des images d'une vidéo MP4 et les enregistre dans un sous-dossier.
+    """
+    # Créer le dossier principal s'il n'existe pas
     os.makedirs(output_folder_path, exist_ok=True)
+
+    # Créer un sous-dossier pour les images extraites
+    extracted_frames_folder = os.path.join(output_folder_path, "extracted_frames")
+    os.makedirs(extracted_frames_folder, exist_ok=True)
 
     # Charger la vidéo
     video_capture = cv2.VideoCapture(input_mp4_path)
@@ -71,11 +80,11 @@ def extraction_pic(input_mp4_path, output_folder_path):
     fps = int(video_capture.get(cv2.CAP_PROP_FPS))
     total_frames = int(video_capture.get(cv2.CAP_PROP_FRAME_COUNT))
 
-    # Définir le nombre de frames à extraire sur les 2 premières secondes
+    # Définir le nombre de frames à extraire
     num_frames_to_extract = 50
-    max_time = 2  # secondes
+    max_time = 10  # secondes
 
-    # Calculer les indices des frames à extraire dans les 2 premières secondes
+    # Calculer les indices des frames à extraire
     frame_indices = np.linspace(0, min(fps * max_time, total_frames) - 1, num_frames_to_extract, dtype=int)
 
     # Extraire et enregistrer les images
@@ -84,16 +93,16 @@ def extraction_pic(input_mp4_path, output_folder_path):
         video_capture.set(cv2.CAP_PROP_POS_FRAMES, frame_index)
         success, frame = video_capture.read()
         if success:
-            img_path = os.path.join(output_folder_path, f"frame_{i}.png")
+            img_path = os.path.join(extracted_frames_folder, f"frame_{i}.png")
             cv2.imwrite(img_path, frame)
             extracted_images.append(img_path)
 
     # Libérer la capture vidéo
     video_capture.release()
 
-    # Compresser les images extraites en un ZIP
-    smoke_frames_zip = output_folder_path + "/smoke_frames.zip"
-    shutil.make_archive(smoke_frames_zip.replace(".zip", ""), 'zip', output_folder_path)
+    # Retourner le chemin du dossier contenant les images extraites
+    return extracted_frames_folder
 
-    # Retourner le lien de téléchargement
-    smoke_frames_zip
+if __name__ == "__main__":
+    path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light a Fire\graphics\video\flame_50"
+    path_out = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light a Fire\graphics\video\flame_50"

@@ -23,8 +23,8 @@ def main():
 
     # pygame setup
     pygame.display.set_caption("Light a Fire")
-    # screen = pygame.display.set_mode(VIEW_PORT, pygame.FULLSCREEN)
-    screen = pygame.display.set_mode(VIEW_PORT)
+    screen = pygame.display.set_mode(VIEW_PORT, pygame.FULLSCREEN)
+    #screen = pygame.display.set_mode(VIEW_PORT)
 
     clock = pygame.time.Clock()  # for fps limit
 
@@ -86,7 +86,7 @@ def main():
         #check_temperature_value = log_temperature(logger, Temperature, check_temperature_value)
         screen.fill(BLACK)  # reset screen
         runing = camera_setup(screen,cap)
-        display_measure(screen, sensor_analogread=sensor_analogread, Temperature=Temperature)  # render the screen
+        display_measure(screen, sensor_analogread=sensor_analogread, Temperature=int(Temperature))  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
 

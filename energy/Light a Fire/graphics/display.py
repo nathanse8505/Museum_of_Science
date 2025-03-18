@@ -52,8 +52,13 @@ def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_VALUE
     number_of_frame = len(SMOKE_FRAMES_PATHS) + len(FLAMES_FRAMES_PATHS)
     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
-
-    load_and_blit_picture(screen, index)
+    
+    if index < len(SMOKE_FRAMES_PATHS):
+        screen.blit(smoke_images[index], SMOKE_FRAME_POS)
+    else:
+        screen.blit(flames_images[index - len(SMOKE_FRAMES_PATHS)], FLAME_FRAME_POS)
+        
+    #load_and_blit_picture(screen, index)
     display_text_values(screen, Temperature)
 
 
@@ -85,12 +90,6 @@ def calculate_Temperature(sensor_value):
 
     return Temperature
 
-# Fonction pour charger une image à la demande
-def load_scaled_image(path, size):
-    """load and change the scale pf the  image if nessesary."""
-    img = pygame.image.load(path)
-    img = pygame.transform.scale(img, size)
-    return img
 
 def load_and_blit_picture(screen,index):
 
@@ -122,21 +121,3 @@ def load_and_blit_picture(screen,index):
     if display_measure.current_image:
         screen.blit(display_measure.current_image, display_measure.pos)
 
-
-# def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_VALUE):
-#     """
-#     Affiche l'écran de mesure avec une image adaptée à la température.
-#     """
-#
-#     number_of_frame = len(SMOKE_FRAMES_PATHS) + len(FLAMES_FRAMES_PATHS)
-#     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
-#     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
-#
-#     if index < len(SMOKE_FRAMES_PATHS):
-#         current_image = load_scaled_image(SMOKE_FRAMES_PATHS[index], VIEW_PORT)
-#         screen.blit(current_image, SMOKE_FRAME_POS)
-#     else:
-#         current_image = load_scaled_image(FLAMES_FRAMES_PATHS[index - len(SMOKE_FRAMES_PATHS)], RESOLUTION_FLAME)
-#         screen.blit(current_image, FLAME_FRAME_POS)
-#
-#     display_text_values(screen, Temperature)
