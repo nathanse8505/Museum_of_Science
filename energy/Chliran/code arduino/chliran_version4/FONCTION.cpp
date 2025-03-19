@@ -1,4 +1,4 @@
-#include "FONCTION.h"
+#include "FONCTION_and_CONST.h"
 
 /**
  * Initialize shift register by setting Output Enable and Latch pins
@@ -27,7 +27,7 @@ void init_switch_state(){
  * @param switchNumber Index of switch to check (0 to NUMBER_OF_SWITCH-1)
  * @return HIGH if button was pressed and released, LOW otherwise
  */
-/*bool PRESS_BUTTON(uint8_t switchNumber) {
+bool PRESS_BUTTON(uint8_t switchNumber) {
     // Check if button is pressed
     if (digitalRead(SWITCH_PINS[switchNumber]) == LOW && checkStates[switchNumber] == LOW) {
         delay(BOUNCE_TIME);
@@ -38,20 +38,6 @@ void init_switch_state(){
     if (digitalRead(SWITCH_PINS[switchNumber]) == HIGH && checkStates[switchNumber] == HIGH) {
         checkStates[switchNumber] = LOW;
         return HIGH;
-    }
-    return LOW;
-}*/
-
-bool PRESS_BUTTON(uint8_t switchNumber) {
-    if (digitalRead(SWITCH_PINS[switchNumber]) == LOW && checkStates[switchNumber] == LOW) {
-        delay(BOUNCE_TIME); // Anti-rebond
-        if (digitalRead(SWITCH_PINS[switchNumber]) ==  HIGH) { // Vérification après anti-rebond
-            checkStates[switchNumber] = HIGH;
-            return HIGH;  // Bouton détecté
-        }
-    }
-    if (digitalRead(SWITCH_PINS[switchNumber]) == HIGH && checkStates[switchNumber] == HIGH) {
-        checkStates[switchNumber] = LOW;
     }
     return LOW;
 }

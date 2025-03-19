@@ -1,4 +1,4 @@
-#include "FONCTION.h"
+#include "FONCTION_and_CONST.h"
 File logFile;
 
 void setup() {
@@ -67,8 +67,8 @@ void loop() {
 
     // If not the last switch, shift LED one more position
     if(index_switch < NUMBER_OF_SWITCH - 1){
-      Serial.println("enter");
       out_data = SHIFT_LEFT(out_data);
+      Serial.println("Led SW" + String(index_switch + 2) + " ;has activate");
     }
 
     // Update switch states for next sequence
@@ -90,7 +90,7 @@ void loop() {
     for (int i = 1; i <= 3; i++) {
       int swIndex = (index_switch + i) % NUMBER_OF_SWITCH;
       if (PRESS_BUTTON(swIndex)) {
-        logMessage = "SW" + String(swIndex + 1) + " a été pressé";
+        logMessage = "SW" + String(swIndex + 1) + " ;has been pressed";
         logEvent(logMessage.c_str());
         Serial.println(logMessage);
       }

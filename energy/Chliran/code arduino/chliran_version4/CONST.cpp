@@ -1,4 +1,4 @@
-#include "FONCTION.h"
+#include "FONCTION_and_CONST.h"
 
 const int Bauderate = 9600;
 // Array of switch pins for easy iteration
