@@ -31,10 +31,10 @@
  */
 
 // Pin definitions for shift register
-#define LatchPin 4        // ST_CP: Storage register input
-#define ClockPin 5        // SH_CP: Shift register clock input
-#define Data_Serial 2     // DS: Serial data input
-#define Output_Enable 3   // OE: Output enable (active LOW)
+#define LatchPin 2        // ST_CP: Storage register input
+#define ClockPin 3        // SH_CP: Shift register clock input
+#define Data_Serial 4     // DS: Serial data input
+#define Output_Enable 5   // OE: Output enable (active LOW)
 
 // Pin definitions for switches
 #define SW1 6 
