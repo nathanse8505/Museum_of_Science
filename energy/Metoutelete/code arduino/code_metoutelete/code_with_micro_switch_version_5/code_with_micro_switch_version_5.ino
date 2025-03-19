@@ -1,5 +1,4 @@
-#include "const.h"
-#include "FONCTION.h"
+#include "FONCTION_and_CONST.h"
 
 File logFile; // File object for logging events
 

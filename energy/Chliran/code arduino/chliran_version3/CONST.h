@@ -30,10 +30,10 @@
 #define Output_Enable 3   // OE: Output enable (active LOW)
 
 // Pin definitions for switches
-#define SW1 15 //A1
-#define SW2 14 //A0
-#define SW3 12
-#define SW4 11
+#define SW1 6
+#define SW2 7
+#define SW3 8
+#define SW4 9
 //#define SW5 12
 
 const int Bauderate = 9600;
@@ -44,7 +44,7 @@ const int NUMBER_OF_SWITCH = 4;
 // Timing constants (in milliseconds)
 const int16_t DELAY_BLINK = 300;
 const int16_t BOUNCE_TIME = 100;        // Debounce delay for switches
-const unsigned long  TIME_LED_ON = 90000;       // Duration LED stays on
+const unsigned long  TIME_LED_ON = 900;       // Duration LED stays on
 const unsigned long  TIME_LED_OFF = 0;       // Duration LED stays off
 const int16_t DELAY_AFTER_SHIFT = 100;  // Delay after shifting LED position
 unsigned long timer_on = 0;

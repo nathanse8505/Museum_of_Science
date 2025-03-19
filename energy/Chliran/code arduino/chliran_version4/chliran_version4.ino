@@ -38,23 +38,27 @@ void setup() {
 }
 
 void loop() { 
+
+  //button = read_press_button();
   wdt_reset();
-  log_press_button();
   // Check if current switch is pressed and is active in the sequence
   if(PRESS_BUTTON(index_switch) && (checkSW[index_switch] == HIGH)){
+
     logMessage = "SW" + String(index_switch + 1) + " ;has been pressed and the led UV has activate";
     logEvent(logMessage.c_str());
-    Serial.println(logMessage.c_str());
+    Serial.println("SW" + String(index_switch + 1) + " ;has been pressed and the led UV has activate");
     timer_on = millis();
     // Shift LED to next position 
     out_data = SHIFT_LEFT(out_data);
     while(millis() - timer_on < TIME_LED_ON){
+      //Serial.println("enter to the delay mode ON");
       log_press_button();
       wdt_reset();
     }
     RESET_ALL(out_data);
     timer_off = millis();
     while(millis() - timer_off < TIME_LED_OFF){
+      //Serial.println("enter to the delay mode OFF");
         log_press_button();
         wdt_reset();
     }
@@ -69,17 +73,31 @@ void loop() {
 
     // Update switch states for next sequence
     checkSW[index_switch] = LOW;      // Deactivate current switch
-    checkSW[index_switch + 1] = HIGH; // Activate next switch
+    checkSW[(index_switch + 1) % NUMBER_OF_SWITCH] = HIGH; // Activate next switch
     index_switch++;                   // Move to next switch in sequence
 
     // Debug information
-    Serial.println(out_data);
+    Serial.println("out data: " + String(out_data));
+    Serial.println("index_switch: " + String(index_switch));
     for(int i = 0; i < NUMBER_OF_SWITCH; i++){
-      wdt_reset();
-      Serial.print("checkSW" + String(i) + ": ");
+      Serial.print("checkSW" + String(i + 1) + ": ");
       Serial.println(checkSW[i]);
     }
+    
+    
   }
+  else {
+    for (int i = 1; i <= 3; i++) {
+      int swIndex = (index_switch + i) % NUMBER_OF_SWITCH;
+      if (PRESS_BUTTON(swIndex)) {
+        logMessage = "SW" + String(swIndex + 1) + " a été pressé";
+        logEvent(logMessage.c_str());
+        Serial.println(logMessage);
+      }
+    }
+  }
+  
+  
   //BLINK(out_data);
 
   // Reset sequence when reaching the last switch
@@ -91,9 +109,10 @@ void loop() {
     index_switch = 0;                // Reset to first switch
     checkSW[index_switch] = HIGH;    // Activate first switch
     out_data = SET_FIRST_SW_LED();   // Turn on first LED
-    Serial.println(out_data);
+    Serial.println("out data: " + String(out_data));
   }
   if(out_data == 65536 -1){
     RESET_ALL(out_data);
   }
+
 }

@@ -68,6 +68,7 @@ extern bool checkStates[] ;  // Array for switch debounce states
 extern String logMessage ;
 
 
+
 void init_shift_register();
 void init_switch_state();
 bool PRESS_BUTTON(uint8_t switchNumber);
@@ -77,6 +78,7 @@ int SHIFT_LEFT(int data);
 void BLINK(int data);
 void logEvent(const char* message);
 void log_press_button();
+
 
 
 

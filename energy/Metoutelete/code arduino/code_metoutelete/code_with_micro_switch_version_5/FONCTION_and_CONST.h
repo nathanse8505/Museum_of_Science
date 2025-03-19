@@ -1,10 +1,9 @@
-#ifndef CONST_H
-#define CONST_H
+#ifndef FONCTION_H
+#define FONCTION_H
 
-#include <Arduino.h>  // ✅ Ensures compatibility with Arduino functions
-#include <stdint.h>   // (Optional, already included in Arduino.h)
+#include <SPI.h>
+#include <SD.h>
 
-// Pin assignments
 #define LED_BUTTON 2
 #define MOTOR 3
 #define BUTTON 5
@@ -49,5 +48,13 @@ extern bool check;               // Flag to detect button press
 extern unsigned long time_start;  // Timer to disable button activation after use
 extern unsigned long time_to_secure; // Timer for motor emergency stop if needed
 extern bool flag_first_press;     // Flag to track the first button press after activation
+
+
+void TURN_ON_MOTOR();// Function to turn on the motor
+bool PRESS_BUTTON();// Function to detect and debounce button press
+void IEC();// Function for Immediate Engine Cutoff (IEC) - Stops the motor immediately
+void printMotorOffInfo();// Function to print motor shutdown information to the serial monitor
+void BLINK_FLAG(unsigned int DELAY_BLINK);// Function to blink the LED as an indicator (e.g., for errors or warnings)
+void logEvent(const char* message);// Function to log events to the SD card
 
 #endif

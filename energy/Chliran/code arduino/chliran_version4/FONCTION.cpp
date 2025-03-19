@@ -27,11 +27,11 @@ void init_switch_state(){
  * @param switchNumber Index of switch to check (0 to NUMBER_OF_SWITCH-1)
  * @return HIGH if button was pressed and released, LOW otherwise
  */
-bool PRESS_BUTTON(uint8_t switchNumber) {
+/*bool PRESS_BUTTON(uint8_t switchNumber) {
     // Check if button is pressed
     if (digitalRead(SWITCH_PINS[switchNumber]) == LOW && checkStates[switchNumber] == LOW) {
-        checkStates[switchNumber] = HIGH;
         delay(BOUNCE_TIME);
+        checkStates[switchNumber] = HIGH;
     }
 
     // Check if button is released
@@ -40,7 +40,22 @@ bool PRESS_BUTTON(uint8_t switchNumber) {
         return HIGH;
     }
     return LOW;
+}*/
+
+bool PRESS_BUTTON(uint8_t switchNumber) {
+    if (digitalRead(SWITCH_PINS[switchNumber]) == LOW && checkStates[switchNumber] == LOW) {
+        delay(BOUNCE_TIME); // Anti-rebond
+        if (digitalRead(SWITCH_PINS[switchNumber]) ==  HIGH) { // Vérification après anti-rebond
+            checkStates[switchNumber] = HIGH;
+            return HIGH;  // Bouton détecté
+        }
+    }
+    if (digitalRead(SWITCH_PINS[switchNumber]) == HIGH && checkStates[switchNumber] == HIGH) {
+        checkStates[switchNumber] = LOW;
+    }
+    return LOW;
 }
+
 
 /**
  * Reset all LEDs to OFF state
@@ -108,22 +123,16 @@ void logEvent(const char* message) {
     }
 }
 
-void log_press_button(){
 
-  if(PRESS_BUTTON(0)) {
-      logEvent("SW1 ;has been pressed");
-      Serial.println("the button SW1 has been pressed");
-  }
-  if(PRESS_BUTTON(1)) {
-      logEvent("SW2 ;has been pressed");
-      Serial.println("the button SW2 has been pressed");
-  }
-  if(PRESS_BUTTON(2)) {
-      logEvent("SW3 ;has been pressed");
-      Serial.println("the button  SW3 has been pressed");
-  }
-  if(PRESS_BUTTON(3)) {
-      logEvent("SW4 ;has been pressed");
-      Serial.println("the button  SW4 has been pressed");
-  }
+
+void log_press_button(){
+  
+  for(int i = 0; i < NUMBER_OF_SWITCH; i++){
+      wdt_reset();
+      if(PRESS_BUTTON(i)) {
+        logMessage = "SW" + String(i + 1) + " ;has been pressed";
+        logEvent(logMessage.c_str());
+        Serial.println(logMessage.c_str());
+      }
+    }
 }
