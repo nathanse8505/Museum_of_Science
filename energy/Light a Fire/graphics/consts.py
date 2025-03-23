@@ -16,10 +16,12 @@ RECONNECT_INTERVAL = 1  # secondes
 PARSE_ERROR = 1
 PARSE_VALID = 0
 SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD = 30  # en Celsius
+TIME_AVG = 2 #secondes
 
 # Températures
-MIN_TEMPERATURE_VALUE = 20.0  # en Celsius
-MAX_TEMPERATURE_VALUE = 80.0  # en Celsius
+MIN_TEMPERATURE_VALUE = 24.0  # en Celsius
+MAX_TEMPERATURE_VALUE = 50.0  # en Celsius
+MIN_TEMPERATURE_DEFAULT = 15
 
 # États
 MEASURE = 1
@@ -71,7 +73,7 @@ FIRE_TEXT_POS = (int(0.2 * VIEW_PORT[0]), int(0.8 * VIEW_PORT[1]))
 # Couleurs
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-TEXT_COLOR = WHITE
+TEXT_COLOR = (255, 0, 0)
 
 # Tailles de texte
 TEXT_SIZE = int(60 * VIEW_PORT[0] / 1080)

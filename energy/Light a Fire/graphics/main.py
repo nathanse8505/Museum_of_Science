@@ -29,7 +29,7 @@ def main():
     clock = pygame.time.Clock()  # for fps limit
 
     # initial values for th
-    Temperature = MIN_TEMPERATURE_VALUE
+    Temperature = MIN_TEMPERATURE_DEFAULT
     sensor_analogread = 0
     check_temperature_value = True
 
@@ -43,6 +43,12 @@ def main():
     time.sleep(1)  # wait for the arduino to reset
     last_time_tried_to_connect = time.time()  # for not trying to connect too often
     runing = True
+
+    #moyenne temperature
+    temperature_list = []
+    last_average_time = time.time()
+    temperature_to_display = MIN_TEMPERATURE_DEFAULT
+
     while runing:
 
         events = pygame.event.get()
@@ -56,10 +62,10 @@ def main():
                     Quit_pygame(cap)
 
                 if event.key == pygame.K_UP:
-                    Temperature = min(Temperature + 1, MAX_TEMPERATURE_VALUE)
+                    temperature_to_display = min( temperature_to_display + 1, MAX_TEMPERATURE_VALUE)
 
                 if event.key == pygame.K_DOWN:
-                    Temperature = max(Temperature - 1, MIN_TEMPERATURE_VALUE)
+                    temperature_to_display = max( temperature_to_display - 1, MIN_TEMPERATURE_DEFAULT)
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
@@ -67,7 +73,7 @@ def main():
             logger.info("Arduino disconnected. Trying to reconnect to Arduino...")
 
             ser = None
-            Temperature = MIN_TEMPERATURE_VALUE
+            Temperature = MIN_TEMPERATURE_DEFAULT
             state = MEASURE
 
         # if arduino was connecetd at start, but now failed to read, try to reconnect
@@ -82,11 +88,19 @@ def main():
             # print(f"parsed: pressure {Temperature} sensor_analogread {sensor_analogread}")
             
             if not error:
-                check_temperature_value = log_temperature(logger,Temperature,check_temperature_value)
+                temperature_list.append(Temperature)
+                # Vérifie si 2 secondes sont passées
+                if time.time() - last_average_time >= TIME_AVG:
+                    if temperature_list:
+                        temperature_to_display = sum(temperature_list) / len(temperature_list)
+                        temperature_list = []  # réinitialiser la liste
+                    last_average_time = time.time()
+                check_temperature_value = log_temperature(logger,temperature_to_display, check_temperature_value)
+
         #check_temperature_value = log_temperature(logger, Temperature, check_temperature_value)
         screen.fill(BLACK)  # reset screen
         runing = camera_setup(screen,cap)
-        display_measure(screen, sensor_analogread=sensor_analogread, Temperature=int(Temperature))  # render the screen
+        display_measure(screen, sensor_analogread=sensor_analogread, Temperature=int(temperature_to_display))  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
 

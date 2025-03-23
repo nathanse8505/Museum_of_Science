@@ -42,7 +42,7 @@ def camera_setup(screen,cap):
 
 
 
-def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_VALUE):
+def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_DEFAULT):
     """
     Affiche l'écran de mesure avec une image adaptée à la température.
     Charge une nouvelle image uniquement si elle est différente de l’actuelle.
@@ -63,7 +63,7 @@ def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_VALUE
 
 
 
-def display_text_values(screen, Temperature = MIN_TEMPERATURE_VALUE):
+def display_text_values(screen, Temperature):
     """
     Display the text values on the screen
     :param screen: the screen to display the text values on
@@ -76,7 +76,7 @@ def display_text_values(screen, Temperature = MIN_TEMPERATURE_VALUE):
         sub function to display the text on the screen
         """
         font = pygame.font.Font(None, size)
-        text = font.render(f"{text:.2f}", True, color)
+        text = font.render(f"{text:.1f}°C", True, color)
         text_rect = text.get_rect(center=pos)
         screen.blit(text, text_rect)
 
