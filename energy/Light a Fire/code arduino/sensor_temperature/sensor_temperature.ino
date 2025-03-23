@@ -25,5 +25,5 @@ void loop() {
   NUMBER_TO_DISPLAY(temperature_C * UNIT_CALIBRATION);
 
   Serial.println(String(temperature_C) + " " + String(Vout));
-  delay(200);
+  delay(50);
 }

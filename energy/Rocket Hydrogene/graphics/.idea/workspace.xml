@@ -2,11 +2,108 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/code arduino/sensor_temperature/sensor_temperature.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/code arduino/sensor_temperature/sensor_temperature.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/consts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/logs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/logs/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_34.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_35.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_36.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_38.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_39.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_45.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_46.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_48.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_49.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_9.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

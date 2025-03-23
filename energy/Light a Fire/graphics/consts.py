@@ -16,7 +16,8 @@ RECONNECT_INTERVAL = 1  # secondes
 PARSE_ERROR = 1
 PARSE_VALID = 0
 SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD = 30  # en Celsius
-TIME_AVG = 2 #secondes
+ROLLING_WINDOW_SIZE = 10  # for average
+
 
 # Températures
 MIN_TEMPERATURE_VALUE = 24.0  # en Celsius
@@ -37,11 +38,16 @@ pygame.init()
 VIEW_PORT = pygame.display.Info().current_w , pygame.display.Info().current_h
 RESOLUTION_FLAME = (1920, 1080)
 RESOLUTION_SMOKE = (3840, 2160)
+RESOLUTION_THERMOMETER = (2048//4, 2048//4)
 SIZE_FLAME = (int(0.4 * RESOLUTION_FLAME[0]), int(0.4 * RESOLUTION_FLAME[1]))
 
 # Chemins des dossiers d'images
 PICTURES_SMOKE = os.path.join(os.path.dirname(__file__), "pictures_smoke")
 PICTURES_FLAMES = os.path.join(os.path.dirname(__file__), "pictures_flame")
+PICTURES_THERMOMETER = os.path.join(os.path.dirname(__file__), "pictures_thermometer")
+
+full_thermometer_path = os.path.join(PICTURES_THERMOMETER,"thermometer_full.png")
+empty_thermometer_path = os.path.join(PICTURES_THERMOMETER,"thermometer_empty.png")
 
 # Chargement des chemins des images
 SMOKE_FRAMES_PATHS = sorted(
@@ -62,13 +68,18 @@ def load_scaled_image(path, size):
 
 smoke_images = [load_scaled_image(path , VIEW_PORT) for path in SMOKE_FRAMES_PATHS]
 flames_images = [load_scaled_image(path , (int(VIEW_PORT[0]//2), int(VIEW_PORT[1]//2))) for path in FLAMES_FRAMES_PATHS]
+full_thermometer = load_scaled_image(full_thermometer_path, RESOLUTION_THERMOMETER)
+empty_thermometer = load_scaled_image(empty_thermometer_path, RESOLUTION_THERMOMETER)
 
 # Positions des éléments à l'écran
-#print(VIEW_PORT)
 FLAME_FRAME_POS = (int(0.242*VIEW_PORT[0]), int(0.4*VIEW_PORT[1]))
 #FLAME_FRAME_POS = (0, 0)
 SMOKE_FRAME_POS = (0, 0)
 FIRE_TEXT_POS = (int(0.2 * VIEW_PORT[0]), int(0.8 * VIEW_PORT[1]))
+
+THERMOMETER_FRAME_POS = (0,int(0.22 * VIEW_PORT[1]))
+THERMO_FULL_SIZE = int(0.91 * RESOLUTION_THERMOMETER[1])
+BOTTOM_THERMOMETER_POS = int(1.37 * RESOLUTION_THERMOMETER[1])
 
 # Couleurs
 BLACK = (0, 0, 0)
@@ -77,6 +88,7 @@ TEXT_COLOR = (255, 0, 0)
 
 # Tailles de texte
 TEXT_SIZE = int(60 * VIEW_PORT[0] / 1080)
+
 
 
 

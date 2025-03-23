@@ -60,14 +60,15 @@ def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_DEFAU
         
     #load_and_blit_picture(screen, index)
     display_text_values(screen, Temperature)
+    screen.blit(empty_thermometer,THERMOMETER_FRAME_POS)
+    display_bars(screen,Temperature)
 
 
-
-def display_text_values(screen, Temperature):
+def display_text_values(screen, temperature):
     """
     Display the text values on the screen
     :param screen: the screen to display the text values on
-    :param calorie: the calorie to display
+    :param temperature: the temperature to display
     """
 
     # sub function to reduce code duplication
@@ -80,7 +81,7 @@ def display_text_values(screen, Temperature):
         text_rect = text.get_rect(center=pos)
         screen.blit(text, text_rect)
 
-    display_text(screen, Temperature, FIRE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
+    display_text(screen, temperature, FIRE_TEXT_POS, TEXT_SIZE, TEXT_COLOR)
 
 
 def calculate_Temperature(sensor_value):
@@ -90,6 +91,43 @@ def calculate_Temperature(sensor_value):
 
     return Temperature
 
+
+
+def avg(temperature_list,Temperature):
+    temperature_list.append(Temperature)
+    if len(temperature_list) > ROLLING_WINDOW_SIZE:
+        temperature_list.pop(0)  #
+    temperature_to_display = sum(temperature_list) / len(temperature_list)
+
+    return temperature_list, temperature_to_display
+
+
+def display_bars(screen, temperature=MIN_TEMPERATURE_VALUE):
+    """
+    Display the bar on the screen according to the values
+    :param screen: the screen to display the bar on
+    :param temperature: the voltage to display
+    """
+
+    # sub function to reduce code duplication
+    def display_bar_from_values(screen, value, max, min, bar_image):
+        """
+        sub function to display the bar on the screen according to the value and the max and min values
+        """
+        bar_width = RESOLUTION_THERMOMETER[0]
+        bar_height = RESOLUTION_THERMOMETER[1]
+
+        fill_height = int((value - min) / (max - min) * THERMO_FULL_SIZE)
+        crop_rect = pygame.Rect(0, bar_height - fill_height, bar_width, fill_height)
+        cropped_bar = bar_image.subsurface(crop_rect).copy()
+
+        pos_x = 0
+        pos_y = int(BOTTOM_THERMOMETER_POS - fill_height)
+
+        screen.blit(cropped_bar, (pos_x, pos_y))
+
+
+    display_bar_from_values(screen, temperature, MAX_TEMPERATURE_VALUE, MIN_TEMPERATURE_DEFAULT, full_thermometer)
 
 def load_and_blit_picture(screen,index):
 
@@ -120,4 +158,3 @@ def load_and_blit_picture(screen,index):
     # Blitter uniquement l'image actuelle (sans rechargement inutile)
     if display_measure.current_image:
         screen.blit(display_measure.current_image, display_measure.pos)
-
