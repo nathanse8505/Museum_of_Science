@@ -42,7 +42,7 @@ def find_arduino_port(logger=None):
     return None  # continue without Arduino
 
 
-def open_serial_connection(port=None, baud_rate=BAUDRATE, timeout=1, logger=None):
+def open_serial_connection(port=None, baud_rate=BAUDRATE, timeout=0.05, logger=None):
     """
     Open a serial connection to the specified port.
     """
@@ -84,6 +84,7 @@ def read_line(ser=None, logger=None):
             logger.error(f"Error reading from serial, Arduino probably disconnected")
 
         return SERIAL_ERROR
+
     
 
 def parse_data(raw_data, logger=None):

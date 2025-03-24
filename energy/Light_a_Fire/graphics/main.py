@@ -14,6 +14,9 @@ def Quit_pygame(cap):
     pygame.quit()
     exit()
 
+
+
+
 def main():
     """
     The main function for the Light a Fire UI
@@ -43,6 +46,7 @@ def main():
     ser = open_serial_connection(arduino_port, logger=logger)  # Open the serial port
     time.sleep(1)  # wait for the arduino to reset
     last_time_tried_to_connect = time.time()  # for not trying to connect too often
+
     running = True
 
     #moyenne temperature
@@ -88,11 +92,13 @@ def main():
             # print(f"parsed: pressure {temperature} sensor_analogread {sensor_analogread}")
             
             if not error:
-                temperature_list, temperature_to_display = avg(temperature_list, temperature)
+                temperature_to_display = temperature
+                #temperature_list, temperature_to_display = avg_batch(temperature_list,temperature,temperature_to_display)
                 check_temperature_value = log_temperature(logger, temperature_to_display, check_temperature_value)
 
         screen.fill(BLACK)  # reset screen
         running = camera_setup(screen, cap)
+        #if(temperature != temperature_to_display):
         display_measure(screen, sensor_analogread=sensor_analogread, Temperature=temperature_to_display)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)

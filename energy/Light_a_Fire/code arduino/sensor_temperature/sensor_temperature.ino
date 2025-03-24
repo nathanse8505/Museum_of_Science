@@ -12,6 +12,7 @@ void setup() {
   pinMode(LANG_BUTTON_IO, INPUT_PULLUP);
 
   Serial.begin(SERIAL_BAUD_RATE);
+  timer = millis();
 }
 
 void loop() {
@@ -22,8 +23,14 @@ void loop() {
   Vout = analogRead(ThermistorPin);
   temperature_C = read_temperature(Vout);
 
-  NUMBER_TO_DISPLAY(temperature_C * UNIT_CALIBRATION);
+  
 
-  Serial.println(String(temperature_C) + " " + String(Vout));
-  delay(50);
+  
+  if(millis() - timer > DATA_SER){
+
+      Serial.println(String(temperature_C) + " " + String(Vout));
+      NUMBER_TO_DISPLAY(temperature_C * UNIT_CALIBRATION);
+      timer = millis();
+  }
+  
 }

@@ -93,13 +93,22 @@ def calculate_Temperature(sensor_value):
 
 
 
-def avg(temperature_list,Temperature):
-    temperature_list.append(Temperature)
-    if len(temperature_list) > ROLLING_WINDOW_SIZE:
-        temperature_list.pop(0)  #
-    temperature_to_display = sum(temperature_list) / len(temperature_list)
+def avg_batch(temperature_list, new_temp, previous_avg):
+    """
+    Ajoute une nouvelle température à la liste.
+    Quand on atteint ROLLING_WINDOW_SIZE, on calcule la moyenne, on vide la liste,
+    et on retourne la nouvelle moyenne.
+    Sinon, on retourne la moyenne précédente.
+    """
+    temperature_list.append(new_temp)
 
-    return temperature_list, temperature_to_display
+    if len(temperature_list) >= ROLLING_WINDOW_SIZE:
+        new_avg = sum(temperature_list) / len(temperature_list)
+        temperature_list.clear()  # Réinitialise la liste pour le prochain batch
+        return temperature_list, new_avg
+    else:
+        return temperature_list, previous_avg
+
 
 
 def display_bars(screen, temperature=MIN_TEMPERATURE_VALUE):

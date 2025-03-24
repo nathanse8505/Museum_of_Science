@@ -61,5 +61,8 @@ int Vout;
 float R2;
 float temperature_C;
 
+/////////serial com////////
+unsigned long timer;
+const unsigned long DATA_SER = 150;
 
 #endif
