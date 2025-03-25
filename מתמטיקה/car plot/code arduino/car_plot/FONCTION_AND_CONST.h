@@ -50,8 +50,8 @@ VL53L1X sensor;
 const uint16_t BAUDERATE = 9600;
 const uint8_t OUTPUT_PARALLEL_PORT = 8;
 const int outputPins[OUTPUT_PARALLEL_PORT] = {D1, D2, D3, D4, D5, D6, D7, D8}; // Pins de sortie
-const int MAX_DISTANCE = 500;
-const int MIN_DISTANCE = 100;
+const int MAX_DISTANCE = 1000;
+const int MIN_DISTANCE = 50;
 const int ITERATION = 10;
 
 float Current_distance;
@@ -92,14 +92,15 @@ int set_distance(int pin){
 }
 
 
-void num_to_parallel(int number , int min , int max){
+int num_to_parallel(int number , int min , int max){
     int mappedValue = map(number, min, max, 0, 255); // Mapper de 0-1023 à 0-255
-    Serial.println(mappedValue);
+    //Serial.println(mappedValue);
     // Écrire la valeur binaire sur les pins de sortie
     for (int i = 0; i < 8; i++) {
         digitalWrite(outputPins[i], (mappedValue >> i) & 1); // Extraction du bit i
+        delay(1); // Petite pause pour éviter trop de rafraîchissements
     }
-    delay(100); // Petite pause pour éviter trop de rafraîchissements
+    return mappedValue;
 }
 
 /**
