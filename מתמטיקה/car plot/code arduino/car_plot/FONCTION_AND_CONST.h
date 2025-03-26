@@ -50,8 +50,8 @@ VL53L1X sensor;
 const uint16_t BAUDERATE = 9600;
 const uint8_t OUTPUT_PARALLEL_PORT = 8;
 const int outputPins[OUTPUT_PARALLEL_PORT] = {D1, D2, D3, D4, D5, D6, D7, D8}; // Pins de sortie
-const int MAX_DISTANCE = 1000;
-const int MIN_DISTANCE = 50;
+const int MAX_DISTANCE = 875;
+const int MIN_DISTANCE = 180;
 const int ITERATION = 10;
 
 float Current_distance;
@@ -76,7 +76,7 @@ void init_sensor(){
     while (1); // Stay here if sensor initialization fails
   }
   
-  sensor.setDistanceMode(VL53L1X::Medium);// Set distance measurement mode to Medium
+  sensor.setDistanceMode(VL53L1X::Short);// Set distance measurement mode to Medium
   sensor.setROISize(16,16);//set minimum Range Of Interest 16x16 to 4x4
   //sensor.setROICenter(136);//Y=8,X=8--> = 1000 1000 = 136 to center the ROI in the middle
   sensor.setMeasurementTimingBudget(30000); // Set the timing budget (time per measurement in microseconds).
