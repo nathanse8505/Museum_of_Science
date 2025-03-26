@@ -1,5 +1,5 @@
 """
-Filename: display.py
+Filename: image_processing.py
 Purpose: Display functions for the Hydrogen Rocket UI
 """
 from consts import *

@@ -5750,3 +5750,5 @@
 2025-02-20 17:50:58 - your language is: english
 2025-02-20 17:50:59 - your language is: arabic
 2025-02-20 17:50:59 - your language is: hebrew
+2025-03-27 00:15:19 - Starting Jumping Ring UI
+2025-03-27 00:15:19 - Error: Arduino not found
