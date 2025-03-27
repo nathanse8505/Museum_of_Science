@@ -162,7 +162,8 @@ arduino = None  # the serial port to connect to the arduino
 camera_on = True  # True if camera mode is on
 camera_working = False  # True if the camera is connected and working
 empty_captures_in_a_row = 0  # count the number of empty images in a row, for the idle mode when no hand is detected in the image
-last_capture = time.time()  # the time of the last capture 
+last_capture = time.time()  # the time of the last capture
+sample_index = 0
 
 # check if the arduino is connected to the computer
 try:
@@ -271,6 +272,7 @@ while(running):
             continue
         else:
             camera_working = True
+
         img = cv2.flip(img, 0)  # flip the image vertically (the camera is upside down)
         #img = cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
 
@@ -326,6 +328,7 @@ while(running):
             arduino.flush()  
             arduino.reset_input_buffer()
             arduino.reset_output_buffer()
+
 
             cassette = random.randint(0, cassettes_num-1)  # choose a random cassette number to drop the image in
             send_start_key()  # send the start key to the arduino

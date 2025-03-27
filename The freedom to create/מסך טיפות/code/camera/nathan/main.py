@@ -1,9 +1,9 @@
-import time
-from datetime import datetime
+
 from pygame.locals import *
 from const import *
 from arduino import *
 from image_processing import *
+from random import randint
 
 # Initialisation arduino
 arduino,found_arduino,log = open_serial()
@@ -15,7 +15,12 @@ if found_arduino:
 
 # Initialisation caméra
 camera_on = True
-camera_working , cap = camera_init()
+camera_working = False
+cap = None
+while not camera_working:
+    camera_working , cap = camera_init()
+empty_captures_in_a_row = 0  # count the number of empty images in a row, for the idle mode when no hand is detected in the image
+last_capture = time.time()  # the time of the last capture
 
 # Initialisation Pygame
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
@@ -27,21 +32,13 @@ sample_index = 0
 arduino_done = True
 idle = False
 send_parameters = False
-last_capture = time.time()
-empty_captures_in_a_row = 0
 running = True
 
+byte_list = None
 
 
 # Boucle principale
 while running:
-    img = take_picture(cap, camera_working)
-    time.sleep(0.002)
-
-    if not send_parameters and found_arduino:
-        send_variables_to_arduino(arduino, output_height, valve_on_time, drawing_depth)
-        send_parameters = True
-        time.sleep(0.2)
 
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -49,18 +46,7 @@ while running:
         elif event.type == KEYDOWN:
             if event.key in (K_ESCAPE, K_q):
                 running = False
-            elif event.key == K_p:
-                if not camera_working:
-                    try:
-                        cap = cv2.VideoCapture(camera_index)
-                        if cap.isOpened():
-                            camera_working = True
-                            print("Camera is ready")
-                    except Exception:
-                        continue
-                camera_on = not camera_on
-                print(f"Camera is {'on' if camera_on else 'off'}")
-                last_capture = time.time()
+
             elif event.key == K_RIGHT:
                 threshold += 10
                 print(f"Threshold: {threshold}")
@@ -68,11 +54,90 @@ while running:
                 threshold -= 10
                 print(f"Threshold: {threshold}")
 
+            elif event.key == K_p:
+                if not camera_working:
+                    camera_working, cap = camera_init()
+                    if not camera_working:
+                        continue
+                camera_on = not camera_on
+                print(f"Camera is {'on' if camera_on else 'off'}")
+                last_capture = time.time()
 
-    # Affichage info si caméra off
-    if not camera_on:
+    img = take_picture(cap, camera_working)
+    time.sleep(0.002)
+    img = cv2.flip(img, 0)  # flip the image vertically (the camera is upside down)
+    # img = cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
+    img = cropped_img(img)
+
+    if not send_parameters and found_arduino:
+        send_variables_to_arduino(arduino)
+        send_parameters = True
+        time.sleep(0.2)
+
+    if camera_on and time.time() - last_capture >= space_time/1000 and arduino_done:
+        # if the time since the last capture is more than 'space_time' milliseconds
+        # and the arduino is done processing the previous image, take a new picture and send it to the arduino
+        camera_working,camera_on = take_new_pic(cap, camera_working)
+        if not camera_working:
+            continue
+
+        in_path,out_path = save_picture(img, is_folder_created)
+
+        byte_list, black_percentage = process_and_save_image(in_path,out_path,log)  # process the image and save it as a black and white image
+
+
+        # Affichage info
         screen.fill((0, 0, 0))
-        msg_on_screen(font, screen, screen_width, screen_height, font_size, found_arduino, camera_working, threshold)
+        display_camera_and_process_image(screen,in_path,out_path)
+        pygame.display.flip()
+
+
+        # if the image is not empty (black_percentage > empty_image_threshold), send the image to the arduino
+        if found_arduino and byte_list is not None and black_percentage > empty_image_threshold:
+            idle = False  # the camera is not in idle mode
+            empty_captures_in_a_row = 0  # reset the empty captures counter if the image is not empty
+            arduino,VALID = reset_buffer_arduino(arduino,byte_list)
+            if not  VALID:
+                continue
+            last_capture = time.time()  # reset the last capture time
+            arduino_done = False  # the arduino is not done processing the image yet (it will send a response to the computer when it is done)
+
+        elif found_arduino and byte_list is not None:
+            empty_captures_in_a_row += 1  # increment the empty captures counter
+            if empty_captures_in_a_row >= empty_captures_before_idle:  # if the empty captures counter is more than 'empty_captures_before_idle', go to idle mode
+                if log:
+                    print("Image is empty, sending sample image to arduino...")
+                idle = True  # the camera is in idle mode
+                byte_list, _ = process_and_save_image(os.path.join(idle_folder_name, idle_images[sample_index]),out_path)  # process the sample image
+                if byte_list is not None:
+                    arduino,VALID = reset_buffer_arduino(arduino,byte_list)
+                    if not VALID:
+                        continue
+                    sample_index += 1  # increment the sample index to send the next sample image next time
+                    if sample_index >= len(
+                            idle_images):  # if the sample index is more than the number of sample images, reset the sample index to the first image
+                        sample_index = 0
+            else:
+                 # if the image is empty but the empty captures counter is less then 'empty_captures_before_idle', drop the last image again (which is already in the arduino's buffer and not empty)
+                send_drop_key()  # drop the image in the arduino's buffer (last non-empty image)
+            arduino_done = False  # the arduino is not done processing the image yet (it will send a response to the computer when it is done)
+            last_capture = time.time()  # reset the last capture time
+
+        elif found_arduino and byte_list is None:
+            print("Error processing image")
+
+        in_path,out_path = delete_image(in_path,out_path)
+
+
+    elif found_arduino and not arduino_done:  # check if the arduino is done processing the previous image and ready to receive the next image
+        if arduino.in_waiting > 0:  # if there is data in the serial buffer
+            received_data = arduino.readline().decode().rstrip()
+            # print("Received from Arduino:", received_data) # print the response from the arduino (for debugging)
+            arduino_done = True  # the arduino is done processing the image and ready to receive the next image
+
+    elif not camera_on:
+        screen.fill((0, 0, 0))
+        msg_on_screen(screen, camera_working, found_arduino)
         pygame.display.flip()
 
 # Fin de programme

@@ -17,19 +17,15 @@ void setup() {
 
 void loop() {
 
-  if (PRESS_BUTTON_LANG()) {            // pressed on language button
-    lang = lang >= 2 ? 0 : (lang + 1);  // toggle language
-  }
   Vout = analogRead(ThermistorPin);
   temperature_C = read_temperature(Vout);
-
+  
   
 
   
   if(millis() - timer > DATA_SER){
-
+      NUMBER_TO_DISPLAY(temperature_C);
       Serial.println(String(temperature_C) + " " + String(Vout));
-      NUMBER_TO_DISPLAY(temperature_C * UNIT_CALIBRATION);
       timer = millis();
   }
   

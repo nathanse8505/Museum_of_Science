@@ -51,9 +51,6 @@ uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
 bool check_lang = LOW;// used for checking if lang button was released
 ////////////////////////////////////
 
-const int16_t UNIT_CALIBRATION = 10;
-
-
 const float  R1 = 10000;
 const float A = 0.6097111451e-03, B = 3.133225362e-04, C = -1.811070168e-07; //
 
@@ -63,6 +60,6 @@ float temperature_C;
 
 /////////serial com////////
 unsigned long timer;
-const unsigned long DATA_SER = 150;
+const unsigned long DATA_SER = 170;
 
 #endif

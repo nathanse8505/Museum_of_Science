@@ -86,10 +86,22 @@ void NUMBER_TO_DISPLAY(float variable){
   Digits_from_Number(variable);
   Display_Digit(Digit_1_To_Display);
   enable(RIGHT_DIGIT);
-  Display_Digit(Digit_2_To_Display);
-  enable(MIDDLE_DIGIT);
-  Display_Digit(Digit_3_To_Display);
-  enable(LEFT_DIGIT);
+  
+  if(variable < 10 ){
+    blank_Digit(MIDDLE_DIGIT);
+  }
+  else{
+    Display_Digit(Digit_2_To_Display);
+    enable(MIDDLE_DIGIT);
+  }
+  
+  if(variable < 100 ){
+    blank_Digit(LEFT_DIGIT);
+  }
+  else{
+    Display_Digit(Digit_3_To_Display);
+    enable(LEFT_DIGIT);
+  }
 }
 
 
