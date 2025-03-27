@@ -126,7 +126,12 @@ def display_bars(screen, temperature=MIN_TEMPERATURE_VALUE):
         bar_width = RESOLUTION_THERMOMETER[0]
         bar_height = RESOLUTION_THERMOMETER[1]
 
-        fill_height = int((value - min) / (max - min) * THERMO_FULL_SIZE)
+        fill_height = (value - min) / (max - min)
+        if fill_height >= 1:
+            fill_height =  THERMO_FULL_SIZE
+        else:
+            fill_height = int(fill_height * THERMO_FULL_SIZE)
+
         crop_rect = pygame.Rect(0, bar_height - fill_height, bar_width, fill_height)
         cropped_bar = bar_image.subsurface(crop_rect).copy()
 

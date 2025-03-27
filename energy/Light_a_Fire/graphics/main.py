@@ -8,6 +8,7 @@ from display import *
 from arduino import *
 from logs import *
 
+
 def Quit_pygame(cap):
     if cap:
         cap.release()
@@ -66,7 +67,7 @@ def main():
                     Quit_pygame(cap)
 
                 if event.key == pygame.K_UP:
-                    temperature_to_display = min( temperature_to_display + 0.5, MAX_TEMPERATURE_VALUE)
+                    temperature_to_display = min( temperature_to_display + 0.5, MAX_TEMPERATURE_DEFAULT)
 
                 if event.key == pygame.K_DOWN:
                     temperature_to_display = max( temperature_to_display - 0.5, MIN_TEMPERATURE_DEFAULT)

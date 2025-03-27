@@ -95,7 +95,7 @@ def parse_data(raw_data, logger=None):
     try:
         data = raw_data.split(" ")
 
-        Temperature = max(min(float(data[0]), MAX_TEMPERATURE_VALUE), MIN_TEMPERATURE_DEFAULT)
+        Temperature = max(min(float(data[0]), MAX_TEMPERATURE_DEFAULT), MIN_TEMPERATURE_DEFAULT)
         Sensor_analogread = int(data[1])
 
         if hasattr(parse_data, "already_sent_error"):
