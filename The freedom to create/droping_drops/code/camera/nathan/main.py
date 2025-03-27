@@ -1,9 +1,13 @@
-
+"""
+Filename: main.py
+Purpose: main functions for the Droping Drops UI
+"""
 from pygame.locals import *
 from const import *
 from arduino import *
 from image_processing import *
 from random import randint
+from logs_Drop import *
 
 def main():
     # Initialisation arduino
@@ -22,6 +26,7 @@ def main():
     camera_on = True
     camera_working = False
     cap = None
+    threshold = 80  # 60-80 is a good value for the threshold to convert the image to black and white. value 0-255 (higher values will make the image darker)
     while not camera_working:
         camera_working , cap = camera_init()
     empty_captures_in_a_row = 0  # count the number of empty images in a row, for the idle mode when no hand is detected in the image
@@ -95,7 +100,7 @@ def main():
             #saving picture
             in_path,out_path = save_pictures(img, is_folder_created)
             #process the image
-            byte_list, black_percentage = process_and_save_image(in_path,out_path,log)  # process the image and save it as a black and white image
+            byte_list, black_percentage = process_and_save_image(in_path,out_path,log,threshold)  # process the image and save it as a black and white image
 
 
             # display info

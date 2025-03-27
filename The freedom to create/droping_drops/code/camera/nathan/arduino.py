@@ -1,3 +1,7 @@
+"""
+Filename: arduino.py
+Purpose: arduino functions for the Droping Drops UI
+"""
 import serial
 from const import *
 from random import randint

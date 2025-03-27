@@ -1,11 +1,11 @@
 """
-Filename: logs.py
+Filename: logs_Drop.py
 Purpose: Logging functions for the Droping Drops UI
 """
 import logging
 from logging.handlers import RotatingFileHandler
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER, SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD
+from const import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER
 
 
 def get_logger():

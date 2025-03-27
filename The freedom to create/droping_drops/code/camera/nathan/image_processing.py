@@ -1,3 +1,7 @@
+"""
+Filename: image_processing.py
+Purpose: functions for the Droping Drops UI
+"""
 import os
 import cv2
 from const import *
@@ -8,7 +12,7 @@ import pygame
 
 
 
-def process_and_save_image(input_path, output_path ,log):
+def process_and_save_image(input_path, output_path ,log,threshold):
     image = cv2.imread(input_path)  # read the image from the input path
     if image is not None:
         resized_image = cv2.resize(image, (output_width, output_height))  # resize the image to (output_width) x (output_height) pixels. probably 64 x (25 or 30) pixels
@@ -70,7 +74,7 @@ def camera_init():
         max_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         print(f"Valeur d'exposition actuelle : {min_exposure}")
         #cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)
-        #cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)
+        cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)
         #cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)
         if cap.isOpened():
             print("Camera is ready")

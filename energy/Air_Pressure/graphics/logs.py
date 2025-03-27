@@ -5,8 +5,7 @@ Purpose: Logging functions for the Air Pressure UI
 import logging
 from logging.handlers import RotatingFileHandler
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER, SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD, \
-    dic_lang
+from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER, SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD, dic_lang
 
 
 def get_logger():
