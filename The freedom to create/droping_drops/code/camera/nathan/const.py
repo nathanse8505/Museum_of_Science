@@ -32,6 +32,7 @@ valve_on_time = 1 # time in milliseconds the valve will be open for each row in 
 space_time = 20 # time in milliseconds the arduino will wait after receiving the 's' key before starting the process of dropping the image
 drawing_depth = 1 # the amount of layers each picture will be (1 is the default value)
 cassettes_num = 10 # the number of cassettes available in the exhibit
+BAUDRATE = 115200
 
 # Light configuration - currently not used
 full_light = True # if True, the lights will be on all the time. If False, the lights will be on only after 'led_start_time' milliseconds and for 'led_on_time' milliseconds  - currently not used
