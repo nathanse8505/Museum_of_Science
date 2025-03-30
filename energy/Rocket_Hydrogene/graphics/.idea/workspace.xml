@@ -2,109 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/code arduino/sensor_temperature/sensor_temperature.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/code arduino/sensor_temperature/sensor_temperature.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/consts.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/consts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/logs/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light a Fire/graphics/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/flame_images_transparent/frame_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Light a Fire/graphics/video/smoke_frame_transparent/frame_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,20 +26,27 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2sB1Sg8nEWwjBu4v1RfxiRonFUz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/natou/Documents/GitHub/Museum_of_Science/energy/Light a Fire/graphics&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main (1).executor": "Run",
+    "Python.main2.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/natou/Documents/GitHub/Museum_of_Science/energy/Light a Fire/graphics",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Air Pressure\graphics" />
@@ -146,9 +55,10 @@
       <recent name="C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Horsepower\graphics\logs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.main2">
     <configuration name="change_pic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -170,6 +80,7 @@
     </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -191,6 +102,7 @@
     </configuration>
     <configuration name="main (4)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -210,29 +122,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (5)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Museum_of_sience_energy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Air Pressure/graphics" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Air Pressure/graphics/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -252,8 +144,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="remove_bg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -275,13 +190,20 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main2" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.change_pic" />
         <item itemvalue="Python.remove_bg" />
         <item itemvalue="Python.main (4)" />
-        <item itemvalue="Python.main (5)" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-14705d77f0bb-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.25659.43" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

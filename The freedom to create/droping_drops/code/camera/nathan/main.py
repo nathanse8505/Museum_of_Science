@@ -71,8 +71,6 @@ def main():
                     print(f"Camera is {'on' if camera_on else 'off'}")
                     last_capture = time.time()
 
-        # img = take_picture(cap, camera_working)
-        # time.sleep(0.002)
 
         if not send_parameters and found_arduino:
             send_variables_to_arduino(arduino)
@@ -89,21 +87,11 @@ def main():
         elif camera_on and time.time() - last_capture >= space_time / 1000 and arduino_done:
             # if the time since the last capture is more than 'space_time' milliseconds
             # and the arduino is done processing the previous image, take a new picture and send it to the arduino
+            img, camera_working, byte_list, black_percentage, in_path, out_path = main_process(cap, screen, camera_working, log_arduino, threshold, is_folder_created)
 
-            img, camera_working = take_pic(cap, camera_working)
-            # img = config_cam(img)
-            time.sleep(0.002)
-            if not camera_working:
+            if not camera_working or img is None:
+                print("Camera not working. Skipping this cycle.")
                 continue
-            # saving picture and create path
-            in_path, out_path = save_pictures(img, is_folder_created)
-            # process the image
-            byte_list, black_percentage = process_and_save_image(in_path, out_path, log_arduino,threshold)  # process the image and save it as a black and white image
-
-            # display info
-            screen.fill((0, 0, 0))
-            display_camera_and_process_image(screen, img, in_path, out_path)
-            pygame.display.flip()
 
             ################################## send arduino data from camera ###################################
             ####################################################################################################
@@ -126,7 +114,7 @@ def main():
                         print("Image is empty, sending sample image to arduino...")
                     idle = True  # the camera is in idle mode
                     in_path_idle = os.path.join(idle_folder_name, idle_images[sample_index])
-                    byte_list, _ = process_and_save_image(in_path_idle, out_path, log_arduino)  # process the sample image
+                    byte_list, _ = process_image(img, log_arduino, threshold)  # process the sample image
                     VALID = reset_buffer_arduino(arduino, byte_list, log_arduino)
                     if not VALID:
                         continue
@@ -140,12 +128,12 @@ def main():
                 arduino_done = False  # the arduino is not done processing the image yet (it will send a response to the computer when it is done)
                 last_capture = time.time()  # reset the last capture time
 
-            ########################### error processing image arduino is found ################################
+            ########################### error processing image. arduino is found ###############################
             ####################################################################################################
             elif found_arduino and byte_list is None:
                 print("Error processing image")
 
-            in_path, out_path = delete_image(in_path, out_path)
+            delete_image(in_path, out_path)
 
         ###################################  part 3   ##########################################
         ####################### arduino working & ready for new session #######################
@@ -153,7 +141,7 @@ def main():
         elif found_arduino and not arduino_done:  # check if the arduino is done processing the previous image and ready to receive the next image
             if arduino.in_waiting > 0:  # if there is data in the serial buffer
                 received_data = arduino.readline().decode().rstrip()
-                # print("Received from Arduino:", received_data) # print the response from the arduino (for debugging)
+                print("Received from Arduino:", received_data) # print the response from the arduino (for debugging)
                 arduino_done = True  # the arduino is done processing the image and ready to receive the next image
 
     # Fin de programme
