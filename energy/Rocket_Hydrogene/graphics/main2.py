@@ -8,6 +8,7 @@ from consts import *
 from display import *
 from arduino import *
 from logs import *
+from sound import *
 
 
 def main():
@@ -35,6 +36,9 @@ def main():
     ser = open_serial_connection(arduino_port, logger=logger)  # Open the serial port
     last_time_tried_to_connect = time.time()  # for not trying to connect too often
 
+    #sound
+    music_playing = False  # Variable pour suivre l'état de la musique
+
     while True:
 
         events = pygame.event.get()
@@ -46,18 +50,28 @@ def main():
 
                 if event.key == pygame.K_SPACE:
                     language = (language + 1) % len(LANGUAGES)  # toggle language
-                    
+
                 if event.key == pygame.K_UP:
-                    charge = min(charge + 1, MAX_CHARGE)
+                    charge = min(charge + 4, MAX_CHARGE)
 
                 if event.key == pygame.K_DOWN:
-                    charge = max(charge - 1, MIN_CHARGE)
+                    charge = max(charge - 4, MIN_CHARGE)
 
                 if event.key == pygame.K_LEFT:
                     current = max(current - 0.2, MIN_CURRENT)
 
                 if event.key == pygame.K_RIGHT:
                     current = min(current + 0.2, MAX_CURRENT)
+
+                if event.key == pygame.K_KP_1:
+                    play_audio(dic_sound.get(HEBREW))
+
+                if event.key == pygame.K_KP_2:
+                    play_audio(dic_sound.get(ENGLISH))
+
+                if event.key == pygame.K_KP_3:
+                    play_audio(dic_sound.get(ARABIC))
+
 
                 if event.key == pygame.K_RETURN:
                     state = (state + 1) % len(STATES)  # toggle state from OPENING to MEASURE
@@ -83,16 +97,27 @@ def main():
 
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
-            current, charge, has_ignited, language, error = parse_data(data_from_arduino, logger=logger)
+            current, charge, sound_ready, language, error = parse_data(data_from_arduino, logger=logger)
             # print(f"parsed: current {current} charge {charge} has_ignited {has_ignited} language {language}")
+
             if not error:
-                if has_ignited:
-                    logger.info(f"Rocket has ignited!")
-                    print("Rocket has ignited!")
                 if language != previous_language:
                     logger.info(f"your language is: {dic_lang.get(language)}")
-                    print(f"your language is: {dic_lang.get(language)}")
                     previous_language = language
+
+                if sound_ready and not music_playing:
+                    logger.info(f"Sound in {dic_lang.get(language)} is activate")
+                    print(f"Sound in {dic_lang.get(language)} is activate")
+                    play_audio(dic_sound.get(language))  # Jouer la musique
+                    music_playing = True  # Marquer que la musique est en cours
+
+                elif music_playing and not pygame.mixer.music.get_busy():  # Vérifier si la musique est terminée
+                    if write_line(ser, "ignite", logger):  # Utilisation de la fonction write_line sécurisée
+                        logger.info("Sent 'ignite' command to Arduino.")
+                        print("Sent 'ignite' command to Arduino.")
+                    else:
+                        logger.warning("Failed to send 'ignite' command. Serial port might be closed or unavailable.")
+                    music_playing = False  # Réinitialiser l'état de la musique
 
             state = MEASURE if current >= SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD else OPENING  # if you got data, change the screen automatically based on the current value
 
@@ -100,6 +125,7 @@ def main():
         display_state(screen, state=state, language=language, charge=charge, current=current)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
+
 
 if __name__ == "__main__":
     main()

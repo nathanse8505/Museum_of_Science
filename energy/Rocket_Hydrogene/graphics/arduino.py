@@ -82,6 +82,34 @@ def read_line(ser=None, logger=None):
             logger.error(f"Error reading from serial, Arduino probably disconnected")
 
         return SERIAL_ERROR
+
+
+def write_line(ser=None, message="", logger=None):
+    """
+    Write a message to the serial buffer.
+    :param ser: a serial buffer writer object (serial.Serial)
+    :param message: the message to send
+    :param logger: optional logger object for error handling
+    :return: True if message was sent successfully, False otherwise
+    """
+    if not ser or not message:
+        return False  # Ne rien faire si le port série est invalide ou message vide
+
+    if not ser.is_open:
+        if logger:
+            logger.warning("Serial port is closed. Cannot send data.")
+        return False  # Retourne False si le port série est fermé
+
+    try:
+        ser.write(f"{message}\n".encode('utf-8'))  # Écrit le message avec un saut de ligne
+        return True  # Succès
+
+    except serial.SerialException as e:
+        print(f"Error writing to serial: {e}")
+        if logger:
+            logger.error("Error writing to serial. Arduino might be disconnected.")
+        return False  # Échec d'écriture
+
     
 
 def parse_data(raw_data, logger=None):
@@ -100,7 +128,7 @@ def parse_data(raw_data, logger=None):
         if hasattr(parse_data, "already_sent_error"):
             parse_data.already_sent_error = False
             
-        return current_value, charge_value, has_ignited_value, language_value,PARSE_VALID
+        return current_value, charge_value, has_ignited_value, language_value, PARSE_VALID
 
     except:        
         if logger:
@@ -113,4 +141,4 @@ def parse_data(raw_data, logger=None):
                 print(f"Error parsing data: {raw_data}")
                 parse_data.already_sent_error = True
         
-        return 0, 0, 0, 0,PARSE_ERROR
+        return 0, 0, 0, 0, PARSE_ERROR

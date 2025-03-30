@@ -20,12 +20,11 @@ HEBREW = 0
 ENGLISH = 1
 ARABIC = 2
 LANGUAGES = [HEBREW, ENGLISH, ARABIC]
-dic_lang = {HEBREW:"hebrew",
-            ENGLISH:"english",
-            ARABIC:"arabic"}
+dic_lang = {HEBREW: "hebrew",
+            ENGLISH: "english",
+            ARABIC: "arabic"}
 
-
-#states
+# states
 OPENING = 0
 MEASURE = 1
 STATES = [OPENING, MEASURE]
@@ -40,7 +39,17 @@ SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD = 1  # above this current value, the 
 # logging values
 LOG_FOLDER = os.path.join(os.path.dirname(__file__), "logs")  # get the path of the logs folder
 MAX_SIZE_PER_LOG_FILE = 1 * 1024 * 1024  # 1MB
-BACKUP_COUNT = 10  # max number of log files, if all 10 are full, the first one will be deleted, rotating the rest 
+BACKUP_COUNT = 10  # max number of log files, if all 10 are full, the first one will be deleted, rotating the rest
+
+# sound
+SOUND = os.path.join(os.path.dirname(__file__), "music")  # get the path of the pictures folder
+SOUND_HEB = os.path.join(SOUND, "heb.mp3")
+SOUND_ENG = os.path.join(SOUND, "eng.mp3")
+SOUND_ARB = os.path.join(SOUND, "arb.mp3")
+
+dic_sound = {HEBREW: SOUND_HEB,
+             ENGLISH: SOUND_ENG,
+             ARABIC: SOUND_ARB}
 
 # pictures
 pygame.init()
@@ -88,7 +97,8 @@ niddle = pygame.transform.scale(niddle, (int(niddle.get_size()[0] * VIEW_PORT[0]
 
 # positions
 NIDDLE_POS = (int(0.5 * VIEW_PORT[0]), int(0.43 * VIEW_PORT[1]))  # the position of the niddle on the screen
-CURRENT_TEXT_POS = (int(0.5 * VIEW_PORT[0]), int(0.487 * VIEW_PORT[1]))  # the position of the current text on the screen
+CURRENT_TEXT_POS = (
+int(0.5 * VIEW_PORT[0]), int(0.487 * VIEW_PORT[1]))  # the position of the current text on the screen
 CHARGE_TEXT_POS = (int(0.51 * VIEW_PORT[0]), int(0.92 * VIEW_PORT[1]))  # the position of the charge text on the screen
 BAR_GRAPH_BOTTOM_HEIGHT = int(0.875 * VIEW_PORT[1])  # the bottom of the bar graph
 
