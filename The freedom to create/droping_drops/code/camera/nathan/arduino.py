@@ -49,26 +49,28 @@ def send_variables_to_arduino(arduino):
     return True
 
 
-def reset_buffer_arduino(arduino, byte_list, log):
+def reset_buffer_arduino(arduino, log):
     if log:
         print("sending to arduino")
     # clear Serial buffer
     arduino.flush()
     arduino.reset_input_buffer()
     arduino.reset_output_buffer()
+
+def send_data_to_arduino(arduino,byte_list):
     cassette = randint(0, cassettes_num - 1)  # choose a random cassette number to drop the image in
     send_start_key(arduino)  # send the start key to the arduino
     if not send_one_number(bytearray([cassette])):  # send the cassette number to the arduino
         print("Error: Could not send cassette number")
         return False
-    if not send_to_arduino(byte_list):  # send the image to the arduino
+    if not send_image_to_arduino(byte_list):  # send the image to the arduino
         print("Error: Could not send image to arduino")
         return False
     send_end_key(arduino)  # send the end key to the arduino
     return True
 
 
-def send_to_arduino(log, byte_list, arduino):
+def send_image_to_arduino(log, byte_list, arduino):
     if log:
         print('Sending data to Arduino...')
     for i in range(len(byte_list)):

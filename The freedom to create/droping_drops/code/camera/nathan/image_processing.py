@@ -14,11 +14,9 @@ import pygame
 # def process_and_save_image(input_path, output_path, log, threshold):
 #     image = cv2.imread(input_path)  # read the image from the input path
 #     if image is not None:
-#         resized_image = cv2.resize(image, (output_width,
-#                                            output_height))  # resize the image to (output_width) x (output_height) pixels. probably 64 x (25 or 30) pixels
+#         resized_image = cv2.resize(image, (output_width,output_height))  # resize the image to (output_width) x (output_height) pixels. probably 64 x (25 or 30) pixels
 #         gray_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)  # convert the image to grayscale
-#         _, bw_image = cv2.threshold(gray_image, threshold, 255,
-#                                     cv2.THRESH_BINARY)  # Apply binary thresholding to create a black and white image
+#         _, bw_image = cv2.threshold(gray_image, threshold, 255,cv2.THRESH_BINARY)  # Apply binary thresholding to create a black and white image
 #         cv2.imwrite(output_path, bw_image)  # save the black and white image to the output path
 #         flattened_array = bw_image.flatten()  # flatten the image to a 1D array
 #         arr = []
@@ -30,8 +28,7 @@ import pygame
 #             byte_value = 0
 #             for j in range(8):
 #                 pixel_value = flattened_array[i + j]  # get the value of the pixel
-#                 byte_value |= (pixel_value & 1) << (
-#                             7 - j)  # shift the pixel value to the left by (7 - j) bits, then add it to the byte value
+#                 byte_value |= (pixel_value & 1) << (7 - j)  # shift the pixel value to the left by (7 - j) bits, then add it to the byte value
 #                 if pixel_value == 0:  # if the pixel is black, increment the black pixels counter
 #                     black_pixels += 1
 #                 if log:
@@ -41,24 +38,12 @@ import pygame
 #         if log:
 #             print('\n\nImage processed and saved successfully.')
 #             # print("\n\n len(byte_array): ", len(byte_array))
-#         return byte_array, black_pixels / len(
-#             flattened_array)  # return the byte array and the percentage of black pixels in the image
+#         return byte_array, black_pixels / len(flattened_array)  # return the byte array and the percentage of black pixels in the image
 #     else:
 #         print('Error loading the image.')
 #         return None, None
 #
 
-
-
-# def save_pictures(img, is_folder_created):
-#     time_stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # get the current time to use it as the name of the image
-#     if not is_folder_created:  # if the folder to save the images in is not created, create it
-#         os.makedirs(folder_name, exist_ok=True)
-#     in_path = os.path.join(folder_name, time_stamp + ".png")  # the path to save the original image
-#     out_path = os.path.join(folder_name, time_stamp + "_bw.png")  # the path to save the black and white image
-#     cv2.imwrite(in_path, img)  # save the original image
-#     return in_path, out_path
-#
 #
 # def display_camera_and_process_image(screen, img, in_path, out_path):
 #     screen.fill((0, 0, 0))
@@ -71,36 +56,28 @@ import pygame
 #     screen.blit(image_display, (0, 0))
 #     screen.blit(image_bw_display, (screen_width // 2, 0))
 
-# def delete_image(in_path, out_path):
-#     # delete images if not saving, or if the time to take the picture is less than 2 seconds for not saving too many images in a short time
-#     if not save_picture or space_time / 1000 <= 2:
-#         try:
-#             os.remove(in_path)  # delete the original image
-#             os.remove(out_path)  # delete the black and white image
-#             return in_path, out_path
-#         except Exception as e:
-#             print(f"Error deleting images: {e}")
+
 def main_process(cap, screen, camera_working, log_arduino, threshold, is_folder_created):
     # 1. Prendre une photo
     img, camera_working = take_pic(cap, camera_working)
     if not camera_working or img is None:
-        return None, False, None, None, None, None  # continuer à la prochaine boucle si erreur
+        return None, False, None, None # continuer à la prochaine boucle si erreur
 
     # Configurer l'image (redimensionnement, flip, rotation…)
     #img = config_cam(img)
 
     # 2. Traitement de l’image
-    byte_list, black_percentage, processed_image = process_image(img, log_arduino, threshold)
-    if processed_image is None:
-        return None, False, None, None, None, None
+    byte_list, black_percentage, B_W_image = process_image(img, log_arduino, threshold)
+    if B_W_image is None:
+        return None, False, None, None
 
     # 3. Affichage
-    display_images(screen, img, processed_image)
+    display_images(screen, img, B_W_image)
 
-    # 4. Sauvegarde des images
-    in_path, out_path = save_images(img, processed_image, is_folder_created)
+    # 4. Sauvegarde les images si besoin
+    save_images(img, B_W_image, is_folder_created)
 
-    return img,camera_working, byte_list, black_percentage,in_path,out_path
+    return img,camera_working, byte_list, black_percentage
 
 
 
@@ -184,9 +161,9 @@ def display_images(screen, original_img, bw_img):
     original_img_pygame = cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB)
     bw_img_pygame = cv2.cvtColor(bw_img, cv2.COLOR_GRAY2RGB)
 
-    # Convert NumPy arrays to pygame surfaces and rotate them
-    original_surface = pygame.surfarray.make_surface(np.rot90(original_img_pygame))
-    bw_surface = pygame.surfarray.make_surface(np.rot90(bw_img_pygame))
+    # # Convert cv2 arrays to pygame surfaces and rotate them
+    original_surface = pygame.image.frombuffer(original_img_pygame.tobytes(), original_img_pygame.shape[1::-1], "RGB")
+    bw_surface = pygame.image.frombuffer(bw_img_pygame.tobytes(), bw_img_pygame.shape[1::-1], "RGB")
 
     # Resize the images to fit the screen (side-by-side layout)
     original_surface = pygame.transform.scale(original_surface, (screen_width // 2, screen_height))
@@ -198,6 +175,8 @@ def display_images(screen, original_img, bw_img):
 
     # Update the screen
     pygame.display.flip()
+
+
 
 
 def process_image(image, log, threshold):
@@ -237,34 +216,15 @@ def process_image(image, log, threshold):
 
 
 def save_images(original_img, bw_img, is_folder_created):
-    # Generate a unique timestamp for file naming
-    time_stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    # Only save the image if saving is enabled AND enough time has passed between captures
+    if save_picture and space_time / 1000 > 2:
+        time_stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-    # Create the folder if it doesn't already exist
-    if not is_folder_created:
-        os.makedirs(folder_name, exist_ok=True)
+        if not is_folder_created:
+            os.makedirs(folder_name, exist_ok=True)
 
-    # Define file paths
-    in_path = os.path.join(folder_name, time_stamp + ".png")      # original image path
-    out_path = os.path.join(folder_name, time_stamp + "_bw.png")  # black & white image path
+        in_path = os.path.join(folder_name, time_stamp + ".png")
+        out_path = os.path.join(folder_name, time_stamp + "_bw.png")
 
-    # Save both images to disk
-    cv2.imwrite(in_path, original_img)
-    cv2.imwrite(out_path, bw_img)
-
-    return in_path, out_path
-
-
-def delete_image(in_path, out_path):
-    # Delete images if saving is disabled or if the time between captures is too short
-    if not save_picture or space_time / 1000 <= 2:
-        try:
-            if os.path.exists(in_path):
-                os.remove(in_path)
-            if os.path.exists(out_path):
-                os.remove(out_path)
-            return None, None  # Images deleted successfully
-        except Exception as e:
-            print(f"Error deleting images: {e}")
-    else:
-        pass  # Keep the images if saving is enabled and timing is OK
+        cv2.imwrite(in_path, original_img)
+        cv2.imwrite(out_path, bw_img)

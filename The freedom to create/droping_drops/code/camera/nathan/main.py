@@ -6,7 +6,8 @@ from pygame.locals import *
 from arduino import *
 from image_processing import *
 from logs_Drop import *
-
+os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide" # to suppress Pygame welcome message
+os.environ["OPENCV_LOG_LEVEL"]="SILENT"
 
 def main():
     # logger
@@ -19,7 +20,7 @@ def main():
 
     # Reset des buffers série si Arduino présent
     if found_arduino:
-        log_arduino = True
+        log_arduino = space_time/1000 > 5  # only write print statements if taking each picture takes more than 5 seconds to avoid spamming the console
         arduino.reset_input_buffer()
         arduino.reset_output_buffer()
         time.sleep(0.1)
@@ -29,6 +30,7 @@ def main():
     camera_working = False
     cap = None
     threshold = 80  # 60-80 is a good value for the threshold to convert the image to black and white. value 0-255 (higher values will make the image darker)
+
     while not camera_working:
         camera_working, cap = camera_init()
     empty_captures_in_a_row = 0  # count the number of empty images in a row, for the idle mode when no hand is detected in the image
@@ -42,7 +44,6 @@ def main():
     is_folder_created = os.path.exists(folder_name)
     sample_index = 0
     arduino_done = True
-    idle = False
     send_parameters = False
     running = True
 
@@ -87,7 +88,7 @@ def main():
         elif camera_on and time.time() - last_capture >= space_time / 1000 and arduino_done:
             # if the time since the last capture is more than 'space_time' milliseconds
             # and the arduino is done processing the previous image, take a new picture and send it to the arduino
-            img, camera_working, byte_list, black_percentage, in_path, out_path = main_process(cap, screen, camera_working, log_arduino, threshold, is_folder_created)
+            img, camera_working, byte_list, black_percentage= main_process(cap, screen, camera_working, log_arduino, threshold, is_folder_created)
 
             if not camera_working or img is None:
                 print("Camera not working. Skipping this cycle.")
@@ -97,9 +98,9 @@ def main():
             ####################################################################################################
             # if the image is not empty (black_percentage > empty_image_threshold), send the image to the arduino
             if found_arduino and byte_list is not None and black_percentage > empty_image_threshold:
-                idle = False  # the camera is not in idle mode
                 empty_captures_in_a_row = 0  # reset the empty captures counter if the image is not empty
-                VALID = reset_buffer_arduino(arduino, byte_list, log_arduino)
+                reset_buffer_arduino(arduino, log_arduino)
+                VALID = send_data_to_arduino(arduino,byte_list)
                 if not VALID:
                     continue
                 last_capture = time.time()  # reset the last capture time
@@ -112,15 +113,15 @@ def main():
                 if empty_captures_in_a_row >= empty_captures_before_idle:  # if the empty captures counter is more than 'empty_captures_before_idle', go to idle mode
                     if log_arduino:
                         print("Image is empty, sending sample image to arduino...")
-                    idle = True  # the camera is in idle mode
                     in_path_idle = os.path.join(idle_folder_name, idle_images[sample_index])
-                    byte_list, _ = process_image(img, log_arduino, threshold)  # process the sample image
-                    VALID = reset_buffer_arduino(arduino, byte_list, log_arduino)
+                    image_idle = cv2.imread(in_path_idle)  # read the image from the input path
+                    byte_list, _ = process_image(image_idle, log_arduino, threshold)  # process the sample image
+                    reset_buffer_arduino(arduino, log_arduino)
+                    VALID = send_data_to_arduino(arduino, byte_list)
                     if not VALID:
                         continue
                     sample_index += 1  # increment the sample index to send the next sample image next time
-                    if sample_index >= len(
-                            idle_images):  # if the sample index is more than the number of sample images, reset the sample index to the first image
+                    if sample_index >= len(idle_images):  # if the sample index is more than the number of sample images, reset the sample index to the first image
                         sample_index = 0
                 else:
                     # if the image is empty but the empty captures counter is less then 'empty_captures_before_idle', drop the last image again (which is already in the arduino's buffer and not empty)
@@ -133,7 +134,6 @@ def main():
             elif found_arduino and byte_list is None:
                 print("Error processing image")
 
-            delete_image(in_path, out_path)
 
         ###################################  part 3   ##########################################
         ####################### arduino working & ready for new session #######################

@@ -67,8 +67,7 @@ check_key = 'g'  # the key to check the arduino's response
 
 
 # Réglage des variables globales
-os.environ["OPENCV_LOG_LEVEL"]="SILENT"
-os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
+
 
 folder_name = os.path.join(os.path.dirname(os.path.abspath(__file__)), folder_name_for_saved_pictures)
 idle_folder_name = os.path.join(os.path.dirname(os.path.abspath(__file__)), folder_name_for_idle_pictures)
