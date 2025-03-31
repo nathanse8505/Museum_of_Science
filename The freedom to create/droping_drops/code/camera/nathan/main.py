@@ -16,11 +16,11 @@ def main():
     log_arduino = False
     # Initialisation arduino
     arduino_port = find_arduino_port(logger=logger)  # find the serial port
-    arduino, found_arduino = open_serial_connection(arduino_port, logger=logger)  # Open the serial port
+    arduino, found_arduino = open_serial_connection(port=arduino_port,timeout=0.05,logger=logger)  # Open the serial port
 
     # Reset des buffers série si Arduino présent
     if found_arduino:
-        log_arduino = space_time/1000 > 5  # only write print statements if taking each picture takes more than 5 seconds to avoid spamming the console
+        log_arduino = space_time > 5   # if True, the program will print logs to the console. if the time between sending pictures is less than 5 seconds, no logs will be printed to avoid spamming the console
         arduino.reset_input_buffer()
         arduino.reset_output_buffer()
         time.sleep(0.1)
@@ -41,7 +41,6 @@ def main():
     pygame.display.set_caption("Camera")
 
     # Initialisation dossier et variables
-    is_folder_created = os.path.exists(folder_name)
     sample_index = 0
     arduino_done = True
     send_parameters = False
@@ -78,23 +77,24 @@ def main():
             send_parameters = True
             time.sleep(0.2)
         ###################################  part 1   ####################################
-        ################################### P information ###################################
+        ################################### P information ################################
         if not camera_on:
             screen.fill((0, 0, 0))
             msg_on_screen(screen, camera_working, found_arduino,threshold)
             pygame.display.flip()
         ###################################  part 2   ####################################
-        ##################################  camera working ###################################
-        elif camera_on and time.time() - last_capture >= space_time / 1000 and arduino_done:
-            # if the time since the last capture is more than 'space_time' milliseconds
+        ##################################  camera working ###############################
+        elif camera_on and (time.time() - last_capture) >= space_time and arduino_done:
+            # if the time since the last capture is more than 'space_time' seconds
             # and the arduino is done processing the previous image, take a new picture and send it to the arduino
-            img, camera_working, byte_list, black_percentage= main_process(cap, screen, camera_working, log_arduino, threshold, is_folder_created)
+            img, camera_working, byte_list, black_percentage= main_process(cap, screen, camera_working, log_arduino, threshold,logger)
 
             if not camera_working or img is None:
                 print("Camera not working. Skipping this cycle.")
+                logger.info("Camera not working. Skipping this cycle.")
                 continue
 
-            ################################## send arduino data from camera ###################################
+            ################################## send data from camera to arduino ################################
             ####################################################################################################
             # if the image is not empty (black_percentage > empty_image_threshold), send the image to the arduino
             if found_arduino and byte_list is not None and black_percentage > empty_image_threshold:
@@ -106,13 +106,15 @@ def main():
                 last_capture = time.time()  # reset the last capture time
                 arduino_done = False  # the arduino is not done processing the image yet (it will send a response to the computer when it is done)
 
-            ################################## send arduino data from idle ###################################
+            ################################## send data from idle to arduino ##################################
             ####################################################################################################
             elif found_arduino and byte_list is not None:
                 empty_captures_in_a_row += 1  # increment the empty captures counter
                 if empty_captures_in_a_row >= empty_captures_before_idle:  # if the empty captures counter is more than 'empty_captures_before_idle', go to idle mode
                     if log_arduino:
                         print("Image is empty, sending sample image to arduino...")
+                        logger.info("Image is empty, sending sample image to arduino...")
+
                     in_path_idle = os.path.join(idle_folder_name, idle_images[sample_index])
                     image_idle = cv2.imread(in_path_idle)  # read the image from the input path
                     byte_list, _ = process_image(image_idle, log_arduino, threshold)  # process the sample image
@@ -133,15 +135,17 @@ def main():
             ####################################################################################################
             elif found_arduino and byte_list is None:
                 print("Error processing image")
+                logger.info("Error processing image")
 
 
-        ###################################  part 3   ##########################################
+        ###################################  part 3   #########################################
         ####################### arduino working & ready for new session #######################
-        ########################################################################################
+        #######################################################################################
         elif found_arduino and not arduino_done:  # check if the arduino is done processing the previous image and ready to receive the next image
             if arduino.in_waiting > 0:  # if there is data in the serial buffer
                 received_data = arduino.readline().decode().rstrip()
                 print("Received from Arduino:", received_data) # print the response from the arduino (for debugging)
+                logger.info("Received from Arduino:", received_data)
                 arduino_done = True  # the arduino is done processing the image and ready to receive the next image
 
     # Fin de programme
@@ -152,6 +156,7 @@ def main():
             os.rmdir(folder_name)
         except Exception as e:
             print(f"Error deleting folder: {e}")
+            logger.info(f"Error deleting folder: {e}")
     cap.release()
     cv2.destroyAllWindows()
     pygame.quit()

@@ -11,53 +11,7 @@ from datetime import datetime
 import pygame
 
 
-# def process_and_save_image(input_path, output_path, log, threshold):
-#     image = cv2.imread(input_path)  # read the image from the input path
-#     if image is not None:
-#         resized_image = cv2.resize(image, (output_width,output_height))  # resize the image to (output_width) x (output_height) pixels. probably 64 x (25 or 30) pixels
-#         gray_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2GRAY)  # convert the image to grayscale
-#         _, bw_image = cv2.threshold(gray_image, threshold, 255,cv2.THRESH_BINARY)  # Apply binary thresholding to create a black and white image
-#         cv2.imwrite(output_path, bw_image)  # save the black and white image to the output path
-#         flattened_array = bw_image.flatten()  # flatten the image to a 1D array
-#         arr = []
-#         black_pixels = 0  # count the number of black pixels in the image (black pixels are the pixels with value 0). This is to calculate the percentage of black pixels in the image
-#         for i in range(0, len(flattened_array), 8):
-#             if i % 64 == 0 and log:
-#                 print()
-#             # for each 8 pixels, create a byte value from the 8 pixels. The byte value is the binary representation of the 8 pixels
-#             byte_value = 0
-#             for j in range(8):
-#                 pixel_value = flattened_array[i + j]  # get the value of the pixel
-#                 byte_value |= (pixel_value & 1) << (7 - j)  # shift the pixel value to the left by (7 - j) bits, then add it to the byte value
-#                 if pixel_value == 0:  # if the pixel is black, increment the black pixels counter
-#                     black_pixels += 1
-#                 if log:
-#                     print(" " if (pixel_value & 1) else "#", end="")
-#             arr.append(byte_value)  # add the byte value to the array
-#         byte_array = bytearray(arr)  # convert the array to a byte array
-#         if log:
-#             print('\n\nImage processed and saved successfully.')
-#             # print("\n\n len(byte_array): ", len(byte_array))
-#         return byte_array, black_pixels / len(flattened_array)  # return the byte array and the percentage of black pixels in the image
-#     else:
-#         print('Error loading the image.')
-#         return None, None
-#
-
-#
-# def display_camera_and_process_image(screen, img, in_path, out_path):
-#     screen.fill((0, 0, 0))
-#     image_display = pygame.image.load(in_path)
-#     image_bw_display = pygame.image.load(out_path)
-#     image_bw_display = pygame.transform.rotate(image_bw_display, -90)
-#     image_display = pygame.transform.rotate(image_display, -90)
-#     image_bw_display = pygame.transform.scale(image_bw_display, (screen_width // 2, screen_height))
-#     image_display = pygame.transform.scale(image_display, (screen_width // 2, screen_height,))
-#     screen.blit(image_display, (0, 0))
-#     screen.blit(image_bw_display, (screen_width // 2, 0))
-
-
-def main_process(cap, screen, camera_working, log_arduino, threshold, is_folder_created):
+def main_process(cap, screen, camera_working, log_arduino, threshold,logger):
     # 1. Prendre une photo
     img, camera_working = take_pic(cap, camera_working)
     if not camera_working or img is None:
@@ -67,7 +21,7 @@ def main_process(cap, screen, camera_working, log_arduino, threshold, is_folder_
     #img = config_cam(img)
 
     # 2. Traitement de l’image
-    byte_list, black_percentage, B_W_image = process_image(img, log_arduino, threshold)
+    byte_list, black_percentage, B_W_image = process_image(img, log_arduino, logger, threshold)
     if B_W_image is None:
         return None, False, None, None
 
@@ -87,7 +41,7 @@ def camera_init():
         cap = cv2.VideoCapture(camera_index)
         min_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         max_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
-        print(f"Valeur d'exposition actuelle : {min_exposure}")
+        #print(f"Valeur d'exposition actuelle : {min_exposure}")
         # cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)
         cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)
         # cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)
@@ -95,8 +49,7 @@ def camera_init():
             print("Camera is ready")
             camera_working = True
             return camera_working, cap
-        print(
-            "\nError: Could not open camera. please check if the camera is connected properly.\nRetrying in 2 seconds...\n\n")
+        print("\nError: Could not open camera. please check if the camera is connected properly.\nRetrying in 2 seconds...\n\n")
         time.sleep(2)
     except Exception:
         return False, None
@@ -179,7 +132,24 @@ def display_images(screen, original_img, bw_img):
 
 
 
-def process_image(image, log, threshold):
+
+
+def save_images(original_img, bw_img, is_folder_created):
+    # Only save the image if saving is enabled AND enough time has passed between captures
+    if save_picture and space_time > 2:
+        time_stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+        if not is_folder_created:
+            os.makedirs(folder_name, exist_ok=True)
+
+        in_path = os.path.join(folder_name, time_stamp + ".png")
+        out_path = os.path.join(folder_name, time_stamp + "_bw.png")
+
+        cv2.imwrite(in_path, original_img)
+        cv2.imwrite(out_path, bw_img)
+
+
+def process_image(image, log, logger, threshold):
     # Resize the image to expected output size (e.g. 64x30)
     resized_image = cv2.resize(image, (output_width, output_height))
 
@@ -192,39 +162,26 @@ def process_image(image, log, threshold):
     # Flatten the image into a 1D array
     flattened_array = bw_image.flatten()
     arr = []
-    black_pixels = 0
+    black_pixels = 0  # count the number of black pixels in the image (black pixels are the pixels with value 0). This is to calculate the percentage of black pixels in the image
 
     # Convert each group of 8 pixels into a byte (bitwise)
     for i in range(0, len(flattened_array), 8):
         if i % 64 == 0 and log:
             print()
-        byte_value = 0
+        byte_value = 0  # for each 8 pixels, create a byte value from the 8 pixels. The byte value is the binary representation of the 8 pixels
         for j in range(8):
-            pixel_value = flattened_array[i + j]
-            byte_value |= (pixel_value & 1) << (7 - j)
-            if pixel_value == 0:
+            pixel_value = flattened_array[i + j] # get the value of the pixel
+            byte_value |= (pixel_value & 1) << (7 - j)  # shift the pixel value to the left by (7 - j) bits, then add it to the byte value
+            if pixel_value == 0:   # if the pixel is black, increment the black pixels counter
                 black_pixels += 1
             if log:
                 print(" " if (pixel_value & 1) else "#", end="")
-        arr.append(byte_value)
+        arr.append(byte_value)  # add the byte value to the array
 
     if log:
         print('\n\nImage processed successfully.')
+        logger.info('\n\nImage processed successfully.')
 
-    # Return the byte array, black pixel ratio, and the processed image
+
+    # Return the arr byte array, black pixel ratio, and the processed image
     return bytearray(arr), black_pixels / len(flattened_array), bw_image
-
-
-def save_images(original_img, bw_img, is_folder_created):
-    # Only save the image if saving is enabled AND enough time has passed between captures
-    if save_picture and space_time / 1000 > 2:
-        time_stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
-        if not is_folder_created:
-            os.makedirs(folder_name, exist_ok=True)
-
-        in_path = os.path.join(folder_name, time_stamp + ".png")
-        out_path = os.path.join(folder_name, time_stamp + "_bw.png")
-
-        cv2.imwrite(in_path, original_img)
-        cv2.imwrite(out_path, bw_img)
