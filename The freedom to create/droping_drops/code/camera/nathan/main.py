@@ -87,13 +87,11 @@ def main():
         elif camera_on and (time.time() - last_capture) >= space_time and arduino_done:
             # if the time since the last capture is more than 'space_time' seconds
             # and the arduino is done processing the previous image, take a new picture and send it to the arduino
-            img, camera_working, byte_list, black_percentage= main_process(cap, screen, camera_working, log_arduino, threshold,logger)
-
+            img, camera_working, byte_list, black_percentage= main_process(cap, screen, camera_working, log_arduino, threshold, logger)
             if not camera_working or img is None:
                 print("Camera not working. Skipping this cycle.")
                 logger.info("Camera not working. Skipping this cycle.")
                 continue
-
             ################################## send data from camera to arduino ################################
             ####################################################################################################
             # if the image is not empty (black_percentage > empty_image_threshold), send the image to the arduino
