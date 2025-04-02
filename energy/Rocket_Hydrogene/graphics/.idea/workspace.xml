@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f49ad77e-df42-4c9b-8fdf-c21a0096d9be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/.idea/camera.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/.idea/camera.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/arduino.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/image_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/image_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/logs/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../The freedom to create/droping_drops/code/camera/nathan/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket_3_sound/Hydrogen-Rocket_3_sound.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket_3_sound/Hydrogen-Rocket_3_sound.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket_3_sound/consts.h" beforeDir="false" afterPath="$PROJECT_DIR$/../code arduino/Hydrogen-Rocket_3_sound/consts.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/arduino.py" beforeDir="false" afterPath="$PROJECT_DIR$/arduino.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.py" beforeDir="false" afterPath="$PROJECT_DIR$/display.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../משימות.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../משימות.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_with_sound.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/arb.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/music/arb.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/eng.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/music/eng.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/music/heb.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/music/heb.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/sound.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../רכבת/דוגמת אקסל לנתן .xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../רכבת/דוגמת אקסל לנתן .xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,18 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main2.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/natou/Documents/GitHub/Museum_of_Science/energy/Light a Fire/graphics&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main (1).executor": "Run",
+    "Python.main2.executor": "Run",
+    "Python.main_with_sound.executor": "Run",
+    "Python.sound.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/natou/Documents/GitHub/Museum_of_Science/energy/Light a Fire/graphics",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Air Pressure\graphics" />
@@ -62,9 +70,10 @@
       <recent name="C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Horsepower\graphics\logs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main2">
+  <component name="RunManager" selected="Python.main_with_sound">
     <configuration name="change_pic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -86,6 +95,7 @@
     </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -105,29 +115,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (4)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Museum_of_sience_energy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../Horsepower/graphics" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../Horsepower/graphics/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -147,8 +137,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_with_sound" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -159,7 +150,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main2.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\nathans\Desktop\Museum_of_Science\energy\Rocket_Hydrogene\graphics\main_with_sound.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,6 +161,7 @@
     </configuration>
     <configuration name="remove_bg" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -189,13 +181,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="sound" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sound.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main2" />
+        <item itemvalue="Python.main_with_sound" />
+        <item itemvalue="Python.sound" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.change_pic" />
         <item itemvalue="Python.remove_bg" />
-        <item itemvalue="Python.main (4)" />
       </list>
     </recent_temporary>
   </component>

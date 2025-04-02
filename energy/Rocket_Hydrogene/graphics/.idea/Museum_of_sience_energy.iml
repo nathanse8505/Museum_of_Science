@@ -6,7 +6,7 @@
     <content url="file://$MODULE_DIR$/../../Jumping Ring/graphics" />
     <content url="file://$MODULE_DIR$/../../Light a Fire/graphics" />
     <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">

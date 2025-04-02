@@ -8,7 +8,6 @@ from consts import *
 from display import *
 from arduino import *
 from logs import *
-from sound import *
 
 
 def main():
@@ -111,12 +110,12 @@ def main():
                     play_audio(dic_sound.get(language))  # Jouer la musique
                     music_playing = True  # Marquer que la musique est en cours
 
-                elif music_playing and not pygame.mixer.music.get_busy():  # Vérifier si la musique est terminée
+                if music_playing and not pygame.mixer.music.get_busy():  # Vérifier si la musique est terminée
                     if write_line(ser, "ignite", logger):  # Utilisation de la fonction write_line sécurisée
                         logger.info("Sent 'ignite' command to Arduino.")
                         print("Sent 'ignite' command to Arduino.")
                     else:
-                        logger.warning("Failed to send 'ignite' command. Serial port might be closed or unavailable.")
+                        logger.info("Failed to send 'ignite' command. Serial port might be closed or unavailable.")
                     music_playing = False  # Réinitialiser l'état de la musique
 
             state = MEASURE if current >= SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD else OPENING  # if you got data, change the screen automatically based on the current value

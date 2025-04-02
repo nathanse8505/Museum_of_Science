@@ -25,7 +25,7 @@ void setup() {
 void loop() {
 
   //resetWatchdog(); // Reset the Watchdog Timer to ensure the system does not reset
-
+  //Serial.println((millis() - time_start));
   // Check if the activation time has passed
   if ((millis() - time_start) > ACTIVATION_TIME) { 
     digitalWrite(LED_BUTTON, HIGH); // Turn on the button LED that turn on the motor
@@ -65,7 +65,7 @@ void loop() {
       // If the micro switch is activated
       if (digitalRead(MICRO_SW) == !NO_MICRO_SWITCH) {
         digitalWrite(MOTOR, LOW); // Turn off the motor
-        //printMotorOffInfo();
+        printMotorOffInfo();
         time_start = millis();    // Reset the activation timer
         flag_first_press = HIGH;
         //break;                    // Exit the loop
