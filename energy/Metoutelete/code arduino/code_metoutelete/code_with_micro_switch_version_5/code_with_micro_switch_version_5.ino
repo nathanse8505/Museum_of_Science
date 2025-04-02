@@ -29,21 +29,21 @@ void setup() {
 
 void loop() {
 
-     if ((millis() - time_start) < ACTIVATION_TIME){
-    // Log button presses even when they don't activate the motor
-      if (PRESS_BUTTON()) {
-          Serial.println("Button pressed (no action triggered)");
-          logEvent("Button pressed (no action triggered)");
-          delay(20);
-      }
+     // Log button presses even when they don't activate the motor
+    if ((millis() - time_start) < ACTIVATION_TIME){
+        if (PRESS_BUTTON()) {
+            Serial.println("Button pressed (no action triggered)");
+            logEvent("Button pressed (no action triggered)");
+            delay(20);
+        }
     }
     // Check if the activation time has elapsed
     else if ((millis() - time_start) > ACTIVATION_TIME) { 
         digitalWrite(LED_BUTTON, HIGH);
         
-
         // If the button is pressed and it's the first valid press
         if (PRESS_BUTTON() && flag_first_press) {
+
             Serial.println("Motor activated!");
             logEvent("Button pressed - Motor activated");
             TURN_ON_MOTOR();
@@ -67,7 +67,6 @@ void loop() {
             if (PRESS_BUTTON()) {
                 Serial.println("Button pressed (while motor running)");
                 logEvent("Button pressed (while motor running)");
-                
             }
 
             // Safety timeout: Stop motor if micro switch does not trigger within safety period
