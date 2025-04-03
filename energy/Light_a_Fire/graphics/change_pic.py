@@ -47,7 +47,7 @@ def remove_black_bg(source_folder_path, output_folder_path):
             img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 
         # Détecter et rendre le fond noir transparent
-        threshold = 50
+        threshold = 80
         mask = (img[:, :, 0] < threshold) & (img[:, :, 1] < threshold) & (img[:, :, 2] < threshold)
         img[mask, 3] = 0  # Appliquer la transparence
 
@@ -82,7 +82,7 @@ def extraction_pic(input_mp4_path, output_folder_path):
 
     # Définir le nombre de frames à extraire
     num_frames_to_extract = 50
-    max_time = 10  # secondes
+    max_time = 2  # secondes
 
     # Calculer les indices des frames à extraire
     frame_indices = np.linspace(0, min(fps * max_time, total_frames) - 1, num_frames_to_extract, dtype=int)
@@ -104,5 +104,9 @@ def extraction_pic(input_mp4_path, output_folder_path):
     return extracted_frames_folder
 
 if __name__ == "__main__":
-    path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light a Fire\graphics\video\flame_50"
-    path_out = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light a Fire\graphics\video\flame_50"
+    path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke.mp4"
+    #path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke_frames_transparent"
+    path_out = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\flame 50"
+
+    extraction_pic(path_in,path_out)
+

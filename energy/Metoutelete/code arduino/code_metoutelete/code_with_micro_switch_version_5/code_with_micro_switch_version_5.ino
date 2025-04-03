@@ -22,35 +22,38 @@ void setup() {
 
     // Ensure the motor is off at startup
     digitalWrite(MOTOR, LOW);
-    
+
     Serial.println("Init.");
     logEvent("Init");
 }
 
 void loop() {
+    bool buttonPressed = PRESS_BUTTON(); // Lire une seule fois l'état du bouton
 
-     // Log button presses even when they don't activate the motor
-    if ((millis() - time_start) < ACTIVATION_TIME){
-        if (PRESS_BUTTON()) {
+    // Log button presses even when they don't activate the motor
+    if ((millis() - time_start) < ACTIVATION_TIME) {
+        if (buttonPressed) {
             Serial.println("Button pressed (no action triggered)");
             logEvent("Button pressed (no action triggered)");
             delay(20);
         }
+        //Serial.println("Waiting Mode");
     }
     // Check if the activation time has elapsed
-    else if ((millis() - time_start) > ACTIVATION_TIME) { 
+    else {
         digitalWrite(LED_BUTTON, HIGH);
-        
+
         // If the button is pressed and it's the first valid press
-        if (PRESS_BUTTON() && flag_first_press) {
+        if (buttonPressed && flag_first_press) {
 
             Serial.println("Motor activated!");
             logEvent("Button pressed - Motor activated");
-            TURN_ON_MOTOR();
+            digitalWrite(LED_BUTTON, LOW);
             flag_first_press = LOW;
+            TURN_ON_MOTOR();
 
             // Safety check: Stop motor if micro switch is constantly pressed
-            if (digitalRead(MICRO_SW) == !NO_MICRO_SWITCH) {
+            if (digitalRead(MICRO_SW) != NO_MICRO_SWITCH) {
                 Serial.println("Safety alert: Micro switch constantly pressed! Stopping motor.");
                 logEvent("Safety alert: Micro switch constantly pressed - Motor stopped");
                 IEC();
@@ -59,12 +62,13 @@ void loop() {
 
             time_to_secure = millis();
         }
+        //Serial.println("Activation Mode");
 
         // Keep checking while motor is running and micro switch is not triggered
-        while (digitalRead(MICRO_SW) == NO_MICRO_SWITCH && digitalRead(MOTOR) == HIGH && flag_first_press == LOW) {
-            digitalWrite(LED_BUTTON, LOW);
+        while (digitalRead(MICRO_SW) == NO_MICRO_SWITCH && flag_first_press == LOW) {
+            buttonPressed = PRESS_BUTTON(); // Mettre à jour l'état du bouton pendant la boucle
 
-            if (PRESS_BUTTON()) {
+            if (buttonPressed) {
                 Serial.println("Button pressed (while motor running)");
                 logEvent("Button pressed (while motor running)");
             }
@@ -78,7 +82,7 @@ void loop() {
             }
 
             // Stop motor if the micro switch is triggered
-            if (digitalRead(MICRO_SW) == !NO_MICRO_SWITCH) {
+            if (digitalRead(MICRO_SW) != NO_MICRO_SWITCH) {
                 digitalWrite(MOTOR, LOW);
                 Serial.println("Motor stopped - Micro switch triggered");
                 logEvent("Motor stopped - Micro switch triggered");

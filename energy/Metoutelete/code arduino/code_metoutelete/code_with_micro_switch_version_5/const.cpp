@@ -6,7 +6,7 @@ bool NO_MICRO_SWITCH = HIGH;
 int8_t time_bouncing = 50;
 int BAUDERATE = 9600;
 unsigned long ACTIVATION_TIME = 10000;
-unsigned long RESET_TIME_SECURE = 5000;
+unsigned long RESET_TIME_SECURE = 10000;
 int16_t MOTOR_DELAY = 1000;
 int16_t DELAY_BEFORE_SLEEP = 1000;
 
