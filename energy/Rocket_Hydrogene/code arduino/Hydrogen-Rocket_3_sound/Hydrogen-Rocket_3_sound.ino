@@ -42,7 +42,7 @@ void loop() {
     ready_sound = checkSerialCommand();
   }
 
-  if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME && !ready_sound) {
+  if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {
 
     if (charge >= AUTO_EXPLOSION_THRESHOLD) {
       ready_sound = true;
