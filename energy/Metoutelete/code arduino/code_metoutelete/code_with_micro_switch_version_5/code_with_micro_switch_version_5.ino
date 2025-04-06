@@ -4,7 +4,7 @@ File logFile; // File object for logging events
 
 void setup() {
     Serial.begin(BAUDERATE);
-    while (!Serial);  // Wait for Serial Monitor to be ready
+    //while (!Serial);  // Wait for Serial Monitor to be ready
 
     // Initialize the SD card
     Serial.println("Initializing SD card...");
@@ -37,11 +37,16 @@ void loop() {
             logEvent("Button pressed (no action triggered)");
             delay(20);
         }
+        flag_led_on = HIGH;
         //Serial.println("Waiting Mode");
     }
     // Check if the activation time has elapsed
     else {
-        digitalWrite(LED_BUTTON, HIGH);
+        if(flag_led_on){
+          digitalWrite(LED_BUTTON, HIGH);
+          flag_led_on = LOW;
+        }
+        
 
         // If the button is pressed and it's the first valid press
         if (buttonPressed && flag_first_press) {
@@ -65,10 +70,9 @@ void loop() {
         //Serial.println("Activation Mode");
 
         // Keep checking while motor is running and micro switch is not triggered
-        while (digitalRead(MICRO_SW) == NO_MICRO_SWITCH && flag_first_press == LOW) {
-            buttonPressed = PRESS_BUTTON(); // Mettre à jour l'état du bouton pendant la boucle
-
-            if (buttonPressed) {
+        while (digitalRead(MOTOR) == HIGH && flag_first_press == LOW) {
+             
+            if (PRESS_BUTTON()) {
                 Serial.println("Button pressed (while motor running)");
                 logEvent("Button pressed (while motor running)");
             }
