@@ -106,3 +106,10 @@ def display_charge(screen, charge):
     text = font.render(f"{charge:.2f}", True, CHARGE_TEXT_COLOR)
     text_rect = text.get_rect(center=CHARGE_TEXT_POS)
     screen.blit(text, text_rect)
+
+
+def play_audio(file_path):
+    """Lit un fichier audio avec pygame."""
+    pygame.mixer.init()
+    pygame.mixer.music.load(file_path)
+    pygame.mixer.music.play()

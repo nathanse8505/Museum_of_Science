@@ -115,3 +115,21 @@
 2025-03-30 15:19:19 - Found Arduino! port: COM3
 2025-03-30 15:19:19 - Connected to COM3
 2025-03-30 15:19:37 - the ember ignites!
+2025-04-03 15:25:52 - Starting Light a Fire UI
+2025-04-03 15:25:52 - Error: Arduino not found
+2025-04-03 15:31:11 - Starting Light a Fire UI
+2025-04-03 15:31:11 - Error: Arduino not found
+2025-04-03 17:16:25 - Starting Light a Fire UI
+2025-04-03 17:16:25 - Error: Arduino not found
+2025-04-03 17:18:03 - Starting Light a Fire UI
+2025-04-03 17:18:03 - Error: Arduino not found
+2025-04-03 17:20:09 - Starting Light a Fire UI
+2025-04-03 17:20:09 - Error: Arduino not found
+2025-04-03 17:21:46 - Starting Light a Fire UI
+2025-04-03 17:21:46 - Error: Arduino not found
+2025-04-03 17:23:22 - Starting Light a Fire UI
+2025-04-03 17:23:22 - Error: Arduino not found
+2025-04-03 18:05:20 - Starting Light a Fire UI
+2025-04-03 18:05:20 - Error: Arduino not found
+2025-04-03 18:06:58 - Starting Light a Fire UI
+2025-04-03 18:06:58 - Error: Arduino not found

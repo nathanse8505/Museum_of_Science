@@ -73,7 +73,7 @@ def send_data_to_arduino(arduino,byte_list):
 def send_image_to_arduino(log, byte_list, arduino):
     if log:
         print('Sending data to Arduino...')
-    for i in range(len(byte_list)):
+    for i in range(len(byte_list)):#pixel/byte =  (64 x 40) / 8 = 320
         if not send_one_number(bytearray([byte_list[i]])):
             print(f"Error: Could not send {ord(byte_list[i])}")
             return False

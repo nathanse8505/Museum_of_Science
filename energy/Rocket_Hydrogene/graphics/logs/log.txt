@@ -280,3 +280,526 @@
 2025-03-30 15:03:04 - Error: Arduino not found
 2025-03-30 23:39:09 - Starting Hydrogen Rocket UI
 2025-03-30 23:39:09 - Error: Arduino not found
+2025-04-02 15:46:11 - Starting Hydrogen Rocket UI
+2025-04-02 15:46:11 - Found Arduino! port: COM3
+2025-04-02 15:46:11 - Connected to COM3
+2025-04-02 15:46:24 - your language is: arabic
+2025-04-02 15:46:24 - your language is: hebrew
+2025-04-02 15:46:25 - your language is: arabic
+2025-04-02 15:46:26 - your language is: hebrew
+2025-04-02 15:47:09 - Sound in hebrew is activate
+2025-04-02 15:48:34 - Starting Hydrogen Rocket UI
+2025-04-02 15:48:34 - Found Arduino! port: COM3
+2025-04-02 15:48:34 - Connected to COM3
+2025-04-02 15:49:03 - your language is: english
+2025-04-02 15:49:07 - Sound in english is activate
+2025-04-02 15:50:12 - Starting Hydrogen Rocket UI
+2025-04-02 15:50:12 - Found Arduino! port: COM3
+2025-04-02 15:50:12 - Connected to COM3
+2025-04-02 15:50:38 - Sound in hebrew is activate
+2025-04-02 15:51:12 - Starting Hydrogen Rocket UI
+2025-04-02 15:51:12 - Found Arduino! port: COM3
+2025-04-02 15:51:12 - Connected to COM3
+2025-04-02 15:51:12 - Sound in hebrew is activate
+2025-04-02 15:51:15 - Sent 'ignite' command to Arduino.
+2025-04-02 15:51:15 - Sound in hebrew is activate
+2025-04-02 15:51:18 - Sent 'ignite' command to Arduino.
+2025-04-02 15:51:18 - Sound in hebrew is activate
+2025-04-02 15:51:31 - Starting Hydrogen Rocket UI
+2025-04-02 15:51:31 - Found Arduino! port: COM3
+2025-04-02 15:51:31 - Connected to COM3
+2025-04-02 15:51:57 - Sound in hebrew is activate
+2025-04-02 15:52:29 - Starting Hydrogen Rocket UI
+2025-04-02 15:52:29 - Found Arduino! port: COM3
+2025-04-02 15:52:29 - Connected to COM3
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:30 - Sound in hebrew is activate
+2025-04-02 15:52:30 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:31 - Sound in hebrew is activate
+2025-04-02 15:52:31 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:31 - Sound in hebrew is activate
+2025-04-02 15:52:31 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:31 - Sound in hebrew is activate
+2025-04-02 15:52:31 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:31 - Sound in hebrew is activate
+2025-04-02 15:52:31 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:31 - Sound in hebrew is activate
+2025-04-02 15:52:31 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:31 - Sound in hebrew is activate
+2025-04-02 15:52:31 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:31 - Sound in hebrew is activate
+2025-04-02 15:52:31 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:32 - Sound in hebrew is activate
+2025-04-02 15:52:32 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:33 - Sound in hebrew is activate
+2025-04-02 15:52:33 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:34 - Sound in hebrew is activate
+2025-04-02 15:52:34 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:34 - Sound in hebrew is activate
+2025-04-02 15:52:34 - Sent 'ignite' command to Arduino.
+2025-04-02 15:52:36 - Starting Hydrogen Rocket UI
+2025-04-02 15:52:36 - Found Arduino! port: COM3
+2025-04-02 15:52:36 - Connected to COM3
+2025-04-02 15:52:46 - your language is: arabic
+2025-04-02 15:52:46 - your language is: english
+2025-04-02 15:52:47 - your language is: arabic
+2025-04-02 15:52:48 - your language is: hebrew
+2025-04-02 15:53:03 - Sound in hebrew is activate
+2025-04-02 15:53:03 - Sent 'ignite' command to Arduino.
+2025-04-02 15:53:13 - your language is: english
+2025-04-02 15:53:28 - Sound in english is activate
+2025-04-02 15:53:28 - Sent 'ignite' command to Arduino.
+2025-04-02 15:53:51 - your language is: arabic
+2025-04-02 15:53:52 - your language is: hebrew
+2025-04-02 15:53:54 - Sound in hebrew is activate
+2025-04-02 15:53:54 - Sent 'ignite' command to Arduino.
+2025-04-02 15:54:42 - Starting Hydrogen Rocket UI
+2025-04-02 15:54:42 - Found Arduino! port: COM3
+2025-04-02 15:54:42 - Connected to COM3
+2025-04-02 15:54:42 - Sound in hebrew is activate
+2025-04-02 15:54:45 - Sent 'ignite' command to Arduino.
+2025-04-02 15:54:46 - Sound in hebrew is activate
+2025-04-02 15:54:48 - Starting Hydrogen Rocket UI
+2025-04-02 15:54:48 - Found Arduino! port: COM3
+2025-04-02 15:54:48 - Connected to COM3
+2025-04-02 15:55:05 - Starting Hydrogen Rocket UI
+2025-04-02 15:55:05 - Found Arduino! port: COM3
+2025-04-02 15:55:05 - Connected to COM3
+2025-04-02 15:55:32 - Sound in hebrew is activate
+2025-04-02 16:01:55 - Starting Hydrogen Rocket UI
+2025-04-02 16:01:55 - Found Arduino! port: COM3
+2025-04-02 16:01:55 - Connected to COM3
+2025-04-02 16:02:21 - Sound in hebrew is activate
+2025-04-02 16:02:24 - Sent 'ignite' command to Arduino.
+2025-04-02 16:02:50 - Sound in hebrew is activate
+2025-04-02 16:02:53 - Sent 'ignite' command to Arduino.
+2025-04-02 16:02:56 - your language is: arabic
+2025-04-02 16:03:18 - Sound in arabic is activate
+2025-04-02 16:03:43 - your language is: english
+2025-04-02 16:03:47 - your language is: arabic
+2025-04-02 16:03:48 - your language is: hebrew
+2025-04-02 16:03:48 - your language is: arabic
+2025-04-02 16:03:49 - your language is: hebrew
+2025-04-02 16:03:50 - your language is: english
+2025-04-02 16:03:58 - Starting Hydrogen Rocket UI
+2025-04-02 16:03:58 - Found Arduino! port: COM3
+2025-04-02 16:03:58 - Connected to COM3
+2025-04-02 16:04:03 - your language is: english
+2025-04-02 16:04:25 - Sound in english is activate
+2025-04-02 16:04:48 - Sent 'ignite' command to Arduino.
+2025-04-02 16:05:13 - Sound in english is activate
+2025-04-02 16:05:36 - Sent 'ignite' command to Arduino.
+2025-04-02 16:05:43 - your language is: arabic
+2025-04-02 16:05:44 - your language is: hebrew
+2025-04-02 16:06:01 - Sound in hebrew is activate
+2025-04-02 16:06:04 - Sent 'ignite' command to Arduino.
+2025-04-02 16:06:29 - Sound in hebrew is activate
+2025-04-02 16:06:32 - Sent 'ignite' command to Arduino.
+2025-04-02 16:06:57 - Sound in hebrew is activate
+2025-04-02 16:07:00 - Sent 'ignite' command to Arduino.
+2025-04-02 16:07:05 - your language is: english
+2025-04-02 16:07:26 - Sound in english is activate
+2025-04-02 16:07:49 - Sent 'ignite' command to Arduino.
+2025-04-02 16:08:14 - Sound in english is activate
+2025-04-02 16:08:23 - your language is: arabic
+2025-04-02 16:08:24 - your language is: hebrew
+2025-04-02 16:08:37 - Sent 'ignite' command to Arduino.
+2025-04-02 16:09:02 - Sound in hebrew is activate
+2025-04-02 16:09:05 - Sent 'ignite' command to Arduino.
+2025-04-02 16:32:34 - Starting Hydrogen Rocket UI
+2025-04-02 16:32:34 - Found Arduino! port: COM3
+2025-04-02 16:32:34 - Connected to COM3
+2025-04-02 16:33:01 - Sound in hebrew is activate
+2025-04-02 16:33:04 - Sent 'ignite' command to Arduino.
+2025-04-02 16:33:29 - Sound in hebrew is activate
+2025-04-02 16:33:32 - Sent 'ignite' command to Arduino.
+2025-04-02 16:33:57 - Sound in hebrew is activate
+2025-04-02 16:34:00 - Sent 'ignite' command to Arduino.
+2025-04-02 16:34:22 - Starting Hydrogen Rocket UI
+2025-04-02 16:34:22 - Found Arduino! port: COM3
+2025-04-02 16:34:22 - Connected to COM3
+2025-04-02 16:34:49 - Sound in hebrew is activate
+2025-04-02 16:34:52 - Sent 'ignite' command to Arduino.
+2025-04-02 16:34:55 - your language is: english
+2025-04-02 16:55:45 - Starting Hydrogen Rocket UI
+2025-04-02 16:55:45 - Found Arduino! port: COM3
+2025-04-02 16:55:45 - Connected to COM3
+2025-04-02 16:55:45 - Error parsing data: 8 1 1
+2025-04-02 16:55:45 - your language is: english
+2025-04-02 16:55:45 - Sound in english is activate
+2025-04-02 16:55:46 - Error parsing data: 8 1 1
+2025-04-02 16:55:46 - Error parsing data: 8 1 1
+2025-04-02 16:55:46 - Error parsing data: 8 1 1
+2025-04-02 16:55:46 - Error parsing data: 8 1 1
+2025-04-02 16:55:46 - Error parsing data: 8 1 1
+2025-04-02 16:55:47 - Error parsing data: 8 1 1
+2025-04-02 16:55:47 - Error parsing data: 8 1 1
+2025-04-02 16:55:52 - Starting Hydrogen Rocket UI
+2025-04-02 16:55:52 - Found Arduino! port: COM3
+2025-04-02 16:55:52 - Connected to COM3
+2025-04-02 16:56:19 - Sound in hebrew is activate
+2025-04-02 16:56:22 - Sent 'ignite' command to Arduino.
+2025-04-02 16:56:25 - your language is: arabic
+2025-04-02 16:56:47 - Sound in arabic is activate
+2025-04-02 16:56:55 - Sent 'ignite' command to Arduino.
+2025-04-02 16:57:00 - your language is: hebrew
+2025-04-02 16:57:09 - your language is: arabic
+2025-04-02 16:57:09 - your language is: hebrew
+2025-04-02 16:57:10 - your language is: arabic
+2025-04-02 16:57:11 - your language is: hebrew
+2025-04-02 16:57:12 - your language is: arabic
+2025-04-02 16:57:12 - your language is: english
+2025-04-02 16:57:13 - your language is: hebrew
+2025-04-02 16:57:14 - your language is: english
+2025-04-02 16:57:21 - Sound in english is activate
+2025-04-02 16:57:27 - Sent 'ignite' command to Arduino.
+2025-04-02 16:57:34 - Starting Hydrogen Rocket UI
+2025-04-02 16:57:34 - Found Arduino! port: COM3
+2025-04-02 16:57:34 - Connected to COM3
+2025-04-02 16:57:34 - your language is: english
+2025-04-02 16:58:00 - Starting Hydrogen Rocket UI
+2025-04-02 16:58:00 - Found Arduino! port: COM3
+2025-04-02 16:58:00 - Connected to COM3
+2025-04-02 16:58:05 - Starting Hydrogen Rocket UI
+2025-04-02 16:58:05 - Found Arduino! port: COM3
+2025-04-02 16:58:05 - Connected to COM3
+2025-04-02 16:58:10 - your language is: arabic
+2025-04-02 16:58:11 - your language is: english
+2025-04-02 16:58:12 - your language is: hebrew
+2025-04-02 16:58:12 - your language is: english
+2025-04-02 16:58:32 - Sound in english is activate
+2025-04-02 16:58:38 - Sent 'ignite' command to Arduino.
+2025-04-02 17:00:45 - Starting Hydrogen Rocket UI
+2025-04-02 17:00:45 - Found Arduino! port: COM3
+2025-04-02 17:00:45 - Connected to COM3
+2025-04-02 17:00:57 - Starting Hydrogen Rocket UI
+2025-04-02 17:00:57 - Found Arduino! port: COM3
+2025-04-02 17:00:57 - Connected to COM3
+2025-04-02 17:01:07 - your language is: arabic
+2025-04-02 17:01:08 - your language is: hebrew
+2025-04-02 17:01:08 - your language is: arabic
+2025-04-02 17:01:09 - your language is: english
+2025-04-02 17:01:24 - Sound in english is activate
+2025-04-02 17:01:30 - Sent 'ignite' command to Arduino.
+2025-04-02 19:18:28 - Starting Hydrogen Rocket UI
+2025-04-02 19:18:28 - Error: Arduino not found
+2025-04-02 19:18:37 - Found Arduino! port: COM3
+2025-04-02 19:18:40 - Connected to COM3
+2025-04-02 19:19:07 - Sound in hebrew is activate
+2025-04-02 19:19:12 - Sent 'ignite' command to Arduino.
+2025-04-02 19:19:30 - your language is: arabic
+2025-04-02 19:19:37 - Sound in arabic is activate
+2025-04-02 19:19:45 - Sent 'ignite' command to Arduino.
+2025-04-02 19:19:49 - your language is: hebrew
+2025-04-02 19:20:11 - Sound in hebrew is activate
+2025-04-02 19:20:14 - your language is: arabic
+2025-04-02 19:20:15 - your language is: hebrew
+2025-04-02 19:20:16 - Sent 'ignite' command to Arduino.
+2025-04-02 19:20:20 - your language is: english
+2025-04-02 19:20:41 - Sound in english is activate
+2025-04-02 19:20:47 - Sent 'ignite' command to Arduino.
+2025-04-02 19:20:51 - your language is: arabic
+2025-04-02 19:21:12 - Sound in arabic is activate
+2025-04-02 19:21:20 - Sent 'ignite' command to Arduino.
+2025-04-02 19:21:45 - Sound in arabic is activate
+2025-04-02 19:21:53 - Sent 'ignite' command to Arduino.
+2025-04-02 19:22:18 - Sound in arabic is activate
+2025-04-02 19:22:26 - Sent 'ignite' command to Arduino.
+2025-04-02 19:22:51 - Sound in arabic is activate
+2025-04-02 19:23:00 - Sent 'ignite' command to Arduino.
+2025-04-02 19:23:25 - Sound in arabic is activate
+2025-04-02 19:23:33 - Sent 'ignite' command to Arduino.
+2025-04-02 19:23:58 - Sound in arabic is activate
+2025-04-02 19:24:06 - Sent 'ignite' command to Arduino.
+2025-04-02 19:24:31 - Sound in arabic is activate
+2025-04-02 19:24:39 - Sent 'ignite' command to Arduino.
+2025-04-02 19:27:22 - Starting Hydrogen Rocket UI
+2025-04-02 19:27:22 - Found Arduino! port: COM3
+2025-04-02 19:27:22 - Connected to COM3
+2025-04-02 19:27:29 - your language is: english
+2025-04-02 19:27:30 - your language is: arabic
+2025-04-02 19:27:49 - Sound in arabic is activate
+2025-04-02 19:27:56 - Sent 'ignite' command to Arduino.
+2025-04-02 19:28:21 - Sound in arabic is activate
+2025-04-02 19:28:28 - Sent 'ignite' command to Arduino.
+2025-04-02 19:28:53 - Sound in arabic is activate
+2025-04-02 19:33:58 - Starting Hydrogen Rocket UI
+2025-04-02 19:33:58 - Found Arduino! port: COM3
+2025-04-02 19:33:58 - Connected to COM3
+2025-04-02 19:34:25 - Sound in hebrew is activate
+2025-04-02 19:34:30 - Sent 'ignite' command to Arduino.
+2025-04-02 19:34:33 - your language is: english
+2025-04-02 19:34:35 - your language is: arabic
+2025-04-02 19:34:54 - Sound in arabic is activate
+2025-04-02 19:35:03 - Sent 'ignite' command to Arduino.
+2025-04-02 19:35:26 - Sound in arabic is activate
+2025-04-02 19:35:34 - Sent 'ignite' command to Arduino.
+2025-04-02 19:35:58 - Sound in arabic is activate
+2025-04-02 19:36:00 - your language is: english
+2025-04-02 19:36:06 - Sent 'ignite' command to Arduino.
+2025-04-02 19:36:27 - Sound in english is activate
+2025-04-02 19:36:32 - Sent 'ignite' command to Arduino.
+2025-04-02 19:36:53 - Sound in english is activate
+2025-04-02 19:36:58 - Sent 'ignite' command to Arduino.
+2025-04-02 19:37:22 - Sound in english is activate
+2025-04-02 19:37:27 - Sent 'ignite' command to Arduino.
+2025-04-02 19:37:51 - Sound in english is activate
+2025-04-02 19:37:56 - Sent 'ignite' command to Arduino.
+2025-04-02 19:38:16 - your language is: arabic
+2025-04-02 19:38:17 - your language is: hebrew
+2025-04-02 19:38:20 - Sound in hebrew is activate
+2025-04-02 19:38:26 - Sent 'ignite' command to Arduino.
+2025-04-02 19:38:30 - your language is: arabic
+2025-04-02 19:38:49 - Sound in arabic is activate
+2025-04-02 19:38:58 - Sent 'ignite' command to Arduino.
+2025-04-02 19:39:21 - Sound in arabic is activate
+2025-04-02 19:44:05 - Starting Hydrogen Rocket UI
+2025-04-02 19:44:05 - Found Arduino! port: COM3
+2025-04-02 19:44:05 - Connected to COM3
+2025-04-02 19:44:05 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:05 - your language is: arabic
+2025-04-02 19:44:05 - Sound in arabic is activate
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:06 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:07 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:08 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:09 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:10 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:11 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:12 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:13 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Sent 'ignite' command to Arduino.
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Sound in arabic is activate
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:14 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:15 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:15 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:15 - Error parsing data: 1287.99 1 2
+2025-04-02 19:44:31 - Starting Hydrogen Rocket UI
+2025-04-02 19:44:31 - Found Arduino! port: COM3
+2025-04-02 19:44:31 - Connected to COM3
+2025-04-02 19:44:56 - Sound in hebrew is activate
+2025-04-02 19:45:02 - Sent 'ignite' command to Arduino.
+2025-04-02 19:45:10 - your language is: english
+2025-04-02 19:45:26 - Sound in english is activate
+2025-04-02 19:45:31 - Sent 'ignite' command to Arduino.
+2025-04-02 19:45:49 - your language is: arabic
+2025-04-02 19:45:55 - Sound in arabic is activate
+2025-04-02 19:46:03 - Sent 'ignite' command to Arduino.
+2025-04-02 19:46:27 - Sound in arabic is activate
+2025-04-02 19:49:24 - Starting Hydrogen Rocket UI
+2025-04-02 19:49:24 - Found Arduino! port: COM3
+2025-04-02 19:49:24 - Connected to COM3
+2025-04-02 19:49:28 - your language is: english
+2025-04-02 19:49:29 - your language is: arabic
+2025-04-02 19:49:29 - your language is: hebrew
+2025-04-02 19:49:30 - your language is: english
+2025-04-02 19:49:30 - your language is: arabic
+2025-04-02 19:49:31 - your language is: english
+2025-04-02 19:49:31 - your language is: arabic
+2025-04-02 19:49:32 - your language is: english
+2025-04-02 19:49:33 - your language is: arabic
+2025-04-02 19:49:33 - your language is: english
+2025-04-02 19:49:50 - Sound in english is activate
+2025-04-02 19:49:56 - Sent 'ignite' command to Arduino.
+2025-04-02 19:50:19 - Sound in english is activate
+2025-04-02 19:53:08 - Starting Hydrogen Rocket UI
+2025-04-02 19:53:08 - Found Arduino! port: COM3
+2025-04-02 19:53:08 - Connected to COM3
+2025-04-02 19:53:24 - your language is: english
+2025-04-02 19:53:25 - your language is: arabic
+2025-04-02 19:53:33 - Sound in arabic is activate
+2025-04-02 19:53:42 - Sent 'ignite' command to Arduino.
+2025-04-02 19:54:05 - Sound in arabic is activate
+2025-04-02 19:54:14 - Sent 'ignite' command to Arduino.
+2025-04-02 19:54:20 - your language is: hebrew
+2025-04-02 19:54:37 - Sound in hebrew is activate
+2025-04-02 19:54:43 - Sent 'ignite' command to Arduino.
+2025-04-02 19:55:07 - Sound in hebrew is activate
+2025-04-02 19:55:12 - Sent 'ignite' command to Arduino.
+2025-04-02 19:55:36 - Sound in hebrew is activate
+2025-04-02 19:55:41 - Sent 'ignite' command to Arduino.
+2025-04-02 19:56:05 - Sound in hebrew is activate
+2025-04-02 19:56:10 - Sent 'ignite' command to Arduino.
+2025-04-02 19:56:34 - Sound in hebrew is activate
+2025-04-02 19:56:39 - Sent 'ignite' command to Arduino.
+2025-04-02 19:57:03 - Sound in hebrew is activate
+2025-04-02 19:57:09 - Sent 'ignite' command to Arduino.
+2025-04-02 19:57:32 - Sound in hebrew is activate
+2025-04-02 19:57:38 - Sent 'ignite' command to Arduino.
+2025-04-02 19:58:01 - Sound in hebrew is activate
+2025-04-02 19:58:07 - Sent 'ignite' command to Arduino.
+2025-04-02 19:58:30 - Sound in hebrew is activate
+2025-04-02 19:58:36 - Sent 'ignite' command to Arduino.
+2025-04-02 19:58:59 - Sound in hebrew is activate
+2025-04-02 19:59:05 - Sent 'ignite' command to Arduino.
+2025-04-02 19:59:28 - Sound in hebrew is activate
+2025-04-02 19:59:34 - Sent 'ignite' command to Arduino.
+2025-04-02 19:59:57 - Sound in hebrew is activate
+2025-04-02 20:00:03 - Sent 'ignite' command to Arduino.
+2025-04-02 20:00:26 - Sound in hebrew is activate
+2025-04-02 20:00:32 - Sent 'ignite' command to Arduino.
+2025-04-02 20:00:56 - Sound in hebrew is activate
+2025-04-02 20:01:01 - Sent 'ignite' command to Arduino.
+2025-04-02 20:01:25 - Sound in hebrew is activate
+2025-04-02 20:01:30 - Sent 'ignite' command to Arduino.
+2025-04-02 20:01:54 - Sound in hebrew is activate
+2025-04-02 20:03:11 - Starting Hydrogen Rocket UI
+2025-04-02 20:03:11 - Found Arduino! port: COM3
+2025-04-02 20:03:11 - Connected to COM3
+2025-04-02 20:03:16 - your language is: english
+2025-04-02 20:03:17 - your language is: arabic
+2025-04-02 20:03:18 - your language is: hebrew
+2025-04-02 20:03:18 - your language is: english
+2025-04-02 20:03:18 - your language is: hebrew
+2025-04-02 20:03:19 - your language is: english
+2025-04-02 20:03:20 - your language is: arabic
+2025-04-02 20:03:20 - your language is: hebrew
+2025-04-02 20:03:20 - your language is: english
+2025-04-02 20:03:21 - your language is: arabic

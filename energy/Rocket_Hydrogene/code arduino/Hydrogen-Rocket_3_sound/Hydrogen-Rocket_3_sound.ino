@@ -6,7 +6,6 @@
 */
 
 #include "consts.h"  
-#include "display.h"
 #include "basic_routines.h"
 
 void setup() {

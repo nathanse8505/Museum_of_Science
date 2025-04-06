@@ -46,6 +46,8 @@ void loop() {
            digitalWrite(LED_BUTTON, HIGH);
           flag_led = LOW;
         }
+        //Serial.println("Waiting Mode");
+ 
 
         // If the button is pressed and it's the first valid press
         if (buttonPressed && flag_first_press) {
@@ -69,6 +71,7 @@ void loop() {
         //Serial.println("Activation Mode");
 
         // Keep checking while motor is running and micro switch is not triggered
+
         while (digitalRead(MOTOR) == HIGH && flag_first_press == LOW) {
             
             if (PRESS_BUTTON()){
