@@ -52,17 +52,21 @@ def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_DEFAU
     number_of_frame = len(SMOKE_FRAMES_PATHS) + len(FLAMES_FRAMES_PATHS)
     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
-    
-    if index < len(SMOKE_FRAMES_PATHS):
-        screen.blit(smoke_images[index], SMOKE_FRAME_POS)
-    else:
-        screen.blit(flames_images[index - len(SMOKE_FRAMES_PATHS)], FLAME_FRAME_POS)
-        
-    #load_and_blit_picture(screen, index)
-    display_text_values(screen, Temperature)
-    screen.blit(empty_thermometer,THERMOMETER_FRAME_POS)
-    display_bars(screen,Temperature)
 
+    if(Temperature < MAX_TEMPERATURE_VALUE):
+        if index < len(SMOKE_FRAMES_PATHS):
+            screen.blit(smoke_images[index], SMOKE_FRAME_POS)
+        else:
+            screen.blit(flames_images[index - len(SMOKE_FRAMES_PATHS)], FLAME_FRAME_POS)
+
+        #load_and_blit_picture(screen, index)
+    else:
+        for i in range(len(FLAMES_FRAMES_PATHS)//2,len(FLAMES_FRAMES_PATHS),1):
+            screen.blit(flames_images[i], FLAME_FRAME_POS)
+
+    display_text_values(screen, Temperature)
+    screen.blit(empty_thermometer, THERMOMETER_FRAME_POS)
+    display_bars(screen, Temperature)
 
 def display_text_values(screen, temperature):
     """
