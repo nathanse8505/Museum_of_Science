@@ -67,6 +67,9 @@ def load_scaled_image(path, size):
     img = pygame.transform.scale(img, size)
     return img
 
+LOOP_FLAME_COUNT = 25         # Nombre d'images de flammes pour la boucle
+DEGREES_PER_FRAME = 0.5        # Tous les X degrés, on passe à l’image suivante dans la boucle
+
 smoke_images = [load_scaled_image(path , VIEW_PORT) for path in SMOKE_FRAMES_PATHS]
 flames_images = [load_scaled_image(path , (int(VIEW_PORT[0]//2), int(VIEW_PORT[1]//2))) for path in FLAMES_FRAMES_PATHS]
 full_thermometer = load_scaled_image(full_thermometer_path, RESOLUTION_THERMOMETER)

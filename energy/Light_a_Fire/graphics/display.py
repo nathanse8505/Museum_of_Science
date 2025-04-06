@@ -42,31 +42,37 @@ def camera_setup(screen,cap):
 
 
 
+
+
+
+
 def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_DEFAULT):
     """
     Affiche l'écran de mesure avec une image adaptée à la température.
-    Charge une nouvelle image uniquement si elle est différente de l’actuelle.
+    Fait boucler certaines images de flammes si la température dépasse le max.
     """
 
-    # Trouver l’image correcte en fonction de la température
     number_of_frame = len(SMOKE_FRAMES_PATHS) + len(FLAMES_FRAMES_PATHS)
     temperatures = np.linspace(MIN_TEMPERATURE_VALUE, MAX_TEMPERATURE_VALUE, number_of_frame)
     index = min(range(number_of_frame), key=lambda i: abs(temperatures[i] - Temperature))
 
-    if(Temperature < MAX_TEMPERATURE_VALUE):
+    if Temperature < MAX_TEMPERATURE_VALUE:
         if index < len(SMOKE_FRAMES_PATHS):
             screen.blit(smoke_images[index], SMOKE_FRAME_POS)
         else:
             screen.blit(flames_images[index - len(SMOKE_FRAMES_PATHS)], FLAME_FRAME_POS)
-
-        #load_and_blit_picture(screen, index)
     else:
-        for i in range(len(FLAMES_FRAMES_PATHS)//2,len(FLAMES_FRAMES_PATHS),1):
-            screen.blit(flames_images[i], FLAME_FRAME_POS)
+        # Choisir l’image à afficher selon l'écart de température
+        delta_temp = Temperature - MAX_TEMPERATURE_VALUE
+        frame_index = int(delta_temp // DEGREES_PER_FRAME) % LOOP_FLAME_COUNT
+        last_flame_images = flames_images[-LOOP_FLAME_COUNT:]
+        image_to_display = last_flame_images[frame_index]
+        screen.blit(image_to_display, FLAME_FRAME_POS)
 
     display_text_values(screen, Temperature)
     screen.blit(empty_thermometer, THERMOMETER_FRAME_POS)
     display_bars(screen, Temperature)
+
 
 def display_text_values(screen, temperature):
     """

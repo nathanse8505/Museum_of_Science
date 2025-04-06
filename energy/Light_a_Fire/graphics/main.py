@@ -70,7 +70,7 @@ def main():
                     temperature_to_display = min( temperature_to_display + 0.5, MAX_TEMPERATURE_DEFAULT)
 
                 if event.key == pygame.K_DOWN:
-                    temperature_to_display = max( temperature_to_display - 0.5, MIN_TEMPERATURE_DEFAULT)
+                    temperature_to_display = max( temperature_to_display - 1, MIN_TEMPERATURE_DEFAULT)
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
