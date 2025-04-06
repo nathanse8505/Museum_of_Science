@@ -14,8 +14,5 @@ bool check = LOW;
 unsigned long time_start = 0;
 unsigned long time_to_secure = 0;
 bool flag_first_press = HIGH;
-<<<<<<< HEAD
-bool flag_led  = HIGH;
-=======
 bool flag_led_on = HIGH;
->>>>>>> 609987c6a1cb516f8a5f7e5a7f55e326c1839b6b
+

@@ -48,11 +48,8 @@ extern bool check;               // Flag to detect button press
 extern unsigned long time_start;  // Timer to disable button activation after use
 extern unsigned long time_to_secure; // Timer for motor emergency stop if needed
 extern bool flag_first_press;     // Flag to track the first button press after activation
-<<<<<<< HEAD
-extern bool flag_led;
-=======
 extern bool flag_led_on;
->>>>>>> 609987c6a1cb516f8a5f7e5a7f55e326c1839b6b
+
 
 
 void TURN_ON_MOTOR();// Function to turn on the motor
