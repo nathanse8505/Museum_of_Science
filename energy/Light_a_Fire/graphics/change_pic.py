@@ -4,10 +4,9 @@ import numpy as np
 import shutil
 
 
-
 def rename_png(source_folder_path):
     # Lister les fichiers image triés par nom
-    image_files = sorted(os.listdir(source_folder_path),key=extract_numbers)
+    image_files = sorted(os.listdir(source_folder_path), key=extract_numbers)
 
     # Renommer les fichiers de frame_0.png à frame_49.png en frame_50.png à frame_99.png
     for i, file_name in enumerate(image_files[:len(image_files)]):
@@ -17,6 +16,7 @@ def rename_png(source_folder_path):
         os.rename(old_path, new_path)
 
     print("Renommage terminé !")
+
 
 def extract_numbers(filename):
     """ Extrait les nombres d'un nom de fichier et retourne une clé de tri. """
@@ -46,9 +46,14 @@ def remove_black_bg(source_folder_path, output_folder_path):
         if img.shape[-1] != 4:
             img = cv2.cvtColor(img, cv2.COLOR_BGR2BGRA)
 
-        # Détecter et rendre le fond noir transparent
-        threshold = 80
+        #Détecter et rendre le fond noir transparent
+        threshold = 50
         mask = (img[:, :, 0] < threshold) & (img[:, :, 1] < threshold) & (img[:, :, 2] < threshold)
+
+        # #pour fond blanc
+        # threshold = 200  # tu peux ajuster si besoin
+        # mask = (img[:, :, 0] > threshold) & (img[:, :, 1] > threshold) & (img[:, :, 2] > threshold)
+
         img[mask, 3] = 0  # Appliquer la transparence
 
         # Sauvegarder avec le même nom
@@ -104,8 +109,6 @@ def extraction_pic(input_mp4_path, output_folder_path):
     return extracted_frames_folder
 
 
-
-
 def crop_image_center_down(input_folder, output_folder, crop_size=(400, 1200)):
     """
     Recadre chaque image du dossier à 500x1000 centré horizontalement et positionné en bas.
@@ -143,63 +146,47 @@ def crop_image_center_down(input_folder, output_folder, crop_size=(400, 1200)):
             print(f"[✓] Crop effectué : {filename}")
 
 
-def apply_column_blur(image, window_size=60):
-    """
-    Applique un flou vertical basé sur une moyenne glissante par colonne.
-    Conserve le canal alpha (transparence).
-    """
-    h, w = image.shape[:2]
-    blurred = np.zeros_like(image)
-
-    for x in range(w):
-        for c in range(3):  # R, G, B uniquement
-            # Moyenne glissante verticale
-            blurred[:, x, c] = np.convolve(
-                image[:, x, c],
-                np.ones(window_size) / window_size,
-                mode='same'
-            )
-
-    # Copier le canal alpha tel quel
-    if image.shape[2] == 4:
-        blurred[:, :, 3] = image[:, :, 3]
-
-    return blurred.astype(np.uint8)
-
-
-def process_smoke_folder(input_folder, output_folder, window_size=60):
-    """
-    Applique le flou 'new_smoke' à toutes les images PNG d’un dossier.
-
-    :param input_folder: Dossier contenant les images originales
-    :param output_folder: Dossier de sortie pour les images floutées
-    :param window_size: Taille de la fenêtre verticale pour la moyenne
-    """
+def rotate_images_90_degrees(input_folder, output_folder):
+    # Crée le dossier de sortie s'il n'existe pas
     os.makedirs(output_folder, exist_ok=True)
 
+    # Parcourt tous les fichiers dans le dossier d'entrée
     for filename in os.listdir(input_folder):
-        if filename.lower().endswith(".png"):
-            in_path = os.path.join(input_folder, filename)
-            out_path = os.path.join(output_folder, filename)
+        input_path = os.path.join(input_folder, filename)
 
-            image = cv2.imread(in_path, cv2.IMREAD_UNCHANGED)
-            if image is None or image.shape[2] != 4:
-                print(f"[!] Image ignorée ou invalide : {filename}")
-                continue
+        # Vérifie que c'est un fichier image
+        if filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif')):
+            try:
+                # Lis l'image avec OpenCV
+                img = cv2.imread(input_path)
 
-            blurred = apply_column_blur(image, window_size=window_size)
-            cv2.imwrite(out_path, blurred)
-            print(f"[✓] Fichier traité : {filename}")
+                if img is None:
+                    print(f"Impossible de lire l'image : {filename}")
+                    continue
+
+                # Rotate l'image de 90 degrés dans le sens horaire
+                rotated = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+
+                # Enregistre l'image tournée
+                output_path = os.path.join(output_folder, filename)
+                cv2.imwrite(output_path, rotated)
+                print(f"Image sauvegardée : {output_path}")
+
+            except Exception as e:
+                print(f"Erreur avec {filename} : {e}")
 
 
-# Exemple d'utilisation :
-# process_smoke_folder("chemin/vers/images_fumee", "chemin/vers/images_fumee_floues")
+# Exemple d'appel
+# rotate_images_90_degrees("chemin/vers/dossier_source", "chemin/vers/dossier_sortie")
 
 
 if __name__ == "__main__":
-    path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\crop_image_smoke"
-    #path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke_frames_transparent"
-    path_out = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\crop_image_smoke_blur"
 
-    process_smoke_folder(path_in, path_out, window_size=15)
-
+    #path_in = r"C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke\crop_image_smoke"
+    #path_out = r"C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke\crop_image_smoke_rotate"
+    path_in = r"C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Light_a_Fire\graphics\video\flame\crop_image_flame"
+    path_out = r"C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Light_a_Fire\graphics\video\flame\crop_image_flame_rotate"
+    #path_in = r"C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Light_a_Fire\graphics\video\thermometer"
+    #path_out = path_in
+    rotate_images_90_degrees(path_in,path_out)
+    remove_black_bg(path_out, path_out)

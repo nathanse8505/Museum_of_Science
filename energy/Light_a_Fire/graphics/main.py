@@ -2,7 +2,6 @@
 File: main.py
 Purpose: Main file for the Light a Fire UI
 """
-#import time
 
 from display import *
 from arduino import *
