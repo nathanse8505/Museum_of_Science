@@ -103,10 +103,103 @@ def extraction_pic(input_mp4_path, output_folder_path):
     # Retourner le chemin du dossier contenant les images extraites
     return extracted_frames_folder
 
-if __name__ == "__main__":
-    path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke.mp4"
-    #path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke_frames_transparent"
-    path_out = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\flame 50"
 
-    extraction_pic(path_in,path_out)
+
+
+def crop_image_center_down(input_folder, output_folder, crop_size=(400, 1200)):
+    """
+    Recadre chaque image du dossier à 500x1000 centré horizontalement et positionné en bas.
+
+    :param input_folder: Dossier contenant les images originales
+    :param output_folder: Dossier où enregistrer les images recadrées
+    :param crop_size: (largeur, hauteur) du crop
+    """
+    os.makedirs(output_folder, exist_ok=True)
+    target_width, target_height = crop_size
+
+    for filename in os.listdir(input_folder):
+        if filename.lower().endswith((".png", ".jpg", ".jpeg")):
+            input_path = os.path.join(input_folder, filename)
+            output_path = os.path.join(output_folder, filename)
+
+            image = cv2.imread(input_path, cv2.IMREAD_UNCHANGED)
+            if image is None:
+                print(f"[!] Impossible de charger {filename}")
+                continue
+
+            h, w = image.shape[:2]
+
+            if h < target_height or w < target_width:
+                print(f"[!] Image trop petite pour crop : {filename}")
+                continue
+
+            # Coordonnées du crop : centré horizontalement, en bas verticalement
+            x_start = (w - target_width) // 2
+            y_start = h - target_height
+
+            cropped = image[y_start:y_start + target_height, x_start:x_start + target_width]
+
+            cv2.imwrite(output_path, cropped)
+            print(f"[✓] Crop effectué : {filename}")
+
+
+def apply_column_blur(image, window_size=60):
+    """
+    Applique un flou vertical basé sur une moyenne glissante par colonne.
+    Conserve le canal alpha (transparence).
+    """
+    h, w = image.shape[:2]
+    blurred = np.zeros_like(image)
+
+    for x in range(w):
+        for c in range(3):  # R, G, B uniquement
+            # Moyenne glissante verticale
+            blurred[:, x, c] = np.convolve(
+                image[:, x, c],
+                np.ones(window_size) / window_size,
+                mode='same'
+            )
+
+    # Copier le canal alpha tel quel
+    if image.shape[2] == 4:
+        blurred[:, :, 3] = image[:, :, 3]
+
+    return blurred.astype(np.uint8)
+
+
+def process_smoke_folder(input_folder, output_folder, window_size=60):
+    """
+    Applique le flou 'new_smoke' à toutes les images PNG d’un dossier.
+
+    :param input_folder: Dossier contenant les images originales
+    :param output_folder: Dossier de sortie pour les images floutées
+    :param window_size: Taille de la fenêtre verticale pour la moyenne
+    """
+    os.makedirs(output_folder, exist_ok=True)
+
+    for filename in os.listdir(input_folder):
+        if filename.lower().endswith(".png"):
+            in_path = os.path.join(input_folder, filename)
+            out_path = os.path.join(output_folder, filename)
+
+            image = cv2.imread(in_path, cv2.IMREAD_UNCHANGED)
+            if image is None or image.shape[2] != 4:
+                print(f"[!] Image ignorée ou invalide : {filename}")
+                continue
+
+            blurred = apply_column_blur(image, window_size=window_size)
+            cv2.imwrite(out_path, blurred)
+            print(f"[✓] Fichier traité : {filename}")
+
+
+# Exemple d'utilisation :
+# process_smoke_folder("chemin/vers/images_fumee", "chemin/vers/images_fumee_floues")
+
+
+if __name__ == "__main__":
+    path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\crop_image_smoke"
+    #path_in = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\smoke_frames_transparent"
+    path_out = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\video\crop_image_smoke_blur"
+
+    process_smoke_folder(path_in, path_out, window_size=15)
 

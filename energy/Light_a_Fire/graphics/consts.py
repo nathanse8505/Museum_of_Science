@@ -37,14 +37,18 @@ BACKUP_COUNT = 10  # Nombre max de fichiers log en rotation
 pygame.init()
 #VIEW_PORT = (1920, 1080)
 VIEW_PORT = pygame.display.Info().current_w , pygame.display.Info().current_h
-RESOLUTION_FLAME = (1920, 1080)
-RESOLUTION_SMOKE = (3840, 2160)
+RESOLUTION_FLAME = (350, 850)
+RESOLUTION_SMOKE = (400, 1200)
 RESOLUTION_THERMOMETER = (2048//4, 2048//4)
+
 SIZE_FLAME = (int(0.4 * RESOLUTION_FLAME[0]), int(0.4 * RESOLUTION_FLAME[1]))
+SIZE_SMOKE = (int(0.4 * RESOLUTION_SMOKE[0]), int(0.4 * RESOLUTION_SMOKE[1]))
 
 # Chemins des dossiers d'images
-PICTURES_SMOKE = os.path.join(os.path.dirname(__file__), "pictures_smoke")
-PICTURES_FLAMES = os.path.join(os.path.dirname(__file__), "pictures_flame")
+# PICTURES_SMOKE = os.path.join(os.path.dirname(__file__), "pictures_smoke")
+# PICTURES_FLAMES = os.path.join(os.path.dirname(__file__), "pictures_flame")
+PICTURES_SMOKE = os.path.join(os.path.dirname(__file__), "crop_image_smoke")
+PICTURES_FLAMES = os.path.join(os.path.dirname(__file__), "crop_image_flame")
 PICTURES_THERMOMETER = os.path.join(os.path.dirname(__file__), "pictures_thermometer")
 
 full_thermometer_path = os.path.join(PICTURES_THERMOMETER,"thermometer_full.png")
@@ -70,20 +74,19 @@ def load_scaled_image(path, size):
 LOOP_FLAME_COUNT = 25         # Nombre d'images de flammes pour la boucle
 DEGREES_PER_FRAME = 0.5        # Tous les X degrés, on passe à l’image suivante dans la boucle
 
-smoke_images = [load_scaled_image(path , VIEW_PORT) for path in SMOKE_FRAMES_PATHS]
-flames_images = [load_scaled_image(path , (int(VIEW_PORT[0]//2), int(VIEW_PORT[1]//2))) for path in FLAMES_FRAMES_PATHS]
+smoke_images = [load_scaled_image(path , SIZE_SMOKE) for path in SMOKE_FRAMES_PATHS]
+flames_images = [load_scaled_image(path , SIZE_FLAME) for path in FLAMES_FRAMES_PATHS]
 full_thermometer = load_scaled_image(full_thermometer_path, RESOLUTION_THERMOMETER)
 empty_thermometer = load_scaled_image(empty_thermometer_path, RESOLUTION_THERMOMETER)
 
 # Positions des éléments à l'écran
-FLAME_FRAME_POS = (int(0.242*VIEW_PORT[0]), int(0.4*VIEW_PORT[1]))
-#FLAME_FRAME_POS = (0, 0)
-SMOKE_FRAME_POS = (0, 0)
+FLAME_FRAME_POS = (int(0.45 * VIEW_PORT[0]), int(0.65 * VIEW_PORT[1]))
+SMOKE_FRAME_POS = (int(0.45 * VIEW_PORT[0]), int(0.6 * VIEW_PORT[1]))
 FIRE_TEXT_POS = (int(0.2 * VIEW_PORT[0]), int(0.9 * VIEW_PORT[1]))
 
 THERMOMETER_FRAME_POS = (0, int(0.22 * VIEW_PORT[1]))
 THERMO_FULL_SIZE = int(0.91 * RESOLUTION_THERMOMETER[1])
-BOTTOM_THERMOMETER_POS = int(1.37 * RESOLUTION_THERMOMETER[1])
+BOTTOM_THERMOMETER_POS = int(0.695 * VIEW_PORT[1])
 
 # Couleurs
 BLACK = (0, 0, 0)
