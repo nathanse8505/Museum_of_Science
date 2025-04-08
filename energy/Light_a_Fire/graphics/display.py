@@ -42,7 +42,7 @@ def camera_setup(screen, cap):
     return True
 
 
-def display_measure(screen, sensor_analogread, Temperature=MIN_TEMPERATURE_DEFAULT):
+def display_measure(screen, Temperature=MIN_TEMPERATURE_DEFAULT):
     """
     Affiche l'écran de mesure avec une image adaptée à la température.
     Fait boucler certaines images de flammes si la température dépasse le max.

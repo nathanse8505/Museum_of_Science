@@ -1,0 +1,109 @@
+# https://esphome.io/guides/automations.html#automation
+
+esphome:
+  name: node02
+  platform: ESP8266
+  board: esp12e # nodemcu
+
+wifi:
+  networks:
+  - ssid: Mada_WiFi_1
+    password: madaorgil
+  - ssid: KokorikoBlaBla
+    password: MooMiauMeeLoLoLi
+
+logger:
+
+# cant use both api and mqtt - or reboot loop
+ota:
+api:
+# mqtt:
+  # broker: nuc02 # 172.22.0.35
+  # username: user
+  # password: none
+
+switch:
+  - platform: gpio
+    name: "Red LED"
+    id: r_led
+    pin:
+      number: 5 # D1
+      inverted: True
+
+  - platform: gpio
+    name: "Green LED"
+    id: g_led
+    pin:
+      number: 2 # D4
+      inverted: True
+
+  - platform: gpio
+    name: "Blue LED"
+    id: b_led
+    pin:
+      number: 0 # D3
+      inverted: True
+
+  - platform: gpio
+    name: "Yellow LED"
+    id: y_led
+    pin:
+      number: 4 # D2
+      inverted: True
+
+binary_sensor:
+  - platform: gpio
+    name: "Red Button"
+    id: r_button
+    pin:
+      number: 14 # D5
+      inverted: True
+      mode: INPUT_PULLUP
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 10ms
+    on_click:
+      then:
+        - switch.toggle: r_led
+
+  - platform: gpio
+    name: "Green Button"
+    id: g_button
+    pin:
+      number: 3 # RX #15 # D8
+      inverted: True
+      mode: INPUT_PULLUP
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 10ms
+    on_click:
+      then:
+        - switch.toggle: g_led
+
+  - platform: gpio
+    name: "Blue Button"
+    id: b_button
+    pin:
+      number: 13 # D7
+      inverted: True
+      mode: INPUT_PULLUP
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 10ms
+    on_click:
+      then:
+        - switch.toggle: b_led
+
+  - platform: gpio
+    name: "Yellow Button"
+    id: y_button
+    pin:
+      number: 12 # D6
+      inverted: True
+      mode: INPUT_PULLUP
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 10ms
+    on_click:
+      then:
+        - switch.toggle: y_led
