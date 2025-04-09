@@ -803,3 +803,110 @@
 2025-04-02 20:03:20 - your language is: hebrew
 2025-04-02 20:03:20 - your language is: english
 2025-04-02 20:03:21 - your language is: arabic
+2025-04-09 14:12:38 - Starting Hydrogen Rocket UI
+2025-04-09 14:12:38 - Found Arduino! port: COM3
+2025-04-09 14:12:38 - Connected to COM3
+2025-04-09 14:15:04 - Starting Hydrogen Rocket UI
+2025-04-09 14:15:04 - Found Arduino! port: COM3
+2025-04-09 14:15:04 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:05 - Found Arduino! port: COM3
+2025-04-09 14:15:05 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:06 - Found Arduino! port: COM3
+2025-04-09 14:15:06 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:07 - Found Arduino! port: COM3
+2025-04-09 14:15:07 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:08 - Found Arduino! port: COM3
+2025-04-09 14:15:08 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:09 - Found Arduino! port: COM3
+2025-04-09 14:15:09 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:10 - Found Arduino! port: COM3
+2025-04-09 14:15:10 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:11 - Found Arduino! port: COM3
+2025-04-09 14:15:11 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:12 - Found Arduino! port: COM3
+2025-04-09 14:15:12 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:13 - Found Arduino! port: COM3
+2025-04-09 14:15:13 - Error: Could not open serial port COM3 - could not open port 'COM3': PermissionError(13, 'Access is denied.', None, 5)
+2025-04-09 14:15:22 - Starting Hydrogen Rocket UI
+2025-04-09 14:15:22 - Found Arduino! port: COM3
+2025-04-09 14:15:22 - Connected to COM3
+2025-04-09 14:15:47 - Sound in hebrew is activate
+2025-04-09 14:15:53 - Sent 'ignite' command to Arduino.
+2025-04-09 14:16:13 - your language is: arabic
+2025-04-09 14:16:16 - Sound in arabic is activate
+2025-04-09 14:16:25 - Sent 'ignite' command to Arduino.
+2025-04-09 14:16:48 - Sound in arabic is activate
+2025-04-09 14:16:57 - Sent 'ignite' command to Arduino.
+2025-04-09 14:17:04 - your language is: english
+2025-04-09 14:17:20 - Sound in english is activate
+2025-04-09 14:17:26 - Sent 'ignite' command to Arduino.
+2025-04-09 14:17:29 - your language is: hebrew
+2025-04-09 14:17:50 - Sound in hebrew is activate
+2025-04-09 14:17:55 - Sent 'ignite' command to Arduino.
+2025-04-09 14:18:19 - Sound in hebrew is activate
+2025-04-09 14:18:24 - Sent 'ignite' command to Arduino.
+2025-04-09 14:21:48 - Starting Hydrogen Rocket UI
+2025-04-09 14:21:48 - Found Arduino! port: COM3
+2025-04-09 14:21:48 - Connected to COM3
+2025-04-09 14:22:07 - Starting Hydrogen Rocket UI
+2025-04-09 14:22:07 - Found Arduino! port: COM3
+2025-04-09 14:22:07 - Connected to COM3
+2025-04-09 14:22:13 - your language is: arabic
+2025-04-09 14:22:32 - Sound in arabic is activate
+2025-04-09 14:22:52 - Starting Hydrogen Rocket UI
+2025-04-09 14:22:52 - Found Arduino! port: COM3
+2025-04-09 14:22:52 - Connected to COM3
+2025-04-09 14:22:55 - Starting Hydrogen Rocket UI
+2025-04-09 14:22:55 - Found Arduino! port: COM3
+2025-04-09 14:22:55 - Connected to COM3
+2025-04-09 14:23:02 - Starting Hydrogen Rocket UI
+2025-04-09 14:23:02 - Found Arduino! port: COM3
+2025-04-09 14:23:02 - Connected to COM3
+2025-04-09 14:23:15 - your language is: arabic
+2025-04-09 14:23:27 - Sound in arabic is activate
+2025-04-09 14:25:22 - Starting Hydrogen Rocket UI
+2025-04-09 14:25:22 - Found Arduino! port: COM3
+2025-04-09 14:25:22 - Connected to COM3
+2025-04-09 14:25:29 - your language is: arabic
+2025-04-09 14:25:48 - Sound in arabic is activate
+2025-04-09 14:25:54 - Sent 'ignite' command to Arduino.
+2025-04-09 14:26:09 - your language is: english
+2025-04-09 14:26:10 - your language is: hebrew
+2025-04-09 14:26:12 - your language is: arabic
+2025-04-09 14:26:13 - your language is: english
+2025-04-09 14:26:18 - Sound in english is activate
+2025-04-09 14:26:23 - Sent 'ignite' command to Arduino.
+2025-04-09 14:26:47 - Sound in english is activate
+2025-04-09 14:26:48 - your language is: hebrew
+2025-04-09 14:26:52 - Sent 'ignite' command to Arduino.
+2025-04-09 14:27:16 - Sound in hebrew is activate
+2025-04-09 14:27:22 - Sent 'ignite' command to Arduino.
+2025-04-09 14:28:44 - Starting Hydrogen Rocket UI
+2025-04-09 14:28:44 - Found Arduino! port: COM3
+2025-04-09 14:28:44 - Connected to COM3
+2025-04-09 14:29:08 - Sound in hebrew is activate
+2025-04-09 14:29:14 - Sent 'ignite' command to Arduino.
+2025-04-09 14:29:34 - Sound in hebrew is activate
+2025-04-09 14:29:39 - Sent 'ignite' command to Arduino.
+2025-04-09 14:29:47 - your language is: arabic
+2025-04-09 14:29:59 - Sound in arabic is activate
+2025-04-09 14:30:06 - Sent 'ignite' command to Arduino.
+2025-04-09 14:30:09 - your language is: english
+2025-04-09 14:30:26 - Sound in english is activate
+2025-04-09 14:30:32 - Sent 'ignite' command to Arduino.
+2025-04-09 14:30:37 - your language is: hebrew
+2025-04-09 14:30:37 - your language is: english
+2025-04-09 14:30:38 - your language is: hebrew
+2025-04-09 14:30:39 - your language is: arabic
+2025-04-09 14:30:40 - your language is: english
+2025-04-09 14:30:42 - your language is: hebrew
+2025-04-09 14:30:52 - Sound in hebrew is activate
+2025-04-09 14:30:58 - Sent 'ignite' command to Arduino.
+2025-04-09 14:31:05 - Starting Hydrogen Rocket UI
+2025-04-09 14:31:05 - Found Arduino! port: COM3
+2025-04-09 14:31:05 - Connected to COM3
+2025-04-09 14:31:13 - Starting Hydrogen Rocket UI
+2025-04-09 14:31:13 - Found Arduino! port: COM3
+2025-04-09 14:31:13 - Connected to COM3
+2025-04-09 15:11:05 - Starting Hydrogen Rocket UI
+2025-04-09 15:11:05 - Error: Arduino not found
