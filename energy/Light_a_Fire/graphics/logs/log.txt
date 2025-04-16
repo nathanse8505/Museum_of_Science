@@ -68,3 +68,7 @@
 2025-04-08 15:21:40 - Error: Arduino not found
 2025-04-08 15:22:20 - Starting Light a Fire UI
 2025-04-08 15:22:20 - Error: Arduino not found
+2025-04-14 15:43:51 - Starting Light a Fire UI
+2025-04-14 15:43:51 - Error: Arduino not found
+2025-04-14 15:45:03 - Starting Light a Fire UI
+2025-04-14 15:45:03 - Error: Arduino not found

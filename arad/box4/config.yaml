@@ -2,20 +2,30 @@
 
 esphome:
   name: node02
-  platform: ESP8266
-  board: esp12e # nodemcu
+
+esp8266:
+  board: esp12e
+
 
 wifi:
   networks:
   - ssid: Mada_WiFi_1
-    password: madaorgil
-  - ssid: KokorikoBlaBla
-    password: MooMiauMeeLoLoLi
+    password: "madaorgil"
+  - ssid: Moshe1
+    password: "20152015"
+
+  manual_ip:
+    static_ip: 10.0.0.15
+    gateway: 10.0.0.138
+    subnet: 255.255.255.0
+
 
 logger:
 
 # cant use both api and mqtt - or reboot loop
 ota:
+  platform: esphome
+
 api:
 # mqtt:
   # broker: nuc02 # 172.22.0.35

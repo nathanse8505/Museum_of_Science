@@ -16,7 +16,7 @@ void loop() {
     Current_distance = sensor.read();
     int num = num_to_parallel(Current_distance , min_value , max_value);
     //Serial.println("Current_distance: " + String(Current_distance) + " integer: " + String(num));
-    delay(50); // Petite pause pour éviter trop de rafraîchissements
+    delay(70); // Petite pause pour éviter trop de rafraîchissements
     wdt_reset();
 }
 

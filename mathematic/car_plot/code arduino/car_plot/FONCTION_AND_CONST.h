@@ -50,8 +50,8 @@ VL53L1X sensor;
 const uint16_t BAUDERATE = 9600;
 const uint8_t OUTPUT_PARALLEL_PORT = 8;
 const int outputPins[OUTPUT_PARALLEL_PORT] = {D1, D2, D3, D4, D5, D6, D7, D8}; // Pins de sortie
-const int MAX_DISTANCE = 790;
-const int MIN_DISTANCE = 30;
+const int MAX_DISTANCE = 726;
+const int MIN_DISTANCE = 40;
 const int ITERATION = 10;
 
 float Current_distance;
