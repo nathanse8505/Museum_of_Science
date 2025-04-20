@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88b5a91d-6db4-46e7-872f-231a487775dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Light_a_Fire/graphics/logs/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Light_a_Fire/graphics/logs/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/EasyEDA/car_plot.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/EasyEDA/info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/code arduino/car_plot/FONCTION_AND_CONST.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/code arduino/car_plot/car_plot.ino" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/code arduino/test_graph_car/test_graph_car.ino" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/מעודכן 11 למרץ 2025CARPLOT  החלפת חיישן ושידרוג מחשב מרץ 2025.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/שרטוטים/Schematic_car_graph_2025-03-12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../mathematic/car plot/שרטוטים/parallel-port-i-o-pins-041pm4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2_old.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/run.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

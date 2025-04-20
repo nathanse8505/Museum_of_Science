@@ -28,12 +28,12 @@ void setup()
 
   
   sensor.setDistanceMode(VL53L1X::Medium);// Set distance measurement mode to Medium
-  sensor.setROISize(4,4);//set minimum Range Of Interest 16x16 to 4x4
+  sensor.setROISize(8,8);//set minimum Range Of Interest 16x16 to 4x4
   //sensor.setROICenter(136);//Y=8,X=8--> = 1000 1000 = 136 to center the ROI in the middle
   sensor.setMeasurementTimingBudget(30000); // Set the timing budget (time per measurement in microseconds).
   sensor.startContinuous(30); // Start continuous measurements every 30 ms
   //read_ROI_XY_and_ROI_center();
-8
+
   // Read and set the initial distance (this will be our baseline)
   initialDistance = read_average_distance();
   
@@ -42,9 +42,11 @@ void setup()
 
   // Print the initial horsepower and current language index to Serial
   Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
+  //Serial.println(minDistance);
    
   // Enable the watchdog timer with a 4-second timeout
   wdt_enable(WDTO_4S);
+  Tmr_rst_com = millis();
 }
 
 /**
@@ -78,6 +80,7 @@ void loop()
     Lift_in_motion = true;
     startTime = millis();      // Mark the start time of this motion
     meas_Tmr_rst = millis();   // Also mark for measurement reset check
+    //Serial.println("enter begin");
   }
 
   /**
@@ -100,7 +103,8 @@ void loop()
       Lift_in_motion = false;         // End the lift motion, start cooldown
       start_try = false;               // Indicates we're now in cooldown
       bouncingBallTimer = millis();   // Record when cooldown started
-
+      
+      //Serial.println("enter lift motion");
       Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);// Print the computed horsepower and current language index
     }
 
@@ -115,6 +119,7 @@ void loop()
       bouncingBallTimer = 0;
       deltaTime = 0;
       Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
+      //Serial.println("enter lift motion not arriving to max distance");
     }
   }
 
@@ -135,22 +140,28 @@ void loop()
     Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   }
 
-if(((millis() - bouncingBallTimer) > SENSOR_FAULTY) && horsepower != 0){
+  
+///////////////////reset arduino////////////////
+
+  if(((millis() - bouncingBallTimer) > SENSOR_FAULTY) && horsepower != 0){
   reset_sensor();
   delay(RST_WDT);
   
-}
+  }
 
-/*
-// Vérifier si le capteur a échoué ou retourné 0
-if (sensor.timeoutOccurred() || smoothedDistance == 0) {
-    Serial.println("data sensor" + String(smoothedDistance) + "timeoue occured" + String(sensor.timeoutOccurred()));
+
+  // Vérifier si le capteur a échoué ou retourné 0
+  if (sensor.timeoutOccurred() || smoothedDistance == 0) {
+    //Serial.println("data sensor: " + String(smoothedDistance) + "timeoue occured: " + String(sensor.timeoutOccurred()));
     reset_sensor();
     delay(RST_WDT);
+  }
+
+  if(millis() - Tmr_rst_com > RST_COMMUNICATION){
+    reset_sensor();
+    delay(RST_WDT);
+  }
+
+
+
 }
-*/
-
-
-}
-
-

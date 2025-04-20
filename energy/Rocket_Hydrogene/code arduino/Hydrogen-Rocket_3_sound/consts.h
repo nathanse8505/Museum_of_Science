@@ -23,7 +23,7 @@
  *                      --USB--        
  */
 
-#define CURRENT_INPUT_IO A7 // current sensor 
+#define CURRENT_INPUT_IO A0 // current sensor 
 // #define CURRENT_INPUT_IO A6 // simulation potentiometer
   
 #define BAUDRATE (115200)
