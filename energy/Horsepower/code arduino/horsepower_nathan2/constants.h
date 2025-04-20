@@ -52,22 +52,22 @@ float initialDistance = 0.0;    // Baseline distance (starting point)
 
 // Lift state tracking
 bool Lift_in_motion = false;    // True if the lift is actively moving
-bool first_try = true;          // Used as a cooldown indicator after movement
+bool start_try = true;          // Used as a cooldown indicator after movement
 
 unsigned long startTime = 0;    // Timestamp when the lift starts moving
 unsigned long deltaTime = 0;    // Time difference from start to finish of the lift
 
 // Distance constraints
 float minDistance = 0.0;        // Threshold for detecting movement start
-const float maxDistance = 1000; //in mm The maximum distance used for computing horsepower
+const float maxDistance = 500; //in mm The maximum distance used for computing horsepower
 float horsepower = 0;           // Holds the computed horsepower value
 
 // Timers for resets and cooldowns
 unsigned long bouncingBallTimer = 0;  // Timer for cooldown once max distance is reached
 unsigned long meas_Tmr_rst = 0;       // Timer for measurement reset if max distance is not reached
 const unsigned long MEAS_RST_MS = 5000;      // If lift takes longer than 5s, reset
-const unsigned long RST_BOUNCING_BALL = 4000; // 4s cooldown after reaching max distance
+const unsigned long RST_BOUNCING_BALL = 6000; // 6s cooldown after reaching max distance
 const unsigned long SENSOR_FAULTY = 15000;
-const unsigned long RST_ARDUINO = 5000;
+const unsigned long RST_WDT = 5000;
 
 #endif
