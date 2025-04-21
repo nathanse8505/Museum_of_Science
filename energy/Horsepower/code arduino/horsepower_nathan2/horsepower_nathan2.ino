@@ -37,15 +37,15 @@ void setup()
   // Read and set the initial distance (this will be our baseline)
   initialDistance = read_average_distance();
   
-  // Calculate the minimum distance threshold by subtracting THRESHOLD
+  // Calculate the minimum distance threshold to start the mesurment
   minDistance = initialDistance - THRESHOLD;
 
   // Print the initial horsepower and current language index to Serial
   Serial.println(String(horsepower) + " " + String(deltaTime) + " " + lang);
   //Serial.println(minDistance);
    
-  // Enable the watchdog timer with a 4-second timeout
-  wdt_enable(WDTO_4S);
+  
+  wdt_enable(WDTO_4S);// Enable the watchdog timer with a 4-second timeout
   Tmr_rst_com = millis();
 }
 
