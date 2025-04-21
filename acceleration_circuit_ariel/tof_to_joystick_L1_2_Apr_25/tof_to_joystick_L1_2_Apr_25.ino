@@ -33,14 +33,17 @@ int16_t dist = 0;
 
 void setup()
 {
+	//Serial.begin(115200);
 
 	// initialize USB joystick HID
 	Gamepad.begin();
 	// initialize TOF sensor to long range readings
 	Wire.begin();
 	tof.setTimeout(500);
-	while (!tof.init())
+	while (!tof.init()){
     delay(1000);
+    //Serial.println("error");
+   }
 
   tof.setDistanceMode(VL53L1X::Long);
   tof.setMeasurementTimingBudget(50000);
@@ -53,7 +56,17 @@ void loop()
 	if (tof.timeoutOccurred())
 		dist = 0;
 
-	Gamepad.xAxis(map(dist, 0, TOF_MAX_VALUE, 0, JOYSTICK_MAX_VALUE));
-	Gamepad.write();
+	 // Mapper la distance en valeur de joystick
+  int16_t joystickValue = map(dist, 0, TOF_MAX_VALUE, 0, JOYSTICK_MAX_VALUE);
+
+  // Affichage dans le moniteur série
+  /*Serial.print("Distance: ");
+  Serial.print(dist);
+  Serial.print(" mm\tJoystick X: ");
+  Serial.println(joystickValue);
+*/
+  // Envoi au joystick
+  Gamepad.xAxis(joystickValue);
+  Gamepad.write();
 	delay(LOOP_MS);
 }
