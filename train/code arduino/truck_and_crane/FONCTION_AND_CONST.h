@@ -7,10 +7,10 @@
 #define BUTTON_TRUCK  2 // Entrée analogique
 #define BUTTON_CRANE  3 // Entrée analogique
 
-#define MOTOR_TRUCK_1 4
-#define MOTOR_TRUCK_2 5
-#define MOTOR_CRANE_1 6
-#define MOTOR_CRANE_2 7
+#define MOTOR_TRUCK_R 4
+#define MOTOR_TRUCK_L 5
+#define MOTOR_CRANE_R 6
+#define MOTOR_CRANE_L 7
 
 
 
@@ -23,9 +23,9 @@
  *                   RST-|       |-RST
  *                   GND-|       |-+5V 
  *     BUTTON_TRUCK   D2-|       |-A7
- *     BUTTON_CRANE   D3-|       |-A6
- *   MOTOR_TRUCK_1    D4-|       |-A5 
- *   MOTOR_TRUCK_2    D5-|       |-A4 
+ *     MOTOR_TRUCK_1  D3-|       |-A6
+ *     BUTTON_CRANE   D4-|       |-A5 
+ *     MOTOR_TRUCK_2  D5-|       |-A4 
  *   MOTOR CRANE_1    D6-|       |-A3
  *   MOTOR CRANE_2    D7-|       |-A2
  *                    D8-|       |-A1
@@ -64,18 +64,22 @@ bool PRESS_BUTTON(int IO , bool check) {
 }
 
 
-void TURN_ON(int BUTTON,bool check,int MOTOR1,int MOTOR2,unsigned long timer){
-  if(millis() - timer > 5000){
+void TURN_ON(int BUTTON,bool check,int MOTOR_R,int MOTOR_L,unsigned long timer){
+  if(millis() - timer > 7000){
 
     if (PRESS_BUTTON(BUTTON,check)) {  // pressed on language button
-        digitalWrite(MOTOR1,HIGH);
-        digitalWrite(MOTOR2,LOW);
+
+        analogWrite(MOTOR_R,20);
+        digitalWrite(MOTOR_L,LOW);
         delay(2000);
-        digitalWrite(MOTOR1,LOW);
+
+        digitalWrite(MOTOR_R,LOW);
         delay(3000);
-        digitalWrite(MOTOR2,HIGH);
+
+        analogWrite(MOTOR_L,20);
         delay(2000);
-        digitalWrite(MOTOR2,LOW);
+
+        digitalWrite(MOTOR_L,LOW);
         timer = millis();
 
     }
