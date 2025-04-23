@@ -1,0 +1,328 @@
+{
+  "uuid": "a4e57a48314d7fc80939992b135d3cc0",
+  "path": "Offline/Arduino_Pro_Micro_Stepper_Shield",
+  "name": "Arduino_Pro_Micro_Stepper_Shield",
+  "content": "Shield for pro-micro (32U4) to A4988 stepper driver, for photogramerty (Dafna) Exhibit, 3D exhebition",
+  "created_at": "2023-10-19 14:35:48",
+  "updated_at": "2025-04-22 19:09:36",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "3a84e6ad28c9a4948d146d81b1b46fcd",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "a212fef236974afab2e5d4f845386978": 1,
+        "57570b0fead1437eb1c14e07a68125a8": 1,
+        "ba950eeb23764b3ea5edbd5f2f3fcc71": 1,
+        "230bc382ca0246f58f622947b27c87e1": 3,
+        "6e917499202c847bedcfe29d31e244f7": 1,
+        "212e4e7ac253e44d17caceb02663d93c": 1,
+        "a63fb69de1e24542965ed97bbc8820db": 4,
+        "9bc5d46e2bd4176ac7c3958f1aa86225": 4,
+        "5964f5c00a14401ea690aa7afe38379f": 4,
+        "8594922bf7656e1a593fe27b198cf7ff": 4,
+        "597701dbde98d3183fe5df5fb870ec57": 8,
+        "efa061cb4326418d99deb33742cff3a8": 4,
+        "506a2f49fd5af7690094a86e81a44ebe": 4,
+        "e1cb9a0bbd38417d9882b4c55cc336a6": 2,
+        "0806368f73e1232ca543f14a515367b4": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 1,
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "470uF",
+          1,
+          "CAP-TH_BD8.0-P3.50-D0.6-FD",
+          "C1",
+          {
+            "BOM_Manufacturer Part": "GR477M025F12RR0VH4FP0",
+            "puuid": "90d1b58a2d284d63b5d026a0c4e38bab",
+            "uuid": "6e917499202c847bedcfe29d31e244f7",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CX(承兴)",
+            "BOM_Supplier Part": "C44602",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "10uF",
+          1,
+          "CAP-SMD_L3.2-W1.6-RD-C7171",
+          "C2",
+          {
+            "BOM_Manufacturer Part": "TAJA106K016RNJ",
+            "puuid": "29b657b818a84e4ea7b685b79368b530",
+            "uuid": "212e4e7ac253e44d17caceb02663d93c",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Kyocera AVX",
+            "BOM_Supplier Part": "C7171",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SOFNG",
+            "BOM_Manufacturer Part": "DC005-2.0MM",
+            "BOM_Supplier Part": "C111567",
+            "puuid": "1337670005c6484c999f9b4c272ee9fe",
+            "uuid": "daa3cf3493c84fa3b0b6a6d427d23f0b"
+          }
+        ],
+        [
+          "1N4007",
+          4,
+          "SMAF_L3.5-W2.6-LS4.7-RD",
+          "DOUT7,DOUT8,DOUT9,DOUT10",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SK",
+            "BOM_Manufacturer Part": "1N4007F",
+            "BOM_Supplier Part": "C110856",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "a4613b89ccf34746ac088089e5eb544d",
+            "uuid": "efa061cb4326418d99deb33742cff3a8"
+          }
+        ],
+        [
+          "Q",
+          4,
+          "SOT-23-3_L2.9-W1.3-P0.95-LS2.4-BR",
+          "DQ7,DQ8,DQ9,DQ10",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C5224189",
+            "BOM_Manufacturer": "ElecSuper(静芯微）",
+            "BOM_Manufacturer Part": "AO3400",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "bade90667a6e4731855e9a223387b8a6",
+            "uuid": "5964f5c00a14401ea690aa7afe38379f"
+          }
+        ],
+        [
+          "KH-2.54PH180-1X12P-L11.5",
+          2,
+          "HDR-TH_12P-P2.54-V-M",
+          "H1,H2",
+          {
+            "BOM_Manufacturer Part": "KH-2.54PH180-1X12P-L11.5",
+            "puuid": "cc36c6ebfbc648d5879d9c565d52f5f3",
+            "uuid": "e1cb9a0bbd38417d9882b4c55cc336a6",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "kinghelm(金航标)",
+            "BOM_Supplier Part": "C2905489",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "LED",
+          4,
+          "LED0603-R-RD_BLUE",
+          "LD7,LD8,LD9,LD10",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "EVERLIGHT",
+            "BOM_Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "BOM_Supplier Part": "C72041",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "041cc9180dc046b7bb66bb309da71792",
+            "uuid": "8594922bf7656e1a593fe27b198cf7ff"
+          }
+        ],
+        [
+          "KT-0603R",
+          1,
+          "LED0603-RD",
+          "LED1",
+          {
+            "BOM_Manufacturer Part": "KT-0603R",
+            "puuid": "7335dfa67b564d7988d09a073a20aa42",
+            "uuid": "0806368f73e1232ca543f14a515367b4",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "KENTO",
+            "BOM_Supplier Part": "C2286",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "XH2.54-4AW",
+          1,
+          "CONN-TH_XH2.54-4AW",
+          "MOTOR_X1",
+          {
+            "BOM_Manufacturer Part": "XH-4AW",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C21273",
+            "BOM_Manufacturer": "BOOMELE(博穆精密)",
+            "puuid": "a7fe1e7f669543bbb9dbd363eab26f57",
+            "uuid": "57570b0fead1437eb1c14e07a68125a8",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "KF2510-2A",
+          4,
+          "CONN-TH_KF2510-2A",
+          "OUTP_7,OUTP_8,OUTP_9,OUTP_10",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "KF2510-2A",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Supplier Part": "C27543",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "506a2f49fd5af7690094a86e81a44ebe"
+          }
+        ],
+        [
+          "1K",
+          8,
+          "R0603",
+          "RG7,RG8,RG9,RG10,RL7,RL8,RL9,RL10",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1001T5E",
+            "BOM_Supplier Part": "C21190",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "10kΩ",
+          1,
+          "R0603",
+          "RL12V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b210af5a1436310a86e8b108e2e5a90b"
+          }
+        ],
+        [
+          "FK2510",
+          4,
+          "CONN-TH_3P-P2.00_KF2510_3A",
+          "SENS_A0,SENS_A1,SENS_A2,SENS_A3",
+          {
+            "BOM_Manufacturer Part": "2510-3A",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C29275",
+            "BOM_Manufacturer": "BOOMELE(博穆精密)",
+            "puuid": "98de716523d04f20a577f5e7c7e71f1d",
+            "uuid": "9bc5d46e2bd4176ac7c3958f1aa86225",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "TC-6610-7-160G",
+          4,
+          "SW-TH_4P-L5.0-W5.0-P4.50-LS6.5",
+          "SWA0,SWA1,SWA2,SWA3",
+          {
+            "BOM_Manufacturer Part": "TC-6610-7-160G",
+            "puuid": "e2c307bc2a8d4381a6ae5d94eb862a32",
+            "uuid": "a63fb69de1e24542965ed97bbc8820db",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "HCTL(华灿天禄)",
+            "BOM_Supplier Part": "C2845252",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "ARDUINO-PRO-MICRO",
+          1,
+          "ARDUINO_PRO_MICRO",
+          "U1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "15080a8a3ebf40798008fa0b36b61a70",
+            "uuid": "a212fef236974afab2e5d4f845386978"
+          }
+        ],
+        [
+          "A4988",
+          1,
+          "A4988",
+          "UX1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "abb601d2f8aa4e1fbca19a237a6a8542",
+            "uuid": "ba950eeb23764b3ea5edbd5f2f3fcc71"
+          }
+        ]
+      ],
+      "updateTime": 1745338176,
+      "createTime": 1697715349,
+      "histories": [],
+      "created_at": "2023-10-19 14:35:49",
+      "updated_at": "2025-04-22 19:09:36"
+    },
+    {
+      "uuid": "164a36eeb7f705305611048437748d50",
+      "puuid": "a4e57a48314d7fc80939992b135d3cc0",
+      "title": "PCB_Arduino_Pro_Micro_Stepper_Shield",
+      "filename": "PCB_Arduino_Pro_Micro_Stepper_Shield.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "1337670005c6484c999f9b4c272ee9fe": 1,
+        "2550b1556b6546148b9e97fc95a93d31": 3,
+        "a7fe1e7f669543bbb9dbd363eab26f57": 1,
+        "15080a8a3ebf40798008fa0b36b61a70": 1,
+        "abb601d2f8aa4e1fbca19a237a6a8542": 1,
+        "a4613b89ccf34746ac088089e5eb544d": 4,
+        "bade90667a6e4731855e9a223387b8a6": 4,
+        "041cc9180dc046b7bb66bb309da71792": 4,
+        "9ba63133985d42cda948c6301d2bf7d5": 4,
+        "98de716523d04f20a577f5e7c7e71f1d": 4,
+        "e2c307bc2a8d4381a6ae5d94eb862a32": 4,
+        "398691f1f785460098bbe5ee6590333c": 9,
+        "90d1b58a2d284d63b5d026a0c4e38bab": 1,
+        "29b657b818a84e4ea7b685b79368b530": 1,
+        "cc36c6ebfbc648d5879d9c565d52f5f3": 2,
+        "7335dfa67b564d7988d09a073a20aa42": 1
+      },
+      "BOM": [],
+      "updateTime": 1745338090,
+      "createTime": 1734704959,
+      "histories": [],
+      "created_at": "2024-12-20 16:29:19",
+      "updated_at": "2025-04-22 19:08:10"
+    }
+  ],
+  "sort": [],
+  "title": "Arduino_Pro_Micro_Stepper_Shield",
+  "foldername": "Arduino_Pro_Micro_Stepper_Shield",
+  "schfilename": "Arduino_Pro_Micro_Stepper_Shield.json",
+  "schfilemtime": 1745338176737
+}

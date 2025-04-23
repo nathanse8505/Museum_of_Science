@@ -1,0 +1,305 @@
+{
+  "uuid": "1241639e05eea4468812fa6a1144cb53",
+  "path": "Offline/ROBOT_SENSORS",
+  "name": "ROBOT_SENSORS",
+  "content": "4 in  a row robot sgift register sensors for reading optosensors sensing disk drop \nApr 2025\n",
+  "created_at": "2025-04-17 00:43:36",
+  "updated_at": "2025-04-17 16:47:07",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "e0c5083e7a909b8e95446a9e5d17255a",
+      "title": "Robot_SR",
+      "description": "74HC165 SR\n",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "cad5a88a8e2a48d3a819e02f8181ce2a": 1,
+        "7535eb2f13ae4dbd84a8b0453640eef2": 1,
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "212e4e7ac253e44d17caceb02663d93c": 1,
+        "3e0f6070d4fced362a88119254c2f83a": 1,
+        "968e097f53eb48239918b7f33c25cc39": 1,
+        "b6d6c5c03f064b08b573b09b0b4a0455": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 3,
+        "8594922bf7656e1a593fe27b198cf7ff": 9,
+        "154b66255b01a09bf1c88bb1ea89be78": 2,
+        "8ca012b44a93210c29da80c56fdc97cc": 1,
+        "8ff3f52df3c249d5bcb71a087fbd3742": 8,
+        "597701dbde98d3183fe5df5fb870ec57": 16,
+        "5964f5c00a14401ea690aa7afe38379f": 8,
+        "efa061cb4326418d99deb33742cff3a8": 8
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "D",
+          8,
+          "SMA_L4.3-W2.6-LS5.2-RD",
+          "AD1,BD1,CD1,DD1,ED1,FD1,GD1,HD1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "晶导微电子",
+            "BOM_Manufacturer Part": "ES1J",
+            "BOM_Supplier Part": "C115404",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "a4613b89ccf34746ac088089e5eb544d",
+            "uuid": "efa061cb4326418d99deb33742cff3a8"
+          }
+        ],
+        [
+          "LED",
+          9,
+          "LED0603-R-RD_BLUE",
+          "ALED1,BLED1,CLED1,DLED1,ELED1,FLED1,GLED1,HLED1,L12V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "EVERLIGHT",
+            "BOM_Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "BOM_Supplier Part": "C72041",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "041cc9180dc046b7bb66bb309da71792",
+            "uuid": "8594922bf7656e1a593fe27b198cf7ff"
+          }
+        ],
+        [
+          "Q",
+          8,
+          "SOT-23-3_L2.9-W1.3-P0.95-LS2.4-BR",
+          "AQ1,BQ1,CQ1,DQ1,EQ1,FQ1,GQ1,HQ1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C5224189",
+            "BOM_Manufacturer": "ElecSuper(静芯微）",
+            "BOM_Manufacturer Part": "AO3400",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "bade90667a6e4731855e9a223387b8a6",
+            "uuid": "5964f5c00a14401ea690aa7afe38379f"
+          }
+        ],
+        [
+          "R10K",
+          16,
+          "R0603",
+          "AR1,AR2,BR1,BR2,CR1,CR2,DR1,DR2,ER1,ER2,FR1,FR2,GR1,GR2,HR1,HR2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "10uF",
+          1,
+          "CAP-SMD_L3.2-W1.6-RD-C7171",
+          "C1",
+          {
+            "BOM_Manufacturer Part": "TAJA106K016RNJ",
+            "puuid": "29b657b818a84e4ea7b685b79368b530",
+            "uuid": "212e4e7ac253e44d17caceb02663d93c",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Kyocera AVX",
+            "BOM_Supplier Part": "C7171",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "100uF",
+          1,
+          "CAP-TH_BD6.3-P2.50-D1.0-FD",
+          "C2",
+          {
+            "BOM_Manufacturer Part": "KM107M035E11RR0VH2FP0",
+            "puuid": "1a9b494b74c34d3b879eb7f824b3824d",
+            "uuid": "3e0f6070d4fced362a88119254c2f83a",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CX(承兴)",
+            "BOM_Supplier Part": "C19504",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C10,C11",
+          {
+            "BOM_Manufacturer Part": "CC0603KRX7R9BB104",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C14663",
+            "BOM_Manufacturer": "YAGEO(国巨)",
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "154b66255b01a09bf1c88bb1ea89be78",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "PH-2AW",
+          8,
+          "CONN-TH_PH-2AW",
+          "CNA1,CNB1,CNC1,CND1,CNE1,CNF1,CNG1,CNH1",
+          {
+            "BOM_Manufacturer Part": "PH-2AW",
+            "puuid": "5097991214d64acd8259630f7811648f",
+            "uuid": "8ff3f52df3c249d5bcb71a087fbd3742",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CAX(创都)",
+            "BOM_Supplier Part": "C722769",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SOFNG",
+            "BOM_Manufacturer Part": "DC005-2.0MM",
+            "BOM_Supplier Part": "C111567",
+            "puuid": "1337670005c6484c999f9b4c272ee9fe",
+            "uuid": "daa3cf3493c84fa3b0b6a6d427d23f0b"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "BOM_Supplier Part": "C124408",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "bce4bcfcccfb42a296f7a392ab0b7199",
+            "uuid": "5a9ec2085ad6436d86701332d4451b76"
+          }
+        ],
+        [
+          "74HC595",
+          1,
+          "SOP-16_L10.0-W3.9-P1.27-LS6.0-BL",
+          "IC2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UTC",
+            "BOM_Manufacturer Part": "U74HC595AG-S16-R",
+            "BOM_Supplier Part": "C87300",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "bf1b7b0953d842979fbb5acfa9df7d18",
+            "uuid": "8ca012b44a93210c29da80c56fdc97cc"
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "0476c63fa99e4a998187e5a274bdf1f1",
+            "uuid": "fee3186e847b42ecb0244c6d4d6aaef8"
+          }
+        ],
+        [
+          "1.3 inch OLED SSH1106 I2C 128x64 copy",
+          1,
+          "1.3_OLED_SSH1106_I2C_128X64_BOARD",
+          "OLED1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "f0ccd3ac0fa7406f9e8b294e992fe48f",
+            "uuid": "968e097f53eb48239918b7f33c25cc39"
+          }
+        ],
+        [
+          "10kΩ",
+          3,
+          "R0603",
+          "R3,R4,RL12V",
+          {
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b210af5a1436310a86e8b108e2e5a90b",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "SN74HC165DR(LX)",
+          1,
+          "SOP-16_L10.0-W3.9-P1.27-LS6.0-BL",
+          "U1",
+          {
+            "BOM_Manufacturer Part": "SN74HC165DR(LX)",
+            "puuid": "bf1b7b0953d842979fbb5acfa9df7d18",
+            "uuid": "cad5a88a8e2a48d3a819e02f8181ce2a",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "LX(灵星芯微)",
+            "BOM_Supplier Part": "C22384789",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "LM321MF",
+          1,
+          "SOT-23-5_L2.9-W1.6-P0.95-LS2.8-BL",
+          "U4",
+          {
+            "BOM_Manufacturer Part": "LM321MF",
+            "puuid": "82dc0bb42e6440dca9b666a7b0ad6e11",
+            "uuid": "7535eb2f13ae4dbd84a8b0453640eef2",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UMW(友台半导体)",
+            "BOM_Supplier Part": "C668208",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U5",
+          {
+            "BOM_Manufacturer Part": "78L09U 78L09",
+            "puuid": "5304eb2b87a945debf431931d498d92a",
+            "uuid": "b6d6c5c03f064b08b573b09b0b4a0455",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CBI(创基)",
+            "BOM_Supplier Part": "C2875177",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ]
+      ],
+      "updateTime": 1744897627,
+      "createTime": 1744839816,
+      "histories": [],
+      "created_at": "2025-04-17 00:43:36",
+      "updated_at": "2025-04-17 16:47:07"
+    }
+  ],
+  "sort": [],
+  "title": "ROBOT_SENSORS",
+  "foldername": "ROBOT_SENSORS",
+  "schfilename": "ROBOT_SENSORS.json",
+  "schfilemtime": 1744897627587
+}

@@ -1,0 +1,476 @@
+{
+  "uuid": "0f2a8964ee0a2185d5ddbd689224f06a",
+  "path": "Offline/MOTOR_CONTROL",
+  "name": "MOTOR_CONTROL",
+  "content": "",
+  "created_at": "2024-01-06 21:38:03",
+  "updated_at": "2024-01-07 13:05:21",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "133676221f302dd629c70addf7e124a5",
+      "title": "MOTOR_CONTROL",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "65b1ae295679465fabfb76c1fc7cc7e6": 5,
+        "154b66255b01a09bf1c88bb1ea89be78": 2,
+        "72dd6b6944675da997cf5a851951151d": 1,
+        "597701dbde98d3183fe5df5fb870ec57": 16,
+        "2c006955f05dcac079a3038b72e9481e": 4,
+        "45ddbab4559a43c6bc95d2ca22fb25a0": 4,
+        "411d5fc5016e46cda46b0cba274baae1": 1,
+        "968e097f53eb48239918b7f33c25cc39": 1,
+        "eda3af0dd4f3457ca763df30e3ac5d73": 2,
+        "a3878746005c70adddb43469db023fc0": 3,
+        "b6d6c5c03f064b08b573b09b0b4a0455": 1,
+        "8594922bf7656e1a593fe27b198cf7ff": 3,
+        "45aa9db41fe55f139f756074a7ef37a0": 7,
+        "f80e29816fd30bb295222fb4f47bcc25": 6,
+        "e3feacc3f78b4f9eb460bd89a310e2de": 6,
+        "506a2f49fd5af7690094a86e81a44ebe": 3,
+        "a4eacdcb63554cb08b3b56477817ab57": 2,
+        "24eeb2ceca08480b92b847b6a310acda": 1,
+        "483d608d8be24188892e1a9e7867eb81": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "12V_TO_R",
+          1,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "12V_TO_XR_IN",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "Cixi Kefa Elec",
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0"
+          }
+        ],
+        [
+          "KF2510-2A",
+          3,
+          "CONN-TH_KF2510-2A",
+          "ACON1,ACON2,ACON3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "KF2510-2A",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Supplier Part": "C27543",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "506a2f49fd5af7690094a86e81a44ebe"
+          }
+        ],
+        [
+          "1000uF",
+          1,
+          "CAP-TH_BD12.5-P5.00-D0.6-FD",
+          "C2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ValuePro",
+            "BOM_Manufacturer Part": "1000uF 50V",
+            "BOM_Supplier Part": "C18104",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "646b2bc75eb7468ebc6c9b1c5395cda9",
+            "uuid": "72dd6b6944675da997cf5a851951151d"
+          }
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C3,C5",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "YAGEO",
+            "BOM_Manufacturer Part": "CC0603KRX7R9BB104",
+            "BOM_Supplier Part": "C14663",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "154b66255b01a09bf1c88bb1ea89be78"
+          }
+        ],
+        [
+          "220nF",
+          1,
+          "C0603",
+          "C4",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Manufacturer": "",
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "24eeb2ceca08480b92b847b6a310acda"
+          }
+        ],
+        [
+          "KF2510-3PFlat knitting needle",
+          4,
+          "CONN-TH_KF2510-3AW",
+          "CN1,CN2,CN3,CN4",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Manufacturer Part": "KF2510-3PFlat knitting needle",
+            "BOM_Supplier Part": "C45011",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "79647548f7ec47f7bf3c0f1853f94418",
+            "uuid": "2c006955f05dcac079a3038b72e9481e"
+          }
+        ],
+        [
+          "ON/OFF",
+          1,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "CR3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "Cixi Kefa Elec",
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0"
+          }
+        ],
+        [
+          "M7_C95872",
+          6,
+          "SMA_L4.3-W2.6-LS5.2-RD",
+          "D1,D2,D3,D4,D5,D6",
+          {
+            "BOM_Manufacturer Part": "M7",
+            "puuid": "b7243d11a5f04fb7894887aaa3569585",
+            "uuid": "e3feacc3f78b4f9eb460bd89a310e2de",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C95872",
+            "BOM_Manufacturer": "MDD",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "DC-063-20A",
+          1,
+          "DC-IN-TH_DC-063-20A",
+          "DC2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C707268",
+            "BOM_Manufacturer": "韩国韩荣",
+            "BOM_Manufacturer Part": "DC-063-20A",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "690b189262d3400ba1c87bc08e3f70f0",
+            "uuid": "411d5fc5016e46cda46b0cba274baae1"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H1,H2",
+          {
+            "BOM_Supplier Part": "C124408",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "bce4bcfcccfb42a296f7a392ab0b7199",
+            "uuid": "5a9ec2085ad6436d86701332d4451b76"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x5",
+          5,
+          "HDR-F-2.54_1X5",
+          "H7,H8,H9,H10,H11",
+          {
+            "BOM_Supplier Part": "C50950",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "4bb67b2ac49a4595b3ed10b792fcbebb",
+            "uuid": "65b1ae295679465fabfb76c1fc7cc7e6"
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J1",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "0476c63fa99e4a998187e5a274bdf1f1",
+            "uuid": "fee3186e847b42ecb0244c6d4d6aaef8"
+          }
+        ],
+        [
+          "FC-2012HRK-620D",
+          7,
+          "LED0805-RD_RED",
+          "L1,L2,L3,L4,L5,L6,L12V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "NATIONSTAR",
+            "BOM_Manufacturer Part": "FC-2012HRK-620D",
+            "BOM_Supplier Part": "C84256",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "bfb6a2773f06414c87aa48a7f877b54b",
+            "uuid": "45aa9db41fe55f139f756074a7ef37a0"
+          }
+        ],
+        [
+          "main(U) coil",
+          1,
+          "L0603",
+          "L9",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Manufacturer": "",
+            "puuid": "1f261cf72cb1479ca32177c31156ede3",
+            "uuid": "a4eacdcb63554cb08b3b56477817ab57"
+          }
+        ],
+        [
+          "2nd (Z) coil",
+          1,
+          "L0603",
+          "L10",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Manufacturer": "",
+            "puuid": "1f261cf72cb1479ca32177c31156ede3",
+            "uuid": "a4eacdcb63554cb08b3b56477817ab57"
+          }
+        ],
+        [
+          "19-217/BHC-ZL1M2RY/3T",
+          3,
+          "LED0603-R-RD_BLUE",
+          "LA0,LA1,LA2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "EVERLIGHT",
+            "BOM_Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "BOM_Supplier Part": "C72041",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "041cc9180dc046b7bb66bb309da71792",
+            "uuid": "8594922bf7656e1a593fe27b198cf7ff"
+          }
+        ],
+        [
+          "1.3 inch OLED SSH1106 I2C 128x64 copy",
+          1,
+          "1.3_OLED_SSH1106_I2C_128X64_BOARD",
+          "OLED1",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "f0ccd3ac0fa7406f9e8b294e992fe48f",
+            "uuid": "968e097f53eb48239918b7f33c25cc39"
+          }
+        ],
+        [
+          "长柄旋转电位器",
+          2,
+          "RES-ADJ-TH_RV09",
+          "P2,P3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2874842",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "长柄旋转电位器",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "08842a68e5644655bc648513ffbbbdbb",
+            "uuid": "eda3af0dd4f3457ca763df30e3ac5d73"
+          }
+        ],
+        [
+          "220V Plug",
+          1,
+          "MAIN VOLTAGE PLUG 1",
+          "P4",
+          {
+            "BOM_LCSC": "C49661",
+            "BOM_Supplier Part": "C49661",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "",
+            "uuid": "483d608d8be24188892e1a9e7867eb81"
+          }
+        ],
+        [
+          "AO3400A",
+          6,
+          "SOT-23-3_L2.9-W1.6-P1.90-LS2.8-BR",
+          "Q1,Q2,Q3,Q4,Q5,Q6",
+          {
+            "BOM_Manufacturer Part": "AO3400A",
+            "puuid": "b3b82869fa924bae820e3a6cfb44d689",
+            "uuid": "f80e29816fd30bb295222fb4f47bcc25",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C20917",
+            "BOM_Manufacturer": "AOS",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "1kΩ",
+          15,
+          "R0603",
+          "R1,R2,R3,R4,R5,R6,RL1,RL2,RL3,RL4,RL5,RL6,RLA0,RLA1,RLA2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1001T5E",
+            "BOM_Supplier Part": "C21190",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "R10K",
+          1,
+          "R0603",
+          "RL12V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "SRA-12VDC-CL",
+          3,
+          "RELAY-TH_SRA-X-CX",
+          "RLY1,RLY2,RLY3",
+          {
+            "BOM_Manufacturer Part": "SRA-12VDC-CL",
+            "puuid": "d8ab81c31f294d2da4cb9751a61dbd65",
+            "uuid": "a3878746005c70adddb43469db023fc0",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C60169",
+            "BOM_Manufacturer": "松乐",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "TO_MOTOR",
+          1,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "TO_MOTOR",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "Cixi Kefa Elec",
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U5",
+          {
+            "BOM_Manufacturer Part": "78L09U 78L09",
+            "puuid": "5304eb2b87a945debf431931d498d92a",
+            "uuid": "b6d6c5c03f064b08b573b09b0b4a0455",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2875177",
+            "BOM_Manufacturer": "CBI(创基)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "XR_IN",
+          1,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "XR_IN",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "Cixi Kefa Elec",
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0"
+          }
+        ]
+      ],
+      "updateTime": 1704624875,
+      "createTime": 1652993523,
+      "histories": [],
+      "created_at": "2022-05-19 23:52:03",
+      "updated_at": "2024-01-07 12:54:35"
+    },
+    {
+      "uuid": "f23f0dc36838c0c8cb18bf8d61c106e6",
+      "title": "PCB_MOTOR_CONTROL",
+      "filename": "PCB_MOTOR_CONTROL.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "c444d117946441c3ab8b7492a6a9cd72": 4,
+        "9ba63133985d42cda948c6301d2bf7d5": 3,
+        "b7243d11a5f04fb7894887aaa3569585": 6,
+        "bfb6a2773f06414c87aa48a7f877b54b": 7,
+        "b3b82869fa924bae820e3a6cfb44d689": 6,
+        "398691f1f785460098bbe5ee6590333c": 16,
+        "041cc9180dc046b7bb66bb309da71792": 3,
+        "f0ccd3ac0fa7406f9e8b294e992fe48f": 1,
+        "08842a68e5644655bc648513ffbbbdbb": 2,
+        "d8ab81c31f294d2da4cb9751a61dbd65": 3,
+        "5304eb2b87a945debf431931d498d92a": 1,
+        "646b2bc75eb7468ebc6c9b1c5395cda9": 1,
+        "f8151fdc728a41ebbc304e11d39e5437": 2,
+        "79647548f7ec47f7bf3c0f1853f94418": 4,
+        "690b189262d3400ba1c87bc08e3f70f0": 1,
+        "4bb67b2ac49a4595b3ed10b792fcbebb": 5,
+        "bce4bcfcccfb42a296f7a392ab0b7199": 2,
+        "0476c63fa99e4a998187e5a274bdf1f1": 1
+      },
+      "BOM": [],
+      "updateTime": 1704625521,
+      "createTime": 1652994767,
+      "histories": [],
+      "created_at": "2022-05-20 00:12:47",
+      "updated_at": "2024-01-07 13:05:21"
+    }
+  ],
+  "sort": [],
+  "title": "MOTOR_CONTROL",
+  "foldername": "MOTOR_CONTROL",
+  "schfilename": "MOTOR_CONTROL.json",
+  "schfilemtime": 1704624875434
+}

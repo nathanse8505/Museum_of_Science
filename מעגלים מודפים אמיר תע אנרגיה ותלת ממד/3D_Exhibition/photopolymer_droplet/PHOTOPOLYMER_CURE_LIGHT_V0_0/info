@@ -1,0 +1,207 @@
+{
+  "uuid": "bafa53b8c189ba9f8c49a27fe71a5da8",
+  "path": "Offline/PHOTOPOLYMER_CURE_LIGHT_V0_0",
+  "name": "PHOTOPOLYMER_CURE_LIGHT_V0_0",
+  "content": "Resistor array and fet for UV led light source. Photopolymer cure exhibit (Elad) 3D exhebition Nov 2023\n",
+  "created_at": "2023-11-01 21:09:14",
+  "updated_at": "2023-11-09 13:45:00",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "cbcbc730233500d38465f46bc9ce4bb2",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "66d3b2cecb3a47cea8dbb33698ace399": 6,
+        "94f28f610a9f425ea44384a477adf9be": 2,
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "8594922bf7656e1a593fe27b198cf7ff": 1,
+        "597701dbde98d3183fe5df5fb870ec57": 3,
+        "98f51f8de3135369e850596fab9b1a5d": 1,
+        "0806368f73e1232ca543f14a515367b4": 1,
+        "506a2f49fd5af7690094a86e81a44ebe": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "DB126V-5.0-3P",
+          2,
+          "CONN-TH_3P-P5.00_DB126V-5.0-3P",
+          "CON_N,CON_P",
+          {
+            "BOM_Manufacturer Part": "DB126V-5.0-3P-GN",
+            "puuid": "bd6a8d92f0314a409f892aabb8087d76",
+            "uuid": "94f28f610a9f425ea44384a477adf9be",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "DIBO(地博电气)",
+            "BOM_Supplier Part": "C395850",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SOFNG",
+            "BOM_Manufacturer Part": "DC005-2.0MM",
+            "BOM_Supplier Part": "C111567",
+            "puuid": "1337670005c6484c999f9b4c272ee9fe",
+            "uuid": "daa3cf3493c84fa3b0b6a6d427d23f0b"
+          }
+        ],
+        [
+          "KT-0603R",
+          1,
+          "LED0603-RD",
+          "L1",
+          {
+            "BOM_Manufacturer Part": "KT-0603R",
+            "puuid": "7335dfa67b564d7988d09a073a20aa42",
+            "uuid": "0806368f73e1232ca543f14a515367b4",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "KENTO",
+            "BOM_Supplier Part": "C2286",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "LED",
+          1,
+          "LED0603-R-RD_BLUE",
+          "L2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "EVERLIGHT",
+            "BOM_Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "BOM_Supplier Part": "C72041",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "041cc9180dc046b7bb66bb309da71792",
+            "uuid": "8594922bf7656e1a593fe27b198cf7ff"
+          }
+        ],
+        [
+          "IPD068N10N3G",
+          1,
+          "TO-252-3_L6.5-W5.8-P4.58-BL",
+          "Q1",
+          {
+            "BOM_Manufacturer Part": "IPD068N10N3G",
+            "puuid": "bfea5f9ca5864d01b6017012e629454b",
+            "uuid": "98f51f8de3135369e850596fab9b1a5d",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Infineon(英飞凌)",
+            "BOM_Supplier Part": "C88066",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "B12J20RE",
+          6,
+          "RES-TH_BD8.0-L44.5-P48.50-D1.0",
+          "R1,R2,R3,R4,R5,R6",
+          {
+            "BOM_Manufacturer Part": "B12J20RE",
+            "puuid": "28d8715502b242d3a640f841b8d70f5e",
+            "uuid": "66d3b2cecb3a47cea8dbb33698ace399",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Ohmite",
+            "BOM_Supplier Part": "C2642179"
+          }
+        ],
+        [
+          "1K",
+          2,
+          "R0603",
+          "RG,RL2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1001T5E",
+            "BOM_Supplier Part": "C21190",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "10K",
+          1,
+          "R0603",
+          "RL1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "KF2510-2A",
+          1,
+          "CONN-TH_KF2510-2A",
+          "VIN1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "KF2510-2A",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Supplier Part": "C27543",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "506a2f49fd5af7690094a86e81a44ebe"
+          }
+        ]
+      ],
+      "updateTime": 1699530253,
+      "createTime": 1698865755,
+      "histories": [],
+      "created_at": "2023-11-01 21:09:15",
+      "updated_at": "2023-11-09 13:44:13"
+    },
+    {
+      "uuid": "41227cc8242e4cc15a5c57da6101b0ae",
+      "puuid": "bafa53b8c189ba9f8c49a27fe71a5da8",
+      "title": "PCB_PHOTOPOLYMER_CURE_LIGHT_V0_0",
+      "filename": "PCB_PHOTOPOLYMER_CURE_LIGHT_V0_0.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "1337670005c6484c999f9b4c272ee9fe": 1,
+        "bfea5f9ca5864d01b6017012e629454b": 1,
+        "28d8715502b242d3a640f841b8d70f5e": 6,
+        "9ba63133985d42cda948c6301d2bf7d5": 1,
+        "bd6a8d92f0314a409f892aabb8087d76": 2,
+        "7335dfa67b564d7988d09a073a20aa42": 1,
+        "041cc9180dc046b7bb66bb309da71792": 1,
+        "398691f1f785460098bbe5ee6590333c": 3
+      },
+      "BOM": [],
+      "updateTime": 1699530300,
+      "createTime": 1698866508,
+      "histories": [],
+      "created_at": "2023-11-01 21:21:48",
+      "updated_at": "2023-11-09 13:45:00"
+    }
+  ],
+  "sort": [],
+  "title": "PHOTOPOLYMER_CURE_LIGHT_V0_0",
+  "foldername": "PHOTOPOLYMER_CURE_LIGHT_V0_0",
+  "schfilename": "PHOTOPOLYMER_CURE_LIGHT_V0_0.json",
+  "schfilemtime": 1699530253809
+}

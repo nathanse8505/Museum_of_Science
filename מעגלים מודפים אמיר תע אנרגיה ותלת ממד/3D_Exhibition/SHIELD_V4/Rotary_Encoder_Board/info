@@ -1,0 +1,148 @@
+{
+  "uuid": "47466e38b5ae8bf0ed7bf12f68480501",
+  "path": "Offline/Rotary_Encoder_Board",
+  "name": "Rotary_Encoder_Board",
+  "content": "small pcb for 20pulses mechanical rotary encoder used in exhibits. ",
+  "created_at": "2023-09-12 11:24:58",
+  "updated_at": "2025-02-10 01:07:18",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "84334ff29d73fa56ddb1a4f55e25df61",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "33840d78b60f4ae4934c62d822c83426": 1,
+        "79eaf0a63c7646f39ec63d87035a6ee0": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 3,
+        "a75e0b0ac2a54cd29d2b86da3540e893": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "XH-5AW_C722878",
+          1,
+          "CONN-TH_XH-5AW",
+          "CN1",
+          {
+            "BOM_Manufacturer Part": "XH-5AW",
+            "puuid": "a1278a40a63f401e874486f4bdcdc401",
+            "uuid": "79eaf0a63c7646f39ec63d87035a6ee0",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CAX",
+            "BOM_Supplier Part": "C722878",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "10kΩ",
+          3,
+          "R0603",
+          "R1,R2,R3",
+          {
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b210af5a1436310a86e8b108e2e5a90b",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "PEC11R-4015F-S0024",
+          1,
+          "SW-TH_PEC11R-4XXXF-SXXXX",
+          "SW1",
+          {
+            "BOM_Manufacturer Part": "PEC11R-4015F-S0024",
+            "puuid": "77fbb25425be4a41b080944c96357ff7",
+            "uuid": "33840d78b60f4ae4934c62d822c83426",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "BOURNS",
+            "BOM_Supplier Part": "C143789",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "640456-2",
+          1,
+          "CONN-TH_KF2510-2A",
+          "VIN1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "TE Connectivity",
+            "BOM_Manufacturer Part": "640456-2",
+            "BOM_Supplier Part": "C86502",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "a75e0b0ac2a54cd29d2b86da3540e893"
+          }
+        ]
+      ],
+      "updateTime": 1739141026,
+      "createTime": 1694507098,
+      "histories": [],
+      "created_at": "2023-09-12 11:24:58",
+      "updated_at": "2025-02-10 00:43:46"
+    },
+    {
+      "uuid": "28a078f4ffaa194bc775bc583ae3e848",
+      "puuid": "47466e38b5ae8bf0ed7bf12f68480501",
+      "title": "PCB_Rotary_Encoder_Board",
+      "filename": "PCB_Rotary_Encoder_Board.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "398691f1f785460098bbe5ee6590333c": 3,
+        "a1278a40a63f401e874486f4bdcdc401": 1,
+        "77fbb25425be4a41b080944c96357ff7": 1,
+        "9ba63133985d42cda948c6301d2bf7d5": 1
+      },
+      "BOM": [],
+      "updateTime": 1739141711,
+      "createTime": 1694508305,
+      "histories": [],
+      "created_at": "2023-09-12 11:45:05",
+      "updated_at": "2025-02-10 00:55:11"
+    },
+    {
+      "uuid": "780c9a6b6205e025ab14636b264a6a74",
+      "puuid": "47466e38b5ae8bf0ed7bf12f68480501",
+      "title": "PCB_Rotary_Encoder_Board_PS",
+      "filename": "PCB_Rotary_Encoder_Board_PS.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "9ba63133985d42cda948c6301d2bf7d5": 1,
+        "398691f1f785460098bbe5ee6590333c": 3,
+        "a1278a40a63f401e874486f4bdcdc401": 1,
+        "77fbb25425be4a41b080944c96357ff7": 1
+      },
+      "BOM": [],
+      "updateTime": 1739142438,
+      "createTime": 1739140704,
+      "histories": [],
+      "created_at": "2025-02-10 00:38:24",
+      "updated_at": "2025-02-10 01:07:18"
+    }
+  ],
+  "sort": [],
+  "title": "Rotary_Encoder_Board",
+  "foldername": "Rotary_Encoder_Board",
+  "schfilename": "Rotary_Encoder_Board.json",
+  "schfilemtime": 1739141026659
+}

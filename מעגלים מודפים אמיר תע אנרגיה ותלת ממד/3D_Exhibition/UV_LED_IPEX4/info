@@ -1,0 +1,254 @@
+{
+  "uuid": "ae47e9e88e3bfa2b19821f98a31a4ac2",
+  "path": "Offline/UV_LED_IPEX4",
+  "name": "UV_LED_IPEX4",
+  "content": "very small board for draw in liquid (Yotam) exhibit . connect 3W UV 3535 led to IPEX4 connector \n",
+  "created_at": "2023-10-01 21:08:13",
+  "updated_at": "2023-11-21 18:35:36",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "15c59945c4a69d34abd6d6854dfb5b12",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "4a1070e77e5d428a92792c2535a1ccbb": 6,
+        "11773c9293ab4d48bbb2d97051971d3c": 3
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "3535LED",
+          6,
+          "LED-SMD_3P-L3.5-W3.5_M3535O1IRS13G06",
+          "LED1,LED2,LED3,LED4,LED5,LED6",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2833503",
+            "BOM_Manufacturer": "Silverlight(银月光)",
+            "BOM_Manufacturer Part": "M3535N1UVS8U06-365nm",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "f3b8a3c743ae4cd59376781886fa2695",
+            "uuid": "4a1070e77e5d428a92792c2535a1ccbb"
+          }
+        ],
+        [
+          "KH-IPEX4-2020",
+          3,
+          "IPEX4-SMD_4P-L1.8-W1.7-LS2.0-L_KH-IPEX4-2020",
+          "RF1,RF2,RF3",
+          {
+            "BOM_Manufacturer Part": "KH-IPEX4-2020",
+            "puuid": "28adc087b8a04cb791b02cc221afddd6",
+            "uuid": "11773c9293ab4d48bbb2d97051971d3c",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C530666",
+            "BOM_Manufacturer": "kinghelm(金航标)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ]
+      ],
+      "updateTime": 1696186409,
+      "createTime": 1696183694,
+      "histories": [],
+      "created_at": "2023-10-01 21:08:14",
+      "updated_at": "2023-10-01 21:53:29"
+    },
+    {
+      "uuid": "fb097b67633effa9043fb1149f8a7944",
+      "puuid": "ae47e9e88e3bfa2b19821f98a31a4ac2",
+      "title": "PCB_UV_LED_IPEX4_5_des",
+      "filename": "PCB_UV_LED_IPEX4_5_des.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "f3b8a3c743ae4cd59376781886fa2695": 6,
+        "28adc087b8a04cb791b02cc221afddd6": 5
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1699400744,
+      "createTime": 1696338915,
+      "histories": [],
+      "created_at": "2023-10-03 16:15:15",
+      "updated_at": "2023-11-08 01:45:44"
+    },
+    {
+      "uuid": "2f0524da8611911782d6725e78c4af8f",
+      "puuid": "ae47e9e88e3bfa2b19821f98a31a4ac2",
+      "title": "PCB_UV_LED_IPEX4_4_Des",
+      "filename": "PCB_UV_LED_IPEX4_4_Des.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "f3b8a3c743ae4cd59376781886fa2695": 10,
+        "28adc087b8a04cb791b02cc221afddd6": 5
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1699405489,
+      "createTime": 1696341749,
+      "histories": [],
+      "created_at": "2023-10-03 17:02:29",
+      "updated_at": "2023-11-08 03:04:49"
+    },
+    {
+      "uuid": "cd8be365095e758d3286faacc5fa4bb8",
+      "puuid": "ae47e9e88e3bfa2b19821f98a31a4ac2",
+      "title": "PCB_UV_LED_SH_10_SIDE",
+      "filename": "PCB_UV_LED_SH_10_SIDE.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "f3b8a3c743ae4cd59376781886fa2695": 1,
+        "7dccb85345f74ecdb0d2aeab4a6d77ee": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1700584536,
+      "createTime": 1700583457,
+      "histories": [],
+      "created_at": "2023-11-21 18:17:37",
+      "updated_at": "2023-11-21 18:35:36"
+    },
+    {
+      "uuid": "f6b943e1ab8568084a6a4fab4dcf6a91",
+      "puuid": "ae47e9e88e3bfa2b19821f98a31a4ac2",
+      "title": "PCB_UV_LED_SH_10_UP",
+      "filename": "PCB_UV_LED_SH_10_UP.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "5c058b36f3b34a5c9c6d475a278e46dd": 1,
+        "f3b8a3c743ae4cd59376781886fa2695": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1700584532,
+      "createTime": 1700584310,
+      "histories": [],
+      "created_at": "2023-11-21 18:31:50",
+      "updated_at": "2023-11-21 18:35:32"
+    },
+    {
+      "uuid": "33561dde5b7c4d3c0f47efd1c448c9c7",
+      "title": "PCB_UV_LED_IPEX4",
+      "filename": "PCB_UV_LED_IPEX4.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1696193119,
+      "createTime": 1696193119,
+      "histories": [],
+      "created_at": "2023-10-01 23:45:19",
+      "updated_at": "2023-10-01 23:45:19"
+    },
+    {
+      "uuid": "426f03a3b989f1c68964e6030e90c37e",
+      "title": "PCB_UV_LED_IPEX4_2",
+      "filename": "PCB_UV_LED_IPEX4_2.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1696337020,
+      "createTime": 1696337020,
+      "histories": [],
+      "created_at": "2023-10-03 15:43:40",
+      "updated_at": "2023-10-03 15:43:40"
+    },
+    {
+      "uuid": "b0652579a5bae6f50489739fdf55b49e",
+      "title": "PCB_UV_LED_IPEX4_2A",
+      "filename": "PCB_UV_LED_IPEX4_2A.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1696338812,
+      "createTime": 1696338812,
+      "histories": [],
+      "created_at": "2023-10-03 16:13:32",
+      "updated_at": "2023-10-03 16:13:32"
+    },
+    {
+      "uuid": "5156d89b9737f5253dcaac951b8a61a6",
+      "title": "PCB_UV_LED_IPEX4_2B",
+      "filename": "PCB_UV_LED_IPEX4_2B.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1696337056,
+      "createTime": 1696337056,
+      "histories": [],
+      "created_at": "2023-10-03 15:44:16",
+      "updated_at": "2023-10-03 15:44:16"
+    },
+    {
+      "uuid": "d3b5fb3e7d78d4ff8e3060c373753f51",
+      "title": "PCB_UV_LED_IPEX4`_2",
+      "filename": "PCB_UV_LED_IPEX4`_2.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1696188853,
+      "createTime": 1696188853,
+      "histories": [],
+      "created_at": "2023-10-01 22:34:13",
+      "updated_at": "2023-10-01 22:34:13"
+    }
+  ],
+  "sort": [],
+  "title": "UV_LED_IPEX4",
+  "foldername": "UV_LED_IPEX4",
+  "schfilename": "UV_LED_IPEX4.json",
+  "schfilemtime": 1696186409374
+}

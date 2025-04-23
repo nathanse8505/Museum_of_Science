@@ -1,0 +1,390 @@
+{
+  "uuid": "ee256dfb09e2c4191f855141d524b060",
+  "path": "Offline/Train_Barrier",
+  "name": "Train_Barrier",
+  "content": "",
+  "created_at": "2022-07-02 22:15:59",
+  "updated_at": "2024-01-04 18:10:59",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "5426e4a0193f5da4c58bc85b93ead0c0",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "230bc382ca0246f58f622947b27c87e1": 4,
+        "65b1ae295679465fabfb76c1fc7cc7e6": 5,
+        "df5ff30be1db43e88ab762910e993a7b": 1,
+        "69421c1cc8594b888aa0481e292b0f5d": 1,
+        "154b66255b01a09bf1c88bb1ea89be78": 2,
+        "72dd6b6944675da997cf5a851951151d": 1,
+        "08c2c7e8c8b0acfd1902a7861fb76f69": 3,
+        "d3c0365927a64d539852c068adc5ce88": 3,
+        "05f019ea54634ddf86ca3b043cbfe517": 3,
+        "597701dbde98d3183fe5df5fb870ec57": 6,
+        "b330e12190d7101e651d3068c78fe71d": 3,
+        "8594922bf7656e1a593fe27b198cf7ff": 3,
+        "45aa9db41fe55f139f756074a7ef37a0": 3,
+        "2c006955f05dcac079a3038b72e9481e": 5,
+        "45ddbab4559a43c6bc95d2ca22fb25a0": 3,
+        "411d5fc5016e46cda46b0cba274baae1": 1,
+        "506a2f49fd5af7690094a86e81a44ebe": 1,
+        "b9804cc65f04eb8a3f2b4055e02f5143": 4
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "78L05_C842819",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.2-BR",
+          "78L05",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C842819",
+            "BOM_Manufacturer": "FUXINSEMI",
+            "BOM_Manufacturer Part": "78L05",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "89243c15a2974ba08305eced8ca2c9d4",
+            "uuid": "69421c1cc8594b888aa0481e292b0f5d"
+          }
+        ],
+        [
+          "1000uF",
+          1,
+          "CAP-TH_BD12.5-P5.00-D0.6-FD",
+          "C2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ValuePro",
+            "BOM_Manufacturer Part": "1000uF 50V",
+            "BOM_Supplier Part": "C18104",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "646b2bc75eb7468ebc6c9b1c5395cda9",
+            "uuid": "72dd6b6944675da997cf5a851951151d"
+          }
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C3,C5",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "YAGEO",
+            "BOM_Manufacturer Part": "CC0603KRX7R9BB104",
+            "BOM_Supplier Part": "C14663",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "154b66255b01a09bf1c88bb1ea89be78"
+          }
+        ],
+        [
+          "KF2510-3PFlat knitting needle",
+          5,
+          "CONN-TH_KF2510-3AW",
+          "CN1,CN2,CN3,CN4,CN6",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Manufacturer Part": "KF2510-3PFlat knitting needle",
+            "BOM_Supplier Part": "C45011",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "79647548f7ec47f7bf3c0f1853f94418",
+            "uuid": "2c006955f05dcac079a3038b72e9481e"
+          }
+        ],
+        [
+          "KF2510-2A",
+          1,
+          "CONN-TH_KF2510-2A",
+          "CN_VIN",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "KF2510-2A",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Supplier Part": "C27543",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "506a2f49fd5af7690094a86e81a44ebe"
+          }
+        ],
+        [
+          "CR2",
+          2,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "CR1,CR2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "Cixi Kefa Elec",
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0"
+          }
+        ],
+        [
+          "CR3",
+          1,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "CR3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "Cixi Kefa Elec",
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0"
+          }
+        ],
+        [
+          "1N4007G",
+          3,
+          "SMA_L4.4-W2.6-LS5.0-RD",
+          "D1,D2,D3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SK",
+            "BOM_Manufacturer Part": "1N4007G",
+            "BOM_Supplier Part": "C111122",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "6f2d54427ac94617a7b88c27da4b513c",
+            "uuid": "05f019ea54634ddf86ca3b043cbfe517"
+          }
+        ],
+        [
+          "DC-063-20A",
+          1,
+          "DC-IN-TH_DC-063-20A",
+          "DC2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C707268",
+            "BOM_Manufacturer": "韩国韩荣",
+            "BOM_Manufacturer Part": "DC-063-20A",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "690b189262d3400ba1c87bc08e3f70f0",
+            "uuid": "411d5fc5016e46cda46b0cba274baae1"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H1,H2",
+          {
+            "BOM_Supplier Part": "C124408",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "bce4bcfcccfb42a296f7a392ab0b7199",
+            "uuid": "5a9ec2085ad6436d86701332d4451b76"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x5",
+          5,
+          "HDR-F-2.54_1X5",
+          "H7,H8,H9,H10,H11",
+          {
+            "BOM_Supplier Part": "C50950",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "4bb67b2ac49a4595b3ed10b792fcbebb",
+            "uuid": "65b1ae295679465fabfb76c1fc7cc7e6"
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J1",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "0476c63fa99e4a998187e5a274bdf1f1",
+            "uuid": "fee3186e847b42ecb0244c6d4d6aaef8"
+          }
+        ],
+        [
+          "19-217/BHC-ZL1M2RY/3T",
+          3,
+          "LED0603-R-RD_BLUE",
+          "LED1,LED2,LED3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "EVERLIGHT",
+            "BOM_Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "BOM_Supplier Part": "C72041",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "041cc9180dc046b7bb66bb309da71792",
+            "uuid": "8594922bf7656e1a593fe27b198cf7ff"
+          }
+        ],
+        [
+          "FC-2012HRK-620D",
+          3,
+          "LED0805-RD_RED",
+          "LED4,LED5,LED6",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "NATIONSTAR",
+            "BOM_Manufacturer Part": "FC-2012HRK-620D",
+            "BOM_Supplier Part": "C84256",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "bfb6a2773f06414c87aa48a7f877b54b",
+            "uuid": "45aa9db41fe55f139f756074a7ef37a0"
+          }
+        ],
+        [
+          "AO3400_C2938367",
+          3,
+          "SOT-23_L2.9-W1.3-P1.90-LS2.4-BR",
+          "Q1,Q2,Q3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2938367",
+            "BOM_Manufacturer": "GOODWORK(固得沃克)",
+            "BOM_Manufacturer Part": "AO3400",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "2a819e02584e46aea9f04b619de61270",
+            "uuid": "d3c0365927a64d539852c068adc5ce88"
+          }
+        ],
+        [
+          "1kΩ",
+          6,
+          "R0603",
+          "R1,R2,R3,R4,R5,R6",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1001T5E",
+            "BOM_Supplier Part": "C21190",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "560Ω",
+          3,
+          "R0603",
+          "RL1,RL2,RL3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF5600T5E",
+            "BOM_Supplier Part": "C23204",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b330e12190d7101e651d3068c78fe71d"
+          }
+        ],
+        [
+          "SRA-05VDC-CL blue",
+          3,
+          "RELAY-TH_SRA-9VDC-CL",
+          "RLY1,RLY2,RLY3",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SONGLE",
+            "BOM_Manufacturer Part": "SRA-05VDC-CL blue",
+            "BOM_Supplier Part": "C87714",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "db2d06bd2946405a98007443fb3fa529",
+            "uuid": "08c2c7e8c8b0acfd1902a7861fb76f69"
+          }
+        ],
+        [
+          "0Ω",
+          4,
+          "R0402",
+          "RR1,RR2,RR3,VR5V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0402WGF0000TCE",
+            "BOM_Supplier Part": "C17168",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "fafd024f554e426eb74cf4a204aa88b0",
+            "uuid": "b9804cc65f04eb8a3f2b4055e02f5143"
+          }
+        ],
+        [
+          "KH-MICRO-SMT.J7.2-5P",
+          1,
+          "MICRO-USB-SMD_KH-MICRO-SMT.J7.2-5P",
+          "USB1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2688801",
+            "BOM_Manufacturer": "kinghelm(金航标)",
+            "BOM_Manufacturer Part": "KH-MICRO-SMT.J7.2-5P",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "dd7f5823610548d0b9110c7c0a59e5ae",
+            "uuid": "df5ff30be1db43e88ab762910e993a7b"
+          }
+        ]
+      ],
+      "updateTime": 1704384659,
+      "createTime": 1652993523,
+      "histories": [],
+      "created_at": "2022-05-19 23:52:03",
+      "updated_at": "2024-01-04 18:10:59"
+    },
+    {
+      "uuid": "acbfafb7fa70ca264c1ae47f4515c1f6",
+      "title": "PCB_Train_Barrier",
+      "filename": "PCB_Train_Barrier.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fafd024f554e426eb74cf4a204aa88b0": 4,
+        "9ba63133985d42cda948c6301d2bf7d5": 1,
+        "c444d117946441c3ab8b7492a6a9cd72": 3,
+        "89243c15a2974ba08305eced8ca2c9d4": 1,
+        "2550b1556b6546148b9e97fc95a93d31": 4,
+        "646b2bc75eb7468ebc6c9b1c5395cda9": 1,
+        "f8151fdc728a41ebbc304e11d39e5437": 2,
+        "79647548f7ec47f7bf3c0f1853f94418": 5,
+        "6f2d54427ac94617a7b88c27da4b513c": 3,
+        "690b189262d3400ba1c87bc08e3f70f0": 1,
+        "041cc9180dc046b7bb66bb309da71792": 3,
+        "bfb6a2773f06414c87aa48a7f877b54b": 3,
+        "2a819e02584e46aea9f04b619de61270": 3,
+        "398691f1f785460098bbe5ee6590333c": 9,
+        "db2d06bd2946405a98007443fb3fa529": 3,
+        "dd7f5823610548d0b9110c7c0a59e5ae": 1,
+        "4bb67b2ac49a4595b3ed10b792fcbebb": 5,
+        "bce4bcfcccfb42a296f7a392ab0b7199": 2,
+        "0476c63fa99e4a998187e5a274bdf1f1": 1
+      },
+      "BOM": [],
+      "updateTime": 1656970568,
+      "createTime": 1652994767,
+      "histories": [],
+      "created_at": "2022-05-20 00:12:47",
+      "updated_at": "2022-07-05 00:36:08"
+    }
+  ],
+  "sort": [],
+  "title": "Train_Barrier",
+  "foldername": "Train_Barrier",
+  "schfilename": "Train_Barrier.json",
+  "schfilemtime": 1704384659490
+}
