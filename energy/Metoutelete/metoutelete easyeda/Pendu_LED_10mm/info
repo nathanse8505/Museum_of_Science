@@ -1,0 +1,104 @@
+{
+  "uuid": "1b918f111a71615f84d8186cdcf324ab",
+  "path": "Offline/Pendu_LED_10mm",
+  "name": "Pendu_LED_10mm",
+  "content": "many many RED led for pendulum exhibit Energy exhwbiton 2024",
+  "created_at": "2024-11-20 12:05:25",
+  "updated_at": "2024-11-20 14:50:12",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "e00431ca7b03224bd7866f7cc3568902",
+      "title": "Pendu_LED_10mm",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "404aa9221ff94de597b8734806e7c74f": 2,
+        "ce10c57018aa4a84be7d732523e866bd": 42
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "HDR-M-2.54_1x1",
+          2,
+          "HDR-M-2.54_1X1",
+          "J1,J2",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "1004OUW",
+          42,
+          "LED2-2.54-D10MM",
+          "LD1,LD2,LD3,LD4,LD5,LD6,LD7,LD8,LD9,LD10,LD11,LD12,LD13,LD14,LD15,LD16,LD17,LD18,LD19,LD20,LD21,LU1,LU2,LU3,LU4,LU5,LU6,LU7,LU8,LU9,LU10,LU11,LU12,LU13,LU14,LU15,LU16,LU17,LU18,LU19,LU20,LU21",
+          {
+            "BOM_Manufacturer Part": "1004OUW",
+            "puuid": "0c1aa09e751b4eefb2fa6962290649da",
+            "uuid": "ce10c57018aa4a84be7d732523e866bd"
+          }
+        ]
+      ],
+      "updateTime": 1732102481,
+      "createTime": 1732087156,
+      "histories": [],
+      "created_at": "2024-11-20 09:19:16",
+      "updated_at": "2024-11-20 13:34:41"
+    },
+    {
+      "uuid": "f118b9e1a10eb8716971bf9dbfd08681",
+      "title": "PCB_Pendu_LED_10mm",
+      "filename": "PCB_Pendu_LED_10mm.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "0c1aa09e751b4eefb2fa6962290649da": 42,
+        "19c77e72422b43b59c26b9fa67af5de4": 2
+      },
+      "BOM": [],
+      "updateTime": 1732107012,
+      "createTime": 1732087921,
+      "histories": [],
+      "created_at": "2024-11-20 09:32:01",
+      "updated_at": "2024-11-20 14:50:12"
+    },
+    {
+      "uuid": "387b723b46d69d86766c50efa17f4611",
+      "title": "PCB_Pendu_LED_10mm_LED only",
+      "filename": "PCB_Pendu_LED_10mm_LED only.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "0c1aa09e751b4eefb2fa6962290649da": 42,
+        "19c77e72422b43b59c26b9fa67af5de4": 2
+      },
+      "BOM": [],
+      "updateTime": 1732102570,
+      "createTime": 1732093248,
+      "histories": [],
+      "created_at": "2024-11-20 11:00:48",
+      "updated_at": "2024-11-20 13:36:10"
+    }
+  ],
+  "sort": [],
+  "title": "Pendu_LED_10mm",
+  "foldername": "Pendu_LED_10mm",
+  "schfilename": "Pendu_LED_10mm.json",
+  "schfilemtime": 1732102482005
+}

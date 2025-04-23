@@ -3,14 +3,23 @@
 
 #include <Wire.h>
 #include <avr/wdt.h>
+#include <Servo.h>
 
-#define BUTTON_TRUCK  2 // Entrée analogique
-#define BUTTON_CRANE  3 // Entrée analogique
+Servo servo_truck;
 
-#define MOTOR_TRUCK_R 4
-#define MOTOR_TRUCK_L 5
+
+#define BUTTON_TRUCK   8 // Entrée analogique
+#define BUTTON_CRANE   9 // Entrée analogique
+#define BUTTON_NADNEDA 10 // Entrée analogique
+
+
+#define COIL_NADNEDA  3
+#define MOTOR_TRUCK   5
+//#define MOTOR_TRUCK_R 4
+//#define MOTOR_TRUCK_L 5
 #define MOTOR_CRANE_R 6
 #define MOTOR_CRANE_L 7
+
 
 
 
@@ -41,8 +50,32 @@ const uint16_t BAUDERATE = 9600;
 const int ITERATION = 10;
 bool check_truck = LOW;
 bool check_crane = LOW;
-unsigned long timer_truck;
-unsigned long timer_crane;
+bool check_nadneda = LOW;
+unsigned long now = 0;
+
+// Variables pour le truck
+unsigned long start_truck = 0;
+bool active_truck = false;
+
+int pos_servo = 90;
+int servo_step = 1;
+unsigned long last_servo_update = 0;
+const unsigned long servo_interval = 20; // ms
+
+int bounce_counter = 0;
+bool bounce_phase = false;
+bool descending_to_90 = false;
+
+// Variables pour la nadneda
+unsigned long start_nadneda = 0;
+bool active_nadneda = false;
+
+int pos_pwm = 0;
+int pwm_step = 1;
+unsigned long last_pwm_update = 0;
+const unsigned long pwm_interval = 8; // ms
+int nadneda_counter = 0;
+const int CYCLE_NADNEDA = 10;
 
 
 
@@ -64,29 +97,65 @@ bool PRESS_BUTTON(int IO , bool check) {
 }
 
 
-void TURN_ON(int BUTTON,bool check,int MOTOR_R,int MOTOR_L,unsigned long timer){
-  if(millis() - timer > 7000){
+void NADNEDA(){
+  // Gestion de la bobine
+  if (now - last_pwm_update >= pwm_interval) {
+    pos_pwm += pwm_step;
+    last_pwm_update = now;
+    analogWrite(COIL_NADNEDA, pos_pwm);
 
-    if (PRESS_BUTTON(BUTTON,check)) {  // pressed on language button
-
-        analogWrite(MOTOR_R,20);
-        digitalWrite(MOTOR_L,LOW);
-        delay(2000);
-
-        digitalWrite(MOTOR_R,LOW);
-        delay(3000);
-
-        analogWrite(MOTOR_L,20);
-        delay(2000);
-
-        digitalWrite(MOTOR_L,LOW);
-        timer = millis();
-
+    if (pos_pwm >= 255 || pos_pwm <= 0) {
+      pwm_step = -pwm_step; // Inverse la direction
     }
+    if(pos_pwm == 0){
+      nadneda_counter++;
+    }
+    
+    
   }
 
 }
 
 
+void TRUCK(){
+  if (now - last_servo_update >= servo_interval) {
+    last_servo_update = now;
+    servo_truck.write(pos_servo);
 
+    if (bounce_phase) {
+      pos_servo += servo_step;
+      if (pos_servo >= 180) {
+        servo_step = -1;
+      } 
+      else if (pos_servo <= 160) {
+        bounce_counter--;
+        if (bounce_counter > 0) {
+          servo_step = 1;
+        } 
+        else {
+          bounce_phase = false;
+          descending_to_90 = true;
+          servo_step = -1;
+        }
+      }
+    }
+    else if (descending_to_90) {
+      pos_servo += servo_step;
+      if (pos_servo <= 90) {
+        descending_to_90 = false;
+        servo_step = 1;
+      }
+    }
+    else {
+      pos_servo += servo_step;
+      if (pos_servo >= 180) {
+        bounce_phase = true;
+        bounce_counter = 4;
+        servo_step = -1;
+      }
+    }
+  }
+
+  
+}
 #endif

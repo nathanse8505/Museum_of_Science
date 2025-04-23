@@ -1,0 +1,526 @@
+{
+  "uuid": "0ba7b4e52216286217ac172258fcfa08",
+  "path": "Offline/Hydrogen_Rocket",
+  "name": "Hydrogen_Rocket",
+  "content": "Hydrogen rocket exhibit control circuit, Energy exhebition 2024",
+  "created_at": "2024-10-19 09:57:46",
+  "updated_at": "2024-12-09 18:04:38",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "9e96a432553b378c843b4300c7ec7f3c",
+      "title": "Hydro_Roc",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "212e4e7ac253e44d17caceb02663d93c": 6,
+        "3e0f6070d4fced362a88119254c2f83a": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "968e097f53eb48239918b7f33c25cc39": 1,
+        "b6d6c5c03f064b08b573b09b0b4a0455": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 1,
+        "9bc5d46e2bd4176ac7c3958f1aa86225": 5,
+        "506a2f49fd5af7690094a86e81a44ebe": 11,
+        "a63fb69de1e24542965ed97bbc8820db": 5,
+        "154b66255b01a09bf1c88bb1ea89be78": 2,
+        "597701dbde98d3183fe5df5fb870ec57": 16,
+        "5964f5c00a14401ea690aa7afe38379f": 8,
+        "efa061cb4326418d99deb33742cff3a8": 7,
+        "2f5c8276f8d64010877a8d3bb97697b8": 5,
+        "2136fccdbd134a5a9a82366e6666fe20": 1,
+        "e3feacc3f78b4f9eb460bd89a310e2de": 2,
+        "a3878746005c70adddb43469db023fc0": 2,
+        "365fa2e1e30c355b19179fc7dc483d23": 1,
+        "637415f70eb949abfaeba2abe658ee9b": 1,
+        "54690b060cdc47ad95a6d2eb43d7a591": 1,
+        "ebe4969bd6e946e78b540849df8bf9c0": 2,
+        "45ddbab4559a43c6bc95d2ca22fb25a0": 1,
+        "68b2fc9958894be8a748858534788b97": 2,
+        "0806368f73e1232ca543f14a515367b4": 7,
+        "353ff04a8071d3e6740fa5273965e20c": 1,
+        "0e7de0705db79c49f7005d174cdac6cc": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "Q",
+          8,
+          "SOT-23-3_L2.9-W1.3-P0.95-LS2.4-BR",
+          "AQ,BQ,CQ,DQ,EQ,FQ,GQ,HQ",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C5224189",
+            "BOM_Manufacturer": "ElecSuper(静芯微）",
+            "BOM_Manufacturer Part": "AO3400",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "bade90667a6e4731855e9a223387b8a6",
+            "uuid": "5964f5c00a14401ea690aa7afe38379f"
+          }
+        ],
+        [
+          "1K",
+          16,
+          "R0603",
+          "ARG,ARL,BRG,BRL,CRG,CRL,DRG,DRL,ERG,ERL,FRG,FRL,GRG,GRL,HRG,HRL",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1001T5E",
+            "BOM_Supplier Part": "C21190",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57"
+          }
+        ],
+        [
+          "BUZZER-12X9",
+          1,
+          "BUZ-TH_BD12.0-P7.60-D0.6-FD",
+          "BUZZER1",
+          {
+            "BOM_Manufacturer Part": "buzzer-12X9",
+            "puuid": "4937126739894c52921de221c4760bbc",
+            "uuid": "2136fccdbd134a5a9a82366e6666fe20",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900016920",
+            "BOM_Manufacturer": "null",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "10uF",
+          6,
+          "CAP-SMD_L3.2-W1.6-RD-C7171",
+          "C1,DCM,ECM,FCM,GCM,HCM",
+          {
+            "BOM_Manufacturer Part": "TAJA106K016RNJ",
+            "puuid": "29b657b818a84e4ea7b685b79368b530",
+            "uuid": "212e4e7ac253e44d17caceb02663d93c",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C7171",
+            "BOM_Manufacturer": "Kyocera AVX",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "100uF",
+          1,
+          "CAP-TH_BD6.3-P2.50-D1.0-FD",
+          "C2",
+          {
+            "BOM_Manufacturer Part": "KM107M035E11RR0VH2FP0",
+            "puuid": "1a9b494b74c34d3b879eb7f824b3824d",
+            "uuid": "3e0f6070d4fced362a88119254c2f83a",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C19504",
+            "BOM_Manufacturer": "CX(承兴)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "1uF",
+          1,
+          "C0603",
+          "C3",
+          {
+            "BOM_Manufacturer Part": "CL10A105KB8NNNC",
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "637415f70eb949abfaeba2abe658ee9b",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C15849",
+            "BOM_Manufacturer": "SAMSUNG(三星)",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C10,C11",
+          {
+            "BOM_Manufacturer Part": "CC0603KRX7R9BB104",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C14663",
+            "BOM_Manufacturer": "YAGEO(国巨)",
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "154b66255b01a09bf1c88bb1ea89be78",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "M7_C95872",
+          2,
+          "SMA_L4.3-W2.6-LS5.2-RD",
+          "D1,D7",
+          {
+            "BOM_Manufacturer Part": "M7",
+            "puuid": "b7243d11a5f04fb7894887aaa3569585",
+            "uuid": "e3feacc3f78b4f9eb460bd89a310e2de",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C95872",
+            "BOM_Manufacturer": "MDD",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SOFNG",
+            "BOM_Manufacturer Part": "DC005-2.0MM",
+            "BOM_Supplier Part": "C111567",
+            "puuid": "1337670005c6484c999f9b4c272ee9fe",
+            "uuid": "daa3cf3493c84fa3b0b6a6d427d23f0b"
+          }
+        ],
+        [
+          "KF2510-2A",
+          11,
+          "CONN-TH_KF2510-2A",
+          "DCON,ECON,FCON,GCON,HCON,IGNIT_CON,OUT_7,OUT_8,OUT_9,OUT_10,OUT_11",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "KF2510-2A",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Supplier Part": "C27543",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "506a2f49fd5af7690094a86e81a44ebe"
+          }
+        ],
+        [
+          "1N4007",
+          7,
+          "SMAF_L3.5-W2.6-LS4.7-RD",
+          "DDM,DDM1,DDM2,EDM,FDM,GDM,HDM",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SK",
+            "BOM_Manufacturer Part": "1N4007F",
+            "BOM_Supplier Part": "C110856",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "a4613b89ccf34746ac088089e5eb544d",
+            "uuid": "efa061cb4326418d99deb33742cff3a8"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x6",
+          5,
+          "HDR-F-2.54_1X6",
+          "H1,H2,H3,H6,H11",
+          {
+            "BOM_Supplier Part": "C40877",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "e86d43893d914130bd34765c00ed5f63",
+            "uuid": "2f5c8276f8d64010877a8d3bb97697b8"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "BOM_Supplier Part": "C124408",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "bce4bcfcccfb42a296f7a392ab0b7199",
+            "uuid": "5a9ec2085ad6436d86701332d4451b76"
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "0476c63fa99e4a998187e5a274bdf1f1",
+            "uuid": "fee3186e847b42ecb0244c6d4d6aaef8"
+          }
+        ],
+        [
+          "KT-0603R",
+          7,
+          "LED0603-RD",
+          "LED1,LED4,LED5,LED6,LED7,LED8,LED9",
+          {
+            "BOM_Manufacturer Part": "KT-0603R",
+            "puuid": "7335dfa67b564d7988d09a073a20aa42",
+            "uuid": "0806368f73e1232ca543f14a515367b4",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2286",
+            "BOM_Manufacturer": "KENTO",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "0603White light_C2290",
+          1,
+          "LED0603-R-RD_WHITE",
+          "LED2",
+          {
+            "BOM_Manufacturer Part": "KT-0603W",
+            "puuid": "af16510a196f45a3b2eecfb1ed8360c1",
+            "uuid": "353ff04a8071d3e6740fa5273965e20c",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2290",
+            "BOM_Manufacturer": "KENTO",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "19-213/Y2C-CQ2R2L/3T(CY)",
+          1,
+          "LED0603-RD-YELLOW",
+          "LED3",
+          {
+            "BOM_Manufacturer Part": "19-213/Y2C-CQ2R2L/3T(CY)",
+            "puuid": "915ed4d9d6f54d4c9533225998da3260",
+            "uuid": "0e7de0705db79c49f7005d174cdac6cc",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C72038",
+            "BOM_Manufacturer": "EVERLIGHT(亿光)",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "1.3 inch OLED SSH1106 I2C 128x64 copy",
+          1,
+          "1.3_OLED_SSH1106_I2C_128X64_BOARD",
+          "OLED",
+          {
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "puuid": "f0ccd3ac0fa7406f9e8b294e992fe48f",
+            "uuid": "968e097f53eb48239918b7f33c25cc39"
+          }
+        ],
+        [
+          "10kΩ",
+          2,
+          "RES-ADJ-TH_3P-L10.0-W10.0-P2.50-L",
+          "P6,P7",
+          {
+            "BOM_Manufacturer Part": "3296W-1-103",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C118954",
+            "BOM_Manufacturer": "BOCHEN(博晨)",
+            "puuid": "e69d1e15e9424ba29134b31c38da6ed5",
+            "uuid": "68b2fc9958894be8a748858534788b97",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "10kΩ",
+          1,
+          "R0603",
+          "RL12V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b210af5a1436310a86e8b108e2e5a90b"
+          }
+        ],
+        [
+          "SRA-12VDC-CL",
+          2,
+          "RELAY-TH_SRA-X-CX",
+          "RLY1,RLY4",
+          {
+            "BOM_Manufacturer Part": "SRA-12VDC-CL",
+            "puuid": "d8ab81c31f294d2da4cb9751a61dbd65",
+            "uuid": "a3878746005c70adddb43469db023fc0",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C60169",
+            "BOM_Manufacturer": "松乐",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "FK2510",
+          5,
+          "CONN-TH_3P-P2.00_KF2510_3A",
+          "SENS_2,SENS_3,SENS_A1,SENS_A2,SENS_A3",
+          {
+            "BOM_Manufacturer Part": "2510-3A",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C29275",
+            "BOM_Manufacturer": "BOOMELE(博穆精密)",
+            "puuid": "98de716523d04f20a577f5e7c7e71f1d",
+            "uuid": "9bc5d46e2bd4176ac7c3958f1aa86225",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "TC-6610-7-160G",
+          5,
+          "SW-TH_4P-L5.0-W5.0-P4.50-LS6.5",
+          "SW2,SW3,SWA1,SWA2,SWA3",
+          {
+            "BOM_Manufacturer Part": "TC-6610-7-160G",
+            "puuid": "e2c307bc2a8d4381a6ae5d94eb862a32",
+            "uuid": "a63fb69de1e24542965ed97bbc8820db",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2845252",
+            "BOM_Manufacturer": "HCTL(华灿天禄)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "ACS712ELCTR-05B-T",
+          1,
+          "SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL",
+          "U2",
+          {
+            "BOM_Manufacturer Part": "ACS712ELCTR-05B-T",
+            "puuid": "71450838f2174409b429143f6acc9d2a",
+            "uuid": "365fa2e1e30c355b19179fc7dc483d23",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C44471",
+            "BOM_Manufacturer": "ALLEGRO(美国埃戈罗)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U5",
+          {
+            "BOM_Manufacturer Part": "78L09U 78L09",
+            "puuid": "5304eb2b87a945debf431931d498d92a",
+            "uuid": "b6d6c5c03f064b08b573b09b0b4a0455",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2875177",
+            "BOM_Manufacturer": "CBI(创基)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "KF301-5.0-2P",
+          1,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "VALVE-CON",
+          {
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "KEFA(科发)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "XT30U-F",
+          1,
+          "CONN-TH_XT30U-F",
+          "XT_F",
+          {
+            "BOM_Manufacturer Part": "XT30U-F",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C99102",
+            "BOM_Manufacturer": "AMASS(艾迈斯)",
+            "puuid": "6bea3a136bbb4db1aa5961f7f0a3ce1e",
+            "uuid": "54690b060cdc47ad95a6d2eb43d7a591",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "XT30U-M",
+          2,
+          "CONN-TH_XT30U-M",
+          "XT_M,XT_M1",
+          {
+            "BOM_Manufacturer Part": "XT30U-M",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C99101",
+            "BOM_Manufacturer": "AMASS(艾迈斯)",
+            "puuid": "4dfd1634c8974cb3b1032ace5bc85256",
+            "uuid": "ebe4969bd6e946e78b540849df8bf9c0",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ]
+      ],
+      "updateTime": 1733760278,
+      "createTime": 1729321441,
+      "histories": [],
+      "created_at": "2024-10-19 10:04:01",
+      "updated_at": "2024-12-09 18:04:38"
+    },
+    {
+      "uuid": "3b909a3886196b43e955c09459995f58",
+      "title": "PCB_Hydro_Roc",
+      "filename": "PCB_Hydro_Roc.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "7335dfa67b564d7988d09a073a20aa42": 7,
+        "af16510a196f45a3b2eecfb1ed8360c1": 1,
+        "915ed4d9d6f54d4c9533225998da3260": 1,
+        "e69d1e15e9424ba29134b31c38da6ed5": 2,
+        "e86d43893d914130bd34765c00ed5f63": 5,
+        "4dfd1634c8974cb3b1032ace5bc85256": 2,
+        "a4613b89ccf34746ac088089e5eb544d": 7,
+        "9ba63133985d42cda948c6301d2bf7d5": 11,
+        "c444d117946441c3ab8b7492a6a9cd72": 1,
+        "f8151fdc728a41ebbc304e11d39e5437": 3,
+        "b7243d11a5f04fb7894887aaa3569585": 2,
+        "d8ab81c31f294d2da4cb9751a61dbd65": 2,
+        "71450838f2174409b429143f6acc9d2a": 1,
+        "6bea3a136bbb4db1aa5961f7f0a3ce1e": 1,
+        "5304eb2b87a945debf431931d498d92a": 1,
+        "4937126739894c52921de221c4760bbc": 1,
+        "398691f1f785460098bbe5ee6590333c": 17,
+        "bade90667a6e4731855e9a223387b8a6": 8,
+        "29b657b818a84e4ea7b685b79368b530": 6,
+        "1a9b494b74c34d3b879eb7f824b3824d": 1,
+        "1337670005c6484c999f9b4c272ee9fe": 1,
+        "bce4bcfcccfb42a296f7a392ab0b7199": 2,
+        "0476c63fa99e4a998187e5a274bdf1f1": 1,
+        "f0ccd3ac0fa7406f9e8b294e992fe48f": 1,
+        "98de716523d04f20a577f5e7c7e71f1d": 5,
+        "e2c307bc2a8d4381a6ae5d94eb862a32": 5
+      },
+      "BOM": [],
+      "updateTime": 1732040268,
+      "createTime": 1732017325,
+      "histories": [],
+      "created_at": "2024-11-19 13:55:25",
+      "updated_at": "2024-11-19 20:17:48"
+    }
+  ],
+  "sort": [
+    "9e96a432553b378c843b4300c7ec7f3c",
+    "b165a6298a489527aa842797435353bc"
+  ],
+  "title": "Hydrogen_Rocket",
+  "foldername": "Hydrogen_Rocket",
+  "schfilename": "Hydrogen_Rocket.json",
+  "schfilemtime": 1733760279036
+}

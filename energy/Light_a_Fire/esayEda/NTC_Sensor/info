@@ -1,0 +1,56 @@
+{
+  "uuid": "58b7a3a0561433b9bdf2efccdcbc2a7d",
+  "path": "Offline/NTC_Sensor",
+  "name": "NTC_Sensor",
+  "content": "Aluminum base/pcb for NTC (tem[erature resistor/sensor) for |light the fire exhibit energy exhebition. Apr 2025",
+  "created_at": "2025-04-16 17:30:13",
+  "updated_at": "2025-04-17 11:48:36",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "0283175bd02f17a75118f5e868778c77",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {},
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ]
+      ],
+      "updateTime": 1744815910,
+      "createTime": 1744813813,
+      "histories": [],
+      "created_at": "2025-04-16 17:30:13",
+      "updated_at": "2025-04-16 18:05:10"
+    },
+    {
+      "uuid": "06a013c816a5ba77187e4deb5596866c",
+      "puuid": "58b7a3a0561433b9bdf2efccdcbc2a7d",
+      "title": "PCB_NTC_Sensor",
+      "filename": "PCB_NTC_Sensor.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {},
+      "BOM": [],
+      "updateTime": 1744879716,
+      "createTime": 1744814074,
+      "histories": [],
+      "created_at": "2025-04-16 17:34:34",
+      "updated_at": "2025-04-17 11:48:36"
+    }
+  ],
+  "sort": [],
+  "title": "NTC_Sensor",
+  "foldername": "NTC_Sensor",
+  "schfilename": "NTC_Sensor.json",
+  "schfilemtime": 1744815910192
+}

@@ -111,8 +111,8 @@ void NUMBER_TO_DISPLAY(float variable){
 
 
 float read_temperature(int data){
-  //R2 = R1 * (1023.0 / (float)data - 1.0); //+5V --- Thermistance (R2) --- A3 --- R1 --- GND
-  R2 = R1 * ((float)data / (1023.0 - (float)data)); //+5V --- R1 (fixe) --- A3 --- Thermistance (R2) --- GND
+  R2 = R1 * (1023.0 / (float)data - 1.0); //+5V --- Thermistance (R2) --- A3 --- R1 --- GND
+  //R2 = R1 * ((float)data / (1023.0 - (float)data)); //+5V --- R1 (fixe) --- A3 --- Thermistance (R2) --- GND
 
   float TK = (1.0 / (A + B*log(R2) + C*pow(log(R2),3)));
   float Tc = TK - 273.15;

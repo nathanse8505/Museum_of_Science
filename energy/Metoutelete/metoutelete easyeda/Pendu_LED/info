@@ -1,0 +1,175 @@
+{
+  "uuid": "8656a4bcb27852c7d2e15bea4700f978",
+  "path": "Offline/Pendu_LED",
+  "name": "Pendu_LED",
+  "content": "many many RED led for pendulum exhibit Energy exhwbiton 2024",
+  "created_at": "2024-11-20 09:19:15",
+  "updated_at": "2024-11-20 15:26:30",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "f12351c49690e78f9072e0da1469acf0",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "45aa9db41fe55f139f756074a7ef37a0": 42,
+        "404aa9221ff94de597b8734806e7c74f": 2,
+        "230bc382ca0246f58f622947b27c87e1": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "HDR-M-2.54_1x1",
+          2,
+          "HDR-M-2.54_1X1",
+          "J1,J2",
+          {
+            "BOM_Supplier Part": "C81276",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer Part": "",
+            "puuid": "19c77e72422b43b59c26b9fa67af5de4",
+            "uuid": "404aa9221ff94de597b8734806e7c74f"
+          }
+        ],
+        [
+          "FC-2012HRK-620D",
+          42,
+          "LED0805-R-RD",
+          "LD,LD1,LD2,LD3,LD4,LD5,LD6,LD7,LD8,LD9,LD10,LD11,LD12,LD13,LD14,LD15,LD16,LD17,LD18,LD19,LD20,LU,LU1,LU2,LU3,LU4,LU5,LU6,LU7,LU8,LU9,LU10,LU11,LU12,LU13,LU14,LU15,LU16,LU17,LU18,LU19,LU20",
+          {
+            "BOM_Manufacturer Part": "NCD0805R1",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C84256",
+            "BOM_Manufacturer": "国星光电",
+            "puuid": "82605a93a0be4c79a27d82f67f2aca29",
+            "uuid": "45aa9db41fe55f139f756074a7ef37a0"
+          }
+        ]
+      ],
+      "updateTime": 1732091261,
+      "createTime": 1732087156,
+      "histories": [],
+      "created_at": "2024-11-20 09:19:16",
+      "updated_at": "2024-11-20 10:27:41"
+    },
+    {
+      "uuid": "2a511a3bed7169dbfbbaff7bfe530d21",
+      "puuid": "8656a4bcb27852c7d2e15bea4700f978",
+      "title": "PCB_Pendu_LED",
+      "filename": "PCB_Pendu_LED.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "19c77e72422b43b59c26b9fa67af5de4": 2,
+        "2550b1556b6546148b9e97fc95a93d31": 1,
+        "82605a93a0be4c79a27d82f67f2aca29": 42
+      },
+      "BOM": [],
+      "updateTime": 1732092746,
+      "createTime": 1732087921,
+      "histories": [],
+      "created_at": "2024-11-20 09:32:01",
+      "updated_at": "2024-11-20 10:52:26"
+    },
+    {
+      "uuid": "c115bbc943da85cce9d7e085cf5eba98",
+      "puuid": "8656a4bcb27852c7d2e15bea4700f978",
+      "title": "PCB_Pendu_LED x 3",
+      "filename": "PCB_Pendu_LED x 3.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "19c77e72422b43b59c26b9fa67af5de4": 2,
+        "2550b1556b6546148b9e97fc95a93d31": 1,
+        "82605a93a0be4c79a27d82f67f2aca29": 42
+      },
+      "BOM": [],
+      "updateTime": 1732092450,
+      "createTime": 1732092450,
+      "histories": [],
+      "created_at": "2024-11-20 10:47:30",
+      "updated_at": "2024-11-20 10:47:30"
+    },
+    {
+      "uuid": "cb4a2bd5e21477eb7b1d36e62ea3fa7e",
+      "puuid": "8656a4bcb27852c7d2e15bea4700f978",
+      "title": "PCB_Pendu_LEDX2",
+      "filename": "PCB_Pendu_LEDX2.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "19c77e72422b43b59c26b9fa67af5de4": 2,
+        "2550b1556b6546148b9e97fc95a93d31": 2,
+        "82605a93a0be4c79a27d82f67f2aca29": 84
+      },
+      "BOM": [],
+      "updateTime": 1732093128,
+      "createTime": 1732092773,
+      "histories": [],
+      "created_at": "2024-11-20 10:52:53",
+      "updated_at": "2024-11-20 10:58:48"
+    },
+    {
+      "uuid": "5542ba42c82d5572cd529ef803b8201f",
+      "puuid": "8656a4bcb27852c7d2e15bea4700f978",
+      "title": "PCB_Pendu_LEDX3",
+      "filename": "PCB_Pendu_LEDX3.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "82605a93a0be4c79a27d82f67f2aca29": 126,
+        "2550b1556b6546148b9e97fc95a93d31": 3,
+        "19c77e72422b43b59c26b9fa67af5de4": 2
+      },
+      "BOM": [],
+      "updateTime": 1732109190,
+      "createTime": 1732093209,
+      "histories": [],
+      "created_at": "2024-11-20 11:00:09",
+      "updated_at": "2024-11-20 15:26:30"
+    },
+    {
+      "uuid": "11bbe268cd61cdcb30c43cfc18fec968",
+      "puuid": "8656a4bcb27852c7d2e15bea4700f978",
+      "title": "PCB_Pendu_LED only",
+      "filename": "PCB_Pendu_LED only.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "19c77e72422b43b59c26b9fa67af5de4": 2,
+        "2550b1556b6546148b9e97fc95a93d31": 1,
+        "82605a93a0be4c79a27d82f67f2aca29": 42
+      },
+      "BOM": [],
+      "updateTime": 1732093622,
+      "createTime": 1732093248,
+      "histories": [],
+      "created_at": "2024-11-20 11:00:48",
+      "updated_at": "2024-11-20 11:07:02"
+    }
+  ],
+  "sort": [],
+  "title": "Pendu_LED",
+  "foldername": "Pendu_LED",
+  "schfilename": "Pendu_LED.json",
+  "schfilemtime": 1732091261168
+}
