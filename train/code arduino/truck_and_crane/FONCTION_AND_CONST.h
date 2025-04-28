@@ -11,15 +11,19 @@ Servo servo_crane;
 
 #define BUTTON_TRUCK   8 // Entrée analogique
 #define BUTTON_NADNEDA 7 // Entrée analogique
-#define BUTTON_CRANE   10 // Entrée analogique
+#define BUTTON_CRANE   6 // Entrée analogique
 
 
-#define COIL_NADNEDA  6
+#define COIL_NADNEDA  3
 #define MOTOR_TRUCK   5
 
-#define MOTOR_CRANE  11
-#define MOTOR_CRANE_R 11
-#define MOTOR_CRANE_L 3
+///////servo/////////
+//#define MOTOR_CRANE  11
+
+////////pwm/////////
+#define MOTOR_CRANE_L 9
+#define MOTOR_CRANE_R 10
+#define MOTOR_CRANE_ENA 11
 
 
 
@@ -55,18 +59,16 @@ bool check_nadneda = LOW;
 unsigned long now = 0;
 
 // Variables pour le truck
-unsigned long start_truck = 0;
 bool active_truck = false;
-int pos_servo = 90;
-int servo_step = 1;
-unsigned long last_servo_update = 0;
-const unsigned long servo_interval = 20; // ms
+int pos_servo_truck = 90;
+int truck_step = 1;
+unsigned long last_truck_update = 0;
+const unsigned long truck_interval = 20; // ms
 int bounce_counter = 0;
 bool bounce_phase = false;
 bool descending_to_90 = false;
 
 // Variables pour la nadneda
-unsigned long start_nadneda = 0;
 bool active_nadneda = false;
 int pos_pwm = 0;
 int pwm_step = 1;
@@ -83,15 +85,16 @@ int crane_counter = 0;
 const int CYCLE_CRANE = 1;
 bool active_crane = false;
 
+//////servo crane//////
 int pos_servo_crane = 90;
 int crane_step = 1;
 const unsigned long crane_pause_at_180 = 2000; // Temps de pause en ms sur 180° (ex: 2 secondes)
 unsigned long pause_start_time = 0; // Temps où on arrive à 180°
 bool ascending_to_180 = true;
 bool pausing_at_180 = false;
-
+////////pwm crane///////
 bool  crane_direction_right = true;
-bool crane_phase_gauche_done = false;
+bool crane_phase_left_done = false;
 
 
 bool PRESS_BUTTON(int IO , bool check) {
@@ -133,47 +136,47 @@ void NADNEDA(){
 
 
 void TRUCK(){
-  if (now - last_servo_update >= servo_interval) {
-    last_servo_update = now;
-    servo_truck.write(pos_servo);
+  if (now - last_truck_update >= truck_interval) {
+    last_truck_update = now;
+    servo_truck.write(pos_servo_truck);
 
     if (bounce_phase) {
-      pos_servo += servo_step;
-      if (pos_servo >= 180) {
-        servo_step = -1;
+      pos_servo_truck += truck_step;
+      if (pos_servo_truck >= 180) {
+        truck_step = -1;
       } 
-      else if (pos_servo <= 160) {
+      else if (pos_servo_truck <= 160) {
         bounce_counter--;
         if (bounce_counter > 0) {
-          servo_step = 1;
+          truck_step = 1;
         } 
         else {
           bounce_phase = false;
           descending_to_90 = true;
-          servo_step = -1;
+          truck_step = -1;
         }
       }
     }
     else if (descending_to_90) {
-      pos_servo += servo_step;
-      if (pos_servo <= 90) {
+      pos_servo_truck += truck_step;
+      if (pos_servo_truck <= 90) {
         descending_to_90 = false;
-        servo_step = 1;
+        truck_step = 1;
       }
     }
     else {
-      pos_servo += servo_step;
-      if (pos_servo >= 180) {
+      pos_servo_truck += truck_step;
+      if (pos_servo_truck >= 180) {
         bounce_phase = true;
         bounce_counter = 4;
-        servo_step = -1;
+        truck_step = -1;
       }
     }
   }
 
   
 }
-
+/*
 void CRANE() {
   if (now - last_crane_update >= crane_interval) {
     last_crane_update = now;
@@ -221,39 +224,39 @@ void CRANE() {
   }
 }
 
-/*void CRANE(){
+*/
+
+void CRANE(){
   if (now - last_crane_update >= crane_interval) {
   
-  last_crane_update = now;
-  if (crane_direction_right) {
-        // Phase moteur droit
-    Serial.println("Turning RIGHT");
-    analogWrite(MOTOR_CRANE_R, 200);
-    analogWrite(MOTOR_CRANE_L, LOW);
+    last_crane_update = now;
+    if (crane_direction_right) {
+          // Phase moteur droit
+      Serial.println("Turning RIGHT");
+      digitalWrite(MOTOR_CRANE_R, HIGH);
+      digitalWrite(MOTOR_CRANE_L, LOW);
 
-    crane_direction_right = false; // Prochaine fois aller à gauche
-  } 
-  else {
-    if (!crane_phase_gauche_done) {
-        // Phase moteur gauche
-      Serial.println("Turning LEFT");
-      analogWrite(MOTOR_CRANE_R, LOW);
-      analogWrite(MOTOR_CRANE_L, 200);
-
-      crane_phase_gauche_done = true; // La phase gauche vient de commencer
-    }
+      crane_direction_right = false; // Prochaine fois aller à gauche
+    } 
     else {
-
-      crane_counter++;
-      Serial.print("Crane Counter: ");
-      Serial.println(crane_counter);
-      // Remettre tout pour recommencer un cycle
-      crane_direction_right = true;
-      crane_phase_gauche_done = false;
+      if (!crane_phase_left_done) {
+          // Phase moteur gauche
+        Serial.println("Turning LEFT");
+        digitalWrite(MOTOR_CRANE_R, LOW);
+        digitalWrite(MOTOR_CRANE_L, HIGH);
+        crane_phase_left_done = true; // La phase gauche vient de commencer
       }
+      else {
+        crane_counter++;
+        Serial.print("Crane Counter: ");
+        Serial.println(crane_counter);
+        // Remettre tout pour recommencer un cycle
+        crane_direction_right = true;
+        crane_phase_left_done = false;
+        }
+    }
   }
-  }
-}*/
+}
 
 void setPwmFrequencyTimer2(int prescaler_setting) {
     TCCR2B = (TCCR2B & 0b11111000) | prescaler_setting;
