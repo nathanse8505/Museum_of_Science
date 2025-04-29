@@ -11,19 +11,12 @@ Servo servo_crane;
 
 #define BUTTON_TRUCK   8 // Entrée analogique
 #define BUTTON_NADNEDA 7 // Entrée analogique
-#define BUTTON_CRANE   6 // Entrée analogique
+#define BUTTON_CRANE   9 // Entrée analogique
 
 
 #define COIL_NADNEDA  3
-#define MOTOR_TRUCK   5
-
-///////servo/////////
-//#define MOTOR_CRANE  11
-
-////////pwm/////////
-#define MOTOR_CRANE_L 9
-#define MOTOR_CRANE_R 10
-#define MOTOR_CRANE_ENA 11
+#define SERVO_TRUCK   5
+#define SERVO_CRANE  2
 
 
 
@@ -88,13 +81,14 @@ bool active_crane = false;
 //////servo crane//////
 int pos_servo_crane = 90;
 int crane_step = 1;
-const unsigned long crane_pause_at_180 = 2000; // Temps de pause en ms sur 180° (ex: 2 secondes)
+const unsigned long crane_pause_at_max_angle = 2000; // Temps de pause en ms sur 180° (ex: 2 secondes)
 unsigned long pause_start_time = 0; // Temps où on arrive à 180°
-bool ascending_to_180 = true;
-bool pausing_at_180 = false;
-////////pwm crane///////
-bool  crane_direction_right = true;
-bool crane_phase_left_done = false;
+bool ascending_to_max_angle = true;
+bool pausing_at_max_angle = false;
+const int MAX_ANGLE = 170;
+const int MIN_ANGLE = 90;
+
+
 
 
 bool PRESS_BUTTON(int IO , bool check) {
@@ -176,17 +170,17 @@ void TRUCK(){
 
   
 }
-/*
+
 void CRANE() {
   if (now - last_crane_update >= crane_interval) {
     last_crane_update = now;
 
-    if (pausing_at_180) {
+    if (pausing_at_max_angle) {
       // Phase d'attente à 180°
-      if (now - pause_start_time >= crane_pause_at_180) {
+      if (now - pause_start_time >= crane_pause_at_max_angle) {
         // Fin de la pause, commencer à descendre
-        pausing_at_180 = false;
-        ascending_to_180 = false;
+        pausing_at_max_angle = false;
+        ascending_to_max_angle = false;
         crane_step = -1;
       }
       return; // Pendant la pause, ne rien faire d'autre
@@ -195,26 +189,26 @@ void CRANE() {
     servo_crane.write(pos_servo_crane); // Mise à jour de la position actuelle
     Serial.println(pos_servo_crane);
 
-    if (ascending_to_180) {
+    if (ascending_to_max_angle) {
       // Monter vers 180°
       pos_servo_crane += crane_step;
-      if (pos_servo_crane >= 180) {
-        pos_servo_crane = 180; // Fixer précisément à 180°
+      if (pos_servo_crane >= MAX_ANGLE) {
+        pos_servo_crane = MAX_ANGLE; // Fixer précisément à 180°
         servo_crane.write(pos_servo_crane);
 
         // Démarrer la pause
-        pausing_at_180 = true;
+        pausing_at_max_angle = true;
         pause_start_time = now;
       }
     } 
     else {
       // Descendre vers 90°
       pos_servo_crane += crane_step;
-      if (pos_servo_crane <= 90) {
-        pos_servo_crane = 90; // Fixer précisément à 90°
+      if (pos_servo_crane <= MIN_ANGLE) {
+        pos_servo_crane = MIN_ANGLE; // Fixer précisément à 90°
         servo_crane.write(pos_servo_crane);
 
-        ascending_to_180 = true; // Préparer la montée pour le prochain cycle
+        ascending_to_max_angle = true; // Préparer la montée pour le prochain cycle
         crane_step = 1;
         crane_counter++; // Cycle complet terminé
         Serial.print("Crane Cycle Counter: ");
@@ -224,42 +218,6 @@ void CRANE() {
   }
 }
 
-*/
 
-void CRANE(){
-  if (now - last_crane_update >= crane_interval) {
-  
-    last_crane_update = now;
-    if (crane_direction_right) {
-          // Phase moteur droit
-      Serial.println("Turning RIGHT");
-      digitalWrite(MOTOR_CRANE_R, HIGH);
-      digitalWrite(MOTOR_CRANE_L, LOW);
-
-      crane_direction_right = false; // Prochaine fois aller à gauche
-    } 
-    else {
-      if (!crane_phase_left_done) {
-          // Phase moteur gauche
-        Serial.println("Turning LEFT");
-        digitalWrite(MOTOR_CRANE_R, LOW);
-        digitalWrite(MOTOR_CRANE_L, HIGH);
-        crane_phase_left_done = true; // La phase gauche vient de commencer
-      }
-      else {
-        crane_counter++;
-        Serial.print("Crane Counter: ");
-        Serial.println(crane_counter);
-        // Remettre tout pour recommencer un cycle
-        crane_direction_right = true;
-        crane_phase_left_done = false;
-        }
-    }
-  }
-}
-
-void setPwmFrequencyTimer2(int prescaler_setting) {
-    TCCR2B = (TCCR2B & 0b11111000) | prescaler_setting;
-}
 
 #endif

@@ -8,21 +8,11 @@ void setup() {
 
   
   //pinMode(MOTOR_TRUCK_L, OUTPUT);
-  servo_truck.attach(MOTOR_TRUCK); // pin de signal
+  servo_truck.attach(SERVO_TRUCK); // pin de signal
   pinMode(COIL_NADNEDA, OUTPUT);
-
-  ////servo/////
-  //servo_crane.attach(MOTOR_CRANE);
-
-  /////pwm/////
-  pinMode(MOTOR_CRANE_ENA, OUTPUT);
-  pinMode(MOTOR_CRANE_R, OUTPUT);
-  pinMode(MOTOR_CRANE_L, OUTPUT);
-  //////////
+  servo_crane.attach(SERVO_CRANE);
 
   wdt_enable(WDTO_4S);// Enable the watchdog timer with a 4-second timeout
-  // Exemple : mettre un prescaler de 32
-  //setPwmFrequencyTimer2(0b111);
   Serial.println("init");
     
 }
@@ -80,21 +70,13 @@ void loop() {
   if (active_crane) {
     //Serial.println("enter to the active motor");
     CRANE();
-    analogWrite(MOTOR_CRANE_ENA,128);
+    //analogWrite(MOTOR_CRANE_ENA,128);
     if (crane_counter >=  CYCLE_CRANE) {
       Serial.println("enter to the STOP");
       active_crane = false;
       crane_counter = 0;
-
-      //////servo//////
-      //servo_crane.write(pos_servo_crane);
-      ////////////////
-
-      /////pwm///////
-      digitalWrite(MOTOR_CRANE_R, LOW);
-      digitalWrite(MOTOR_CRANE_L, LOW);
-      analogWrite(MOTOR_CRANE_ENA,LOW);
-      ///////////////
+      servo_crane.write(pos_servo_crane);
+      
       
      
     }
