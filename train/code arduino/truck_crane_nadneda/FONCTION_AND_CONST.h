@@ -9,8 +9,8 @@ Servo servo_truck;
 Servo servo_crane;
 
 
-#define BUTTON_TRUCK   6 // Entrée analogique
-#define BUTTON_NADNEDA 7 // Entrée analogique
+#define BUTTON_TRUCK   7 // Entrée analogique
+#define BUTTON_NADNEDA 9 // Entrée analogique
 #define BUTTON_CRANE   8 // Entrée analogique
 
 
@@ -66,9 +66,9 @@ bool active_nadneda = false;
 int pos_pwm = 0;
 int pwm_step = 1;
 unsigned long last_pwm_update = 0;
-const unsigned long pwm_interval = 8; // ms
+const unsigned long pwm_interval = 7; // ms
 int nadneda_counter = 0;
-const int CYCLE_NADNEDA = 10;
+const int CYCLE_NADNEDA = 5;
 
 
 // Variables pour le crane
@@ -116,7 +116,7 @@ void NADNEDA(){
     last_pwm_update = now;
     analogWrite(COIL_NADNEDA, pos_pwm);
 
-    if (pos_pwm >= 255 || pos_pwm <= 0) {
+    if (pos_pwm >= 200 || pos_pwm <= 0) {
       pwm_step = -pwm_step; // Inverse la direction
     }
     if(pos_pwm == 0){

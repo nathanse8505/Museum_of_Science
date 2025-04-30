@@ -12,6 +12,10 @@ void setup() {
   pinMode(COIL_NADNEDA, OUTPUT);
   servo_crane.attach(SERVO_CRANE);
 
+  servo_crane.write(pos_servo_crane);
+  servo_truck.write(pos_servo_truck); // Stop position (optional)
+  digitalWrite(COIL_NADNEDA, LOW);
+
   wdt_enable(WDTO_4S);// Enable the watchdog timer with a 4-second timeout
   Serial.println("init");
     
