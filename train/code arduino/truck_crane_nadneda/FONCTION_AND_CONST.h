@@ -9,9 +9,9 @@ Servo servo_truck;
 Servo servo_crane;
 
 
-#define BUTTON_TRUCK   8 // Entrée analogique
+#define BUTTON_TRUCK   6 // Entrée analogique
 #define BUTTON_NADNEDA 7 // Entrée analogique
-#define BUTTON_CRANE   9 // Entrée analogique
+#define BUTTON_CRANE   8 // Entrée analogique
 
 
 #define COIL_NADNEDA  3
@@ -73,20 +73,20 @@ const int CYCLE_NADNEDA = 10;
 
 // Variables pour le crane
 unsigned long last_crane_update = 0;
-const unsigned long crane_interval = 40; // ms
+const unsigned long crane_interval = 30; // ms
 int crane_counter = 0;
 const int CYCLE_CRANE = 1;
 bool active_crane = false;
 
 //////servo crane//////
-int pos_servo_crane = 90;
+int pos_servo_crane = 10;
 int crane_step = 1;
 const unsigned long crane_pause_at_max_angle = 2000; // Temps de pause en ms sur 180° (ex: 2 secondes)
 unsigned long pause_start_time = 0; // Temps où on arrive à 180°
 bool ascending_to_max_angle = true;
 bool pausing_at_max_angle = false;
-const int MAX_ANGLE = 170;
-const int MIN_ANGLE = 90;
+const int MAX_ANGLE = 130;
+const int MIN_ANGLE = 10;
 
 
 
@@ -133,6 +133,7 @@ void TRUCK(){
   if (now - last_truck_update >= truck_interval) {
     last_truck_update = now;
     servo_truck.write(pos_servo_truck);
+    Serial.println(pos_servo_truck);
 
     if (bounce_phase) {
       pos_servo_truck += truck_step;

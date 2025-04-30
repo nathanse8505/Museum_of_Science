@@ -43,7 +43,7 @@ void loop() {
   ////////////////////////////TRUCK///////////////////////////////
     if (!active_truck){
     if (PRESS_BUTTON(BUTTON_TRUCK, check_truck)) {
-       Serial.println("enter to the press button");
+       Serial.println("enter to the press button truck");
       active_truck = true;
     }
   }
