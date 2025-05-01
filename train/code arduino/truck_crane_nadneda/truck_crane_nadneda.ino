@@ -1,7 +1,7 @@
 #include "FONCTION_AND_CONST.h"
 
 void setup() {
-  Serial.begin(BAUDERATE);      // Start serial communication at the specified baud rate
+  //Serial.begin(BAUDERATE);      // Start serial communication at the specified baud rate
   pinMode(BUTTON_TRUCK, INPUT_PULLUP);
   pinMode(BUTTON_CRANE, INPUT_PULLUP);
   pinMode(BUTTON_NADNEDA, INPUT_PULLUP);
@@ -17,7 +17,7 @@ void setup() {
   digitalWrite(COIL_NADNEDA, LOW);
 
   wdt_enable(WDTO_4S);// Enable the watchdog timer with a 4-second timeout
-  Serial.println("init");
+  //Serial.println("init");
     
 }
 
@@ -28,7 +28,7 @@ void loop() {
   ////////////////////////////NADNEDA//////////////////////////
   if (!active_nadneda){
     if (PRESS_BUTTON(BUTTON_NADNEDA, check_nadneda)) {
-        Serial.println("enter to the press button nadneda");
+        //Serial.println("enter to the press button nadneda");
         active_nadneda = true;
     }
   }
@@ -47,7 +47,7 @@ void loop() {
   ////////////////////////////TRUCK///////////////////////////////
   if (!active_truck){
     if (PRESS_BUTTON(BUTTON_TRUCK, check_truck)) {
-      Serial.println("enter to the press button truck");
+      //Serial.println("enter to the press button truck");
       active_truck = true;
     }
   }
@@ -66,7 +66,7 @@ void loop() {
 
   if (!active_crane){
     if (PRESS_BUTTON(BUTTON_CRANE, check_crane)) {
-      Serial.println("enter to the press button");
+      //Serial.println("enter to the press button");
       active_crane = true;
     }
   }
@@ -75,7 +75,7 @@ void loop() {
     //Serial.println("enter to the active motor");
     CRANE();
     if (crane_counter >=  CYCLE_CRANE) {
-      Serial.println("enter to the STOP");
+      //Serial.println("enter to the STOP");
       active_crane = false;
       crane_counter = 0;
       servo_crane.write(pos_servo_crane);

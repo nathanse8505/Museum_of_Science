@@ -76,7 +76,7 @@ int pwm_step = 1;
 // Variables pour le crane
 bool active_crane = false;
 unsigned long last_crane_update = 0;
-const unsigned long CRANE_SPEED_INTERVAL = 30; // ms
+const unsigned long CRANE_SPEED_INTERVAL = 25; // ms
 const int CYCLE_CRANE = 1;
 int crane_counter = 0;
 
@@ -135,7 +135,7 @@ void TRUCK(){
   if (now - last_truck_update >= TRUCK_TIME_INTERVAL) {
     last_truck_update = now;
     servo_truck.write(pos_servo_truck);
-    Serial.println(pos_servo_truck);
+    //Serial.println(pos_servo_truck);
 
     if (bounce_phase) {
       pos_servo_truck += truck_step;
@@ -190,7 +190,7 @@ void CRANE() {
     }
 
     servo_crane.write(pos_servo_crane); // Mise à jour de la position actuelle
-    Serial.println(pos_servo_crane);
+    //Serial.println(pos_servo_crane);
 
     if (ascending_to_max_angle) {
       // Monter vers 180°
@@ -214,8 +214,8 @@ void CRANE() {
         ascending_to_max_angle = true; // Préparer la montée pour le prochain cycle
         crane_step = 1;
         crane_counter++; // Cycle complet terminé
-        Serial.print("Crane Cycle Counter: ");
-        Serial.println(crane_counter);
+        //Serial.print("Crane Cycle Counter: ");
+        //Serial.println(crane_counter);
       }
     }
   }
