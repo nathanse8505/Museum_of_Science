@@ -53,38 +53,40 @@ unsigned long now = 0;
 
 // Variables pour le truck
 bool active_truck = false;
+unsigned long last_truck_update = 0;
+const unsigned long TRUCK_TIME_INTERVAL = 20; // ms
 int pos_servo_truck = 90;
 int truck_step = 1;
-unsigned long last_truck_update = 0;
-const unsigned long truck_interval = 20; // ms
 int bounce_counter = 0;
 bool bounce_phase = false;
 bool descending_to_90 = false;
 
 // Variables pour la nadneda
 bool active_nadneda = false;
+unsigned long last_pwm_update = 0;
+const unsigned long PWM_INTERVAL = 7; // ms
+const int CYCLE_NADNEDA = 5;
+int nadneda_counter = 0;
 int pos_pwm = 0;
 int pwm_step = 1;
-unsigned long last_pwm_update = 0;
-const unsigned long pwm_interval = 7; // ms
-int nadneda_counter = 0;
-const int CYCLE_NADNEDA = 5;
+
+
 
 
 // Variables pour le crane
-unsigned long last_crane_update = 0;
-const unsigned long crane_interval = 30; // ms
-int crane_counter = 0;
-const int CYCLE_CRANE = 1;
 bool active_crane = false;
+unsigned long last_crane_update = 0;
+const unsigned long CRANE_SPEED_INTERVAL = 30; // ms
+const int CYCLE_CRANE = 1;
+int crane_counter = 0;
 
 //////servo crane//////
 int pos_servo_crane = 10;
 int crane_step = 1;
-const unsigned long crane_pause_at_max_angle = 2000; // Temps de pause en ms sur 180° (ex: 2 secondes)
-unsigned long pause_start_time = 0; // Temps où on arrive à 180°
 bool ascending_to_max_angle = true;
 bool pausing_at_max_angle = false;
+unsigned long pause_start_time = 0; // Temps où on arrive à 180°
+const unsigned long PAUSE_AT_MAX_ANGLE = 2000; // Temps de pause en ms sur max angle (ex: 2 secondes)
 const int MAX_ANGLE = 130;
 const int MIN_ANGLE = 10;
 
@@ -111,7 +113,7 @@ bool PRESS_BUTTON(int IO , bool check) {
 
 void NADNEDA(){
   // Gestion de la bobine
-  if (now - last_pwm_update >= pwm_interval) {
+  if (now - last_pwm_update >= PWM_INTERVAL) {
     pos_pwm += pwm_step;
     last_pwm_update = now;
     analogWrite(COIL_NADNEDA, pos_pwm);
@@ -130,7 +132,7 @@ void NADNEDA(){
 
 
 void TRUCK(){
-  if (now - last_truck_update >= truck_interval) {
+  if (now - last_truck_update >= TRUCK_TIME_INTERVAL) {
     last_truck_update = now;
     servo_truck.write(pos_servo_truck);
     Serial.println(pos_servo_truck);
@@ -173,12 +175,12 @@ void TRUCK(){
 }
 
 void CRANE() {
-  if (now - last_crane_update >= crane_interval) {
+  if (now - last_crane_update >= CRANE_SPEED_INTERVAL) {
     last_crane_update = now;
 
     if (pausing_at_max_angle) {
       // Phase d'attente à 180°
-      if (now - pause_start_time >= crane_pause_at_max_angle) {
+      if (now - pause_start_time >= PAUSE_AT_MAX_ANGLE) {
         // Fin de la pause, commencer à descendre
         pausing_at_max_angle = false;
         ascending_to_max_angle = false;

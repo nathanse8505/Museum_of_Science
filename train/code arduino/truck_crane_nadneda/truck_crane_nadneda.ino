@@ -26,10 +26,10 @@ void loop() {
   now = millis();
 
   ////////////////////////////NADNEDA//////////////////////////
-    if (!active_nadneda){
+  if (!active_nadneda){
     if (PRESS_BUTTON(BUTTON_NADNEDA, check_nadneda)) {
-       Serial.println("enter to the press button nadneda");
-      active_nadneda = true;
+        Serial.println("enter to the press button nadneda");
+        active_nadneda = true;
     }
   }
 
@@ -45,9 +45,9 @@ void loop() {
   
 
   ////////////////////////////TRUCK///////////////////////////////
-    if (!active_truck){
+  if (!active_truck){
     if (PRESS_BUTTON(BUTTON_TRUCK, check_truck)) {
-       Serial.println("enter to the press button truck");
+      Serial.println("enter to the press button truck");
       active_truck = true;
     }
   }
@@ -64,7 +64,7 @@ void loop() {
 
   /////////////////////////////CRANE//////////////////////////////
 
-   if (!active_crane){
+  if (!active_crane){
     if (PRESS_BUTTON(BUTTON_CRANE, check_crane)) {
       Serial.println("enter to the press button");
       active_crane = true;
@@ -74,19 +74,15 @@ void loop() {
   if (active_crane) {
     //Serial.println("enter to the active motor");
     CRANE();
-    //analogWrite(MOTOR_CRANE_ENA,128);
     if (crane_counter >=  CYCLE_CRANE) {
       Serial.println("enter to the STOP");
       active_crane = false;
       crane_counter = 0;
       servo_crane.write(pos_servo_crane);
-      
-      
-     
     }
     
   }
- 
+
   wdt_reset();
 }
 
