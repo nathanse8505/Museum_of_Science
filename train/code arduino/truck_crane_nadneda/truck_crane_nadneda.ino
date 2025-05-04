@@ -24,6 +24,7 @@ void setup() {
 void loop() {
   
   now = millis();
+  wdt_reset();
 
   ////////////////////////////NADNEDA//////////////////////////
   if (!active_nadneda){
@@ -35,7 +36,7 @@ void loop() {
 
   if (active_nadneda) {
     NADNEDA();
-    //Serial.println("enter to the press button nadneda");
+    //Serial.println("enter to nadneda");
     if (nadneda_counter >=  CYCLE_NADNEDA) {
       active_nadneda = false;
       analogWrite(COIL_NADNEDA, 0);
@@ -83,7 +84,7 @@ void loop() {
     
   }
 
-  wdt_reset();
+  
 }
 
 

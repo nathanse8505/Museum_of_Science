@@ -118,7 +118,7 @@ void NADNEDA(){
     last_pwm_update = now;
     analogWrite(COIL_NADNEDA, pos_pwm);
 
-    if (pos_pwm >= 200 || pos_pwm <= 0) {
+    if (pos_pwm >= 255 || pos_pwm <= 0) {
       pwm_step = -pwm_step; // Inverse la direction
     }
     if(pos_pwm == 0){
