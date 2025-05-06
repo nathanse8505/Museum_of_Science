@@ -8,15 +8,14 @@
 Servo servo_truck;
 Servo servo_crane;
 
-
-#define BUTTON_TRUCK   7 // Entrée analogique
-#define BUTTON_NADNEDA 9 // Entrée analogique
-#define BUTTON_CRANE   8 // Entrée analogique
-
-
+#define SERVO_CRANE   2
 #define COIL_NADNEDA  3
 #define SERVO_TRUCK   5
-#define SERVO_CRANE  2
+
+#define BUTTON_TRUCK   7 
+#define BUTTON_CRANE   8 
+#define BUTTON_NADNEDA 9 
+
 
 
 
@@ -29,14 +28,14 @@ Servo servo_crane;
  *                   RXD-|       |-GND 
  *                   RST-|       |-RST
  *                   GND-|       |-+5V 
- *     BUTTON_TRUCK   D2-|       |-A7
- *     MOTOR_TRUCK_1  D3-|       |-A6
- *     BUTTON_CRANE   D4-|       |-A5 
- *     MOTOR_TRUCK_2  D5-|       |-A4 
- *   MOTOR CRANE_1    D6-|       |-A3
- *   MOTOR CRANE_2    D7-|       |-A2
- *                    D8-|       |-A1
- *                    D9-|       |-A0
+ *      SERVO_CRANE   D2-|       |-A7
+ *      COIL_NADNEDA  D3-|       |-A6
+ *                    D4-|       |-A5 
+ *      SERVO_TRUCK   D5-|       |-A4 
+ *                    D6-|       |-A3
+ *    BUTTON_TRUCK    D7-|       |-A2
+ *    BUTTON_CRANE    D8-|       |-A1
+ *    BUTTON_NADNEDA  D9-|       |-A0
  *                   D10-|       |-Ref
  *                   D11-|       |-3.3V
  *                   D12-|       |-D13  
@@ -45,50 +44,63 @@ Servo servo_crane;
 
 const uint16_t BOUNCE_TIME = 50;
 const uint16_t BAUDERATE = 9600;
-const int ITERATION = 10;
 bool check_truck = LOW;
 bool check_crane = LOW;
 bool check_nadneda = LOW;
 unsigned long now = 0;
 
-// Variables pour le truck
-bool active_truck = false;
-unsigned long last_truck_update = 0;
-const unsigned long TRUCK_TIME_INTERVAL = 20; // ms
-int pos_servo_truck = 90;
-int truck_step = 1;
-int bounce_counter = 0;
-bool bounce_phase = false;
-bool descending_to_90 = false;
-
-// Variables pour la nadneda
-bool active_nadneda = false;
-unsigned long last_pwm_update = 0;
-const unsigned long PWM_INTERVAL = 7; // ms
-const int CYCLE_NADNEDA = 5;
-int nadneda_counter = 0;
-int pos_pwm = 0;
-int pwm_step = 1;
 
 
+// Variables for nadneda
+bool active_nadneda = false;                // Flag indicating if nadneda is active
+unsigned long last_pwm_update = 0;          // Timer to control PWM update frequency
+int nadneda_counter = 0;                    // Counter for the number of complete PWM oscillation cycles
+int pos_pwm = 0;                            // Current PWM value
+int pwm_step = 1;                           // PWM increment or decrement step
+
+// Constants for nadneda PWM control
+const unsigned long PWM_INTERVAL = 7;       // Time in milliseconds between PWM updates
+const int CYCLE_NADNEDA = 5;                // Number of desired oscillation cycles (not used directly in function)
+const int MAX_PWM = 255;                    // Maximum PWM value
+const int MIN_PWM = 0;                      // Minimum PWM value
 
 
-// Variables pour le crane
-bool active_crane = false;
-unsigned long last_crane_update = 0;
-const unsigned long CRANE_SPEED_INTERVAL = 25; // ms
-const int CYCLE_CRANE = 1;
-int crane_counter = 0;
+// Variables for truck
+bool active_truck = false;                  // Flag indicating if the truck is active
+unsigned long last_truck_update = 0;        // Timer to control the update rate of the truck servo
+int pos_servo_truck = 90;                   // Current angle position of the truck servo
+int truck_step = 1;                         // Step increment or decrement for servo movement
+int bounce_counter = 0;                     // Counter for the number of remaining bounce cycles
+bool bounce_phase = false;                  // Flag indicating if the servo is in bounce mode (between 160° and 180°)
+bool descending_to_min_angle = false;       // Flag indicating if the servo is descending toward 90° after bouncing
 
-//////servo crane//////
-int pos_servo_crane = 10;
-int crane_step = 1;
-bool ascending_to_max_angle = true;
-bool pausing_at_max_angle = false;
-unsigned long pause_start_time = 0; // Temps où on arrive à 180°
-const unsigned long PAUSE_AT_MAX_ANGLE = 2000; // Temps de pause en ms sur max angle (ex: 2 secondes)
-const int MAX_ANGLE = 130;
-const int MIN_ANGLE = 10;
+// Constants for truck servo control
+const unsigned long TRUCK_TIME_INTERVAL = 20; // Time in milliseconds between servo updates
+const int MAX_ANGLE_TRUCK = 180;              // Maximum angle the truck should reach
+const int MIN_ANGLE_TRUCK = 90;               // Minimum angle the truck should return to
+const int ANGLE_BOUNCE = 160;                 // Intermediate bounce angle during bouncing
+const int NUM_OF_BOUNCE = 4;                  // Number of bounce cycles before descending
+
+
+
+
+// Variables for crane
+bool active_crane = false;                // Flag indicating if the crane is active
+unsigned long last_crane_update = 0;      // Timer to control the update rate of the servo
+int pos_servo_crane = 10;                 // Current angle position of the crane servo
+int crane_step = 1;                       // Step increment or decrement for servo movement
+int crane_counter = 0;                    // Counter to track how many full cycles the crane has completed
+bool ascending_to_max_angle = true;       // Flag indicating if the crane is currently ascending
+bool pausing_at_max_angle = false;        // Flag indicating if the crane is in pause state at max angle
+unsigned long pause_start_time = 0;       // Timestamp when the pause at max angle started
+
+// Constants for crane servo control
+const int CYCLE_CRANE = 1;                         // Number of up-down cycles to perform (not used directly in CRANE function)
+const unsigned long PAUSE_AT_MAX_ANGLE = 2000;     // Duration in milliseconds to pause at max angle (e.g. 2 seconds)
+const int MAX_ANGLE_CRANE = 130;                   // Maximum angle the crane should reach
+const int MIN_ANGLE_CRANE = 10;                    // Minimum angle the crane should reach
+const unsigned long CRANE_SPEED_INTERVAL = 25;     // Time in milliseconds between servo updates (controls speed)
+
 
 
 
@@ -111,115 +123,113 @@ bool PRESS_BUTTON(int IO , bool check) {
 }
 
 
-void NADNEDA(){
-  // Gestion de la bobine
+void NADNEDA() {
+  // Handle the coil PWM
   if (now - last_pwm_update >= PWM_INTERVAL) {
-    pos_pwm += pwm_step;
+    pos_pwm += pwm_step;              // Update PWM position
     last_pwm_update = now;
-    analogWrite(COIL_NADNEDA, pos_pwm);
+    analogWrite(COIL_NADNEDA, pos_pwm); // Send PWM signal to the coil
 
-    if (pos_pwm >= 255 || pos_pwm <= 0) {
-      pwm_step = -pwm_step; // Inverse la direction
+    if (pos_pwm >= MAX_PWM || pos_pwm <= MIN_PWM) {
+      pwm_step = -pwm_step;           // Reverse direction at limits
     }
-    if(pos_pwm == 0){
-      nadneda_counter++;
+
+    if (pos_pwm == MIN_PWM) {
+      nadneda_counter++;              // Count full oscillation cycles
     }
-    
-    
   }
-
 }
 
-
-void TRUCK(){
+void TRUCK() {
+  // Handle truck servo movement
   if (now - last_truck_update >= TRUCK_TIME_INTERVAL) {
     last_truck_update = now;
-    servo_truck.write(pos_servo_truck);
-    //Serial.println(pos_servo_truck);
+    servo_truck.write(pos_servo_truck); // Update servo position
 
     if (bounce_phase) {
+      // During bounce phase between ANGLE_BOUNCE° and MAX_ANGLE
       pos_servo_truck += truck_step;
-      if (pos_servo_truck >= 180) {
-        truck_step = -1;
+      if (pos_servo_truck >= MAX_ANGLE_TRUCK) {
+        truck_step = -1; // Start descending
       } 
-      else if (pos_servo_truck <= 160) {
-        bounce_counter--;
+      else if (pos_servo_truck <= ANGLE_BOUNCE) {
+        bounce_counter--; // One bounce completed
         if (bounce_counter > 0) {
-          truck_step = 1;
+          truck_step = 1; // Go up again for another bounce
         } 
         else {
-          bounce_phase = false;
-          descending_to_90 = true;
+          bounce_phase = false;             // End of bouncing
+          descending_to_min_angle = true;   // Start descending to 90°
           truck_step = -1;
         }
       }
     }
-    else if (descending_to_90) {
+    else if (descending_to_min_angle) {
+      // After bouncing, go down to min angle
       pos_servo_truck += truck_step;
-      if (pos_servo_truck <= 90) {
-        descending_to_90 = false;
+      if (pos_servo_truck <= MIN_ANGLE_TRUCK) {
+        descending_to_min_angle = false; // End of sequence
         truck_step = 1;
       }
     }
     else {
+      // Regular upward motion from min to max angle
       pos_servo_truck += truck_step;
-      if (pos_servo_truck >= 180) {
-        bounce_phase = true;
-        bounce_counter = 4;
+      if (pos_servo_truck >= MAX_ANGLE_TRUCK) {
+        bounce_phase = true;            // Start bounce phase
+        bounce_counter = NUM_OF_BOUNCE; // Set number of bounces
         truck_step = -1;
       }
     }
   }
-
-  
 }
 
+
 void CRANE() {
+  // Handle crane servo movement
   if (now - last_crane_update >= CRANE_SPEED_INTERVAL) {
     last_crane_update = now;
 
     if (pausing_at_max_angle) {
-      // Phase d'attente à 180°
+      // Waiting phase at MAX_ANGLE_CRANE
       if (now - pause_start_time >= PAUSE_AT_MAX_ANGLE) {
-        // Fin de la pause, commencer à descendre
+        // End of pause, start descending
         pausing_at_max_angle = false;
         ascending_to_max_angle = false;
         crane_step = -1;
       }
-      return; // Pendant la pause, ne rien faire d'autre
+      return; // Do nothing else during pause
     }
 
-    servo_crane.write(pos_servo_crane); // Mise à jour de la position actuelle
-    //Serial.println(pos_servo_crane);
+    servo_crane.write(pos_servo_crane); // Update servo position
 
     if (ascending_to_max_angle) {
-      // Monter vers 180°
+      // Ascend toward MAX_ANGLE_CRANE
       pos_servo_crane += crane_step;
-      if (pos_servo_crane >= MAX_ANGLE) {
-        pos_servo_crane = MAX_ANGLE; // Fixer précisément à 180°
-        servo_crane.write(pos_servo_crane);
+      if (pos_servo_crane >= MAX_ANGLE_CRANE) {
+        pos_servo_crane = MAX_ANGLE_CRANE; // Clamp to max angle
+        servo_crane.write(pos_servo_crane); // Apply final position
 
-        // Démarrer la pause
+        // Start pause at top
         pausing_at_max_angle = true;
         pause_start_time = now;
       }
     } 
     else {
-      // Descendre vers 90°
+      // Descend toward MIN_ANGLE_CRANE
       pos_servo_crane += crane_step;
-      if (pos_servo_crane <= MIN_ANGLE) {
-        pos_servo_crane = MIN_ANGLE; // Fixer précisément à 90°
-        servo_crane.write(pos_servo_crane);
+      if (pos_servo_crane <= MIN_ANGLE_CRANE) {
+        pos_servo_crane = MIN_ANGLE_CRANE; // Clamp to min angle
+        servo_crane.write(pos_servo_crane); // Apply final position
 
-        ascending_to_max_angle = true; // Préparer la montée pour le prochain cycle
+        ascending_to_max_angle = true; // Prepare next cycle
         crane_step = 1;
-        crane_counter++; // Cycle complet terminé
-        //Serial.print("Crane Cycle Counter: ");
-        //Serial.println(crane_counter);
+        crane_counter++; // One full up-down cycle complete
       }
     }
   }
 }
+
 
 
 

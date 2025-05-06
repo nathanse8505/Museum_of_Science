@@ -6,8 +6,6 @@ void setup() {
   pinMode(BUTTON_CRANE, INPUT_PULLUP);
   pinMode(BUTTON_NADNEDA, INPUT_PULLUP);
 
-  
-  //pinMode(MOTOR_TRUCK_L, OUTPUT);
   servo_truck.attach(SERVO_TRUCK); // pin de signal
   pinMode(COIL_NADNEDA, OUTPUT);
   servo_crane.attach(SERVO_CRANE);
@@ -56,7 +54,7 @@ void loop() {
   if (active_truck) {
     //Serial.println("enter to the active motor");
     TRUCK();
-    if (pos_servo_truck == 90) {
+    if (pos_servo_truck ==  MIN_ANGLE_TRUCK) {
       active_truck = false;
       servo_truck.write(pos_servo_truck); // Stop position (optional)
      
@@ -83,7 +81,6 @@ void loop() {
     }
     
   }
-
   
 }
 
