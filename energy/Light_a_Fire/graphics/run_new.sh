@@ -1,10 +1,11 @@
 #!/bin/bash
 
+# === S'assure que le script est exécutable ===
+chmod +x "$0"
+
 # === Chemins ===
 PROJECT_DIR="$HOME/Desktop/light_a_fire/New"
 MAIN_SCRIPT="$PROJECT_DIR/main.py"
-AUTOSTART_FILE="$HOME/.config/lxsession/LXDE-pi/autostart"
-AUTOSTART_CMD="@bash -c 'sleep 20 && $PROJECT_DIR/run.sh &'"
 
 echo "📁 Projet : $PROJECT_DIR"
 
@@ -34,15 +35,26 @@ else
     echo "❌ Le fichier $MAIN_SCRIPT est introuvable."
 fi
 
-# === Ajout au démarrage automatique si absent ===
-#echo "⚙️ Vérification de l'autostart..."
-#mkdir -p "$(dirname "$AUTOSTART_FILE")"
+# === Ajout au démarrage automatique via fichier .desktop ===
+DESKTOP_ENTRY_DIR="$HOME/.config/autostart"
+DESKTOP_ENTRY_FILE="$DESKTOP_ENTRY_DIR/run_light_a_fire.desktop"
 
-#if grep -Fxq "$AUTOSTART_CMD" "$AUTOSTART_FILE"; then
-#    echo "✅ Ligne déjà présente dans autostart."
-#else
-#    echo "$AUTOSTART_CMD" >> "$AUTOSTART_FILE"
-#    echo "✅ Ajouté à autostart : $AUTOSTART_CMD"
-#fi
+echo "🖥️ Vérification du fichier .desktop de démarrage..."
+
+mkdir -p "$DESKTOP_ENTRY_DIR"
+
+if [ -f "$DESKTOP_ENTRY_FILE" ]; then
+    echo "✅ Fichier .desktop déjà présent : $DESKTOP_ENTRY_FILE"
+else
+    echo "🛠️ Création du fichier .desktop..."
+    cat > "$DESKTOP_ENTRY_FILE" <<EOL
+[Desktop Entry]
+Type=Application
+Name=Run Light A Fire Script
+Exec=lxterminal -e "$PROJECT_DIR/run.sh"
+X-GNOME-Autostart-enabled=true
+EOL
+    echo "✅ Fichier .desktop créé : $DESKTOP_ENTRY_FILE"
+fi
 
 echo "🎉 Script terminé avec succès."
