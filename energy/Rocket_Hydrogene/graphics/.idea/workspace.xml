@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88b5a91d-6db4-46e7-872f-231a487775dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/constants.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/code arduino/horsepower_nathan2/horsepower_nathan2_old.ino" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Horsepower/graphics/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../Horsepower/graphics/run.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_with_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_with_sound.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +48,7 @@
   <component name="RunManager" selected="Python.main">
     <configuration name="change_pic" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -69,6 +70,7 @@
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -90,6 +92,7 @@
     </configuration>
     <configuration name="main_with_sound" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Museum_of_sience_energy" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>

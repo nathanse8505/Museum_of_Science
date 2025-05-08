@@ -100,21 +100,22 @@ bool check_charge() {
    return charge >= MIN_CHARGE;
 }
 
-bool checkSerialCommand() {
+bool Check_Ignite_Serial() {
   static String input = "";
 
   while (Serial.available()) {
     char c = Serial.read();
-    if (c == '\n') {
-      input.trim();
-      if (input == "ignite") {
+    if (c == '\n') {          //if we arrive to the lest letter
+      input.trim();           //delete /n and space in the string
+      if (input == "ignite") {//check ignite
         ignite();
-        input = "";  // 🔁 Clear après traitement
-        return false;  // → on éteint ready_sound
+        input = "";           // 🔁 Clear après traitement
+        return false;         // → on éteint ready_sound
       }
-      input = "";  // 🔁 Reset même si la commande n'est pas valide
-    } else {
-      input += c;
+      input = "";             // 🔁 Reset if the data is not valid valide
+    } 
+    else {
+      input += c;             //add an aother letter to input
     }
   }
 

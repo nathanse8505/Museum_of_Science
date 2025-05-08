@@ -38,7 +38,7 @@ void loop() {
   reset_watchdog();
 
   if(ready_sound){
-    ready_sound = checkSerialCommand();
+    ready_sound = Check_Ignite_Serial();
   }
 
   if (millis() - last_display_time >= DISPLAY_INTERVAL_TIME) {

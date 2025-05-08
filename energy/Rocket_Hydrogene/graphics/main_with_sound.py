@@ -22,6 +22,7 @@ def main():
     # initial values for the UI
     language = HEBREW
     previous_language = HEBREW
+    previous_sound_ready = False
     charge = 0.0
     current = 0.0
     state = OPENING
@@ -117,6 +118,12 @@ def main():
                     else:
                         logger.info("Failed to send 'ignite' command. Serial port might be closed or unavailable.")
                     music_playing = False  # Réinitialiser l'état de la musique
+
+                if previous_sound_ready and not sound_ready:
+                    logger.info("🚀 The rocket has ignited")
+                    print("🚀 The rocket has ignited")
+
+                previous_sound_ready = sound_ready  # Met à jour l'état précédent
 
             state = MEASURE if current >= SWITCH_TO_MEASURE_SCREEN_CURRENT_THRESHOLD else OPENING  # if you got data, change the screen automatically based on the current value
 
