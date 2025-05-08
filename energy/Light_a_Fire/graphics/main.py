@@ -47,6 +47,7 @@ def main():
     last_time_tried_to_connect = time.time()  # for not trying to connect too often
 
     running = True
+    sensor_off = False
 
     #moyenne temperature
     temperature_list = []
@@ -76,7 +77,7 @@ def main():
             logger.info("Arduino disconnected. Trying to reconnect to Arduino...")
 
             ser = None
-            temperature = MIN_TEMPERATURE_DEFAULT
+            temperature_to_display = MIN_TEMPERATURE_DEFAULT
             state = MEASURE
 
         # if arduino was connecetd at start, but now failed to read, try to reconnect
@@ -88,8 +89,14 @@ def main():
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
             temperature, sensor_analogread, error = parse_data(data_from_arduino, logger=logger)
-            # print(f"parsed: pressure {temperature} sensor_analogread {sensor_analogread}")
-            
+            #print(f"parsed: pressure {temperature} sensor_analogread {sensor_analogread} error {error}")
+            if sensor_analogread == 1023:
+                if not sensor_off:
+                    print("the sensor is disconected")
+                    logger.info("the sensor is disconected")
+                    sensor_off = True
+                temperature_to_display = TEMPERATURE_SENSOR_OFF
+                error = PARSE_ERROR
             if not error:
                 temperature_to_display = temperature
                 #temperature_list, temperature_to_display = avg_batch(temperature_list,temperature,temperature_to_display)

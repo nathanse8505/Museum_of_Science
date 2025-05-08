@@ -712,3 +712,8 @@ Image processed successfully.
 2025-04-08 16:15:52 - Starting Droping Drops UI
 2025-04-08 16:15:52 - Error: Arduino not found
 2025-04-08 16:16:42 - Error deleting folder: [WinError 2] The system cannot find the file specified: 'C:\\Users\\nathans\\Desktop\\Museum_of_Science\\The freedom to create\\droping_drops\\code\\camera\\nathan\\pictures_from_camera'
+2025-05-08 18:00:03 - Starting Droping Drops UI
+2025-05-08 18:00:03 - Error: Arduino not found
+2025-05-08 18:00:20 - Starting Droping Drops UI
+2025-05-08 18:00:20 - Error: Arduino not found
+2025-05-08 18:00:29 - Error deleting folder: [WinError 2] The system cannot find the file specified: 'C:\\Users\\nathans\\Desktop\\Museum_of_Science\\The freedom to create\\droping_drops\\code\\camera\\nathan\\pictures_from_camera'

@@ -72,3 +72,212 @@
 2025-04-14 15:43:51 - Error: Arduino not found
 2025-04-14 15:45:03 - Starting Light a Fire UI
 2025-04-14 15:45:03 - Error: Arduino not found
+2025-05-08 18:00:39 - Starting Light a Fire UI
+2025-05-08 18:00:39 - Error: Arduino not found
+2025-05-08 18:02:31 - Starting Light a Fire UI
+2025-05-08 18:02:31 - Found Arduino! port: COM1
+2025-05-08 18:02:31 - Connected to COM1
+2025-05-08 18:03:05 - Starting Light a Fire UI
+2025-05-08 18:03:05 - Found Arduino! port: COM1
+2025-05-08 18:03:05 - Connected to COM1
+2025-05-08 18:04:26 - Starting Light a Fire UI
+2025-05-08 18:04:26 - Found Arduino! port: COM1
+2025-05-08 18:04:26 - Connected to COM1
+2025-05-08 18:05:21 - Starting Light a Fire UI
+2025-05-08 18:05:21 - Found Arduino! port: COM4
+2025-05-08 18:05:21 - Connected to COM4
+2025-05-08 18:06:55 - Starting Light a Fire UI
+2025-05-08 18:06:55 - Found Arduino! port: COM4
+2025-05-08 18:06:55 - Connected to COM4
+2025-05-08 18:08:46 - Starting Light a Fire UI
+2025-05-08 18:08:46 - Found Arduino! port: COM4
+2025-05-08 18:08:46 - Connected to COM4
+2025-05-08 18:12:20 - Starting Light a Fire UI
+2025-05-08 18:12:20 - Found Arduino! port: COM4
+2025-05-08 18:12:20 - Connected to COM4
+2025-05-08 18:12:22 - the sensor is disconected
+2025-05-08 18:12:22 - the sensor is disconected
+2025-05-08 18:12:22 - the sensor is disconected
+2025-05-08 18:12:22 - the sensor is disconected
+2025-05-08 18:12:22 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:23 - the sensor is disconected
+2025-05-08 18:12:24 - the sensor is disconected
+2025-05-08 18:12:24 - the sensor is disconected
+2025-05-08 18:12:24 - the sensor is disconected
+2025-05-08 18:12:24 - the sensor is disconected
+2025-05-08 18:12:24 - the sensor is disconected
+2025-05-08 18:12:25 - the sensor is disconected
+2025-05-08 18:12:25 - the sensor is disconected
+2025-05-08 18:12:25 - the sensor is disconected
+2025-05-08 18:12:25 - the sensor is disconected
+2025-05-08 18:12:25 - the sensor is disconected
+2025-05-08 18:12:25 - the sensor is disconected
+2025-05-08 18:12:26 - the sensor is disconected
+2025-05-08 18:12:26 - the sensor is disconected
+2025-05-08 18:12:26 - the sensor is disconected
+2025-05-08 18:12:26 - the sensor is disconected
+2025-05-08 18:12:26 - the sensor is disconected
+2025-05-08 18:12:26 - the sensor is disconected
+2025-05-08 18:12:27 - the sensor is disconected
+2025-05-08 18:12:27 - the sensor is disconected
+2025-05-08 18:12:27 - the sensor is disconected
+2025-05-08 18:12:27 - the sensor is disconected
+2025-05-08 18:12:27 - the sensor is disconected
+2025-05-08 18:12:27 - the sensor is disconected
+2025-05-08 18:12:28 - the sensor is disconected
+2025-05-08 18:12:28 - the sensor is disconected
+2025-05-08 18:12:28 - the sensor is disconected
+2025-05-08 18:12:28 - the sensor is disconected
+2025-05-08 18:12:28 - the sensor is disconected
+2025-05-08 18:12:28 - the sensor is disconected
+2025-05-08 18:12:29 - the sensor is disconected
+2025-05-08 18:12:29 - the sensor is disconected
+2025-05-08 18:12:29 - the sensor is disconected
+2025-05-08 18:12:29 - the sensor is disconected
+2025-05-08 18:12:29 - the sensor is disconected
+2025-05-08 18:12:29 - the sensor is disconected
+2025-05-08 18:12:30 - the sensor is disconected
+2025-05-08 18:12:30 - the sensor is disconected
+2025-05-08 18:12:30 - the sensor is disconected
+2025-05-08 18:12:30 - the sensor is disconected
+2025-05-08 18:16:31 - Starting Light a Fire UI
+2025-05-08 18:16:31 - Found Arduino! port: COM4
+2025-05-08 18:16:31 - Connected to COM4
+2025-05-08 18:16:34 - the sensor is disconected
+2025-05-08 18:17:19 - Starting Light a Fire UI
+2025-05-08 18:17:19 - Found Arduino! port: COM4
+2025-05-08 18:17:19 - Connected to COM4
+2025-05-08 18:17:22 - the sensor is disconected
+2025-05-08 18:20:40 - Starting Light a Fire UI
+2025-05-08 18:20:40 - Found Arduino! port: COM4
+2025-05-08 18:20:40 - Connected to COM4
+2025-05-08 18:20:42 - the sensor is disconected
+2025-05-08 18:20:53 - Starting Light a Fire UI
+2025-05-08 18:20:53 - Found Arduino! port: COM4
+2025-05-08 18:20:53 - Connected to COM4
+2025-05-08 18:20:56 - the sensor is disconected
+2025-05-08 18:22:26 - Starting Light a Fire UI
+2025-05-08 18:22:26 - Found Arduino! port: COM4
+2025-05-08 18:22:26 - Connected to COM4
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:28 - the sensor is disconected
+2025-05-08 18:22:29 - the sensor is disconected
+2025-05-08 18:22:29 - the sensor is disconected
+2025-05-08 18:22:29 - the sensor is disconected
+2025-05-08 18:22:29 - the sensor is disconected
+2025-05-08 18:22:29 - the sensor is disconected
+2025-05-08 18:22:29 - the sensor is disconected
+2025-05-08 18:22:30 - the sensor is disconected
+2025-05-08 18:22:30 - the sensor is disconected
+2025-05-08 18:22:30 - the sensor is disconected
+2025-05-08 18:22:30 - the sensor is disconected
+2025-05-08 18:22:30 - the sensor is disconected
+2025-05-08 18:22:31 - the sensor is disconected
+2025-05-08 18:22:31 - the sensor is disconected
+2025-05-08 18:22:31 - the sensor is disconected
+2025-05-08 18:22:31 - the sensor is disconected
+2025-05-08 18:22:31 - the sensor is disconected
+2025-05-08 18:22:31 - the sensor is disconected
+2025-05-08 18:22:32 - the sensor is disconected
+2025-05-08 18:22:32 - the sensor is disconected
+2025-05-08 18:22:32 - the sensor is disconected
+2025-05-08 18:22:32 - the sensor is disconected
+2025-05-08 18:22:32 - the sensor is disconected
+2025-05-08 18:22:32 - the sensor is disconected
+2025-05-08 18:22:33 - the sensor is disconected
+2025-05-08 18:22:33 - the sensor is disconected
+2025-05-08 18:22:33 - the sensor is disconected
+2025-05-08 18:22:33 - the sensor is disconected
+2025-05-08 18:22:33 - the sensor is disconected
+2025-05-08 18:22:33 - the sensor is disconected
+2025-05-08 18:22:34 - the sensor is disconected
+2025-05-08 18:22:34 - the sensor is disconected
+2025-05-08 18:22:34 - the sensor is disconected
+2025-05-08 18:22:34 - the sensor is disconected
+2025-05-08 18:22:34 - the sensor is disconected
+2025-05-08 18:22:34 - the sensor is disconected
+2025-05-08 18:22:35 - the sensor is disconected
+2025-05-08 18:22:35 - the sensor is disconected
+2025-05-08 18:22:35 - the sensor is disconected
+2025-05-08 18:22:35 - the sensor is disconected
+2025-05-08 18:22:35 - the sensor is disconected
+2025-05-08 18:22:35 - the sensor is disconected
+2025-05-08 18:22:36 - the sensor is disconected
+2025-05-08 18:22:36 - the sensor is disconected
+2025-05-08 18:22:36 - the sensor is disconected
+2025-05-08 18:22:36 - the sensor is disconected
+2025-05-08 18:22:36 - the sensor is disconected
+2025-05-08 18:22:37 - the sensor is disconected
+2025-05-08 18:22:37 - the sensor is disconected
+2025-05-08 18:22:37 - the sensor is disconected
+2025-05-08 18:22:37 - the sensor is disconected
+2025-05-08 18:22:37 - the sensor is disconected
+2025-05-08 18:22:37 - the sensor is disconected
+2025-05-08 18:22:38 - the sensor is disconected
+2025-05-08 18:22:38 - the sensor is disconected
+2025-05-08 18:22:38 - the sensor is disconected
+2025-05-08 18:22:38 - the sensor is disconected
+2025-05-08 18:22:38 - the sensor is disconected
+2025-05-08 18:22:38 - the sensor is disconected
+2025-05-08 18:22:39 - the sensor is disconected
+2025-05-08 18:22:39 - the sensor is disconected
+2025-05-08 18:22:39 - the sensor is disconected
+2025-05-08 18:22:39 - the sensor is disconected
+2025-05-08 18:22:39 - the sensor is disconected
+2025-05-08 18:22:39 - the sensor is disconected
+2025-05-08 18:22:40 - the sensor is disconected
+2025-05-08 18:22:40 - the sensor is disconected
+2025-05-08 18:22:40 - the sensor is disconected
+2025-05-08 18:22:40 - the sensor is disconected
+2025-05-08 18:22:40 - the sensor is disconected
+2025-05-08 18:22:40 - the sensor is disconected
+2025-05-08 18:22:41 - the sensor is disconected
+2025-05-08 18:22:41 - the sensor is disconected
+2025-05-08 18:22:41 - the sensor is disconected
+2025-05-08 18:22:41 - the sensor is disconected
+2025-05-08 18:22:41 - the sensor is disconected
+2025-05-08 18:22:41 - the sensor is disconected
+2025-05-08 18:22:42 - the sensor is disconected
+2025-05-08 18:22:42 - the sensor is disconected
+2025-05-08 18:22:42 - the sensor is disconected
+2025-05-08 18:22:42 - the sensor is disconected
+2025-05-08 18:22:42 - the sensor is disconected
+2025-05-08 18:22:43 - the sensor is disconected
+2025-05-08 18:22:43 - the sensor is disconected
+2025-05-08 18:22:43 - the sensor is disconected
+2025-05-08 18:25:55 - Starting Light a Fire UI
+2025-05-08 18:25:55 - Found Arduino! port: COM4
+2025-05-08 18:25:55 - Connected to COM4
+2025-05-08 18:26:20 - Starting Light a Fire UI
+2025-05-08 18:26:20 - Found Arduino! port: COM4
+2025-05-08 18:26:20 - Connected to COM4
+2025-05-08 18:26:23 - the sensor is disconected
+2025-05-08 18:27:02 - Starting Light a Fire UI
+2025-05-08 18:27:02 - Found Arduino! port: COM4
+2025-05-08 18:27:02 - Connected to COM4
+2025-05-08 18:27:04 - the sensor is disconected
+2025-05-08 18:30:29 - Starting Light a Fire UI
+2025-05-08 18:30:29 - Found Arduino! port: COM4
+2025-05-08 18:30:29 - Connected to COM4
+2025-05-08 18:30:32 - the sensor is disconected
+2025-05-08 18:30:42 - Error reading from serial, Arduino probably disconnected
+2025-05-08 18:30:42 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 18:30:42 - Error: Arduino not found
+2025-05-08 18:30:54 - Found Arduino! port: COM4
+2025-05-08 18:30:54 - Connected to COM4
+2025-05-08 18:31:13 - Error reading from serial, Arduino probably disconnected
+2025-05-08 18:31:13 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 18:31:13 - Error: Arduino not found

@@ -18,7 +18,7 @@ def find_arduino_port(logger=None):
     for port in ports:
         # Check if the device description matches an Arduino
         # print(f"port: {port}")
-        if "Arduino" in port.description or "ttyUSB" in port.device or "ttyACM" in port.device or "COM3" in port.device: # Support for Windows:
+        if "Arduino" in port.description or "ttyUSB" in port.device or "ttyACM" in port.device or "COM4" in port.device: # Support for Windows:
             print(f"Found Arduino on port {port.device}")
             if logger:
                 logger.info(f"Found Arduino! port: {port.device}")
