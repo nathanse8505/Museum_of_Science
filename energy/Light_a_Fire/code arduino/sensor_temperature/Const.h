@@ -45,6 +45,13 @@ int Digit_2_To_Display = 0;// Mid right (10th) digit to disply  - used as units
 int Digit_1_To_Display = 0;// rigth (external unit) digit to disply - not used for winf tunnel
 ///////////////////////////////////////////////
 
+/////////////average//////////////////
+const int AVG_WINDOW_SIZE  = 20;
+float temperatureBuffer[AVG_WINDOW_SIZE];
+int bufferIndex = 0;
+bool bufferFull = false;
+
+
 ////////////language/////////
 int const  BOUNCE_TIME = 100; //ms
 uint8_t lang = 0;  // 0 - hebrew, 1 - english, 2 - arabic
@@ -52,7 +59,8 @@ bool check_lang = LOW;// used for checking if lang button was released
 ////////////////////////////////////
 
 const float  R1 = 10000;
-const float A = 0.6097111451e-03, B = 3.133225362e-04, C = -1.811070168e-07; //
+//const float A = 0.6097111451e-03, B = 3.133225362e-04, C = -1.811070168e-07; //
+const float A = -2.425181458e-03, B =8.101790945e-04, C = -21.03109194e-07; //
 
 int Vout;
 float R2;

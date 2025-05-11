@@ -139,5 +139,23 @@ bool PRESS_BUTTON_LANG() {
 }
 
 
+float rolling_average(float newTemp) {
+  // save the new measure
+  temperatureBuffer[bufferIndex++] = newTemp;
+  if (bufferIndex >= AVG_WINDOW_SIZE) {
+    bufferIndex = 0;
+    bufferFull = true;
+  }
+
+  float sum = 0;
+  int count = bufferFull ? AVG_WINDOW_SIZE : bufferIndex;
+  for (int i = 0; i < count; i++) {
+    sum += temperatureBuffer[i];
+  }
+
+  return sum / count;
+}
+
+
 
 #endif

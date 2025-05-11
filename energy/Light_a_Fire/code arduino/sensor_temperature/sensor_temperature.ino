@@ -20,12 +20,12 @@ void loop() {
   Vout = analogRead(ThermistorPin);
   temperature_C = read_temperature(Vout);
   
-  
+  float avg_temp = rolling_average( temperature_C);
 
   
   if(millis() - timer > DATA_SER){
-      NUMBER_TO_DISPLAY(temperature_C);
-      Serial.println(String(temperature_C) + " " + String(Vout));
+      NUMBER_TO_DISPLAY( avg_temp);
+      Serial.println(String(avg_temp) + " " + String(Vout));
       timer = millis();
   }
   
