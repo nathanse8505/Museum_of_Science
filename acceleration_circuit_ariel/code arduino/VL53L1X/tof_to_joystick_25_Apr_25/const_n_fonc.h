@@ -52,7 +52,8 @@ VL53L1X tof;
 
 const int LOOP_MS =	20;
 const int TOF_MAX_VALUE = 3000;
-const int JOYSTICK_MAX_VALUE = 16000;
+const int JOYSTICK_MIN_VALUE = 12000;
+const int JOYSTICK_MAX_VALUE = 20000;
 const int RST_WDT = 5000;
 
 int16_t dist = 0;

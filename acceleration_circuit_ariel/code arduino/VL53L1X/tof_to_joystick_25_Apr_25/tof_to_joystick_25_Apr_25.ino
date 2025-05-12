@@ -13,7 +13,7 @@ void setup()
 void loop()
 {
   dist = tof.read();
-  sensor_to_joystick = map(dist, 0, TOF_MAX_VALUE, 0, JOYSTICK_MAX_VALUE);
+  sensor_to_joystick = map(dist, 0, TOF_MAX_VALUE, JOYSTICK_MIN_VALUE, JOYSTICK_MAX_VALUE);
   //test_x = (test_x+100)%JOYSTICK_MAX_VALUE; //test
 
   write_Joystick_X(sensor_to_joystick);
