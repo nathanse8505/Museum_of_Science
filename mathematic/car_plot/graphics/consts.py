@@ -4,6 +4,18 @@ Purpose: Constants for the car plotter exhibit
 """
 import os
 
+FPS = 100
+
+# arduino
+BAUDRATE = 115200
+SERIAL_ERROR = -1
+RECONNECT_INTERVAL = 1  # seconds
+MAX_DISTANCE = 500
+MIN_DISTANCE = -500
+
+PARSE_VALID = 0
+PARSE_ERROR = 1
+
 # screen dimensions
 VIEWPORT = (800, 600)  # default viewport size
 FULLSCREEN = True  # if True, the game will run in fullscreen mode (ignoring the viewport size)

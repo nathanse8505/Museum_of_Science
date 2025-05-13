@@ -50,13 +50,13 @@ VL53L1X sensor;
 const uint16_t BAUDERATE = 9600;
 const uint8_t OUTPUT_PARALLEL_PORT = 8;
 const int outputPins[OUTPUT_PARALLEL_PORT] = {D1, D2, D3, D4, D5, D6, D7, D8}; // Pins de sortie
-const int MAX_DISTANCE = 726;
-const int MIN_DISTANCE = 40;
+const int MAX_DISTANCE = 726;//mm
+const int MIN_DISTANCE = 40;//mm
+const int MAX_DISTANCE_PY = 500;
+const int MIN_DISTANCE_PY = -500;
 const int ITERATION = 10;
 
 float Current_distance;
-int min_value;
-int max_value;
 
 void init_pinmode(){
   for (int i = 0; i < OUTPUT_PARALLEL_PORT; i++) {
@@ -85,9 +85,9 @@ void init_sensor(){
 
 }
 
-int set_distance(int pin){
-  int number = analogRead(pin);
-  int mappedValue = map(number, 0, 1023, MIN_DISTANCE, MAX_DISTANCE); // Mapper de 0-1023 à 0-255
+int map_distance_to_python(int distance){
+  int distance_limited = constrain(distance, MIN_DISTANCE, MAX_DISTANCE);
+  int mappedValue = map(distance_limited,  MIN_DISTANCE, MAX_DISTANCE, MIN_DISTANCE_PY, MAX_DISTANCE_PY); // Mapper de 0-1023 à 0-255
   return  mappedValue;
 }
 

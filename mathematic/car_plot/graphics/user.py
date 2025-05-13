@@ -65,7 +65,7 @@ class User:
             self.position[1] = self.y_range[0]
     
     def set_y(self, y):
-        self.position[1] = y
+        self.position[1] = -y
 
     def add_point(self):
         self.user_points.append(self.position.copy())
@@ -154,6 +154,7 @@ class User:
 
         screen_points = [(int((x - self.x_range[0]) * x_scale),
                           int((y - self.y_range[0]) * y_scale)) for x, y in self.user_points]  # Convert to screen coordinates
+
         pygame.draw.lines(graph_surface, self.color, False, screen_points, self.graph_line_width)  # Draw the line on the graph surface
 
         self.screen.blit(graph_surface, (pos_x, pos_y))  # Blit the graph surface onto the main screen
@@ -163,10 +164,11 @@ class User:
         Draw the lines from the user position to the edges of the graph.
         """
         pos_x, pos_y, width, height = self.sub_surface
-        
+
         pygame.draw.line(self.screen, BLUE, (pos_x + int((self.position[0] - self.x_range[0]) * self.scale[0]),
                                                 pos_y + int((self.position[1] - self.y_range[0]) * self.scale[1])),
                                                 (pos_x, pos_y + int((self.position[1] - self.y_range[0]) * self.scale[1])), 2)
+
         pygame.draw.line(self.screen, BLUE, (pos_x + int((self.position[0] - self.x_range[0]) * self.scale[0]),
                                                 pos_y + int((self.position[1] - self.y_range[0]) * self.scale[1])),
                                                 (pos_x + int((self.position[0] - self.x_range[0]) * self.scale[0]),
@@ -174,7 +176,7 @@ class User:
         
         pygame.draw.circle(self.screen, YELLOW, (pos_x + int((self.position[0] - self.x_range[0]) * self.scale[0]),
                                                 pos_y + int((self.position[1] - self.y_range[0]) * self.scale[1])), 8)
-        
+
         if len(self.user_points) >= self.max_points:
             pygame.draw.line(self.screen, (128, 128, 128), (pos_x + int((self.user_points[-self.max_points][0] - self.x_range[0]) * self.scale[0]),
                                                     pos_y + height),

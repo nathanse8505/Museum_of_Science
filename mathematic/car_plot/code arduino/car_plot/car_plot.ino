@@ -11,11 +11,13 @@ void setup() {
 
 void loop() {
 
-    min_value = MIN_DISTANCE;
-    max_value = MAX_DISTANCE;
     Current_distance = sensor.read();
-    int num = num_to_parallel(Current_distance , min_value , max_value);
+    int num = map_distance_to_python(Current_distance);
+    Serial.println(num);
+    
+    //int num = num_to_parallel(Current_distance , MIN_DISTANCE , MAX_DISTANCE);
     //Serial.println("Current_distance: " + String(Current_distance) + " integer: " + String(num));
+    
     delay(70); // Petite pause pour éviter trop de rafraîchissements
     wdt_reset();
 }
