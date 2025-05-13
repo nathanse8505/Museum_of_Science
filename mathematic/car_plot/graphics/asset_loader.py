@@ -98,9 +98,10 @@ class AssetLoader:
                 pictures[filename.split('.')[0]] = [pygame.transform.scale(
                     pygame.image.load(image_path).convert_alpha(), new_size
                 ), new_pos]
+
             else:
                 print(f"Skipping non-image file: {filename}")
-        
+        print(pictures)
         return pictures
 
 

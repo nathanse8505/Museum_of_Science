@@ -8,7 +8,7 @@
     <content url="file://$MODULE_DIR$" />
     <content url="file://$MODULE_DIR$/../../Rocket_Hydrogene/graphics" />
     <content url="file://$MODULE_DIR$/../../../mathematic/car_plot/graphics" />
-    <orderEntry type="jdk" jdkName="Python 3.13 virtualenv at C:\Users\nathans\Desktop\Museum_of_Science\energy\Light_a_Fire\graphics\.venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

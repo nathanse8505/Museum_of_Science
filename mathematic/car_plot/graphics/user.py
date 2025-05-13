@@ -55,7 +55,7 @@ class User:
         
         return False
 
-    def move_y(self, direction_up=True):
+    def move_y(self, direction_up=True):#for mouse or KEYUP and KEYDOWN
         self.position[1] += -self.step[1] if direction_up else self.step[1]
 
         if self.position[1] > self.y_range[1]:
@@ -64,7 +64,7 @@ class User:
         elif self.position[1] < self.y_range[0]:
             self.position[1] = self.y_range[0]
     
-    def set_y(self, y):
+    def set_y(self, y):#for sensor or joystick
         self.position[1] = -y
 
     def add_point(self):
