@@ -7,7 +7,7 @@ import os
 FPS = 100
 
 # arduino
-BAUDRATE = 9600  
+BAUDRATE = 115200
 SERIAL_ERROR = -1
 RECONNECT_INTERVAL = 1  # seconds
 MAX_DISTANCE = 500

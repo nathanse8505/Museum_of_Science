@@ -130,3 +130,192 @@
 2025-05-14 14:08:54 - Trying to reconnect...
 2025-05-14 14:31:10 - Starting Car Plotter Exhibit
 2025-05-14 14:31:10 - Error: Arduino not found
+2025-05-14 20:09:30 - Starting Car Plotter Exhibit
+2025-05-14 20:09:30 - Error: Arduino not found
+2025-05-14 20:22:10 - Starting Car Plotter Exhibit
+2025-05-14 20:22:10 - Found Arduino! port: COM6
+2025-05-14 20:22:10 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:11 - Found Arduino! port: COM6
+2025-05-14 20:22:11 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:12 - Found Arduino! port: COM6
+2025-05-14 20:22:12 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:13 - Found Arduino! port: COM6
+2025-05-14 20:22:13 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:14 - Found Arduino! port: COM6
+2025-05-14 20:22:14 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:15 - Found Arduino! port: COM6
+2025-05-14 20:22:15 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:16 - Found Arduino! port: COM6
+2025-05-14 20:22:16 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:17 - Found Arduino! port: COM6
+2025-05-14 20:22:17 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:18 - Found Arduino! port: COM6
+2025-05-14 20:22:18 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:19 - Found Arduino! port: COM6
+2025-05-14 20:22:19 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:20 - Found Arduino! port: COM6
+2025-05-14 20:22:20 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:21 - Found Arduino! port: COM6
+2025-05-14 20:22:21 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:22 - Found Arduino! port: COM6
+2025-05-14 20:22:22 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:23 - Found Arduino! port: COM6
+2025-05-14 20:22:23 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:24 - Found Arduino! port: COM6
+2025-05-14 20:22:24 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:25 - Found Arduino! port: COM6
+2025-05-14 20:22:25 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:26 - Found Arduino! port: COM6
+2025-05-14 20:22:26 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:27 - Found Arduino! port: COM6
+2025-05-14 20:22:27 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:28 - Found Arduino! port: COM6
+2025-05-14 20:22:28 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:29 - Found Arduino! port: COM6
+2025-05-14 20:22:29 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:30 - Found Arduino! port: COM6
+2025-05-14 20:22:30 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:31 - Found Arduino! port: COM6
+2025-05-14 20:22:31 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:32 - Found Arduino! port: COM6
+2025-05-14 20:22:32 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:33 - Found Arduino! port: COM6
+2025-05-14 20:22:33 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:35 - Found Arduino! port: COM6
+2025-05-14 20:22:35 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:36 - Found Arduino! port: COM6
+2025-05-14 20:22:36 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:37 - Found Arduino! port: COM6
+2025-05-14 20:22:37 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:38 - Found Arduino! port: COM6
+2025-05-14 20:22:38 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:39 - Found Arduino! port: COM6
+2025-05-14 20:22:39 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:40 - Found Arduino! port: COM6
+2025-05-14 20:22:40 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:41 - Found Arduino! port: COM6
+2025-05-14 20:22:41 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:42 - Found Arduino! port: COM6
+2025-05-14 20:22:42 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:43 - Found Arduino! port: COM6
+2025-05-14 20:22:43 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:44 - Found Arduino! port: COM6
+2025-05-14 20:22:44 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:45 - Found Arduino! port: COM6
+2025-05-14 20:22:45 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:46 - Found Arduino! port: COM6
+2025-05-14 20:22:46 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:47 - Found Arduino! port: COM6
+2025-05-14 20:22:47 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:48 - Found Arduino! port: COM6
+2025-05-14 20:22:48 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:49 - Found Arduino! port: COM6
+2025-05-14 20:22:49 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:50 - Found Arduino! port: COM6
+2025-05-14 20:22:50 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:51 - Found Arduino! port: COM6
+2025-05-14 20:22:51 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:52 - Found Arduino! port: COM6
+2025-05-14 20:22:52 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:53 - Found Arduino! port: COM6
+2025-05-14 20:22:53 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:54 - Found Arduino! port: COM6
+2025-05-14 20:22:54 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:55 - Found Arduino! port: COM6
+2025-05-14 20:22:55 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:56 - Found Arduino! port: COM6
+2025-05-14 20:22:56 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:57 - Found Arduino! port: COM6
+2025-05-14 20:22:57 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:58 - Found Arduino! port: COM6
+2025-05-14 20:22:58 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:22:59 - Found Arduino! port: COM6
+2025-05-14 20:22:59 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:00 - Found Arduino! port: COM6
+2025-05-14 20:23:00 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:01 - Found Arduino! port: COM6
+2025-05-14 20:23:01 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:02 - Found Arduino! port: COM6
+2025-05-14 20:23:02 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:03 - Found Arduino! port: COM6
+2025-05-14 20:23:03 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:04 - Found Arduino! port: COM6
+2025-05-14 20:23:04 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:05 - Found Arduino! port: COM6
+2025-05-14 20:23:05 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:06 - Found Arduino! port: COM6
+2025-05-14 20:23:06 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:07 - Found Arduino! port: COM6
+2025-05-14 20:23:07 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:08 - Found Arduino! port: COM6
+2025-05-14 20:23:08 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:09 - Found Arduino! port: COM6
+2025-05-14 20:23:09 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:10 - Found Arduino! port: COM6
+2025-05-14 20:23:10 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:11 - Found Arduino! port: COM6
+2025-05-14 20:23:11 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:12 - Found Arduino! port: COM6
+2025-05-14 20:23:12 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:13 - Found Arduino! port: COM6
+2025-05-14 20:23:13 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:14 - Found Arduino! port: COM6
+2025-05-14 20:23:14 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:15 - Found Arduino! port: COM6
+2025-05-14 20:23:15 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:16 - Found Arduino! port: COM6
+2025-05-14 20:23:16 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:17 - Found Arduino! port: COM6
+2025-05-14 20:23:17 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:18 - Found Arduino! port: COM6
+2025-05-14 20:23:18 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:19 - Found Arduino! port: COM6
+2025-05-14 20:23:19 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:21 - Found Arduino! port: COM6
+2025-05-14 20:23:21 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:22 - Found Arduino! port: COM6
+2025-05-14 20:23:22 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:23 - Found Arduino! port: COM6
+2025-05-14 20:23:23 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:24 - Found Arduino! port: COM6
+2025-05-14 20:23:24 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:25 - Found Arduino! port: COM6
+2025-05-14 20:23:25 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:26 - Found Arduino! port: COM6
+2025-05-14 20:23:26 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:27 - Found Arduino! port: COM6
+2025-05-14 20:23:27 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:28 - Found Arduino! port: COM6
+2025-05-14 20:23:28 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:29 - Found Arduino! port: COM6
+2025-05-14 20:23:29 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:30 - Found Arduino! port: COM6
+2025-05-14 20:23:30 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:31 - Found Arduino! port: COM6
+2025-05-14 20:23:31 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:32 - Found Arduino! port: COM6
+2025-05-14 20:23:32 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:33 - Found Arduino! port: COM6
+2025-05-14 20:23:33 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:34 - Found Arduino! port: COM6
+2025-05-14 20:23:34 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:35 - Found Arduino! port: COM6
+2025-05-14 20:23:35 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:36 - Found Arduino! port: COM6
+2025-05-14 20:23:36 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:37 - Found Arduino! port: COM6
+2025-05-14 20:23:37 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:38 - Found Arduino! port: COM6
+2025-05-14 20:23:38 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:39 - Found Arduino! port: COM6
+2025-05-14 20:23:39 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:40 - Found Arduino! port: COM6
+2025-05-14 20:23:40 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:41 - Found Arduino! port: COM6
+2025-05-14 20:23:41 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:42 - Found Arduino! port: COM6
+2025-05-14 20:23:42 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:43 - Found Arduino! port: COM6
+2025-05-14 20:23:43 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-14 20:23:44 - Found Arduino! port: COM6
+2025-05-14 20:23:44 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)

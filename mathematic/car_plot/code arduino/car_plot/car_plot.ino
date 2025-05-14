@@ -6,7 +6,7 @@ void setup() {
   digitalWrite(XSHUT_PIN, HIGH); // active the sensor
   init_sensor();
   wdt_enable(WDTO_4S);// Enable the watchdog timer with a 4-second timeout
-    
+  Serial.println("init");
 }
 
 void loop() {

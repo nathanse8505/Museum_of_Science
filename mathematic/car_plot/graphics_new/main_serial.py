@@ -51,19 +51,6 @@ def main():
         ),
     )
 
-
-        # Graph(
-        #    screen,
-        #    lambda x: 300 * math.sin(0.02 * x),
-        #    (0, 1000), (-500, 500),
-        #    (
-        #         asset_loader.pictures["grid"][1][0],
-        #         asset_loader.pictures["grid"][1][1],
-        #         asset_loader.pictures["grid"][0].get_width(),
-        #         asset_loader.pictures["grid"][0].get_height()
-        #     ),
-        #     title="Sine Function"
-        # )
     def sinusodial(x):
         if x <= 157:
             return 3.185 * x - 500

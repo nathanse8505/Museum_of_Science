@@ -47,7 +47,7 @@ VL53L1X sensor;
  */
 
 
-const uint16_t BAUDERATE = 9600;
+const uint32_t BAUDERATE = 115200;
 const uint8_t OUTPUT_PARALLEL_PORT = 8;
 const int outputPins[OUTPUT_PARALLEL_PORT] = {D1, D2, D3, D4, D5, D6, D7, D8}; // Pins de sortie
 const int MAX_DISTANCE = 726;//mm
