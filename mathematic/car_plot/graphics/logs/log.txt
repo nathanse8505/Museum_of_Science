@@ -1,0 +1,36 @@
+2025-05-13 00:33:29 - Starting Car Plotter Exhibit
+2025-05-13 00:33:30 - No joystick connected.
+2025-05-13 00:33:30 - Trying to reconnect...
+2025-05-13 00:35:50 - Starting Car Plotter Exhibit
+2025-05-13 00:35:51 - No joystick connected.
+2025-05-13 00:35:51 - Trying to reconnect...
+2025-05-13 00:37:11 - Starting Car Plotter Exhibit
+2025-05-13 00:37:11 - No joystick connected.
+2025-05-13 00:37:11 - Trying to reconnect...
+2025-05-13 00:39:00 - Starting Car Plotter Exhibit
+2025-05-13 00:39:00 - No joystick connected.
+2025-05-13 00:39:00 - Trying to reconnect...
+2025-05-13 00:40:28 - Starting Car Plotter Exhibit
+2025-05-13 00:40:28 - No joystick connected.
+2025-05-13 00:40:28 - Trying to reconnect...
+2025-05-13 00:41:22 - Starting Car Plotter Exhibit
+2025-05-13 00:41:22 - No joystick connected.
+2025-05-13 00:41:22 - Trying to reconnect...
+2025-05-13 23:01:18 - Starting Car Plotter Exhibit
+2025-05-13 23:01:22 - Error: Arduino not found
+2025-05-13 23:12:40 - Starting Car Plotter Exhibit
+2025-05-13 23:12:45 - Error: Arduino not found
+2025-05-13 23:34:03 - Starting Car Plotter Exhibit
+2025-05-13 23:34:08 - Error: Arduino not found
+2025-05-13 23:44:54 - Starting Car Plotter Exhibit
+2025-05-13 23:44:59 - Error: Arduino not found
+2025-05-14 00:17:15 - Starting Car Plotter Exhibit
+2025-05-14 00:17:19 - Error: Arduino not found
+2025-05-14 00:17:41 - Starting Car Plotter Exhibit
+2025-05-14 00:17:46 - Error: Arduino not found
+2025-05-14 00:30:33 - Starting Car Plotter Exhibit
+2025-05-14 00:30:38 - Error: Arduino not found
+2025-05-14 00:31:01 - Starting Car Plotter Exhibit
+2025-05-14 00:31:06 - Error: Arduino not found
+2025-05-14 00:40:37 - Starting Car Plotter Exhibit
+2025-05-14 00:40:41 - Error: Arduino not found

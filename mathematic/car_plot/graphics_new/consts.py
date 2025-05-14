@@ -7,7 +7,7 @@ import os
 FPS = 100
 
 # arduino
-BAUDRATE = 115200
+BAUDRATE = 9600  
 SERIAL_ERROR = -1
 RECONNECT_INTERVAL = 1  # seconds
 MAX_DISTANCE = 500
@@ -32,7 +32,7 @@ YELLOW = (255, 255, 0)
 GRAPH_COLOR = RED  # color of the graph
 USER_GRAPH_COLOR = GREEN  # color of the user graph
 
-USER_GRAPH_STEP = 5  # step size for the user in x direction every frame
+USER_GRAPH_STEP = 10 # step size for the user in x direction every frame
 USER_GRAPH_MAX_POINTS = 1  # maximum number of points to consider for the score calculation
 USER_GRAPH_LINE_WIDTH = 10  # width of the user graph line
 GRAPH_LINE_WIDTH = 10  # width of the graph line (for the background functions)

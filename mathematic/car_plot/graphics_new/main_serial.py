@@ -51,6 +51,24 @@ def main():
         ),
     )
 
+
+        # Graph(
+        #    screen,
+        #    lambda x: 300 * math.sin(0.02 * x),
+        #    (0, 1000), (-500, 500),
+        #    (
+        #         asset_loader.pictures["grid"][1][0],
+        #         asset_loader.pictures["grid"][1][1],
+        #         asset_loader.pictures["grid"][0].get_width(),
+        #         asset_loader.pictures["grid"][0].get_height()
+        #     ),
+        #     title="Sine Function"
+        # )
+    def sinusodial(x):
+        if x <= 157:
+            return 3.185 * x - 500
+        return - 300 * math.sin(0.02 * x)
+    
     def cool_function(x):
         """
         x: in range [0, 1000]
@@ -62,12 +80,25 @@ def main():
         y += 70 * math.tan(math.sin(x * 0.004)) / 2  # Occasional spikes
         y += 80 * math.exp(-((x - 700) ** 2) / 5000)  # Sharp bump
         return y
-
+    
+   
     # Create a graph object
     graphs = [
         Graph(
             screen,
             lambda x: 500 - x,
+            (0, 1000), (-500, 500),
+            (
+                asset_loader.pictures["grid"][1][0],
+                asset_loader.pictures["grid"][1][1],
+                asset_loader.pictures["grid"][0].get_width(),
+                asset_loader.pictures["grid"][0].get_height()
+            ),
+            title="Linear Function"
+        ),
+        Graph(
+            screen,
+            lambda x: x - 500,
             (0, 1000), (-500, 500),
             (
                 asset_loader.pictures["grid"][1][0],
@@ -91,7 +122,7 @@ def main():
         ),
         Graph(
             screen,
-            lambda x: 0.0036 * (x - 500) ** 2 - 400,
+            lambda x: - 0.0036 * (x - 500) ** 2 + 400,
             (0, 1000), (-500, 500),
             (
                 asset_loader.pictures["grid"][1][0],
@@ -103,7 +134,7 @@ def main():
         ),
         Graph(
             screen,
-            lambda x: 300 * math.sin(0.02 * x),
+            lambda x: sinusodial(x),
             (0, 1000), (-500, 500),
             (
                 asset_loader.pictures["grid"][1][0],
@@ -111,19 +142,7 @@ def main():
                 asset_loader.pictures["grid"][0].get_width(),
                 asset_loader.pictures["grid"][0].get_height()
             ),
-            title="Sine Function"
-        ),
-        Graph(
-            screen,
-            lambda x: 0,
-            (0, 1000), (-500, 500),
-            (
-                asset_loader.pictures["grid"][1][0],
-                asset_loader.pictures["grid"][1][1],
-                asset_loader.pictures["grid"][0].get_width(),
-                asset_loader.pictures["grid"][0].get_height()
-            ),
-            title="Zero Function"
+            title="Sinusoidal Function"
         ),
         Graph(
             screen,
@@ -161,11 +180,11 @@ def main():
                     graph_index = (graph_index + 1) % len(graphs)
                     user.reset()
 
-            # if event.type == pygame.MOUSEWHEEL:
-            #     if event.y > 0:
-            #         user.move_y(True)
-            #     else:
-            #         user.move_y(False)
+            #if event.type == pygame.MOUSEWHEEL:
+             #   if event.y > 0:
+              #      user.move_y(True)
+               # else:
+                #    user.move_y(False)
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:

@@ -1,7 +1,7 @@
 #include "FONCTION_AND_CONST.h"
 
 void setup() {
-  //Serial.begin(BAUDERATE);      // Start serial communication at the specified baud rate
+  Serial.begin(BAUDERATE);      // Start serial communication at the specified baud rate
   init_pinmode();
   digitalWrite(XSHUT_PIN, HIGH); // active the sensor
   init_sensor();
@@ -18,7 +18,7 @@ void loop() {
     //int num = num_to_parallel(Current_distance , MIN_DISTANCE , MAX_DISTANCE);
     //Serial.println("Current_distance: " + String(Current_distance) + " integer: " + String(num));
     
-    delay(70); // Petite pause pour éviter trop de rafraîchissements
+    delay(170); // Petite pause pour éviter trop de rafraîchissements
     wdt_reset();
 }
 
