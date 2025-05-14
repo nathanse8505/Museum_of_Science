@@ -32,7 +32,7 @@ const byte TIME_DELAY_ARDUINO = 10;  //ms
 const uint32_t MAX_TIME_TO_COLLECT_DATA = 3000;  //ms
 
 byte image_w = 64;  // width of image - DO NOT CHNAGE
-byte image_h = 20;  // height of image, PI sends this
+byte image_h = 40;  // height of image, PI sends this
 byte valve_on_time = 5;  // how much time (in ms) each row from image is opened on valves
 uint16_t led_start = 350;  // how much time the lights are delayed from first row sent (relevant if "full light" is off)
 uint16_t led_on_time = 550;  // how much time the lights are on (after waiting let_start millis)(relevant if "full light" is off)

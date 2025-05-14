@@ -1,0 +1,132 @@
+2025-05-13 11:25:54 - Starting Car Plotter Exhibit
+2025-05-13 11:25:54 - No joystick connected.
+2025-05-13 11:25:54 - Trying to reconnect...
+2025-05-13 13:54:26 - Starting Car Plotter Exhibit
+2025-05-13 13:54:26 - Error: Arduino not found
+2025-05-13 17:00:52 - Starting Car Plotter Exhibit
+2025-05-13 17:00:52 - Error: Arduino not found
+2025-05-13 17:01:30 - Starting Car Plotter Exhibit
+2025-05-13 17:01:30 - Found Arduino! port: COM6
+2025-05-13 17:01:30 - Connected to COM6
+2025-05-13 17:02:27 - Starting Car Plotter Exhibit
+2025-05-13 17:02:27 - Found Arduino! port: COM6
+2025-05-13 17:02:27 - Connected to COM6
+2025-05-13 17:03:38 - Starting Car Plotter Exhibit
+2025-05-13 17:03:38 - Found Arduino! port: COM6
+2025-05-13 17:03:38 - Connected to COM6
+2025-05-13 17:06:28 - Starting Car Plotter Exhibit
+2025-05-13 17:06:29 - Found Arduino! port: COM6
+2025-05-13 17:06:29 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:30 - Found Arduino! port: COM6
+2025-05-13 17:06:30 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:31 - Found Arduino! port: COM6
+2025-05-13 17:06:31 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:32 - Found Arduino! port: COM6
+2025-05-13 17:06:32 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:33 - Found Arduino! port: COM6
+2025-05-13 17:06:33 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:34 - Found Arduino! port: COM6
+2025-05-13 17:06:34 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:35 - Found Arduino! port: COM6
+2025-05-13 17:06:35 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:36 - Found Arduino! port: COM6
+2025-05-13 17:06:36 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:37 - Found Arduino! port: COM6
+2025-05-13 17:06:37 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:38 - Found Arduino! port: COM6
+2025-05-13 17:06:38 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:06:39 - Found Arduino! port: COM6
+2025-05-13 17:06:39 - Error: Could not open serial port COM6 - could not open port 'COM6': PermissionError(13, 'Access is denied.', None, 5)
+2025-05-13 17:07:18 - Starting Car Plotter Exhibit
+2025-05-13 17:07:18 - Found Arduino! port: COM6
+2025-05-13 17:07:18 - Connected to COM6
+2025-05-13 17:08:52 - Starting Car Plotter Exhibit
+2025-05-13 17:08:52 - Found Arduino! port: COM6
+2025-05-13 17:08:52 - Connected to COM6
+2025-05-13 17:09:09 - Starting Car Plotter Exhibit
+2025-05-13 17:09:09 - Found Arduino! port: COM6
+2025-05-13 17:09:09 - Connected to COM6
+2025-05-13 17:10:21 - Starting Car Plotter Exhibit
+2025-05-13 17:10:21 - Found Arduino! port: COM6
+2025-05-13 17:10:21 - Connected to COM6
+2025-05-13 17:11:09 - Starting Car Plotter Exhibit
+2025-05-13 17:11:10 - Found Arduino! port: COM6
+2025-05-13 17:11:10 - Connected to COM6
+2025-05-13 17:13:03 - Starting Car Plotter Exhibit
+2025-05-13 17:13:03 - Found Arduino! port: COM6
+2025-05-13 17:13:03 - Connected to COM6
+2025-05-13 17:13:13 - Starting Car Plotter Exhibit
+2025-05-13 17:13:13 - Found Arduino! port: COM6
+2025-05-13 17:13:13 - Connected to COM6
+2025-05-13 17:13:33 - Starting Car Plotter Exhibit
+2025-05-13 17:13:33 - Found Arduino! port: COM6
+2025-05-13 17:13:33 - Connected to COM6
+2025-05-13 17:14:05 - Starting Car Plotter Exhibit
+2025-05-13 17:14:05 - Found Arduino! port: COM6
+2025-05-13 17:14:05 - Connected to COM6
+2025-05-13 17:14:54 - Starting Car Plotter Exhibit
+2025-05-13 17:14:54 - Found Arduino! port: COM6
+2025-05-13 17:14:54 - Connected to COM6
+2025-05-13 17:16:42 - Starting Car Plotter Exhibit
+2025-05-13 17:16:43 - Found Arduino! port: COM6
+2025-05-13 17:16:43 - Connected to COM6
+2025-05-13 17:22:04 - Starting Car Plotter Exhibit
+2025-05-13 17:22:04 - Found Arduino! port: COM6
+2025-05-13 17:22:04 - Connected to COM6
+2025-05-13 17:22:52 - Starting Car Plotter Exhibit
+2025-05-13 17:22:52 - Found Arduino! port: COM6
+2025-05-13 17:22:52 - Connected to COM6
+2025-05-13 17:23:22 - Starting Car Plotter Exhibit
+2025-05-13 17:23:22 - Found Arduino! port: COM6
+2025-05-13 17:23:22 - Connected to COM6
+2025-05-13 17:23:52 - Starting Car Plotter Exhibit
+2025-05-13 17:23:52 - Found Arduino! port: COM6
+2025-05-13 17:23:52 - Connected to COM6
+2025-05-13 17:23:58 - Starting Car Plotter Exhibit
+2025-05-13 17:23:59 - Found Arduino! port: COM6
+2025-05-13 17:23:59 - Connected to COM6
+2025-05-13 17:24:55 - Starting Car Plotter Exhibit
+2025-05-13 17:24:55 - Found Arduino! port: COM6
+2025-05-13 17:24:55 - Connected to COM6
+2025-05-13 17:24:59 - Error reading from serial, Arduino probably disconnected
+2025-05-13 17:24:59 - Arduino disconnected... Going to default settings
+2025-05-13 17:24:59 - Trying to reconnect to Arduino...
+2025-05-13 17:24:59 - Error: Arduino not found
+2025-05-13 17:25:14 - Found Arduino! port: COM6
+2025-05-13 17:25:14 - Connected to COM6
+2025-05-13 17:27:18 - Starting Car Plotter Exhibit
+2025-05-13 17:27:19 - Found Arduino! port: COM6
+2025-05-13 17:27:19 - Connected to COM6
+2025-05-13 17:32:07 - Starting Car Plotter Exhibit
+2025-05-13 17:32:07 - Found Arduino! port: COM6
+2025-05-13 17:32:07 - Connected to COM6
+2025-05-13 17:33:27 - Starting Car Plotter Exhibit
+2025-05-13 17:33:27 - Found Arduino! port: COM6
+2025-05-13 17:33:27 - Connected to COM6
+2025-05-13 17:42:26 - Starting Car Plotter Exhibit
+2025-05-13 17:42:27 - Found Arduino! port: COM6
+2025-05-13 17:42:27 - Connected to COM6
+2025-05-13 17:43:45 - Starting Car Plotter Exhibit
+2025-05-13 17:43:46 - Found Arduino! port: COM6
+2025-05-13 17:43:46 - Connected to COM6
+2025-05-13 17:49:00 - Starting Car Plotter Exhibit
+2025-05-13 17:49:01 - Found Arduino! port: COM6
+2025-05-13 17:49:01 - Connected to COM6
+2025-05-13 18:44:17 - Starting Car Plotter Exhibit
+2025-05-13 18:44:17 - Found Arduino! port: COM6
+2025-05-13 18:44:17 - Connected to COM6
+2025-05-14 12:14:49 - Starting Car Plotter Exhibit
+2025-05-14 12:14:50 - Found Arduino! port: COM6
+2025-05-14 12:14:50 - Connected to COM6
+2025-05-14 12:15:06 - Starting Car Plotter Exhibit
+2025-05-14 12:15:06 - Found Arduino! port: COM6
+2025-05-14 12:15:06 - Connected to COM6
+2025-05-14 13:51:03 - Starting Car Plotter Exhibit
+2025-05-14 13:51:03 - Error: Arduino not found
+2025-05-14 13:52:02 - Starting Car Plotter Exhibit
+2025-05-14 13:52:02 - Error: Arduino not found
+2025-05-14 14:08:54 - Starting Car Plotter Exhibit
+2025-05-14 14:08:54 - No joystick connected.
+2025-05-14 14:08:54 - Trying to reconnect...
+2025-05-14 14:31:10 - Starting Car Plotter Exhibit
+2025-05-14 14:31:10 - Error: Arduino not found

@@ -138,4 +138,4 @@ def parse_data(raw_data, logger=None):
                 print(f"Error parsing data: {raw_data}")
                 parse_data.already_sent_error = True
         
-        return 0, 0, 0, 0, PARSE_ERROR
+        return 0, PARSE_ERROR

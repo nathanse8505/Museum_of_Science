@@ -177,7 +177,7 @@ def main():
 
         if joystick.joystick:
             joystick.get_value()
-            user.set_y(joystick.map_value(joystick.value, -500, 500))
+            user.set_y(joystick.map_value(joystick.value, 500, -500))
 
         user.add_point()
         has_done_graph = user.move_x()
