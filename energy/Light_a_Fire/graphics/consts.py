@@ -19,8 +19,8 @@ SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD = 30  # en Celsius
 ROLLING_WINDOW_SIZE = 10  # for average
 
 # Températures
-MIN_TEMPERATURE_VALUE = 24.0  # en Celsius
-MAX_TEMPERATURE_VALUE = 50.0  # en Celsius
+MIN_TEMPERATURE_VALUE = 26.0  # en Celsius
+MAX_TEMPERATURE_VALUE = 45.0  # en Celsius
 MIN_TEMPERATURE_DEFAULT = 15
 MAX_TEMPERATURE_DEFAULT = 250
 TEMPERATURE_SENSOR_OFF = 5
@@ -89,10 +89,10 @@ full_thermometer = load_scaled_image(full_thermometer_path, SIZE_THERMOMETER)
 empty_thermometer = load_scaled_image(empty_thermometer_path, SIZE_THERMOMETER)
 
 # Positions of éléments to the screen
-FLAME_FRAME_POS = (int(0.15 * VIEW_PORT[0]), int(0.5 * VIEW_PORT[1]))
-SMOKE_FRAME_POS = (int(0.1 * VIEW_PORT[0]), int(0.5 * VIEW_PORT[1]))
-THERMOMETER_POS = (int(0.2 * VIEW_PORT[0]), int(0.08 * VIEW_PORT[1]))
-TEMPERATURE_TEXT_POS = (int(0.15 * VIEW_PORT[0]), int(0.17 * VIEW_PORT[1]))
+FLAME_FRAME_POS = (int(0.12 * VIEW_PORT[0]), int(0.31 * VIEW_PORT[1]))
+SMOKE_FRAME_POS = (int(0.05 * VIEW_PORT[0]), int(0.31 * VIEW_PORT[1]))
+THERMOMETER_POS = (int(0.3 * VIEW_PORT[0]), int(0.75 * VIEW_PORT[1]))
+TEMPERATURE_TEXT_POS = (int(0.25 * VIEW_PORT[0]), int(0.87 * VIEW_PORT[1]))
 
 THERMO_FULL_SIZE = int(0.97 * SIZE_THERMOMETER[0])
 

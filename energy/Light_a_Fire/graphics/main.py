@@ -89,8 +89,8 @@ def main():
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
             temperature, sensor_analogread, error = parse_data(data_from_arduino, logger=logger)
-            #print(f"parsed: pressure {temperature} sensor_analogread {sensor_analogread} error {error}")
-            if sensor_analogread == 1023:
+            print(f"parsed: pressure {temperature} sensor_analogread {sensor_analogread} error {error}")
+            if sensor_analogread >= 1000:
                 if not sensor_off:
                     print("the sensor is disconected")
                     logger.info("the sensor is disconected")
