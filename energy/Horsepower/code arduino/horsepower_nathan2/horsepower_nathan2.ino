@@ -70,7 +70,7 @@ void loop()
 
   
   
-  /**
+  /*
    * If the current distance is less than the minDistance (lift is moving upward),
    * and the lift is NOT already in motion, and it's not the first try (i.e., cooldown ended),
    * we start timing the lift movement.
@@ -83,7 +83,7 @@ void loop()
     //Serial.println("enter begin");
   }
 
-  /**
+  /*
    * While the lift is in motion, keep reading the sensor and
    * check if we've reached the max distance or the measurement timeout.
    */
@@ -123,7 +123,7 @@ void loop()
     }
   }
 
-  /**
+  /*
    * If the distance is now greater than minDistance (meaning the ball is back down),
    * and we are in the cooldown phase (`first_try == true`),
    * and we have waited long enough (`RST_BOUNCING_BALL`),

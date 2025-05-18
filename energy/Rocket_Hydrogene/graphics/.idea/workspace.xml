@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88b5a91d-6db4-46e7-872f-231a487775dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Museum_of_sience_energy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_with_sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_with_sound.py" afterDir="false" />
-    </list>
+    <list default="true" id="88b5a91d-6db4-46e7-872f-231a487775dd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
