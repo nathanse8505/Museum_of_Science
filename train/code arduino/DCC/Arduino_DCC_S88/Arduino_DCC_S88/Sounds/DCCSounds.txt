@@ -1,0 +1,17 @@
+T00:00,cow_01.mp3,0,180,240
+T00:00,bird_01.mp3,0,120,240
+T00:00,bird_02.mp3,0,120,240
+T00:00,dog_01.mp3,0,240,480
+T00:00,steam_loc_01.mp3,0,240,480
+T00:00,Perron_5min.mp3,0,300,360
+701,railroad_crossing_bell.mp3,0,0,0
+702,gennep_delay_message_01.mp3,0,0,0
+703,steam_loc_01.mp3,0,0,0
+101,railroad_crossing_bell.mp3,0,0,0
+102,dog_01.mp3,0,0,0
+103,cow_01.mp3,0,0,0
+104,birds_01.mp3,0,0,0
+105,birds_02.mp3,0,0,0
+106,afblijven_01.mp3,0,0,0
+107,afblijven_02.mp3,0,0,0
+108,gennep_delay_message_01.mp3,0,0,0
