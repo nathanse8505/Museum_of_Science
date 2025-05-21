@@ -44,8 +44,7 @@ void sendDSD2010SensorState(uint16_t state) {
 
   Serial.write('D');      // D = détecteurs
   Serial.write('0');      // Sous-type
-  Serial.println(lowByte);  // bits 0-7
-  Serial.println(highByte);  // bits 0-7
+  //Serial.println(lowByte,highByte);  // bits 0-7
   Serial.write(lowByte);  // bits 0-7
   Serial.write(highByte); // bits 8-15
   Serial.write(0x0D);     // Fin de ligne (carriage return)
