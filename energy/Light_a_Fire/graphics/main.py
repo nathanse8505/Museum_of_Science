@@ -22,7 +22,6 @@ def main():
     The main function for the Light a Fire UI
     """
     # camera setup
-    cap = None
     cap = camera_init()
 
     # pygame setup
@@ -34,11 +33,12 @@ def main():
 
     # initial values for th
     temperature = MIN_TEMPERATURE_DEFAULT
-    check_temperature_value = True
 
     # logging setup - log into a file called log.txt in the folder /logs with the format: [TIME] - [MESSAGE], if the file exists, append to it, if not, create it, if it exceeds 1MB, create a new file with a number suffix (before the .txt) and continue logging to it (e.g., log1.txt, log2.txt, etc.)
     logger = get_logger()
     logger.info("Starting Light a Fire UI")
+    state = "idle"
+    last_peak_temperature = None
 
     # arduino setup
     arduino_port = find_arduino_port(logger=logger)  # find the serial port
@@ -49,8 +49,6 @@ def main():
     running = True
     sensor_off = False
 
-    #moyenne temperature
-    temperature_list = []
     temperature_to_display = MIN_TEMPERATURE_DEFAULT
 
     while running:
@@ -78,7 +76,6 @@ def main():
 
             ser = None
             temperature_to_display = MIN_TEMPERATURE_DEFAULT
-            state = MEASURE
 
         # if arduino was connecetd at start, but now failed to read, try to reconnect
         if not ser and time.time() - last_time_tried_to_connect > RECONNECT_INTERVAL:
@@ -99,12 +96,11 @@ def main():
                 error = PARSE_ERROR
             if not error:
                 temperature_to_display = temperature
-                #temperature_list, temperature_to_display = avg_batch(temperature_list,temperature,temperature_to_display)
-                check_temperature_value = log_temperature(logger, temperature_to_display, check_temperature_value)
+                state, last_peak_temperature = log_temperature(logger, temperature_to_display, state,last_peak_temperature)
 
+        #state, last_peak_temperature = log_temperature(logger, temperature_to_display,state, last_peak_temperature)
         screen.fill(BLACK)  # reset screen
         running = camera_setup(screen, cap)
-        #if(temperature != temperature_to_display):
         display_measure(screen, Temperature=temperature_to_display)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)

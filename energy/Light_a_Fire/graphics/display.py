@@ -137,31 +137,3 @@ def display_bars(screen, temperature=MIN_TEMPERATURE_VALUE):
     display_bar_from_values(screen, temperature, MAX_TEMPERATURE_VALUE, MIN_TEMPERATURE_DEFAULT, full_thermometer)
 
 
-def load_and_blit_picture(screen, index):
-    # Initialiser les variables statiques si elles n'existent pas
-    if not hasattr(display_measure, "current_image"):
-        display_measure.current_image = None  # Image actuellement affichée
-        display_measure.last_index = -1  # Dernier index d’image affiché
-        display_measure.pos = SMOKE_FRAME_POS
-
-    # Vérifier si l'image affichée doit changer
-    if index != display_measure.last_index:
-        # Supprimer l’ancienne image pour libérer la RAM
-        if display_measure.current_image:
-            del display_measure.current_image
-
-        # Charger la nouvelle image
-        if index < len(SMOKE_FRAMES_PATHS):
-            new_image = load_scaled_image(SMOKE_FRAMES_PATHS[index], VIEW_PORT)
-            display_measure.pos = SMOKE_FRAME_POS
-        else:
-            new_image = load_scaled_image(FLAMES_FRAMES_PATHS[index - len(SMOKE_FRAMES_PATHS)], RESOLUTION_FLAME)
-            display_measure.pos = FLAME_FRAME_POS
-
-        # Mettre à jour l'image actuelle et son index
-        display_measure.current_image = new_image
-        display_measure.last_index = index
-
-    # Blitter uniquement l'image actuelle (sans rechargement inutile)
-    if display_measure.current_image:
-        screen.blit(display_measure.current_image, display_measure.pos)

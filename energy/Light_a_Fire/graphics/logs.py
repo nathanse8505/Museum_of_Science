@@ -5,7 +5,7 @@ Purpose: Logging functions for the Air Pressure UI
 import logging
 from logging.handlers import RotatingFileHandler
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER, SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD
+from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER, TEMP_AFTER_PEAK,TEMP_NEW_USER
 
 
 def get_logger():
@@ -32,11 +32,33 @@ def get_logger():
     return logger
 
 
-def log_temperature(logger, temperature, check_temperature_value):
-    if check_temperature_value and temperature >= SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD:
-        logger.info(f"the ember ignites!")
-        check_temperature_value = False
-    elif temperature < SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD:
-        check_temperature_value = True
+def log_temperature(logger, temperature, state, last_peak_temperature=None):
+    """
+    Detect and log a true peak temperature after a 2°C drop, and wait for any upward trend to start tracking again.
 
-    return check_temperature_value
+    States:
+    - "idle": waiting to start tracking a peak
+    - "tracking_peak": monitoring for a maximum
+    - "after_drop": logged a peak, waiting for temperature to rise again (any rise)
+    """
+    if state == "idle":
+        last_peak_temperature = temperature
+        state = "tracking_peak"
+
+    elif state == "tracking_peak":
+        if temperature > last_peak_temperature:
+            last_peak_temperature = temperature  # peak still rising
+        elif temperature <= last_peak_temperature - TEMP_AFTER_PEAK:
+            logger.info(f"Peak temperature reached: {last_peak_temperature:.2f}°C")
+            #print(f"Peak temperature reached: {last_peak_temperature:.2f}°C")
+            state = "after_drop"
+
+    elif state == "after_drop":
+        if temperature < TEMP_NEW_USER:
+            #print("enter after drop")
+            # any rising trend means we can restart
+            state = "idle"
+            last_peak_temperature = None
+
+    return state, last_peak_temperature
+

@@ -15,28 +15,26 @@ SERIAL_ERROR = -1
 RECONNECT_INTERVAL = 1  # secondes
 PARSE_ERROR = 1
 PARSE_VALID = 0
-SWITCH_TO_MEASURE_SCREEN_TEMPERATURE_THRESHOLD = 30  # en Celsius
-ROLLING_WINDOW_SIZE = 10  # for average
 
 # Températures
-MIN_TEMPERATURE_VALUE = 26.0  # en Celsius
-MAX_TEMPERATURE_VALUE = 45.0  # en Celsius
-MIN_TEMPERATURE_DEFAULT = 15
+MIN_TEMPERATURE_VALUE = 26.0  # en Celsius for begin the smoke pic
+MAX_TEMPERATURE_VALUE = 45.0  # en Celsius for end thermometer and last pic of fire
+MIN_TEMPERATURE_DEFAULT = 15  #if arduino is not connected and for the begin of the thermometer
 MAX_TEMPERATURE_DEFAULT = 250
 TEMPERATURE_SENSOR_OFF = 5
-
-# États
-MEASURE = 1
 
 # Logs
 LOG_FOLDER = os.path.join(os.path.dirname(__file__), "logs")
 MAX_SIZE_PER_LOG_FILE = 1 * 1024 * 1024  # 1MB
 BACKUP_COUNT = 10  # Nombre max de fichiers log en rotation
+TEMP_AFTER_PEAK = 2  # en Celsius
+TEMP_NEW_USER= 28  # en Celsius
 
 # Interface graphique
 pygame.init()
 # VIEW_PORT = (1920, 1080)
 VIEW_PORT = pygame.display.Info().current_w, pygame.display.Info().current_h
+#VIEW_PORT = (1000,1000)
 print(VIEW_PORT)
 RESOLUTION_FLAME = (850, 350)
 RESOLUTION_SMOKE = (1200, 400)
