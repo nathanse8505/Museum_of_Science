@@ -109,24 +109,19 @@ void NUMBER_TO_DISPLAY(float variable){
 //////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////
 
-void voltmeter(int pin){
-  Vout = (float) analogRead(pin);
-  //Serial.println(Vout);
+void voltmeter(){
   Vout = (Vout*Vref)/BIT_RESOLUTION;
   Serial.println(Vout);
   Vin = (Vout*(R1 + R2))/R1;
 }
 
-void voltmeter_after_wire(int pin){
-  Vout = (float) analogRead(pin);
-  Serial.println(Vout);
-  Vout = (Vout*Vref)/BIT_RESOLUTION;
-  Vin = Vout;
+void analog_to_voltmeter(){
+  Vin = map(Vout,0,BIT_RESOLUTION,0,Vref*UNIT_CALIBRATION);
 }
 
-void voltmeter_map(int pin){
-  Vout = (float) analogRead(pin);
-  Vin = map(Vout,0,BIT_RESOLUTION,0,VIN_MAX);
+void voltmeter_map(){
+  analog_to_voltmeter();
+  Vin = map(Vin,0,Vref*UNIT_CALIBRATION,0,VIN_MAX*UNIT_CALIBRATION);
 }
 
 

@@ -11,16 +11,17 @@ void setup() {
   Init_Output(LE_UNITS);
   pinMode(VOLTMETER_PIN, INPUT);
 
-  Serial.begin(SERIAL_BAUD_RATE);
+  //Serial.begin(SERIAL_BAUD_RATE);
 }
 
 void loop() {
-  
-  //voltmeter(VOLTMETER_PIN);
-  voltmeter_map(VOLTMETER_PIN);
-  Serial.println(Vin);
-  NUMBER_TO_DISPLAY(Vin*UNIT_CALIBRATION);
-  Serial.println("Vin: " + String(Vin));
+  Vout = (float) analogRead(VOLTMETER_PIN);
+  //Serial.println("Vout: " + String(Vout));
+
+  //analog_to_voltmeter();
+  //voltmeter_map();
+  NUMBER_TO_DISPLAY(980);
+  //Serial.println("Vin: " + String(Vin/10));
   delay(100);
       
   }

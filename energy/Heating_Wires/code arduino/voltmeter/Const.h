@@ -13,8 +13,8 @@
 #define LE_UNITS (9) // Output right (10th) digit LE (negative pulse) used as units 
 
 
-#define VOLTMETER_PIN A1
-//#define VOLTMETER_PIN A2
+//#define VOLTMETER_PIN A1
+#define VOLTMETER_PIN A3
 /*
 /*
 *==========Arduino Nano pinout====== 
@@ -50,7 +50,7 @@ int Digit_1_To_Display = 0;// rigth (external unit) digit to disply - not used f
 
 const float R2 = 149200;
 const float  R1 = 36290;
-const float Vref = 4.7;
+const float Vref = 4.2;
 const float BIT_RESOLUTION = 1023;
 const float VIN_MAX = 24;
 float Vin;
