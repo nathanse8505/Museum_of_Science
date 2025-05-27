@@ -16,8 +16,10 @@ void setup() {
 
 void loop() {
   
-  voltmeter(VOLTMETER_PIN);
-  NUMBER_TO_DISPLAY(Vin);
+  //voltmeter(VOLTMETER_PIN);
+  voltmeter_map(VOLTMETER_PIN);
+  Serial.println(Vin);
+  NUMBER_TO_DISPLAY(Vin*UNIT_CALIBRATION);
   Serial.println("Vin: " + String(Vin));
   delay(100);
       

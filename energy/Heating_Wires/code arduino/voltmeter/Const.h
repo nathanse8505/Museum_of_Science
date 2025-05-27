@@ -23,7 +23,7 @@
  *                 RXD-|       |-Gnd  
  *                 RST-|       |-RST
  *                 GND-|       |-+5V  
- *  LANG_BUTTON_IO  D2-|       |-A7  
+ *                  D2-|       |-A7  
  *           BCD A  D3-|       |-A6  
  *           BCD B  D4-|       |-A5  
  *           BCD C  D5-|       |-A4  
@@ -52,6 +52,7 @@ const float R2 = 149200;
 const float  R1 = 36290;
 const float Vref = 4.7;
 const float BIT_RESOLUTION = 1023;
+const float VIN_MAX = 24;
 float Vin;
 float Vout;
 

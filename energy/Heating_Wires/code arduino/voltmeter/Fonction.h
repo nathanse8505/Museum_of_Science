@@ -124,6 +124,12 @@ void voltmeter_after_wire(int pin){
   Vin = Vout;
 }
 
+void voltmeter_map(int pin){
+  Vout = (float) analogRead(pin);
+  Vin = map(Vout,0,BIT_RESOLUTION,0,VIN_MAX);
+}
+
+
 
 
 #endif
