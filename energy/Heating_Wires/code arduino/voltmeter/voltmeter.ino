@@ -18,9 +18,9 @@ void loop() {
   Vout = (float) analogRead(VOLTMETER_PIN);
   //Serial.println("Vout: " + String(Vout));
 
-  //analog_to_voltmeter();
-  //voltmeter_map();
-  NUMBER_TO_DISPLAY(980);
+  //analog_to_voltmeter();calcul the voltage between 0 to Vref
+  //voltmeter();calcul the voltage between 0 to VINMAX
+  NUMBER_TO_DISPLAY(Vin);//display the numner to the 7seg
   //Serial.println("Vin: " + String(Vin/10));
   delay(100);
       

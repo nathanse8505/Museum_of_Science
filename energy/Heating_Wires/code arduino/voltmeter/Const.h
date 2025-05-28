@@ -27,15 +27,18 @@
  *           BCD A  D3-|       |-A6  
  *           BCD B  D4-|       |-A5  
  *           BCD C  D5-|       |-A4  
- *           BCD D  D6-|       |-A3  ThermistorPin
+ *           BCD D  D6-|       |-A3  voltmeter after wire
  *    LE_CENTURIES  D7-|       |-A2  
- *       LE_DOZENS  D8-|       |-A1
+ *       LE_DOZENS  D8-|       |-A1  voltmeter 24V
  *        LE_UNITS  D9-|       |-A0
  *                 D10-|       |-Ref
  *                 D11-|       |-3.3V   
  *                 D12-|       |-D13
  *                      --USB--        
  */
+
+//R2 = 149200 ->conected to 24V and A1
+//R1 = 32500 -> connected to Gnd and A1
 
 //////////////variable for 7seg///////////////
 const int8_t  Number_OF_7SEG = 3;
@@ -48,8 +51,7 @@ int Digit_2_To_Display = 0;// Mid right (10th) digit to disply  - used as units
 int Digit_1_To_Display = 0;// rigth (external unit) digit to disply - not used for winf tunnel
 ///////////////////////////////////////////////
 
-const float R2 = 149200;
-const float  R1 = 36290;
+
 const float Vref = 4.2;
 const float BIT_RESOLUTION = 1023;
 const float VIN_MAX = 24;
