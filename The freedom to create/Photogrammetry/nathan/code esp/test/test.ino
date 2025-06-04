@@ -2,7 +2,7 @@
 #include "FS.h"
 #include "SD_MMC.h"
 
-#define PWDN_GPIO_NUM     -1
+#define PWDN_GPIO_NUM     32
 #define RESET_GPIO_NUM    -1
 #define XCLK_GPIO_NUM      0
 #define SIOD_GPIO_NUM     26
@@ -20,7 +20,8 @@
 #define HREF_GPIO_NUM     23
 #define PCLK_GPIO_NUM     22
 
-#define BUTTON_PIN 12  // Bouton sur GPIO 14
+#define BUTTON_PIN 13 // Bouton sur GPIO 13
+#define FLASH_PIN 4
 
 int photoCount = 0;
 const int BOUNCE_TIME = 50;
@@ -47,7 +48,27 @@ void startCamera() {
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
+  
+  
+
   config.pixel_format = PIXFORMAT_JPEG;
+
+  config.frame_size = FRAMESIZE_SXGA;
+  // config.frame_size = FRAMESIZE_UXGA;
+  config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
+  config.fb_location = CAMERA_FB_IN_PSRAM;
+  config.jpeg_quality = 12;
+  config.fb_count = 1;
+   if (psramFound()) {
+    config.jpeg_quality = 10;
+    config.fb_count = 2;
+    config.grab_mode = CAMERA_GRAB_LATEST;
+  } else {
+    // Limit the frame size when PSRAM is not available
+    Serial.println("PSRAM not found!");
+    config.frame_size = FRAMESIZE_SVGA;
+    config.fb_location = CAMERA_FB_IN_DRAM;
+  }/*
 
   if(psramFound()){
     config.frame_size = FRAMESIZE_VGA;
@@ -57,42 +78,13 @@ void startCamera() {
     config.frame_size = FRAMESIZE_CIF;
     config.jpeg_quality = 12;
     config.fb_count = 1;
-  }
+  }*/
 
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
-    Serial.printf("Erreur init caméra: 0x%x", err);
+    Serial.printf("Erreur init caméra: 0x%x \n", err);
     return;
   }
-}
-
-bool PRESS_BUTTON(){
-  // Detect button press (active LOW) if previously unpressed
-  if (digitalRead(BUTTON_PIN) == LOW && check == LOW){
-    check = HIGH;          // Mark the button as pressed
-    delay(BOUNCE_TIME);         // Debounce delay
-  }
-  // Detect button release (goes HIGH) if it was previously pressed
-  if (digitalRead(BUTTON_PIN) == HIGH && check == HIGH){
-    check = LOW;           // Reset the state for the next press
-    return true;                // Indicate a valid press-release cycle
-  }
-  return false;                 // Otherwise, no valid press-release detected
-}
-
-
-void setup() {
-  Serial.begin(115200);
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-
-  startCamera();
-
-  if (!SD_MMC.begin()) {
-    Serial.println("Erreur init SD_MMC !");
-    return;
-  }
-
-  Serial.println("SD_MMC OK !");
 }
 
 void takePhoto() {
@@ -117,7 +109,45 @@ void takePhoto() {
   Serial.printf("Photo sauvegardée : %s\n", path.c_str());
 }
 
+bool PRESS_BUTTON(){
+  // Detect button press (active LOW) if previously unpressed
+  if (digitalRead(BUTTON_PIN) == LOW && check == LOW){
+    check = HIGH;          // Mark the button as pressed
+    delay(BOUNCE_TIME);         // Debounce delay
+  }
+  // Detect button release (goes HIGH) if it was previously pressed
+  if (digitalRead(BUTTON_PIN) == HIGH && check == HIGH){
+    check = LOW;           // Reset the state for the next press
+    return true;                // Indicate a valid press-release cycle
+  }
+  return false;                 // Otherwise, no valid press-release detected
+}
+
+
+
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  //pinMode(FLASH_PIN, OUTPUT);    // GPIO du flash
+
+  startCamera();
+
+  if (!SD_MMC.begin()) {
+    Serial.println("Erreur init SD_MMC !");
+    return;
+  }
+
+  Serial.println("SD_MMC OK !");
+  
+  
+}
+
+
+
 void loop() {
+  
+
   if (PRESS_BUTTON()) {
     Serial.println("Bouton pressé !");
     takePhoto();
