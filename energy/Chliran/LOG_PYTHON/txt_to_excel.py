@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 
 # === LECTURE DU FICHIER TEXTE ===
-file_path = "LOG_april.TXT"
+file_path = r"graph/april/LOG_april.TXT"
 with open(file_path, "r", encoding="utf-8") as f:
     lines = f.readlines()
 
@@ -67,10 +67,9 @@ moyenne_uv_par_jour = total_uv_activations / 30
 print(f"\nTotal d'activations UV : {total_uv_activations}")
 print(f"Moyenne d'activations UV par jour : {moyenne_uv_par_jour:.2f}")
 
-
-#output_file = "appuis_par_jour.xlsx"
-#df.to_excel(output_file, index=False)
-#print(f"\nFichier '{output_file}' généré avec succès.")
+output_file = "appuis_par_jour.xlsx"
+df.to_excel(output_file, index=False)
+print(f"\nFichier '{output_file}' généré avec succès.")
 
 
 ##################plot##################
@@ -96,7 +95,7 @@ plt.grid(axis='y')
 
 plt.savefig("appuis_uv_par_jour.png")  # 📁 Image sauvegardée dans le dossier courant
 # Afficher le graphique
-plt.show()
+#plt.show()
 
 
 

@@ -5,7 +5,8 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 # === LECTURE DU FICHIER TEXTE ===
-file_path = "LOG_april.TXT"
+#file_path = "LOG_april.TXT"
+file_path = r"graph/april/LOG_april.TXT"
 with open(file_path, "r", encoding="utf-8") as f:
     lines = f.readlines()
 
@@ -82,7 +83,7 @@ df_final.to_excel("résumé_appuis_uv_6_colonnes.xlsx", index=False)
 
 # === AFFICHAGE DU GRAPHIQUE : seulement les appuis avec UV ===
 plt.figure(figsize=(14, 6))
-df_final.set_index("Date")["Avec UV"].plot(kind="bar", color="orange", label=f"Avec UV (Total: {total_avec_uv})")
+df_final.set_index("Date")["Avec UV"].plot(kind="bar", color="blue",width=0.9, label=f"Avec UV (Total: {total_avec_uv})")
 plt.title(f"Nombre d'appuis AVEC UV par mois - Total: {total_avec_uv}")
 plt.xlabel("Date")
 plt.ylabel("Nombre d'appuis AVEC UV")
