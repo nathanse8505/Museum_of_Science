@@ -1,10 +1,10 @@
 {
   "uuid": "a32c068bd0de2838b18c8ac9cc7b9ce9",
-  "path": "Offline/metoutelete",
-  "name": "metoutelete",
+  "path": "Offline/metutelet",
+  "name": "metutelet",
   "content": "",
   "created_at": "2024-10-18 00:31:59",
-  "updated_at": "2025-01-05 19:28:07",
+  "updated_at": "2025-06-09 20:44:40",
   "stick": "",
   "documents": [
     {
@@ -21,11 +21,12 @@
         "4315c7829684cc8a6968bec48e158497": 2,
         "667fac78c3346a31119778d9efd4e707": 3,
         "e869a782b90705dc9926da97baa35b27": 1,
-        "76186ddecd76475f8828a16c1ae271fa": 5,
+        "76186ddecd76475f8828a16c1ae271fa": 6,
         "145e57670a244882af532f5de6672a1b": 1,
         "ebef92bdb1224c9e80490478c9647cf9": 2,
         "646013db46794b0da33e7fc57c459489": 1,
-        "5cbe824183374fac8e4c1ae848199ce3": 3
+        "5cbe824183374fac8e4c1ae848199ce3": 4,
+        "532238ac2d5f461b9b34d16f00b1013e": 1
       },
       "BOM": [
         [
@@ -84,6 +85,18 @@
           }
         ],
         [
+          "CON6X1_7-62MM",
+          1,
+          "CONN-TH_6P-P7.62_CON6X1_7-62MM",
+          "CN4",
+          {
+            "Manufacturer Part": "con6x1_7-62mm",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900011107"
+          }
+        ],
+        [
           "SM4007PL",
           1,
           "SOD-123F_L2.8-W1.8-LS3.7-RD",
@@ -109,9 +122,9 @@
         ],
         [
           "LED-0603_R",
-          3,
+          4,
           "LED0603_RED",
-          "LED1,LED2,LED3",
+          "LED1,LED2,LED3,LED4",
           {
             "Manufacturer Part": "19-217/R6C-AL1M2VY/3T",
             "Manufacturer": "EVERLIGHT(台湾亿光)",
@@ -181,9 +194,9 @@
         ],
         [
           "1kΩ",
-          3,
+          4,
           "R0603",
-          "U7,U8,U9",
+          "U7,U8,U9,U10",
           {
             "Manufacturer Part": "0603 ±5% 10K",
             "Manufacturer": "VO(翔胜)",
@@ -192,11 +205,11 @@
           }
         ]
       ],
-      "updateTime": 1736098087,
+      "updateTime": 1749491080,
       "createTime": 1729200719,
       "histories": [],
       "created_at": "2024-10-18 00:31:59",
-      "updated_at": "2025-01-05 19:28:07"
+      "updated_at": "2025-06-09 20:44:40"
     },
     {
       "uuid": "371dabd871df997fa8b015243da95c8c",
@@ -356,8 +369,8 @@
     }
   ],
   "sort": [],
-  "title": "metoutelete",
-  "foldername": "metoutelete",
+  "title": "metutelet",
+  "foldername": "metutelet",
   "schfilename": "metoutelete.json",
-  "schfilemtime": 1736098087397
+  "schfilemtime": 1749491080889
 }
