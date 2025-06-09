@@ -3,55 +3,58 @@ import re
 from datetime import datetime
 import matplotlib.pyplot as plt
 
+
 # === PARAMÈTRES ===
-file_path = "graph/april/LOG_april.TXT"
-offset_ms = 20 * 60 * 60 * 1000  # Décalage de 20h
-pattern = re.compile(r"(\d+)\s*ms\s*;", re.IGNORECASE)
-motor_keywords = ["Motor activated", "Motor"]
-MONTH = 6
+file_path = "LOG.TXT"
+pattern_button = re.compile(r"(\d+)\s*ms\s*;\s*Button pressed", re.IGNORECASE)
+motor_keywords = ["Motor activated"]
+MONTH = 5
 YEAR = 2025
 # === LECTURE ET PARSING ===
-time_ms_raw = []
-time_ms_offset = []
-button_list = []
+current_day_index = 0
+time_ms_list = []
 motor_status_list = []
+jour_logique_list = []
 
 with open(file_path, "r", encoding="utf-8") as f:
-    lines = f.readlines()
+    for line in f:
+        if "Init" in line:
+            current_day_index += 1
 
-for line in lines:
-    match = pattern.search(line)
-    if match:
-        raw_time = int(match.group(1))
-        time_ms = raw_time + offset_ms
-        activated = any(keyword.lower() in line.lower() for keyword in motor_keywords)
+        match = pattern_button.search(line)
+        if match:
+            raw_time = int(match.group(1))
+            motor = any(keyword.lower() in line.lower() for keyword in motor_keywords)
 
-        time_ms_raw.append(raw_time)
-        time_ms_offset.append(time_ms)
-        motor_status_list.append("YES" if activated else "NO")
+            time_ms_list.append(raw_time)
+            motor_status_list.append("YES" if motor else "NO")
+            jour_logique_list.append(current_day_index)
 
-# === DATAFRAME PRINCIPAL ===
+# === ERREUR SI PAS D'INIT
+if current_day_index == 0:
+    raise ValueError("Aucun 'Init' trouvé : impossible d'assigner les jours.")
+
+# === CONSTRUCTION DU DATAFRAME
 df = pd.DataFrame({
-    "Time_ms_raw": time_ms_raw,
-    "Time_ms": time_ms_offset,  # avec offset
-    "Motor_Activated": motor_status_list
-}).sort_values("Time_ms").reset_index(drop=True)
+    "Time_ms": time_ms_list,
+    "Motor_Activated": motor_status_list,
+    "Day": jour_logique_list
+})
 
-# === DISTRIBUTION PAR JOUR ===
-total_pushes = len(df)
-average_per_day = total_pushes // 30
-remainder = total_pushes % 30
+# === CONVERSION EN DATES
+df["Date"] = df["Day"].apply(
+    lambda j: datetime(YEAR, MONTH, 1) + pd.Timedelta(days=j - 1)
+)
+# Réorganiser les colonnes dans df
+cols = df.columns.tolist()
+cols.remove("Date")
+cols.remove("Day")
+cols.insert(1, "Date")  # Position 1 = deuxième colonne (0-indexé)
+df = df[cols]
 
-dates = [datetime(2025, MONTH, day).date() for day in range(1, 31)]
-date_labels = []
-for i in range(30):
-    count = average_per_day + (1 if i < remainder else 0)
-    date_labels.extend([dates[i]] * count)
-
-df["Date_Calculée"] = date_labels
 
 # === RÉSUMÉ JOURNALIER ===
-grouped = df.groupby(["Date_Calculée", "Motor_Activated"]).size().unstack(fill_value=0)
+grouped = df.groupby(["Date", "Motor_Activated"]).size().unstack(fill_value=0)
 grouped = grouped.rename(columns={"NO": "NO ACTION", "YES": "MOTOR ON"})
 
 total_avec_uv = grouped.get("MOTOR ON", pd.Series()).sum()
@@ -67,6 +70,9 @@ df_resume = pd.DataFrame({
     "Total": [total_all] + [None] * (len(grouped) - 1)
 })
 
+df_resume["Date"] = df_resume["Date"].astype(str)
+df["Date"] = df["Date"].astype(str)
+
 # === EXPORT EXCEL À 2 ONGLET ===
 with pd.ExcelWriter(f"df_{MONTH}.xlsx") as writer:
     df.to_excel(writer, sheet_name="Raw Data", index=False)
@@ -78,7 +84,7 @@ print(f"✅ Excel avec 2 onglets créé : df_{MONTH}.xlsx")
 plt.figure(figsize=(14, 6))
 df_resume.set_index("Date")["MOTOR ON"].plot(kind="bar", color="orange", width=0.8)
 plt.title("Number of pushes per day (motor activate)")
-plt.xlabel("Date (avril 2025)")
+plt.xlabel(f"Date ({MONTH}/{YEAR})")
 plt.ylabel("Number of pushes with motor ON")
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()

@@ -6,6 +6,7 @@
 
 #define LED_BUTTON 2
 #define MOTOR 3
+#define LED_SD_CARD 4
 #define BUTTON 5
 #define MICRO_SW 6
 #define CHIPSELECT 10  // Chip Select pin for the SD card module
@@ -19,7 +20,7 @@
  *                 GND-|       |-+5V  
  *      LED_BUTTON  D2-|       |-A7  
  *           MOTOR  D3-|       |-A6  
- *                  D4-|       |-A5  
+ *     LED_SD_CARD  D4-|       |-A5  
  *          BUTTON  D5-|       |-A4  
  *        MICRO_SW  D6-|       |-A3
  *                  D7-|       |-A2  
@@ -37,7 +38,7 @@ extern bool NO_MICRO_SWITCH;  // Normally open (NO) micro switch → Connects to
 
 // Timing and communication settings
 extern int8_t time_bouncing;           // Button debounce delay (ms)
-extern int BAUDERATE;                   // Serial communication baud rate
+extern unsigned long BAUDERATE;                   // Serial communication baud rate
 extern unsigned long ACTIVATION_TIME;    // Time before the button can be pressed again (ms)
 extern unsigned long RESET_TIME_SECURE;  // Safety timeout: stops motor if micro switch is stuck (ms)
 extern int16_t MOTOR_DELAY;              // Delay to allow micro switch to release after motor stops (ms)

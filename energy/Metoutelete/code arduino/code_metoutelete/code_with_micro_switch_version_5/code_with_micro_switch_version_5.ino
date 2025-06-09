@@ -10,9 +10,11 @@ void setup() {
     Serial.println("Initializing SD card...");
     if (!SD.begin(CHIPSELECT)) {
         Serial.println("SD card initialization failed!");
+        digitalWrite(LED_SD_CARD, HIGH);
     } else {
         Serial.println("SD card successfully initialized.");
         logEvent("SD card successfully initialized.");
+        digitalWrite(LED_SD_CARD, LOW);
     }
 
     // Configure pins
@@ -20,6 +22,7 @@ void setup() {
     pinMode(BUTTON, INPUT_PULLUP);
     pinMode(MOTOR, OUTPUT);
     pinMode(LED_BUTTON, OUTPUT);
+    pinMode(LED_SD_CARD, OUTPUT);
 
     // Ensure the motor is off at startup
     digitalWrite(MOTOR, LOW);

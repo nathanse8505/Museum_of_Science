@@ -48,5 +48,6 @@ void logEvent(const char* message) {
         logFile.close();
     } else {
         Serial.println("Erreur d'écriture sur la carte SD.");
+        digitalWrite(LED_SD_CARD, HIGH);
     }
 }

@@ -4,7 +4,7 @@ bool NC_MICRO_SWITCH = LOW;  // Initialisation ici
 bool NO_MICRO_SWITCH = HIGH;
 
 int8_t time_bouncing = 50;
-int BAUDERATE = 9600;
+unsigned long BAUDERATE = 115200;
 unsigned long ACTIVATION_TIME = 30000;
 unsigned long RESET_TIME_SECURE = 5000;
 int16_t MOTOR_DELAY = 1000;
