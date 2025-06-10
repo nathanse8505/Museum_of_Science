@@ -98,7 +98,7 @@ def main():
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
             current, charge, sound_ready, language, error = parse_data(data_from_arduino, logger=logger)
-            # print(f"parsed: current {current} charge {charge} has_ignited {has_ignited} language {language}")
+            # print(f"parsed: current {current} charge {charge} sound_ready {sound_ready} language {language}")
 
             if not error:
                 if language != previous_language:
