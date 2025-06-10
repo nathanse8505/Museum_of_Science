@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 file_path = "LOG.TXT"
 pattern_button = re.compile(r"(\d+)\s*ms\s*;\s*Button pressed", re.IGNORECASE)
 motor_keywords = ["Motor activated"]
+DAY = 1
 MONTH = 5
 YEAR = 2025
 # === LECTURE ET PARSING ===
@@ -43,7 +44,7 @@ df = pd.DataFrame({
 
 # === CONVERSION EN DATES
 df["Date"] = df["Day"].apply(
-    lambda j: datetime(YEAR, MONTH, 1) + pd.Timedelta(days=j - 1)
+    lambda j: datetime(YEAR, MONTH, DAY) + pd.Timedelta(days=j - 1)
 )
 # Réorganiser les colonnes dans df
 cols = df.columns.tolist()
@@ -57,16 +58,16 @@ df = df[cols]
 grouped = df.groupby(["Date", "Motor_Activated"]).size().unstack(fill_value=0)
 grouped = grouped.rename(columns={"NO": "NO ACTION", "YES": "MOTOR ON"})
 
-total_avec_uv = grouped.get("MOTOR ON", pd.Series()).sum()
-total_sans_uv = grouped.get("NO ACTION", pd.Series()).sum()
-total_all = total_avec_uv + total_sans_uv
+total_on = grouped.get("MOTOR ON", pd.Series()).sum()
+total_off = grouped.get("NO ACTION", pd.Series()).sum()
+total_all = total_on + total_off
 
 df_resume = pd.DataFrame({
     "Date": grouped.index,
     "MOTOR ON": grouped.get("MOTOR ON", 0),
     "NO ACTION": grouped.get("NO ACTION", 0),
-    "Total with Motor": [total_avec_uv] + [None] * (len(grouped) - 1),
-    "Total NO ACTION": [total_sans_uv] + [None] * (len(grouped) - 1),
+    "Total with Motor": [total_on] + [None] * (len(grouped) - 1),
+    "Total NO ACTION": [total_off] + [None] * (len(grouped) - 1),
     "Total": [total_all] + [None] * (len(grouped) - 1)
 })
 

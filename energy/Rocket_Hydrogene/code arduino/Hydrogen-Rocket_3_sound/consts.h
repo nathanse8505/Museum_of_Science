@@ -24,7 +24,7 @@
  */
 
 #define CURRENT_INPUT_IO A0 // current sensor 
-// #define CURRENT_INPUT_IO A6 // simulation potentiometer
+//#define CURRENT_INPUT_IO A7 // simulation potentiometer
   
 #define BAUDRATE (115200)
 //#define IGNITION_BUTTON_IO A2
@@ -35,7 +35,7 @@
 //#define LANG_BUTTON_IO A1
 
 
-const float AUTO_EXPLOSION_THRESHOLD = 90; // absolute max charge for auto explosion
+const float AUTO_EXPLOSION_THRESHOLD = 80; // absolute max charge for auto explosion
 
 const float MIN_CHARGE = 0;// Coulomb, minimum charge enable ignition  
 const float MAX_CHARGE = 40;// Coulomb, maximum charge have to ignite
@@ -52,6 +52,7 @@ const int16_t NUM_OF_SPARK = 3;//ms
 const int16_t SPARK_SPACE_TIME = 150;//ms
 const int16_t SPARK_TIME = 50; // ms - Spark time !!! keep as short as possible to avoid HV driver damage
 const int16_t TIME_TO_IGNITE = 1000;
+const int16_t TIME_LOST_COM = 7000;
 
 
 // display consts
@@ -68,6 +69,8 @@ byte text = 0;
 float charge = 0;
 int32_t last_measure_time = 0;  // ms last measuring time 
 int32_t last_display_time = 0;  // ms last time data was display
+int32_t timer_lost_com = 0;
+bool flag_lost_com = false;
 
 int32_t time_sound = 0;   //ms mesuring time sound until the ignit
 bool ready_sound = false; 

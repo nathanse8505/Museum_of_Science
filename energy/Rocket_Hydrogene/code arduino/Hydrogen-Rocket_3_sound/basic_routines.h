@@ -75,7 +75,7 @@ void ignite(){
   /*
    * ignite after ignition button was pressed
    */
-
+flag_lost_com = false;
 digitalWrite(HYDROGEN_VALVE_IO, HIGH);  // close valve
 delay(DELAY_BETWEEN_VALVE_AND_SPARK);  // wait
 reset_charge();
@@ -117,9 +117,11 @@ bool Check_Ignite_Serial() {
     else {
       input += c;             //add an aother letter to input
     }
-  }
 
-  return true;  // → on reste dans ready_sound
+  }
+  
+
+  return true;  // → stay in check ignit if the comunication lost 
 }
 
 

@@ -45,8 +45,15 @@ void loop() {
 
     if (charge >= AUTO_EXPLOSION_THRESHOLD) {
       ready_sound = true;
-    }
 
+      if(!flag_lost_com){
+        timer_lost_com = millis();
+        flag_lost_com = true;
+        }
+      if (millis() - timer_lost_com >= TIME_LOST_COM) {
+        ignite();
+      }
+    }
     if (PRESS_BUTTON_IGNITION() && check_charge()) {  // button pressed
     ready_sound = true;
     }
@@ -58,7 +65,7 @@ void loop() {
   
  
   
-  if (PRESS_BUTTON_LANG()) {  // pressed on language button
+if (PRESS_BUTTON_LANG()) {  // pressed on language button
     lang = lang >= 2 ? 0 : (lang + 1);  // toggle language
   }
   

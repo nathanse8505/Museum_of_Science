@@ -120,8 +120,8 @@ def main():
                     music_playing = False  # Réinitialiser l'état de la musique
 
                 if previous_sound_ready and not sound_ready:
-                    logger.info("🚀 The rocket has ignited")
-                    print("🚀 The rocket has ignited")
+                    logger.info("The rocket has ignited")
+                    print("The rocket has ignited")
 
                 previous_sound_ready = sound_ready  # Met à jour l'état précédent
 
