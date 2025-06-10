@@ -59,8 +59,9 @@ unsigned long deltaTime = 0;    // Time difference from start to finish of the l
 
 // Distance constraints
 float minDistance = 0.0;        // Threshold for detecting movement start
-const float maxDistance = 700; //in mm The maximum distance used for computing horsepower
+const int32_t DELTA_MAX_DISTANCE = 700; //in mm The maximum distance used for computing horsepower
 float horsepower = 0;           // Holds the computed horsepower value
+const int32_t INITIAL_DISTANCE = 1300;
 
 // Timers for resets and cooldowns
 unsigned long bouncingBallTimer = 0;  // Timer for cooldown once max distance is reached
@@ -71,5 +72,6 @@ const unsigned long RST_BOUNCING_BALL = 7000; // 6s cooldown after reaching max 
 const unsigned long SENSOR_FAULTY = 15000;
 const unsigned long RST_WDT = 5000;
 const unsigned long RST_COMMUNICATION = 3600000;
+
 
 #endif
