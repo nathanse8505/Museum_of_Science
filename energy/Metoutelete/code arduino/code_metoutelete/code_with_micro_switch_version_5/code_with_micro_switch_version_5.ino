@@ -13,7 +13,7 @@ void setup() {
         digitalWrite(LED_SD_CARD, HIGH);
     } else {
         Serial.println("SD card successfully initialized.");
-        logEvent("SD card successfully initialized.");
+        //logEvent("SD card successfully initialized.");
         digitalWrite(LED_SD_CARD, LOW);
     }
 
@@ -27,8 +27,8 @@ void setup() {
     // Ensure the motor is off at startup
     digitalWrite(MOTOR, LOW);
 
-    Serial.println("Init.");
-    logEvent("Init");
+    Serial.println("init.");
+    logEvent("init");
 }
 
 void loop() {
