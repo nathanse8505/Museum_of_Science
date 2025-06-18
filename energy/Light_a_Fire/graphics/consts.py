@@ -17,9 +17,9 @@ PARSE_ERROR = 1
 PARSE_VALID = 0
 
 # Températures
-MIN_TEMPERATURE_VALUE = 26.0  # en Celsius for begin the smoke pic
-MAX_TEMPERATURE_VALUE = 45.0  # en Celsius for end thermometer and last pic of fire
-MIN_TEMPERATURE_DEFAULT = 15  #if arduino is not connected and for the begin of the thermometer
+MIN_TEMPERATURE_VALUE = 31.0  # in Celsius for begin the smoke pic
+MAX_TEMPERATURE_VALUE = 45.0  # in Celsius for end thermometer and last pic of fire
+MIN_TEMPERATURE_DEFAULT = 15  # if the Arduino is not connected AND it's the start of the temperature reading
 MAX_TEMPERATURE_DEFAULT = 250
 TEMPERATURE_SENSOR_OFF = 5
 
@@ -27,8 +27,8 @@ TEMPERATURE_SENSOR_OFF = 5
 LOG_FOLDER = os.path.join(os.path.dirname(__file__), "logs")
 MAX_SIZE_PER_LOG_FILE = 1 * 1024 * 1024  # 1MB
 BACKUP_COUNT = 10  # Nombre max de fichiers log en rotation
-TEMP_AFTER_PEAK = 2  # en Celsius
-TEMP_NEW_USER= 28  # en Celsius
+TEMP_AFTER_PEAK = 2  # in Celsius
+TEMP_NEW_USER= 32  # in Celsius
 
 RISE_THRESHOLD = 7  # Nombre de hausses nécessaires pour détecter une tendance montante
 WINDOWS_SIZE = 10
