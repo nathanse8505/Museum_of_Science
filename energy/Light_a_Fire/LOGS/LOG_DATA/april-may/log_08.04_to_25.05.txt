@@ -1,0 +1,2594 @@
+2025-04-08 00:58:51 - Starting Light a Fire UI
+2025-04-08 00:58:51 - Error: Arduino not found
+2025-04-08 01:05:46 - Starting Light a Fire UI
+2025-04-08 01:05:46 - Error: Arduino not found
+2025-04-08 01:06:38 - Starting Light a Fire UI
+2025-04-08 01:06:38 - Error: Arduino not found
+2025-04-08 01:10:43 - Starting Light a Fire UI
+2025-04-08 01:10:43 - Error: Arduino not found
+2025-04-08 01:13:18 - Starting Light a Fire UI
+2025-04-08 01:13:18 - Error: Arduino not found
+2025-04-08 01:14:25 - Starting Light a Fire UI
+2025-04-08 01:14:25 - Error: Arduino not found
+2025-04-08 01:19:42 - Starting Light a Fire UI
+2025-04-08 01:19:42 - Error: Arduino not found
+2025-04-08 01:22:10 - Starting Light a Fire UI
+2025-04-08 01:22:10 - Error: Arduino not found
+2025-04-08 01:23:59 - Starting Light a Fire UI
+2025-04-08 01:23:59 - Error: Arduino not found
+2025-04-08 01:26:16 - Starting Light a Fire UI
+2025-04-08 01:26:16 - Error: Arduino not found
+2025-04-08 01:27:03 - Starting Light a Fire UI
+2025-04-08 01:27:03 - Error: Arduino not found
+2025-04-08 01:28:10 - Starting Light a Fire UI
+2025-04-08 01:28:10 - Error: Arduino not found
+2025-04-08 01:32:30 - Starting Light a Fire UI
+2025-04-08 01:32:30 - Error: Arduino not found
+2025-04-08 01:34:43 - Starting Light a Fire UI
+2025-04-08 01:34:43 - Error: Arduino not found
+2025-04-08 01:38:06 - Starting Light a Fire UI
+2025-04-08 01:38:06 - Error: Arduino not found
+2025-04-08 01:39:42 - Starting Light a Fire UI
+2025-04-08 01:39:42 - Error: Arduino not found
+2025-04-08 01:40:24 - Starting Light a Fire UI
+2025-04-08 01:40:24 - Error: Arduino not found
+2025-04-08 01:40:59 - Starting Light a Fire UI
+2025-04-08 01:40:59 - Error: Arduino not found
+2025-04-08 01:41:34 - Starting Light a Fire UI
+2025-04-08 01:41:34 - Error: Arduino not found
+2025-04-08 01:43:27 - Starting Light a Fire UI
+2025-04-08 01:43:27 - Error: Arduino not found
+2025-04-08 01:45:18 - Starting Light a Fire UI
+2025-04-08 01:45:18 - Error: Arduino not found
+2025-04-08 01:46:46 - Starting Light a Fire UI
+2025-04-08 01:46:46 - Error: Arduino not found
+2025-04-08 02:02:07 - Starting Light a Fire UI
+2025-04-08 02:02:07 - Error: Arduino not found
+2025-04-08 02:02:47 - Starting Light a Fire UI
+2025-04-08 02:02:47 - Error: Arduino not found
+2025-04-08 02:03:45 - Starting Light a Fire UI
+2025-04-08 02:03:45 - Error: Arduino not found
+2025-04-08 02:04:28 - Starting Light a Fire UI
+2025-04-08 02:04:28 - Error: Arduino not found
+2025-04-08 02:09:51 - Starting Light a Fire UI
+2025-04-08 02:09:51 - Error: Arduino not found
+2025-04-08 02:12:20 - Starting Light a Fire UI
+2025-04-08 02:12:20 - Error: Arduino not found
+2025-04-08 02:13:49 - Starting Light a Fire UI
+2025-04-08 02:13:49 - Error: Arduino not found
+2025-04-08 13:08:10 - Starting Light a Fire UI
+2025-04-08 13:08:10 - Error: Arduino not found
+2025-04-08 13:12:16 - Starting Light a Fire UI
+2025-04-08 13:12:16 - Error: Arduino not found
+2025-04-08 13:54:37 - Starting Light a Fire UI
+2025-04-08 13:54:37 - Error: Arduino not found
+2025-04-08 15:17:55 - Starting Light a Fire UI
+2025-04-08 15:17:55 - Error: Arduino not found
+2025-04-08 15:21:40 - Starting Light a Fire UI
+2025-04-08 15:21:40 - Error: Arduino not found
+2025-04-08 15:22:20 - Starting Light a Fire UI
+2025-04-08 15:22:20 - Error: Arduino not found
+2025-04-14 15:43:51 - Starting Light a Fire UI
+2025-04-14 15:43:51 - Error: Arduino not found
+2025-04-14 15:45:03 - Starting Light a Fire UI
+2025-04-14 15:45:03 - Error: Arduino not found
+2025-05-06 18:47:33 - Starting Light a Fire UI
+2025-05-06 18:47:34 - Found Arduino! port: /dev/ttyUSB0
+2025-05-06 18:47:34 - Connected to /dev/ttyUSB0
+2025-05-06 18:48:02 - the ember ignites!
+2025-05-06 18:58:06 - Starting Light a Fire UI
+2025-05-06 18:58:06 - Found Arduino! port: /dev/ttyUSB0
+2025-05-06 18:58:06 - Connected to /dev/ttyUSB0
+2025-05-06 19:24:15 - Starting Light a Fire UI
+2025-05-06 19:24:15 - Found Arduino! port: /dev/ttyUSB0
+2025-05-06 19:24:16 - Connected to /dev/ttyUSB0
+2025-05-06 19:25:32 - Starting Light a Fire UI
+2025-05-06 19:25:32 - Found Arduino! port: /dev/ttyUSB0
+2025-05-06 19:25:32 - Connected to /dev/ttyUSB0
+2025-05-06 19:26:45 - Error reading from serial, Arduino probably disconnected
+2025-05-06 19:26:45 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-06 19:26:45 - Error: Arduino not found
+2025-05-06 19:41:23 - Starting Light a Fire UI
+2025-05-06 19:41:23 - Error: Arduino not found
+2025-05-06 19:42:51 - Starting Light a Fire UI
+2025-05-06 19:42:51 - Error: Arduino not found
+2025-05-06 19:55:41 - Starting Light a Fire UI
+2025-05-06 19:55:41 - Error: Arduino not found
+2025-05-06 19:58:14 - Starting Light a Fire UI
+2025-05-06 19:58:14 - Error: Arduino not found
+2025-05-06 19:59:50 - Starting Light a Fire UI
+2025-05-06 19:59:50 - Error: Arduino not found
+2025-05-06 20:09:13 - Starting Light a Fire UI
+2025-05-06 20:09:13 - Error: Arduino not found
+2025-05-06 20:18:32 - Starting Light a Fire UI
+2025-05-06 20:18:32 - Error: Arduino not found
+2025-05-06 20:19:10 - Starting Light a Fire UI
+2025-05-06 20:19:10 - Error: Arduino not found
+2025-05-06 20:25:32 - Starting Light a Fire UI
+2025-05-06 20:25:32 - Error: Arduino not found
+2025-05-06 20:25:57 - Found Arduino! port: /dev/ttyUSB0
+2025-05-06 20:25:57 - Connected to /dev/ttyUSB0
+2025-05-07 12:35:19 - Starting Light a Fire UI
+2025-05-07 12:35:19 - Error: Arduino not found
+2025-05-07 12:53:14 - Starting Light a Fire UI
+2025-05-07 12:53:14 - Error: Arduino not found
+2025-05-07 13:00:20 - Starting Light a Fire UI
+2025-05-07 13:00:20 - Error: Arduino not found
+2025-05-07 13:48:10 - Starting Light a Fire UI
+2025-05-07 13:48:10 - Error: Arduino not found
+2025-05-07 15:25:05 - Starting Light a Fire UI
+2025-05-07 15:25:05 - Error: Arduino not found
+2025-05-07 17:13:09 - Starting Light a Fire UI
+2025-05-07 17:13:09 - Error: Arduino not found
+2025-05-07 20:04:31 - Starting Light a Fire UI
+2025-05-07 20:04:31 - Found Arduino! port: /dev/ttyUSB0
+2025-05-07 20:04:31 - Connected to /dev/ttyUSB0
+2025-05-08 15:19:39 - Starting Light a Fire UI
+2025-05-08 15:19:39 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 15:19:39 - Connected to /dev/ttyUSB0
+2025-05-08 15:20:54 - Starting Light a Fire UI
+2025-05-08 15:20:54 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 15:20:54 - Connected to /dev/ttyUSB0
+2025-05-08 15:21:06 - Error reading from serial, Arduino probably disconnected
+2025-05-08 15:21:06 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 15:21:07 - Error: Arduino not found
+2025-05-08 15:21:09 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 15:21:09 - Connected to /dev/ttyUSB0
+2025-05-08 15:22:39 - Starting Light a Fire UI
+2025-05-08 15:22:39 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 15:22:39 - Connected to /dev/ttyUSB0
+2025-05-08 15:35:25 - Starting Light a Fire UI
+2025-05-08 15:35:25 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 15:35:25 - Connected to /dev/ttyUSB0
+2025-05-08 15:35:45 - the ember ignites!
+2025-05-08 15:35:53 - the ember ignites!
+2025-05-08 15:35:54 - the ember ignites!
+2025-05-08 15:35:54 - the ember ignites!
+2025-05-08 15:35:54 - the ember ignites!
+2025-05-08 15:35:55 - the ember ignites!
+2025-05-08 15:36:10 - the ember ignites!
+2025-05-08 15:36:17 - the ember ignites!
+2025-05-08 15:36:24 - the ember ignites!
+2025-05-08 15:37:28 - the ember ignites!
+2025-05-08 15:37:31 - the ember ignites!
+2025-05-08 15:37:32 - the ember ignites!
+2025-05-08 15:37:33 - the ember ignites!
+2025-05-08 15:37:33 - the ember ignites!
+2025-05-08 15:37:34 - the ember ignites!
+2025-05-08 15:37:35 - the ember ignites!
+2025-05-08 15:37:36 - the ember ignites!
+2025-05-08 15:37:37 - the ember ignites!
+2025-05-08 15:37:38 - the ember ignites!
+2025-05-08 15:37:41 - the ember ignites!
+2025-05-08 15:53:51 - Starting Light a Fire UI
+2025-05-08 15:53:51 - Error: Arduino not found
+2025-05-08 15:54:49 - Starting Light a Fire UI
+2025-05-08 15:54:49 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 15:54:49 - Connected to /dev/ttyUSB0
+2025-05-08 15:55:44 - Starting Light a Fire UI
+2025-05-08 15:55:44 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 15:55:44 - Connected to /dev/ttyUSB0
+2025-05-08 16:07:49 - Starting Light a Fire UI
+2025-05-08 16:07:49 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 16:07:49 - Connected to /dev/ttyUSB0
+2025-05-08 16:10:23 - Starting Light a Fire UI
+2025-05-08 16:10:23 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 16:10:23 - Connected to /dev/ttyUSB0
+2025-05-08 16:11:34 - Starting Light a Fire UI
+2025-05-08 16:11:34 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 16:11:34 - Connected to /dev/ttyUSB0
+2025-05-08 16:54:20 - Error reading from serial, Arduino probably disconnected
+2025-05-08 16:54:20 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 16:54:20 - Error: Arduino not found
+2025-05-08 16:54:36 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 16:54:36 - Connected to /dev/ttyUSB0
+2025-05-08 16:55:15 - Starting Light a Fire UI
+2025-05-08 16:55:15 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 16:55:15 - Connected to /dev/ttyUSB0
+2025-05-08 16:57:30 - Starting Light a Fire UI
+2025-05-08 16:57:30 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 16:57:30 - Connected to /dev/ttyUSB0
+2025-05-08 16:57:38 - the ember ignites!
+2025-05-08 16:59:39 - the ember ignites!
+2025-05-08 16:59:39 - the ember ignites!
+2025-05-08 16:59:40 - the ember ignites!
+2025-05-08 17:04:49 - Starting Light a Fire UI
+2025-05-08 17:04:49 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 17:04:49 - Connected to /dev/ttyUSB0
+2025-05-08 17:06:26 - Starting Light a Fire UI
+2025-05-08 17:06:26 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 17:06:26 - Connected to /dev/ttyUSB0
+2025-05-08 17:08:12 - Starting Light a Fire UI
+2025-05-08 17:08:12 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 17:08:12 - Connected to /dev/ttyUSB0
+2025-05-08 17:11:47 - Starting Light a Fire UI
+2025-05-08 17:11:47 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 17:11:47 - Connected to /dev/ttyUSB0
+2025-05-08 17:16:46 - Starting Light a Fire UI
+2025-05-08 17:16:46 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 17:16:46 - Connected to /dev/ttyUSB0
+2025-05-08 18:34:21 - Starting Light a Fire UI
+2025-05-08 18:34:21 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:34:21 - Connected to /dev/ttyUSB0
+2025-05-08 18:34:34 - the sensor is disconected
+2025-05-08 18:34:44 - Error reading from serial, Arduino probably disconnected
+2025-05-08 18:34:44 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 18:34:44 - Error: Arduino not found
+2025-05-08 18:35:07 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:35:07 - Connected to /dev/ttyUSB0
+2025-05-08 18:36:40 - Starting Light a Fire UI
+2025-05-08 18:36:40 - Error: Arduino not found
+2025-05-08 18:36:46 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:36:46 - Connected to /dev/ttyUSB0
+2025-05-08 18:36:51 - Error reading from serial, Arduino probably disconnected
+2025-05-08 18:36:51 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 18:36:51 - Error: Arduino not found
+2025-05-08 18:37:13 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:37:13 - Connected to /dev/ttyUSB0
+2025-05-08 18:37:17 - Error reading from serial, Arduino probably disconnected
+2025-05-08 18:37:17 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 18:37:17 - Error: Arduino not found
+2025-05-08 18:37:25 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:37:25 - Connected to /dev/ttyUSB0
+2025-05-08 18:37:28 - the sensor is disconected
+2025-05-08 18:42:19 - Starting Light a Fire UI
+2025-05-08 18:42:19 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:42:19 - Connected to /dev/ttyUSB0
+2025-05-08 18:42:27 - Error reading from serial, Arduino probably disconnected
+2025-05-08 18:42:27 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-08 18:42:27 - Error: Arduino not found
+2025-05-08 18:47:22 - Starting Light a Fire UI
+2025-05-08 18:47:22 - Error: Arduino not found
+2025-05-08 18:47:38 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:47:38 - Connected to /dev/ttyUSB0
+2025-05-08 18:47:47 - the sensor is disconected
+2025-05-08 18:49:20 - Starting Light a Fire UI
+2025-05-08 18:49:20 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:49:20 - Connected to /dev/ttyUSB0
+2025-05-08 18:49:22 - the sensor is disconected
+2025-05-08 18:50:37 - Starting Light a Fire UI
+2025-05-08 18:50:37 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:50:37 - Connected to /dev/ttyUSB0
+2025-05-08 18:50:39 - the sensor is disconected
+2025-05-08 18:51:17 - Starting Light a Fire UI
+2025-05-08 18:51:17 - Found Arduino! port: /dev/ttyUSB0
+2025-05-08 18:51:17 - Connected to /dev/ttyUSB0
+2025-05-08 18:51:19 - the sensor is disconected
+2025-05-08 18:43:43 - Starting Light a Fire UI
+2025-05-08 18:43:43 - Error: Arduino not found
+2025-05-11 14:18:57 - Starting Light a Fire UI
+2025-05-11 14:18:57 - Error: Arduino not found
+2025-05-11 14:19:42 - Starting Light a Fire UI
+2025-05-11 14:19:42 - Error: Arduino not found
+2025-05-11 14:39:08 - Starting Light a Fire UI
+2025-05-11 14:39:08 - Error: Arduino not found
+2025-05-11 15:50:19 - Starting Light a Fire UI
+2025-05-11 15:50:19 - Error: Arduino not found
+2025-05-11 15:55:54 - Starting Light a Fire UI
+2025-05-11 15:55:54 - Error: Arduino not found
+2025-05-11 15:56:40 - Starting Light a Fire UI
+2025-05-11 15:56:40 - Error: Arduino not found
+2025-05-11 15:57:29 - Starting Light a Fire UI
+2025-05-11 15:57:29 - Error: Arduino not found
+2025-05-11 15:58:03 - Starting Light a Fire UI
+2025-05-11 15:58:03 - Error: Arduino not found
+2025-05-11 15:59:14 - Starting Light a Fire UI
+2025-05-11 15:59:14 - Error: Arduino not found
+2025-05-11 15:59:58 - Starting Light a Fire UI
+2025-05-11 15:59:58 - Error: Arduino not found
+2025-05-11 16:00:33 - Starting Light a Fire UI
+2025-05-11 16:00:33 - Error: Arduino not found
+2025-05-11 16:01:38 - Starting Light a Fire UI
+2025-05-11 16:01:38 - Error: Arduino not found
+2025-05-11 16:03:32 - Starting Light a Fire UI
+2025-05-11 16:03:32 - Error: Arduino not found
+2025-05-11 16:04:19 - Starting Light a Fire UI
+2025-05-11 16:04:19 - Error: Arduino not found
+2025-05-11 16:05:11 - Starting Light a Fire UI
+2025-05-11 16:05:11 - Error: Arduino not found
+2025-05-11 16:07:34 - Starting Light a Fire UI
+2025-05-11 16:07:34 - Error: Arduino not found
+2025-05-11 16:07:50 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:07:50 - Connected to /dev/ttyUSB0
+2025-05-11 16:07:52 - the sensor is disconected
+2025-05-11 16:09:06 - the ember ignites!
+2025-05-11 16:09:07 - the ember ignites!
+2025-05-11 16:12:34 - Starting Light a Fire UI
+2025-05-11 16:12:34 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:12:34 - Connected to /dev/ttyUSB0
+2025-05-11 16:12:36 - the ember ignites!
+2025-05-11 16:13:28 - Starting Light a Fire UI
+2025-05-11 16:13:28 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:13:28 - Connected to /dev/ttyUSB0
+2025-05-11 16:13:30 - the ember ignites!
+2025-05-11 16:13:39 - the ember ignites!
+2025-05-11 16:14:05 - Starting Light a Fire UI
+2025-05-11 16:14:05 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:14:05 - Connected to /dev/ttyUSB0
+2025-05-11 16:14:06 - the ember ignites!
+2025-05-11 16:14:43 - Starting Light a Fire UI
+2025-05-11 16:14:43 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:14:43 - Connected to /dev/ttyUSB0
+2025-05-11 16:14:44 - the ember ignites!
+2025-05-11 16:14:46 - the ember ignites!
+2025-05-11 16:15:00 - the ember ignites!
+2025-05-11 16:15:12 - the ember ignites!
+2025-05-11 16:15:41 - Starting Light a Fire UI
+2025-05-11 16:15:41 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:15:41 - Connected to /dev/ttyUSB0
+2025-05-11 16:15:43 - the ember ignites!
+2025-05-11 16:15:44 - the ember ignites!
+2025-05-11 16:15:45 - the ember ignites!
+2025-05-11 16:15:46 - the ember ignites!
+2025-05-11 16:15:51 - the ember ignites!
+2025-05-11 16:15:53 - the ember ignites!
+2025-05-11 16:15:54 - the ember ignites!
+2025-05-11 16:15:54 - the ember ignites!
+2025-05-11 16:15:54 - the ember ignites!
+2025-05-11 16:15:56 - the ember ignites!
+2025-05-11 16:15:59 - the ember ignites!
+2025-05-11 16:16:00 - the ember ignites!
+2025-05-11 16:16:01 - the ember ignites!
+2025-05-11 16:16:04 - the ember ignites!
+2025-05-11 16:16:05 - the ember ignites!
+2025-05-11 16:16:05 - the ember ignites!
+2025-05-11 16:16:06 - the ember ignites!
+2025-05-11 16:16:06 - the ember ignites!
+2025-05-11 16:16:07 - the ember ignites!
+2025-05-11 16:16:07 - the ember ignites!
+2025-05-11 16:16:08 - the ember ignites!
+2025-05-11 16:16:09 - the ember ignites!
+2025-05-11 16:16:09 - the ember ignites!
+2025-05-11 16:16:10 - the ember ignites!
+2025-05-11 16:16:10 - the ember ignites!
+2025-05-11 16:16:11 - the ember ignites!
+2025-05-11 16:16:12 - the ember ignites!
+2025-05-11 16:16:15 - the ember ignites!
+2025-05-11 16:16:17 - the ember ignites!
+2025-05-11 16:16:19 - the ember ignites!
+2025-05-11 16:17:15 - Starting Light a Fire UI
+2025-05-11 16:17:16 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:17:16 - Connected to /dev/ttyUSB0
+2025-05-11 16:17:18 - the ember ignites!
+2025-05-11 16:17:18 - the ember ignites!
+2025-05-11 16:17:19 - the ember ignites!
+2025-05-11 16:17:22 - the ember ignites!
+2025-05-11 16:17:28 - the ember ignites!
+2025-05-11 16:17:30 - the ember ignites!
+2025-05-11 16:17:31 - the ember ignites!
+2025-05-11 16:17:34 - the ember ignites!
+2025-05-11 16:17:43 - the ember ignites!
+2025-05-11 16:17:55 - the ember ignites!
+2025-05-11 16:17:59 - the ember ignites!
+2025-05-11 16:18:04 - the ember ignites!
+2025-05-11 16:18:09 - the sensor is disconected
+2025-05-11 16:18:38 - Error reading from serial, Arduino probably disconnected
+2025-05-11 16:18:38 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 16:18:38 - Error: Arduino not found
+2025-05-11 16:18:44 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:18:44 - Connected to /dev/ttyUSB0
+2025-05-11 16:18:52 - the ember ignites!
+2025-05-11 16:19:21 - Starting Light a Fire UI
+2025-05-11 16:19:21 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:19:21 - Connected to /dev/ttyUSB0
+2025-05-11 16:20:25 - Starting Light a Fire UI
+2025-05-11 16:20:25 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:20:25 - Connected to /dev/ttyUSB0
+2025-05-11 16:20:30 - the ember ignites!
+2025-05-11 16:20:39 - the ember ignites!
+2025-05-11 16:20:45 - the ember ignites!
+2025-05-11 16:22:02 - Starting Light a Fire UI
+2025-05-11 16:22:02 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:22:02 - Connected to /dev/ttyUSB0
+2025-05-11 16:22:12 - the ember ignites!
+2025-05-11 16:22:13 - the ember ignites!
+2025-05-11 16:22:16 - the ember ignites!
+2025-05-11 16:22:23 - the ember ignites!
+2025-05-11 16:22:24 - the ember ignites!
+2025-05-11 16:22:28 - the ember ignites!
+2025-05-11 16:22:44 - the ember ignites!
+2025-05-11 16:24:21 - the ember ignites!
+2025-05-11 16:24:39 - the ember ignites!
+2025-05-11 16:24:59 - the ember ignites!
+2025-05-11 16:25:00 - the ember ignites!
+2025-05-11 16:25:00 - the ember ignites!
+2025-05-11 16:25:12 - the ember ignites!
+2025-05-11 16:25:56 - the ember ignites!
+2025-05-11 16:30:03 - Starting Light a Fire UI
+2025-05-11 16:30:03 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:30:03 - Connected to /dev/ttyUSB0
+2025-05-11 16:30:04 - Error parsing data:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            29.02 469
+2025-05-11 16:30:27 - Error reading from serial, Arduino probably disconnected
+2025-05-11 16:30:27 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 16:30:27 - Error: Arduino not found
+2025-05-11 16:30:44 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:30:44 - Connected to /dev/ttyUSB0
+2025-05-11 16:30:45 - the sensor is disconected
+2025-05-11 16:30:53 - the ember ignites!
+2025-05-11 16:30:54 - the ember ignites!
+2025-05-11 16:30:54 - the ember ignites!
+2025-05-11 16:30:56 - the ember ignites!
+2025-05-11 16:30:57 - the ember ignites!
+2025-05-11 16:30:57 - the ember ignites!
+2025-05-11 16:30:58 - the ember ignites!
+2025-05-11 16:30:59 - the ember ignites!
+2025-05-11 16:31:00 - the ember ignites!
+2025-05-11 16:31:01 - the ember ignites!
+2025-05-11 16:31:01 - the ember ignites!
+2025-05-11 16:31:02 - the ember ignites!
+2025-05-11 16:31:02 - the ember ignites!
+2025-05-11 16:31:03 - the ember ignites!
+2025-05-11 16:31:03 - the ember ignites!
+2025-05-11 16:31:05 - the ember ignites!
+2025-05-11 16:31:06 - the ember ignites!
+2025-05-11 16:31:06 - the ember ignites!
+2025-05-11 16:31:07 - the ember ignites!
+2025-05-11 16:31:08 - the ember ignites!
+2025-05-11 16:31:08 - the ember ignites!
+2025-05-11 16:31:09 - the ember ignites!
+2025-05-11 16:31:09 - the ember ignites!
+2025-05-11 16:31:10 - the ember ignites!
+2025-05-11 16:31:11 - the ember ignites!
+2025-05-11 16:31:11 - the ember ignites!
+2025-05-11 16:31:12 - the ember ignites!
+2025-05-11 16:31:14 - the ember ignites!
+2025-05-11 16:31:14 - the ember ignites!
+2025-05-11 16:31:15 - the ember ignites!
+2025-05-11 16:31:16 - the ember ignites!
+2025-05-11 16:31:18 - the ember ignites!
+2025-05-11 16:31:19 - the ember ignites!
+2025-05-11 16:31:19 - the ember ignites!
+2025-05-11 16:31:20 - the ember ignites!
+2025-05-11 16:31:20 - the ember ignites!
+2025-05-11 16:31:21 - the ember ignites!
+2025-05-11 16:31:23 - the ember ignites!
+2025-05-11 16:31:24 - the ember ignites!
+2025-05-11 16:31:24 - the ember ignites!
+2025-05-11 16:31:25 - the ember ignites!
+2025-05-11 16:31:26 - the ember ignites!
+2025-05-11 16:31:27 - the ember ignites!
+2025-05-11 16:31:27 - the ember ignites!
+2025-05-11 16:31:28 - the ember ignites!
+2025-05-11 16:31:29 - the ember ignites!
+2025-05-11 16:31:29 - the ember ignites!
+2025-05-11 16:31:30 - the ember ignites!
+2025-05-11 16:31:30 - the ember ignites!
+2025-05-11 16:31:31 - the ember ignites!
+2025-05-11 16:31:31 - the ember ignites!
+2025-05-11 16:31:32 - the ember ignites!
+2025-05-11 16:31:34 - the ember ignites!
+2025-05-11 16:31:35 - the ember ignites!
+2025-05-11 16:31:36 - the ember ignites!
+2025-05-11 16:31:37 - the ember ignites!
+2025-05-11 16:31:38 - the ember ignites!
+2025-05-11 16:31:38 - the ember ignites!
+2025-05-11 16:31:39 - the ember ignites!
+2025-05-11 16:31:41 - the ember ignites!
+2025-05-11 16:31:46 - the ember ignites!
+2025-05-11 16:31:47 - the ember ignites!
+2025-05-11 16:31:49 - the ember ignites!
+2025-05-11 16:31:54 - the ember ignites!
+2025-05-11 16:31:55 - the ember ignites!
+2025-05-11 16:32:43 - the ember ignites!
+2025-05-11 16:32:49 - the ember ignites!
+2025-05-11 16:32:50 - the ember ignites!
+2025-05-11 16:32:52 - the ember ignites!
+2025-05-11 16:32:56 - the ember ignites!
+2025-05-11 16:33:00 - the ember ignites!
+2025-05-11 16:33:03 - the ember ignites!
+2025-05-11 16:33:04 - the ember ignites!
+2025-05-11 16:33:07 - the ember ignites!
+2025-05-11 16:33:09 - the ember ignites!
+2025-05-11 16:33:13 - the ember ignites!
+2025-05-11 16:33:14 - the ember ignites!
+2025-05-11 16:33:14 - the ember ignites!
+2025-05-11 16:33:15 - the ember ignites!
+2025-05-11 16:33:16 - the ember ignites!
+2025-05-11 16:33:19 - the ember ignites!
+2025-05-11 16:33:20 - the ember ignites!
+2025-05-11 16:33:23 - the ember ignites!
+2025-05-11 16:33:24 - the ember ignites!
+2025-05-11 16:33:25 - the ember ignites!
+2025-05-11 16:33:26 - the ember ignites!
+2025-05-11 16:33:28 - the ember ignites!
+2025-05-11 16:33:28 - the ember ignites!
+2025-05-11 16:33:29 - the ember ignites!
+2025-05-11 16:33:29 - the ember ignites!
+2025-05-11 16:33:30 - the ember ignites!
+2025-05-11 16:33:32 - the ember ignites!
+2025-05-11 16:33:34 - the ember ignites!
+2025-05-11 16:33:37 - the ember ignites!
+2025-05-11 16:33:39 - the ember ignites!
+2025-05-11 16:33:41 - the ember ignites!
+2025-05-11 16:33:41 - the ember ignites!
+2025-05-11 16:33:41 - the ember ignites!
+2025-05-11 16:33:43 - the ember ignites!
+2025-05-11 16:33:44 - the ember ignites!
+2025-05-11 16:33:45 - the ember ignites!
+2025-05-11 16:33:45 - the ember ignites!
+2025-05-11 16:33:47 - the ember ignites!
+2025-05-11 16:33:50 - the ember ignites!
+2025-05-11 16:33:52 - the ember ignites!
+2025-05-11 16:33:52 - the ember ignites!
+2025-05-11 16:33:53 - the ember ignites!
+2025-05-11 16:33:54 - the ember ignites!
+2025-05-11 16:33:54 - the ember ignites!
+2025-05-11 16:33:55 - the ember ignites!
+2025-05-11 16:33:56 - the ember ignites!
+2025-05-11 16:33:57 - the ember ignites!
+2025-05-11 16:33:58 - the ember ignites!
+2025-05-11 16:33:59 - the ember ignites!
+2025-05-11 16:34:00 - the ember ignites!
+2025-05-11 16:34:01 - the ember ignites!
+2025-05-11 16:34:02 - the ember ignites!
+2025-05-11 16:34:03 - the ember ignites!
+2025-05-11 16:34:03 - the ember ignites!
+2025-05-11 16:34:04 - the ember ignites!
+2025-05-11 16:34:05 - the ember ignites!
+2025-05-11 16:34:06 - the ember ignites!
+2025-05-11 16:34:07 - the ember ignites!
+2025-05-11 16:34:09 - the ember ignites!
+2025-05-11 16:34:13 - the ember ignites!
+2025-05-11 16:34:14 - the ember ignites!
+2025-05-11 16:34:14 - the ember ignites!
+2025-05-11 16:34:15 - the ember ignites!
+2025-05-11 16:34:15 - the ember ignites!
+2025-05-11 16:34:16 - the ember ignites!
+2025-05-11 16:34:17 - the ember ignites!
+2025-05-11 16:34:17 - the ember ignites!
+2025-05-11 16:34:18 - the ember ignites!
+2025-05-11 16:34:18 - the ember ignites!
+2025-05-11 16:34:19 - the ember ignites!
+2025-05-11 16:34:20 - the ember ignites!
+2025-05-11 16:34:20 - the ember ignites!
+2025-05-11 16:34:21 - the ember ignites!
+2025-05-11 16:34:23 - the ember ignites!
+2025-05-11 16:34:23 - the ember ignites!
+2025-05-11 16:34:24 - the ember ignites!
+2025-05-11 16:34:25 - the ember ignites!
+2025-05-11 16:34:25 - the ember ignites!
+2025-05-11 16:34:27 - the ember ignites!
+2025-05-11 16:34:27 - the ember ignites!
+2025-05-11 16:34:28 - the ember ignites!
+2025-05-11 16:34:28 - the ember ignites!
+2025-05-11 16:34:29 - the ember ignites!
+2025-05-11 16:34:30 - the ember ignites!
+2025-05-11 16:34:31 - the ember ignites!
+2025-05-11 16:34:32 - the ember ignites!
+2025-05-11 16:34:32 - the ember ignites!
+2025-05-11 16:34:33 - the ember ignites!
+2025-05-11 16:34:34 - the ember ignites!
+2025-05-11 16:34:35 - the ember ignites!
+2025-05-11 16:34:36 - the ember ignites!
+2025-05-11 16:34:37 - the ember ignites!
+2025-05-11 16:34:37 - the ember ignites!
+2025-05-11 16:34:38 - the ember ignites!
+2025-05-11 16:34:39 - the ember ignites!
+2025-05-11 16:34:40 - the ember ignites!
+2025-05-11 16:34:42 - the ember ignites!
+2025-05-11 16:34:43 - the ember ignites!
+2025-05-11 16:34:44 - the ember ignites!
+2025-05-11 16:34:47 - the ember ignites!
+2025-05-11 16:34:47 - the ember ignites!
+2025-05-11 16:34:48 - the ember ignites!
+2025-05-11 16:34:49 - the ember ignites!
+2025-05-11 16:34:49 - the ember ignites!
+2025-05-11 16:34:50 - the ember ignites!
+2025-05-11 16:34:51 - the ember ignites!
+2025-05-11 16:34:52 - the ember ignites!
+2025-05-11 16:34:53 - the ember ignites!
+2025-05-11 16:34:54 - the ember ignites!
+2025-05-11 16:34:55 - the ember ignites!
+2025-05-11 16:34:57 - the ember ignites!
+2025-05-11 16:34:58 - the ember ignites!
+2025-05-11 16:35:00 - the ember ignites!
+2025-05-11 16:35:01 - the ember ignites!
+2025-05-11 16:35:02 - the ember ignites!
+2025-05-11 16:35:02 - the ember ignites!
+2025-05-11 16:35:04 - the ember ignites!
+2025-05-11 16:35:05 - the ember ignites!
+2025-05-11 16:35:07 - the ember ignites!
+2025-05-11 16:35:09 - the ember ignites!
+2025-05-11 16:35:10 - the ember ignites!
+2025-05-11 16:35:12 - the ember ignites!
+2025-05-11 16:35:14 - the ember ignites!
+2025-05-11 16:35:15 - the ember ignites!
+2025-05-11 16:35:15 - the ember ignites!
+2025-05-11 16:35:16 - the ember ignites!
+2025-05-11 16:35:18 - the ember ignites!
+2025-05-11 16:35:23 - the ember ignites!
+2025-05-11 16:35:28 - the ember ignites!
+2025-05-11 16:35:28 - the ember ignites!
+2025-05-11 16:35:30 - the ember ignites!
+2025-05-11 16:35:31 - the ember ignites!
+2025-05-11 16:35:31 - the ember ignites!
+2025-05-11 16:35:32 - the ember ignites!
+2025-05-11 16:35:33 - the ember ignites!
+2025-05-11 16:35:36 - the ember ignites!
+2025-05-11 16:35:37 - the ember ignites!
+2025-05-11 16:35:38 - the ember ignites!
+2025-05-11 16:35:39 - the ember ignites!
+2025-05-11 16:35:40 - the ember ignites!
+2025-05-11 16:35:43 - the ember ignites!
+2025-05-11 16:35:48 - the ember ignites!
+2025-05-11 16:35:52 - the ember ignites!
+2025-05-11 16:35:53 - the ember ignites!
+2025-05-11 16:35:54 - the ember ignites!
+2025-05-11 16:35:55 - the ember ignites!
+2025-05-11 16:35:55 - the ember ignites!
+2025-05-11 16:35:56 - the ember ignites!
+2025-05-11 16:35:57 - the ember ignites!
+2025-05-11 16:35:58 - the ember ignites!
+2025-05-11 16:35:59 - the ember ignites!
+2025-05-11 16:36:04 - the ember ignites!
+2025-05-11 16:36:07 - the ember ignites!
+2025-05-11 16:36:08 - the ember ignites!
+2025-05-11 16:36:10 - the ember ignites!
+2025-05-11 16:36:11 - the ember ignites!
+2025-05-11 16:36:16 - the ember ignites!
+2025-05-11 16:36:17 - the ember ignites!
+2025-05-11 16:36:18 - the ember ignites!
+2025-05-11 16:36:21 - the ember ignites!
+2025-05-11 16:36:33 - the ember ignites!
+2025-05-11 16:36:36 - the ember ignites!
+2025-05-11 16:36:36 - the ember ignites!
+2025-05-11 16:36:38 - the ember ignites!
+2025-05-11 16:36:39 - the ember ignites!
+2025-05-11 16:36:40 - the ember ignites!
+2025-05-11 16:36:41 - the ember ignites!
+2025-05-11 16:36:42 - the ember ignites!
+2025-05-11 16:36:48 - the ember ignites!
+2025-05-11 16:36:52 - the ember ignites!
+2025-05-11 16:36:52 - the ember ignites!
+2025-05-11 16:36:53 - the ember ignites!
+2025-05-11 16:36:53 - the ember ignites!
+2025-05-11 16:36:55 - the ember ignites!
+2025-05-11 16:37:00 - the ember ignites!
+2025-05-11 16:37:05 - the ember ignites!
+2025-05-11 16:37:06 - the ember ignites!
+2025-05-11 16:37:13 - the ember ignites!
+2025-05-11 16:37:15 - the ember ignites!
+2025-05-11 16:37:16 - the ember ignites!
+2025-05-11 16:37:19 - the ember ignites!
+2025-05-11 16:37:21 - the ember ignites!
+2025-05-11 16:37:23 - the ember ignites!
+2025-05-11 16:37:24 - the ember ignites!
+2025-05-11 16:37:40 - the ember ignites!
+2025-05-11 16:37:41 - the ember ignites!
+2025-05-11 16:37:43 - the ember ignites!
+2025-05-11 16:37:47 - the ember ignites!
+2025-05-11 16:37:48 - the ember ignites!
+2025-05-11 16:37:49 - the ember ignites!
+2025-05-11 16:37:52 - the ember ignites!
+2025-05-11 16:37:53 - the ember ignites!
+2025-05-11 16:37:54 - the ember ignites!
+2025-05-11 16:37:57 - the ember ignites!
+2025-05-11 16:37:59 - the ember ignites!
+2025-05-11 16:38:01 - the ember ignites!
+2025-05-11 16:38:03 - the ember ignites!
+2025-05-11 16:38:07 - the ember ignites!
+2025-05-11 16:38:08 - the ember ignites!
+2025-05-11 16:38:08 - the ember ignites!
+2025-05-11 16:38:13 - the ember ignites!
+2025-05-11 16:38:15 - the ember ignites!
+2025-05-11 16:38:16 - the ember ignites!
+2025-05-11 16:38:17 - the ember ignites!
+2025-05-11 16:38:23 - the ember ignites!
+2025-05-11 16:38:25 - the ember ignites!
+2025-05-11 16:38:29 - the ember ignites!
+2025-05-11 16:38:33 - the ember ignites!
+2025-05-11 16:38:34 - the ember ignites!
+2025-05-11 16:38:35 - the ember ignites!
+2025-05-11 16:38:42 - the ember ignites!
+2025-05-11 16:38:49 - the ember ignites!
+2025-05-11 16:38:51 - the ember ignites!
+2025-05-11 16:38:52 - the ember ignites!
+2025-05-11 16:38:54 - the ember ignites!
+2025-05-11 16:38:55 - the ember ignites!
+2025-05-11 16:38:56 - the ember ignites!
+2025-05-11 16:38:58 - the ember ignites!
+2025-05-11 16:38:58 - the ember ignites!
+2025-05-11 16:39:01 - the ember ignites!
+2025-05-11 16:39:04 - the ember ignites!
+2025-05-11 16:39:05 - the ember ignites!
+2025-05-11 16:39:07 - the ember ignites!
+2025-05-11 16:39:11 - the ember ignites!
+2025-05-11 16:39:16 - the ember ignites!
+2025-05-11 16:39:16 - the ember ignites!
+2025-05-11 16:39:17 - the ember ignites!
+2025-05-11 16:39:20 - the ember ignites!
+2025-05-11 16:39:28 - the ember ignites!
+2025-05-11 16:39:33 - the ember ignites!
+2025-05-11 16:39:34 - the ember ignites!
+2025-05-11 16:39:35 - the ember ignites!
+2025-05-11 16:39:37 - the ember ignites!
+2025-05-11 16:39:38 - the ember ignites!
+2025-05-11 16:39:40 - the ember ignites!
+2025-05-11 16:39:45 - the ember ignites!
+2025-05-11 16:39:47 - the ember ignites!
+2025-05-11 16:39:48 - the ember ignites!
+2025-05-11 16:39:51 - the ember ignites!
+2025-05-11 16:39:53 - the ember ignites!
+2025-05-11 16:39:56 - the ember ignites!
+2025-05-11 16:39:59 - the ember ignites!
+2025-05-11 16:40:03 - the ember ignites!
+2025-05-11 16:40:04 - the ember ignites!
+2025-05-11 16:40:04 - the ember ignites!
+2025-05-11 16:40:06 - the ember ignites!
+2025-05-11 16:40:06 - the ember ignites!
+2025-05-11 16:40:07 - the ember ignites!
+2025-05-11 16:40:09 - the ember ignites!
+2025-05-11 16:40:11 - the ember ignites!
+2025-05-11 16:40:12 - the ember ignites!
+2025-05-11 16:40:17 - the ember ignites!
+2025-05-11 16:40:20 - the ember ignites!
+2025-05-11 16:40:22 - the ember ignites!
+2025-05-11 16:40:27 - the ember ignites!
+2025-05-11 16:40:29 - the ember ignites!
+2025-05-11 16:40:30 - the ember ignites!
+2025-05-11 16:40:31 - the ember ignites!
+2025-05-11 16:40:35 - the ember ignites!
+2025-05-11 16:40:38 - the ember ignites!
+2025-05-11 16:40:39 - the ember ignites!
+2025-05-11 16:40:43 - the ember ignites!
+2025-05-11 16:40:45 - the ember ignites!
+2025-05-11 16:40:47 - the ember ignites!
+2025-05-11 16:40:48 - the ember ignites!
+2025-05-11 16:41:00 - the ember ignites!
+2025-05-11 16:41:10 - the ember ignites!
+2025-05-11 16:41:11 - the ember ignites!
+2025-05-11 16:41:16 - the ember ignites!
+2025-05-11 16:41:19 - the ember ignites!
+2025-05-11 16:41:24 - the ember ignites!
+2025-05-11 16:41:27 - the ember ignites!
+2025-05-11 16:41:28 - the ember ignites!
+2025-05-11 16:41:33 - the ember ignites!
+2025-05-11 16:41:34 - the ember ignites!
+2025-05-11 16:41:39 - the ember ignites!
+2025-05-11 16:41:40 - the ember ignites!
+2025-05-11 16:41:42 - the ember ignites!
+2025-05-11 16:41:45 - the ember ignites!
+2025-05-11 16:41:48 - the ember ignites!
+2025-05-11 16:41:49 - the ember ignites!
+2025-05-11 16:41:51 - the ember ignites!
+2025-05-11 16:41:54 - the ember ignites!
+2025-05-11 16:41:57 - the ember ignites!
+2025-05-11 16:41:59 - the ember ignites!
+2025-05-11 16:42:00 - the ember ignites!
+2025-05-11 16:42:04 - the ember ignites!
+2025-05-11 16:42:05 - the ember ignites!
+2025-05-11 16:42:07 - the ember ignites!
+2025-05-11 16:42:08 - the ember ignites!
+2025-05-11 16:42:11 - the ember ignites!
+2025-05-11 16:42:12 - the ember ignites!
+2025-05-11 16:42:17 - the ember ignites!
+2025-05-11 16:42:18 - the ember ignites!
+2025-05-11 16:42:19 - the ember ignites!
+2025-05-11 16:42:22 - the ember ignites!
+2025-05-11 16:42:25 - the ember ignites!
+2025-05-11 16:42:28 - the ember ignites!
+2025-05-11 16:42:31 - the ember ignites!
+2025-05-11 16:42:34 - the ember ignites!
+2025-05-11 16:42:36 - the ember ignites!
+2025-05-11 16:42:38 - the ember ignites!
+2025-05-11 16:42:39 - the ember ignites!
+2025-05-11 16:42:41 - the ember ignites!
+2025-05-11 16:42:43 - the ember ignites!
+2025-05-11 16:42:47 - the ember ignites!
+2025-05-11 16:42:51 - the ember ignites!
+2025-05-11 16:42:51 - the ember ignites!
+2025-05-11 16:42:53 - the ember ignites!
+2025-05-11 16:42:54 - the ember ignites!
+2025-05-11 16:42:56 - the ember ignites!
+2025-05-11 16:42:59 - the ember ignites!
+2025-05-11 16:43:04 - the ember ignites!
+2025-05-11 16:43:04 - the ember ignites!
+2025-05-11 16:43:09 - the ember ignites!
+2025-05-11 16:43:12 - the ember ignites!
+2025-05-11 16:43:13 - the ember ignites!
+2025-05-11 16:43:14 - the ember ignites!
+2025-05-11 16:43:15 - the ember ignites!
+2025-05-11 16:43:16 - the ember ignites!
+2025-05-11 16:43:19 - the ember ignites!
+2025-05-11 16:43:22 - the ember ignites!
+2025-05-11 16:43:24 - the ember ignites!
+2025-05-11 16:43:33 - the ember ignites!
+2025-05-11 16:43:35 - the ember ignites!
+2025-05-11 16:43:36 - the ember ignites!
+2025-05-11 16:43:37 - the ember ignites!
+2025-05-11 16:43:37 - the ember ignites!
+2025-05-11 16:43:38 - the ember ignites!
+2025-05-11 16:43:39 - the ember ignites!
+2025-05-11 16:43:40 - the ember ignites!
+2025-05-11 16:43:53 - the ember ignites!
+2025-05-11 16:43:59 - the ember ignites!
+2025-05-11 16:44:02 - the ember ignites!
+2025-05-11 16:44:03 - the ember ignites!
+2025-05-11 16:44:04 - the ember ignites!
+2025-05-11 16:44:10 - the ember ignites!
+2025-05-11 16:44:19 - the ember ignites!
+2025-05-11 16:44:22 - the ember ignites!
+2025-05-11 16:44:25 - the ember ignites!
+2025-05-11 16:44:27 - the ember ignites!
+2025-05-11 16:44:28 - the ember ignites!
+2025-05-11 16:44:34 - the ember ignites!
+2025-05-11 16:44:34 - the ember ignites!
+2025-05-11 16:44:39 - the ember ignites!
+2025-05-11 16:44:41 - the ember ignites!
+2025-05-11 16:44:44 - the ember ignites!
+2025-05-11 16:44:46 - the ember ignites!
+2025-05-11 16:44:48 - the ember ignites!
+2025-05-11 16:44:48 - the ember ignites!
+2025-05-11 16:44:55 - the ember ignites!
+2025-05-11 16:44:55 - the ember ignites!
+2025-05-11 16:44:56 - the ember ignites!
+2025-05-11 16:44:58 - the ember ignites!
+2025-05-11 16:45:00 - the ember ignites!
+2025-05-11 16:45:09 - the ember ignites!
+2025-05-11 16:45:09 - the ember ignites!
+2025-05-11 16:45:16 - the ember ignites!
+2025-05-11 16:45:19 - the ember ignites!
+2025-05-11 16:45:27 - the ember ignites!
+2025-05-11 16:45:29 - the ember ignites!
+2025-05-11 16:45:30 - the ember ignites!
+2025-05-11 16:45:31 - the ember ignites!
+2025-05-11 16:45:32 - the ember ignites!
+2025-05-11 16:45:32 - the ember ignites!
+2025-05-11 16:45:33 - the ember ignites!
+2025-05-11 16:45:35 - the ember ignites!
+2025-05-11 16:45:38 - the ember ignites!
+2025-05-11 16:45:40 - the ember ignites!
+2025-05-11 16:45:43 - the ember ignites!
+2025-05-11 16:45:45 - the ember ignites!
+2025-05-11 16:45:49 - the ember ignites!
+2025-05-11 16:45:52 - the ember ignites!
+2025-05-11 16:46:00 - the ember ignites!
+2025-05-11 16:46:01 - the ember ignites!
+2025-05-11 16:46:03 - the ember ignites!
+2025-05-11 16:46:04 - the ember ignites!
+2025-05-11 16:46:10 - the ember ignites!
+2025-05-11 16:46:11 - the ember ignites!
+2025-05-11 16:46:14 - the ember ignites!
+2025-05-11 16:46:16 - the ember ignites!
+2025-05-11 16:46:17 - the ember ignites!
+2025-05-11 16:46:17 - the ember ignites!
+2025-05-11 16:46:19 - the ember ignites!
+2025-05-11 16:46:19 - the ember ignites!
+2025-05-11 16:46:25 - the ember ignites!
+2025-05-11 16:46:29 - the ember ignites!
+2025-05-11 16:46:30 - the ember ignites!
+2025-05-11 16:46:32 - the ember ignites!
+2025-05-11 16:46:32 - the ember ignites!
+2025-05-11 16:46:35 - the ember ignites!
+2025-05-11 16:46:39 - the ember ignites!
+2025-05-11 16:46:42 - the ember ignites!
+2025-05-11 16:46:43 - the ember ignites!
+2025-05-11 16:49:56 - Error reading from serial, Arduino probably disconnected
+2025-05-11 16:49:56 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 16:49:56 - Error: Arduino not found
+2025-05-11 16:50:05 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:50:05 - Connected to /dev/ttyUSB0
+2025-05-11 16:50:33 - the ember ignites!
+2025-05-11 16:50:35 - the ember ignites!
+2025-05-11 16:50:53 - the ember ignites!
+2025-05-11 16:50:54 - the ember ignites!
+2025-05-11 16:50:54 - the ember ignites!
+2025-05-11 16:50:55 - the ember ignites!
+2025-05-11 16:50:55 - the ember ignites!
+2025-05-11 16:50:56 - the ember ignites!
+2025-05-11 16:50:57 - the ember ignites!
+2025-05-11 16:50:57 - the ember ignites!
+2025-05-11 16:50:58 - the ember ignites!
+2025-05-11 16:50:58 - the ember ignites!
+2025-05-11 16:50:59 - the ember ignites!
+2025-05-11 16:50:59 - the ember ignites!
+2025-05-11 16:51:00 - the ember ignites!
+2025-05-11 16:51:01 - the ember ignites!
+2025-05-11 16:51:01 - the ember ignites!
+2025-05-11 16:51:02 - the ember ignites!
+2025-05-11 16:51:02 - the ember ignites!
+2025-05-11 16:51:03 - the ember ignites!
+2025-05-11 16:51:03 - the ember ignites!
+2025-05-11 16:51:04 - the ember ignites!
+2025-05-11 16:51:07 - the ember ignites!
+2025-05-11 16:51:08 - the ember ignites!
+2025-05-11 16:51:09 - the ember ignites!
+2025-05-11 16:51:10 - the ember ignites!
+2025-05-11 16:51:10 - the ember ignites!
+2025-05-11 16:51:10 - the ember ignites!
+2025-05-11 16:51:11 - the ember ignites!
+2025-05-11 16:51:12 - the ember ignites!
+2025-05-11 16:51:13 - the ember ignites!
+2025-05-11 16:51:13 - the ember ignites!
+2025-05-11 16:51:14 - the ember ignites!
+2025-05-11 16:51:14 - the ember ignites!
+2025-05-11 16:51:15 - the ember ignites!
+2025-05-11 16:51:17 - the ember ignites!
+2025-05-11 16:51:17 - the ember ignites!
+2025-05-11 16:51:18 - the ember ignites!
+2025-05-11 16:51:19 - the ember ignites!
+2025-05-11 16:51:20 - the ember ignites!
+2025-05-11 16:51:21 - the ember ignites!
+2025-05-11 16:51:21 - the ember ignites!
+2025-05-11 16:51:22 - the ember ignites!
+2025-05-11 16:51:23 - the ember ignites!
+2025-05-11 16:51:24 - the ember ignites!
+2025-05-11 16:51:25 - the ember ignites!
+2025-05-11 16:51:25 - the ember ignites!
+2025-05-11 16:51:28 - the ember ignites!
+2025-05-11 16:51:31 - the ember ignites!
+2025-05-11 16:51:34 - the ember ignites!
+2025-05-11 16:51:35 - the ember ignites!
+2025-05-11 16:51:37 - the ember ignites!
+2025-05-11 16:51:38 - the ember ignites!
+2025-05-11 16:51:40 - the ember ignites!
+2025-05-11 16:51:42 - the ember ignites!
+2025-05-11 16:51:45 - the ember ignites!
+2025-05-11 16:51:46 - the ember ignites!
+2025-05-11 16:51:53 - Error reading from serial, Arduino probably disconnected
+2025-05-11 16:51:53 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 16:51:53 - Error: Arduino not found
+2025-05-11 16:52:14 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 16:52:14 - Connected to /dev/ttyUSB0
+2025-05-11 16:52:54 - the ember ignites!
+2025-05-11 16:52:56 - the ember ignites!
+2025-05-11 16:52:57 - the ember ignites!
+2025-05-11 16:52:58 - the ember ignites!
+2025-05-11 16:52:59 - the ember ignites!
+2025-05-11 16:53:00 - the ember ignites!
+2025-05-11 16:53:01 - the ember ignites!
+2025-05-11 16:53:02 - the ember ignites!
+2025-05-11 16:53:03 - the ember ignites!
+2025-05-11 16:53:04 - the ember ignites!
+2025-05-11 16:53:04 - the ember ignites!
+2025-05-11 16:53:05 - the ember ignites!
+2025-05-11 16:53:05 - the ember ignites!
+2025-05-11 16:53:06 - the ember ignites!
+2025-05-11 16:53:08 - the ember ignites!
+2025-05-11 16:53:09 - the ember ignites!
+2025-05-11 16:53:10 - the ember ignites!
+2025-05-11 16:53:11 - the ember ignites!
+2025-05-11 16:53:20 - the ember ignites!
+2025-05-11 16:53:21 - the ember ignites!
+2025-05-11 16:53:22 - the ember ignites!
+2025-05-11 16:53:23 - the ember ignites!
+2025-05-11 16:53:24 - the ember ignites!
+2025-05-11 16:53:24 - the ember ignites!
+2025-05-11 16:53:25 - the ember ignites!
+2025-05-11 16:53:25 - the ember ignites!
+2025-05-11 16:53:26 - the ember ignites!
+2025-05-11 16:53:27 - the ember ignites!
+2025-05-11 16:53:28 - the ember ignites!
+2025-05-11 16:53:29 - the ember ignites!
+2025-05-11 16:53:30 - the ember ignites!
+2025-05-11 16:53:31 - the ember ignites!
+2025-05-11 16:53:35 - the ember ignites!
+2025-05-11 16:53:41 - the ember ignites!
+2025-05-11 16:53:48 - the ember ignites!
+2025-05-11 16:53:48 - the ember ignites!
+2025-05-11 16:53:53 - the ember ignites!
+2025-05-11 16:53:54 - the ember ignites!
+2025-05-11 16:53:55 - the ember ignites!
+2025-05-11 16:56:37 - the ember ignites!
+2025-05-11 16:56:38 - the ember ignites!
+2025-05-11 16:56:44 - the ember ignites!
+2025-05-11 16:56:45 - the ember ignites!
+2025-05-11 16:56:47 - the ember ignites!
+2025-05-11 16:56:49 - the ember ignites!
+2025-05-11 16:56:52 - the ember ignites!
+2025-05-11 16:56:54 - the ember ignites!
+2025-05-11 16:56:54 - the ember ignites!
+2025-05-11 16:56:56 - the ember ignites!
+2025-05-11 16:56:56 - the ember ignites!
+2025-05-11 16:56:57 - the ember ignites!
+2025-05-11 16:56:58 - the ember ignites!
+2025-05-11 16:56:59 - the ember ignites!
+2025-05-11 16:57:00 - the ember ignites!
+2025-05-11 16:57:01 - the ember ignites!
+2025-05-11 16:57:03 - the ember ignites!
+2025-05-11 16:57:03 - the ember ignites!
+2025-05-11 16:57:04 - the ember ignites!
+2025-05-11 16:57:04 - the ember ignites!
+2025-05-11 16:57:05 - the ember ignites!
+2025-05-11 16:57:05 - the ember ignites!
+2025-05-11 16:57:06 - the ember ignites!
+2025-05-11 16:57:06 - the ember ignites!
+2025-05-11 16:57:07 - the ember ignites!
+2025-05-11 16:57:08 - the ember ignites!
+2025-05-11 16:57:09 - the ember ignites!
+2025-05-11 16:57:10 - the ember ignites!
+2025-05-11 16:57:10 - the ember ignites!
+2025-05-11 16:57:11 - the ember ignites!
+2025-05-11 16:57:12 - the ember ignites!
+2025-05-11 16:57:12 - the ember ignites!
+2025-05-11 16:57:13 - the ember ignites!
+2025-05-11 16:57:14 - the ember ignites!
+2025-05-11 16:57:14 - the ember ignites!
+2025-05-11 16:57:15 - the ember ignites!
+2025-05-11 16:57:15 - the ember ignites!
+2025-05-11 16:57:16 - the ember ignites!
+2025-05-11 16:57:17 - the ember ignites!
+2025-05-11 16:57:17 - the ember ignites!
+2025-05-11 16:57:18 - the ember ignites!
+2025-05-11 16:57:19 - the ember ignites!
+2025-05-11 16:57:19 - the ember ignites!
+2025-05-11 16:57:20 - the ember ignites!
+2025-05-11 16:57:21 - the ember ignites!
+2025-05-11 16:57:21 - the ember ignites!
+2025-05-11 16:57:22 - the ember ignites!
+2025-05-11 16:57:23 - the ember ignites!
+2025-05-11 16:57:24 - the ember ignites!
+2025-05-11 16:57:25 - the ember ignites!
+2025-05-11 16:57:27 - the ember ignites!
+2025-05-11 16:57:28 - the ember ignites!
+2025-05-11 16:57:29 - the ember ignites!
+2025-05-11 16:57:29 - the ember ignites!
+2025-05-11 16:57:30 - the ember ignites!
+2025-05-11 16:57:31 - the ember ignites!
+2025-05-11 16:57:31 - the ember ignites!
+2025-05-11 16:57:32 - the ember ignites!
+2025-05-11 16:57:32 - the ember ignites!
+2025-05-11 16:57:32 - the ember ignites!
+2025-05-11 16:57:33 - the ember ignites!
+2025-05-11 16:57:34 - the ember ignites!
+2025-05-11 16:57:35 - the ember ignites!
+2025-05-11 16:57:36 - the ember ignites!
+2025-05-11 16:57:36 - the ember ignites!
+2025-05-11 16:57:37 - the ember ignites!
+2025-05-11 16:57:37 - the ember ignites!
+2025-05-11 16:57:38 - the ember ignites!
+2025-05-11 16:57:38 - the ember ignites!
+2025-05-11 16:57:39 - the ember ignites!
+2025-05-11 16:57:42 - the ember ignites!
+2025-05-11 16:57:43 - the ember ignites!
+2025-05-11 16:57:44 - the ember ignites!
+2025-05-11 16:57:47 - the ember ignites!
+2025-05-11 16:57:47 - the ember ignites!
+2025-05-11 16:57:48 - the ember ignites!
+2025-05-11 16:57:48 - the ember ignites!
+2025-05-11 16:57:49 - the ember ignites!
+2025-05-11 17:03:16 - Error reading from serial, Arduino probably disconnected
+2025-05-11 17:03:16 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 17:03:16 - Error: Arduino not found
+2025-05-11 17:03:30 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 17:03:30 - Connected to /dev/ttyUSB0
+2025-05-11 17:03:36 - the ember ignites!
+2025-05-11 17:03:39 - the ember ignites!
+2025-05-11 17:03:42 - the ember ignites!
+2025-05-11 17:03:51 - the ember ignites!
+2025-05-11 17:03:55 - the ember ignites!
+2025-05-11 17:03:56 - the ember ignites!
+2025-05-11 17:03:57 - the ember ignites!
+2025-05-11 17:03:58 - the ember ignites!
+2025-05-11 17:04:03 - Error reading from serial, Arduino probably disconnected
+2025-05-11 17:04:03 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 17:04:03 - Error: Arduino not found
+2025-05-11 17:05:00 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 17:05:00 - Error: Could not open serial port /dev/ttyUSB0 - [Errno 13] could not open port /dev/ttyUSB0: [Errno 13] Permission denied: '/dev/ttyUSB0'
+2025-05-11 17:05:01 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 17:05:01 - Connected to /dev/ttyUSB0
+2025-05-11 17:05:06 - the ember ignites!
+2025-05-11 17:05:08 - the ember ignites!
+2025-05-11 17:05:11 - the ember ignites!
+2025-05-11 17:05:11 - the ember ignites!
+2025-05-11 17:05:13 - the ember ignites!
+2025-05-11 17:05:15 - the ember ignites!
+2025-05-11 17:05:18 - the ember ignites!
+2025-05-11 17:05:19 - the ember ignites!
+2025-05-11 17:05:21 - the ember ignites!
+2025-05-11 17:05:22 - the ember ignites!
+2025-05-11 17:05:22 - the ember ignites!
+2025-05-11 17:05:23 - the ember ignites!
+2025-05-11 17:05:25 - the ember ignites!
+2025-05-11 17:05:25 - the ember ignites!
+2025-05-11 17:05:26 - the ember ignites!
+2025-05-11 17:05:26 - the ember ignites!
+2025-05-11 17:05:28 - the ember ignites!
+2025-05-11 17:05:29 - the ember ignites!
+2025-05-11 17:05:31 - the ember ignites!
+2025-05-11 17:05:32 - the ember ignites!
+2025-05-11 17:05:32 - the ember ignites!
+2025-05-11 17:05:33 - the ember ignites!
+2025-05-11 17:05:33 - the ember ignites!
+2025-05-11 17:05:34 - the ember ignites!
+2025-05-11 17:05:35 - the ember ignites!
+2025-05-11 17:05:36 - the ember ignites!
+2025-05-11 17:05:37 - the ember ignites!
+2025-05-11 17:05:39 - the ember ignites!
+2025-05-11 17:05:40 - the ember ignites!
+2025-05-11 17:05:42 - the ember ignites!
+2025-05-11 17:05:42 - the ember ignites!
+2025-05-11 17:05:43 - the ember ignites!
+2025-05-11 17:05:44 - the ember ignites!
+2025-05-11 17:05:44 - the ember ignites!
+2025-05-11 17:05:45 - the ember ignites!
+2025-05-11 17:05:47 - the ember ignites!
+2025-05-11 17:05:48 - the ember ignites!
+2025-05-11 17:05:48 - the ember ignites!
+2025-05-11 17:05:49 - the ember ignites!
+2025-05-11 17:05:50 - the ember ignites!
+2025-05-11 17:05:50 - the ember ignites!
+2025-05-11 17:05:51 - the ember ignites!
+2025-05-11 17:05:53 - the ember ignites!
+2025-05-11 17:05:54 - the ember ignites!
+2025-05-11 17:05:54 - the ember ignites!
+2025-05-11 17:05:56 - the ember ignites!
+2025-05-11 17:05:56 - the ember ignites!
+2025-05-11 17:05:56 - the ember ignites!
+2025-05-11 17:05:57 - the ember ignites!
+2025-05-11 17:05:58 - the ember ignites!
+2025-05-11 17:05:59 - the ember ignites!
+2025-05-11 17:06:00 - the ember ignites!
+2025-05-11 17:06:00 - the ember ignites!
+2025-05-11 17:06:01 - the ember ignites!
+2025-05-11 17:06:02 - the ember ignites!
+2025-05-11 17:06:02 - the ember ignites!
+2025-05-11 17:06:03 - the ember ignites!
+2025-05-11 17:06:03 - the ember ignites!
+2025-05-11 17:06:04 - the ember ignites!
+2025-05-11 17:06:04 - the ember ignites!
+2025-05-11 17:06:05 - the ember ignites!
+2025-05-11 17:06:05 - the ember ignites!
+2025-05-11 17:06:06 - the ember ignites!
+2025-05-11 17:06:06 - the ember ignites!
+2025-05-11 17:06:07 - the ember ignites!
+2025-05-11 17:06:08 - the ember ignites!
+2025-05-11 17:06:08 - the ember ignites!
+2025-05-11 17:06:09 - the ember ignites!
+2025-05-11 17:06:10 - the ember ignites!
+2025-05-11 17:06:11 - the ember ignites!
+2025-05-11 17:06:11 - the ember ignites!
+2025-05-11 17:06:14 - the ember ignites!
+2025-05-11 17:06:14 - the ember ignites!
+2025-05-11 17:06:15 - the ember ignites!
+2025-05-11 17:06:16 - the ember ignites!
+2025-05-11 17:06:17 - the ember ignites!
+2025-05-11 17:06:18 - the ember ignites!
+2025-05-11 17:06:19 - the ember ignites!
+2025-05-11 17:06:19 - the ember ignites!
+2025-05-11 17:06:21 - the ember ignites!
+2025-05-11 17:06:22 - the ember ignites!
+2025-05-11 17:06:24 - the ember ignites!
+2025-05-11 17:06:25 - the ember ignites!
+2025-05-11 17:06:26 - the ember ignites!
+2025-05-11 17:06:27 - the ember ignites!
+2025-05-11 17:06:29 - the ember ignites!
+2025-05-11 17:06:30 - the ember ignites!
+2025-05-11 17:06:31 - the ember ignites!
+2025-05-11 17:06:31 - the ember ignites!
+2025-05-11 17:06:33 - the ember ignites!
+2025-05-11 17:06:34 - the ember ignites!
+2025-05-11 17:06:34 - the ember ignites!
+2025-05-11 17:06:35 - the ember ignites!
+2025-05-11 17:06:36 - the ember ignites!
+2025-05-11 17:06:36 - the ember ignites!
+2025-05-11 17:06:37 - the ember ignites!
+2025-05-11 17:06:38 - the ember ignites!
+2025-05-11 17:06:38 - the ember ignites!
+2025-05-11 17:06:39 - the ember ignites!
+2025-05-11 17:06:39 - the ember ignites!
+2025-05-11 17:06:40 - the ember ignites!
+2025-05-11 17:06:40 - the ember ignites!
+2025-05-11 17:06:41 - the ember ignites!
+2025-05-11 17:06:42 - the ember ignites!
+2025-05-11 17:06:42 - the ember ignites!
+2025-05-11 17:06:43 - the ember ignites!
+2025-05-11 17:06:44 - the ember ignites!
+2025-05-11 17:06:44 - the ember ignites!
+2025-05-11 17:06:45 - the ember ignites!
+2025-05-11 17:06:45 - the ember ignites!
+2025-05-11 17:06:46 - the ember ignites!
+2025-05-11 17:06:47 - the ember ignites!
+2025-05-11 17:06:47 - the ember ignites!
+2025-05-11 17:06:47 - the ember ignites!
+2025-05-11 17:06:48 - the ember ignites!
+2025-05-11 17:06:49 - the ember ignites!
+2025-05-11 17:06:49 - the ember ignites!
+2025-05-11 17:06:50 - the ember ignites!
+2025-05-11 17:06:50 - the ember ignites!
+2025-05-11 17:06:51 - the ember ignites!
+2025-05-11 17:06:52 - the ember ignites!
+2025-05-11 17:06:53 - the ember ignites!
+2025-05-11 17:06:53 - the ember ignites!
+2025-05-11 17:06:54 - the ember ignites!
+2025-05-11 17:06:54 - the ember ignites!
+2025-05-11 17:06:55 - the ember ignites!
+2025-05-11 17:06:55 - the ember ignites!
+2025-05-11 17:06:56 - the ember ignites!
+2025-05-11 17:06:57 - the ember ignites!
+2025-05-11 17:06:57 - the ember ignites!
+2025-05-11 17:06:58 - the ember ignites!
+2025-05-11 17:06:59 - the ember ignites!
+2025-05-11 17:07:00 - the ember ignites!
+2025-05-11 17:07:00 - the ember ignites!
+2025-05-11 17:07:01 - the ember ignites!
+2025-05-11 17:07:01 - the ember ignites!
+2025-05-11 17:07:02 - the ember ignites!
+2025-05-11 17:07:03 - the ember ignites!
+2025-05-11 17:07:03 - the ember ignites!
+2025-05-11 17:07:03 - the ember ignites!
+2025-05-11 17:07:04 - the ember ignites!
+2025-05-11 17:07:05 - the ember ignites!
+2025-05-11 17:07:05 - the ember ignites!
+2025-05-11 17:07:06 - the ember ignites!
+2025-05-11 17:07:07 - the ember ignites!
+2025-05-11 17:07:07 - the ember ignites!
+2025-05-11 17:07:08 - the ember ignites!
+2025-05-11 17:07:09 - the ember ignites!
+2025-05-11 17:07:10 - the ember ignites!
+2025-05-11 17:07:11 - the ember ignites!
+2025-05-11 17:07:13 - the ember ignites!
+2025-05-11 17:07:14 - the ember ignites!
+2025-05-11 17:07:16 - the ember ignites!
+2025-05-11 17:07:17 - the ember ignites!
+2025-05-11 17:07:18 - the ember ignites!
+2025-05-11 17:07:20 - the ember ignites!
+2025-05-11 17:07:20 - the ember ignites!
+2025-05-11 17:07:21 - the ember ignites!
+2025-05-11 17:07:21 - the ember ignites!
+2025-05-11 17:07:24 - the ember ignites!
+2025-05-11 17:07:26 - the ember ignites!
+2025-05-11 17:07:26 - the ember ignites!
+2025-05-11 17:07:27 - the ember ignites!
+2025-05-11 17:07:28 - the ember ignites!
+2025-05-11 17:07:29 - the ember ignites!
+2025-05-11 17:07:30 - the ember ignites!
+2025-05-11 17:07:31 - the ember ignites!
+2025-05-11 17:07:31 - the ember ignites!
+2025-05-11 17:07:32 - the ember ignites!
+2025-05-11 17:07:32 - the ember ignites!
+2025-05-11 17:07:33 - the ember ignites!
+2025-05-11 17:07:34 - the ember ignites!
+2025-05-11 17:07:35 - the ember ignites!
+2025-05-11 17:07:37 - the ember ignites!
+2025-05-11 17:07:38 - the ember ignites!
+2025-05-11 17:07:39 - the ember ignites!
+2025-05-11 17:07:42 - the ember ignites!
+2025-05-11 17:07:45 - the ember ignites!
+2025-05-11 17:07:47 - the ember ignites!
+2025-05-11 17:07:48 - the ember ignites!
+2025-05-11 17:07:48 - the ember ignites!
+2025-05-11 17:07:50 - the ember ignites!
+2025-05-11 17:07:52 - the ember ignites!
+2025-05-11 17:07:53 - the ember ignites!
+2025-05-11 17:07:54 - the ember ignites!
+2025-05-11 17:07:56 - the ember ignites!
+2025-05-11 17:08:01 - the ember ignites!
+2025-05-11 17:08:01 - the ember ignites!
+2025-05-11 17:08:02 - the ember ignites!
+2025-05-11 17:08:03 - the ember ignites!
+2025-05-11 17:08:04 - the ember ignites!
+2025-05-11 17:08:08 - the ember ignites!
+2025-05-11 17:08:09 - the ember ignites!
+2025-05-11 17:08:13 - the ember ignites!
+2025-05-11 17:08:14 - the ember ignites!
+2025-05-11 17:08:18 - the ember ignites!
+2025-05-11 17:08:18 - the ember ignites!
+2025-05-11 17:08:20 - the ember ignites!
+2025-05-11 17:08:21 - the ember ignites!
+2025-05-11 17:08:26 - the ember ignites!
+2025-05-11 17:08:28 - the ember ignites!
+2025-05-11 17:08:30 - the ember ignites!
+2025-05-11 17:08:33 - the ember ignites!
+2025-05-11 17:08:36 - the ember ignites!
+2025-05-11 17:08:37 - the ember ignites!
+2025-05-11 17:08:38 - the ember ignites!
+2025-05-11 17:08:42 - the ember ignites!
+2025-05-11 17:08:49 - the ember ignites!
+2025-05-11 17:08:56 - the ember ignites!
+2025-05-11 17:09:00 - the ember ignites!
+2025-05-11 17:09:17 - the ember ignites!
+2025-05-11 17:09:26 - the ember ignites!
+2025-05-11 17:09:29 - the ember ignites!
+2025-05-11 17:09:32 - the ember ignites!
+2025-05-11 17:09:48 - the ember ignites!
+2025-05-11 17:09:54 - the ember ignites!
+2025-05-11 17:09:58 - the ember ignites!
+2025-05-11 17:10:20 - the ember ignites!
+2025-05-11 17:10:32 - the ember ignites!
+2025-05-11 17:10:33 - the ember ignites!
+2025-05-11 17:10:55 - the ember ignites!
+2025-05-11 17:11:20 - the ember ignites!
+2025-05-11 17:11:33 - the ember ignites!
+2025-05-11 17:11:34 - the ember ignites!
+2025-05-11 17:20:37 - Starting Light a Fire UI
+2025-05-11 17:20:37 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 17:20:37 - Connected to /dev/ttyUSB0
+2025-05-11 17:20:58 - the ember ignites!
+2025-05-11 17:21:52 - the sensor is disconected
+2025-05-11 17:50:15 - Starting Light a Fire UI
+2025-05-11 17:50:15 - Error: Arduino not found
+2025-05-11 17:50:36 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 17:50:36 - Connected to /dev/ttyUSB0
+2025-05-11 17:51:18 - the ember ignites!
+2025-05-11 17:51:18 - the ember ignites!
+2025-05-11 17:55:28 - the sensor is disconected
+2025-05-11 18:06:17 - Starting Light a Fire UI
+2025-05-11 18:06:17 - Found Arduino! port: /dev/ttyUSB1
+2025-05-11 18:06:17 - Connected to /dev/ttyUSB1
+2025-05-11 18:06:18 - Error parsing data:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          NAN 1023
+2025-05-11 18:06:57 - Error reading from serial, Arduino probably disconnected
+2025-05-11 18:06:57 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 18:06:57 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 18:06:57 - Connected to /dev/ttyUSB0
+2025-05-11 18:06:59 - Error reading from serial, Arduino probably disconnected
+2025-05-11 18:06:59 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 18:06:59 - Error: Arduino not found
+2025-05-11 18:07:00 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 18:07:00 - Connected to /dev/ttyUSB0
+2025-05-11 18:07:02 - the ember ignites!
+2025-05-11 18:07:06 - the ember ignites!
+2025-05-11 18:07:07 - the ember ignites!
+2025-05-11 18:07:16 - the ember ignites!
+2025-05-11 18:07:16 - the ember ignites!
+2025-05-11 18:07:19 - the ember ignites!
+2025-05-11 18:10:04 - the ember ignites!
+2025-05-11 18:10:19 - the ember ignites!
+2025-05-11 18:10:24 - the ember ignites!
+2025-05-11 18:10:26 - the ember ignites!
+2025-05-11 18:10:27 - the ember ignites!
+2025-05-11 18:10:28 - the ember ignites!
+2025-05-11 18:10:40 - the ember ignites!
+2025-05-11 18:10:41 - the ember ignites!
+2025-05-11 18:10:43 - the ember ignites!
+2025-05-11 18:10:50 - the ember ignites!
+2025-05-11 18:10:53 - the ember ignites!
+2025-05-11 18:10:59 - the ember ignites!
+2025-05-11 18:11:00 - the ember ignites!
+2025-05-11 18:11:06 - the ember ignites!
+2025-05-11 18:11:07 - the ember ignites!
+2025-05-11 18:11:08 - the ember ignites!
+2025-05-11 18:11:10 - the ember ignites!
+2025-05-11 18:11:10 - the ember ignites!
+2025-05-11 18:11:11 - the ember ignites!
+2025-05-11 18:11:14 - the ember ignites!
+2025-05-11 18:11:15 - the ember ignites!
+2025-05-11 18:11:16 - the ember ignites!
+2025-05-11 18:11:16 - the ember ignites!
+2025-05-11 18:11:16 - the ember ignites!
+2025-05-11 18:11:18 - the ember ignites!
+2025-05-11 18:11:19 - the ember ignites!
+2025-05-11 18:11:20 - the ember ignites!
+2025-05-11 18:11:21 - the ember ignites!
+2025-05-11 18:11:25 - the ember ignites!
+2025-05-11 18:11:27 - the ember ignites!
+2025-05-11 18:11:29 - the ember ignites!
+2025-05-11 18:11:29 - the ember ignites!
+2025-05-11 18:11:30 - the ember ignites!
+2025-05-11 18:11:30 - the ember ignites!
+2025-05-11 18:11:31 - the ember ignites!
+2025-05-11 18:11:32 - the ember ignites!
+2025-05-11 18:11:32 - the sensor is disconected
+2025-05-11 18:12:20 - Starting Light a Fire UI
+2025-05-11 18:12:20 - Found Arduino! port: /dev/ttyUSB1
+2025-05-11 18:12:20 - Connected to /dev/ttyUSB1
+2025-05-11 18:12:22 - Error parsing data:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          NAN 1023
+2025-05-11 18:12:22 - the sensor is disconected
+2025-05-11 18:13:04 - Error parsing data: NAN 1023AN 1023
+2025-05-11 18:17:54 - Error reading from serial, Arduino probably disconnected
+2025-05-11 18:17:54 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 18:17:54 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 18:17:54 - Connected to /dev/ttyUSB0
+2025-05-11 18:19:05 - Starting Light a Fire UI
+2025-05-11 18:19:05 - Found Arduino! port: /dev/ttyUSB1
+2025-05-11 18:19:05 - Connected to /dev/ttyUSB1
+2025-05-11 18:19:06 - Error parsing data:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                NAN 1023
+2025-05-11 18:19:07 - the sensor is disconected
+2025-05-11 18:19:12 - Error reading from serial, Arduino probably disconnected
+2025-05-11 18:19:12 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 18:19:12 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 18:19:12 - Connected to /dev/ttyUSB0
+2025-05-11 18:19:47 - the ember ignites!
+2025-05-11 18:28:24 - Starting Light a Fire UI
+2025-05-11 18:28:24 - Found Arduino! port: /dev/ttyUSB1
+2025-05-11 18:28:24 - Connected to /dev/ttyUSB1
+2025-05-11 18:28:25 - Error parsing data:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  NAN 1023
+2025-05-11 18:28:26 - the sensor is disconected
+2025-05-11 18:28:30 - Error reading from serial, Arduino probably disconnected
+2025-05-11 18:28:30 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 18:28:30 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 18:28:30 - Connected to /dev/ttyUSB0
+2025-05-11 18:28:32 - the ember ignites!
+2025-05-11 18:37:40 - the ember ignites!
+2025-05-11 18:37:46 - the ember ignites!
+2025-05-11 18:37:49 - the ember ignites!
+2025-05-11 18:37:50 - the ember ignites!
+2025-05-11 18:37:52 - the ember ignites!
+2025-05-11 18:37:55 - the ember ignites!
+2025-05-11 18:37:55 - the ember ignites!
+2025-05-11 18:37:59 - the ember ignites!
+2025-05-11 18:38:02 - the ember ignites!
+2025-05-11 18:38:02 - the ember ignites!
+2025-05-11 18:38:03 - the ember ignites!
+2025-05-11 18:38:03 - the ember ignites!
+2025-05-11 18:38:04 - the ember ignites!
+2025-05-11 18:38:05 - the ember ignites!
+2025-05-11 18:38:05 - the ember ignites!
+2025-05-11 18:38:07 - the ember ignites!
+2025-05-11 18:38:08 - the ember ignites!
+2025-05-11 18:38:08 - the ember ignites!
+2025-05-11 18:38:09 - the ember ignites!
+2025-05-11 18:38:10 - the ember ignites!
+2025-05-11 18:38:11 - the ember ignites!
+2025-05-11 18:38:12 - the ember ignites!
+2025-05-11 18:38:12 - the ember ignites!
+2025-05-11 18:38:13 - the ember ignites!
+2025-05-11 18:38:14 - the ember ignites!
+2025-05-11 18:38:14 - the ember ignites!
+2025-05-11 18:38:15 - the ember ignites!
+2025-05-11 18:38:16 - the ember ignites!
+2025-05-11 18:38:16 - the ember ignites!
+2025-05-11 18:38:16 - the ember ignites!
+2025-05-11 18:38:17 - the ember ignites!
+2025-05-11 18:38:17 - the ember ignites!
+2025-05-11 18:38:18 - the ember ignites!
+2025-05-11 18:38:20 - the ember ignites!
+2025-05-11 18:38:20 - the ember ignites!
+2025-05-11 18:38:21 - the ember ignites!
+2025-05-11 18:38:21 - the ember ignites!
+2025-05-11 18:38:22 - the ember ignites!
+2025-05-11 18:38:22 - the ember ignites!
+2025-05-11 18:38:23 - the ember ignites!
+2025-05-11 18:38:23 - the ember ignites!
+2025-05-11 19:20:42 - Starting Light a Fire UI
+2025-05-11 19:20:42 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:20:42 - Connected to /dev/ttyUSB0
+2025-05-11 19:28:01 - the ember ignites!
+2025-05-11 19:28:05 - the ember ignites!
+2025-05-11 19:28:08 - the ember ignites!
+2025-05-11 19:28:08 - the ember ignites!
+2025-05-11 19:28:10 - the ember ignites!
+2025-05-11 19:28:10 - the ember ignites!
+2025-05-11 19:28:12 - the ember ignites!
+2025-05-11 19:28:14 - the ember ignites!
+2025-05-11 19:28:14 - the ember ignites!
+2025-05-11 19:28:14 - the ember ignites!
+2025-05-11 19:28:15 - the ember ignites!
+2025-05-11 19:28:16 - the ember ignites!
+2025-05-11 19:28:17 - the ember ignites!
+2025-05-11 19:28:17 - the ember ignites!
+2025-05-11 19:28:18 - the ember ignites!
+2025-05-11 19:28:18 - the ember ignites!
+2025-05-11 19:28:19 - the ember ignites!
+2025-05-11 19:28:19 - the ember ignites!
+2025-05-11 19:28:20 - the ember ignites!
+2025-05-11 19:28:22 - the ember ignites!
+2025-05-11 19:28:22 - the ember ignites!
+2025-05-11 19:28:24 - the ember ignites!
+2025-05-11 19:28:24 - the ember ignites!
+2025-05-11 19:28:25 - the ember ignites!
+2025-05-11 19:28:25 - the ember ignites!
+2025-05-11 19:28:27 - the ember ignites!
+2025-05-11 19:28:28 - the ember ignites!
+2025-05-11 19:28:29 - the ember ignites!
+2025-05-11 19:28:30 - the ember ignites!
+2025-05-11 19:28:31 - the ember ignites!
+2025-05-11 19:28:31 - the ember ignites!
+2025-05-11 19:28:32 - the ember ignites!
+2025-05-11 19:30:42 - the sensor is disconected
+2025-05-11 19:31:22 - Starting Light a Fire UI
+2025-05-11 19:31:22 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:31:22 - Connected to /dev/ttyUSB0
+2025-05-11 19:31:23 - the sensor is disconected
+2025-05-11 19:32:33 - Starting Light a Fire UI
+2025-05-11 19:32:33 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:32:33 - Connected to /dev/ttyUSB0
+2025-05-11 19:32:34 - the sensor is disconected
+2025-05-11 19:34:04 - Starting Light a Fire UI
+2025-05-11 19:34:04 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:34:04 - Connected to /dev/ttyUSB0
+2025-05-11 19:34:06 - the sensor is disconected
+2025-05-11 19:34:36 - Starting Light a Fire UI
+2025-05-11 19:34:36 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:34:36 - Connected to /dev/ttyUSB0
+2025-05-11 19:35:23 - Starting Light a Fire UI
+2025-05-11 19:35:23 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:35:23 - Connected to /dev/ttyUSB0
+2025-05-11 19:35:24 - the sensor is disconected
+2025-05-11 19:36:40 - Starting Light a Fire UI
+2025-05-11 19:36:40 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:36:40 - Connected to /dev/ttyUSB0
+2025-05-11 19:36:42 - the sensor is disconected
+2025-05-11 19:38:32 - Starting Light a Fire UI
+2025-05-11 19:38:32 - Found Arduino! port: /dev/ttyUSB0
+2025-05-11 19:38:32 - Connected to /dev/ttyUSB0
+2025-05-11 19:38:45 - the ember ignites!
+2025-05-11 19:42:50 - the ember ignites!
+2025-05-11 19:42:50 - the ember ignites!
+2025-05-11 19:42:51 - the ember ignites!
+2025-05-11 19:42:53 - the ember ignites!
+2025-05-11 19:42:55 - the ember ignites!
+2025-05-11 19:42:56 - the ember ignites!
+2025-05-11 19:42:56 - the ember ignites!
+2025-05-11 19:42:57 - the ember ignites!
+2025-05-11 19:42:57 - the ember ignites!
+2025-05-11 19:42:58 - the ember ignites!
+2025-05-11 19:43:00 - the ember ignites!
+2025-05-11 19:43:00 - the ember ignites!
+2025-05-11 19:43:00 - the ember ignites!
+2025-05-11 19:43:02 - the ember ignites!
+2025-05-11 19:43:03 - the ember ignites!
+2025-05-11 20:13:43 - Error reading from serial, Arduino probably disconnected
+2025-05-11 20:13:43 - Arduino disconnected. Trying to reconnect to Arduino...
+2025-05-11 20:13:43 - Error: Arduino not found
+2025-05-12 16:13:20 - Starting Light a Fire UI
+2025-05-12 16:13:20 - Found Arduino! port: /dev/ttyUSB0
+2025-05-12 16:13:20 - Connected to /dev/ttyUSB0
+2025-05-12 16:13:39 - the ember ignites!
+2025-05-12 16:14:14 - the ember ignites!
+2025-05-12 16:15:17 - the ember ignites!
+2025-05-12 16:17:22 - Starting Light a Fire UI
+2025-05-12 16:17:22 - Found Arduino! port: /dev/ttyUSB0
+2025-05-12 16:17:22 - Connected to /dev/ttyUSB0
+2025-05-12 16:17:48 - the ember ignites!
+2025-05-12 16:17:49 - the ember ignites!
+2025-05-12 16:17:49 - the ember ignites!
+2025-05-12 16:20:53 - the ember ignites!
+2025-05-12 16:20:54 - the ember ignites!
+2025-05-12 16:20:55 - the ember ignites!
+2025-05-12 16:30:32 - the ember ignites!
+2025-05-12 16:32:23 - the ember ignites!
+2025-05-12 18:17:34 - Starting Light a Fire UI
+2025-05-12 18:17:34 - Found Arduino! port: /dev/ttyUSB0
+2025-05-12 18:17:34 - Connected to /dev/ttyUSB0
+2025-05-13 09:03:09 - the ember ignites!
+2025-05-13 09:04:11 - the ember ignites!
+2025-05-13 09:54:42 - the ember ignites!
+2025-05-13 10:36:20 - the ember ignites!
+2025-05-13 10:36:46 - the ember ignites!
+2025-05-13 10:42:51 - the ember ignites!
+2025-05-13 10:42:51 - the ember ignites!
+2025-05-13 10:42:52 - the ember ignites!
+2025-05-13 10:42:53 - the ember ignites!
+2025-05-13 10:42:53 - the ember ignites!
+2025-05-13 10:42:54 - the ember ignites!
+2025-05-13 10:42:54 - the ember ignites!
+2025-05-13 10:42:55 - the ember ignites!
+2025-05-13 10:42:55 - the ember ignites!
+2025-05-13 10:42:59 - the ember ignites!
+2025-05-13 10:49:21 - the ember ignites!
+2025-05-13 10:49:39 - the ember ignites!
+2025-05-13 10:55:41 - the ember ignites!
+2025-05-13 10:56:10 - the ember ignites!
+2025-05-13 11:25:56 - the ember ignites!
+2025-05-13 11:26:06 - the ember ignites!
+2025-05-13 11:26:06 - the ember ignites!
+2025-05-13 11:26:07 - the ember ignites!
+2025-05-13 11:32:43 - the ember ignites!
+2025-05-13 11:32:44 - the ember ignites!
+2025-05-13 11:54:34 - the ember ignites!
+2025-05-13 11:54:35 - the ember ignites!
+2025-05-13 11:55:35 - the ember ignites!
+2025-05-13 12:00:44 - the ember ignites!
+2025-05-13 12:02:34 - the ember ignites!
+2025-05-13 12:02:36 - the ember ignites!
+2025-05-13 12:14:29 - the ember ignites!
+2025-05-13 12:14:30 - the sensor is disconected
+2025-05-13 12:28:46 - Starting Light a Fire UI
+2025-05-13 12:28:46 - Found Arduino! port: /dev/ttyUSB0
+2025-05-13 12:28:46 - Connected to /dev/ttyUSB0
+2025-05-13 12:28:47 - the sensor is disconected
+2025-05-13 18:50:36 - Starting Light a Fire UI
+2025-05-13 18:50:36 - Found Arduino! port: /dev/ttyUSB0
+2025-05-13 18:50:36 - Connected to /dev/ttyUSB0
+2025-05-13 18:51:01 - the ember ignites!
+2025-05-13 18:52:13 - the ember ignites!
+2025-05-13 18:52:13 - the ember ignites!
+2025-05-13 18:52:42 - Starting Light a Fire UI
+2025-05-13 18:52:43 - Found Arduino! port: /dev/ttyUSB0
+2025-05-13 18:52:43 - Connected to /dev/ttyUSB0
+2025-05-14 09:00:23 - the ember ignites!
+2025-05-14 09:01:33 - the ember ignites!
+2025-05-14 09:22:28 - the ember ignites!
+2025-05-14 09:24:13 - the ember ignites!
+2025-05-14 09:24:14 - the ember ignites!
+2025-05-14 10:02:40 - the ember ignites!
+2025-05-14 10:02:41 - the ember ignites!
+2025-05-14 10:02:41 - the ember ignites!
+2025-05-14 10:02:42 - the ember ignites!
+2025-05-14 10:02:42 - the ember ignites!
+2025-05-14 10:02:44 - the ember ignites!
+2025-05-14 10:02:44 - the ember ignites!
+2025-05-14 10:02:47 - the ember ignites!
+2025-05-14 10:02:47 - the ember ignites!
+2025-05-14 10:02:48 - the ember ignites!
+2025-05-14 10:09:28 - the ember ignites!
+2025-05-14 11:10:09 - the ember ignites!
+2025-05-14 11:10:09 - the ember ignites!
+2025-05-14 11:10:13 - the ember ignites!
+2025-05-14 11:10:15 - the ember ignites!
+2025-05-14 11:10:44 - the ember ignites!
+2025-05-14 11:10:45 - the ember ignites!
+2025-05-14 11:10:46 - the ember ignites!
+2025-05-14 11:10:46 - the ember ignites!
+2025-05-14 13:00:12 - the ember ignites!
+2025-05-14 13:05:30 - the ember ignites!
+2025-05-14 13:06:32 - the ember ignites!
+2025-05-14 13:08:41 - the ember ignites!
+2025-05-14 13:08:42 - the ember ignites!
+2025-05-14 13:09:53 - the ember ignites!
+2025-05-14 13:09:59 - the ember ignites!
+2025-05-14 13:10:00 - the ember ignites!
+2025-05-14 13:10:01 - the ember ignites!
+2025-05-14 13:10:03 - the ember ignites!
+2025-05-14 13:10:07 - the ember ignites!
+2025-05-14 13:10:08 - the ember ignites!
+2025-05-14 13:10:09 - the ember ignites!
+2025-05-14 13:10:23 - the ember ignites!
+2025-05-14 13:10:24 - the ember ignites!
+2025-05-14 13:13:43 - the ember ignites!
+2025-05-14 13:13:44 - the ember ignites!
+2025-05-14 13:13:44 - the ember ignites!
+2025-05-14 13:29:36 - the ember ignites!
+2025-05-14 13:29:58 - the ember ignites!
+2025-05-14 13:29:58 - the ember ignites!
+2025-05-14 13:36:55 - the ember ignites!
+2025-05-14 13:38:44 - the ember ignites!
+2025-05-14 13:44:00 - the ember ignites!
+2025-05-14 13:56:06 - the ember ignites!
+2025-05-14 13:56:07 - the ember ignites!
+2025-05-14 13:56:08 - the ember ignites!
+2025-05-14 13:56:09 - the ember ignites!
+2025-05-14 13:56:10 - the ember ignites!
+2025-05-14 13:56:10 - the ember ignites!
+2025-05-14 13:56:10 - the ember ignites!
+2025-05-14 13:56:11 - the ember ignites!
+2025-05-14 13:56:12 - the ember ignites!
+2025-05-14 13:56:12 - the ember ignites!
+2025-05-14 14:26:28 - the ember ignites!
+2025-05-14 14:26:29 - the ember ignites!
+2025-05-14 14:26:29 - the ember ignites!
+2025-05-14 14:26:30 - the ember ignites!
+2025-05-14 14:26:30 - the ember ignites!
+2025-05-14 14:26:30 - the ember ignites!
+2025-05-14 14:27:33 - the ember ignites!
+2025-05-14 14:27:33 - the ember ignites!
+2025-05-14 14:27:34 - the ember ignites!
+2025-05-14 14:27:34 - the ember ignites!
+2025-05-14 14:27:35 - the ember ignites!
+2025-05-14 15:04:51 - the ember ignites!
+2025-05-14 15:04:52 - the ember ignites!
+2025-05-14 15:07:22 - the ember ignites!
+2025-05-14 15:07:22 - the ember ignites!
+2025-05-14 15:07:23 - the ember ignites!
+2025-05-14 15:11:12 - Starting Light a Fire UI
+2025-05-14 15:11:12 - Found Arduino! port: /dev/ttyUSB0
+2025-05-14 15:11:12 - Connected to /dev/ttyUSB0
+2025-05-14 15:15:28 - the ember ignites!
+2025-05-14 15:15:29 - the ember ignites!
+2025-05-14 15:15:29 - the ember ignites!
+2025-05-14 15:17:29 - Starting Light a Fire UI
+2025-05-14 15:17:29 - Found Arduino! port: /dev/ttyUSB0
+2025-05-14 15:17:29 - Connected to /dev/ttyUSB0
+2025-05-14 15:18:13 - the sensor is disconected
+2025-05-14 15:25:51 - the ember ignites!
+2025-05-14 15:25:51 - the ember ignites!
+2025-05-14 15:29:29 - the ember ignites!
+2025-05-14 15:29:30 - the ember ignites!
+2025-05-14 15:29:31 - the ember ignites!
+2025-05-14 15:29:32 - the ember ignites!
+2025-05-14 15:32:29 - the ember ignites!
+2025-05-14 15:32:30 - the ember ignites!
+2025-05-14 15:32:30 - the ember ignites!
+2025-05-14 15:32:31 - the ember ignites!
+2025-05-14 15:33:36 - the ember ignites!
+2025-05-14 15:33:37 - the ember ignites!
+2025-05-14 15:33:38 - the ember ignites!
+2025-05-14 15:33:39 - the ember ignites!
+2025-05-14 15:33:39 - the ember ignites!
+2025-05-14 15:33:40 - the ember ignites!
+2025-05-14 17:34:30 - Starting Light a Fire UI
+2025-05-14 17:34:30 - Found Arduino! port: /dev/ttyUSB0
+2025-05-14 17:34:30 - Connected to /dev/ttyUSB0
+2025-05-15 10:58:22 - the ember ignites!
+2025-05-15 11:13:51 - the ember ignites!
+2025-05-15 11:13:53 - the ember ignites!
+2025-05-15 11:13:57 - the ember ignites!
+2025-05-15 11:13:58 - the ember ignites!
+2025-05-15 11:13:59 - the ember ignites!
+2025-05-15 11:14:00 - the ember ignites!
+2025-05-15 11:14:00 - the ember ignites!
+2025-05-15 11:14:00 - the ember ignites!
+2025-05-15 11:14:02 - the ember ignites!
+2025-05-15 11:14:03 - the ember ignites!
+2025-05-15 11:14:03 - the ember ignites!
+2025-05-15 11:14:04 - the ember ignites!
+2025-05-15 11:14:04 - the ember ignites!
+2025-05-15 11:14:05 - the ember ignites!
+2025-05-15 11:14:05 - the ember ignites!
+2025-05-15 11:14:27 - the ember ignites!
+2025-05-15 11:14:28 - the ember ignites!
+2025-05-15 11:14:32 - the ember ignites!
+2025-05-15 11:14:33 - the ember ignites!
+2025-05-15 11:14:33 - the ember ignites!
+2025-05-15 11:14:35 - the ember ignites!
+2025-05-15 11:14:35 - the ember ignites!
+2025-05-15 11:14:36 - the ember ignites!
+2025-05-15 11:14:38 - the ember ignites!
+2025-05-15 11:14:40 - the ember ignites!
+2025-05-15 11:14:50 - the ember ignites!
+2025-05-15 11:14:51 - the ember ignites!
+2025-05-15 11:20:31 - the ember ignites!
+2025-05-15 11:20:32 - the ember ignites!
+2025-05-15 11:20:32 - the ember ignites!
+2025-05-15 11:20:33 - the ember ignites!
+2025-05-15 11:20:33 - the ember ignites!
+2025-05-15 11:34:27 - the ember ignites!
+2025-05-15 11:34:27 - the ember ignites!
+2025-05-15 11:35:29 - the ember ignites!
+2025-05-15 11:35:30 - the ember ignites!
+2025-05-15 13:22:25 - the ember ignites!
+2025-05-15 13:22:26 - the ember ignites!
+2025-05-15 13:22:28 - the ember ignites!
+2025-05-15 13:22:28 - the ember ignites!
+2025-05-15 13:22:29 - the ember ignites!
+2025-05-15 13:22:30 - the ember ignites!
+2025-05-15 13:22:32 - the ember ignites!
+2025-05-15 13:22:32 - the ember ignites!
+2025-05-15 13:22:33 - the ember ignites!
+2025-05-15 13:22:34 - the ember ignites!
+2025-05-15 13:22:35 - the ember ignites!
+2025-05-15 13:22:35 - the ember ignites!
+2025-05-15 13:22:36 - the ember ignites!
+2025-05-15 13:22:36 - the ember ignites!
+2025-05-15 13:22:37 - the ember ignites!
+2025-05-15 13:22:38 - the ember ignites!
+2025-05-15 13:22:38 - the ember ignites!
+2025-05-15 13:22:39 - the ember ignites!
+2025-05-15 13:22:40 - the ember ignites!
+2025-05-15 13:22:43 - the ember ignites!
+2025-05-15 13:22:44 - the ember ignites!
+2025-05-15 13:22:44 - the ember ignites!
+2025-05-15 13:22:45 - the ember ignites!
+2025-05-15 13:22:46 - the ember ignites!
+2025-05-15 13:22:46 - the ember ignites!
+2025-05-15 13:22:47 - the ember ignites!
+2025-05-15 13:22:48 - the ember ignites!
+2025-05-15 13:22:49 - the ember ignites!
+2025-05-15 13:23:57 - the ember ignites!
+2025-05-15 13:23:58 - the ember ignites!
+2025-05-15 13:23:59 - the ember ignites!
+2025-05-15 13:23:59 - the ember ignites!
+2025-05-15 13:24:00 - the ember ignites!
+2025-05-15 13:27:20 - the ember ignites!
+2025-05-15 13:27:22 - the ember ignites!
+2025-05-15 13:27:22 - the ember ignites!
+2025-05-15 13:27:23 - the ember ignites!
+2025-05-15 13:27:24 - the ember ignites!
+2025-05-15 13:27:25 - the ember ignites!
+2025-05-15 13:27:26 - the ember ignites!
+2025-05-15 13:27:26 - the ember ignites!
+2025-05-15 15:10:22 - the ember ignites!
+2025-05-15 15:10:23 - the ember ignites!
+2025-05-15 15:10:23 - the ember ignites!
+2025-05-15 15:10:56 - the ember ignites!
+2025-05-15 15:10:58 - the ember ignites!
+2025-05-15 15:10:58 - the ember ignites!
+2025-05-15 15:11:00 - the ember ignites!
+2025-05-15 15:11:00 - the ember ignites!
+2025-05-15 15:11:01 - the ember ignites!
+2025-05-15 15:11:01 - the ember ignites!
+2025-05-15 15:11:02 - the ember ignites!
+2025-05-15 15:11:02 - the ember ignites!
+2025-05-15 15:47:20 - the ember ignites!
+2025-05-15 15:47:20 - the ember ignites!
+2025-05-15 15:51:07 - the ember ignites!
+2025-05-15 15:51:08 - the ember ignites!
+2025-05-15 15:51:09 - the ember ignites!
+2025-05-15 15:51:10 - the ember ignites!
+2025-05-15 15:51:10 - the ember ignites!
+2025-05-15 15:51:13 - the ember ignites!
+2025-05-15 16:07:34 - the ember ignites!
+2025-05-15 16:07:35 - the ember ignites!
+2025-05-15 16:11:18 - the ember ignites!
+2025-05-15 16:11:20 - the ember ignites!
+2025-05-15 16:11:20 - the ember ignites!
+2025-05-15 16:11:21 - the ember ignites!
+2025-05-15 16:11:24 - the ember ignites!
+2025-05-15 16:11:26 - the ember ignites!
+2025-05-15 16:11:26 - the ember ignites!
+2025-05-15 16:11:27 - the ember ignites!
+2025-05-15 16:11:28 - the ember ignites!
+2025-05-15 16:11:29 - the ember ignites!
+2025-05-15 16:11:29 - the ember ignites!
+2025-05-15 16:11:30 - the ember ignites!
+2025-05-15 16:11:30 - the ember ignites!
+2025-05-15 16:11:31 - the ember ignites!
+2025-05-15 16:11:32 - the ember ignites!
+2025-05-15 16:22:40 - the ember ignites!
+2025-05-15 16:22:41 - the ember ignites!
+2025-05-15 16:22:41 - the ember ignites!
+2025-05-15 16:22:42 - the ember ignites!
+2025-05-15 16:22:42 - the ember ignites!
+2025-05-15 16:23:32 - the ember ignites!
+2025-05-15 16:23:33 - the ember ignites!
+2025-05-15 16:23:34 - the ember ignites!
+2025-05-15 16:23:34 - the ember ignites!
+2025-05-15 16:23:36 - the ember ignites!
+2025-05-15 16:23:36 - the ember ignites!
+2025-05-15 16:32:27 - the ember ignites!
+2025-05-15 16:32:27 - the ember ignites!
+2025-05-15 16:32:28 - the ember ignites!
+2025-05-15 16:32:29 - the ember ignites!
+2025-05-15 16:32:29 - the ember ignites!
+2025-05-15 16:33:09 - the ember ignites!
+2025-05-15 16:33:11 - the ember ignites!
+2025-05-15 16:33:11 - the ember ignites!
+2025-05-15 16:33:12 - the ember ignites!
+2025-05-15 16:33:12 - the ember ignites!
+2025-05-15 16:33:14 - the ember ignites!
+2025-05-15 16:33:15 - the ember ignites!
+2025-05-15 16:33:15 - the ember ignites!
+2025-05-15 16:33:16 - the ember ignites!
+2025-05-15 16:39:27 - the ember ignites!
+2025-05-15 16:39:27 - the ember ignites!
+2025-05-15 16:39:29 - the ember ignites!
+2025-05-15 16:39:54 - the ember ignites!
+2025-05-15 16:39:56 - the ember ignites!
+2025-05-15 16:39:57 - the ember ignites!
+2025-05-15 16:39:57 - the ember ignites!
+2025-05-15 16:39:58 - the ember ignites!
+2025-05-15 16:39:58 - the ember ignites!
+2025-05-15 16:39:59 - the ember ignites!
+2025-05-15 16:40:03 - the ember ignites!
+2025-05-15 16:43:13 - the ember ignites!
+2025-05-15 16:43:14 - the ember ignites!
+2025-05-15 16:43:14 - the ember ignites!
+2025-05-15 16:43:15 - the ember ignites!
+2025-05-15 16:43:15 - the ember ignites!
+2025-05-15 16:43:16 - the ember ignites!
+2025-05-15 16:43:16 - the ember ignites!
+2025-05-15 16:43:17 - the ember ignites!
+2025-05-15 16:43:17 - the ember ignites!
+2025-05-15 16:43:18 - the ember ignites!
+2025-05-15 16:47:28 - the ember ignites!
+2025-05-15 16:47:29 - the ember ignites!
+2025-05-15 16:47:30 - the ember ignites!
+2025-05-15 16:47:31 - the ember ignites!
+2025-05-15 16:47:32 - the ember ignites!
+2025-05-15 16:47:32 - the ember ignites!
+2025-05-15 16:47:33 - the ember ignites!
+2025-05-15 16:47:34 - the ember ignites!
+2025-05-15 16:47:34 - the ember ignites!
+2025-05-15 16:47:35 - the ember ignites!
+2025-05-15 16:47:36 - the ember ignites!
+2025-05-15 16:47:38 - the ember ignites!
+2025-05-15 16:47:42 - the ember ignites!
+2025-05-15 16:47:56 - the ember ignites!
+2025-05-15 16:48:00 - the ember ignites!
+2025-05-15 16:48:01 - the ember ignites!
+2025-05-15 16:48:03 - the ember ignites!
+2025-05-15 16:48:06 - the ember ignites!
+2025-05-15 16:48:07 - the ember ignites!
+2025-05-15 16:48:08 - the ember ignites!
+2025-05-15 16:48:08 - the ember ignites!
+2025-05-15 16:48:09 - the ember ignites!
+2025-05-15 16:48:09 - the ember ignites!
+2025-05-15 16:48:10 - the ember ignites!
+2025-05-15 16:48:11 - the ember ignites!
+2025-05-15 16:48:22 - the ember ignites!
+2025-05-15 16:48:25 - the ember ignites!
+2025-05-15 16:48:26 - the ember ignites!
+2025-05-15 16:48:26 - the ember ignites!
+2025-05-15 16:48:27 - the ember ignites!
+2025-05-15 16:48:27 - the ember ignites!
+2025-05-15 16:48:28 - the ember ignites!
+2025-05-15 16:48:28 - the ember ignites!
+2025-05-15 16:48:28 - the ember ignites!
+2025-05-15 16:48:29 - the ember ignites!
+2025-05-15 16:48:30 - the ember ignites!
+2025-05-15 16:48:31 - the ember ignites!
+2025-05-15 16:48:31 - the ember ignites!
+2025-05-15 16:48:32 - the ember ignites!
+2025-05-15 16:48:32 - the ember ignites!
+2025-05-15 16:48:33 - the ember ignites!
+2025-05-15 16:48:34 - the ember ignites!
+2025-05-15 16:48:34 - the ember ignites!
+2025-05-15 16:48:34 - the ember ignites!
+2025-05-15 16:48:35 - the ember ignites!
+2025-05-15 16:48:35 - the ember ignites!
+2025-05-15 16:48:36 - the ember ignites!
+2025-05-15 16:48:36 - the ember ignites!
+2025-05-15 16:48:37 - the ember ignites!
+2025-05-15 16:48:38 - the ember ignites!
+2025-05-15 16:48:39 - the ember ignites!
+2025-05-15 16:48:39 - the ember ignites!
+2025-05-15 16:48:40 - the ember ignites!
+2025-05-15 16:48:41 - the ember ignites!
+2025-05-15 16:48:45 - the ember ignites!
+2025-05-15 16:48:46 - the ember ignites!
+2025-05-15 16:51:04 - the ember ignites!
+2025-05-15 16:51:04 - the ember ignites!
+2025-05-15 16:51:06 - the ember ignites!
+2025-05-15 16:51:08 - the ember ignites!
+2025-05-15 16:51:08 - the ember ignites!
+2025-05-15 16:51:09 - the ember ignites!
+2025-05-15 16:51:10 - the ember ignites!
+2025-05-15 17:30:40 - the ember ignites!
+2025-05-15 17:30:40 - the ember ignites!
+2025-05-15 17:31:15 - the ember ignites!
+2025-05-15 17:31:16 - the ember ignites!
+2025-05-15 17:31:17 - the ember ignites!
+2025-05-15 17:31:18 - the ember ignites!
+2025-05-15 17:31:18 - the ember ignites!
+2025-05-15 17:31:19 - the ember ignites!
+2025-05-15 17:49:14 - the ember ignites!
+2025-05-15 17:49:16 - the ember ignites!
+2025-05-15 17:49:17 - the ember ignites!
+2025-05-15 17:49:17 - the ember ignites!
+2025-05-15 17:49:18 - the ember ignites!
+2025-05-15 17:49:18 - the ember ignites!
+2025-05-15 17:49:19 - the ember ignites!
+2025-05-15 17:49:20 - the ember ignites!
+2025-05-15 17:49:20 - the ember ignites!
+2025-05-15 17:49:21 - the ember ignites!
+2025-05-15 17:49:23 - the ember ignites!
+2025-05-15 17:49:24 - the ember ignites!
+2025-05-15 17:49:25 - the ember ignites!
+2025-05-15 17:49:50 - the ember ignites!
+2025-05-15 17:52:07 - the ember ignites!
+2025-05-15 17:52:08 - the ember ignites!
+2025-05-15 17:52:10 - the ember ignites!
+2025-05-15 17:52:11 - the ember ignites!
+2025-05-15 17:52:11 - the ember ignites!
+2025-05-15 17:52:12 - the ember ignites!
+2025-05-15 17:52:13 - the ember ignites!
+2025-05-15 17:52:13 - the ember ignites!
+2025-05-15 17:52:14 - the ember ignites!
+2025-05-15 17:52:14 - the ember ignites!
+2025-05-15 17:52:15 - the ember ignites!
+2025-05-15 17:52:15 - the ember ignites!
+2025-05-15 17:52:16 - the ember ignites!
+2025-05-15 17:52:17 - the ember ignites!
+2025-05-15 17:38:41 - Starting Light a Fire UI
+2025-05-15 17:38:41 - Found Arduino! port: /dev/ttyUSB0
+2025-05-15 17:38:41 - Connected to /dev/ttyUSB0
+2025-05-15 18:23:38 - Starting Light a Fire UI
+2025-05-15 18:23:38 - Found Arduino! port: /dev/ttyUSB0
+2025-05-15 18:23:38 - Connected to /dev/ttyUSB0
+2025-05-16 14:08:44 - Starting Light a Fire UI
+2025-05-16 14:08:44 - Found Arduino! port: /dev/ttyUSB0
+2025-05-16 14:08:44 - Connected to /dev/ttyUSB0
+2025-05-17 09:08:38 - Starting Light a Fire UI
+2025-05-17 09:08:38 - Found Arduino! port: /dev/ttyUSB0
+2025-05-17 09:08:38 - Connected to /dev/ttyUSB0
+2025-05-17 12:41:17 - the ember ignites!
+2025-05-17 12:41:18 - the ember ignites!
+2025-05-17 12:41:19 - the ember ignites!
+2025-05-17 12:41:38 - the ember ignites!
+2025-05-17 12:41:41 - the ember ignites!
+2025-05-17 12:41:41 - the ember ignites!
+2025-05-17 12:41:42 - the ember ignites!
+2025-05-17 12:41:43 - the ember ignites!
+2025-05-17 12:41:43 - the ember ignites!
+2025-05-17 12:41:44 - the ember ignites!
+2025-05-17 12:41:45 - the ember ignites!
+2025-05-17 17:02:22 - Starting Light a Fire UI
+2025-05-17 17:02:22 - Found Arduino! port: /dev/ttyUSB0
+2025-05-17 17:02:22 - Connected to /dev/ttyUSB0
+2025-05-18 15:19:40 - the sensor is disconected
+2025-05-18 15:36:48 - Starting Light a Fire UI
+2025-05-18 15:36:48 - Found Arduino! port: /dev/ttyUSB0
+2025-05-18 15:36:48 - Connected to /dev/ttyUSB0
+2025-05-18 15:37:07 - the ember ignites!
+2025-05-18 15:41:58 - the ember ignites!
+2025-05-18 15:42:00 - the ember ignites!
+2025-05-18 15:42:00 - the ember ignites!
+2025-05-18 15:42:02 - the ember ignites!
+2025-05-18 15:42:03 - the ember ignites!
+2025-05-18 15:42:06 - the ember ignites!
+2025-05-18 15:42:07 - the ember ignites!
+2025-05-18 15:42:08 - the ember ignites!
+2025-05-18 15:42:09 - the ember ignites!
+2025-05-18 15:42:09 - the ember ignites!
+2025-05-18 15:42:11 - the ember ignites!
+2025-05-18 15:42:11 - the ember ignites!
+2025-05-18 15:42:12 - the ember ignites!
+2025-05-18 15:42:13 - the ember ignites!
+2025-05-18 15:42:14 - the ember ignites!
+2025-05-18 15:42:15 - the ember ignites!
+2025-05-18 15:42:18 - the ember ignites!
+2025-05-18 15:42:21 - the ember ignites!
+2025-05-19 05:06:38 - Starting Light a Fire UI
+2025-05-19 05:06:38 - Found Arduino! port: /dev/ttyUSB0
+2025-05-19 05:06:38 - Connected to /dev/ttyUSB0
+2025-05-19 08:53:03 - the ember ignites!
+2025-05-19 09:25:30 - the ember ignites!
+2025-05-19 09:26:22 - the ember ignites!
+2025-05-19 09:26:52 - the ember ignites!
+2025-05-19 09:29:22 - the ember ignites!
+2025-05-19 09:30:01 - the ember ignites!
+2025-05-19 09:31:16 - the ember ignites!
+2025-05-19 09:31:16 - the ember ignites!
+2025-05-19 09:32:24 - the ember ignites!
+2025-05-19 09:33:34 - the ember ignites!
+2025-05-19 09:34:24 - the ember ignites!
+2025-05-19 09:35:21 - the ember ignites!
+2025-05-19 09:35:22 - the ember ignites!
+2025-05-19 09:35:47 - the ember ignites!
+2025-05-19 09:37:20 - the ember ignites!
+2025-05-19 09:41:00 - the ember ignites!
+2025-05-19 09:44:50 - the ember ignites!
+2025-05-19 09:50:34 - the ember ignites!
+2025-05-19 09:50:35 - the ember ignites!
+2025-05-19 09:50:35 - the ember ignites!
+2025-05-19 09:54:36 - the ember ignites!
+2025-05-19 09:55:22 - the ember ignites!
+2025-05-19 09:55:22 - the ember ignites!
+2025-05-19 09:57:09 - the ember ignites!
+2025-05-19 09:59:37 - the ember ignites!
+2025-05-19 09:59:37 - the ember ignites!
+2025-05-19 09:59:38 - the ember ignites!
+2025-05-19 09:59:39 - the ember ignites!
+2025-05-19 10:00:17 - the ember ignites!
+2025-05-19 10:01:23 - the ember ignites!
+2025-05-19 10:01:24 - the ember ignites!
+2025-05-19 10:01:24 - the ember ignites!
+2025-05-19 10:01:25 - the ember ignites!
+2025-05-19 10:02:09 - the ember ignites!
+2025-05-19 10:02:09 - the ember ignites!
+2025-05-19 10:02:50 - the ember ignites!
+2025-05-19 10:11:46 - the ember ignites!
+2025-05-19 10:13:55 - the ember ignites!
+2025-05-19 10:18:30 - the ember ignites!
+2025-05-19 10:18:31 - the ember ignites!
+2025-05-19 10:18:31 - the ember ignites!
+2025-05-19 10:18:32 - the ember ignites!
+2025-05-19 10:18:32 - the ember ignites!
+2025-05-19 10:19:24 - the ember ignites!
+2025-05-19 10:27:59 - the ember ignites!
+2025-05-19 10:28:00 - the ember ignites!
+2025-05-19 10:28:01 - the ember ignites!
+2025-05-19 10:28:02 - the ember ignites!
+2025-05-19 10:28:02 - the ember ignites!
+2025-05-19 10:28:02 - the ember ignites!
+2025-05-19 10:28:03 - the ember ignites!
+2025-05-19 10:28:05 - the ember ignites!
+2025-05-19 10:29:38 - the ember ignites!
+2025-05-19 10:29:39 - the ember ignites!
+2025-05-19 10:29:39 - the ember ignites!
+2025-05-19 10:29:46 - the ember ignites!
+2025-05-19 10:29:47 - the ember ignites!
+2025-05-19 10:30:26 - the ember ignites!
+2025-05-19 10:30:27 - the ember ignites!
+2025-05-19 10:30:28 - the ember ignites!
+2025-05-19 10:39:39 - the ember ignites!
+2025-05-19 10:39:49 - the ember ignites!
+2025-05-19 10:39:49 - the ember ignites!
+2025-05-19 10:40:48 - the ember ignites!
+2025-05-19 10:44:30 - the ember ignites!
+2025-05-19 10:44:32 - the ember ignites!
+2025-05-19 10:44:32 - the ember ignites!
+2025-05-19 10:44:33 - the ember ignites!
+2025-05-19 10:49:17 - the ember ignites!
+2025-05-19 10:50:16 - the ember ignites!
+2025-05-19 10:50:17 - the ember ignites!
+2025-05-19 10:50:17 - the ember ignites!
+2025-05-19 10:50:17 - the ember ignites!
+2025-05-19 12:01:37 - the ember ignites!
+2025-05-19 12:18:26 - the ember ignites!
+2025-05-19 12:18:27 - the ember ignites!
+2025-05-19 12:18:28 - the ember ignites!
+2025-05-19 12:18:29 - the ember ignites!
+2025-05-19 12:18:29 - the ember ignites!
+2025-05-19 12:18:39 - the ember ignites!
+2025-05-19 12:21:17 - the ember ignites!
+2025-05-19 12:21:18 - the ember ignites!
+2025-05-19 12:21:18 - the ember ignites!
+2025-05-19 12:21:47 - the ember ignites!
+2025-05-19 12:22:14 - the ember ignites!
+2025-05-19 12:22:16 - the ember ignites!
+2025-05-19 12:24:21 - the ember ignites!
+2025-05-19 12:24:21 - the ember ignites!
+2025-05-19 12:24:25 - the ember ignites!
+2025-05-19 12:24:26 - the ember ignites!
+2025-05-19 12:24:27 - the ember ignites!
+2025-05-19 12:25:29 - the ember ignites!
+2025-05-19 12:25:30 - the ember ignites!
+2025-05-19 12:25:31 - the ember ignites!
+2025-05-19 12:27:42 - the ember ignites!
+2025-05-19 12:27:42 - the ember ignites!
+2025-05-19 12:29:49 - the ember ignites!
+2025-05-19 12:29:50 - the ember ignites!
+2025-05-19 12:29:51 - the ember ignites!
+2025-05-19 12:29:52 - the ember ignites!
+2025-05-19 12:32:18 - the ember ignites!
+2025-05-19 12:32:25 - the ember ignites!
+2025-05-19 12:32:26 - the ember ignites!
+2025-05-19 12:32:27 - the ember ignites!
+2025-05-19 12:32:28 - the ember ignites!
+2025-05-19 12:32:42 - the ember ignites!
+2025-05-19 12:32:42 - the ember ignites!
+2025-05-19 12:32:43 - the ember ignites!
+2025-05-19 12:32:53 - the ember ignites!
+2025-05-19 12:32:53 - the ember ignites!
+2025-05-19 12:32:54 - the ember ignites!
+2025-05-19 12:32:54 - the ember ignites!
+2025-05-19 12:32:55 - the ember ignites!
+2025-05-19 12:32:55 - the ember ignites!
+2025-05-19 12:32:56 - the ember ignites!
+2025-05-19 12:32:56 - the ember ignites!
+2025-05-19 12:35:11 - the ember ignites!
+2025-05-19 12:37:12 - the ember ignites!
+2025-05-19 12:37:14 - the ember ignites!
+2025-05-19 12:37:15 - the ember ignites!
+2025-05-19 12:37:15 - the ember ignites!
+2025-05-19 12:37:16 - the ember ignites!
+2025-05-19 12:37:16 - the ember ignites!
+2025-05-19 12:37:17 - the ember ignites!
+2025-05-19 12:38:19 - the ember ignites!
+2025-05-19 12:39:34 - the ember ignites!
+2025-05-19 12:39:35 - the ember ignites!
+2025-05-19 12:39:36 - the ember ignites!
+2025-05-19 12:39:36 - the ember ignites!
+2025-05-19 12:45:25 - the ember ignites!
+2025-05-19 12:45:41 - the ember ignites!
+2025-05-19 12:48:40 - the ember ignites!
+2025-05-19 12:48:55 - the ember ignites!
+2025-05-19 12:48:56 - the ember ignites!
+2025-05-19 12:49:59 - the ember ignites!
+2025-05-19 12:50:28 - the ember ignites!
+2025-05-19 12:56:05 - the ember ignites!
+2025-05-19 12:56:15 - the ember ignites!
+2025-05-19 12:56:17 - the ember ignites!
+2025-05-19 12:56:17 - the ember ignites!
+2025-05-19 12:56:26 - the ember ignites!
+2025-05-19 12:57:06 - the ember ignites!
+2025-05-19 12:57:07 - the ember ignites!
+2025-05-19 12:57:08 - the ember ignites!
+2025-05-19 12:57:08 - the ember ignites!
+2025-05-19 12:57:10 - the ember ignites!
+2025-05-19 12:58:38 - the ember ignites!
+2025-05-19 12:58:39 - the ember ignites!
+2025-05-19 13:02:12 - the ember ignites!
+2025-05-19 13:06:32 - the ember ignites!
+2025-05-19 13:06:33 - the ember ignites!
+2025-05-19 13:06:33 - the ember ignites!
+2025-05-19 13:06:34 - the ember ignites!
+2025-05-19 13:06:35 - the ember ignites!
+2025-05-19 13:07:50 - the ember ignites!
+2025-05-19 13:07:50 - the ember ignites!
+2025-05-19 13:08:16 - the ember ignites!
+2025-05-19 13:08:29 - the ember ignites!
+2025-05-19 13:11:11 - the ember ignites!
+2025-05-19 13:12:57 - the ember ignites!
+2025-05-19 13:12:58 - the ember ignites!
+2025-05-19 13:15:29 - the ember ignites!
+2025-05-19 13:15:30 - the ember ignites!
+2025-05-19 13:15:30 - the ember ignites!
+2025-05-19 13:16:08 - the ember ignites!
+2025-05-19 13:16:08 - the ember ignites!
+2025-05-19 13:16:20 - the ember ignites!
+2025-05-19 13:16:20 - the ember ignites!
+2025-05-19 13:16:40 - the ember ignites!
+2025-05-19 13:19:19 - the ember ignites!
+2025-05-19 13:19:34 - the ember ignites!
+2025-05-19 13:19:35 - the ember ignites!
+2025-05-19 13:25:17 - the ember ignites!
+2025-05-19 13:25:18 - the ember ignites!
+2025-05-19 13:25:19 - the ember ignites!
+2025-05-19 13:41:13 - the ember ignites!
+2025-05-19 13:42:49 - the ember ignites!
+2025-05-19 13:42:50 - the ember ignites!
+2025-05-19 13:45:15 - the ember ignites!
+2025-05-19 13:48:01 - the ember ignites!
+2025-05-19 13:48:02 - the ember ignites!
+2025-05-19 13:48:15 - the ember ignites!
+2025-05-19 13:48:15 - the ember ignites!
+2025-05-19 13:49:53 - the ember ignites!
+2025-05-19 13:49:53 - the ember ignites!
+2025-05-19 13:59:30 - the ember ignites!
+2025-05-19 13:59:30 - the ember ignites!
+2025-05-19 13:59:33 - the ember ignites!
+2025-05-19 14:30:32 - the ember ignites!
+2025-05-19 16:50:08 - the ember ignites!
+2025-05-19 16:51:00 - the ember ignites!
+2025-05-19 17:08:23 - the ember ignites!
+2025-05-19 17:09:34 - the ember ignites!
+2025-05-19 18:23:14 - the ember ignites!
+2025-05-19 18:24:33 - the ember ignites!
+2025-05-19 18:45:55 - Starting Light a Fire UI
+2025-05-19 18:45:55 - Found Arduino! port: /dev/ttyUSB0
+2025-05-19 18:45:55 - Connected to /dev/ttyUSB0
+2025-05-20 08:42:28 - Starting Light a Fire UI
+2025-05-20 08:42:28 - Found Arduino! port: /dev/ttyUSB0
+2025-05-20 08:42:28 - Connected to /dev/ttyUSB0
+2025-05-20 10:23:25 - Starting Light a Fire UI
+2025-05-20 10:23:25 - Found Arduino! port: /dev/ttyUSB0
+2025-05-20 10:23:25 - Connected to /dev/ttyUSB0
+2025-05-20 11:11:48 - the ember ignites!
+2025-05-20 11:24:02 - the ember ignites!
+2025-05-20 11:25:50 - the ember ignites!
+2025-05-20 11:27:21 - the ember ignites!
+2025-05-20 11:29:38 - the ember ignites!
+2025-05-20 11:30:03 - the ember ignites!
+2025-05-20 11:30:05 - the ember ignites!
+2025-05-20 11:30:09 - the ember ignites!
+2025-05-20 11:31:09 - the ember ignites!
+2025-05-20 11:31:48 - the ember ignites!
+2025-05-20 12:03:18 - the ember ignites!
+2025-05-20 12:04:37 - the ember ignites!
+2025-05-20 12:15:49 - the ember ignites!
+2025-05-20 12:17:38 - the ember ignites!
+2025-05-20 12:19:52 - the ember ignites!
+2025-05-20 12:27:56 - the ember ignites!
+2025-05-20 12:27:56 - the ember ignites!
+2025-05-20 12:33:22 - the ember ignites!
+2025-05-20 12:36:58 - the ember ignites!
+2025-05-20 12:40:41 - the ember ignites!
+2025-05-20 12:40:41 - the ember ignites!
+2025-05-20 12:57:23 - the ember ignites!
+2025-05-20 12:59:11 - the ember ignites!
+2025-05-20 12:59:38 - the ember ignites!
+2025-05-20 13:01:59 - the ember ignites!
+2025-05-20 13:09:06 - the ember ignites!
+2025-05-20 13:09:07 - the ember ignites!
+2025-05-20 13:09:08 - the ember ignites!
+2025-05-20 13:12:57 - the ember ignites!
+2025-05-20 14:35:39 - the ember ignites!
+2025-05-20 14:35:39 - the ember ignites!
+2025-05-20 14:38:01 - the ember ignites!
+2025-05-20 14:38:01 - the ember ignites!
+2025-05-20 14:38:52 - the ember ignites!
+2025-05-20 14:39:59 - the ember ignites!
+2025-05-20 14:40:10 - the ember ignites!
+2025-05-20 14:42:40 - the ember ignites!
+2025-05-20 14:42:42 - the ember ignites!
+2025-05-20 15:52:41 - the ember ignites!
+2025-05-20 15:52:59 - the ember ignites!
+2025-05-20 18:22:10 - Starting Light a Fire UI
+2025-05-20 18:22:10 - Found Arduino! port: /dev/ttyUSB0
+2025-05-20 18:22:10 - Connected to /dev/ttyUSB0
+2025-05-21 09:04:37 - the ember ignites!
+2025-05-21 10:49:38 - the ember ignites!
+2025-05-21 11:37:42 - the ember ignites!
+2025-05-21 11:37:43 - the ember ignites!
+2025-05-21 11:38:31 - the ember ignites!
+2025-05-21 11:40:01 - the ember ignites!
+2025-05-21 11:40:02 - the ember ignites!
+2025-05-21 11:40:02 - the ember ignites!
+2025-05-21 11:41:58 - the ember ignites!
+2025-05-21 11:42:08 - the ember ignites!
+2025-05-21 11:42:51 - the ember ignites!
+2025-05-21 11:42:51 - the ember ignites!
+2025-05-21 11:43:48 - the ember ignites!
+2025-05-21 11:43:48 - the ember ignites!
+2025-05-21 11:43:51 - the ember ignites!
+2025-05-21 11:46:04 - the ember ignites!
+2025-05-21 11:46:05 - the ember ignites!
+2025-05-21 12:01:37 - the ember ignites!
+2025-05-21 12:04:21 - the ember ignites!
+2025-05-21 12:04:43 - the ember ignites!
+2025-05-21 12:04:44 - the ember ignites!
+2025-05-21 12:08:27 - the ember ignites!
+2025-05-21 12:08:27 - the ember ignites!
+2025-05-21 12:08:29 - the ember ignites!
+2025-05-21 12:08:41 - the ember ignites!
+2025-05-21 12:17:03 - the ember ignites!
+2025-05-21 12:17:04 - the ember ignites!
+2025-05-21 13:39:52 - the ember ignites!
+2025-05-21 14:31:36 - the ember ignites!
+2025-05-21 15:09:28 - the ember ignites!
+2025-05-21 15:14:08 - the ember ignites!
+2025-05-21 15:14:12 - the ember ignites!
+2025-05-21 15:14:16 - the ember ignites!
+2025-05-21 15:14:17 - the ember ignites!
+2025-05-21 15:14:20 - the ember ignites!
+2025-05-21 15:14:27 - the ember ignites!
+2025-05-21 15:14:30 - the ember ignites!
+2025-05-21 15:16:07 - the ember ignites!
+2025-05-21 15:16:07 - the ember ignites!
+2025-05-21 15:29:49 - the ember ignites!
+2025-05-21 15:32:03 - the ember ignites!
+2025-05-21 15:34:33 - the ember ignites!
+2025-05-21 15:36:20 - the ember ignites!
+2025-05-21 15:38:44 - the ember ignites!
+2025-05-21 15:38:53 - the ember ignites!
+2025-05-21 15:52:01 - the ember ignites!
+2025-05-21 15:52:50 - the ember ignites!
+2025-05-21 15:52:50 - the ember ignites!
+2025-05-21 15:54:21 - the ember ignites!
+2025-05-21 15:57:25 - the ember ignites!
+2025-05-21 15:58:52 - the ember ignites!
+2025-05-21 15:59:15 - the ember ignites!
+2025-05-21 16:37:49 - the ember ignites!
+2025-05-21 16:45:22 - the ember ignites!
+2025-05-21 16:54:07 - the ember ignites!
+2025-05-21 17:35:47 - the ember ignites!
+2025-05-21 17:35:53 - the ember ignites!
+2025-05-21 17:51:44 - the ember ignites!
+2025-05-21 17:53:00 - the ember ignites!
+2025-05-21 20:34:01 - Starting Light a Fire UI
+2025-05-21 20:34:01 - Found Arduino! port: /dev/ttyUSB0
+2025-05-21 20:34:01 - Connected to /dev/ttyUSB0
+2025-05-22 08:52:07 - Starting Light a Fire UI
+2025-05-22 08:52:07 - Found Arduino! port: /dev/ttyUSB0
+2025-05-22 08:52:07 - Connected to /dev/ttyUSB0
+2025-05-22 09:10:40 - the ember ignites!
+2025-05-22 09:26:56 - the ember ignites!
+2025-05-22 10:08:21 - the ember ignites!
+2025-05-22 10:09:12 - the ember ignites!
+2025-05-22 10:14:55 - the ember ignites!
+2025-05-22 10:15:34 - the ember ignites!
+2025-05-22 10:17:05 - the ember ignites!
+2025-05-22 10:17:05 - the ember ignites!
+2025-05-22 10:17:06 - the ember ignites!
+2025-05-22 11:42:45 - the ember ignites!
+2025-05-22 11:43:39 - the ember ignites!
+2025-05-22 11:43:39 - the ember ignites!
+2025-05-22 11:43:39 - the ember ignites!
+2025-05-22 11:44:12 - the ember ignites!
+2025-05-22 11:47:56 - the ember ignites!
+2025-05-22 11:49:23 - the ember ignites!
+2025-05-22 11:49:51 - the ember ignites!
+2025-05-22 11:50:46 - the ember ignites!
+2025-05-22 12:09:00 - the ember ignites!
+2025-05-22 12:12:16 - the ember ignites!
+2025-05-22 12:12:24 - the ember ignites!
+2025-05-22 12:14:07 - the ember ignites!
+2025-05-22 12:14:57 - the ember ignites!
+2025-05-22 12:14:59 - the ember ignites!
+2025-05-22 12:33:54 - the ember ignites!
+2025-05-22 12:34:33 - the ember ignites!
+2025-05-22 12:42:41 - the ember ignites!
+2025-05-22 12:42:41 - the ember ignites!
+2025-05-22 12:42:43 - the ember ignites!
+2025-05-22 12:42:55 - the ember ignites!
+2025-05-22 12:42:57 - the ember ignites!
+2025-05-22 12:42:59 - the ember ignites!
+2025-05-22 12:43:55 - the ember ignites!
+2025-05-22 12:43:55 - the ember ignites!
+2025-05-22 12:45:03 - the ember ignites!
+2025-05-22 12:45:03 - the ember ignites!
+2025-05-22 12:53:22 - the ember ignites!
+2025-05-22 12:53:23 - the ember ignites!
+2025-05-22 12:53:54 - the ember ignites!
+2025-05-22 12:53:54 - the ember ignites!
+2025-05-22 12:54:19 - the ember ignites!
+2025-05-22 12:54:19 - the ember ignites!
+2025-05-22 12:54:24 - the ember ignites!
+2025-05-22 12:54:40 - the ember ignites!
+2025-05-22 12:54:41 - the ember ignites!
+2025-05-22 12:58:55 - the ember ignites!
+2025-05-22 12:58:55 - the ember ignites!
+2025-05-22 12:59:04 - the ember ignites!
+2025-05-22 12:59:08 - the ember ignites!
+2025-05-22 12:59:09 - the ember ignites!
+2025-05-22 12:59:09 - the ember ignites!
+2025-05-22 12:59:10 - the ember ignites!
+2025-05-22 12:59:10 - the ember ignites!
+2025-05-22 12:59:11 - the ember ignites!
+2025-05-22 12:59:11 - the ember ignites!
+2025-05-22 13:03:09 - the ember ignites!
+2025-05-22 13:03:39 - the ember ignites!
+2025-05-22 13:04:14 - the ember ignites!
+2025-05-22 13:04:51 - the ember ignites!
+2025-05-22 13:04:52 - the ember ignites!
+2025-05-22 13:04:52 - the ember ignites!
+2025-05-22 13:04:54 - the ember ignites!
+2025-05-22 13:04:56 - the ember ignites!
+2025-05-22 13:05:29 - the ember ignites!
+2025-05-22 13:05:30 - the ember ignites!
+2025-05-22 13:05:31 - the ember ignites!
+2025-05-22 13:05:39 - the ember ignites!
+2025-05-22 13:05:44 - the ember ignites!
+2025-05-22 14:23:06 - the ember ignites!
+2025-05-22 14:23:22 - the ember ignites!
+2025-05-22 14:23:26 - the ember ignites!
+2025-05-22 14:23:26 - the ember ignites!
+2025-05-22 15:53:33 - the ember ignites!
+2025-05-22 15:55:10 - the ember ignites!
+2025-05-22 15:57:21 - the ember ignites!
+2025-05-22 15:58:30 - the ember ignites!
+2025-05-22 15:59:20 - the ember ignites!
+2025-05-22 15:59:29 - the ember ignites!
+2025-05-22 15:59:29 - the ember ignites!
+2025-05-22 15:59:43 - the ember ignites!
+2025-05-22 15:59:44 - the ember ignites!
+2025-05-22 16:02:48 - the ember ignites!
+2025-05-22 16:42:24 - the ember ignites!
+2025-05-22 16:42:55 - the ember ignites!
+2025-05-22 17:27:04 - the ember ignites!
+2025-05-22 17:28:15 - the ember ignites!
+2025-05-22 17:31:41 - the ember ignites!
+2025-05-22 17:31:42 - the ember ignites!
+2025-05-22 17:58:12 - the ember ignites!
+2025-05-22 17:58:37 - the ember ignites!
+2025-05-22 18:15:53 - the ember ignites!
+2025-05-22 18:16:46 - the ember ignites!
+2025-05-22 18:41:38 - the ember ignites!
+2025-05-22 18:41:39 - the ember ignites!
+2025-05-22 19:17:35 - Starting Light a Fire UI
+2025-05-22 19:17:35 - Found Arduino! port: /dev/ttyUSB0
+2025-05-22 19:17:35 - Connected to /dev/ttyUSB0
+2025-05-24 11:24:51 - the ember ignites!
+2025-05-24 11:26:36 - the ember ignites!
+2025-05-24 11:27:48 - the ember ignites!
+2025-05-24 11:30:08 - the ember ignites!
+2025-05-24 11:30:16 - the ember ignites!
+2025-05-24 11:33:40 - the ember ignites!
+2025-05-24 11:33:41 - the ember ignites!
+2025-05-24 11:33:41 - the ember ignites!
+2025-05-24 11:33:42 - the ember ignites!
+2025-05-24 11:36:05 - the ember ignites!
+2025-05-24 11:38:30 - the ember ignites!
+2025-05-24 11:40:47 - the ember ignites!
+2025-05-24 11:41:20 - the ember ignites!
+2025-05-24 11:44:12 - the ember ignites!
+2025-05-24 11:53:33 - the ember ignites!
+2025-05-24 11:53:33 - the ember ignites!
+2025-05-24 11:56:36 - the ember ignites!
+2025-05-24 11:57:14 - the ember ignites!
+2025-05-24 11:59:29 - the ember ignites!
+2025-05-24 12:01:58 - the ember ignites!
+2025-05-24 12:01:59 - the ember ignites!
+2025-05-24 12:02:00 - the ember ignites!
+2025-05-24 12:02:58 - the ember ignites!
+2025-05-24 12:08:28 - the ember ignites!
+2025-05-24 12:08:29 - the ember ignites!
+2025-05-24 12:10:49 - the ember ignites!
+2025-05-24 12:11:00 - the ember ignites!
+2025-05-24 12:11:00 - the ember ignites!
+2025-05-24 12:11:01 - the ember ignites!
+2025-05-24 12:11:30 - the ember ignites!
+2025-05-24 12:11:30 - the ember ignites!
+2025-05-24 12:17:35 - the ember ignites!
+2025-05-24 12:17:36 - the ember ignites!
+2025-05-24 12:17:37 - the ember ignites!
+2025-05-24 12:17:38 - the ember ignites!
+2025-05-24 12:17:39 - the ember ignites!
+2025-05-24 12:17:39 - the ember ignites!
+2025-05-24 12:17:40 - the ember ignites!
+2025-05-24 12:17:40 - the ember ignites!
+2025-05-24 12:18:11 - the ember ignites!
+2025-05-24 12:18:11 - the ember ignites!
+2025-05-24 12:18:12 - the ember ignites!
+2025-05-24 12:18:12 - the ember ignites!
+2025-05-24 12:18:13 - the ember ignites!
+2025-05-24 12:18:13 - the ember ignites!
+2025-05-24 12:19:13 - the ember ignites!
+2025-05-24 12:19:14 - the ember ignites!
+2025-05-24 12:19:15 - the ember ignites!
+2025-05-24 12:19:54 - the ember ignites!
+2025-05-24 12:20:20 - the ember ignites!
+2025-05-24 12:20:20 - the ember ignites!
+2025-05-24 12:20:21 - the ember ignites!
+2025-05-24 12:20:36 - the ember ignites!
+2025-05-24 12:22:16 - the ember ignites!
+2025-05-24 12:22:17 - the ember ignites!
+2025-05-24 12:22:18 - the ember ignites!
+2025-05-24 12:29:58 - the ember ignites!
+2025-05-24 12:32:03 - the ember ignites!
+2025-05-24 12:32:03 - the ember ignites!
+2025-05-24 12:33:44 - the ember ignites!
+2025-05-24 12:35:52 - the ember ignites!
+2025-05-24 12:35:53 - the ember ignites!
+2025-05-24 12:35:54 - the ember ignites!
+2025-05-24 12:37:07 - the ember ignites!
+2025-05-24 12:37:33 - the ember ignites!
+2025-05-24 12:37:33 - the ember ignites!
+2025-05-24 12:37:34 - the ember ignites!
+2025-05-24 12:41:58 - the ember ignites!
+2025-05-24 12:45:50 - the ember ignites!
+2025-05-24 12:45:50 - the ember ignites!
+2025-05-24 12:46:09 - the ember ignites!
+2025-05-24 12:46:09 - the ember ignites!
+2025-05-24 13:05:16 - the ember ignites!
+2025-05-24 13:06:37 - the ember ignites!
+2025-05-24 13:06:48 - the ember ignites!
+2025-05-24 13:06:49 - the ember ignites!
+2025-05-24 13:06:50 - the ember ignites!
+2025-05-24 13:06:50 - the ember ignites!
+2025-05-24 13:06:51 - the ember ignites!
+2025-05-24 13:06:51 - the ember ignites!
+2025-05-24 13:06:52 - the ember ignites!
+2025-05-24 13:06:53 - the ember ignites!
+2025-05-24 13:06:58 - the ember ignites!
+2025-05-24 13:07:13 - the ember ignites!
+2025-05-24 13:07:14 - the ember ignites!
+2025-05-24 13:24:10 - the ember ignites!
+2025-05-24 13:24:38 - the ember ignites!
+2025-05-24 13:25:13 - the ember ignites!
+2025-05-24 13:28:53 - the ember ignites!
+2025-05-24 13:28:53 - the ember ignites!
+2025-05-24 13:39:39 - the ember ignites!
+2025-05-24 13:58:46 - the ember ignites!
+2025-05-24 13:58:47 - the ember ignites!
+2025-05-24 14:01:12 - the ember ignites!
+2025-05-24 14:01:13 - the ember ignites!
+2025-05-24 14:01:14 - the ember ignites!
+2025-05-24 14:22:58 - the ember ignites!
+2025-05-24 14:23:06 - the ember ignites!
+2025-05-24 14:23:07 - the ember ignites!
+2025-05-24 14:23:15 - the ember ignites!
+2025-05-24 14:24:15 - the ember ignites!
+2025-05-24 14:24:15 - the ember ignites!
+2025-05-24 15:01:16 - the ember ignites!
+2025-05-24 15:03:00 - the ember ignites!
+2025-05-24 15:04:30 - the ember ignites!
+2025-05-24 15:04:31 - the ember ignites!
+2025-05-24 15:05:20 - the ember ignites!
+2025-05-24 15:06:53 - the ember ignites!
+2025-05-24 15:06:54 - the ember ignites!
+2025-05-24 15:06:54 - the ember ignites!
+2025-05-24 15:06:55 - the ember ignites!
+2025-05-24 15:15:25 - the ember ignites!
+2025-05-24 15:15:25 - the ember ignites!
+2025-05-24 16:17:35 - Starting Light a Fire UI
+2025-05-24 16:17:35 - Found Arduino! port: /dev/ttyUSB0
+2025-05-24 16:17:35 - Connected to /dev/ttyUSB0
+2025-05-25 14:12:34 - Starting Light a Fire UI
+2025-05-25 14:12:34 - Found Arduino! port: /dev/ttyUSB0
+2025-05-25 14:12:34 - Connected to /dev/ttyUSB0
+2025-05-25 14:26:21 - Starting Light a Fire UI
+2025-05-25 14:26:21 - Error: Arduino not found
+2025-05-25 14:26:29 - Peak temperature reached: 25.00°C
+2025-05-25 14:27:38 - Starting Light a Fire UI
+2025-05-25 14:27:38 - Error: Arduino not found
+2025-05-25 14:27:45 - Peak temperature reached: 26.00°C
+2025-05-25 14:28:31 - Starting Light a Fire UI
+2025-05-25 14:28:31 - Error: Arduino not found
+2025-05-25 14:28:40 - Peak temperature reached: 31.00°C
+2025-05-25 14:29:22 - Starting Light a Fire UI
+2025-05-25 14:29:22 - Error: Arduino not found
+2025-05-25 14:29:28 - Peak temperature reached: 25.50°C
+2025-05-25 14:30:18 - Starting Light a Fire UI
+2025-05-25 14:30:18 - Error: Arduino not found
+2025-05-25 14:30:25 - Peak temperature reached: 26.00°C
+2025-05-25 14:31:25 - Starting Light a Fire UI
+2025-05-25 14:31:25 - Error: Arduino not found
+2025-05-25 14:31:35 - Peak temperature reached: 27.00°C
+2025-05-25 14:31:36 - Peak temperature reached: 24.00°C
+2025-05-25 14:31:40 - Peak temperature reached: 33.50°C
+2025-05-25 14:31:40 - Peak temperature reached: 30.50°C
+2025-05-25 14:31:41 - Peak temperature reached: 27.50°C
+2025-05-25 14:31:43 - Peak temperature reached: 24.50°C
+2025-05-25 14:31:43 - Peak temperature reached: 21.50°C
+2025-05-25 14:32:35 - Starting Light a Fire UI
+2025-05-25 14:32:35 - Error: Arduino not found
+2025-05-25 14:32:52 - Peak temperature reached: 20.00°C
+2025-05-25 14:33:05 - Starting Light a Fire UI
+2025-05-25 14:33:05 - Error: Arduino not found
+2025-05-25 14:33:18 - Peak temperature reached: 32.00°C
+2025-05-25 14:33:19 - Peak temperature reached: 29.00°C
+2025-05-25 14:33:30 - Peak temperature reached: 39.00°C
+2025-05-25 14:33:31 - Peak temperature reached: 36.00°C
+2025-05-25 14:33:31 - Peak temperature reached: 33.00°C
+2025-05-25 14:35:10 - Starting Light a Fire UI
+2025-05-25 14:35:10 - Error: Arduino not found
+2025-05-25 14:35:47 - Starting Light a Fire UI
+2025-05-25 14:35:47 - Error: Arduino not found
+2025-05-25 14:36:29 - Starting Light a Fire UI
+2025-05-25 14:36:29 - Error: Arduino not found
+2025-05-25 14:36:38 - Peak temperature reached: 25.00°C
+2025-05-25 14:36:51 - Peak temperature reached: 35.00°C
+2025-05-25 14:36:52 - Peak temperature reached: 32.00°C
+2025-05-25 14:36:53 - Peak temperature reached: 29.00°C
+2025-05-25 14:37:02 - Peak temperature reached: 26.00°C
+2025-05-25 14:37:04 - Peak temperature reached: 23.00°C
+2025-05-25 14:37:20 - Peak temperature reached: 20.00°C
+2025-05-25 14:38:04 - Starting Light a Fire UI
+2025-05-25 14:38:04 - Error: Arduino not found
+2025-05-25 14:38:17 - Peak temperature reached: 40.00°C
+2025-05-25 14:38:23 - Peak temperature reached: 37.00°C
+2025-05-25 14:38:38 - Peak temperature reached: 34.00°C
+2025-05-25 14:38:58 - Peak temperature reached: 31.00°C
+2025-05-25 14:38:59 - Peak temperature reached: 28.00°C
+2025-05-25 14:38:59 - Peak temperature reached: 25.00°C
+2025-05-25 14:39:00 - Peak temperature reached: 22.00°C
+2025-05-25 14:39:00 - Peak temperature reached: 19.00°C
+2025-05-25 14:39:05 - Peak temperature reached: 29.00°C
+2025-05-25 14:39:06 - Peak temperature reached: 26.00°C
+2025-05-25 14:39:06 - Peak temperature reached: 23.00°C
+2025-05-25 14:39:07 - Peak temperature reached: 20.00°C
+2025-05-25 14:39:49 - Starting Light a Fire UI
+2025-05-25 14:39:49 - Error: Arduino not found
+2025-05-25 14:39:57 - Peak temperature reached: 29.50°C
+2025-05-25 14:41:52 - Starting Light a Fire UI
+2025-05-25 14:41:52 - Error: Arduino not found
+2025-05-25 14:41:59 - Peak temperature reached: 29.50°C
+2025-05-25 14:42:09 - Peak temperature reached: 38.50°C
+2025-05-25 14:42:16 - Peak temperature reached: 29.50°C
+2025-05-25 14:42:20 - Peak temperature reached: 23.50°C
+2025-05-25 14:42:30 - Peak temperature reached: 40.50°C
+2025-05-25 14:42:36 - Peak temperature reached: 39.00°C

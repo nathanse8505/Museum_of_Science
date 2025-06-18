@@ -39,6 +39,8 @@ def main():
     logger.info("Starting Light a Fire UI")
     state = "idle"
     last_peak_temperature = None
+    previous_window = None
+    current_window  = None
 
     # arduino setup
     arduino_port = find_arduino_port(logger=logger)  # find the serial port
@@ -64,10 +66,10 @@ def main():
                     Quit_pygame(cap)
 
                 if event.key == pygame.K_UP:
-                    temperature_to_display = min( temperature_to_display + 0.5, MAX_TEMPERATURE_DEFAULT)
+                    temperature_to_display = min( temperature_to_display + 0.2, MAX_TEMPERATURE_DEFAULT)
 
                 if event.key == pygame.K_DOWN:
-                    temperature_to_display = max( temperature_to_display - 1, MIN_TEMPERATURE_DEFAULT)
+                    temperature_to_display = max( temperature_to_display - 0.2, MIN_TEMPERATURE_DEFAULT)
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
@@ -98,7 +100,8 @@ def main():
                 temperature_to_display = temperature
                 state, last_peak_temperature = log_temperature(logger, temperature_to_display, state,last_peak_temperature)
 
-        #state, last_peak_temperature = log_temperature(logger, temperature_to_display,state, last_peak_temperature)
+        #state, last_peak_temperature,previous_window, current_window = log_temperature_new(logger, temperature_to_display,state, last_peak_temperature,previous_window, current_window)
+        #state, last_peak_temperature = log_temperature(logger, temperature, state, last_peak_temperature=None)
         screen.fill(BLACK)  # reset screen
         running = camera_setup(screen, cap)
         display_measure(screen, Temperature=temperature_to_display)  # render the screen
