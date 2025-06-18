@@ -52,7 +52,7 @@ const int16_t NUM_OF_SPARK = 3;//ms
 const int16_t SPARK_SPACE_TIME = 150;//ms
 const int16_t SPARK_TIME = 50; // ms - Spark time !!! keep as short as possible to avoid HV driver damage
 const int16_t TIME_TO_IGNITE = 1000;
-const int16_t TIME_LOST_COM = 7000;
+const uint16_t TIME_LOST_COM = 15000;
 
 
 // display consts

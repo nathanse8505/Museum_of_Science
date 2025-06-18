@@ -15,8 +15,7 @@ VL53L1X sensor;
  *
  * @return The average distance measured by the sensor.
  */
-float read_average_distance()
-{
+float read_average_distance(){
   float avg = 0;
   for(int i = 0; i < ITERATION; i++)
   {
@@ -28,23 +27,26 @@ float read_average_distance()
   return avg;
 }
 
+void calcul_min_distance(){
+  initialDistance = read_average_distance();// Read and set the initial distance (this will be our baseline)
+  minDistance = initialDistance - THRESHOLD;// Calculate the minimum distance threshold to start the mesurment
+  Serial.println(minDistance);
+}
+
 /**
  * Checks if the language button has been pressed and released.
  *
  * @return true if the button was fully pressed and released; false otherwise.
  */
-bool PRESS_BUTTON_LANG()
-{
+bool PRESS_BUTTON_LANG(){
   // Detect button press (active LOW) if previously unpressed
-  if (digitalRead(LANG_BUTTON_IO) == LOW && check_lang == LOW)
-  {
+  if (digitalRead(LANG_BUTTON_IO) == LOW && check_lang == LOW){
     check_lang = HIGH;          // Mark the button as pressed
     delay(BOUNCE_TIME);         // Debounce delay
   }
 
   // Detect button release (goes HIGH) if it was previously pressed
-  if (digitalRead(LANG_BUTTON_IO) == HIGH && check_lang == HIGH)
-  {
+  if (digitalRead(LANG_BUTTON_IO) == HIGH && check_lang == HIGH){
     check_lang = LOW;           // Reset the state for the next press
     return true;                // Indicate a valid press-release cycle
   }
