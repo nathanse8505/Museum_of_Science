@@ -7,7 +7,8 @@ import time
 from consts import *
 from display import *
 from arduino import *
-from logs import *
+#from logs import *
+from logs_new import *
 from detect_drop import *
 
 

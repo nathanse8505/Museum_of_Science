@@ -7,10 +7,10 @@ import re
 import os
 import numpy as np
 
-FILE_PATH = ""
+FILE_PATH = [r"C:\Users\natou\Documents\GitHub\Museum_of_Science\energy\Air_Pressure\LOGS\LOG_PYTHON\log.txt"]
 INTERVAL = "day" # "day" or "hour"
-START_DT = "YYYY-MM-DD HH:MM:SS"
-END_DT = "YYYY-MM-DD HH:MM:SS"
+START_DT = "2025-05-05 12:05:40" #YYYY-MM-DD HH:MM:SS
+END_DT = "2025-06-18 11:10:49"   #YYYY-MM-DD HH:MM:SS
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Analyze logs in a datetime range.")
@@ -207,12 +207,12 @@ def check_format_and_incoherance(dt_start,dt_end,interval):
 
 
 def main():
-    args = parse_args()
-    start_dt, end_dt, interval = check_format_and_incoherance(args.start,args.end,args.interval)#with terminal
-    files = args.files
+    #args = parse_args()
+    #start_dt, end_dt, interval = check_format_and_incoherance(args.start,args.end,args.interval)#with terminal
+    #files = args.files
 
-    #start_dt, end_dt, interval = check_format_and_incoherance(START_DT, END_DT, INTERVAL) #set Mamualy
-    #files = FILE_PATH
+    start_dt, end_dt, interval = check_format_and_incoherance(START_DT, END_DT, INTERVAL) #set Mamualy
+    files = FILE_PATH
 
     data_dict = analyze_logs(files, start_dt, end_dt, interval)
     if not data_dict:
