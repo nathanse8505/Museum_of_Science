@@ -8,6 +8,7 @@ class LogAnalyzerGUI:
     def __init__(self, root):
         self.root = root
         self.root.title("Air Pressure Log Analyzer")
+        self.root.protocol("WM_DELETE_WINDOW", self.on_close)
 
         self.log_file_path = tk.StringVar()
         self.start_date = tk.StringVar()
@@ -80,6 +81,13 @@ class LogAnalyzerGUI:
             log_analysis_main.plot_and_save_counts({k: v for k, v in result.items() if "Timestamp" not in k}, self.interval.get(), start_dt, end_dt)
             log_analysis_main.write_summary(result, self.interval.get(), start_dt, end_dt)
             messagebox.showinfo("Done", "Analysis complete. Output files saved.")
+
+    def on_close(self):
+        # Ici, tu peux faire d'autres nettoyages si besoin
+        print("Fermeture de l'application par l'utilisateur.")
+        self.root.quit()
+        self.root.destroy()
+
 
 if __name__ == "__main__":
     root = tk.Tk()
