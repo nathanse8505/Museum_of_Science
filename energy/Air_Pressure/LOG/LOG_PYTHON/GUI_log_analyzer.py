@@ -7,7 +7,7 @@ import os
 class LogAnalyzerGUI:
     def __init__(self, root):
         self.root = root
-        self.root.title("Air Pressure Log Analyzer")
+        self.root.title("Air Pressure Log Analyzer Julie elle est Belle")
         self.root.protocol("WM_DELETE_WINDOW", self.on_close)
 
         self.log_file_path = tk.StringVar()
