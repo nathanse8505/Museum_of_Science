@@ -1,0 +1,25 @@
+Summary from 2025-05-01 00:00:00 to 2025-06-01 23:59:59 (32 days)
+Log data time range: 2025-05-10 13:13:49 to 2025-06-01 13:48:21 (23 days)
+
+Total Rocket Ignition: 1531
+Average Rocket Ignition per day: 72.90
+
+Total Horsepower Trigger: 0
+Average Horsepower Trigger per day: 0.00
+
+Total Ring Jump: 0
+Average Ring Jump per day: 0.00
+
+Total Bottle Launch: 0
+Average Bottle Launch per day: 0.00
+
+Total Language: English: 899
+Average Language: English per day: 42.81
+
+Total Language: Hebrew: 843
+Average Language: Hebrew per day: 40.14
+
+Total Language: Arabic: 853
+Average Language: Arabic per day: 40.62
+
+Total event count: 4126

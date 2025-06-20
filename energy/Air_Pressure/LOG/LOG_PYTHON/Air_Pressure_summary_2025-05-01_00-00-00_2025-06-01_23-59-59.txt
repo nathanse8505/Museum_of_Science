@@ -1,0 +1,16 @@
+Summary from 2025-05-01 00:00:00 to 2025-06-01 23:59:59 (32 days)
+Log data time range: 2025-05-10 13:13:49 to 2025-06-01 13:48:21 (23 days)
+
+Total bottle ignite: 0
+Total english language: 899
+Total hebrew language: 843
+Total arabic language: 853
+Total language changes: 2595
+
+Average bottle ignite per day: 0.00
+Average english language per day: 44.95
+Average hebrew language per day: 42.15
+Average arabic language per day: 42.65
+Average total language changes per day: 129.75
+
+Good runs: 0 / 2595 (0.00%)
