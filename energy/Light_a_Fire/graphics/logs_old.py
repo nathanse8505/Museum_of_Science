@@ -3,90 +3,34 @@ Filename: logs.py
 Purpose: Logging functions for the Air Pressure UI
 """
 import logging
+from logging.handlers import RotatingFileHandler
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, LOG_FOLDER, TEMP_AFTER_PEAK, TEMP_NEW_USER, WINDOWS_SIZE,RISE_THRESHOLD
-from datetime import datetime
-import re
-
-
-class DateBasedFileHandler(logging.Handler):
-    def __init__(self, log_folder, max_bytes):
-        super().__init__()
-        self.log_folder = log_folder
-        self.max_bytes = max_bytes
-        self.base_date = datetime.now().strftime("%Y-%m-%d")
-        self.current_index = self._get_last_index()  # ← nouveau
-        self.current_log_file = None
-        self.current_file_handler = None
-        self._create_new_log_file()
-
-    def _get_log_filename(self, index=None):
-        index = self.current_index if index is None else index
-        suffix = f"({index})" if index > 0 else ""
-        filename = f"log_{self.base_date}{suffix}.txt"
-        return os.path.join(self.log_folder, filename)
-
-    def _get_last_index(self):
-        """Trouve le plus grand index existant pour la date d'aujourd'hui (avec suffixes entre parenthèses)"""
-        pattern = re.compile(rf"log_{self.base_date}(?:\((\d+)\))?\.txt$")
-        max_index = 0
-
-        try:
-            for filename in os.listdir(self.log_folder):
-                match = pattern.match(filename)
-                if match:
-                    idx = int(match.group(1)) if match.group(1) else 0
-                    max_index = max(max_index, idx)
-        except FileNotFoundError:
-            pass  # le dossier n'existe pas encore
-
-        return max_index
-
-    def _create_new_log_file(self):
-        self.current_log_file = self._get_log_filename()
-
-        if self.current_file_handler:
-            self.current_file_handler.close()
-
-        self.current_file_handler = logging.FileHandler(self.current_log_file, mode="a", encoding="utf-8")
-        self.current_file_handler.setFormatter(logging.Formatter(
-            "%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
-        ))
-
-    def emit(self, record):
-        today = datetime.now().strftime("%Y-%m-%d")
-
-        if today != self.base_date:
-            # Nouveau jour : on redémarre à zéro
-            self.base_date = today
-            self.current_index = 0
-            self._create_new_log_file()
-
-        if self.current_file_handler.stream.tell() > self.max_bytes:
-            self.current_index += 1
-            self._create_new_log_file()
-
-        self.current_file_handler.emit(record)
-
-    def close(self):
-        if hasattr(self, "current_file_handler") and self.current_file_handler:
-            self.current_file_handler.close()
-        super().close()
+from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER, TEMP_AFTER_PEAK, TEMP_NEW_USER, WINDOWS_SIZE, \
+    RISE_THRESHOLD
 
 
 def get_logger():
-    os.makedirs(LOG_FOLDER, exist_ok=True)
+    """
+    Setup logging into a file called log.txt in the folder /logs with the format: [TIME] - [MESSAGE].
+    If it exceeds 1MB (MAX_SIZE_PER_LOG_FILE), create a new file with a number suffix (before the .txt) and continue logging to it (e.g., log1.txt, log2.txt, etc.)
+    """
+    os.makedirs(LOG_FOLDER, exist_ok=True)  # create the logs folder if it doesn't exist
+    log_file = os.path.join(LOG_FOLDER, "log.txt")
 
-    logger = logging.getLogger("date_logger")
-    logger.setLevel(logging.INFO)
+    # Configure the logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(message)s",  # Format: [TIME] - [MESSAGE]
+        datefmt="%Y-%m-%d %H:%M:%S",
+        handlers=[
+            RotatingFileHandler(
+                log_file, mode="a", maxBytes=MAX_SIZE_PER_LOG_FILE, backupCount=BACKUP_COUNT
+            )
+        ],
+    )
 
-    # Avoid adding multiple handlers if already configured
-    if not logger.handlers:
-        date_handler = DateBasedFileHandler(LOG_FOLDER, MAX_SIZE_PER_LOG_FILE)
-        logger.addHandler(date_handler)
-
+    logger = logging.getLogger()  # get the logger
     return logger
-
 
 
 def log_temperature(logger, temperature, state, last_peak_temperature=None):

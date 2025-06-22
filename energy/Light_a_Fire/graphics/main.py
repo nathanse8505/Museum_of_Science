@@ -15,8 +15,6 @@ def Quit_pygame(cap):
     exit()
 
 
-
-
 def main():
     """
     The main function for the Light a Fire UI
@@ -27,7 +25,7 @@ def main():
     # pygame setup
     pygame.display.set_caption("Light a Fire")
     screen = pygame.display.set_mode(VIEW_PORT, pygame.FULLSCREEN)
-    #screen = pygame.display.set_mode(VIEW_PORT)
+    # screen = pygame.display.set_mode(VIEW_PORT)
 
     clock = pygame.time.Clock()  # for fps limit
 
@@ -40,7 +38,7 @@ def main():
     state = "idle"
     last_peak_temperature = None
     previous_window = None
-    current_window  = None
+    current_window = None
 
     # arduino setup
     arduino_port = find_arduino_port(logger=logger)  # find the serial port
@@ -66,10 +64,10 @@ def main():
                     Quit_pygame(cap)
 
                 if event.key == pygame.K_UP:
-                    temperature_to_display = min( temperature_to_display + 0.2, MAX_TEMPERATURE_DEFAULT)
+                    temperature_to_display = min(temperature_to_display + 0.2, MAX_TEMPERATURE_DEFAULT)
 
                 if event.key == pygame.K_DOWN:
-                    temperature_to_display = max( temperature_to_display - 0.2, MIN_TEMPERATURE_DEFAULT)
+                    temperature_to_display = max(temperature_to_display - 0.2, MIN_TEMPERATURE_DEFAULT)
 
         data_from_arduino = read_line(ser, logger=logger)  # try to read from arduino
         if data_from_arduino == SERIAL_ERROR:  # if arduino WAS connected at start, but now failed to read:
@@ -88,7 +86,7 @@ def main():
         if data_from_arduino and data_from_arduino != SERIAL_ERROR:  # if data is vaild
             # print(data_from_arduino)
             temperature, sensor_analogread, error = parse_data(data_from_arduino, logger=logger)
-            #print(f"parsed: pressure {temperature} sensor_analogread {sensor_analogread} error {error}")
+            # print(f"parsed: pressure {temperature} sensor_analogread {sensor_analogread} error {error}")
             if sensor_analogread >= 1000:
                 if not sensor_off:
                     print("the sensor is disconected")
@@ -98,10 +96,9 @@ def main():
                 error = PARSE_ERROR
             if not error:
                 temperature_to_display = temperature
-                state, last_peak_temperature = log_temperature(logger, temperature_to_display, state,last_peak_temperature)
-
-        #state, last_peak_temperature,previous_window, current_window = log_temperature_new(logger, temperature_to_display,state, last_peak_temperature,previous_window, current_window)
-        #state, last_peak_temperature = log_temperature(logger, temperature, state, last_peak_temperature=None)
+                state, last_peak_temperature = log_temperature(logger, temperature_to_display, state,
+                                                               last_peak_temperature)
+        # state, last_peak_temperature = log_temperature(logger, temperature, state, last_peak_temperature=None)
         screen.fill(BLACK)  # reset screen
         running = camera_setup(screen, cap)
         display_measure(screen, Temperature=temperature_to_display)  # render the screen
@@ -110,7 +107,6 @@ def main():
 
     Quit_pygame(cap)
 
+
 if __name__ == "__main__":
     main()
-
-

@@ -2,9 +2,6 @@
 File: main.py
 Purpose: Main file for the Horse Power UI
 """
-import pygame
-import time
-from consts import *
 from display import *
 from arduino import *
 from logs import *

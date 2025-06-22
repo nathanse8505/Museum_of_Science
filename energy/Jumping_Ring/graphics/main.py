@@ -2,9 +2,8 @@
 File: main.py
 Purpose: Main file for the Jumping Ring UI
 """
-import pygame
+
 import time
-from consts import *
 from display import *
 from arduino import *
 from logs import *
@@ -48,7 +47,7 @@ def main():
 
                 if event.key == pygame.K_SPACE:
                     language = (language + 1) % len(LANGUAGES)  # toggle language
-                    
+
                 if event.key == pygame.K_UP:
                     voltage = min(voltage + 5, MAX_VOLTAGE)
 
@@ -83,11 +82,11 @@ def main():
                     logger.info(f"your language is: {dic_lang.get(language)}")
                     previous_language = language
 
-
         screen.fill(BLACK)  # reset screen
         display_state(screen, state=state, language=language, voltage=voltage)  # render the screen
         pygame.display.flip()
         clock.tick(FPS)
+
 
 if __name__ == "__main__":
     main()

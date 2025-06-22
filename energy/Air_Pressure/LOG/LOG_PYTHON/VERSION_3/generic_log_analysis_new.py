@@ -7,6 +7,13 @@ from collections import defaultdict
 from datetime import datetime
 import argparse
 
+# Dossier de sauvegarde par défaut : Téléchargements de l'utilisateur
+DOWNLOAD_DIR = os.path.expanduser("~/Downloads")
+HOUR_BEGIN_DAY = 9
+MINUTE_BEGIN_DAY = 30
+HOUR_END_DAY = 18
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Analyze logs in a datetime range.")
     parser.add_argument("files", nargs='+', help="Path(s) to text log file(s).")
@@ -57,6 +64,18 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
     language_eng_counter = defaultdict(int)
     language_heb_counter = defaultdict(int)
     language_arb_counter = defaultdict(int)
+
+    ui_restart_counter = 0
+    arduino_disconnect_counter = 0
+
+    ui_restart_keywords = [
+        "Starting Hydrogen Rocket UI",
+        "Starting Horse Power UI",
+        "Starting Air Pressure UI",
+        "Starting Jumping Ring UI"
+    ]
+    arduino_disconnect_keyword = "Error reading from serial, Arduino probably disconnected"
+
     any_data_found = False
     first_dt = None
     last_dt = None
@@ -99,6 +118,17 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
                         language_arb_counter[time_key] += 1
                         any_data_found = True
 
+                    if (timestamp.hour > HOUR_BEGIN_DAY or (
+                            timestamp.hour == HOUR_BEGIN_DAY and timestamp.minute >= MINUTE_BEGIN_DAY)) and timestamp.hour < HOUR_END_DAY:
+
+                        for keyword in ui_restart_keywords:
+                            if keyword.lower() in line_lower:
+                                print(timestamp)
+                                ui_restart_counter += 1
+                                break
+                        if arduino_disconnect_keyword.lower() in line_lower:
+                            arduino_disconnect_counter += 1
+
                 except Exception:
                     print(f"Skipping line (parse error): {line.rstrip()}", file=sys.stderr)
 
@@ -113,7 +143,9 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
         "counters": counters,
         "First Timestamp": first_dt,
         "Last Timestamp": last_dt,
-        "project_name": project_name
+        "project_name": project_name,
+        "ui_restart_count": ui_restart_counter,
+        "arduino_disconnect_count": arduino_disconnect_counter
     }
 
 
@@ -127,7 +159,10 @@ def write_summary(data_dict, interval, start_dt, end_dt):
     project_name = data_dict["project_name"]
     label_text = label_title(project_name)
 
-    filename = f"{project_name}_summary.txt"
+    ui_restart_count = data_dict.get("ui_restart_count", 0)
+    arduino_disconnect_count = data_dict.get("arduino_disconnect_count", 0)
+
+    filename = os.path.join(DOWNLOAD_DIR, f"{project_name}_summary.txt")
 
     total_intervals = len(set().union(*[d.keys() for d in counters.values()]))
 
@@ -164,7 +199,11 @@ def write_summary(data_dict, interval, start_dt, end_dt):
 
         f.write(f"Good runs: {ring_total} / {denom} ({good_runs_pct:.2f}%)\n")
 
-    print(f"✅ Saved summary to: {filename}")
+        f.write(f"\n---\n")
+        f.write(f"UI restarts between 09:30 and 18:00: {ui_restart_count}\n")
+        f.write(f"Arduino disconnections between 09:30 and 18:00: {arduino_disconnect_count}\n")
+
+    print(f"\u2705 Saved summary to: {filename}")
 
 
 def plot_and_save_counts(data_dict, interval):
@@ -178,7 +217,6 @@ def plot_and_save_counts(data_dict, interval):
     offset = 0
     plt.figure(figsize=(12, 6))
 
-    # Ne garder que le label principal + langues
     lang_labels = ["Language: English", "Language: Hebrew", "Language: Arabic"]
 
     for label in [project_name] + lang_labels:
@@ -195,60 +233,6 @@ def plot_and_save_counts(data_dict, interval):
     plt.tight_layout()
     plt.grid(True, axis='y')
 
-    filename = f"{project_name}_plot.png"
+    filename = os.path.join(DOWNLOAD_DIR, f"{project_name}_plot.png")
     plt.savefig(filename)
-    print(f"✅ Saved bar graph to: {filename}")
-
-
-def confirm_large_hour_interval(start_dt, end_dt, interval):
-    if interval == "hour":
-        delta_days = (end_dt - start_dt).days
-        if delta_days >= 6:
-            print(
-                f"⚠️  WARNING: Time range is {delta_days} days but interval is set to 'hour'. This may produce a large and cluttered graph.")
-            proceed = input("Do you want to continue? (yes/no): ").strip().lower()
-            if proceed not in ["yes", "y", "Y", "Yes"]:
-                print("Aborted by user.")
-                sys.exit(0)
-
-
-def check_format_and_incoherance(dt_start, dt_end, interval):
-    try:
-        start_dt = datetime.strptime(dt_start, "%Y-%m-%d %H:%M:%S")
-        end_dt = datetime.strptime(dt_end, "%Y-%m-%d %H:%M:%S")
-    except ValueError:
-        print("Invalid datetime format. Use 'YYYY-MM-DD HH:MM:SS'", file=sys.stderr)
-        sys.exit(1)
-
-    if start_dt >= end_dt:
-        print("Start datetime must be earlier than end datetime.", file=sys.stderr)
-        sys.exit(1)
-
-    confirm_large_hour_interval(start_dt, end_dt, interval)
-    return start_dt, end_dt, interval
-
-
-def main():
-    FILE_PATH = [""]
-    INTERVAL = "day"
-    START_DT = "YYYY-MM-DD HH:MM:SS"
-    END_DT = "YYYY-MM-DD HH:MM:SS"
-
-    # args = parse_args()
-    # start_dt, end_dt, interval = check_format_and_incoherance(args.start,args.end,args.interval)#with terminal
-    # files = args.files
-
-    start_dt, end_dt, interval = check_format_and_incoherance(START_DT, END_DT, INTERVAL)  # set Mamualy
-    files = FILE_PATH
-
-    data_dict = analyze_logs(files, start_dt, end_dt, interval)
-    if not data_dict:
-        print("No data found in the specified time range. No graph was generated.")
-        sys.exit(0)
-
-    plot_and_save_counts({k: v for k, v in data_dict.items() if "Timestamp" not in k}, interval, start_dt, end_dt)
-    write_summary(data_dict, interval, start_dt, end_dt)
-
-
-if __name__ == "__main__":
-    main()
+    print(f"\u2705 Saved bar graph to: {filename}")
