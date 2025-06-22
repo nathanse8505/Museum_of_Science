@@ -1,11 +1,10 @@
 import os
 import sys
-import re
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from datetime import datetime
-import argparse
+
 
 # Dossier de sauvegarde par défaut : Téléchargements de l'utilisateur
 DOWNLOAD_DIR = os.path.expanduser("~/Downloads")
@@ -13,31 +12,16 @@ HOUR_BEGIN_DAY = 9
 MINUTE_BEGIN_DAY = 30
 HOUR_END_DAY = 18
 
-
-def parse_args():
-    parser = argparse.ArgumentParser(description="Analyze logs in a datetime range.")
-    parser.add_argument("files", nargs='+', help="Path(s) to text log file(s).")
-    parser.add_argument("--start", required=True, help="Start datetime (\"YYYY-MM-DD HH:MM:SS\").")
-    parser.add_argument("--end", required=True, help="End datetime (\"YYYY-MM-DD HH:MM:SS\").")
-    parser.add_argument("--interval", choices=["day", "hour"], default="day",
-                        help="Graph granularity: 'day' or 'hour'. Default is 'day'.")
-    return parser.parse_args()
-
-
-def sanitize_for_filename(s):
-    return re.sub(r"[^\w\-]", "_", s)
-
-
 def get_time_key(timestamp, interval):
     return timestamp.strftime("%Y-%m-%d %H:00") if interval == "hour" else timestamp.strftime("%Y-%m-%d")
-
 
 def detect_project_name(file_path):
     patterns = {
         "Rocket Hydrogen": "The rocket has ignited",
         "Horsepower": "your horsepower is",
         "Jumping Ring": "Ring jumped!",
-        "AirPressure": "The Bottle flew!"
+        "AirPressure": "The Bottle flew!",
+        "Light a Fire": "Peak temperature reached:"
     }
     try:
         with open(file_path, encoding="utf-8") as f:
@@ -55,7 +39,8 @@ def label_title(project):
         "Rocket Hydrogen": "The rocket has ignited",
         "Horsepower": "your horsepower is",
         "Jumping Ring": "Ring jumped!",
-        "AirPressure": "The Bottle flew!"
+        "AirPressure": "The Bottle flew!",
+        "Light a Fire": "Peak temperature reached:"
     }.get(project, project.lower())
 
 
@@ -72,7 +57,8 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
         "Starting Hydrogen Rocket UI",
         "Starting Horse Power UI",
         "Starting Air Pressure UI",
-        "Starting Jumping Ring UI"
+        "Starting Jumping Ring UI",
+        "Starting Light a Fire UI"
     ]
     arduino_disconnect_keyword = "Error reading from serial, Arduino probably disconnected"
 
@@ -123,7 +109,6 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
 
                         for keyword in ui_restart_keywords:
                             if keyword.lower() in line_lower:
-                                print(timestamp)
                                 ui_restart_counter += 1
                                 break
                         if arduino_disconnect_keyword.lower() in line_lower:
@@ -186,18 +171,20 @@ def write_summary(data_dict, interval, start_dt, end_dt):
         f.write(f"Log data time range: {first_dt} to {last_dt} ({(last_dt - first_dt).days + 1} days)\n\n")
 
         f.write(f"Total {label_text}: {ring_total}\n")
-        f.write(f"Total english language: {eng_total}\n")
-        f.write(f"Total hebrew language: {heb_total}\n")
-        f.write(f"Total arabic language: {arb_total}\n")
-        f.write(f"Total language changes: {total_langs}\n\n")
+        if project_name != "Light a Fire":
+            f.write(f"Total english language: {eng_total}\n")
+            f.write(f"Total hebrew language: {heb_total}\n")
+            f.write(f"Total arabic language: {arb_total}\n")
+            f.write(f"Total language changes: {total_langs}\n\n")
 
         f.write(f"Average {label_text} per {interval}: {ring_avg:.2f}\n")
-        f.write(f"Average english language per {interval}: {eng_avg:.2f}\n")
-        f.write(f"Average hebrew language per {interval}: {heb_avg:.2f}\n")
-        f.write(f"Average arabic language per {interval}: {arb_avg:.2f}\n")
-        f.write(f"Average total language changes per {interval}: {total_langs_avg:.2f}\n\n")
+        if project_name != "Light a Fire":
+            f.write(f"Average english language per {interval}: {eng_avg:.2f}\n")
+            f.write(f"Average hebrew language per {interval}: {heb_avg:.2f}\n")
+            f.write(f"Average arabic language per {interval}: {arb_avg:.2f}\n")
+            f.write(f"Average total language changes per {interval}: {total_langs_avg:.2f}\n\n")
 
-        f.write(f"Good runs: {ring_total} / {denom} ({good_runs_pct:.2f}%)\n")
+            f.write(f"Good runs: {ring_total} / {denom} ({good_runs_pct:.2f}%)\n")
 
         f.write(f"\n---\n")
         f.write(f"UI restarts between 09:30 and 18:00: {ui_restart_count}\n")
@@ -212,20 +199,26 @@ def plot_and_save_counts(data_dict, interval):
 
     all_keys = sorted(set().union(*[counter.keys() for counter in counters.values()]))
     x = np.arange(len(all_keys))
-
-    bar_width = 0.2
     offset = 0
+
     plt.figure(figsize=(12, 6))
 
-    lang_labels = ["Language: English", "Language: Hebrew", "Language: Arabic"]
+    if project_name != "Light a Fire":
+        lang_labels = ["Language: English", "Language: Hebrew", "Language: Arabic"]
+        bar_width = 0.2
+    else:
+        lang_labels = []
+        bar_width = 0.5
 
     for label in [project_name] + lang_labels:
         if label in counters:
             counts = [counters[label].get(k, 0) for k in all_keys]
             plt.bar(x + offset, counts, width=bar_width, label=label)
             offset += bar_width
-
-    plt.xticks(x + bar_width * len(counters) / 2.5, all_keys, rotation=45, ha="right")
+    if project_name != "Light a Fire":
+        plt.xticks(x + bar_width * len(counters) / 2.5, all_keys, rotation=45, ha="right")
+    else:
+        plt.xticks(x, all_keys, rotation=45, ha="right")
     plt.ylabel("Count")
     plt.xlabel("Hour" if interval == "hour" else "Date")
     plt.title("Log Event Counts")

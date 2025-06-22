@@ -78,7 +78,8 @@ class LogAnalyzerGUI:
             "Rocket Hydrogen": "The rocket has ignited",
             "Horsepower": "your horsepower is",
             "Jumping Ring": "Ring jumped!",
-            "AirPressure": "The Bottle flew!"
+            "AirPressure": "The Bottle flew!",
+            "Light a Fire": "Peak temperature reached:"
         }
 
         result = analyze_logs(
