@@ -65,7 +65,8 @@
 2025-02-16 20:04:27 - Found Arduino! port: /dev/ttyUSB0
 2025-02-16 20:04:27 - Connected to /dev/ttyUSB0
 2025-02-16 20:04:32 - your language is: english
-2025-02-16 20:04:33 - Error parsing data: 0.0 26  0. .901
+2025-02-16 20:04:33 - Error parsing data: 0.0 26  
+0. .901
 2025-02-16 20:04:34 - Error reading from serial, Arduino probably disconnected
 2025-02-16 20:04:34 - Arduino disconnected... Going to default settings
 2025-02-16 20:04:34 - Trying to reconnect to Arduino...
@@ -81,7 +82,9 @@
 2025-02-16 20:04:37 - Trying to reconnect to Arduino...
 2025-02-16 20:04:37 - Found Arduino! port: /dev/ttyUSB0
 2025-02-16 20:04:37 - Connected to /dev/ttyUSB0
-2025-02-16 20:04:38 - Error parsing data: 0.0 2.69  1.026  . 6000.69
+2025-02-16 20:04:38 - Error parsing data: 0.0 2.69  1.026  
+. 60
+00.69
 2025-02-16 20:04:38 - Error reading from serial, Arduino probably disconnected
 2025-02-16 20:04:38 - Arduino disconnected... Going to default settings
 2025-02-16 20:04:38 - Trying to reconnect to Arduino...
@@ -102,7 +105,8 @@
 2025-02-16 20:04:48 - Trying to reconnect to Arduino...
 2025-02-16 20:04:48 - Found Arduino! port: /dev/ttyUSB0
 2025-02-16 20:04:48 - Connected to /dev/ttyUSB0
-2025-02-16 20:04:48 - Error parsing data: 0.0 26  0. .901
+2025-02-16 20:04:48 - Error parsing data: 0.0 26  
+0. .901
 2025-02-16 20:04:49 - Error reading from serial, Arduino probably disconnected
 2025-02-16 20:04:49 - Arduino disconnected... Going to default settings
 2025-02-16 20:04:49 - Trying to reconnect to Arduino...
@@ -114,7 +118,9 @@
 2025-02-16 20:04:51 - Trying to reconnect to Arduino...
 2025-02-16 20:04:51 - Found Arduino! port: /dev/ttyUSB0
 2025-02-16 20:04:51 - Connected to /dev/ttyUSB0
-2025-02-16 20:04:52 - Error parsing data: 01.2 . 9 .00 .6 0
+2025-02-16 20:04:52 - Error parsing data: 01.2 
+. 9 
+.00 .6 0
 2025-02-16 20:04:54 - Error reading from serial, Arduino probably disconnected
 2025-02-16 20:04:54 - Arduino disconnected... Going to default settings
 2025-02-16 20:04:54 - Trying to reconnect to Arduino...
@@ -165,7 +171,10 @@
 2025-02-16 20:05:07 - Trying to reconnect to Arduino...
 2025-02-16 20:05:08 - Found Arduino! port: /dev/ttyUSB0
 2025-02-16 20:05:08 - Connected to /dev/ttyUSB0
-2025-02-16 20:05:09 - Error parsing data: 0.0 26  0.0 26  0 000 . 1
+2025-02-16 20:05:09 - Error parsing data: 0.0 26  
+0.0 26  
+0 
+000 . 1
 2025-02-16 20:05:10 - Error parsing data: 0.0 .
 2025-02-16 20:05:10 - Error parsing data: .02.601
 2025-02-16 20:05:12 - Error reading from serial, Arduino probably disconnected
@@ -206,7 +215,8 @@
 2025-02-16 20:05:20 - Trying to reconnect to Arduino...
 2025-02-16 20:05:20 - Found Arduino! port: /dev/ttyUSB0
 2025-02-16 20:05:20 - Connected to /dev/ttyUSB0
-2025-02-16 20:05:22 - Error parsing data: .026  . .901
+2025-02-16 20:05:22 - Error parsing data: .026  
+. .901
 2025-02-16 20:05:23 - Error parsing data: 0.0 29
 2025-02-16 20:05:24 - Error parsing data: 0.0029
 2025-02-16 20:05:25 - Error parsing data: 6.9
@@ -220,7 +230,8 @@
 2025-02-16 20:05:27 - Trying to reconnect to Arduino...
 2025-02-16 20:05:27 - Found Arduino! port: /dev/ttyUSB0
 2025-02-16 20:05:27 - Connected to /dev/ttyUSB0
-2025-02-16 20:05:28 - Error parsing data: 00026  00 2690
+2025-02-16 20:05:28 - Error parsing data: 00026  
+00 2690
 2025-02-16 20:05:29 - Error reading from serial, Arduino probably disconnected
 2025-02-16 20:05:29 - Arduino disconnected... Going to default settings
 2025-02-16 20:05:29 - Trying to reconnect to Arduino...
@@ -235,7 +246,8 @@
 2025-02-16 20:05:31 - Error parsing data: 000 2.6 0
 2025-02-16 20:05:31 - your language is: english
 2025-02-16 20:05:32 - Error parsing data: 000 2.6 01
-2025-02-16 20:05:32 - Error parsing data: 0.00 2.69 0 1000 269  1
+2025-02-16 20:05:32 - Error parsing data: 0.00 2.69 0 1
+000 269  1
 2025-02-16 20:05:33 - Error reading from serial, Arduino probably disconnected
 2025-02-16 20:05:33 - Arduino disconnected... Going to default settings
 2025-02-16 20:05:33 - Trying to reconnect to Arduino...

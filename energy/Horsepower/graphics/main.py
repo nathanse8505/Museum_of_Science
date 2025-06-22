@@ -94,7 +94,7 @@ def main():
             # print(f"parsed: horsepower {voltage} deltatime {deltatime} language {language}")
             state = MEASURE if horsepower > SWITCH_TO_MEASURE_SCREEN else OPENING
 
-        check_horse_power, previous_language = log_horsepower(logger, horsepower, check_horse_power, language, previous_language)
+        #check_horse_power, previous_language = log_horsepower(logger, horsepower, check_horse_power, language, previous_language)
         current_time = pygame.time.get_ticks()
         if state == OPENING and (current_time - last_update) >= DELAY_FRAME_BALL:
             index_images =(index_images + 1) % len(images_balls)

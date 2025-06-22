@@ -18,7 +18,7 @@ void setup()
   Wire.setClock(400000);                 // Use 400 kHz I2C
   sensor.setTimeout(500);                // Timeout for sensor operations (in ms)
 
-  Serial.println(String(0.5) + " " + String(deltaTime) + " " + lang);//sensor disconnect
+  Serial.println(String(0.4) + " " + String(deltaTime) + " " + lang);//sensor disconnect
 
   // Initialize the VL53L1X sensor
   if (!sensor.init()){
