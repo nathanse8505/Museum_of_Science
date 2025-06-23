@@ -1,12 +1,12 @@
 import re
 import matplotlib.pyplot as plt
 # === PARAMÈTRES ===
-file_path = "graph_and_data/april/LOG_april.TXT"
+FILE_PATH = "graph_and_data/april/LOG_april.TXT"
 #file_path = "graph/april/simulated_log.TXT"
 pattern_button = re.compile(r"(\d+)\s*ms\s*;\s*(SW\d)", re.IGNORECASE)
 pattern_init = re.compile(r"(\d+)\s*ms\s*;\s*init", re.IGNORECASE)
 uv_keywords = ["led UV has activate", "la led UV", "UV a été activée", "UV activée"]
-DELTA_TIME= 3600*1000*5
+DELTA_TIME= 3600*1000*5 # if there are 5 hour between init you can count a day
 DAY = 10
 MONTH = 5
 YEAR = 2025

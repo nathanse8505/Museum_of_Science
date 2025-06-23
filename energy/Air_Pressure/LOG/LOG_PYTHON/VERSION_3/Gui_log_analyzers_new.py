@@ -3,7 +3,7 @@ from tkinter import ttk, filedialog, messagebox
 from tkcalendar import DateEntry
 from generic_log_analysis_new import *
 
-lst_projקct = ["Rocket Hydrogen","Horsepower","Jumping Ring","AirPressure","Light a Fire","Chliran","Pendulum"]
+lst_project = ["Rocket Hydrogen", "Horsepower", "Jumping Ring", "AirPressure", "Light a Fire", "Chliran", "Pendulum"]
 
 class LogAnalyzerGUI:
     def __init__(self, root):
@@ -18,6 +18,10 @@ class LogAnalyzerGUI:
         self.end_time = tk.StringVar()
         self.interval = tk.StringVar(value="day")
         self.exhibits = tk.StringVar(value="Horsepower")
+
+        self.start_date_entry = None
+        self.end_date_entry = None
+        self.log_file_path_label = None
 
         self.create_widgets()
 
@@ -50,9 +54,9 @@ class LogAnalyzerGUI:
         interval_menu = ttk.Combobox(self.root, textvariable=self.interval, values=["day", "hour"], state="readonly")
         interval_menu.grid(row=3, column=1, sticky="w", **padding)
 
-        ttk.Label(self.root, text="Exhibits:").grid(row=3, column=1, sticky="e", **padding)
-        interval_exhibits = ttk.Combobox(self.root, textvariable=self.exhibits, values=lst_projקct, state="readonly")
-        interval_exhibits.grid(row=3, column=2, sticky="w", **padding)
+        # ttk.Label(self.root, text="Exhibits:").grid(row=3, column=1, sticky="e", **padding)
+        # interval_exhibits = ttk.Combobox(self.root, textvariable=self.exhibits, values=lst_project, state="readonly")
+        # interval_exhibits.grid(row=3, column=2, sticky="w", **padding)
 
         ttk.Button(self.root, text="Run Analysis", command=self.run_analysis).grid(row=4, column=0, columnspan=3,
                                                                                    pady=15)
@@ -89,6 +93,8 @@ class LogAnalyzerGUI:
             "Light a Fire": "Peak temperature reached:"
         }
 
+        #if self.exhibits in ["Chliran","Pendulum"]:
+
         result = analyze_logs(
             files=self.log_file_paths,
             start_dt=start_dt,
@@ -115,7 +121,7 @@ if __name__ == "__main__":
     root = tk.Tk()
 
     # === Centrer la fenêtre principale ===
-    window_width = 570
+    window_width = 500
     window_height = 200
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
