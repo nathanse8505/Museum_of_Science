@@ -14,7 +14,7 @@ def build_df(time_ms_list,button_list,uv_status_list,jour_logique_list):
 def timestamp_to_date(df,start_dt):
     # === CONVERSION EN DATES
     df["Date"] = df["Day"].apply(
-        lambda j: start_dt + pd.Timedelta(days=j - 1)
+        lambda j: start_dt + pd.Timedelta(days=j)
     )
     return df
 
@@ -62,10 +62,12 @@ def write_summary_chliran(df, start_dt, end_dt):
     # Convertir la colonne Date
     project_name = "Chliran"
     interval = "day"
+
+    # Convertir et tronquer la colonne Date
     df["Date"] = pd.to_datetime(df["Date"])
 
     # Appliquer un filtre strict entre start_dt et end_dt
-    df_filtered = df[(df["Date"] >= start_dt) & (df["Date"] <= end_dt)]
+    df_filtered = df[(df["Date"] <= end_dt)]
 
     if df_filtered.empty:
         print("⚠️ Aucun événement dans l’intervalle de temps spécifié.")
@@ -89,8 +91,10 @@ def write_summary_chliran(df, start_dt, end_dt):
     total_avg = total_events / nb_periods
 
     with open(output_path, "w", encoding="utf-8") as f:
-        f.write(f"Summary from {start_dt} to {end_dt} ({(end_dt - start_dt).days + 1} days)\n")
-        f.write(f"Log data time range: {first_dt} to {last_dt} ({(last_dt - first_dt).days + 1} days)\n\n")
+        f.write(f"Summary from {start_dt.strftime('%Y-%m-%d')} to {end_dt.strftime('%Y-%m-%d')} "
+                f"({(end_dt - start_dt).days + 1} days)\n")
+        f.write(f"Log data time range: {first_dt.strftime('%Y-%m-%d')} to {last_dt.strftime('%Y-%m-%d')} "
+                f"({(last_dt - first_dt).days + 1} days)\n\n")
 
         f.write(f"UV activated: {uv_activated_total}\n")
         f.write(f"Total SW off: {sw_off_total}\n")

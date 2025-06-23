@@ -79,17 +79,23 @@ class LogAnalyzerGUI:
             messagebox.showerror("Invalid Input", "Datetime format must be YYYY-MM-DD HH:MM:SS")
             return
 
-        if selected_project in ["Chliran", "Pendulum"]:
-            from main_chliran import analyze_chliran
+        if selected_project == "Chliran":
+            from Chliran_log import main_chliran
             for path in self.log_file_paths:
                 try:
-                    analyze_chliran(path,start_dt,end_dt)
+                    main_chliran.analyze_chliran(path, start_dt, end_dt)
                 except Exception as e:
-                    messagebox.showerror("Erreur", f"Erreur lors de l’analyse de {selected_project}: {{e}}")
+                    messagebox.showerror("Error", f"Error during analysis of {selected_project}: {e}")
                     return
-            messagebox.showinfo(f"Analyse terminée", f"Analyse '{selected_project}' terminée.")
+        elif selected_project == "Pendulum":
+            from Chliran_log import main_chliran
+            for path in self.log_file_paths:
+                try:
+                    main_chliran.analyze_chliran(path,start_dt,end_dt)
+                except Exception as e:
+                    messagebox.showerror("Error", f"Error during analysis of {selected_project}: {e}")
+                    return
         else:
-            from generic_log_analysis_new import analyze_logs, plot_and_save_counts, write_summary, detect_project_name
             event_config = {
                 "Rocket Hydrogen": "The rocket has ignited",
                 "Horsepower": "your horsepower is",
@@ -107,10 +113,12 @@ class LogAnalyzerGUI:
             )
             if not result:
                 messagebox.showinfo("No Data", "No data found in the specified time range.")
+                return
             else:
                 plot_and_save_counts(result, self.interval.get())
                 write_summary(result, self.interval.get(), start_dt, end_dt)
-                messagebox.showinfo("Done", "Analysis complete. Output files saved.")
+
+        messagebox.showinfo("Analysis Complete", f"Analysis of '{selected_project}' is complete.")
 
     def on_close(self):
         print("Fermeture de l'application par l'utilisateur.")

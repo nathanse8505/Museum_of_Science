@@ -1,6 +1,13 @@
+import sys
+import os
+
+# Ajouter le dossier courant (Chliran_log) au sys.path
+sys.path.append(os.path.dirname(__file__))
+
 from data_frame import *
 
-def analyze_chliran(file_path,start_dt,end_dt):
+
+def analyze_chliran(file_path, start_dt, end_dt):
     # === LECTURE ET PARSING ===
     current_day_index = 0
     time_ms_list = []
@@ -36,7 +43,7 @@ def analyze_chliran(file_path,start_dt,end_dt):
                     prev_raw_time = int(prev_match.group(1))
 
             delta = prev_raw_time - previous_init_reference_time
-            #print(delta, prev_raw_time, previous_init_reference_time)
+            # print(delta, prev_raw_time, previous_init_reference_time)
 
             if delta > DELTA_TIME:  # 5 heures en ms
                 current_day_index += 1
@@ -73,13 +80,14 @@ def analyze_chliran(file_path,start_dt,end_dt):
     df_resume["Date"] = df_resume["Date"].astype(str)
     df["Date"] = df["Date"].astype(str)
     # === EXPORT EXCEL À 2 ONGLET ===
-    export_excel(df,df_resume)
+    export_excel(df, df_resume)
     # === WRITE SUMMARY IN TXT ===
     write_summary_chliran(df, start_dt, end_dt)
     # === GRAPHIQUE RESUME===
-    plot_resume(df_resume,start_dt,end_dt)
+    plot_resume(df_resume, start_dt, end_dt)
     # === GRAPHIQUE PAR SWITCH ===
-    plot_resume_per_SW(df,start_dt,end_dt)
+    plot_resume_per_SW(df, start_dt, end_dt)
+
 
 if __name__ == "__main__":
     analyze_chliran(FILE_PATH)
