@@ -36,11 +36,11 @@ def detect_project_name(file_path):
 
 def label_title(project):
     return {
-        "Rocket Hydrogen": "The rocket has ignited",
-        "Horsepower": "your horsepower is",
+        "Rocket Hydrogen": "Rocket ignited",
+        "Horsepower": "Ball lifted",
         "Jumping Ring": "Ring jumped!",
-        "AirPressure": "The Bottle flew!",
-        "Light a Fire": "Peak temperature reached:"
+        "AirPressure": "Bottle ignited",
+        "Light a Fire": "Flames reached:"
     }.get(project, project.lower())
 
 
