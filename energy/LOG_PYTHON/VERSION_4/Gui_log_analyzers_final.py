@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from tkcalendar import DateEntry
 from generic_log_analysis_new import *
+import sys
+print(sys.executable)
+
 
 lst_project = ["Rocket Hydrogen", "Horsepower", "Jumping Ring", "AirPressure", "Light a Fire", "Chliran", "Pendulum"]
 
