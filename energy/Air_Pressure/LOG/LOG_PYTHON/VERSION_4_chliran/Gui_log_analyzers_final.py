@@ -88,10 +88,10 @@ class LogAnalyzerGUI:
                     messagebox.showerror("Error", f"Error during analysis of {selected_project}: {e}")
                     return
         elif selected_project == "Pendulum":
-            from Chliran_log import main_chliran
+            from Pendulum_log import main_pendulum
             for path in self.log_file_paths:
                 try:
-                    main_chliran.analyze_chliran(path,start_dt,end_dt)
+                    main_pendulum.analyze_pendulum(path, start_dt, end_dt)
                 except Exception as e:
                     messagebox.showerror("Error", f"Error during analysis of {selected_project}: {e}")
                     return

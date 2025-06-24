@@ -1,20 +1,21 @@
 import sys
 import os
+
 sys.path.append(os.path.dirname(__file__))
 from data_frame import *
 
 
-def analyze_chliran(file_path, start_dt, end_dt):
+def analyze_pendulum(file_path, start_dt, end_dt):
     # === LECTURE ET PARSING ===
     current_day_index = 0
     time_ms_list = []
-    button_list = []
-    uv_status_list = []
+    motor_status_list = []
     jour_logique_list = []
     previous_init_reference_time = None
     prev_raw_time = 0
     consecutive_init = False
     is_last_init = False
+
     with open(file_path, "r", encoding="utf-8") as f:
         all_lines = f.readlines()
 
@@ -30,6 +31,7 @@ def analyze_chliran(file_path, start_dt, end_dt):
         if match_init:
             if consecutive_init or idx == init_indices[0]:
                 previous_init_reference_time = raw_time
+                # print(previous_init_reference_time)
                 continue  # ignorer les init consécutifs
 
             # Conserver le timestamp de la ligne précédente pour delta
@@ -40,7 +42,7 @@ def analyze_chliran(file_path, start_dt, end_dt):
                     prev_raw_time = int(prev_match.group(1))
 
             delta = prev_raw_time - previous_init_reference_time
-            # print(delta, prev_raw_time, previous_init_reference_time)
+            # print(delta,prev_raw_time,previous_init_reference_time)
 
             if delta > DELTA_TIME:  # 5 heures en ms
                 current_day_index += 1
@@ -56,35 +58,28 @@ def analyze_chliran(file_path, start_dt, end_dt):
             consecutive_init = False
 
         if match_button:
-            button = match_button.group(2)
-            activated = any(keyword.lower() in line.lower() for keyword in uv_keywords)
+            raw_time = int(match_button.group(1))
+            motor = any(keyword.lower() in line.lower() for keyword in motor_keywords)
 
             time_ms_list.append(raw_time)
-            button_list.append(button)
-            uv_status_list.append("YES" if activated else "NO")
+            motor_status_list.append("YES" if motor else "NO")
             jour_logique_list.append(current_day_index)
 
-    # === ERREUR SI PAS D'INIT
+    # === ERREUR IF NO INIT ===
     if current_day_index == 0:
         raise ValueError("Aucun 'Init' trouvé : impossible d'assigner les jours.")
 
-    df = build_df(time_ms_list, button_list, uv_status_list, jour_logique_list)
-    df = timestamp_to_date(df, start_dt=start_dt)
+    # === CONSTRUCTION DU DATAFRAME ===
+    df = build_df(time_ms_list, motor_status_list, jour_logique_list)
+    # === CONVERSION EN DATES ===
+    df = timestamp_to_date(df, start_dt)
+    # ORGANISE COL IN df ===
     df = organize_df(df)
-
+    # === RÉSUMÉ JOURNALIER ===
     df_resume = build_df_resume(df)
-
-    df_resume["Date"] = df_resume["Date"].astype(str)
-    df["Date"] = df["Date"].astype(str)
     # === EXPORT EXCEL À 2 ONGLET ===
     export_excel(df, df_resume)
-    # === WRITE SUMMARY IN TXT ===
-    write_summary_chliran(df, start_dt, end_dt)
-    # === GRAPHIQUE RESUME===
+    # === GRAPHIQUE ===
     plot_resume(df_resume, start_dt, end_dt)
-    # === GRAPHIQUE PAR SWITCH ===
-    plot_resume_per_SW(df, start_dt, end_dt)
-
-
-if __name__ == "__main__":
-    analyze_chliran(FILE_PATH)
+    # === SUMMARY TXT===
+    write_summary_pendulum(df, start_dt, end_dt)
