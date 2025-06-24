@@ -1,0 +1,8 @@
+416 ms ; init
+8937 ms ; SW1 ;has been pressed and the led UV has activate
+397 ms ; init
+398 ms ; init
+103361 ms ; SW1 ;has been pressed and the led UV has activate
+398 ms ; init
+397 ms ; init
+249 ms ; init
