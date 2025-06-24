@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 
 # === PARAMÈTRES ===
 
-file_path = "LOG.TXT"
+file_path = "LOG_modified.TXT"
 pattern_button = re.compile(r"(\d+)\s*ms\s*;\s*Button pressed", re.IGNORECASE)
 pattern_init = re.compile(r"(\d+)\s*ms\s*;\s*Init", re.IGNORECASE)
 motor_keywords = ["Motor activated"]
-DELTA_TIME= 3600*1000*5
-DAY = 1
-MONTH = 5
+DELTA_TIME= 3600*1000*4
+DAY = 9
+MONTH = 6
 YEAR = 2025
 # === LECTURE ET PARSING ===
 current_day_index = 0
@@ -49,7 +49,7 @@ for idx, line in enumerate(all_lines):
                 prev_raw_time = int(prev_match.group(1))
 
         delta = prev_raw_time - previous_init_reference_time
-        #print(delta,prev_raw_time,previous_init_reference_time)
+        print(delta,prev_raw_time,previous_init_reference_time)
 
         if delta > DELTA_TIME:  # 5 heures en ms
             current_day_index += 1
@@ -87,7 +87,7 @@ df = pd.DataFrame({
 
 # === CONVERSION EN DATES
 df["Date"] = df["Day"].apply(
-    lambda j: datetime(YEAR, MONTH, DAY) + pd.Timedelta(days=j - 1)
+    lambda j: datetime(YEAR, MONTH, DAY) + pd.Timedelta(days=j)
 )
 # Réorganiser les colonnes dans df
 cols = df.columns.tolist()
