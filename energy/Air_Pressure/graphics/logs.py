@@ -1,6 +1,6 @@
 import logging
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, LOG_FOLDER
+from consts import MAX_SIZE_PER_LOG_FILE, LOG_FOLDER,SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD
 import re
 from datetime import datetime
 

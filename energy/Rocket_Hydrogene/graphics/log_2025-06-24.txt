@@ -1,0 +1,6 @@
+2025-06-24 16:40:54 - Starting Hydrogen Rocket UI
+2025-06-24 16:40:54 - Found Arduino! port: /dev/ttyUSB0
+2025-06-24 16:40:54 - Connected to /dev/ttyUSB0
+2025-06-24 16:41:23 - Sound in hebrew is activate
+2025-06-24 16:41:29 - Sent 'ignite' command to Arduino.
+2025-06-24 16:41:31 - The rocket has ignited
