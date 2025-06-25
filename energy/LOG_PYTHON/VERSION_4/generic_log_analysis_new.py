@@ -52,6 +52,7 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
 
     ui_restart_counter = 0
     arduino_disconnect_counter = 0
+    arduino_error_parsing_counter = 0
 
     ui_restart_keywords = [
         "Starting Hydrogen Rocket UI",
@@ -61,6 +62,7 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
         "Starting Light a Fire UI"
     ]
     arduino_disconnect_keyword = "Error reading from serial, Arduino probably disconnected"
+
 
     any_data_found = False
     first_dt = None
@@ -104,6 +106,10 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
                         language_arb_counter[time_key] += 1
                         any_data_found = True
 
+                    if "Error parsing data:".lower() in line_lower:
+                        arduino_error_parsing_counter += 1
+                        any_data_found = True
+
                     if (timestamp.hour > HOUR_BEGIN_DAY or (
                             timestamp.hour == HOUR_BEGIN_DAY and timestamp.minute >= MINUTE_BEGIN_DAY)) and timestamp.hour < HOUR_END_DAY:
 
@@ -130,7 +136,8 @@ def analyze_logs(files, start_dt, end_dt, interval, event_config, project_name):
         "Last Timestamp": last_dt,
         "project_name": project_name,
         "ui_restart_count": ui_restart_counter,
-        "arduino_disconnect_count": arduino_disconnect_counter
+        "arduino_disconnect_count": arduino_disconnect_counter,
+        "Error parsing data": arduino_error_parsing_counter
     }
 
 
@@ -146,6 +153,7 @@ def write_summary(data_dict, interval, start_dt, end_dt):
 
     ui_restart_count = data_dict.get("ui_restart_count", 0)
     arduino_disconnect_count = data_dict.get("arduino_disconnect_count", 0)
+    arduino_parse_error_count = data_dict.get("Error parsing data", 0)
 
     filename = os.path.join(DOWNLOAD_DIR, f"{project_name}_summary.txt")
 
@@ -189,6 +197,7 @@ def write_summary(data_dict, interval, start_dt, end_dt):
         f.write(f"\n---\n")
         f.write(f"UI restarts between 09:30 and 18:00: {ui_restart_count}\n")
         f.write(f"Arduino disconnections between 09:30 and 18:00: {arduino_disconnect_count}\n")
+        f.write(f"Error parsing data: {arduino_parse_error_count}\n")
 
     print(f"\u2705 Saved summary to: {filename}")
 
