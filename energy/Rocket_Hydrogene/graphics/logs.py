@@ -3,7 +3,6 @@ Filename: logs.py
 Purpose: Logging functions for the Hydrogen Rocket UI
 """
 import logging
-from logging.handlers import RotatingFileHandler
 import os
 from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER
 import re
@@ -16,61 +15,117 @@ class DateBasedFileHandler(logging.Handler):
         self.log_folder = log_folder
         self.max_bytes = max_bytes
         self.base_date = datetime.now().strftime("%Y-%m-%d")
-        self.current_index = self._get_last_index()  # ← nouveau
+        self.current_index = 0
         self.current_log_file = None
         self.current_file_handler = None
-        self._create_new_log_file()
+        self.backup_count = BACKUP_COUNT
 
-    def _get_log_filename(self, index=None):
-        index = self.current_index if index is None else index
+        self._select_startup_file()  # Nouveau comportement au démarrage
+
+    def _get_log_filename(self, date_str, index=0):
         suffix = f"({index})" if index > 0 else ""
-        filename = f"log_{self.base_date}{suffix}.txt"
+        filename = f"log_{date_str}{suffix}.txt"
         return os.path.join(self.log_folder, filename)
 
-    def _get_last_index(self):
-        """Trouve le plus grand index existant pour la date d'aujourd'hui (avec suffixes entre parenthèses)"""
-        pattern = re.compile(rf"log_{self.base_date}(?:\((\d+)\))?\.txt$")
-        max_index = 0
+    def _select_startup_file(self):
+        """Trouve le dernier fichier existant, continue s’il n’est pas plein. Sinon crée nouveau fichier."""
+        pattern = re.compile(r"log_(\d{4}-\d{2}-\d{2})(?:\((\d+)\))?\.txt$")
+        files = []
 
         try:
-            for filename in os.listdir(self.log_folder):
-                match = pattern.match(filename)
+            for fname in sorted(os.listdir(self.log_folder)):
+                match = pattern.match(fname)
                 if match:
-                    idx = int(match.group(1)) if match.group(1) else 0
-                    max_index = max(max_index, idx)
+                    date_str = match.group(1)
+                    idx = int(match.group(2)) if match.group(2) else 0
+                    path = os.path.join(self.log_folder, fname)
+                    size = os.path.getsize(path)
+                    files.append((date_str, idx, path, size))
         except FileNotFoundError:
-            pass  # le dossier n'existe pas encore
+            pass
 
-        return max_index
+        if files:
 
-    def _create_new_log_file(self):
-        self.current_log_file = self._get_log_filename()
+            last_date, last_idx, last_path, last_size = files[-1]
+            if last_size < self.max_bytes:
+                # On continue le dernier fichier existant
+                self.base_date = last_date
+                self.current_index = last_idx
+                self.current_log_file = last_path
+                self._create_log_file(self.current_log_file)
+                return
+            else:
+                # Le fichier est plein
+                today = datetime.now().strftime("%Y-%m-%d")
+                if last_date == today:
+                    self.base_date = today
+                    self.current_index = last_idx + 1
+                else:
+                    self.base_date = today
+                    self.current_index = 0
+        else:
+            # Aucun fichier trouvé
+            self.base_date = datetime.now().strftime("%Y-%m-%d")
+            self.current_index = 0
 
+        self.current_log_file = self._get_log_filename(self.base_date, self.current_index)
+        self._create_log_file(self.current_log_file)
+
+    def _create_log_file(self, filepath):
         if self.current_file_handler:
             self.current_file_handler.close()
 
-        self.current_file_handler = logging.FileHandler(self.current_log_file, mode="a", encoding="utf-8")
+        self.current_file_handler = logging.FileHandler(filepath, mode="a", encoding="utf-8")
         self.current_file_handler.setFormatter(logging.Formatter(
             "%(asctime)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
         ))
 
+        self._cleanup_old_logs()  # ← AJOUT ICI
+
     def emit(self, record):
-        today = datetime.now().strftime("%Y-%m-%d")
-
-        if today != self.base_date:
-            # Nouveau jour : on redémarre à zéro
-            self.base_date = today
-            self.current_index = 0
-            self._create_new_log_file()
-
+        # Si fichier courant est plein
         if self.current_file_handler.stream.tell() > self.max_bytes:
-            self.current_index += 1
-            self._create_new_log_file()
+            today = datetime.now().strftime("%Y-%m-%d")
+
+            if today != self.base_date:
+                # Nouveau jour → recommence à 0 avec la date du jour
+                self.base_date = today
+                self.current_index = 0
+            else:
+                # Même jour → juste incrémenter l’index
+                self.current_index += 1
+
+            self.current_log_file = self._get_log_filename(self.base_date, self.current_index)
+            self._create_log_file(self.current_log_file)
 
         self.current_file_handler.emit(record)
 
+    def _cleanup_old_logs(self):
+        """Supprime les plus vieux fichiers de log si on dépasse le BACKUP_COUNT."""
+        pattern = re.compile(r"log_(\d{4}-\d{2}-\d{2})(?:\((\d+)\))?\.txt$")
+        all_logs = []
+
+        try:
+            for fname in os.listdir(self.log_folder):
+                match = pattern.match(fname)
+                if match:
+                    path = os.path.join(self.log_folder, fname)
+                    mtime = os.path.getmtime(path)
+                    all_logs.append((mtime, path))
+        except FileNotFoundError:
+            return
+
+        all_logs.sort()  # plus anciens en premier
+
+        while len(all_logs) > self.backup_count:
+            _, oldest_path = all_logs.pop(0)
+            try:
+                os.remove(oldest_path)
+            except Exception as e:
+                print(f"Erreur lors de la suppression de {oldest_path}: {e}")
+
     def close(self):
-        if hasattr(self, "current_file_handler") and self.current_file_handler:
+        if self.current_file_handler:
             self.current_file_handler.close()
         super().close()
 
@@ -87,5 +142,3 @@ def get_logger():
         logger.addHandler(date_handler)
 
     return logger
-
-
