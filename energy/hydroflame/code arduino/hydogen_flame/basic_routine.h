@@ -13,10 +13,31 @@ void TURN_ON_CURRENT(){
    digitalWrite(RELAY_TURN_ON_OFF_IO, HIGH);
 }
 
+void setZeroCurent(){   
+    for (int i = 0; i < ITERATION; i++){
+      offset_sensor = analogRead(CURRENT_INPUT_IO);
+      if(offset_sensor <= 10 || offset_sensor >= 1000){
+          Serial.println("error reading");
+          i--;
+          continue;
+      }
+      total_offset_sensor += offset_sensor;
+    }
+
+    ZeroCurrentSensor = (float) total_offset_sensor / ITERATION;
+    Serial.print("the zero current offset in bit is:" + String(ZeroCurrentSensor));
+}
+
+float getcurrent(){
+  current_sensor = analogRead(CURRENT_INPUT_IO);
+  current_value = (current_sensor - ZeroCurrentSensor) * READ_TO_CURRENT;
+  delay(MEASURE_INTERVAL_TIME);
+  return current_value;
+}
+
 bool check_current(){
-  current_sensor_value = analogRead(CURRENT_INPUT_IO);
-  current_value = map(current_sensor_value,MIN_CURRENT_SENSOR_VALUE,MAX_CURRENT_SENSOR_VALUE,MIN_CURRENT_VALUE,MAX_CURRENT_VALUE);
-  if (current_value > CURRENT_SYSTEM){
+  
+  if (getcurrent() > CURRENT_SYSTEM){
     return true;
   }
   return false;
@@ -38,9 +59,9 @@ bool check_fire(){
 }
 
 void FILL_WATER(){
-  digitalWrite(RELAY_TURN_ON_OFF_IO, HIGH);
+  digitalWrite(VALVE_WATER_IO, HIGH);
   delay(DELAY_FILL_WATER);
-  digitalWrite(RELAY_TURN_ON_OFF_IO, LOW);
+  digitalWrite(VALVE_WATER_IO, LOW);
   delay(DELAY_AFTER_FILL_WATER);
 }
 

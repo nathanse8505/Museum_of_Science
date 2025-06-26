@@ -1,5 +1,6 @@
-#include "basic_routine.h"
 #include "const.h"
+#include "basic_routine.h"
+
 
 void setup() {
   // Configure pin modes
@@ -15,7 +16,8 @@ void setup() {
 
   Serial.begin(BAUDRATE);                          // Start serial communication
   delay(100);                                      // Give time to establish connection
-  wdt_enable(WDTO_2S);                             // Enable watchdog timer with 2-second timeout
+  wdt_enable(WDTO_2S);   
+  setZeroCurent();                          // Enable watchdog timer with 2-second timeout
 }
 
 void loop() {
@@ -37,7 +39,7 @@ void loop() {
     if(flag_new_session){
       digitalWrite(LED_ACTIVATION, HIGH);  // Turn on activation LED
       DEACTIVE_FAN();                      // Turn off fan
-      flag_new_session = LOW;             // Session started
+      flag_new_session = false;             // Session started
       flag_ready_fan = false;
     }
 
