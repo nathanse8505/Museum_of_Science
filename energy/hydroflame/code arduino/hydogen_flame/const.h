@@ -1,0 +1,106 @@
+#ifndef const
+#define const
+#include <Arduino.h>
+
+/*
+*==========Arduino Nano pinout====== 
+ *                      _______
+ *                 TXD-|       |-Vin 
+ *                 RXD-|       |-Gnd  
+ *                 RST-|       |-RST
+ *                 GND-|       |-+5V  
+ * ignition button, D2-|       |-A7  pot 2 (not used)
+ * language button  D3-|       |-A6  current input pot
+ *     spark output D4-|       |-A5 ,SCL (to Display) 
+ *        valve IO  D5-|       |-A4 ,SDA (to Display) 
+ *                  D6-|       |-A3
+ *                  D7-|       |-A2
+ *            SOUND D8-|       |-A1,
+ *                  D9-|       |-A0,  Current sensor ACS712T-05
+ *                 D10-|       |-Ref
+ *                 D11-|       |-3.3V   
+ *         Buzzer  D12-|       |-D13
+ *                      --USB--        
+ */
+#define BAUDRATE (115200)
+////////////  I/O   ////////////
+#define CURRENT_INPUT_IO A0 // current sensor 
+//#define CURRENT_INPUT_IO A7 // simulation potentiometer
+#define IGNITION_BUTTON_IO 2
+#define SPARK_IO 3
+#define SENSOR_WATER_IO 4
+#define VALVE_WATER_IO 5
+#define SENSOR_FIRE_IO A1
+#define RELAY_TURN_ON_OFF_IO 6
+#define RELAY_FAN_IO 7
+#define LED_ACTIVATION 8
+
+
+
+
+
+
+const float CURRENT_THRESHOLD = 0.1;  // 0.1 Amp , minimum current to measure (against current noise)
+const float READ_TO_CURRENT = 0.02639;  // A/bit, (5000mV/(1024*185))
+const int16_t ZERO_CURRENT_READ = 512; //2.5 Volt sensor zero current output
+const int16_t MOVING_AVG_LENGTH = 20;// number of samples used for moving/rolling average 
+const int32_t MEASURE_INTERVAL_TIME = 50;  // ms measure interval 
+const int16_t DELAY_BETWEEN_VALVE_AND_SPARK = 1000; // ms
+const int16_t TIME_TO_IGNITE = 1000;
+int32_t last_measure_time = 0;  // ms last measuring time 
+// display consts
+const int32_t DISPLAY_INTERVAL_TIME = 200;  // ms show/display interval
+
+
+
+
+const uint32_t ACTIVATION_TIME = 120000;
+
+
+
+//////SPARK //////
+const int16_t SPARK_SPACE_TIME = 2000;//ms
+const int16_t SPARK_TIME = 50; // ms - Spark time !!! keep as short as possible to avoid HV driver damage
+const int16_t NUM_OF_SPARK = 3;//ms
+const int16_t DELAY_AFTER_SPARK = 500; // ms - delay after spark before opening valve again
+bool ready_flag_fire = false;
+
+
+// global vars
+int32_t time_start = 0;
+int32_t time_start_hydro = 0;
+const int16_t HYGROGEN_TIME = 20000;
+int32_t time_new_session = 0;
+const int16_t SESSION_TIME =120000;
+
+//////// FAN /////////
+const int16_t DELAY_FAN_ON = 10;
+const int16_t DELAY_FAN_OFF = 10;
+bool flag_ready_fan = false;
+
+
+//////////////  CURRENT //////////
+int16_t current_sensor_value = 0;  // value read from sensor 
+int16_t current_value = 0;        // calculated current [A]
+const int16_t MIN_CURRENT_SENSOR_VALUE = 0;
+const int16_t MAX_CURRENT_SENSOR_VALUE = 1023;
+const int16_t MIN_CURRENT_VALUE = 0;
+const int16_t MAX_CURRENT_VALUE = 10;
+const int16_t CURRENT_SYSTEM = 2;
+
+//////////// WATER ///////////
+const int16_t DELAY_FILL_WATER = 3000;
+const int16_t DELAY_AFTER_FILL_WATER = 100;
+
+/////////button ignition//////////
+bool check_ignit = LOW;
+bool buttonPressed;
+bool flag_new_session = true;
+bool flag_first_press = false;
+const int16_t BOUNCE_TIME = 100;//ms 
+//////////////////////////////////
+
+
+
+
+#endif
