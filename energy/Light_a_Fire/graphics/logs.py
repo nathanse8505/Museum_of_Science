@@ -4,7 +4,7 @@ Purpose: Logging functions for the Air Pressure UI
 """
 import logging
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, LOG_FOLDER,BACKUP_COUNT, TEMP_AFTER_PEAK, TEMP_NEW_USER, WINDOWS_SIZE, RISE_THRESHOLD
+from consts import MAX_SIZE_PER_LOG_FILE, LOG_FOLDER,BACKUP_COUNT, TEMP_AFTER_PEAK, TEMP_NEW_USER
 from datetime import datetime
 import re
 

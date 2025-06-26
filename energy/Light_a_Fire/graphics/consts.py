@@ -30,9 +30,6 @@ BACKUP_COUNT = 10  # Nombre max de fichiers log en rotation
 TEMP_AFTER_PEAK = 2  # in Celsius
 TEMP_NEW_USER= 32  # in Celsius
 
-RISE_THRESHOLD = 7  # Nombre de hausses nécessaires pour détecter une tendance montante
-WINDOWS_SIZE = 10
-
 
 # Interface graphique
 pygame.init()
