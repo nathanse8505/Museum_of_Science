@@ -59,9 +59,9 @@ bool check_fire(){
 }
 
 void FILL_WATER(){
-  digitalWrite(VALVE_WATER_IO, HIGH);
+  digitalWrite(RELAY_VALVE_WATER_IO, HIGH);
   delay(DELAY_FILL_WATER);
-  digitalWrite(VALVE_WATER_IO, LOW);
+  digitalWrite(RELAY_VALVE_WATER_IO, LOW);
   delay(DELAY_AFTER_FILL_WATER);
 }
 
@@ -99,12 +99,12 @@ void SPARK_ON(){
 }
 
 void ACTIVE_FAN() {
-  digitalWrite(RELAY_FAN_IO, HIGH);
+  digitalWrite(FAN_IO, HIGH);
   delay(DELAY_FAN_ON);
 }
 
 void DEACTIVE_FAN() {
-  digitalWrite(RELAY_FAN_IO, LOW);
+  digitalWrite(FAN_IO, LOW);
   delay(DELAY_FAN_OFF);
 
 }

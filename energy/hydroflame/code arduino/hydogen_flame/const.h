@@ -9,14 +9,14 @@
  *                 RXD-|       |-Gnd  
  *                 RST-|       |-RST
  *                 GND-|       |-+5V  
- * ignition button, D2-|       |-A7  current input pot(not used)
+ * ignition button  D2-|       |-A7  current input pot(not used)
  *                  D3-|       |-A6  input pot (not used)
- *     spark output D4-|       |-A5 ,SCL (to Display) 
- *        valve IO  D5-|       |-A4 ,SDA (to Display) 
- *                  D6-|       |-A3
- *                  D7-|       |-A2   SENSOR_FIRE_IO
- *                  D8-|       |-A1,  SENSOR_WATER_IO
- *                  D9-|       |-A0,  Current sensor ACS712T-05
+ *     SPARK output D4-|       |-A5 
+ *  RELAY_VALVE_IO  D5-|       |-A4 
+ *RELAY_TURN_ON_OFF D6-|       |-A3
+ *          FAN_IO  D7-|       |-A2   SENSOR_FIRE_IO
+ *  LED_ACTIVATION  D8-|       |-A1   SENSOR_WATER_IO
+ *                  D9-|       |-A0   Current sensor ACS712T-05
  *                 D10-|       |-Ref
  *                 D11-|       |-3.3V   
  *         Buzzer  D12-|       |-D13
@@ -30,10 +30,9 @@
 #define SENSOR_FIRE_IO A2
 #define IGNITION_BUTTON_IO 2
 #define SPARK_IO 4
-#define VALVE_WATER_IO 5
-
+#define RELAY_VALVE_WATER_IO 5
 #define RELAY_TURN_ON_OFF_IO 6
-#define RELAY_FAN_IO 7
+#define FAN_IO 7
 #define LED_ACTIVATION 8
 
 // global vars

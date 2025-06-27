@@ -10,9 +10,9 @@ void setup() {
   pinMode(SENSOR_WATER_IO, INPUT_PULLUP);          // Water level sensor
   pinMode(SENSOR_FIRE_IO, INPUT_PULLUP);           // Fire detection sensor
   pinMode(RELAY_TURN_ON_OFF_IO, OUTPUT);           // Power relay
-  pinMode(RELAY_FAN_IO, OUTPUT);                   // Fan relay
+  pinMode(FAN_IO, OUTPUT);                         // Fan relay
   pinMode(LED_ACTIVATION, OUTPUT);                 // Activation indicator LED
-  pinMode(VALVE_WATER_IO, OUTPUT);                 // Water valve control
+  pinMode(RELAY_VALVE_WATER_IO, OUTPUT);                 // Water valve control
 
   Serial.begin(BAUDRATE);                          // Start serial communication
   delay(100);                                      // Give time to establish connection
@@ -60,7 +60,7 @@ void loop() {
 
     // If enough hydrogen time passed and spark is ready, activate spark
     if ((millis() - time_start_hydro) > HYGROGEN_TIME  && ready_flag_fire) {
-      SPARK_ON();                        // Spark ignition
+      SPARK_ON();                       // Spark ignition
       ready_flag_fire = false;          // No more sparks until reset
       time_new_session = millis();      // Track session time
     }
