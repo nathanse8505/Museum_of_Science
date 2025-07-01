@@ -94,6 +94,7 @@ class LogAnalyzerGUI:
             from Pendulum_log import main_pendulum
             for path in self.log_file_paths:
                 try:
+                    print(start_dt,end_dt)
                     main_pendulum.analyze_pendulum(path, start_dt, end_dt)
                 except Exception as e:
                     messagebox.showerror("Error", f"Error during analysis of {selected_project}: {e}")

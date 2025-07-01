@@ -4,7 +4,7 @@ import os
 import pandas as pd
 
 # === PARAMÈTRES ===
-FILE_PATH = "LOG.TXT"
+FILE_PATH = r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Pendulum\LOG\LOG_DATA\24-6-2025_start\LOG.TXT"
 pattern_button = re.compile(r"(\d+)\s*ms\s*;\s*Button pressed", re.IGNORECASE)
 pattern_init = re.compile(r"(\d+)\s*ms\s*;\s*Init", re.IGNORECASE)
 motor_keywords = ["Motor activated"]

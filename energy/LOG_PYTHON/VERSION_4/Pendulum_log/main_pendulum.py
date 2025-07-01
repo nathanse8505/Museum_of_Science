@@ -1,8 +1,8 @@
 import sys
 import os
-
 sys.path.append(os.path.dirname(__file__))
 from data_frame import *
+
 
 
 def analyze_pendulum(file_path, start_dt, end_dt):
@@ -69,6 +69,8 @@ def analyze_pendulum(file_path, start_dt, end_dt):
     if current_day_index == 0:
         raise ValueError("Aucun 'Init' trouvé : impossible d'assigner les jours.")
 
+
+
     # === CONSTRUCTION DU DATAFRAME ===
     df = build_df(time_ms_list, motor_status_list, jour_logique_list)
     # === CONVERSION EN DATES ===
@@ -79,7 +81,11 @@ def analyze_pendulum(file_path, start_dt, end_dt):
     df_resume = build_df_resume(df)
     # === EXPORT EXCEL À 2 ONGLET ===
     export_excel(df, df_resume)
+    print("enter")
     # === GRAPHIQUE ===
     plot_resume(df_resume, start_dt, end_dt)
     # === SUMMARY TXT===
     write_summary_pendulum(df, start_dt, end_dt)
+
+# if __name__ == "main":
+#     analyze_pendulum(r"C:\Users\nathans\Desktop\Museum_of_Science\energy\Pendulum\LOG\LOG_DATA\24-6-2025_start\LOG.TXT" , "2025-06-24 00:00:00", "2025-07-01 23:59:59")
