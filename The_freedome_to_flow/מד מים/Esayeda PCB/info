@@ -1,0 +1,354 @@
+{
+  "uuid": "8b601ca3fef164d7e9d5a13c2f58e743",
+  "path": "Offline/water_counter",
+  "name": "water_counter",
+  "content": "",
+  "created_at": "2025-07-03 18:52:00",
+  "updated_at": "2025-07-03 21:01:44",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "2b2fef74ec74334243dbc76f828d3406",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "12412aa1260c408a9e0e344e7b6a4b1f": 1,
+        "eda3af0dd4f3457ca763df30e3ac5d73": 2,
+        "8594922bf7656e1a593fe27b198cf7ff": 4,
+        "597701dbde98d3183fe5df5fb870ec57": 4,
+        "230bc382ca0246f58f622947b27c87e1": 3,
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "154b66255b01a09bf1c88bb1ea89be78": 2,
+        "b6d6c5c03f064b08b573b09b0b4a0455": 1,
+        "5b5204c45b4e40b9be8ce3a9b6e61f1b": 1,
+        "506a2f49fd5af7690094a86e81a44ebe": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C1,C2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "Manufacturer Part": "DC005-2.0MM",
+            "Manufacturer": "SOFNG",
+            "Supplier": "LCSC",
+            "Supplier Part": "C111567"
+          }
+        ],
+        [
+          "LED",
+          4,
+          "LED0603-R-RD_BLUE",
+          "ELD1,ELD2,ELD3,ELD4",
+          {
+            "Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "Manufacturer": "EVERLIGHT",
+            "Supplier": "LCSC",
+            "Supplier Part": "C72041"
+          }
+        ],
+        [
+          "1K",
+          4,
+          "R0603",
+          "ERL1,ERL2,ERL3,ERL4",
+          {
+            "Manufacturer Part": "0603WAF1001T5E",
+            "Manufacturer": "UniOhm",
+            "Supplier": "LCSC",
+            "Supplier Part": "C21190"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C124408"
+          }
+        ],
+        [
+          "ULN2003SOT16",
+          1,
+          "SOT16",
+          "IC1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "KF2510-2A",
+          1,
+          "CONN-TH_KF2510-2A",
+          "OUT_11",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "长柄旋转电位器",
+          2,
+          "RES-ADJ-TH_RV09",
+          "P2,P3",
+          {
+            "Manufacturer Part": "长柄旋转电位器",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2874842"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "CBI(创基)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2875177"
+          }
+        ],
+        [
+          "Jst 5 Pin",
+          1,
+          "JST 5 PIN",
+          "U2",
+          {
+            "Manufacturer Part": "Jst 5 Pin",
+            "Manufacturer": "Vicky",
+            "Supplier": "Vicky",
+            "Supplier Part": "Jst 5 Pin"
+          }
+        ]
+      ],
+      "updateTime": 1751563728,
+      "createTime": 1751557921,
+      "histories": [],
+      "created_at": "2025-07-03 18:52:01",
+      "updated_at": "2025-07-03 20:28:48"
+    },
+    {
+      "uuid": "d3cce9a4c8f1dd3d58b983378590b96b",
+      "puuid": "8b601ca3fef164d7e9d5a13c2f58e743",
+      "title": "PCB_water_counter",
+      "filename": "PCB_water_counter.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "f8151fdc728a41ebbc304e11d39e5437": 2,
+        "1337670005c6484c999f9b4c272ee9fe": 1,
+        "2550b1556b6546148b9e97fc95a93d31": 3,
+        "041cc9180dc046b7bb66bb309da71792": 4,
+        "398691f1f785460098bbe5ee6590333c": 4,
+        "bce4bcfcccfb42a296f7a392ab0b7199": 2,
+        "e1e3c93204c04da7adbc0ce43abbaf83": 1,
+        "0476c63fa99e4a998187e5a274bdf1f1": 1,
+        "9ba63133985d42cda948c6301d2bf7d5": 1,
+        "08842a68e5644655bc648513ffbbbdbb": 2,
+        "5304eb2b87a945debf431931d498d92a": 1,
+        "d1d88640bf5143a0a70f626ee5628989": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C1,C2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "Manufacturer Part": "DC005-2.0MM",
+            "Manufacturer": "SOFNG",
+            "Supplier": "LCSC",
+            "Supplier Part": "C111567"
+          }
+        ],
+        [
+          "LED",
+          4,
+          "LED0603-R-RD_BLUE",
+          "ELD1,ELD2,ELD3,ELD4",
+          {
+            "Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "Manufacturer": "EVERLIGHT",
+            "Supplier": "LCSC",
+            "Supplier Part": "C72041"
+          }
+        ],
+        [
+          "1K",
+          4,
+          "R0603",
+          "ERL1,ERL2,ERL3,ERL4",
+          {
+            "Manufacturer Part": "0603WAF1001T5E",
+            "Manufacturer": "UniOhm",
+            "Supplier": "LCSC",
+            "Supplier Part": "C21190"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C124408"
+          }
+        ],
+        [
+          "ULN2003SOT16",
+          1,
+          "SOT16",
+          "IC1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "KF2510-2A",
+          1,
+          "CONN-TH_KF2510-2A",
+          "OUT_11",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "长柄旋转电位器",
+          2,
+          "RES-ADJ-TH_RV09",
+          "P2,P3",
+          {
+            "Manufacturer Part": "长柄旋转电位器",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2874842"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "CBI(创基)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2875177"
+          }
+        ],
+        [
+          "Jst 5 Pin",
+          1,
+          "JST 5 PIN",
+          "U2",
+          {
+            "Manufacturer Part": "Jst 5 Pin",
+            "Manufacturer": "Vicky",
+            "Supplier": "Vicky",
+            "Supplier Part": "Jst 5 Pin"
+          }
+        ]
+      ],
+      "updateTime": 1751565704,
+      "createTime": 1751563236,
+      "histories": [],
+      "created_at": "2025-07-03 20:20:36",
+      "updated_at": "2025-07-03 21:01:44"
+    }
+  ],
+  "sort": [],
+  "title": "water_counter",
+  "foldername": "water_counter",
+  "schfilename": "water_counter.json",
+  "schfilemtime": 1751563728848
+}
