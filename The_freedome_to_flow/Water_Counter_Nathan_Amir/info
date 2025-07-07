@@ -1,0 +1,478 @@
+{
+  "uuid": "1e353288b05856115c6037536e412a55",
+  "path": "Offline/Water_Counter_Nathan_Amir",
+  "name": "Water_Counter_Nathan_Amir",
+  "content": "",
+  "created_at": "2025-07-06 21:06:43",
+  "updated_at": "2025-07-07 00:56:46",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "c20a81747758841f548b1f9a3b9f7d45",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "12412aa1260c408a9e0e344e7b6a4b1f": 1,
+        "eda3af0dd4f3457ca763df30e3ac5d73": 2,
+        "8594922bf7656e1a593fe27b198cf7ff": 5,
+        "597701dbde98d3183fe5df5fb870ec57": 6,
+        "230bc382ca0246f58f622947b27c87e1": 4,
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "154b66255b01a09bf1c88bb1ea89be78": 2,
+        "b6d6c5c03f064b08b573b09b0b4a0455": 1,
+        "5b5204c45b4e40b9be8ce3a9b6e61f1b": 1,
+        "506a2f49fd5af7690094a86e81a44ebe": 3,
+        "9bc5d46e2bd4176ac7c3958f1aa86225": 2,
+        "5964f5c00a14401ea690aa7afe38379f": 1,
+        "212e4e7ac253e44d17caceb02663d93c": 1,
+        "efa061cb4326418d99deb33742cff3a8": 1,
+        "a63fb69de1e24542965ed97bbc8820db": 2,
+        "92c32ceaaac84139add7ebda884f0a47": 3,
+        "f5b1d9403e49471cab43bc5a1bec336f": 3
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "FK2510",
+          2,
+          "CONN-TH_3P-P2.00_KF2510_3A",
+          "A2,A3",
+          {
+            "puuid": "98de716523d04f20a577f5e7c7e71f1d",
+            "uuid": "9bc5d46e2bd4176ac7c3958f1aa86225"
+          }
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C1,C2",
+          {
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "154b66255b01a09bf1c88bb1ea89be78"
+          }
+        ],
+        [
+          "KF2510-2A",
+          2,
+          "CONN-TH_KF2510-2A",
+          "D2,D3",
+          {
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "506a2f49fd5af7690094a86e81a44ebe",
+            "BOM_Supplier Part": "C27543",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Manufacturer Part": "KF2510-2A"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "puuid": "1337670005c6484c999f9b4c272ee9fe",
+            "uuid": "daa3cf3493c84fa3b0b6a6d427d23f0b",
+            "BOM_Supplier Part": "C111567",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SOFNG",
+            "BOM_Manufacturer Part": "DC005-2.0MM"
+          }
+        ],
+        [
+          "10uF",
+          1,
+          "CAP-SMD_L3.2-W1.6-RD-C7171",
+          "ECM1",
+          {
+            "puuid": "29b657b818a84e4ea7b685b79368b530",
+            "uuid": "212e4e7ac253e44d17caceb02663d93c"
+          }
+        ],
+        [
+          "D_OUT8",
+          1,
+          "CONN-TH_KF2510-2A",
+          "ECON1",
+          {
+            "puuid": "9ba63133985d42cda948c6301d2bf7d5",
+            "uuid": "506a2f49fd5af7690094a86e81a44ebe",
+            "BOM_Supplier Part": "C27543",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "BOOMELE",
+            "BOM_Manufacturer Part": "KF2510-2A"
+          }
+        ],
+        [
+          "1N4007",
+          1,
+          "SMAF_L3.5-W2.6-LS4.7-RD",
+          "EDM1",
+          {
+            "puuid": "a4613b89ccf34746ac088089e5eb544d",
+            "uuid": "efa061cb4326418d99deb33742cff3a8",
+            "BOM_Supplier Part": "C110856",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SK",
+            "BOM_Manufacturer Part": "1N4007F"
+          }
+        ],
+        [
+          "LED",
+          5,
+          "LED0603-R-RD_BLUE",
+          "ELD1,ELD2,ELD3,ELD4,ELD5",
+          {
+            "puuid": "041cc9180dc046b7bb66bb309da71792",
+            "uuid": "8594922bf7656e1a593fe27b198cf7ff",
+            "BOM_Supplier Part": "C72041",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "EVERLIGHT",
+            "BOM_Manufacturer Part": "19-217/BHC-ZL1M2RY/3T"
+          }
+        ],
+        [
+          "Q",
+          1,
+          "SOT-23-3_L2.9-W1.3-P0.95-LS2.4-BR",
+          "EQ1",
+          {
+            "puuid": "bade90667a6e4731855e9a223387b8a6",
+            "uuid": "5964f5c00a14401ea690aa7afe38379f",
+            "BOM_Supplier Part": "C5224189",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "ElecSuper(静芯微）",
+            "BOM_Manufacturer Part": "AO3400"
+          }
+        ],
+        [
+          "1K",
+          6,
+          "R0603",
+          "ERG1,ERL1,ERL2,ERL3,ERL4,ERL5",
+          {
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57",
+            "BOM_Supplier Part": "C21190",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UniOhm",
+            "BOM_Manufacturer Part": "0603WAF1001T5E"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "puuid": "bce4bcfcccfb42a296f7a392ab0b7199",
+            "uuid": "5a9ec2085ad6436d86701332d4451b76",
+            "BOM_Supplier Part": "C124408",
+            "BOM_Supplier": "LCSC"
+          }
+        ],
+        [
+          "ULN2003SOT16",
+          1,
+          "SOT16",
+          "IC1",
+          {
+            "puuid": "e1e3c93204c04da7adbc0ce43abbaf83",
+            "uuid": "12412aa1260c408a9e0e344e7b6a4b1f"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x8",
+          3,
+          "HDR-M-2.54_1X8",
+          "J1,J3,J4",
+          {
+            "BOM_Supplier Part": "C190820",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "fb11a1cdebf6433b8a3c664a100689e6",
+            "uuid": "92c32ceaaac84139add7ebda884f0a47"
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "puuid": "0476c63fa99e4a998187e5a274bdf1f1",
+            "uuid": "fee3186e847b42ecb0244c6d4d6aaef8"
+          }
+        ],
+        [
+          "HDR-M-2.54_1x4",
+          3,
+          "HDR-M-2.54_1X4",
+          "J5,J6,J7",
+          {
+            "BOM_Supplier Part": "C124378",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "282f7786cb6144d097ae00194c3e3fb3",
+            "uuid": "f5b1d9403e49471cab43bc5a1bec336f"
+          }
+        ],
+        [
+          "长柄旋转电位器",
+          2,
+          "RES-ADJ-TH_RV09",
+          "P2,P3",
+          {
+            "puuid": "08842a68e5644655bc648513ffbbbdbb",
+            "uuid": "eda3af0dd4f3457ca763df30e3ac5d73",
+            "BOM_Supplier Part": "C2874842",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "长柄旋转电位器"
+          }
+        ],
+        [
+          "TC-6610-7-160G",
+          2,
+          "SW-TH_4P-L5.0-W5.0-P4.50-LS6.5",
+          "SWD2,SWD3",
+          {
+            "BOM_Manufacturer Part": "TC-6610-7-160G",
+            "puuid": "e2c307bc2a8d4381a6ae5d94eb862a32",
+            "uuid": "a63fb69de1e24542965ed97bbc8820db",
+            "BOM_Supplier Part": "C2845252",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "HCTL(华灿天禄)"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U1",
+          {
+            "puuid": "5304eb2b87a945debf431931d498d92a",
+            "uuid": "b6d6c5c03f064b08b573b09b0b4a0455",
+            "BOM_Supplier Part": "C2875177",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CBI(创基)"
+          }
+        ],
+        [
+          "Jst 5 Pin",
+          1,
+          "JST 5 PIN",
+          "U2",
+          {
+            "puuid": "d1d88640bf5143a0a70f626ee5628989",
+            "uuid": "5b5204c45b4e40b9be8ce3a9b6e61f1b",
+            "BOM_Supplier Part": "Jst 5 Pin",
+            "BOM_Supplier": "Vicky",
+            "BOM_Manufacturer": "Vicky",
+            "BOM_Manufacturer Part": "Jst 5 Pin"
+          }
+        ]
+      ],
+      "updateTime": 1751838620,
+      "createTime": 1751557921,
+      "histories": [],
+      "created_at": "2025-07-03 18:52:01",
+      "updated_at": "2025-07-07 00:50:20"
+    },
+    {
+      "uuid": "4b7a6a1559b37cc23b8534d09f0b2221",
+      "title": "PCB_water_counter",
+      "filename": "PCB_water_counter.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fb11a1cdebf6433b8a3c664a100689e6": 3,
+        "282f7786cb6144d097ae00194c3e3fb3": 3,
+        "98de716523d04f20a577f5e7c7e71f1d": 2,
+        "e2c307bc2a8d4381a6ae5d94eb862a32": 2,
+        "9ba63133985d42cda948c6301d2bf7d5": 3,
+        "2550b1556b6546148b9e97fc95a93d31": 4,
+        "041cc9180dc046b7bb66bb309da71792": 5,
+        "08842a68e5644655bc648513ffbbbdbb": 2,
+        "d1d88640bf5143a0a70f626ee5628989": 1,
+        "29b657b818a84e4ea7b685b79368b530": 1,
+        "a4613b89ccf34746ac088089e5eb544d": 1,
+        "bade90667a6e4731855e9a223387b8a6": 1,
+        "398691f1f785460098bbe5ee6590333c": 6,
+        "f8151fdc728a41ebbc304e11d39e5437": 2,
+        "1337670005c6484c999f9b4c272ee9fe": 1,
+        "bce4bcfcccfb42a296f7a392ab0b7199": 2,
+        "e1e3c93204c04da7adbc0ce43abbaf83": 1,
+        "0476c63fa99e4a998187e5a274bdf1f1": 1,
+        "5304eb2b87a945debf431931d498d92a": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C1,C2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "Manufacturer Part": "DC005-2.0MM",
+            "Manufacturer": "SOFNG",
+            "Supplier": "LCSC",
+            "Supplier Part": "C111567"
+          }
+        ],
+        [
+          "LED",
+          4,
+          "LED0603-R-RD_BLUE",
+          "ELD1,ELD2,ELD3,ELD4",
+          {
+            "Manufacturer Part": "19-217/BHC-ZL1M2RY/3T",
+            "Manufacturer": "EVERLIGHT",
+            "Supplier": "LCSC",
+            "Supplier Part": "C72041"
+          }
+        ],
+        [
+          "1K",
+          4,
+          "R0603",
+          "ERL1,ERL2,ERL3,ERL4",
+          {
+            "Manufacturer Part": "0603WAF1001T5E",
+            "Manufacturer": "UniOhm",
+            "Supplier": "LCSC",
+            "Supplier Part": "C21190"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C124408"
+          }
+        ],
+        [
+          "ULN2003SOT16",
+          1,
+          "SOT16",
+          "IC1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "KF2510-2A",
+          1,
+          "CONN-TH_KF2510-2A",
+          "OUT_11",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "长柄旋转电位器",
+          2,
+          "RES-ADJ-TH_RV09",
+          "P2,P3",
+          {
+            "Manufacturer Part": "长柄旋转电位器",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2874842"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "CBI(创基)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2875177"
+          }
+        ],
+        [
+          "Jst 5 Pin",
+          1,
+          "JST 5 PIN",
+          "U2",
+          {
+            "Manufacturer Part": "Jst 5 Pin",
+            "Manufacturer": "Vicky",
+            "Supplier": "Vicky",
+            "Supplier Part": "Jst 5 Pin"
+          }
+        ]
+      ],
+      "updateTime": 1751839006,
+      "createTime": 1751563236,
+      "histories": [],
+      "created_at": "2025-07-03 20:20:36",
+      "updated_at": "2025-07-07 00:56:46"
+    }
+  ],
+  "sort": [],
+  "title": "Water_Counter_Nathan_Amir",
+  "foldername": "Water_Counter_Nathan_Amir",
+  "schfilename": "Water_Counter_Nathan_Amir.json",
+  "schfilemtime": 1751838620671
+}
