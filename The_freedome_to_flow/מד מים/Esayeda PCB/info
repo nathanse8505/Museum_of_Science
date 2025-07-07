@@ -1,10 +1,10 @@
 {
   "uuid": "8b601ca3fef164d7e9d5a13c2f58e743",
-  "path": "Offline/water_counter",
-  "name": "water_counter",
+  "path": "Offline/Water_Meter",
+  "name": "Water_Meter",
   "content": "",
   "created_at": "2025-07-03 18:52:00",
-  "updated_at": "2025-07-06 18:22:08",
+  "updated_at": "2025-07-07 16:12:09",
   "stick": "",
   "documents": [
     {
@@ -407,16 +407,16 @@
           }
         ]
       ],
-      "updateTime": 1751815328,
+      "updateTime": 1751893929,
       "createTime": 1751563236,
       "histories": [],
       "created_at": "2025-07-03 20:20:36",
-      "updated_at": "2025-07-06 18:22:08"
+      "updated_at": "2025-07-07 16:12:09"
     }
   ],
   "sort": [],
-  "title": "water_counter",
-  "foldername": "water_counter",
+  "title": "Water_Meter",
+  "foldername": "Water_Meter",
   "schfilename": "water_counter.json",
   "schfilemtime": 1751802737572
 }

@@ -21440,3 +21440,16 @@
 2025-06-18 11:10:48 - Starting Air Pressure UI
 2025-06-18 11:10:48 - Found Arduino! port: /dev/ttyUSB0
 2025-06-18 11:10:48 - Connected to /dev/ttyUSB0
+2025-06-19 10:54:04 - Starting Air Pressure UI
+2025-06-19 10:54:04 - Found Arduino! port: /dev/ttyUSB0
+2025-06-19 10:54:04 - Connected to /dev/ttyUSB0
+2025-06-23 12:27:54 - Starting Air Pressure UI
+2025-06-23 12:27:54 - Found Arduino! port: /dev/ttyUSB0
+2025-06-23 12:27:54 - Connected to /dev/ttyUSB0
+2025-06-24 10:58:29 - Starting Air Pressure UI
+2025-06-24 10:58:29 - Found Arduino! port: /dev/ttyUSB0
+2025-06-24 10:58:29 - Connected to /dev/ttyUSB0
+2025-06-24 16:18:58 - Starting Air Pressure UI
+2025-06-24 16:18:58 - Found Arduino! port: /dev/ttyUSB0
+2025-06-24 16:18:58 - Connected to /dev/ttyUSB0
+2025-06-24 16:19:13 - The Bottle flew!
