@@ -1,0 +1,5 @@
+command instruction
+https://ivcan.com/how-to-modify-color-zoom-of-fpv-thermal-imaging-camera/?srsltid=AfmBOop-ZodU92Zn5026F7y8WGuIeQPkq0n7W4IrQ2Gr7F_ShaiHVJ6A#Commonly_used_commands
+
+App
+https://www.stoneitech.com/download/uart-communication-software-sscom32-2/
