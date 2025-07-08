@@ -54,23 +54,20 @@ void image_to_valves(byte r_index, bool reverse) {
 }
 
 
+
 void init_drawing() {
-  row_in_drawing = image_h - 1;
-  led_start_flag = true;
-  last_led_start = millis();
-  if (full_light)
+  row_in_drawing = image_h - 1;//which row in the drawing is currently dropped (from bottom to top)
+  drawing_flag = true;         // true if an image is currenlty being dropped
+  valve_on_flag = false;       // true if the valves are on
+  led_start_flag = true;       // true if waiting for lights (relevant if "full light" is off)
+  led_on_flag = false;         // true if lights are on (relevant if "full light" is off)
+  last_led_start = millis();    // last time delay in lights started
+  if (full_light || led_start <= 0)
     led_on(color);
-  else {
-    if (led_start > 0)
-      led_off();
-    else
-      led_on(color);
-  }
-  valve_on_flag = false;
+  else
+    led_off();
   off_all_valves(num_of_valves);
   pulse_io(SR_st_pin);
-  led_on_flag = false;
-  drawing_flag = true;
 //  Serial.println("drawing...");
 }
 
@@ -92,70 +89,6 @@ bool check_drawing() {
   return false;
 }
 
-//int read_encoder() {
-//  old_encoder_read = new_encoder_read;
-//  new_encoder_read = ((digitalRead(encoder_pinA)) << 1) + (digitalRead(encoder_pinB));
-//  byte dir = (old_encoder_read << 2) + new_encoder_read;
-//  switch (dir) {
-//    case 1: case 7: case 8: case 14:
-//      return 1;
-//    case 2: case 4: case 11: case 13:
-//      return -1;
-//    case 0: case 5: case 10: case 15:
-//      return 0;
-//    default:
-//      return 0;
-//  }
-//}
-
-//void do_encoder() {
-//  int value = read_encoder();
-//  encoder_pos += value;
-//  if (value == 0 && !on_button && digitalRead(encoder_sw) == LOW) {
-//    on_button = true;
-//  }
-//  if (value == 0 && on_button && digitalRead(encoder_sw) == HIGH) {
-//    on_button = false;
-//    current_setting++;
-//    if (current_setting == 6)
-//      current_setting = 7;
-//    if (current_setting >= max_settings)
-//      current_setting = 0;
-//    display_settings();
-//  }
-//  if (value != 0 && (encoder_pos >= prescaler || encoder_pos <= -prescaler) && digitalRead(encoder_sw) == HIGH) {
-//    // TODO: write all the settings in a byte array. this is for now:
-//    encoder_pos = 0;
-//    switch (current_setting) {
-//      case 0:
-//        valve_on_time += (valve_on_time == max_valve_on_time && value == 1 ? 0 : (valve_on_time == min_valve_on_time && value == -1 ? 0 : value * valve_on_time_step));
-//        if (auto_factor_flag) update_height();
-//        break;
-//      case 1:
-//        space_time += (space_time == max_space_time && value == 1 ? 0 : (space_time == min_space_time && value == -1 ? 0 : value * space_time_step));
-//        break;
-//      case 2:
-//        led_start += (led_start == max_led_start && value == 1 ? 0 : (led_start == min_led_start && value == -1 ? 0 : value * led_start_step));
-//        break;
-//      case 3:
-//        led_on_time += (led_on_time == max_led_on_time && value == 1 ? 0 : (led_on_time == min_led_on_time && value == -1 ? 0 : value * led_on_time_step));
-//        break;
-//      case 4:
-//        drawing_depth += (drawing_depth == max_drawing_depth && value == 1 ? 0 : (drawing_depth == min_drawing_depth && value == -1 ? 0 : value * drawing_depth_step));
-//        break;
-//      case 5:
-//        full_light = !full_light;
-//        break;
-////      case 6:
-////        auto_factor_flag = !auto_factor_flag;
-////        break;
-//      case 7:
-//        led_power += (led_power == max_led_power && value == 1 ? 0 : (led_power == min_led_power && value == -1 ? 0 : value * led_power_step));
-//        break;
-//    }
-//    display_settings();
-//  }
-//}
 
 void led_on(byte index) {
   led_off();
@@ -189,6 +122,12 @@ boolean collect_variables() {
   if (Serial.available())
     return false;  // still got variables in buffer - not good
   return true;
+}
+
+void SEND_GOOD_KEY(int i){
+  if ((i + 1) % NUM_OF_PIXEL == 0) {
+    Serial.write(GOOD_KEY);
+    }
 }
 
 #endif

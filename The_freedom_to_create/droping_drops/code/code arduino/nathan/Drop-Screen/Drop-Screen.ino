@@ -25,7 +25,7 @@ void setup() {
 }
 
 void loop() {
-
+  ///////////////////RECEIVE PARAMETER ////////////////////////
   if (!got_param && Serial.available()) {
     byte value;
 //    Serial.readBytes((char *)&value, sizeof(value));
@@ -44,6 +44,7 @@ void loop() {
       Serial.println("got all parameters - Im good to go");
     }
   }
+  ///////////////////RECEIVE DATA ////////////////////////
   
   if (Serial.available() && !drawing_flag && got_param) {
     char key;
@@ -53,21 +54,16 @@ void loop() {
     }
     else if (key == START_KEY) {
         byte data;
-        for (int i = 0; i < image_h*image_w/8; i++) {
+        for (int i = 0; i < image_h*image_w/BYTE; i++) {
           if (!Serial.available()) {
             i--;
             continue;
           }
           data = Serial.read();
           image[i] = data;
-          if ((i + 1) % 8 == 0) {
-            Serial.write(GOOD_KEY);
-          }
+          SEND_GOOD_KEY(i);
         }
         delay(TIME_DELAY_ARDUINO);
-        if (Serial.read() != END_KEY) {
-//          display_error();
-        }
         init_drawing();
       }
   }

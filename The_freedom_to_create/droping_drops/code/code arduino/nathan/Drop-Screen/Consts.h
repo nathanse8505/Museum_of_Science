@@ -60,7 +60,8 @@ byte color = 0;  // index for colors array
 byte colors[8][3] = {{255,0,255},{255,255,0},{255,215,215}};  // default colors array - max 8 colors
 byte colors_num = 3;  // size of colors array
 byte led_power = 255;  // PWM for lights - not working for now
-
+const int BYTE = 8;
+const int NUM_OF_PIXEL = 8;
 bool drawing_flag = false;  // true if an image is currenlty being dropped
 bool valve_on_flag = false;  // true if the valves are on
 bool led_start_flag = false;  // true if waiting for lights (relevant if "full light" is off)
