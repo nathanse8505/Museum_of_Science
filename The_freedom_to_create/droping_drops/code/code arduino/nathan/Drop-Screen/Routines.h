@@ -164,9 +164,9 @@ void led_on(byte index) {
   analogWrite(blue_led_pin, colors[index][2]);
 }
 void led_off() {
-  analogWrite(red_led_pin, 0);
-  analogWrite(green_led_pin, 0);
-  analogWrite(blue_led_pin, 0);
+  analogWrite(red_led_pin, LOW);
+  analogWrite(green_led_pin, LOW);
+  analogWrite(blue_led_pin, LOW);
 }
 
 boolean collect_variables() {

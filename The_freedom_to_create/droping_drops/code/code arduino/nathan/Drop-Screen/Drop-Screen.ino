@@ -13,46 +13,13 @@ void setup() {
   digitalWrite(SR_clk_pin, LOW);
   digitalWrite(SR_data_pin, LOW);
   off_all_valves(num_of_valves);
-  pulse_io(SR_st_pin);
-//  pinMode(encoder_sw, INPUT_PULLUP);
-//  pinMode(encoder_pinA, INPUT); 
-//  pinMode(encoder_pinB, INPUT); 
+  pulse_io(SR_st_pin);//latch all valve to be off
   pinMode(red_led_pin, OUTPUT);
   pinMode(green_led_pin, OUTPUT);
   pinMode(blue_led_pin, OUTPUT);
   led_off();
-  
-//  start_display();
-  digitalWrite(SR_en_pin, LOW);
-  // get variables:
-//  display_vars_collect();
-//  uint16_t last_collect = millis();
-//  delay(2000);
-//  while (Serial.available() == 0) {
-//    delay(10);
-////    if (millis() - last_collect > 8000) {
-////      display_vars_error();
-////      delay(5000);
-//////      display_vars_collect();
-////      last_collect = millis();
-////    }
-////  }
-//  byte value;
-//  Serial.readBytes((char *)&value, sizeof(value)); // Read the float value from serial
-//  Serial.println(value);
-  //get number of variables - serial is not empty because of loop
-  // super duper important:
-//  if (!collect_variables()) {
-//    display_vars_more_error();
-//    delay(4000);
-//  }
-//  else {
-//    Serial.write(GOOD_KEY);
-////    display_vars_good();
-//    delay(1000);
-//    display_done();
-//  }
-//  display_done();
+  digitalWrite(SR_en_pin, LOW);//transfer the data to the valve
+
   got_param = false;
   Serial.println("START");
 }
@@ -78,41 +45,23 @@ void loop() {
     }
   }
   
-  if (Serial.available() > 0 && !drawing_flag && got_param) {
+  if (Serial.available() && !drawing_flag && got_param) {
     char key;
     key = Serial.read();
     if (key == DROP_KEY) {
       init_drawing();  // drop what is currently in the image buffer
     }
-    else {
-      if (key == START_KEY) {
-        delay(TIME_DELAY_ARDUINO);
-//        uint32_t start_time = millis();
-        cassette_drawing = Serial.read();
-//        cassette_drawing = 0;
+    else if (key == START_KEY) {
         byte data;
         for (int i = 0; i < image_h*image_w/8; i++) {
-//          if (millis() - start_time > MAX_TIME_TO_COLLECT_DATA) {
-////            display_error();
-//            break;
-//          }
-          if (Serial.available() == 0) {
+          if (!Serial.available()) {
             i--;
             continue;
           }
           data = Serial.read();
           image[i] = data;
-          
-  //        Serial.println(data, DEC);
-  //        Serial.print(data); 
-  //        Serial.write(data);
           if ((i + 1) % 8 == 0) {
             Serial.write(GOOD_KEY);
-  //          Serial.write(image[i]);
-  //        Serial.println();
-  //        for (int j = 7; j >=0; j--) {
-  //          Serial.write(image[i-j]);
-  //        }
           }
         }
         delay(TIME_DELAY_ARDUINO);
@@ -121,7 +70,6 @@ void loop() {
         }
         init_drawing();
       }
-    }
   }
 
   if (valve_on_flag && millis() - last_valve_on > valve_on_time) {
