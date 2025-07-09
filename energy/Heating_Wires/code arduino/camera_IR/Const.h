@@ -8,13 +8,13 @@
 #define START_END_BUTTON 4
 #define COLOR_BUTTON 5
 #define ZOOM_BUTTON 6
-#define MINUS_BUTTON 7
+#define MINUS_BUTTON A2
 #define PLUS_BUTTON 8
 #define SAVE_BUTTON 9
 #define RX_CAM 10
 #define TX_CAM 11
 #define RESET_BUTTON 12
-#define OPTION_BUTTON 13
+#define OPTION_BUTTON A0
 
 /*
 /*
@@ -128,16 +128,16 @@ uint8_t start_end_state    = 0; //0 or 1 0 = END 1 = start
 uint8_t option_state       = 0; //(0 or 1) 0 = CONTRAST , 1 = BRIGHTNESS
 byte data_color_state      = 0;//(0 to 14)
 byte data_zoom_state       = 0;//(0 to 3)
-byte data_contrast_state   = 0;//(0 to 100)
-byte data_brightness_state = 0;//(0 to 100)
+byte data_contrast_state   = 50;//(0 to 100)
+byte data_brightness_state = 50;//(0 to 100)
 const byte DATA_SAVE       = 0;
 const byte DATA_RESET      = 0;
 
 
 
 
-const uint8_t NUMBER_OF_COLOR = 15;
-const uint8_t NUMBER_OF_ZOOM  = 4;
+const uint8_t NUMBER_OF_COLOR = 14;
+const uint8_t NUMBER_OF_ZOOM  = 3;
 const uint8_t MAX_BRIGHTNESS  = 100;
 const uint8_t MIN_BRIGHTNESS  = 0;
 const uint8_t MAX_CONTRAST    = 100;
@@ -146,5 +146,7 @@ const uint8_t TRAME_SIZE      = 9;// trame is 9 byte
 const uint8_t BRITGHNESS      = 2;
 const uint8_t CONTRAST        = 1;
 
+
+bool valid = false;
 
 #endif

@@ -19,27 +19,23 @@ byte CALCUL_CHK(byte data,byte class_addr,byte subclass_addr){
 void WRITE_COMMEND(byte data,byte class_addr,byte subclass_addr){
 
   checksum = CALCUL_CHK(data,class_addr,subclass_addr);
-/*
-  Serial.write(BEGIN);
-  Serial.write(SIZE);
-  Serial.write(DEVICE_ADDRESS);
-  Serial.write(class_addr);
-  Serial.write(subclass_addr);
-  Serial.write(R_W_FLAG);
-  Serial.write(data);
-  Serial.write(checksum);
-  Serial.write(END);
-*/
   byte trame[TRAME_SIZE] = {BEGIN,SIZE,DEVICE_ADDRESS,class_addr,subclass_addr,R_W_FLAG,data,checksum,END};
-  Serial.write(trame, sizeof(trame));//for me
   camSerial.write(trame, sizeof(trame));//send to camera
+  Serial.print(">> transmiting trame :");
+  for (int i = 0; i < TRAME_SIZE; i++) {
+      if (trame[i] < 0x10) Serial.print("0");
+      Serial.print(trame[i], HEX);
+      Serial.print(" ");
+    }
+    Serial.println(" ");
 }
 
-void CHECKSUM_receive(byte buffer[TRAME_SIZE]) {
+bool CHECKSUM_receive(byte buffer[TRAME_SIZE]) {
+ 
   // Vérifier que les octets de début et de fin sont corrects
   if (buffer[0] != BEGIN || buffer[TRAME_SIZE - 1] != END) {
     Serial.println("❌ Erreur : BEGIN ou END invalide.");
-    return;
+    return false;
   }
 
   // Calcul du checksum attendu
@@ -52,16 +48,19 @@ void CHECKSUM_receive(byte buffer[TRAME_SIZE]) {
 
   if (chk_calc == chk_received) {// Comparaison
     Serial.println("✅ CHECKSUM OK");
-  } else {
+    return true;
+  } 
+  else {
     Serial.print("❌ CHECKSUM invalide : attendu ");
     Serial.print(chk_calc, HEX);
     Serial.print(", reçu ");
     Serial.println(chk_received, HEX);
+    return false;
   }
 }
 
 
-void READ_FEEDBACK_COMMEND(){
+bool READ_FEEDBACK_COMMEND(){
 
   static byte buffer[TRAME_SIZE];
   static byte index = 0;
@@ -78,39 +77,24 @@ void READ_FEEDBACK_COMMEND(){
   // Timeout : si pas de données depuis 100 ms
   if (index > 0 && millis() - last_read > 200) {
     index = 0; // reset pour ne pas rester bloqué
+    return false;
   }
 
   // Quand la trame est complète
   if (index == TRAME_SIZE) {
-    Serial.println(">> Trame complète reçue :");
-
-    // Affichage en HEX
-    Serial.print("HEX: ");
+    Serial.print(">> Trame complète receive :");
     for (int i = 0; i < TRAME_SIZE; i++) {
       if (buffer[i] < 0x10) Serial.print("0");
       Serial.print(buffer[i], HEX);
       Serial.print(" ");
     }
     Serial.println();
-
-
-    // Affichage en ASCII
-    Serial.print("ASCII: ");
-    for (int i = 0; i < TRAME_SIZE; i++) {
-      char c = (char)buffer[i];
-      // Affiche uniquement les caractères imprimables
-      if (c >= 32 && c <= 126)
-        Serial.print(c);
-      else
-        Serial.print(".");
-    }
-    Serial.println();
-
     index = 0; // Réinitialiser pour la trame suivante
+    if (CHECKSUM_receive(buffer) == false) {return false;}
+    return true;
   }
 
-  CHECKSUM_receive(buffer[TRAME_SIZE]);
-
+  return false;
 }
 
 
@@ -133,16 +117,37 @@ bool PRESS_BUTTON(int BUTTON_IO,bool flag_button) {
   return LOW; // Return false if the button is not in the desired state
 }
 
+void SEND_AND_CHECK_COMMAND(byte data){
+  while(!valid){
+      WRITE_COMMEND(data,class_commend_addr,subclass_commend_addr);
+      delay(50);
+      valid = READ_FEEDBACK_COMMEND();
+      delay(50);
+    }
+    valid = false;
+}
+
 byte PRESS_MINUS_PLUS(byte data_option_state,uint8_t MAX_VALUE,uint8_t MIN_VALUE){
-  if (PRESS_BUTTON(PLUS_BUTTON,flag_plus)){
-    data_option_state = data_option_state > MAX_VALUE ?  MAX_VALUE : data_option_state + 3;
+  //if (PRESS_BUTTON(PLUS_BUTTON,flag_plus)){
+    if (digitalRead(PLUS_BUTTON) == LOW){
+    data_option_state = data_option_state == MAX_VALUE ?  MAX_VALUE : (data_option_state + 1);
+    data = data_option_state;
+    delay(30);
+    SEND_AND_CHECK_COMMAND(data);
+    
   }
-  if (PRESS_BUTTON(MINUS_BUTTON,flag_minus)){
-    data_option_state = data_option_state < MIN_VALUE ? MIN_VALUE : data_option_state - 3;
+  //if (PRESS_BUTTON(MINUS_BUTTON,flag_minus)){
+  if (digitalRead(MINUS_BUTTON) == LOW){
+    data_option_state = data_option_state == MIN_VALUE ? MIN_VALUE : (data_option_state - 1);
+    data = data_option_state;
+    delay(30);
+    SEND_AND_CHECK_COMMAND(data);
   }
   return data_option_state;
 
 }
+
+
 
 
 #endif

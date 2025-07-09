@@ -7,8 +7,8 @@ void setup() {
   camSerial.begin(SERIAL_BAUDRATE);
 
   pinMode(LED_START_END_BUTTON,OUTPUT);
-  pinMode(START_END_BUTTON,INPUT_PULLUP);
   pinMode(LED_OPTION_BUTTON,OUTPUT);
+  pinMode(START_END_BUTTON,INPUT_PULLUP);
   pinMode(COLOR_BUTTON,INPUT_PULLUP);
   pinMode(ZOOM_BUTTON,INPUT_PULLUP);
   pinMode(SAVE_BUTTON,INPUT_PULLUP);
@@ -24,67 +24,70 @@ void loop() {
   if (PRESS_BUTTON(START_END_BUTTON,flag_start_end)){
     start_end_state = start_end_state == 0 ? 1 : 0;
     digitalWrite(LED_START_END_BUTTON,start_end_state);
+    //Serial.println(start_end_state);
   }
 
   if (start_end_state){
 
     if (PRESS_BUTTON(COLOR_BUTTON,flag_color)){
-      data_color_state = data_color_state > NUMBER_OF_COLOR ? 0 : (data_color_state + 1);
+      data_color_state = data_color_state < NUMBER_OF_COLOR ? (data_color_state + 1) : 0;
+      Serial.println(data_color_state,HEX);
       class_commend_addr = 0x78;
       subclass_commend_addr = 0x20;
       data = data_color_state;
+      SEND_AND_CHECK_COMMAND(data);
     }
 
-
     if (PRESS_BUTTON(ZOOM_BUTTON,flag_zoom)){
-      data_zoom_state = data_zoom_state > NUMBER_OF_ZOOM ? 0 : (data_zoom_state + 1);
+      data_zoom_state = data_zoom_state < NUMBER_OF_ZOOM ?  (data_zoom_state + 1) : 0 ;
+      Serial.println(data_zoom_state,HEX);
       class_commend_addr = 0x70;
       subclass_commend_addr = 0x12;
       data = data_zoom_state;
+      SEND_AND_CHECK_COMMAND(data);
     }
-
 
     if (PRESS_BUTTON(SAVE_BUTTON,flag_save)){
       class_commend_addr = 0x74;
       subclass_commend_addr = 0x10;
       data = DATA_SAVE;
+      SEND_AND_CHECK_COMMAND(data);
     }
-
 
     if (PRESS_BUTTON(RESET_BUTTON,flag_reset)){
       class_commend_addr = 0x74;
       subclass_commend_addr = 0x0F;
       data = DATA_RESET;
+      SEND_AND_CHECK_COMMAND(data);
     }
-
 
     if (PRESS_BUTTON(OPTION_BUTTON,flag_option)){
       option_state = option_state > 2 ? 0 : option_state + 1;
       digitalWrite(LED_OPTION_BUTTON,option_state);
+      //Serial.println(option_state);
     }
 
     if(option_state == CONTRAST){
       digitalWrite(LED_OPTION_BUTTON,HIGH);
       class_commend_addr = 0x78;
       subclass_commend_addr = 0x03;
-      data = PRESS_MINUS_PLUS(data_contrast_state,MAX_CONTRAST,MIN_CONTRAST);
+      data_contrast_state = PRESS_MINUS_PLUS(data_contrast_state,MAX_CONTRAST,MIN_CONTRAST);
+      
+      
     }
     else if(option_state == BRITGHNESS){ 
       digitalWrite(LED_OPTION_BUTTON,HIGH);
       class_commend_addr = 0x78;
       subclass_commend_addr = 0x02;
-      data = PRESS_MINUS_PLUS(data_brightness_state ,MAX_BRIGHTNESS,MIN_BRIGHTNESS);
+      data_brightness_state = PRESS_MINUS_PLUS(data_brightness_state ,MAX_BRIGHTNESS,MIN_BRIGHTNESS);
     }
     else{
       digitalWrite(LED_OPTION_BUTTON,LOW);
     }
-
-    WRITE_COMMEND(data,class_commend_addr,subclass_commend_addr);
-    delay(20);
-    READ_FEEDBACK_COMMEND();
+    
+    delay(1);
   }
  
-  delay(50);
 
 }
   
