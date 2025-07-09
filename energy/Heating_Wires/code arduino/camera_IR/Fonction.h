@@ -8,7 +8,7 @@
 #include <Wire.h>
 #include <avr/wdt.h>
 #include <SoftwareSerial.h>
-
+#include <string.h>
 SoftwareSerial camSerial(RX_CAM, TX_CAM); // RX, TX
 
 byte CALCUL_CHK(byte data,byte class_addr,byte subclass_addr){
