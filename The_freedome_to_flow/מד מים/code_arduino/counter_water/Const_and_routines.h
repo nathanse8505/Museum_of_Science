@@ -15,14 +15,14 @@
  *           COIL2  D5-|       |-A4 
  *           COIL3  D6-|       |-A3
  *           COIL4  D7-|       |-A2   
- *  LED_ACTIVATION  D8-|       |-A1  potSpeedPin
+ *                  D8-|       |-A1  potSpeedPin
  *                  D9-|       |-A0  potAnglePin
  *                 D10-|       |-Ref
  *                 D11-|       |-3.3V   
  *                 D12-|       |-D13
  *                      --USB--        
  */
-
+// For the PULSE IO: connect a 1kΩ resistor between 5V and pin D3 
 // --- MOTOR IO ---
 #define COIL1 4
 #define COIL2 5
@@ -58,15 +58,16 @@ const int halfStepSequence[8][4] = {
   {1, 0, 0, 0},
   {1, 0, 0, 1}
 };*/
-
+const int NUMBER_OF TEST  = 2;
 const int BIT_RESOLUTION = 1023;
 const int MIN_DELAY = 2;// in ms
 const int MAX_DELAY = 10;//in ms
 const int MIN_ANGLE = 5;//in degree
 const int MAX_ANGLE = 180;//in degree
-
+//////// PULSE ///////
 int stepIndex = 0;
-volatile bool newPulse = false;
+bool flag_pulse = false;
+const int BOUNCE_TIME = 50;
 
 // ----speed----
 int rawSpeed = 0;
@@ -75,11 +76,10 @@ int currentDelay = 3;
 //-----angle----
 int rawAngle = 0;
 float anglePerLiter = 90.0;//in degreee
-const float STEPS_PER_TURNS = 32.0 * 63.68395;
+//const float STEPS_PER_TURNS = 64.0 * 63.68395;
+const float STEPS_PER_TURNS = 4096;
+const int ANGLE = 36; 
 
-void pulseDetected() {
-  newPulse = true;
-}
 
 void stepMotor(int dir) {
   stepIndex = (stepIndex + dir + 8) % 8;
@@ -94,7 +94,7 @@ void stepMotor(int dir) {
 
 void rotateAngle(float angleDeg) {
   int direction = (angleDeg >= 0) ? 1 : -1;
-  int steps = abs(angleDeg) * STEPS_PER_TURNS / 360;
+  int steps = (int)abs(angleDeg) * STEPS_PER_TURNS / 360;
 
   for (int i = 0; i < steps; i++) {
     stepMotor(direction);
@@ -110,7 +110,23 @@ void reset_coil(){
 }
 
 
+bool PULSE(int BUTTON_IO,bool flag_button) {
 
+  // Check if the button is pressed
+  if (digitalRead(BUTTON_IO) == LOW && flag_button == LOW) {
+     //Serial.println("press :");
+     flag_button = HIGH;         // Mark that the button is being pressed
+    delay(BOUNCE_TIME); // Apply debounce delay
+  }
+
+  // Check if the button is released
+  if (digitalRead(BUTTON_IO) == HIGH && flag_button == HIGH) {
+    //Serial.println("unpress");
+    flag_button = LOW;  // Reset the state for the next button press
+    return HIGH;  // Indicate that the button was successfully pressed and released
+  }
+  return LOW; // Return false if the button is not in the desired state
+}
 
 
 

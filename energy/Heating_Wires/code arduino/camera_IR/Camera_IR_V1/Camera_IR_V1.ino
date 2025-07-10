@@ -42,7 +42,7 @@ void loop() {
     ////////////////// CALIBRATION ////////////////////
     if (PRESS_BUTTON(CALIBRATION_BUTTON,flag_calibration)){
       class_commend_addr = 0x7C;
-      for(int i = 0; i < NUMBER_OF_CALIBRATION; i++){
+      for(int i = 1; i < NUMBER_OF_CALIBRATION; i++){
         subclass_commend_addr = SUB_CLASS_0x7C[i];
         data = DATA_CALIBRATION;
         SEND_AND_CHECK_COMMAND(data);
@@ -75,7 +75,7 @@ void loop() {
     }
     ////////////////CONTRAST & BRIGHTNESS ///////////////
     if (PRESS_BUTTON(OPTION_BUTTON,flag_option)){
-      option_state = option_state > 2 ? 0 : option_state + 1;
+      option_state = option_state > 1 ? 0 : option_state + 1;
       digitalWrite(LED_OPTION_BUTTON,option_state);
     }
 
