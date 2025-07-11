@@ -55,14 +55,15 @@ void loop() {
       Setting_OPTION[i].data_current = data;
       max_value_data = Setting_OPTION[i].max_val;
       min_value_data = Setting_OPTION[i].min_val;
+      Serial.print("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
     } else {
       Setting_OPTION[i].command = true;
     }
-    
+
     // === Process +/- buttons for selected parameter ===
     PRESS_PLUS_MINUS(PLUS_BUTTON, MINUS_BUTTON, max_value_data, min_value_data);
 
-    if(i>BUTTON_OPTION_NUM){
+    if(i >= BUTTON_OPTION_NUM){
       continue;
     }
      //////////////////  BUTTON OPTION ////////////////////
@@ -73,9 +74,7 @@ void loop() {
       SEND_AND_VALIDATE_COMMAND();
     }
     delay(1); // Small delay to reduce CPU usage
-
   }
- 
 }
 
 

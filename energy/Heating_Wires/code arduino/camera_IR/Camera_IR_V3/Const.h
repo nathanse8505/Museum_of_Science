@@ -106,28 +106,35 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 */
 
 // === FRAME STRUCTURE (Protocol framing) ===
-const byte BEGIN           = 0xF0;     // Start byte of frame
-const byte SIZE            = 0x05;     // Number of bytes (excluding BEGIN, checksum, END)
-const byte DEVICE_ADDRESS  = 0x36;     // Address of the camera module
+const byte BEGIN           = 0xF0;  // Start byte of frame
+const byte SIZE            = 0x05;  // Number of bytes (excluding BEGIN, checksum, END)
+const byte DEVICE_ADDRESS  = 0x36;  // Address of the camera module
 
-byte class_command_addr    = 0x78;     // Class address to send
-byte subclass_command_addr = 0x20;     // Subclass address to send
-byte r_w_flag              = 0x00;     // 0x00 = Write, 0x01 = Read
-byte data                  = 0x00;     // Data byte to write or buffer to store received value
-byte checksum              = 0x00;     // Checksum of the frame
-const byte END             = 0xFF;     // End byte of frame
+byte class_command_addr    = 0x78;  // Class address to send
+byte subclass_command_addr = 0x20;  // Subclass address to send
+byte r_w_flag              = 0x00;  // 0x00 = Write, 0x01 = Read
+byte data                  = 0x00;  // Data byte to write or buffer to store received value
+byte checksum              = 0x00;  // Checksum of the frame
+const byte END             = 0xFF;  // End byte of frame
 
-// ======Value range boundaries (used by +/- button handling) ======
+// ====== Value range boundaries (used by +/- button handling) ======
 uint8_t max_value_data;
 uint8_t min_value_data;
 // === CONSTANTS ===
-const int BOUNCE_TIME = 50;            // Debounce time in milliseconds
-const uint8_t BUFFER_SIZE_SEND = 9;    // Total frame size (BEGIN + SIZE + ... + END)
-const uint8_t NUMBER_OF_BLINK  = 3;    // Number of LED blinks on success
-const uint8_t OPTION_NUM = 4;          // Number of configurable parameters (color, contrast, brightness, zoom)
-const uint8_t BUTTON_OPTION_NUM = 3;          // Number of configurable parameters (save, reset, calibration)
+const int BOUNCE_TIME               = 50; // Debounce time in milliseconds
+const uint8_t BUFFER_SIZE_SEND      = 9;  // Total frame size (BEGIN + SIZE + ... + END)
+const uint8_t NUMBER_OF_BLINK       = 3;  // Number of LED blinks on success
+const uint8_t OPTION_NUM            = 4;  // Number of configurable parameters (color, contrast, brightness, zoom)
+const uint8_t BUTTON_OPTION_NUM     = 3;  // Number of configurable parameters (save, reset, calibration)
 const uint8_t NUMBER_OF_CALIBRATION = 3;
-const byte DATA_READ = 0;       // Value used to read current settings
+const byte DATA_READ                = 0;  // Value used to read current settings
+
+//======== GLOBAL =========
+byte data_current[OPTION_NUM];   // Array holding current values
+bool valid              = false; // Flag indicating if the last command was confirmed
+uint8_t buffer_size     = 0;     // Actual number of bytes received
+uint8_t index           = 0;     // Current byte index while reading
+unsigned long last_read = 0;     // Timestamp of last byte received (used for timeout detection)
 
 const int SUB_CLASS_0x7C[BUTTON_OPTION_NUM] = {0x02, 0x03, 0x0C};        // Subclasses used for calibration sequence
 
@@ -140,7 +147,9 @@ typedef struct {
   uint8_t max_val;
   byte data_current;
   bool command;
+  const char* name;
 }CameraSetting;
+
 
 typedef struct {
   int PIN;
@@ -148,26 +157,21 @@ typedef struct {
   byte subclass_addr;
   bool flag;
   byte data_current;
+  const char* name;
 }CameraSetting_Button;
 
-CameraSetting Color_setting      = {COLOR_SW,      0x78, 0x20, 0,  15,  0, true};
-CameraSetting Contrast_setting   = {CONTRAST_SW,   0x78, 0x03, 0, 100, 50, true};
-CameraSetting Brightness_setting = {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true};
-CameraSetting Zoom_setting       = {ZOOM_SW,       0x70, 0x12, 0,   4,  0, true};
+CameraSetting Color_setting      = {COLOR_SW,      0x78, 0x20, 0,  15,  0, true, "COLOR"};
+CameraSetting Contrast_setting   = {CONTRAST_SW,   0x78, 0x03, 0, 100, 50, true, "CONTRAST"};
+CameraSetting Brightness_setting = {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"};
+CameraSetting Zoom_setting       = {ZOOM_SW,       0x70, 0x12, 0,   4,  0, true, "ZOOM"};
 
 CameraSetting Setting_OPTION[OPTION_NUM] = {Color_setting,Contrast_setting,Brightness_setting,Zoom_setting};
 
-CameraSetting_Button Save_Setting        = {SAVE_BUTTON,0x74, 0x10, false, 0};
-CameraSetting_Button Reset_Setting       = {RESET_BUTTON,0x74, 0x0F, false, 0};
-CameraSetting_Button Calibration_Setting = {CALIBRATION_BUTTON,0x7C, 0x02, false, 0};
+CameraSetting_Button Save_Setting        = {SAVE_BUTTON,        0x74, 0x10, false, 0, "SAVE"};
+CameraSetting_Button Reset_Setting       = {RESET_BUTTON,       0x74, 0x0F, false, 0, "RESET"};
+CameraSetting_Button Calibration_Setting = {CALIBRATION_BUTTON, 0x7C, 0x02, false, 0, "CALIBRATION"};
 
 CameraSetting_Button Setting_BUTTON_OPTION[BUTTON_OPTION_NUM] = {Save_Setting,Reset_Setting,Calibration_Setting};
 
-//======== GLOBAL =========
-byte data_current[OPTION_NUM];        // Array holding current values
-bool valid   = false;                  // Flag indicating if the last command was confirmed
-uint8_t buffer_size = 0;               // Actual number of bytes received
-uint8_t index        = 0;              // Current byte index while reading
-unsigned long last_read = 0;          // Timestamp of last byte received (used for timeout detection)
 
 #endif
