@@ -1,42 +1,3 @@
-#ifndef Const
-#define Const
-
-
-#define SERIAL_BAUDRATE (115200)
-#define LED_RECEIVE_DATA     2
-#define COLOR_SW             3
-#define ZOOM_SW              4
-#define CONTRAST_SW          5
-#define BRIGHTNESS_SW        6
-#define MINUS_BUTTON         7
-#define PLUS_BUTTON          8
-#define SAVE_BUTTON          9
-#define RX_CAM               10
-#define TX_CAM               11
-#define RESET_BUTTON         12
-#define CALIBRATION_BUTTON   A0
-
-/*
-/*
-*==========Arduino Nano pinout====== 
- *                         _______
- *                    TXD-|       |-Vin 
- *                    RXD-|       |-Gnd  
- *                    RST-|       |-RST
- *                    GND-|       |-+5V  
- * LED_RECEIVE_DATA    D2-|       |-A7   
- * COLOR_SW            D3-|       |-A6   
- * ZOOM_SW             D4-|       |-A5 
- * CONTRAST_SW         D5-|       |-A4 
- * BRIGHTNESS_SW       D6-|       |-A3  
- * MINUS_BUTTON        D7-|       |-A2 
- * PLUS_BUTTON         D8-|       |-A1   
- * SAVE_BUTTON         D9-|       |-A0 CALIBRATION_BUTTON 
- * RX_CAM             D10-|       |-Ref 
- * TX_CAM             D11-|       |-3.3V    
- * RESET_BUTTON       D12-|       |-D13   
- *                         --USB--        
- */
 
 ////////////////////////////////
 /*Read_and_Write_FLAG
@@ -104,6 +65,46 @@ const int SUB_CLASS_0x78[7] = {0x20,0x02,0x03,0x10,0x15,0x16,0x1A};//0x20 color,
 const int SUB_CLASS_0x70[2] = {0x11,0x12};//0x11 Mirorring,0x12 Zoom
 const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x03 Calibration backgroung,0x0C Vignetting Correction 
 */
+
+#ifndef Const
+#define Const
+
+
+#define SERIAL_BAUDRATE (115200)
+#define LED_RECEIVE_DATA     2
+#define COLOR_SW             3
+#define ZOOM_SW              4
+#define CONTRAST_SW          5
+#define BRIGHTNESS_SW        6
+#define MINUS_BUTTON         7
+#define PLUS_BUTTON          8
+#define SAVE_BUTTON          9
+#define RX_CAM               10
+#define TX_CAM               11
+#define RESET_BUTTON         12
+#define CALIBRATION_BUTTON   A0
+
+/*
+/*
+*=================== Arduino Nano pinout =====================
+ *                         _______
+ *                    TXD-|       |-Vin 
+ *                    RXD-|       |-Gnd  
+ *                    RST-|       |-RST
+ *                    GND-|       |-+5V  
+ * LED_RECEIVE_DATA    D2-|       |-A7   
+ * COLOR_SW            D3-|       |-A6   
+ * ZOOM_SW             D4-|       |-A5 
+ * CONTRAST_SW         D5-|       |-A4 
+ * BRIGHTNESS_SW       D6-|       |-A3  
+ * MINUS_BUTTON        D7-|       |-A2 
+ * PLUS_BUTTON         D8-|       |-A1   
+ * SAVE_BUTTON         D9-|       |-A0 CALIBRATION_BUTTON 
+ * RX_CAM             D10-|       |-Ref 
+ * TX_CAM             D11-|       |-3.3V    
+ * RESET_BUTTON       D12-|       |-D13   
+ *                         --USB--        
+ */
 
 // === FRAME STRUCTURE (Protocol framing) ===
 const byte BEGIN           = 0xF0;  // Start byte of frame

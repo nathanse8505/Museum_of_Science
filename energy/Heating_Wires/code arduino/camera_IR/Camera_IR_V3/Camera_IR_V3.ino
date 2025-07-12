@@ -59,22 +59,22 @@ void loop() {
     } else {
       Setting_OPTION[i].command = true;
     }
-
     // === Process +/- buttons for selected parameter ===
     PRESS_PLUS_MINUS(PLUS_BUTTON, MINUS_BUTTON, max_value_data, min_value_data);
-
-    if(i >= BUTTON_OPTION_NUM){
-      continue;
-    }
+  }
+  
      //////////////////  BUTTON OPTION ////////////////////
+  for(int i = 0; i < BUTTON_OPTION_NUM; i++){
     if (PRESS_BUTTON(Setting_BUTTON_OPTION[i].PIN, &Setting_BUTTON_OPTION[i].flag)) {
       class_command_addr = Setting_BUTTON_OPTION[i].class_addr;
       subclass_command_addr = Setting_BUTTON_OPTION[i].subclass_addr;
       data =  Setting_BUTTON_OPTION[i].data_current;
       SEND_AND_VALIDATE_COMMAND();
     }
-    delay(1); // Small delay to reduce CPU usage
   }
+
+  delay(1); // Small delay to reduce CPU usage
+  
 }
 
 
