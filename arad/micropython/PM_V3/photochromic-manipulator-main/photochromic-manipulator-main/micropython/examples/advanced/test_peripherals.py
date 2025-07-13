@@ -1,6 +1,7 @@
 from sys import modules
 from random import randrange
 from time import sleep_ms, time
+from math import sin, radians
 from esp32 import mcu_temperature
 from pm import PM
 from ansi import *
@@ -116,17 +117,31 @@ try:
     pr_test(lambda: pm.touch_l.read() < l_th, lambda: pm.touch_r.read() < r_th)
     test_end(ret)
 
-    test_start('RGB LEDs and buzzer')
+    test_start('RGB + UV LEDs and buzzer')
     test_log(_LOG_W, 'Verify LEDs red, green and blue colors and buzzer beeps...',
              end='\n\n')
     for i in range(3):
         pm.buzzer.beep(440 + i * 440)
         for c in ('red', 'green', 'blue'):
             pm.rgb_leds.fill(c)
+            pm.uv_led(not pm.uv_led())
             sleep_ms(500)
     pm.rgb_leds.off()
     pm.buzzer.off()
-    
+    pm.uv_led.off()
+
+    test_start('Servo Motors')
+    test_log(_LOG_W, 'Verify both servo motors moves...',
+             end='\n\n')
+    for i in range(3):
+        for j in range(360):
+            a = sin(radians(j + 90)) * 90 + 90
+            print(int(a), end='    \r   ')
+            pm.servo_l.set_angle(a)
+            pm.servo_r.set_angle(a)
+            sleep_ms(5)
+    pm.stop()
+
     a = len(_test_results)
     b = _test_results.count(0)
     print(_LOG_G if a == b else _LOG_E,
