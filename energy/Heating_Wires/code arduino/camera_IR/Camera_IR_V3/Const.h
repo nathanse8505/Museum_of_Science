@@ -161,12 +161,16 @@ typedef struct {
   const char* name;
 }CameraSetting_Button;
 
-CameraSetting Color_setting      = {COLOR_SW,      0x78, 0x20, 0,  15,  0, true, "COLOR"};
+/*CameraSetting Color_setting      = {COLOR_SW,      0x78, 0x20, 0,  15,  0, true, "COLOR"};
 CameraSetting Contrast_setting   = {CONTRAST_SW,   0x78, 0x03, 0, 100, 50, true, "CONTRAST"};
 CameraSetting Brightness_setting = {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"};
 CameraSetting Zoom_setting       = {ZOOM_SW,       0x70, 0x12, 0,   4,  0, true, "ZOOM"};
-
-CameraSetting Setting_OPTION[OPTION_NUM] = {Color_setting,Contrast_setting,Brightness_setting,Zoom_setting};
+*/
+CameraSetting Setting_OPTION[OPTION_NUM] = {{COLOR_SW,      0x78, 0x20, 0,  15,  0, true, "COLOR"},
+                                            {ZOOM_SW,       0x70, 0x12, 0,   4,  0, true, "ZOOM"},
+                                            {CONTRAST_SW,   0x78, 0x03, 0, 100, 50, true, "CONTRAST"},
+                                            {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"}
+                                           };
 
 CameraSetting_Button Save_Setting        = {SAVE_BUTTON,        0x74, 0x10, false, 0, "SAVE"};
 CameraSetting_Button Reset_Setting       = {RESET_BUTTON,       0x74, 0x0F, false, 0, "RESET"};

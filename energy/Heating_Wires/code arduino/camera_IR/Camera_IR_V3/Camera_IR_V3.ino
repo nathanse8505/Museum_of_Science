@@ -32,8 +32,11 @@ void setup() {
     SEND_AND_VALIDATE_COMMAND();        // Send read command and wait for valid response
     Setting_OPTION[i].data_current = data;             // Store value in current settings array
     data = DATA_READ;
-    Serial.println(Setting_OPTION[i].data_current, HEX);
   } 
+  Serial.println("Setting: " + String(Setting_OPTION[0].name) + " = " + String(Setting_OPTION[0].data_current));
+  Serial.println("Setting: " + String(Setting_OPTION[1].name) + " = " + String(Setting_OPTION[1].data_current));
+  Serial.println("Setting: " + String(Setting_OPTION[2].name) + " = " + String(Setting_OPTION[2].data_current));
+  Serial.println("Setting: " + String(Setting_OPTION[3].name) + " = " + String(Setting_OPTION[3].data_current));
   // === Switch to write mode ===
   r_w_flag = 0x00;
   Serial.println("Init complete");
@@ -47,7 +50,7 @@ void loop() {
       if (Setting_OPTION[i].command) {
         data = Setting_OPTION[i].data_current;
         Setting_OPTION[i].command = false;
-        Serial.println(data);
+        Serial.println("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
       }
       // Set target address and limits for color
       class_command_addr = Setting_OPTION[i].class_addr;
@@ -55,12 +58,12 @@ void loop() {
       Setting_OPTION[i].data_current = data;
       max_value_data = Setting_OPTION[i].max_val;
       min_value_data = Setting_OPTION[i].min_val;
-      Serial.print("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
     } else {
       Setting_OPTION[i].command = true;
     }
     // === Process +/- buttons for selected parameter ===
     PRESS_PLUS_MINUS(PLUS_BUTTON, MINUS_BUTTON, max_value_data, min_value_data);
+    delay(5); // Small delay to reduce CPU usage
   }
   
      //////////////////  BUTTON OPTION ////////////////////
@@ -71,9 +74,10 @@ void loop() {
       data =  Setting_BUTTON_OPTION[i].data_current;
       SEND_AND_VALIDATE_COMMAND();
     }
+     delay(5); // Small delay to reduce CPU usage
   }
 
-  delay(1); // Small delay to reduce CPU usage
+ 
   
 }
 
