@@ -73,22 +73,23 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 #define SERIAL_BAUDRATE (115200)
 #define LED_RECEIVE_DATA     2
 #define BUZZER               3
-#define IR_RX                4
+#define IR_RECEIVE_PIN       A1
 #define RX_CAM               7
 #define TX_CAM               8
 
+
+#define DECODE_NEC
 ////////// CODE ////////
-#define COLOR_SW             0x01
-#define ZOOM_SW              0x02
-#define CONTRAST_PLUS        0x03
-#define CONTRAST_MINUS       0x04
-#define BRIGHTNESS_PLUS      0x05
-#define BRIGHTNESS_MINUS     0x06
-#define MINUS_BUTTON         0x07
-#define RESET_BUTTON         0x08
-#define SAVE_BUTTON          0x09
-#define CALIBRATION_BUTTON   0x0A
-#define REPEAT               0xFFFFFFFF
+#define COLOR_SW             0x45
+#define ZOOM_SW              0x46
+#define CONTRAST_PLUS        0x18
+#define CONTRAST_MINUS       0x52
+#define BRIGHTNESS_PLUS      0x5A
+#define BRIGHTNESS_MINUS     0x08
+#define RESET_BUTTON         0x16
+#define SAVE_BUTTON          0x0D
+#define CALIBRATION_BUTTON   0x19
+#define REPEAT               0xFF
 
 /*
 /*

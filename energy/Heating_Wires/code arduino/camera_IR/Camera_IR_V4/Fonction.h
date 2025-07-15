@@ -8,9 +8,6 @@
 #include <IRremote.h>
 
 
-IRrecv irrecv(IR_RX);
-decode_results results;
-
 // === SOFTWARE SERIAL FOR CAMERA ===
 SoftwareSerial camSerial(RX_CAM, TX_CAM); // RX, TX
 
@@ -20,23 +17,57 @@ void PRINT_BUFFER(byte buffer[], uint8_t frame_size);
 bool READ_FEEDBACK_COMMAND();
 bool CHECKSUM_verify(byte buffer[]);
 void SEND_AND_VALIDATE_COMMAND();
-void PRESS_PLUS_MINUS(int BUTTON_IO_PLUS, int BUTTON_IO_MINUS, uint8_t max_val, uint8_t min_val);
+void PRESS_PLUS_MINUS(int i , uint8_t max_val, uint8_t min_val,long code_IR);
 bool IS_BUTTON_PRESSED(int BUTTON_IO, bool button_flag);
-long RECEIVE_IR_CODE();
+byte RECEIVE_IR_CODE();
 
-long RECEIVE_IR_CODE() {
-  if (irrecv.decode(&results)) {
-    long value = results.value;
-    irrecv.resume();
+#define REPEAT 0xFF  // Tu peux changer cette valeur si tu veux une autre constante pour REPEAT
 
-    Serial.print("Code IR reçu : 0x");
-    Serial.println(value, HEX);
+byte RECEIVE_IR_CODE() {
+    static bool buttonPressed = false;  // Pour suivre l’état du bouton
 
-    return value;  // Retourne toujours, même si c'est 0xFFFFFFFF
-  }
+    if (IrReceiver.decode()) {
+        // Protocole inconnu → bruit
+        if (IrReceiver.decodedIRData.protocol == UNKNOWN) {
+            Serial.println(F("Unknown or noise"));
+            IrReceiver.printIRResultRawFormatted(&Serial, true);
+            IrReceiver.resume();
+            buttonPressed = false;
+            return -1;
+        }
 
-  return -1; // Aucun code reçu
+        IrReceiver.resume();  // Réactive la réception pour la prochaine trame
+
+        // Si c'est une répétition (bouton maintenu)
+        if (IrReceiver.decodedIRData.flags & IRDATA_FLAGS_IS_REPEAT) {
+            if (buttonPressed) {
+                Serial.println(F("REPEAT received"));
+                return REPEAT;
+            } else {
+                // Relâchement du bouton, on ignore
+                return -1;
+            }
+        }
+
+        // Sinon, c'est une nouvelle commande
+        if (IrReceiver.decodedIRData.command != 0) {
+            buttonPressed = true;  // Marque que le bouton est pressé
+            Serial.print(F("New command: "));
+            Serial.println(IrReceiver.decodedIRData.command,HEX);
+            return IrReceiver.decodedIRData.command;
+        }
+    } else {
+        // Rien reçu → s'il y avait un bouton pressé avant, maintenant il est relâché
+        if (buttonPressed) {
+            buttonPressed = false;  // Mise à jour d’état
+            return -1;              // Retourner -1 pour signaler le relâchement
+        }
+    }
+
+    return -1;  // Par défaut
 }
+
+
 
 // === SEND COMMAND TO CAMERA ===
 void SEND_COMMAND() {
@@ -54,8 +85,8 @@ void SEND_COMMAND() {
   camSerial.write(send_buffer, sizeof(send_buffer));
 
   // Debug output
-  //Serial.print(">> Transmitting buffer: ");
-  //PRINT_BUFFER(send_buffer, BUFFER_SIZE_SEND);
+  Serial.print(">> Transmitting buffer: ");
+  PRINT_BUFFER(send_buffer, BUFFER_SIZE_SEND);
 }
 
 // === PRINT A BUFFER TO SERIAL IN HEX FORMAT ===
@@ -95,8 +126,8 @@ bool READ_FEEDBACK_COMMAND() {
 
   // If complete frame received
   if (index == buffer_size) {
-    //Serial.print(">> Complete frame received: ");
-    //PRINT_BUFFER(buffer, buffer_size);
+    Serial.print(">> Complete frame received: ");
+    PRINT_BUFFER(buffer, buffer_size);
     index = 0;
 
     if (!CHECKSUM_verify(buffer)) return false;
@@ -130,7 +161,7 @@ bool CHECKSUM_verify(byte buffer[]) {
 
   // Compare calculated and received checksum
   if (checksum_calc == checksum_received) {
-    //Serial.println("✅ CHECKSUM OK");
+    Serial.println("✅ CHECKSUM OK");
     return true;
   } else {
     Serial.print("❌ CHECKSUM Mismatch: expected ");
@@ -143,6 +174,7 @@ bool CHECKSUM_verify(byte buffer[]) {
 
 // === LOOP UNTIL VALID RESPONSE RECEIVED ===
 void SEND_AND_VALIDATE_COMMAND() {
+  IrReceiver.stop();  // Libère les interruptions
   while (!valid) {
     SEND_COMMAND();
     delay(50);
@@ -157,7 +189,7 @@ void SEND_AND_VALIDATE_COMMAND() {
     digitalWrite(LED_RECEIVE_DATA, LOW);
     delay(50);
   }
-
+  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
   valid = false;
 }
 
