@@ -33,16 +33,16 @@ void setup() {
   r_w_flag = 0x00;
 
   for (int i = 0; i < OPTION_NUM; i++) {
-    Serial.println("Setting: " + String(Setting_OPTION[i].name) + " = " + String(Setting_OPTION[i].data_current));
+     PRINT_SETTING(Setting_OPTION[i].name,Setting_OPTION[i].data_current); 
   }
   for (int i = 0; i < OPTION_NUM; i++) {
-    Serial.println("Setting: " + String(Setting_BUTTON_OPTION[i].name) + " = " + String(Setting_BUTTON_OPTION[i].data_current));
+    PRINT_SETTING(Setting_BUTTON_OPTION[i].name,Setting_BUTTON_OPTION[i].data_current);
   }
 
   // === Configure input pins IR ===
   IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
 
-  Serial.println("Init complete");
+  camSerial.write("Init complete\n");
 }
 
 void loop() {
@@ -50,8 +50,9 @@ void loop() {
   byte code_IR = RECEIVE_IR_CODE();  // Une seule fois par boucle
   //byte code_IR = -1;
   if (code_IR != REPEAT && code_IR != -1) {
-    Serial.print("Code IR: ");
-    Serial.println(code_IR, HEX);
+    camSerial.write("Code IR: ");
+    camSerial.write(code_IR);
+    camSerial.write("\n");
   }
   if (code_IR == -1) return;  // Rien reçu, ne fait rien
 
@@ -62,8 +63,10 @@ void loop() {
       if ((last_valid_code == Setting_OPTION[i].CODE_IR_P || 
           last_valid_code == Setting_OPTION[i].CODE_IR_M)) {
 
-        Serial.print("Appui long détecté pour le code : 0x");
-        Serial.println(last_valid_code, HEX);
+        camSerial.write("Appui long détecté pour le code : 0x");
+        camSerial.write(last_valid_code);
+        camSerial.write("\n");
+        
         PRESS_PLUS_MINUS(i, max_value_data, min_value_data, last_valid_code);
         Setting_OPTION[i].data_current = data;
         delay(10);
@@ -79,7 +82,8 @@ void loop() {
         if (Setting_OPTION[i].command) {
           data = Setting_OPTION[i].data_current;
           Setting_OPTION[i].command = false;
-          Serial.println("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
+
+          PRINT_SETTING(Setting_OPTION[i].name,data); 
         }
 
         // Paramètres de la commande
@@ -91,8 +95,9 @@ void loop() {
         // Appui court → comportement ici si souhaité
         PRESS_PLUS_MINUS(i, max_value_data, min_value_data, code_IR);
 
-        Serial.print("Appui court détecté pour le code : 0x");
-        Serial.println(code_IR, HEX);
+        camSerial.write("Appui court détecté pour le code : 0x");
+        camSerial.write(code_IR);
+        camSerial.write("\n");
       }
     }
 
@@ -108,7 +113,8 @@ void loop() {
       if (Setting_BUTTON_OPTION[i].command) {
         data = Setting_BUTTON_OPTION[i].data_current;
         Setting_BUTTON_OPTION[i].command = false;
-        Serial.println("Setting: " + String(Setting_BUTTON_OPTION[i].name) + " = " + String(data));
+
+        PRINT_SETTING(Setting_BUTTON_OPTION[i].name,data); 
       }
       // Set target address and limits for color
       class_command_addr = Setting_BUTTON_OPTION[i].class_addr;

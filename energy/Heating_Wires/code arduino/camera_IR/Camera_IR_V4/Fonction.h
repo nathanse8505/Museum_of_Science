@@ -9,7 +9,7 @@
 
 
 // === SOFTWARE SERIAL FOR CAMERA ===
-SoftwareSerial camSerial(RX_CAM, TX_CAM); // RX, TX
+SoftwareSerial camSerial(RX_SER, TX_SER); // RX, TX
 
 // === FUNCTION DECLARATIONS ===
 void SEND_COMMAND();
@@ -20,8 +20,8 @@ void SEND_AND_VALIDATE_COMMAND();
 void PRESS_PLUS_MINUS(int i , uint8_t max_val, uint8_t min_val,long code_IR);
 bool IS_BUTTON_PRESSED(int BUTTON_IO, bool button_flag);
 byte RECEIVE_IR_CODE();
+void PRINT_SETTING(char* name,byte data_c);
 
-#define REPEAT 0xFF  // Tu peux changer cette valeur si tu veux une autre constante pour REPEAT
 
 byte RECEIVE_IR_CODE() {
     static bool buttonPressed = false;  // Pour suivre l’état du bouton
@@ -29,7 +29,7 @@ byte RECEIVE_IR_CODE() {
     if (IrReceiver.decode()) {
         // Protocole inconnu → bruit
         if (IrReceiver.decodedIRData.protocol == UNKNOWN) {
-            Serial.println(F("Unknown or noise"));
+            camSerial.write(F("Unknown or noise\n"));
             IrReceiver.printIRResultRawFormatted(&Serial, true);
             IrReceiver.resume();
             buttonPressed = false;
@@ -41,7 +41,7 @@ byte RECEIVE_IR_CODE() {
         // Si c'est une répétition (bouton maintenu)
         if (IrReceiver.decodedIRData.flags & IRDATA_FLAGS_IS_REPEAT) {
             if (buttonPressed) {
-                Serial.println(F("REPEAT received"));
+                camSerial.write(F("REPEAT received\n"));
                 return REPEAT;
             } else {
                 // Relâchement du bouton, on ignore
@@ -52,8 +52,9 @@ byte RECEIVE_IR_CODE() {
         // Sinon, c'est une nouvelle commande
         if (IrReceiver.decodedIRData.command != 0) {
             buttonPressed = true;  // Marque que le bouton est pressé
-            Serial.print(F("New command: "));
-            Serial.println(IrReceiver.decodedIRData.command,HEX);
+            camSerial.write(F("New command: "));
+            camSerial.write(IrReceiver.decodedIRData.command);
+            camSerial.write(F("\n"));
             return IrReceiver.decodedIRData.command;
         }
     } else {
@@ -82,21 +83,29 @@ void SEND_COMMAND() {
   };
 
   // Send the frame to the camera
-  camSerial.write(send_buffer, sizeof(send_buffer));
+  Serial.write(send_buffer, sizeof(send_buffer));
 
   // Debug output
-  Serial.print(">> Transmitting buffer: ");
+  camSerial.write(">> Transmitting buffer: ");
   PRINT_BUFFER(send_buffer, BUFFER_SIZE_SEND);
 }
 
 // === PRINT A BUFFER TO SERIAL IN HEX FORMAT ===
 void PRINT_BUFFER(byte buffer[], uint8_t frame_size) {
   for (int i = 0; i < frame_size; i++) {
-    if (buffer[i] < 0x10) Serial.print("0");
-    Serial.print(buffer[i], HEX);
-    Serial.print(" ");
+    if (buffer[i] < 0x10) camSerial.write("0");
+    camSerial.write(buffer[i]);
+    camSerial.write(" ");
   }
-  Serial.println();
+  camSerial.write("\n");
+}
+
+void PRINT_SETTING(char* name,byte data_c){
+    camSerial.write("Setting: ");
+    camSerial.write(name);
+    camSerial.write(" = ");
+    camSerial.write(data_c);
+    camSerial.write("\n");
 }
 
 // === READ AND PARSE RESPONSE FRAME FROM CAMERA ===
@@ -107,8 +116,8 @@ bool READ_FEEDBACK_COMMAND() {
   buffer_size = 0;
 
   // Read available bytes
-  while (camSerial.available()) {
-    byte b = camSerial.read();
+  while ( Serial.available()) {
+    byte b =  Serial.read();
     buffer[index++] = b;
     last_read = millis(); // update timestamp
     buffer_size++;
@@ -120,13 +129,13 @@ bool READ_FEEDBACK_COMMAND() {
   // Timeout if no data received for 200 ms
   if (index > 0 && millis() - last_read > 200 || index > 10) {
     index = 0;
-    Serial.println("⚠️ Incomplete data: timeout");
+    camSerial.write("⚠️ Incomplete data: timeout \n");
     return false;
   }
 
   // If complete frame received
   if (index == buffer_size) {
-    Serial.print(">> Complete frame received: ");
+    camSerial.write(">> Complete frame received: ");
     PRINT_BUFFER(buffer, buffer_size);
     index = 0;
 
@@ -146,7 +155,7 @@ bool READ_FEEDBACK_COMMAND() {
 bool CHECKSUM_verify(byte buffer[]) {
   // Validate start and end markers
   if (buffer[0] != BEGIN || buffer[buffer_size - 1] != END) {
-    Serial.println("❌ Error: Invalid BEGIN or END marker.");
+    camSerial.write("❌ Error: Invalid BEGIN or END marker.\n");
     return false;
   }
 
@@ -161,20 +170,20 @@ bool CHECKSUM_verify(byte buffer[]) {
 
   // Compare calculated and received checksum
   if (checksum_calc == checksum_received) {
-    Serial.println("✅ CHECKSUM OK");
+    camSerial.write("✅ CHECKSUM OK\n");
     return true;
   } else {
-    Serial.print("❌ CHECKSUM Mismatch: expected ");
-    Serial.print(checksum_calc, HEX);
-    Serial.print(", received ");
-    Serial.println(checksum_received, HEX);
+    camSerial.write("❌ CHECKSUM Mismatch: expected ");
+    camSerial.write(checksum_calc);
+    camSerial.write(", received ");
+    camSerial.write(checksum_received);
+    camSerial.write("\n");
     return false;
   }
 }
 
 // === LOOP UNTIL VALID RESPONSE RECEIVED ===
 void SEND_AND_VALIDATE_COMMAND() {
-  IrReceiver.stop();  // Libère les interruptions
   while (!valid) {
     SEND_COMMAND();
     delay(50);
@@ -189,7 +198,6 @@ void SEND_AND_VALIDATE_COMMAND() {
     digitalWrite(LED_RECEIVE_DATA, LOW);
     delay(50);
   }
-  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);
   valid = false;
 }
 
@@ -213,17 +221,17 @@ void PRESS_PLUS_MINUS(int i , uint8_t max_val, uint8_t min_val,long code_IR) {
   if (Setting_OPTION[i].CODE_IR_P ==  code_IR) {
     // Increment with upper limit
     data = (data >= (max_val - 1)) ? (max_val - 1) : (data + 1);
-    Serial.println(data);
+    camSerial.write(data);
+    camSerial.write("\n");
     delay(30);
     SEND_AND_VALIDATE_COMMAND();
-    //Serial.print("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
   }
 
   if (Setting_OPTION[i].CODE_IR_M ==  code_IR) {
     // Decrement with lower limit
-    Serial.println(data);
     data = (data <= min_val) ? min_val : (data - 1);
-    Serial.println(data);
+    camSerial.write(data);
+    camSerial.write("\n");
     delay(30);
     SEND_AND_VALIDATE_COMMAND();
   }

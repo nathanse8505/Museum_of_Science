@@ -68,7 +68,7 @@
  * This include defines the actual pin number for pins like IR_RECEIVE_PIN, IR_SEND_PIN for many different boards and architectures
  */
 #include "PinDefinitionsAndMore.h"
-#include <IRremote.hpp> // include the library
+#include <IRremote.h> // include the library
 
 void setup() {
     Serial.begin(115200);

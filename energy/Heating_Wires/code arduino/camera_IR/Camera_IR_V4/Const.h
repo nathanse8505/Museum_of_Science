@@ -71,11 +71,11 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 
 ///////// PIN ///////
 #define SERIAL_BAUDRATE (115200)
-#define LED_RECEIVE_DATA     2
-#define BUZZER               3
-#define IR_RECEIVE_PIN       A1
-#define RX_CAM               7
-#define TX_CAM               8
+#define IR_RECEIVE_PIN       2
+#define LED_RECEIVE_DATA     3
+#define BUZZER               4
+#define RX_SER               -1
+#define TX_SER               8
 
 
 #define DECODE_NEC
