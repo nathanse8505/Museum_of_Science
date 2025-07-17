@@ -76,13 +76,13 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 #define ZOOM_SW              4
 #define CONTRAST_SW          5
 #define BRIGHTNESS_SW        6
-#define MINUS_BUTTON         7
+#define SAVE_BUTTON          7
 #define PLUS_BUTTON          8
-#define SAVE_BUTTON          9
+#define MINUS_BUTTON         9
 #define RX_CAM               10
 #define TX_CAM               11
-#define RESET_BUTTON         12
-#define CALIBRATION_BUTTON   A0
+#define RESET_BUTTON         A0
+#define CALIBRATION_BUTTON   12
 
 /*
 /*
