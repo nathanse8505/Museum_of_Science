@@ -16,7 +16,7 @@ crop_percentage = [90,95]  # the percentage of the image that WILL STAY after cr
 # adjust these values if the image is not being cropped correctly. 100% means no cropping, 0% means the image will be cropped completely
 auto_exposure = False
 auto_white_balance = False
-fixed_exposure = -6
+fixed_exposure = -4
 
 # logging values
 LOG_FOLDER = os.path.join(os.path.dirname(__file__), "logs")  # get the path of the logs folder

@@ -11,13 +11,14 @@ void setup() {
   pinMode(PULSE_IO, INPUT_PULLUP);
 
   Serial.begin(BAUDERATE);
-  Serial.println("System ready. Waiting for pulses...");
-  for(int i = 0 ;i < NUMBER_OF TEST;i++){
+  for(int i = 0 ;i < NUMBER_OF_TEST;i++){
   rotateAngle(360);
+  Serial.println(i+1);
   reset_coil();
   delay(1000);
 
   }
+  Serial.println("System ready. Waiting for pulses...");
 
 }
 
@@ -25,10 +26,11 @@ void loop() {
   //rawAngle = analogRead(potAnglePin);// read the potentiomèter angle
   //anglePerLiter = map(rawAngle, 0, BIT_RESOLUTION, MIN_ANGLE, MAX_ANGLE);  // 0 to 180°
   anglePerLiter = ANGLE;
-  rawSpeed = analogRead(potSpeedPin);// read the potentiomèter speed
-  currentDelay = map(rawSpeed, 0, BIT_RESOLUTION, MIN_DELAY, MAX_DELAY); //0 = slow , 1023 = fast
+  //rawSpeed = analogRead(potSpeedPin);// read the potentiomèter speed
+  //currentDelay = map(rawSpeed, 0, BIT_RESOLUTION, MIN_DELAY, MAX_DELAY); //0 = slow , 1023 = fast
+  currentDelay = 3;
   
-  if (PULSE(PULSE_IO,flag_pulse)) {
+  if (PULSE(PULSE_IO)) {
     Serial.println("Pulse détecté → 1L → Rotation de " + String(anglePerLiter) + "°");
     Serial.println("vitesse: " + String(currentDelay) + " ms");
     rotateAngle(anglePerLiter);

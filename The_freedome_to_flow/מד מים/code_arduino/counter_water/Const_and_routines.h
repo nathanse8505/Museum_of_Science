@@ -32,7 +32,7 @@
 #define potSpeedPin A0   // potentiomètre pour vitesse
 #define potAnglePin A1   // potentiomètre pour angle
 // --- détection pulse IO ---
-#define PULSE_IO 3
+#define PULSE_IO 2
 
 long BAUDERATE = 115200;
 // --- Séquence half step clockwise---
@@ -58,7 +58,7 @@ const int halfStepSequence[8][4] = {
   {1, 0, 0, 0},
   {1, 0, 0, 1}
 };*/
-const int NUMBER_OF TEST  = 2;
+const int NUMBER_OF_TEST  = 2;
 const int BIT_RESOLUTION = 1023;
 const int MIN_DELAY = 2;// in ms
 const int MAX_DELAY = 10;//in ms
@@ -110,19 +110,19 @@ void reset_coil(){
 }
 
 
-bool PULSE(int BUTTON_IO,bool flag_button) {
+bool PULSE(int BUTTON_IO) {
 
   // Check if the button is pressed
-  if (digitalRead(BUTTON_IO) == LOW && flag_button == LOW) {
+  if (digitalRead(BUTTON_IO) == LOW && flag_pulse == LOW) {
      //Serial.println("press :");
-     flag_button = HIGH;         // Mark that the button is being pressed
+     flag_pulse = HIGH;         // Mark that the button is being pressed
     delay(BOUNCE_TIME); // Apply debounce delay
   }
 
   // Check if the button is released
-  if (digitalRead(BUTTON_IO) == HIGH && flag_button == HIGH) {
+  if (digitalRead(BUTTON_IO) == HIGH && flag_pulse == HIGH) {
     //Serial.println("unpress");
-    flag_button = LOW;  // Reset the state for the next button press
+    flag_pulse = LOW;  // Reset the state for the next button press
     return HIGH;  // Indicate that the button was successfully pressed and released
   }
   return LOW; // Return false if the button is not in the desired state

@@ -42,9 +42,9 @@ def camera_init():
         min_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         max_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         #print(f"Valeur d'exposition actuelle : {min_exposure}")
-        # cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)
+        cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)
         cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)
-        # cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)
+        cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)
         if cap.isOpened():
             print("Camera is ready")
             camera_working = True
