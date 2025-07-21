@@ -36,6 +36,7 @@
 
 long BAUDERATE = 115200;
 // --- Séquence half step clockwise---
+/*
 const int halfStepSequence[8][4] = {
   {1, 0, 0, 0},
   {1, 1, 0, 0},
@@ -44,20 +45,20 @@ const int halfStepSequence[8][4] = {
   {0, 0, 1, 0},
   {0, 0, 1, 1},
   {0, 0, 0, 1},
-  {1, 0, 0, 1}
-};
-
-/* --- Séquence half step unclockwise---
-const int halfStepSequence[8][4] = {
-  {0, 0, 0, 1},
-  {0, 0, 1, 1},
-  {0, 0, 1, 0},
-  {0, 1, 1, 0},
-  {0, 1, 0, 0},
-  {1, 1, 0, 0},
-  {1, 0, 0, 0},
   {1, 0, 0, 1}
 };*/
+
+// --- Séquence half step unclockwise---
+const int halfStepSequence[8][4] = {
+  {0, 0, 0, 1},
+  {0, 0, 1, 1},
+  {0, 0, 1, 0},
+  {0, 1, 1, 0},
+  {0, 1, 0, 0},
+  {1, 1, 0, 0},
+  {1, 0, 0, 0},
+  {1, 0, 0, 1}
+};
 const int NUMBER_OF_TEST  = 2;
 const int BIT_RESOLUTION = 1023;
 const int MIN_DELAY = 2;// in ms
