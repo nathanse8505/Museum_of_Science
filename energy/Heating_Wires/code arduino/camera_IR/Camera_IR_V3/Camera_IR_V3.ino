@@ -25,7 +25,7 @@ void setup() {
   // === Read current configuration from camera ===
   r_w_flag = 0x01; // Set to read mode
   data = DATA_READ;
-
+  delay(3000);
   for (int i = 0; i < OPTION_NUM; i++) {
     class_command_addr = Setting_OPTION[i].class_addr;
     subclass_command_addr = Setting_OPTION[i].subclass_addr;

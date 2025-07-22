@@ -69,7 +69,6 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 #ifndef Const
 #define Const
 
-
 #define SERIAL_BAUDRATE (115200)
 #define LED_RECEIVE_DATA     2
 #define COLOR_SW             3
@@ -79,10 +78,10 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 #define SAVE_BUTTON          7
 #define PLUS_BUTTON          8
 #define MINUS_BUTTON         9
-#define RX_CAM               10
+#define RX_CAM               12
 #define TX_CAM               11
 #define RESET_BUTTON         A0
-#define CALIBRATION_BUTTON   12
+#define CALIBRATION_BUTTON   A1
 
 /*
 /*

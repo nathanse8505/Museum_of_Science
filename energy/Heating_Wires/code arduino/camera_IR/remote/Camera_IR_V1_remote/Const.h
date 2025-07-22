@@ -69,27 +69,34 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 #ifndef Const
 #define Const
 
-
+///////// PIN ///////
 #define SERIAL_BAUDRATE (115200)
-#define LED_RECEIVE_DATA     2
-#define COLOR_SW             3
-#define ZOOM_SW              4
-#define CONTRAST_SW          5
-#define BRIGHTNESS_SW        6
-#define SAVE_BUTTON          10
-#define PLUS_BUTTON          8
-#define MINUS_BUTTON         9
-#define RX_SER               -1
-#define TX_SER               7
-#define RESET_BUTTON         A0
-#define CALIBRATION_BUTTON   12
+#define IR_RECEIVE_PIN       2
+#define LED_RECEIVE_DATA     3
+#define BUZZER               4
+#define RX_SER              -1
+#define TX_SER               8
+
+
+#define DECODE_NEC
+////////// CODE ////////
+#define COLOR_SW             0x45
+#define ZOOM_SW              0x46
+#define CONTRAST_PLUS        0x18
+#define CONTRAST_MINUS       0x52
+#define BRIGHTNESS_PLUS      0x5A
+#define BRIGHTNESS_MINUS     0x08
+#define RESET_BUTTON         0x16
+#define SAVE_BUTTON          0x0D
+#define CALIBRATION_BUTTON   0x19
+#define REPEAT               0xFF
 
 /*
 /*
 *=================== Arduino Nano pinout =====================
  *                         _______
- * TX_CAM             TXD-|       |-Vin 
- * RX_CAM             RXD-|       |-Gnd  
+ *                    TXD-|       |-Vin 
+ *                    RXD-|       |-Gnd  
  *                    RST-|       |-RST
  *                    GND-|       |-+5V  
  * LED_RECEIVE_DATA    D2-|       |-A7   
@@ -99,10 +106,10 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
  * BRIGHTNESS_SW       D6-|       |-A3  
  * MINUS_BUTTON        D7-|       |-A2 
  * PLUS_BUTTON         D8-|       |-A1   
- * SAVE_BUTTON         D9-|       |-A0 RESET_BUTTON 
- * RX_SER             D10-|       |-Ref 
- * TX_SER             D11-|       |-3.3V    
- * CALIBRATION_BUTTON D12-|       |-D13   
+ * SAVE_BUTTON         D9-|       |-A0 CALIBRATION_BUTTON 
+ * RX_CAM             D10-|       |-Ref 
+ * TX_CAM             D11-|       |-3.3V    
+ * RESET_BUTTON       D12-|       |-D13   
  *                         --USB--        
  */
 
@@ -121,12 +128,16 @@ const byte END             = 0xFF;  // End byte of frame
 // ====== Value range boundaries (used by +/- button handling) ======
 uint8_t max_value_data;
 uint8_t min_value_data;
+long last_valid_code = -1;
+unsigned long time_first_press = 0;
+bool long_press_detected = false;
+
 // === CONSTANTS ===
 const int BOUNCE_TIME               = 50; // Debounce time in milliseconds
 const uint8_t BUFFER_SIZE_SEND      = 9;  // Total frame size (BEGIN + SIZE + ... + END)
 const uint8_t NUMBER_OF_BLINK       = 3;  // Number of LED blinks on success
-const uint8_t OPTION_NUM            = 4;  // Number of configurable parameters (color, contrast, brightness, zoom)
-const uint8_t BUTTON_OPTION_NUM     = 3;  // Number of configurable parameters (save, reset, calibration)
+const uint8_t OPTION_NUM            = 2;  // Number of configurable parameters (color, contrast, brightness, zoom)
+const uint8_t BUTTON_OPTION_NUM     = 5;  // Number of configurable parameters (save, reset, calibration)
 const uint8_t NUMBER_OF_CALIBRATION = 3;
 const byte DATA_READ                = 0;  // Value used to read current settings
 
@@ -141,7 +152,8 @@ const int SUB_CLASS_0x7C[BUTTON_OPTION_NUM] = {0x02, 0x03, 0x0C};        // Subc
 
 
 typedef struct {
-  int PIN;
+  long CODE_IR_P;
+  long CODE_IR_M;
   byte class_addr;
   byte subclass_addr;
   uint8_t min_val;
@@ -153,11 +165,13 @@ typedef struct {
 
 
 typedef struct {
-  int PIN;
+  long CODE_IR;
   byte class_addr;
   byte subclass_addr;
-  bool flag;
+  uint8_t min_val;
+  uint8_t max_val;
   byte data_current;
+  bool command;
   const char* name;
 }CameraSetting_Button;
 
@@ -166,21 +180,17 @@ CameraSetting Contrast_setting   = {CONTRAST_SW,   0x78, 0x03, 0, 100, 50, true,
 CameraSetting Brightness_setting = {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"};
 CameraSetting Zoom_setting       = {ZOOM_SW,       0x70, 0x12, 0,   4,  0, true, "ZOOM"};
 */
-CameraSetting Setting_OPTION[OPTION_NUM] = {{COLOR_SW,      0x78, 0x20, 0,  15,  0, true, "COLOR"},
-                                            {ZOOM_SW,       0x70, 0x12, 0,   4,  0, true, "ZOOM"},
-                                            {CONTRAST_SW,   0x78, 0x03, 0, 100, 50, true, "CONTRAST"},
-                                            {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"}
+CameraSetting Setting_OPTION[OPTION_NUM] = {{CONTRAST_PLUS,CONTRAST_MINUS,   0x78, 0x03, 0, 100, 50, true, "CONTRAST"},
+                                            {BRIGHTNESS_PLUS,BRIGHTNESS_MINUS, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"}
                                            };
 
-/*
-CameraSetting_Button Save_Setting        = {SAVE_BUTTON,        0x74, 0x10, false, 0, "SAVE"};
-CameraSetting_Button Reset_Setting       = {RESET_BUTTON,       0x74, 0x0F, false, 0, "RESET"};
-CameraSetting_Button Calibration_Setting = {CALIBRATION_BUTTON, 0x7C, 0x02, false, 0, "CALIBRATION"};
-*/
-CameraSetting_Button Setting_BUTTON_OPTION[BUTTON_OPTION_NUM] = {{SAVE_BUTTON,        0x74, 0x10, false, 0, "SAVE"},
-                                                                 {RESET_BUTTON,       0x74, 0x0F, false, 0, "RESET"},
-                                                                 {CALIBRATION_BUTTON, 0x7C, 0x02, false, 0, "CALIBRATION"}
-                                                                 };
+CameraSetting_Button Save_Setting        = {SAVE_BUTTON,        0x74, 0x10, 0,   0,  0, true, "SAVE"};
+CameraSetting_Button Reset_Setting       = {RESET_BUTTON,       0x74, 0x0F, 0,   0,  0, true, "RESET"};
+CameraSetting_Button Calibration_Setting = {CALIBRATION_BUTTON, 0x7C, 0x02, 0,   0,  0, true, "CALIBRATION"};
+CameraSetting_Button Color_setting       = {COLOR_SW,           0x78, 0x20, 0,  15,  0, true, "COLOR"};
+CameraSetting_Button Zoom_setting        = {ZOOM_SW,            0x70, 0x12, 0,   4,  0, true, "ZOOM"};
+
+CameraSetting_Button Setting_BUTTON_OPTION[BUTTON_OPTION_NUM] = {Color_setting,Zoom_setting,Save_Setting,Reset_Setting,Calibration_Setting};
 
 
 #endif

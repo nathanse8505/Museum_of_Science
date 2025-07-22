@@ -19,7 +19,55 @@ bool CHECKSUM_verify(byte buffer[]);
 void SEND_AND_VALIDATE_COMMAND();
 void PRESS_PLUS_MINUS(int i , uint8_t max_val, uint8_t min_val,long code_IR);
 bool IS_BUTTON_PRESSED(int BUTTON_IO, bool button_flag);
+byte RECEIVE_IR_CODE();
 void PRINT_SETTING(char* name,byte data_c);
+
+
+byte RECEIVE_IR_CODE() {
+    static bool buttonPressed = false;  // Pour suivre l’état du bouton
+
+    if (IrReceiver.decode()) {
+        // Protocole inconnu → bruit
+        if (IrReceiver.decodedIRData.protocol == UNKNOWN) {
+            camSerial.write(F("Unknown or noise\n"));
+            IrReceiver.printIRResultRawFormatted(&Serial, true);
+            IrReceiver.resume();
+            buttonPressed = false;
+            return -1;
+        }
+
+        IrReceiver.resume();  // Réactive la réception pour la prochaine trame
+
+        // Si c'est une répétition (bouton maintenu)
+        if (IrReceiver.decodedIRData.flags & IRDATA_FLAGS_IS_REPEAT) {
+            if (buttonPressed) {
+                camSerial.write(F("REPEAT received\n"));
+                return REPEAT;
+            } else {
+                // Relâchement du bouton, on ignore
+                return -1;
+            }
+        }
+
+        // Sinon, c'est une nouvelle commande
+        if (IrReceiver.decodedIRData.command != 0) {
+            buttonPressed = true;  // Marque que le bouton est pressé
+            camSerial.write(F("New command: "));
+            camSerial.write(IrReceiver.decodedIRData.command);
+            camSerial.write(F("\n"));
+            return IrReceiver.decodedIRData.command;
+        }
+    } else {
+        // Rien reçu → s'il y avait un bouton pressé avant, maintenant il est relâché
+        if (buttonPressed) {
+            buttonPressed = false;  // Mise à jour d’état
+            return -1;              // Retourner -1 pour signaler le relâchement
+        }
+    }
+
+    return -1;  // Par défaut
+}
+
 
 
 // === SEND COMMAND TO CAMERA ===
@@ -169,23 +217,24 @@ bool PRESS_BUTTON(int BUTTON_IO, bool *button_flag) {
 }
 
 // === HANDLE +/- BUTTONS TO MODIFY DATA VALUE AND SEND ===
-void PRESS_PLUS_MINUS(int BUTTON_IO_PLUS, int BUTTON_IO_MINUS, uint8_t max_val, uint8_t min_val) {
-  if (digitalRead(BUTTON_IO_PLUS) == LOW) {
+void PRESS_PLUS_MINUS(int i , uint8_t max_val, uint8_t min_val,long code_IR) {
+  if (Setting_OPTION[i].CODE_IR_P ==  code_IR) {
     // Increment with upper limit
     data = (data >= (max_val - 1)) ? (max_val - 1) : (data + 1);
-    Serial.println(data);
+    camSerial.write(data);
+    camSerial.write("\n");
     delay(30);
     SEND_AND_VALIDATE_COMMAND();
-    //Serial.print("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
   }
 
-  if (digitalRead(BUTTON_IO_MINUS) == LOW) {
+  if (Setting_OPTION[i].CODE_IR_M ==  code_IR) {
     // Decrement with lower limit
-    Serial.println(data);
     data = (data <= min_val) ? min_val : (data - 1);
-    Serial.println(data);
+    camSerial.write(data);
+    camSerial.write("\n");
     delay(30);
     SEND_AND_VALIDATE_COMMAND();
   }
 }
+
 #endif

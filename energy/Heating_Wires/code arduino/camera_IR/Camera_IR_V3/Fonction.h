@@ -34,8 +34,8 @@ void SEND_COMMAND() {
   camSerial.write(send_buffer, sizeof(send_buffer));
 
   // Debug output
-  //Serial.print(">> Transmitting buffer: ");
-  //PRINT_BUFFER(send_buffer, BUFFER_SIZE_SEND);
+  Serial.print(">> Transmitting buffer: ");
+  PRINT_BUFFER(send_buffer, BUFFER_SIZE_SEND);
 }
 
 // === PRINT A BUFFER TO SERIAL IN HEX FORMAT ===
@@ -75,8 +75,8 @@ bool READ_FEEDBACK_COMMAND() {
 
   // If complete frame received
   if (index == buffer_size) {
-    //Serial.print(">> Complete frame received: ");
-    //PRINT_BUFFER(buffer, buffer_size);
+    Serial.print(">> Complete frame received: ");
+    PRINT_BUFFER(buffer, buffer_size);
     index = 0;
 
     if (!CHECKSUM_verify(buffer)) return false;
@@ -110,7 +110,7 @@ bool CHECKSUM_verify(byte buffer[]) {
 
   // Compare calculated and received checksum
   if (checksum_calc == checksum_received) {
-    //Serial.println("✅ CHECKSUM OK");
+    Serial.println("✅ CHECKSUM OK");
     return true;
   } else {
     Serial.print("❌ CHECKSUM Mismatch: expected ");
@@ -169,7 +169,6 @@ void PRESS_PLUS_MINUS(int BUTTON_IO_PLUS, int BUTTON_IO_MINUS, uint8_t max_val, 
 
   if (digitalRead(BUTTON_IO_MINUS) == LOW) {
     // Decrement with lower limit
-    Serial.println(data);
     data = (data <= min_val) ? min_val : (data - 1);
     Serial.println(data);
     delay(30);
