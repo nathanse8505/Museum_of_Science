@@ -40,9 +40,11 @@ void setup() {
   // === Switch to write mode ===
   r_w_flag = 0x00;
   Serial.println("Init complete");
+  wdt_enable(WDTO_4S);
 }
 
 void loop() {
+  wdt_reset();
   ////////////////// OPTION ////////////////////
   for (int i = 0; i < OPTION_NUM; i++){
     if (digitalRead(Setting_OPTION[i].PIN) == LOW) {
