@@ -3,7 +3,7 @@
 
 void setup() {
   Serial.begin(SERIAL_BAUDRATE);
-  camSerial.begin(SERIAL_BAUDRATE);
+  camSerial.begin(SERIAL_BAUDRATE, SERIAL_8N1,RX_CAM, TX_CAM); // RX, TX = tes pins
 
   // === Configure input pins with pull-up ===
   pinMode(COLOR_SW, INPUT_PULLUP);
@@ -26,25 +26,33 @@ void setup() {
   r_w_flag = 0x01; // Set to read mode
   data = DATA_READ;
   delay(3000);
+
   for (int i = 0; i < OPTION_NUM; i++) {
     class_command_addr = Setting_OPTION[i].class_addr;
     subclass_command_addr = Setting_OPTION[i].subclass_addr;
     SEND_AND_VALIDATE_COMMAND();        // Send read command and wait for valid response
     Setting_OPTION[i].data_current = data;             // Store value in current settings array
     data = DATA_READ;
-  } 
-  Serial.println("Setting: " + String(Setting_OPTION[0].name) + " = " + String(Setting_OPTION[0].data_current));
-  Serial.println("Setting: " + String(Setting_OPTION[1].name) + " = " + String(Setting_OPTION[1].data_current));
-  Serial.println("Setting: " + String(Setting_OPTION[2].name) + " = " + String(Setting_OPTION[2].data_current));
-  Serial.println("Setting: " + String(Setting_OPTION[3].name) + " = " + String(Setting_OPTION[3].data_current));
+  }
+
+  #ifdef MODE_TEST
+   for (int i = 0; i < OPTION_NUM; i++) { 
+    Serial.println("Setting: " + String(Setting_OPTION[i].name) + " = " + String(Setting_OPTION[i].data_current));
+   }
+   Serial.println("Init complete");
+  #endif
+ 
   // === Switch to write mode ===
   r_w_flag = 0x00;
-  Serial.println("Init complete");
-  wdt_enable(WDTO_4S);
+
+  // Initialisation du watchdog pour 5 secondes
+  esp_task_wdt_init(&wdt_config); 
+  esp_task_wdt_add(NULL); // Ajoute la tâche courante (loop)
+
 }
 
 void loop() {
-  wdt_reset();
+  esp_task_wdt_reset(); // Reset du watchdog
   ////////////////// OPTION ////////////////////
   for (int i = 0; i < OPTION_NUM; i++){
     if (digitalRead(Setting_OPTION[i].PIN) == LOW) {
@@ -52,7 +60,9 @@ void loop() {
       if (Setting_OPTION[i].command) {
         data = Setting_OPTION[i].data_current;
         Setting_OPTION[i].command = false;
-        Serial.println("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
+        #ifdef MODE_TEST
+          Serial.println("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
+        #endif
       }
       // Set target address and limits for color
       class_command_addr = Setting_OPTION[i].class_addr;

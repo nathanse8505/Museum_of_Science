@@ -70,6 +70,10 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 #define Const
 
 #define SERIAL_BAUDRATE (115200)
+#define MODE_TEST
+
+
+
 #define LED_RECEIVE_DATA     2
 #define COLOR_SW             3
 #define ZOOM_SW              4
@@ -78,8 +82,8 @@ const int SUB_CLASS_0x7C[4] = {0x02,0x03,0x0C,0x04};//0x02 Calibration image ,0x
 #define SAVE_BUTTON          7
 #define PLUS_BUTTON          8
 #define MINUS_BUTTON         9
-#define RX_CAM               12
 #define TX_CAM               11
+#define RX_CAM               12
 #define RESET_BUTTON         A0
 #define CALIBRATION_BUTTON   A1
 
@@ -160,7 +164,8 @@ typedef struct {
   const char* name;
 }CameraSetting_Button;
 
-/*CameraSetting Color_setting      = {COLOR_SW,      0x78, 0x20, 0,  15,  0, true, "COLOR"};
+/*
+CameraSetting Color_setting      = {COLOR_SW,      0x78, 0x20, 0,  15,  0, true, "COLOR"};
 CameraSetting Contrast_setting   = {CONTRAST_SW,   0x78, 0x03, 0, 100, 50, true, "CONTRAST"};
 CameraSetting Brightness_setting = {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"};
 CameraSetting Zoom_setting       = {ZOOM_SW,       0x70, 0x12, 0,   4,  0, true, "ZOOM"};
@@ -171,11 +176,15 @@ CameraSetting Setting_OPTION[OPTION_NUM] = {{COLOR_SW,      0x78, 0x20, 0,  15, 
                                             {BRIGHTNESS_SW, 0x78, 0x02, 0, 100, 50, true, "BRIGHTNESS"}
                                            };
 
+/*
 CameraSetting_Button Save_Setting        = {SAVE_BUTTON,        0x74, 0x10, false, 0, "SAVE"};
 CameraSetting_Button Reset_Setting       = {RESET_BUTTON,       0x74, 0x0F, false, 0, "RESET"};
 CameraSetting_Button Calibration_Setting = {CALIBRATION_BUTTON, 0x7C, 0x02, false, 0, "CALIBRATION"};
-
-CameraSetting_Button Setting_BUTTON_OPTION[BUTTON_OPTION_NUM] = {Save_Setting,Reset_Setting,Calibration_Setting};
+*/
+CameraSetting_Button Setting_BUTTON_OPTION[BUTTON_OPTION_NUM] = {{SAVE_BUTTON,        0x74, 0x10, false, 0, "SAVE"},
+                                                                 {RESET_BUTTON,       0x74, 0x0F, false, 0, "RESET"},
+                                                                 {CALIBRATION_BUTTON, 0x7C, 0x02, false, 0, "CALIBRATION"}
+                                                                };
 
 
 #endif

@@ -33,9 +33,11 @@ void SEND_COMMAND() {
   // Send the frame to the camera
   camSerial.write(send_buffer, sizeof(send_buffer));
 
-  // Debug output
-  Serial.print(">> Transmitting buffer: ");
-  PRINT_BUFFER(send_buffer, BUFFER_SIZE_SEND);
+  #ifdef MODE_TEST
+    // Debug output
+    Serial.print(">> Transmitting buffer: ");
+    PRINT_BUFFER(send_buffer, BUFFER_SIZE_SEND);
+  #endif
 }
 
 // === PRINT A BUFFER TO SERIAL IN HEX FORMAT ===
@@ -69,14 +71,18 @@ bool READ_FEEDBACK_COMMAND() {
   // Timeout if no data received for 200 ms
   if (index > 0 && millis() - last_read > 200 || index > 10) {
     index = 0;
-    Serial.println("⚠️ Incomplete data: timeout");
+    #ifdef MODE_TEST
+      Serial.println("⚠️ Incomplete data: timeout");
+    #endif
     return false;
   }
 
   // If complete frame received
   if (index == buffer_size) {
-    Serial.print(">> Complete frame received: ");
-    PRINT_BUFFER(buffer, buffer_size);
+    #ifdef MODE_TEST
+      Serial.print(">> Complete frame received: ");
+      PRINT_BUFFER(buffer, buffer_size);
+    #endif
     index = 0;
 
     if (!CHECKSUM_verify(buffer)) return false;
@@ -95,7 +101,9 @@ bool READ_FEEDBACK_COMMAND() {
 bool CHECKSUM_verify(byte buffer[]) {
   // Validate start and end markers
   if (buffer[0] != BEGIN || buffer[buffer_size - 1] != END) {
-    Serial.println("❌ Error: Invalid BEGIN or END marker.");
+    #ifdef MODE_TEST
+      Serial.println("❌ Error: Invalid BEGIN or END marker.");
+    #endif
     return false;
   }
 
@@ -110,13 +118,17 @@ bool CHECKSUM_verify(byte buffer[]) {
 
   // Compare calculated and received checksum
   if (checksum_calc == checksum_received) {
-    Serial.println("✅ CHECKSUM OK");
+    #ifdef MODE_TEST
+      Serial.println("✅ CHECKSUM OK");
+    #endif
     return true;
   } else {
-    Serial.print("❌ CHECKSUM Mismatch: expected ");
-    Serial.print(checksum_calc, HEX);
-    Serial.print(", received ");
-    Serial.println(checksum_received, HEX);
+    #ifdef MODE_TEST
+      Serial.print("❌ CHECKSUM Mismatch: expected ");
+      Serial.print(checksum_calc, HEX);
+      Serial.print(", received ");
+      Serial.println(checksum_received, HEX);
+    #endif
     return false;
   }
 }
@@ -161,7 +173,9 @@ void PRESS_PLUS_MINUS(int BUTTON_IO_PLUS, int BUTTON_IO_MINUS, uint8_t max_val, 
   if (digitalRead(BUTTON_IO_PLUS) == LOW) {
     // Increment with upper limit
     data = (data >= (max_val - 1)) ? (max_val - 1) : (data + 1);
-    Serial.println(data);
+    #ifdef MODE_TEST
+      Serial.println(data);
+    #endif
     delay(30);
     SEND_AND_VALIDATE_COMMAND();
     //Serial.print("Setting: " + String(Setting_OPTION[i].name) + " = " + String(data));
@@ -170,7 +184,9 @@ void PRESS_PLUS_MINUS(int BUTTON_IO_PLUS, int BUTTON_IO_MINUS, uint8_t max_val, 
   if (digitalRead(BUTTON_IO_MINUS) == LOW) {
     // Decrement with lower limit
     data = (data <= min_val) ? min_val : (data - 1);
-    Serial.println(data);
+    #ifdef MODE_TEST
+      Serial.println(data);
+    #endif
     delay(30);
     SEND_AND_VALIDATE_COMMAND();
   }
