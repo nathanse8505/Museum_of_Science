@@ -1,0 +1,43 @@
+{
+  "uuid": "74690e4217fae4095e06764e535e8912",
+  "path": "Offline/HV_OPTO_METER",
+  "name": "HV_OPTO_METER",
+  "content": "",
+  "created_at": "2025-03-03 23:51:35",
+  "updated_at": "2025-03-03 23:51:36",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "311b53faa22f115f65ff614612a8e2b0",
+      "title": "HV_OPTO_METER",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1742853970,
+      "createTime": 1742853970,
+      "histories": [],
+      "created_at": "2025-03-25 00:06:10",
+      "updated_at": "2025-03-25 00:06:10"
+    },
+    {
+      "uuid": "2d38cf107b724aaefd7b7af45f7aebe3",
+      "title": "PCB_HV_OPTO_METER",
+      "filename": "PCB_HV_OPTO_METER.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1742853970,
+      "createTime": 1742853970,
+      "histories": [],
+      "created_at": "2025-03-25 00:06:10",
+      "updated_at": "2025-03-25 00:06:10"
+    }
+  ],
+  "sort": [],
+  "title": "HV_OPTO_METER",
+  "foldername": "HV_OPTO_METER",
+  "schfilename": "HV_OPTO_METER.json",
+  "schfilemtime": 1742853970700.0527
+}

@@ -1,0 +1,376 @@
+{
+  "uuid": "a32c068bd0de2838b18c8ac9cc7b9ce9",
+  "path": "Offline/Pendu_Arduino_Motor",
+  "name": "Pendu_Arduino_Motor",
+  "content": "",
+  "created_at": "2024-10-18 00:31:59",
+  "updated_at": "2025-06-09 20:44:40",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "9e0490e30b377ffa45c85adb15de6df8",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "b7adf400643b4936be8b786704d0e70f": 1,
+        "8f5cae780c0a8ec7b7b995e1b2effd15": 2,
+        "506a2f49fd5af7690094a86e81a44ebe": 2,
+        "4315c7829684cc8a6968bec48e158497": 2,
+        "667fac78c3346a31119778d9efd4e707": 3,
+        "e869a782b90705dc9926da97baa35b27": 1,
+        "76186ddecd76475f8828a16c1ae271fa": 6,
+        "145e57670a244882af532f5de6672a1b": 1,
+        "ebef92bdb1224c9e80490478c9647cf9": 2,
+        "646013db46794b0da33e7fc57c459489": 1,
+        "5cbe824183374fac8e4c1ae848199ce3": 4,
+        "532238ac2d5f461b9b34d16f00b1013e": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          1,
+          "C0201",
+          "C1",
+          {
+            "Manufacturer Part": "0201X104K6R3NT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C66938"
+          }
+        ],
+        [
+          "1uF",
+          3,
+          "C0603",
+          "C2,C3,C4",
+          {
+            "Manufacturer Part": "0603B474K500NT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C77572"
+          }
+        ],
+        [
+          "100uF",
+          1,
+          "C0201",
+          "C5",
+          {
+            "Manufacturer Part": "0201X104K6R3NT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C66938"
+          }
+        ],
+        [
+          "KF2510-2A",
+          2,
+          "CONN-TH_KF2510-2A",
+          "CN1,CN2",
+          {
+            "Manufacturer Part": "2510-2A",
+            "Manufacturer": "BOOMELE(博穆精密)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "CON6X1_7-62MM",
+          1,
+          "CONN-TH_6P-P7.62_CON6X1_7-62MM",
+          "CN4",
+          {
+            "Manufacturer Part": "con6x1_7-62mm",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900011107"
+          }
+        ],
+        [
+          "SM4007PL",
+          1,
+          "SOD-123F_L2.8-W1.8-LS3.7-RD",
+          "D1",
+          {
+            "Manufacturer Part": "SM4007PL",
+            "Manufacturer": "MDD(辰达半导体)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C64898"
+          }
+        ],
+        [
+          "DC-005-5A-2.0-SMT",
+          1,
+          "DC-IN-TH_DC-005-5A-2.0-SMT",
+          "DC1",
+          {
+            "Manufacturer Part": "DC-005-5A-2.0-SMT",
+            "Manufacturer": "XKB Connection(中国星坤)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C319134"
+          }
+        ],
+        [
+          "LED-0603_R",
+          4,
+          "LED0603_RED",
+          "LED1,LED2,LED3,LED4",
+          {
+            "Manufacturer Part": "19-217/R6C-AL1M2VY/3T",
+            "Manufacturer": "EVERLIGHT(台湾亿光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C72044"
+          }
+        ],
+        [
+          "2N7002",
+          2,
+          "SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR",
+          "Q1,Q2",
+          {
+            "Manufacturer Part": "2N7002",
+            "Manufacturer": "CJ(江苏长电/长晶)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C8545"
+          }
+        ],
+        [
+          "ARDUINO_NANO",
+          1,
+          "COMM-TH_ARDUINO_NANO",
+          "U1",
+          {
+            "Manufacturer Part": "ARDUINO_NANO",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900017879"
+          }
+        ],
+        [
+          "13kΩ",
+          2,
+          "R0603",
+          "U2,U3",
+          {
+            "Manufacturer Part": "0603 ±5% 10K",
+            "Manufacturer": "VO(翔胜)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2889392"
+          }
+        ],
+        [
+          "LM7809T",
+          1,
+          "TO-220-3_L10.0-W4.5-P2.54-L",
+          "U4",
+          {
+            "Manufacturer Part": "LM7809T",
+            "Manufacturer": "HGSEMI(华冠)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C507141"
+          }
+        ],
+        [
+          "KF301R-5.0-2P",
+          2,
+          "CONN-TH_P5.00_KF301R-5.0-2P",
+          "U5,U6",
+          {
+            "Manufacturer Part": "KF301R-5.0-2P",
+            "Manufacturer": "KEFA(科发)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C474883"
+          }
+        ],
+        [
+          "1kΩ",
+          4,
+          "R0603",
+          "U7,U8,U9,U10",
+          {
+            "Manufacturer Part": "0603 ±5% 10K",
+            "Manufacturer": "VO(翔胜)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2889392"
+          }
+        ]
+      ],
+      "updateTime": 1749491080,
+      "createTime": 1729200719,
+      "histories": [],
+      "created_at": "2024-10-18 00:31:59",
+      "updated_at": "2025-06-09 20:44:40"
+    },
+    {
+      "uuid": "371dabd871df997fa8b015243da95c8c",
+      "puuid": "a32c068bd0de2838b18c8ac9cc7b9ce9",
+      "title": "PCB_metoutelete",
+      "filename": "PCB_metoutelete.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "f8151fdc728a41ebbc304e11d39e5437": 3,
+        "6eac4f0790224a4390e316fa1c7bfc0a": 1,
+        "9ba63133985d42cda948c6301d2bf7d5": 2,
+        "e8e78627020b4795961cd17fb8b42b10": 1,
+        "2f6aabf22e6a40dd850836b1de6d6ead": 1,
+        "bade90667a6e4731855e9a223387b8a6": 1,
+        "ff6e2030776d4574a7594ce501bb86c5": 1,
+        "bc44448d741046d3b426330f702bb718": 1,
+        "398691f1f785460098bbe5ee6590333c": 1,
+        "948e610cffd14df79f04c73832b1409b": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          1,
+          "C0201",
+          "C1",
+          {
+            "Manufacturer Part": "0201X104K6R3NT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C66938"
+          }
+        ],
+        [
+          "470nF",
+          1,
+          "C0603",
+          "C2",
+          {
+            "Manufacturer Part": "0603B474K500NT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C77572"
+          }
+        ],
+        [
+          "KF2510-2A",
+          2,
+          "CONN-TH_KF2510-2A",
+          "CN1,CN2",
+          {
+            "Manufacturer Part": "2510-2A",
+            "Manufacturer": "BOOMELE(博穆精密)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "KF2510-3AGW",
+          1,
+          "CONN-TH_KF2510-3AGW",
+          "CN3",
+          {
+            "Manufacturer Part": "2510-3A高弯",
+            "Manufacturer": "BOOMELE(博穆精密)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C68663"
+          }
+        ],
+        [
+          "SM4007PL",
+          1,
+          "SOD-123F_L2.8-W1.8-LS3.7-RD",
+          "D1",
+          {
+            "Manufacturer Part": "SM4007PL",
+            "Manufacturer": "MDD(辰达半导体)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C64898"
+          }
+        ],
+        [
+          "DC-005-5A-2.0-SMT",
+          1,
+          "DC-IN-TH_DC-005-5A-2.0-SMT",
+          "DC1",
+          {
+            "Manufacturer Part": "DC-005-5A-2.0-SMT",
+            "Manufacturer": "XKB Connection(中国星坤)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C319134"
+          }
+        ],
+        [
+          "2N7002",
+          1,
+          "SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR",
+          "Q1",
+          {
+            "Manufacturer Part": "2N7002",
+            "Manufacturer": "CJ(江苏长电/长晶)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C8545"
+          }
+        ],
+        [
+          "ARDUINO_NANO",
+          1,
+          "COMM-TH_ARDUINO_NANO",
+          "U1",
+          {
+            "Manufacturer Part": "ARDUINO_NANO",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900017879"
+          }
+        ],
+        [
+          "LM7805-5V",
+          1,
+          "TO-252-2_L6.6-W6.1-P4.58-LS9.9-TL",
+          "U2",
+          {
+            "Manufacturer Part": "LM7805-5V",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900008050"
+          }
+        ],
+        [
+          "10kΩ",
+          1,
+          "R0603",
+          "U3",
+          {
+            "Manufacturer Part": "0603 ±5% 10K",
+            "Manufacturer": "VO(翔胜)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2889392"
+          }
+        ]
+      ],
+      "updateTime": 1734464811,
+      "createTime": 1729201606,
+      "histories": [],
+      "created_at": "2024-10-18 00:46:46",
+      "updated_at": "2024-12-17 21:46:51"
+    }
+  ],
+  "sort": [],
+  "title": "Pendu_Arduino_Motor",
+  "foldername": "Pendu_Arduino_Motor",
+  "schfilename": "metoutelete.json",
+  "schfilemtime": 1749491080889
+}

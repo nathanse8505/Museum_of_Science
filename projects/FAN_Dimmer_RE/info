@@ -1,0 +1,275 @@
+{
+  "uuid": "3b9f9ca1c40cf664232284f2f2ca1481",
+  "path": "Offline/FAN_Dimmer_RE",
+  "name": "FAN_Dimmer_RE",
+  "content": "MTY15 fan dimmer reverse engineering",
+  "created_at": "2024-11-26 20:12:11",
+  "updated_at": "2024-11-27 18:19:24",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "2ed6b269df037cf0de134935d4082f23",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "dbfbe472acc22d5987206be37fe08d0d": 1,
+        "237a7b4113464f879489eeb47033be8d": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 2,
+        "c347442997c5413aa4d12fd56ab12a84": 2,
+        "68b2fc9958894be8a748858534788b97": 1,
+        "1587fb3eea834f76bd049da9577256e7": 1,
+        "2cc40f8bfff2497ca5423f8280700e6c": 1,
+        "45ddbab4559a43c6bc95d2ca22fb25a0": 1,
+        "c4b69f535b6a4addad08c6f9b4a1d6c8": 2,
+        "bc65e69eda5141dbb8871eb0b20a5f10": 1,
+        "4365864fcc5b432b90a96d3a6e523091": 1,
+        "b3147d0199824eeab4be506c69a6df85": 1,
+        "c0f586f996524339a23b3d24b465273f": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "68NF/100V",
+          1,
+          "CAP-TH_L26.4-W7.0-P22.50-D0.7",
+          "C1",
+          {
+            "BOM_Manufacturer Part": "68nF/1000V",
+            "puuid": "84e5e40f57304ba8b04533e2fc97046e",
+            "uuid": "c347442997c5413aa4d12fd56ab12a84",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900021245",
+            "BOM_Manufacturer": "null",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "10NF/100V",
+          1,
+          "CAP-TH_L26.4-W7.0-P22.50-D0.7",
+          "C2",
+          {
+            "BOM_Manufacturer Part": "68nF/1000V",
+            "puuid": "84e5e40f57304ba8b04533e2fc97046e",
+            "uuid": "c347442997c5413aa4d12fd56ab12a84",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900021245",
+            "BOM_Manufacturer": "null",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "68nF_310V",
+          1,
+          "CAP-TH_L18.0-W6.0-P15.00-D0.6",
+          "C3",
+          {
+            "BOM_Manufacturer Part": "K155K310VD7L15",
+            "puuid": "1b6c1b0a7c4d4a97ba90c4e7e3b3e400",
+            "uuid": "c4b69f535b6a4addad08c6f9b4a1d6c8",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2686078",
+            "BOM_Manufacturer": "JIERONG(捷容)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "150nF_310V",
+          1,
+          "CAP-TH_L18.0-W6.0-P15.00-D0.6",
+          "C4",
+          {
+            "BOM_Manufacturer Part": "K155K310VD7L15",
+            "puuid": "1b6c1b0a7c4d4a97ba90c4e7e3b3e400",
+            "uuid": "c4b69f535b6a4addad08c6f9b4a1d6c8",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2686078",
+            "BOM_Manufacturer": "JIERONG(捷容)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "0215002.MXEP",
+          1,
+          "FUSE-TH_BD5.5-L21.5-P25.50-D0.7",
+          "F1",
+          {
+            "BOM_Manufacturer Part": "0215002.MXEP",
+            "puuid": "8f4cd926109d4160a966df7b45d057cd",
+            "uuid": "4365864fcc5b432b90a96d3a6e523091",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C142787",
+            "BOM_Manufacturer": "Littelfuse(美国力特)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "1M(A)",
+          1,
+          "RES-ADJ-TH_3P-L10.0-W10.0-P2.50-L",
+          "P7",
+          {
+            "BOM_Manufacturer Part": "3296W-1-103",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C118954",
+            "BOM_Manufacturer": "BOCHEN(博晨)",
+            "puuid": "e69d1e15e9424ba29134b31c38da6ed5",
+            "uuid": "68b2fc9958894be8a748858534788b97",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "BTA08-600CRG",
+          1,
+          "TO-220-3_L10.0-W4.5-P2.54-L",
+          "Q1",
+          {
+            "BOM_Manufacturer Part": "BTA08-600CRG",
+            "puuid": "948e610cffd14df79f04c73832b1409b",
+            "uuid": "dbfbe472acc22d5987206be37fe08d0d",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9102",
+            "BOM_Manufacturer": "ST(意法半导体)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "DB3_C2498",
+          1,
+          "DO-35_BD2.0-L4.0-P8.00-D0.5-FD",
+          "Q3",
+          {
+            "BOM_Manufacturer Part": "DB3",
+            "puuid": "07f65a035ec440c9ba8d8743498f47ca",
+            "uuid": "237a7b4113464f879489eeb47033be8d",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2498",
+            "BOM_Manufacturer": "ST(先科)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "1M(B)",
+          1,
+          "5PIN RV097NS WITH A SWITCH",
+          "R2",
+          {
+            "BOM_Manufacturer Part": "RV097NS",
+            "BOM_Supplier Part": "undefined",
+            "puuid": "",
+            "uuid": "1587fb3eea834f76bd049da9577256e7"
+          }
+        ],
+        [
+          "10kΩ",
+          2,
+          "R0603",
+          "RL1V,RL12V",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b210af5a1436310a86e8b108e2e5a90b"
+          }
+        ],
+        [
+          "KF301R-5.0-3P",
+          1,
+          "CONN-TH_3P-P5.00_KF301R-5.0-3P",
+          "U1",
+          {
+            "BOM_Manufacturer Part": "KF301R-5.0-3P",
+            "puuid": "545d869cfb094eccb97de3da5a4f3377",
+            "uuid": "2cc40f8bfff2497ca5423f8280700e6c",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474884",
+            "BOM_Manufacturer": "KEFA(科发)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "KF301-5.0-2P",
+          1,
+          "CONN-TH_P5.00_KF301-5.0-2P",
+          "U2",
+          {
+            "BOM_Manufacturer Part": "KF301-5.0-2P",
+            "puuid": "c444d117946441c3ab8b7492a6a9cd72",
+            "uuid": "45ddbab4559a43c6bc95d2ca22fb25a0",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C474881",
+            "BOM_Manufacturer": "KEFA(科发)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "300UH5A",
+          1,
+          "IND-TH_BD26.0-P10.80_300UH5A",
+          "U3",
+          {
+            "BOM_Manufacturer Part": "300UH5A",
+            "puuid": "bd085c002f784cfea7034d3a64fbbac6",
+            "uuid": "c0f586f996524339a23b3d24b465273f",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C9900011335",
+            "BOM_Manufacturer": "null",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "560Ω",
+          1,
+          "RES-TH_BD4.5-L11.5-P15.50-D0.8",
+          "U4",
+          {
+            "BOM_Manufacturer Part": "CFR2WSJR-73-560R",
+            "puuid": "d5db2e2cca3644e986ddea224d46bc18",
+            "uuid": "bc65e69eda5141dbb8871eb0b20a5f10",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C1757877",
+            "BOM_Manufacturer": "YAGEO(国巨)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "MOC3021",
+          1,
+          "DIP-6_L8.5-W6.4-P2.54-LS7.6-BL",
+          "U5",
+          {
+            "BOM_Manufacturer Part": "MOC3021",
+            "puuid": "d48d067ae58543cc8ca53c3168957a15",
+            "uuid": "b3147d0199824eeab4be506c69a6df85",
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C123202",
+            "BOM_Manufacturer": "LITEON(光宝)",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ]
+      ],
+      "updateTime": 1732724364,
+      "createTime": 1732644731,
+      "histories": [],
+      "created_at": "2024-11-26 20:12:11",
+      "updated_at": "2024-11-27 18:19:24"
+    }
+  ],
+  "sort": [],
+  "title": "FAN_Dimmer_RE",
+  "foldername": "FAN_Dimmer_RE",
+  "schfilename": "FAN_Dimmer_RE.json",
+  "schfilemtime": 1732724364492
+}
