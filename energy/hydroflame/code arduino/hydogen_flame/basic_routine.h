@@ -2,6 +2,9 @@
 #define basic_routine
 #include "const.h"
 #include <avr/wdt.h>
+#include "MAX6675.h"
+
+MAX6675 thermocouple(THERMOCS, THERMOD , THERMOCLK);
 //#include <MovingAverage.h>  // see https://github.com/careyi3/MovingAverage
 //MovingAverage filter(MOVING_AVG_LENGTH);  // define/use the movinge average object
 
@@ -11,6 +14,7 @@ void TURN_OFF_CURRENT(){
 
 void TURN_ON_CURRENT(){
    digitalWrite(RELAY_TURN_ON_OFF_IO, HIGH);
+   delay(DELAY_AFTER_ON);
 }
 
 void setZeroCurent(){   
@@ -52,7 +56,18 @@ bool check_water_level(){
 }
 
 bool check_fire(){
-  if (digitalRead(SENSOR_FIRE_IO) == HIGH){
+  // Lecture obligatoire pour mettre à jour la température
+  if(millis() - timer_read_temp > DELAY_TEMP){
+    status_sensor = thermocouple.read();
+    if (status_sensor == STATUS_OK) {
+      tempC = thermocouple.getCelsius();
+      Serial.print("Température : " + String(tempC) + " °C");
+    } else {
+      Serial.print("Erreur capteur : code "  + String(status_sensor));
+    }
+    timer_read_temp = 0;
+  }
+  if (tempC >= TEMP_TRESHOLD){
     return true;
   }
   return false;

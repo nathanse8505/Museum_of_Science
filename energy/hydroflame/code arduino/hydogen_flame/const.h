@@ -26,15 +26,21 @@
 ////////////  I/O   ////////////
 //#define CURRENT_INPUT_IO A7 // simulation potentiometer
 #define CURRENT_INPUT_IO A0 // current sensor 
-#define SENSOR_WATER_IO A1
-#define SENSOR_FIRE_IO A2
+#define SENSOR_WATER_IO A3 //finir setup
+#define START_TIME_POT A6
+#define STOP_TIME_POT A7
 #define IGNITION_BUTTON_IO 2
 #define SPARK_IO 4
-#define RELAY_VALVE_WATER_IO 5
-#define RELAY_TURN_ON_OFF_IO 6
-#define FAN_IO 7
-#define LED_ACTIVATION 8
 
+#define RELAY_TURN_ON_OFF_IO 7
+#define FAN_IO 8//preparer setup
+#define RELAY_VALVE_WATER_IO 9/// preparer setup
+#define LED_ACTIVATION 10
+
+
+#define THERMOD   11   // SO (MISO)
+#define THERMOCS  12   // CS
+#define THERMOCLK 13   // SCK
 // global vars
 int32_t time_start = 0;
 int32_t time_start_hydro = 0;
@@ -51,17 +57,12 @@ const int16_t NUM_OF_SPARK = 3;//ms
 const int16_t DELAY_AFTER_SPARK = 500; // ms - delay after spark before opening valve again
 bool ready_flag_fire = false;
 
-
-
-
 //////// FAN /////////
 const int16_t DELAY_FAN_ON = 10;
 const int16_t DELAY_FAN_OFF = 10;
 bool flag_ready_fan = false;
 
-
 //////////////  CURRENT //////////
-
 const float READ_TO_CURRENT = 0.02639;  // A/bit, (5000mV/(1024*185m))       4mV/bit / 185mV/A
 const int16_t ZERO_CURRENT_READ = 512; //2.5 Volt sensor zero current output
 const int16_t CURRENT_SYSTEM = 2;
@@ -76,12 +77,20 @@ const int32_t MEASURE_INTERVAL_TIME = 50;  // ms measure interval
 const int16_t DELAY_FILL_WATER = 3000;
 const int16_t DELAY_AFTER_FILL_WATER = 100;
 
+//////////// FIRE ///////////
+uint8_t status_sensor;
+float tempC;
+long timer_read_temp;
+const int DELAY_TEMP = 220;//in ms
+const int TEMP_TRESHOLD = 100;//in Celsius
+
 /////////button ignition//////////
 bool check_ignit = LOW;
 bool buttonPressed;
 bool flag_new_session = true;
 bool flag_first_press = false;
 const int16_t BOUNCE_TIME = 100;//ms 
+const int DELAY_AFTER_ON = 500;//ms
 //////////////////////////////////
 
 

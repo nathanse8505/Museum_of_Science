@@ -8,7 +8,6 @@ void setup() {
   pinMode(IGNITION_BUTTON_IO, INPUT_PULLUP);       // Ignition button (active LOW)
   pinMode(SPARK_IO, OUTPUT);                       // Spark output
   pinMode(SENSOR_WATER_IO, INPUT_PULLUP);          // Water level sensor
-  pinMode(SENSOR_FIRE_IO, INPUT_PULLUP);           // Fire detection sensor
   pinMode(RELAY_TURN_ON_OFF_IO, OUTPUT);           // Power relay
   pinMode(FAN_IO, OUTPUT);                         // Fan relay
   pinMode(LED_ACTIVATION, OUTPUT);                 // Activation indicator LED
@@ -18,6 +17,7 @@ void setup() {
   delay(100);                                      // Give time to establish connection
   wdt_enable(WDTO_2S);   
   setZeroCurent();                          // Enable watchdog timer with 2-second timeout
+  thermocouple.begin();
 }
 
 void loop() {
@@ -52,11 +52,11 @@ void loop() {
       ready_flag_fire = true;            // Ready to spark
     }
 
-    // If no current detected after first press, turn off system
+    /*// If no current detected after first press, turn off system
     if(check_current() == false && flag_first_press == true){
       TURN_OFF_CURRENT();
       time_start = millis();             // Reset timer
-    }
+    }*/
 
     // If enough hydrogen time passed and spark is ready, activate spark
     if ((millis() - time_start_hydro) > HYGROGEN_TIME  && ready_flag_fire) {
