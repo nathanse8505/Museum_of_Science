@@ -1,9 +1,9 @@
 #include "MAX6675.h"
 
 // Broches pour SPI logiciel
-int thermo1D0  = 6;   // SO (MISO)
-int thermo1CS  = 7;   // CS
-int thermo1CLK = 8;   // SCK
+int thermo1D0  = A1;   // SO (MISO)
+int thermo1CS  = 12;   // CS
+int thermo1CLK = A2;   // SCK
 
 MAX6675 thermocouple(thermo1CS, thermo1D0, thermo1CLK);
 

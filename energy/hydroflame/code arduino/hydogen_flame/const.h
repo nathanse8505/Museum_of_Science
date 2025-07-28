@@ -24,23 +24,21 @@
  */
 #define BAUDRATE (115200)
 ////////////  I/O   ////////////
-//#define CURRENT_INPUT_IO A7 // simulation potentiometer
-#define CURRENT_INPUT_IO A0 // current sensor 
-#define SENSOR_WATER_IO A3 //finir setup
-#define START_TIME_POT A6
-#define STOP_TIME_POT A7
+#define CURRENT_INPUT_IO  A0 // current sensor 
+#define SENSOR_WATER_IO   A3 //finir setup
+#define START_TIME_POT    A6
+#define STOP_TIME_POT     A7
 #define IGNITION_BUTTON_IO 2
-#define SPARK_IO 4
 
 #define RELAY_TURN_ON_OFF_IO 7
-#define FAN_IO 8//preparer setup
-#define RELAY_VALVE_WATER_IO 9/// preparer setup
-#define LED_ACTIVATION 10
+#define FAN_IO               8
+#define RELAY_VALVE_WATER_IO 9
+#define SPARK_IO             10
+#define LED_ACTIVATION       11
 
-
-#define THERMOD   11   // SO (MISO)
+#define THERMOD   A1   // SO (MISO)
 #define THERMOCS  12   // CS
-#define THERMOCLK 13   // SCK
+#define THERMOCLK A2   // SCK
 // global vars
 int32_t time_start = 0;
 int32_t time_start_hydro = 0;
@@ -74,7 +72,7 @@ float current_value = 0;        // calculated current [A]
 float ZeroCurrentSensor = 0;
 const int32_t MEASURE_INTERVAL_TIME = 50;  // ms measure interval 
 //////////// WATER ///////////
-const int16_t DELAY_FILL_WATER = 3000;
+const int16_t DELAY_FILL_WATER = 2000;
 const int16_t DELAY_AFTER_FILL_WATER = 100;
 
 //////////// FIRE ///////////
