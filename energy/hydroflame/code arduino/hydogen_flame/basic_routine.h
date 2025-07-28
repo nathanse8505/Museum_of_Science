@@ -65,8 +65,9 @@ bool check_fire(){
     } else {
       Serial.print("Erreur capteur : code "  + String(status_sensor));
     }
-    timer_read_temp = 0;
+    timer_read_temp = millis();
   }
+
   if (tempC >= TEMP_TRESHOLD){
     return true;
   }
@@ -101,7 +102,6 @@ bool PRESS_BUTTON_IGNITION() {
 
 
 void SPARK_ON(){
-  wdt_reset();//reset the watchdog
   for(int i = 0; i < NUM_OF_SPARK; i++){//ignite - turn on spark 3 times
     digitalWrite(SPARK_IO, HIGH);  // ignite - turn on spark
     delay(SPARK_TIME);
@@ -123,6 +123,13 @@ void DEACTIVE_FAN() {
   delay(DELAY_FAN_OFF);
 
 }
+
+void reset_session() {
+  TURN_OFF_CURRENT();
+  flag_first_press = false;
+  time_start = millis();
+}
+
 
 
 #endif

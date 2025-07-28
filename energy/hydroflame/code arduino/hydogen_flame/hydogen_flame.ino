@@ -15,12 +15,15 @@ void setup() {
 
   Serial.begin(BAUDRATE);                          // Start serial communication
   delay(100);                                      // Give time to establish connection
-  wdt_enable(WDTO_2S);   
+  wdt_enable(WDTO_4S);   
   setZeroCurent();                          // Enable watchdog timer with 2-second timeout
   thermocouple.begin();
 }
 
 void loop() {
+
+  wdt_reset();
+
   // Check if ignition button is pressed
   buttonPressed = PRESS_BUTTON_IGNITION();
 
@@ -38,9 +41,10 @@ void loop() {
     // If it's the first entry into this phase
     if(flag_new_session){
       digitalWrite(LED_ACTIVATION, HIGH);  // Turn on activation LED
-      DEACTIVE_FAN();                      // Turn off fan
-      flag_new_session = false;             // Session started
-      flag_ready_fan = false;
+      DEACTIVE_FAN();   
+      flag_ready_fan = false;                   // Turn off fan
+      flag_new_session = false;             // new Session ready
+      
     }
 
     // On first button press (ignition)
@@ -54,8 +58,7 @@ void loop() {
 
     /*// If no current detected after first press, turn off system
     if(check_current() == false && flag_first_press == true){
-      TURN_OFF_CURRENT();
-      time_start = millis();             // Reset timer
+      reset_session();
     }*/
 
     // If enough hydrogen time passed and spark is ready, activate spark
@@ -66,16 +69,13 @@ void loop() {
     }
 
     // If no fire detected after spark, turn off current
-    if (check_fire() == false && flag_first_press == true && ready_flag_fire == false){
-        TURN_OFF_CURRENT();
-        time_start = millis();
+    if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false && !check_fire()){
+        reset_session();
     }
 
     // If session timeout reached after spark, shut down and reset
-    if (millis() - time_new_session > SESSION_TIME && flag_first_press == true && ready_flag_fire == false){
-        TURN_OFF_CURRENT();
-        time_start = millis();
-        flag_first_press = false;       // Allow new session to start
+    if (millis() - time_new_session > SESSION_TIME && flag_first_press == true && ready_flag_fire == false && check_fire()){
+        reset_session();
         flag_ready_fan = true;
     }
   }

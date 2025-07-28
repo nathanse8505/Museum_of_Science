@@ -26,11 +26,11 @@
 ////////////  I/O   ////////////
 //#define CURRENT_INPUT_IO A7 // simulation potentiometer
 #define SENSOR_WATER_IO A1
-#define RELAY_VALVE_WATER_IO 5
+#define RELAY_VALVE_WATER_IO 9
 
 
 //////////// WATER ///////////
-const int16_t DELAY_FILL_WATER = 300;
+const int16_t DELAY_FILL_WATER = 1000;
 const int16_t DELAY_AFTER_FILL_WATER = 100;
 
 

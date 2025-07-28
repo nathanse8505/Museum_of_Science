@@ -49,7 +49,7 @@ const uint32_t ACTIVATION_TIME = 120000;
 
 
 //////SPARK //////
-const int16_t SPARK_SPACE_TIME = 2000;//ms
+const int16_t SPARK_SPACE_TIME = 1000;//ms
 const int16_t SPARK_TIME = 50; // ms - Spark time !!! keep as short as possible to avoid HV driver damage
 const int16_t NUM_OF_SPARK = 3;//ms
 const int16_t DELAY_AFTER_SPARK = 500; // ms - delay after spark before opening valve again
@@ -81,6 +81,7 @@ float tempC;
 long timer_read_temp;
 const int DELAY_TEMP = 220;//in ms
 const int TEMP_TRESHOLD = 100;//in Celsius
+const int FIRE_TIME = 6000;
 
 /////////button ignition//////////
 bool check_ignit = LOW;
