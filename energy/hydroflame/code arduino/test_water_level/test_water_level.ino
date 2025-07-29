@@ -18,5 +18,10 @@ void loop() {
     FILL_WATER();
   }
    digitalWrite(LED_BUILTIN, LOW);
+   
+
+  //Serial.println(analogRead(SENSOR_WATER_IO));    
+  //delay(100);
+
 
 }

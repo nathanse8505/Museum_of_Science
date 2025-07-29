@@ -25,7 +25,7 @@
 #define BAUDRATE (115200)
 ////////////  I/O   ////////////
 //#define CURRENT_INPUT_IO A7 // simulation potentiometer
-#define SENSOR_WATER_IO A1
+#define SENSOR_WATER_IO A3
 #define RELAY_VALVE_WATER_IO 9
 
 

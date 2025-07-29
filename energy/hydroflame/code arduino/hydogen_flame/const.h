@@ -71,9 +71,11 @@ int16_t current_sensor = 0;  // value read from sensor
 float current_value = 0;        // calculated current [A]
 float ZeroCurrentSensor = 0;
 const int32_t MEASURE_INTERVAL_TIME = 50;  // ms measure interval 
+
 //////////// WATER ///////////
-const int16_t DELAY_FILL_WATER = 2000;
-const int16_t DELAY_AFTER_FILL_WATER = 100;
+const int16_t NO_DETECTION = 200;//in bit resolution
+const int16_t DELAY_FILL_WATER = 1000;//in ms
+const int16_t DELAY_AFTER_FILL_WATER = 100;//in ms
 
 //////////// FIRE ///////////
 uint8_t status_sensor;

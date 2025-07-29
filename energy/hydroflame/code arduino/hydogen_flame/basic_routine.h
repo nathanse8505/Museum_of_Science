@@ -49,10 +49,10 @@ bool check_current(){
 
 
 bool check_water_level(){
-  if (digitalRead(SENSOR_WATER_IO) == HIGH){
-    return true;
+  if (analogRead(SENSOR_WATER_IO) <= NO_DETECTION){
+    return false;
   }
-  return false;
+  return true;
 }
 
 bool check_fire(){
