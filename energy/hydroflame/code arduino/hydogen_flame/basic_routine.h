@@ -57,21 +57,27 @@ bool check_water_level(){
 
 bool check_fire(){
   // Lecture obligatoire pour mettre à jour la température
-  if(millis() - timer_read_temp > DELAY_TEMP){
-    status_sensor = thermocouple.read();
-    if (status_sensor == STATUS_OK) {
-      tempC = thermocouple.getCelsius();
-      Serial.print("Température : " + String(tempC) + " °C");
-    } else {
-      Serial.print("Erreur capteur : code "  + String(status_sensor));
-    }
-    timer_read_temp = millis();
-  }
+ 
 
   if (tempC >= TEMP_TRESHOLD){
     return true;
   }
   return false;
+}
+
+float read_temperature(){
+   if(millis() - timer_read_temp > DELAY_TEMP){
+    status_sensor = thermocouple.read();
+    if (status_sensor == STATUS_OK) {
+      tempC = thermocouple.getCelsius();
+      Serial.print("Température : " + String(tempC) + " °C");
+      return tempC;
+    }
+    Serial.print("Erreur capteur : code "  + String(status_sensor));
+    timer_read_temp = millis();
+    return 0;
+  }
+  
 }
 
 void FILL_WATER(){

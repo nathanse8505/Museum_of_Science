@@ -1,6 +1,6 @@
 #include "const.h"
 #include "basic_routine.h"
-
+//#define TEST
 
 void setup() {
   // Configure pin modes
@@ -19,9 +19,9 @@ void loop() {
   }
    digitalWrite(LED_BUILTIN, LOW);
    
-
-  //Serial.println(analogRead(SENSOR_WATER_IO));    
-  //delay(100);
-
+  #ifdef TEST
+  Serial.println(analogRead(SENSOR_WATER_IO));    
+  delay(100);
+  #endif
 
 }

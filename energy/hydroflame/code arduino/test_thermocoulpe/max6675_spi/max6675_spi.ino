@@ -12,6 +12,7 @@ void setup() {
   delay(500);  // Laisser au capteur le temps de démarrer
 
   thermocouple.begin();  // Initialisation (nécessaire avec cette lib)
+  Serial.println("init");
 }
 
 void loop() {
