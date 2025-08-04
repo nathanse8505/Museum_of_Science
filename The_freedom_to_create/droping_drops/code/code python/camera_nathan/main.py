@@ -30,9 +30,13 @@ def main():
     camera_working = False
     cap = None
     threshold = 80  # 60-80 is a good value for the threshold to convert the image to black and white. value 0-255 (higher values will make the image darker)
+    exposure = get_current_control(exposure_n)
+    wb_temp = get_current_control(wb_temp_n)
+    gain = get_current_control(gain_n)
 
     while not camera_working:
         camera_working, cap = camera_init()
+
     empty_captures_in_a_row = 0  # count the number of empty images in a row, for the idle mode when no hand is detected in the image
     last_capture = time.time()  # the time of the last capture
 
@@ -62,6 +66,18 @@ def main():
                 elif event.key == K_LEFT:
                     threshold -= 5
                     print(f"Threshold: {threshold}")
+                elif event.key == K_DOWN:
+                    exposure-=20
+                    set_manual_controls(exposure, wb_temp, gain)
+                elif event.key == K_UP:
+                    exposure += 20
+                    set_manual_controls(exposure, wb_temp, gain)
+                elif event.key == K_MINUS:
+                    gain-=2
+                    set_manual_controls(exposure, wb_temp, gain)
+                elif event.key == K_PLUS:
+                    gain += 20
+                    set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_p:
                     if not camera_working:
                         camera_working, cap = camera_init()
@@ -87,7 +103,7 @@ def main():
         elif camera_on and (time.time() - last_capture) >= space_time and arduino_done:
             # if the time since the last capture is more than 'space_time' seconds
             # and the arduino is done processing the previous image, take a new picture and send it to the arduino
-            img, camera_working, byte_list, black_percentage= main_process(cap, screen, camera_working, log_arduino, threshold, logger)
+            img, camera_working, byte_list, black_percentage = main_process(cap, screen, camera_working, log_arduino, threshold, logger)
             if not camera_working or img is None:
                 print("Camera not working. Skipping this cycle.")
                 logger.info("Camera not working. Skipping this cycle.")
@@ -95,10 +111,10 @@ def main():
             ################################## send data from camera to arduino ################################
             ####################################################################################################
             # if the image is not empty (black_percentage > empty_image_threshold), send the image to the arduino
-            if found_arduino and byte_list is not None and black_percentage > empty_image_threshold:
+            if found_arduino and byte_list is not None and black_percentage is not None and black_percentage > empty_image_threshold:
                 empty_captures_in_a_row = 0  # reset the empty captures counter if the image is not empty
                 reset_buffer_arduino(arduino, log_arduino)
-                VALID = send_data_to_arduino(arduino,byte_list)
+                VALID = send_data_to_arduino(arduino,byte_list,log_arduino)
                 if not VALID:
                     continue
                 last_capture = time.time()  # reset the last capture time

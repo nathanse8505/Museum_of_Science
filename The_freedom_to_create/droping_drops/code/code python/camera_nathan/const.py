@@ -8,7 +8,10 @@ import os
 import pygame
 
 camera_index = 0 # 0 is the default camera on the computer, change it to the camera you want to use
-
+DEVICE = "/dev/video0"
+exposure_n = "exposure_time_absolute"
+wb_temp_n = "white_balance_temperature"
+gain_n = "gain"
 # Camera configuration
 empty_image_threshold = 0.15 # if the percentage of black pixels in the image is less than this value, the image is considered empty (0-1)
 empty_captures_before_idle = 3  # if this many empty images are taken in a row, the camera will go to idle mode

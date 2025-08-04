@@ -11,14 +11,14 @@ from datetime import datetime
 import pygame
 
 
-def main_process(cap, screen, camera_working, log_arduino, threshold,logger):
+def main_process(cap, screen, camera_working, log_arduino, threshold, logger):
     # 1. Prendre une photo
     img, camera_working = take_pic(cap, camera_working)
     if not camera_working or img is None:
         return None, False, None, None # continuer à la prochaine boucle si erreur
 
     # Configurer l'image (redimensionnement, flip, rotation…)
-    #img = config_cam(img)
+    img = config_cam(img)
 
     # 2. Traitement de l’image
     byte_list, black_percentage, B_W_image = process_image(img, log_arduino, logger, threshold)
@@ -39,12 +39,12 @@ def main_process(cap, screen, camera_working, log_arduino, threshold,logger):
 def camera_init():
     try:
         cap = cv2.VideoCapture(camera_index)
-        min_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
-        max_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
+        #min_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
+        #max_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         #print(f"Valeur d'exposition actuelle : {min_exposure}")
-        cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)
-        cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)
-        cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)
+        #cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)
+        #cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)
+        #cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)
         if cap.isOpened():
             print("Camera is ready")
             camera_working = True
@@ -53,6 +53,31 @@ def camera_init():
         time.sleep(2)
     except Exception:
         return False, None
+
+def get_current_control(ctrl_name):
+    """Lit la valeur actuelle d'un paramètre via v4l2-ctl."""
+    try:
+        result = subprocess.check_output(f"v4l2-ctl -d {DEVICE} --get-ctrl={ctrl_name}", shell=True)
+        value = int(result.decode().strip().split(":")[-1])
+        return value
+    except Exception as e:
+        print(f"Erreur de lecture de {ctrl_name} : {e}")
+        return 0
+
+def set_manual_controls(exposure, wb_temp, gain):
+    # Passer en mode manuel pour l'exposition et la balance des blancs
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=auto_exposure=1")  # 1 = Manual Mode
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_automatic=0")
+
+    # Appliquer les valeurs
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_time_absolute={exposure}")
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature={wb_temp}")
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
+
+
+# Callback pour les sliders
+def nothing(x):
+    pass
 
 
 
@@ -66,9 +91,9 @@ def take_pic(cap, camera_working):
 
 
 def config_cam(img):
-    img = cropped_img(img)
-    img = cv2.flip(img, 0)  # flip the image vertically (the camera is upside down)
-    img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    #img = cropped_img(img)
+    img = cv2.flip(img, 1)  # flip the image vertically (the camera is upside down)
+    #img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
     # img = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
     return img
 
