@@ -67,16 +67,16 @@ def main():
                     threshold -= 5
                     print(f"Threshold: {threshold}")
                 elif event.key == K_DOWN:
-                    exposure-=20
+                    exposure -= 20
                     set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_UP:
                     exposure += 20
                     set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_MINUS:
-                    gain-=2
+                    gain -= 2
                     set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_PLUS:
-                    gain += 20
+                    gain += 2
                     set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_p:
                     if not camera_working:
@@ -114,7 +114,7 @@ def main():
             if found_arduino and byte_list is not None and black_percentage is not None and black_percentage > empty_image_threshold:
                 empty_captures_in_a_row = 0  # reset the empty captures counter if the image is not empty
                 reset_buffer_arduino(arduino, log_arduino)
-                VALID = send_data_to_arduino(arduino,byte_list,log_arduino)
+                VALID = send_data_to_arduino(arduino, byte_list, log_arduino)
                 if not VALID:
                     continue
                 last_capture = time.time()  # reset the last capture time
@@ -122,7 +122,7 @@ def main():
 
             ################################## send data from idle to arduino ##################################
             ####################################################################################################
-            elif found_arduino and byte_list is not None:
+            elif found_arduino and byte_list is not None and black_percentage is not None:
                 empty_captures_in_a_row += 1  # increment the empty captures counter
                 if empty_captures_in_a_row >= empty_captures_before_idle:  # if the empty captures counter is more than 'empty_captures_before_idle', go to idle mode
                     if log_arduino:
@@ -131,9 +131,9 @@ def main():
 
                     in_path_idle = os.path.join(idle_folder_name, idle_images[sample_index])
                     image_idle = cv2.imread(in_path_idle)  # read the image from the input path
-                    byte_list, _ = process_image(image_idle, log_arduino, threshold)  # process the sample image
+                    byte_list, _ = process_image(image_idle, log_arduino, logger, threshold)  # process the sample image
                     reset_buffer_arduino(arduino, log_arduino)
-                    VALID = send_data_to_arduino(arduino, byte_list)
+                    VALID = send_data_to_arduino(arduino, byte_list, log_arduino)
                     if not VALID:
                         continue
                     sample_index += 1  # increment the sample index to send the next sample image next time

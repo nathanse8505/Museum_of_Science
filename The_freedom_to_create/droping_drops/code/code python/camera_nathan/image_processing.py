@@ -9,6 +9,7 @@ import time
 import numpy as np
 from datetime import datetime
 import pygame
+import subprocess
 
 
 def main_process(cap, screen, camera_working, log_arduino, threshold, logger):
