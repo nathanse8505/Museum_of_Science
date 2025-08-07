@@ -66,17 +66,21 @@ def main():
                 elif event.key == K_LEFT:
                     threshold -= 5
                     print(f"Threshold: {threshold}")
-                elif event.key == K_DOWN:
-                    exposure -= 20
+                elif event.key == K_DOWN:              
+                    exposure = max(min(exposure - 20,MAX_EXPOSURE),MIN_EXPOSURE)
+                    print(f"exposure: {exposure}")
                     set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_UP:
-                    exposure += 20
+                    exposure = max(min(exposure + 20,MAX_EXPOSURE),MIN_EXPOSURE)
+                    print(f"exposure: {exposure}")
                     set_manual_controls(exposure, wb_temp, gain)
-                elif event.key == K_MINUS:
-                    gain -= 2
+                elif event.key == K_g:
+                    gain = max(min(gain - 2,MAX_GAIN),MIN_GAIN)
+                    print(f"gain: {gain}")
                     set_manual_controls(exposure, wb_temp, gain)
-                elif event.key == K_PLUS:
-                    gain += 2
+                elif event.key == K_t:
+                    gain = max(min(gain + 2,MAX_GAIN),MIN_GAIN)
+                    print(f"gain: {gain}")
                     set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_p:
                     if not camera_working:

@@ -9,9 +9,15 @@ import pygame
 
 camera_index = 0 # 0 is the default camera on the computer, change it to the camera you want to use
 DEVICE = "/dev/video0"
-exposure_n = "exposure_time_absolute"
+exposure_n = "exposure_absolute"
 wb_temp_n = "white_balance_temperature"
 gain_n = "gain"
+MIN_EXPOSURE = 1
+MAX_EXPOSURE = 5000
+MIN_GAIN = 0
+MAX_GAIN = 100
+MIN_WB = 2800
+MAX_WB = 6500
 # Camera configuration
 empty_image_threshold = 0.15 # if the percentage of black pixels in the image is less than this value, the image is considered empty (0-1)
 empty_captures_before_idle = 3  # if this many empty images are taken in a row, the camera will go to idle mode
@@ -31,7 +37,7 @@ BACKUP_COUNT = 10  # max number of log files, if all 10 are full, the first one 
 output_height = 40 # the height of the image that will be sent to the arduino (max value is 40 - DO NOT OVERPASS THIS VALUE)
 output_width = 64 # DO NOT CHANGE - the width of the image that will be sent to the arduino (the arduino can only receive images with a width of 64 pixels - DO NOT CHANGE)
 valve_on_time = 1 # time in milliseconds the valve will be open for each row in the image
-space_time = 20/1000 # time in seconds the arduino will wait after receiving the 's' key before starting the process of dropping the image
+space_time = 34/1000 # time in seconds the arduino will wait after receiving the 's' key before starting the process of dropping the image
 drawing_depth = 1 # the amount of layers each picture will be (1 is the default value)
 cassettes_num = 10 # the number of cassettes available in the exhibit
 

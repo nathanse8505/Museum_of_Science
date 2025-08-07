@@ -4,16 +4,18 @@ import os
 DEVICE = "/dev/video0"
 
 
-# Initialisation des réglages manuels
-def set_manual_controls(exposure, wb_temp, gain):
-    # Passer en mode manuel pour l'exposition et la balance des blancs
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=auto_exposure=1")  # 1 = Manual Mode
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_automatic=0")
+previous_controls = {"exposure": -1, "wb_temp": -1, "gain": -1}
 
-    # Appliquer les valeurs
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_time_absolute={exposure}")
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature={wb_temp}")
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
+def set_manual_controls(exposure, wb_temp, gain):
+    if exposure != previous_controls["exposure"]:
+        os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_absolute={exposure}")
+        previous_controls["exposure"] = exposure
+    if wb_temp != previous_controls["wb_temp"]:
+        os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature={wb_temp}")
+        previous_controls["wb_temp"] = wb_temp
+    if gain != previous_controls["gain"]:
+        os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
+        previous_controls["gain"] = gain
 
 
 # Callback pour les sliders

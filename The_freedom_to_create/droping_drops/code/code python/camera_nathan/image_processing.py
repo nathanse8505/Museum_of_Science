@@ -19,7 +19,7 @@ def main_process(cap, screen, camera_working, log_arduino, threshold, logger):
         return None, False, None, None # continuer à la prochaine boucle si erreur
 
     # Configurer l'image (redimensionnement, flip, rotation…)
-    img = config_cam(img)
+    #img = config_cam(img)
 
     # 2. Traitement de l’image
     byte_list, black_percentage, B_W_image = process_image(img, log_arduino, logger, threshold)
@@ -40,6 +40,9 @@ def main_process(cap, screen, camera_working, log_arduino, threshold, logger):
 def camera_init():
     try:
         cap = cv2.VideoCapture(camera_index)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+
         #min_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         #max_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         #print(f"Valeur d'exposition actuelle : {min_exposure}")
@@ -65,15 +68,18 @@ def get_current_control(ctrl_name):
         print(f"Erreur de lecture de {ctrl_name} : {e}")
         return 0
 
+# Initialisation des réglages manuels
 def set_manual_controls(exposure, wb_temp, gain):
-    # Passer en mode manuel pour l'exposition et la balance des blancs
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=auto_exposure=1")  # 1 = Manual Mode
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_automatic=0")
+    # 1. Passer en mode manuel pour exposition et white balance
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_auto=1")  # 1 = Manual Mode
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature_auto=0")
 
-    # Appliquer les valeurs
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_time_absolute={exposure}")
+    # 2. Appliquer les réglages
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_absolute={exposure}")
     os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature={wb_temp}")
     os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
+
+
 
 
 # Callback pour les sliders
