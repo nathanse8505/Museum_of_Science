@@ -30,9 +30,10 @@ def main():
     camera_working = False
     cap = None
     threshold = 80  # 60-80 is a good value for the threshold to convert the image to black and white. value 0-255 (higher values will make the image darker)
-    exposure = get_current_control(exposure_n)
-    wb_temp = get_current_control(wb_temp_n)
-    gain = get_current_control(gain_n)
+    config = load_config()
+    exposure = config["exposure"]
+    wb_temp = config["wb_temp"]
+    gain = config["gain"]
 
     while not camera_working:
         camera_working, cap = camera_init()
@@ -82,6 +83,8 @@ def main():
                     gain = max(min(gain + 2,MAX_GAIN),MIN_GAIN)
                     print(f"gain: {gain}")
                     set_manual_controls(exposure, wb_temp, gain)
+                elif event.key == K_s:
+                    save_config(exposure, wb_temp, gain)
                 elif event.key == K_p:
                     if not camera_working:
                         camera_working, cap = camera_init()

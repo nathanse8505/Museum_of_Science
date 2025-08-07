@@ -10,6 +10,7 @@ import numpy as np
 from datetime import datetime
 import pygame
 import subprocess
+import json
 
 
 def main_process(cap, screen, camera_working, log_arduino, threshold, logger):
@@ -58,15 +59,6 @@ def camera_init():
     except Exception:
         return False, None
 
-def get_current_control(ctrl_name):
-    """Lit la valeur actuelle d'un paramètre via v4l2-ctl."""
-    try:
-        result = subprocess.check_output(f"v4l2-ctl -d {DEVICE} --get-ctrl={ctrl_name}", shell=True)
-        value = int(result.decode().strip().split(":")[-1])
-        return value
-    except Exception as e:
-        print(f"Erreur de lecture de {ctrl_name} : {e}")
-        return 0
 
 # Initialisation des réglages manuels
 def set_manual_controls(exposure, wb_temp, gain):
@@ -86,6 +78,26 @@ def set_manual_controls(exposure, wb_temp, gain):
 def nothing(x):
     pass
 
+def load_config():
+    if os.path.exists(CONFIG_FILE):
+        with open(CONFIG_FILE, 'r') as f:
+            try:
+                config = json.load(f)
+                print("Configuration chargée :", config)
+                return config
+            except Exception as e:
+                print("Erreur lecture config:", e)
+    return {"exposure": 157, "wb_temp": 4600, "gain": 0}
+
+def save_config(exposure, wb_temp, gain):
+    config = {
+        "exposure": exposure,
+        "wb_temp": wb_temp,
+        "gain": gain,
+    }
+    with open(CONFIG_FILE, 'w') as f:
+        json.dump(config, f)
+    print("Configuration sauvegardée :", config)
 
 
 def take_pic(cap, camera_working):

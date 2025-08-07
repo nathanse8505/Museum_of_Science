@@ -1,6 +1,6 @@
 #include "const.h"
 #include "basic_routine.h"
-//#define TEST
+#define TEST
 
 void setup() {
   // Configure pin modes
@@ -8,6 +8,7 @@ void setup() {
   pinMode(RELAY_VALVE_WATER_IO, OUTPUT);                 // Water valve control
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(BAUDRATE);                          // Start serial communication  
+  Serial.println("init");
 }
 
 void loop() {
@@ -16,12 +17,16 @@ void loop() {
   while(check_water_level() == false){
     digitalWrite(LED_BUILTIN, HIGH);
     FILL_WATER();
+    #ifdef TEST
+      Serial.println(analogRead(SENSOR_WATER_IO));    
+      delay(100);
+    #endif
   }
    digitalWrite(LED_BUILTIN, LOW);
    
   #ifdef TEST
-  Serial.println(analogRead(SENSOR_WATER_IO));    
-  delay(100);
+    Serial.println(analogRead(SENSOR_WATER_IO));    
+    delay(100);
   #endif
 
 }

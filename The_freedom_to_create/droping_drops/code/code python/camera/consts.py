@@ -1,7 +1,15 @@
 import platform
 
 camera_index = 0 # 0 is the default camera on the computer, change it to the camera you want to use
+DEVICE = "/dev/video0"
+CONFIG_FILE = "camera_config.json"
 
+MIN_EXPOSURE = 1
+MAX_EXPOSURE = 5000
+MIN_GAIN = 0
+MAX_GAIN = 100
+MIN_WB = 2800
+MAX_WB = 6500
 # Camera configuration
 threshold = 80  #60-80 is a good value for the threshold to convert the image to black and white. value 0-255 (higher values will make the image darker)
 empty_image_threshold = 0.15 # if the percentage of black pixels in the image is less than this value, the image is considered empty (0-1)

@@ -16,8 +16,10 @@ void setup() {
   Serial.begin(BAUDRATE);                          // Start serial communication
   delay(100);                                      // Give time to establish connection
   wdt_enable(WDTO_4S);   
-  setZeroCurent();                          // Enable watchdog timer with 2-second timeout
+  //setZeroCurent();                          // Enable watchdog timer with 2-second timeout
   thermocouple.begin();
+  read_temperature();
+  Serial.println("init");
 }
 
 void loop() {
@@ -27,24 +29,28 @@ void loop() {
   // Check if ignition button is pressed
   buttonPressed = PRESS_BUTTON_IGNITION();
 
-  // Start a new session
-  flag_new_session = true;
-
-  // Wait until the water tank is full
-  while(check_water_level() == false){
-    FILL_WATER();
-  }
 
   // After some time, move on to hydrogen and ignition phase
   if ((millis() - time_start) > ACTIVATION_TIME) {
+    wdt_reset();
     
     // If it's the first entry into this phase
     if(flag_new_session){
-      digitalWrite(LED_ACTIVATION, HIGH);  // Turn on activation LED
-      DEACTIVE_FAN();   
+      DEACTIVE_FAN(); 
+
+      // Wait until the water tank is full
+      while(check_water_level() == false){
+        wdt_reset();
+        FILL_WATER();
+        Serial.println("fill water");
+      }
+
+      digitalWrite(LED_ACTIVATION, HIGH);  // Turn on activation LED  
       flag_ready_fan = false;                   // Turn off fan
       flag_new_session = false;             // new Session ready
-      
+      Serial.println("we can push the button");
+      Serial.println("led activated");
+      Serial.println();
     }
 
     // On first button press (ignition)
@@ -54,6 +60,8 @@ void loop() {
       time_start_hydro = millis();        // Start hydrogen timer
       flag_first_press = true;           // Mark ignition as pressed
       ready_flag_fire = true;            // Ready to spark
+      Serial.println("button has been pressed");
+      Serial.println("the hydro start");
     }
 
     /*// If no current detected after first press, turn off system
@@ -66,23 +74,30 @@ void loop() {
       SPARK_ON();                       // Spark ignition
       ready_flag_fire = false;          // No more sparks until reset
       time_new_session = millis();      // Track session time
+      Serial.println("the spark has been activated");
     }
 
+    //read_temperature();
     // If no fire detected after spark, turn off current
-    if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false && !check_fire()){
-        reset_session();
+    if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false && check_fire_test() == false){
+      Serial.println("reset session because no fire");
+      reset_session();
     }
+    //check_fire_test();
 
     // If session timeout reached after spark, shut down and reset
-    if (millis() - time_new_session > SESSION_TIME && flag_first_press == true && ready_flag_fire == false && check_fire()){
-        reset_session();
-        flag_ready_fan = true;
+    if (millis() - time_new_session > SESSION_TIME && flag_first_press == true && ready_flag_fire == false && check_fire_test()){
+      Serial.println("end session");
+      reset_session();
+      flag_ready_fan = true;
     }
+    delay(1);
   }
 
   // If it's a new session, activate the fan
   if(flag_ready_fan){
      ACTIVE_FAN();
+     //Serial.println("active fan");
   }
 
 }

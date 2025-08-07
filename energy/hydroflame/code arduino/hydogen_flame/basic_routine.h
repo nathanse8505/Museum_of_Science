@@ -55,30 +55,64 @@ bool check_water_level(){
   return true;
 }
 
-bool check_fire(){
-  // Lecture obligatoire pour mettre à jour la température
- 
-
-  if (tempC >= TEMP_TRESHOLD){
-    return true;
-  }
-  return false;
-}
-
 float read_temperature(){
    if(millis() - timer_read_temp > DELAY_TEMP){
+    timer_read_temp = millis();
     status_sensor = thermocouple.read();
+
     if (status_sensor == STATUS_OK) {
       tempC = thermocouple.getCelsius();
-      Serial.print("Température : " + String(tempC) + " °C");
+      Serial.println("Température : " + String(tempC) + " °C");
       return tempC;
     }
     Serial.print("Erreur capteur : code "  + String(status_sensor));
-    timer_read_temp = millis();
     return 0;
   }
   
 }
+
+bool check_fire(){
+  // Lecture obligatoire pour mettre à jour la température
+  if(read_temperature() > TEMP_TRESHOLD){
+    Serial.println("true");
+    return true;
+  }
+  Serial.println("false");
+  return false;
+}
+
+bool r_check_fire(){
+   if(millis() - timer_read_temp > DELAY_TEMP){
+    timer_read_temp = millis();
+    status_sensor = thermocouple.read();
+
+    if (status_sensor == STATUS_OK) {
+      tempC = thermocouple.getCelsius();
+      Serial.println("Température : " + String(tempC) + " °C");
+      
+      if(tempC > TEMP_TRESHOLD){
+        Serial.println("true");
+        return true;
+      }
+    }
+    Serial.println("Erreur capteur : code "  + String(status_sensor));
+    return false;
+  }
+ 
+}
+
+bool check_fire_test(){
+  // Lecture obligatoire pour mettre à jour la température
+  float temp1 = map(analogRead(A6),0,1024,0,130);
+  if(temp1 > TEMP_TRESHOLD){
+    Serial.println(temp1);
+    return true;
+  }
+  Serial.println("false");
+  return false;
+}
+
+
 
 void FILL_WATER(){
   digitalWrite(RELAY_VALVE_WATER_IO, HIGH);
@@ -133,6 +167,7 @@ void DEACTIVE_FAN() {
 void reset_session() {
   TURN_OFF_CURRENT();
   flag_first_press = false;
+  flag_new_session = true;
   time_start = millis();
 }
 

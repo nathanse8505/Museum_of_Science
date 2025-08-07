@@ -73,7 +73,7 @@ float ZeroCurrentSensor = 0;
 const int32_t MEASURE_INTERVAL_TIME = 50;  // ms measure interval 
 
 //////////// WATER ///////////
-const int16_t NO_DETECTION = 200;//in bit resolution
+const int16_t NO_DETECTION = 300;//in bit resolution
 const int16_t DELAY_FILL_WATER = 1000;//in ms
 const int16_t DELAY_AFTER_FILL_WATER = 100;//in ms
 

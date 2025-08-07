@@ -11,46 +11,7 @@ import numpy as np
 from pygame.locals import *
 from consts import *
 import random
-import json
 
-# Initialisation des réglages manuels
-def set_manual_controls(exposure, wb_temp, gain):
-    # 1. Passer en mode manuel pour exposition et white balance
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_auto=1")  # 1 = Manual Mode
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature_auto=0")
-
-    # 2. Appliquer les réglages
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_absolute={exposure}")
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature={wb_temp}")
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
-
-
-
-
-# Callback pour les sliders
-def nothing(x):
-    pass
-
-def load_config():
-    if os.path.exists(CONFIG_FILE):
-        with open(CONFIG_FILE, 'r') as f:
-            try:
-                config = json.load(f)
-                print("Configuration chargée :", config)
-                return config
-            except Exception as e:
-                print("Erreur lecture config:", e)
-    return {"exposure": 157, "wb_temp": 4600, "gain": 0}
-
-def save_config(exposure, wb_temp, gain):
-    config = {
-        "exposure": exposure,
-        "wb_temp": wb_temp,
-        "gain": gain,
-    }
-    with open(CONFIG_FILE, 'w') as f:
-        json.dump(config, f)
-    print("Configuration sauvegardée :", config)
 
 # display message on screen with the current status of the camera and the arduino, used when the camera mode is off
 def msg_on_screen():
@@ -220,9 +181,9 @@ cap = None
 while True:
     try:
         cap = cv2.VideoCapture(camera_index)  # open the camera
-        #cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)  # disable automatic exposure - IMPORTANT
-        #cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)  # disable automatic white balance - IMPORTANT
-        #cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)  # set the exposure to a fixed value - IMPORTANT
+        cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0 if not auto_exposure else 1)  # disable automatic exposure - IMPORTANT
+        cap.set(cv2.CAP_PROP_AUTO_WB, 0 if not auto_white_balance else 1)  # disable automatic white balance - IMPORTANT
+        cap.set(cv2.CAP_PROP_EXPOSURE, fixed_exposure)  # set the exposure to a fixed value - IMPORTANT
         if cap.isOpened():
             print("Camera is ready")
             camera_working = True
@@ -256,11 +217,6 @@ sample_index = 0  # the index of the sample image (idle image) to send to the ar
 arduino_done = True  # True if the arduino is done processing the previous image and ready to receive the next image
 idle = False  # True if the camera is in idle mode (no hand detected in the image for 'empty_captures_before_idle' times in a row)
 send_parameters = False  # True if the parameters already sent to the arduino
-
-config = load_config()
-exposure = config["exposure"]
-wb_temp = config["wb_temp"]
-gain = config["gain"]
 
 running = True  # True if the program is running
 while(running):
@@ -304,32 +260,6 @@ while(running):
             if event.key == K_LEFT:  # if the left arrow key is pressed, decrease the threshold for the black and white filter
                 threshold -= 10
                 print(f"Threshold: {threshold}")
-            elif event.key == K_DOWN:              
-                exposure = max(min(exposure - 20,MAX_EXPOSURE),MIN_EXPOSURE)
-                print(f"exposure: {exposure}")
-                set_manual_controls(exposure, wb_temp, gain)
-            elif event.key == K_UP:
-                exposure = max(min(exposure + 20,MAX_EXPOSURE),MIN_EXPOSURE)
-                print(f"exposure: {exposure}")
-                set_manual_controls(exposure, wb_temp, gain)
-            elif event.key == K_g:
-                gain = max(min(gain - 2,MAX_GAIN),MIN_GAIN)
-                print(f"gain: {gain}")
-                set_manual_controls(exposure, wb_temp, gain)
-            elif event.key == K_t:
-                gain = max(min(gain + 2,MAX_GAIN),MIN_GAIN)
-                print(f"gain: {gain}")
-                set_manual_controls(exposure, wb_temp, gain)
-            elif event.key == K_w:
-                wb_temp = max(min(wb_temp + 40,MAX_WB),MIN_WB)
-                print(f"wb_temp: {wb_temp}")
-                set_manual_controls(exposure, wb_temp, gain)
-            elif event.key == K_e:
-                wb_temp = max(min(wb_temp - 40,MAX_WB),MIN_WB)
-                print(f"wb_temp: {wb_temp}")
-                set_manual_controls(exposure, wb_temp, gain)
-            elif event.key == K_s:
-                save_config(exposure, wb_temp, gain)
 
     if camera_on and time.time() - last_capture >= space_time/1000 and arduino_done:  
         # if the time since the last capture is more than 'space_time' milliseconds 
@@ -345,21 +275,21 @@ while(running):
 
         img = cv2.flip(img, 0)  # flip the image vertically (the camera is upside down)
         #img = cv2.rotate(img,cv2.ROTATE_90_CLOCKWISE)
-        
-        ## Calculate the dimensions of the central region to keep after cropping
-        #height, width = img.shape[:2]
-        #crop_height = int(height * crop_percentage[1] / 100)
-        #crop_width = int(width * crop_percentage[0] / 100)
+
+        # Calculate the dimensions of the central region to keep after cropping
+        height, width = img.shape[:2]
+        crop_height = int(height * crop_percentage[1] / 100)
+        crop_width = int(width * crop_percentage[0] / 100)
         # Calculate the starting point for cropping
-        #start_x = (width - crop_width) // 2
-        #start_y = (height - crop_height) // 2
+        start_x = (width - crop_width) // 2
+        start_y = (height - crop_height) // 2
         # Crop the central region of the image
-        #cropped_image = img[start_y:start_y + crop_height, start_x:start_x + crop_width]
+        cropped_image = img[start_y:start_y + crop_height, start_x:start_x + crop_width]
         # Create a new image with the same dimensions as the original, filled with white
-        #new_image = np.full_like(img, 255, dtype=np.uint8)
+        new_image = np.full_like(img, 255, dtype=np.uint8)
         # Place the cropped image in the center of the new image
-        #new_image[start_y:start_y + crop_height, start_x:start_x + crop_width] = cropped_image
-        #img = new_image
+        new_image[start_y:start_y + crop_height, start_x:start_x + crop_width] = cropped_image
+        img = new_image
 
         time_stamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # get the current time to use it as the name of the image
         if not is_folder_created:  # if the folder to save the images in is not created, create it
