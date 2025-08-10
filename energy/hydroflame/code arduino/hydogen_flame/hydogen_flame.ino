@@ -17,8 +17,8 @@ void setup() {
   delay(100);                                      // Give time to establish connection
   wdt_enable(WDTO_4S);   
   //setZeroCurent();                          // Enable watchdog timer with 2-second timeout
-  thermocouple.begin();
-  read_temperature();
+  //thermocouple.begin();
+  readTemperature();
   Serial.println("init");
 }
 
@@ -32,7 +32,6 @@ void loop() {
 
   // After some time, move on to hydrogen and ignition phase
   if ((millis() - time_start) > ACTIVATION_TIME) {
-    wdt_reset();
     
     // If it's the first entry into this phase
     if(flag_new_session){
@@ -79,14 +78,18 @@ void loop() {
 
     //read_temperature();
     // If no fire detected after spark, turn off current
-    if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false && check_fire_test() == false){
-      Serial.println("reset session because no fire");
-      reset_session();
-    }
-    //check_fire_test();
+    if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false){
+      if (millis() - lastReadTemp >= DELAY_TEMP) {
+        lastReadTemp = millis();
+        if(detect_drop_temp()){
+          Serial.println("reset session because no fire");
+          reset_session();
+        }
+      }
+    } 
 
     // If session timeout reached after spark, shut down and reset
-    if (millis() - time_new_session > SESSION_TIME && flag_first_press == true && ready_flag_fire == false && check_fire_test()){
+    if (millis() - time_new_session > SESSION_TIME && flag_first_press == true && ready_flag_fire == false){
       Serial.println("end session");
       reset_session();
       flag_ready_fan = true;

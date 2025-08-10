@@ -4,7 +4,7 @@
 #include <avr/wdt.h>
 #include "MAX6675.h"
 
-MAX6675 thermocouple(THERMOCS, THERMOD , THERMOCLK);
+//MAX6675 thermocouple(THERMOCS, THERMOD , THERMOCLK);
 //#include <MovingAverage.h>  // see https://github.com/careyi3/MovingAverage
 //MovingAverage filter(MOVING_AVG_LENGTH);  // define/use the movinge average object
 
@@ -55,60 +55,46 @@ bool check_water_level(){
   return true;
 }
 
-float read_temperature(){
-   if(millis() - timer_read_temp > DELAY_TEMP){
-    timer_read_temp = millis();
-    status_sensor = thermocouple.read();
 
-    if (status_sensor == STATUS_OK) {
-      tempC = thermocouple.getCelsius();
-      Serial.println("Température : " + String(tempC) + " °C");
-      return tempC;
-    }
-    Serial.print("Erreur capteur : code "  + String(status_sensor));
-    return 0;
-  }
+
+// --- Fonction pour lire la température depuis un NTC ---
+float readTemperature() {
+  int analogValue = analogRead(NTC_PIN);
   
+  // Conversion analogique -> résistance
+  float resistance = R_SERIE / ((1023.0 / analogValue) - 1.0);
+  
+  // Formule Beta pour obtenir la température en Kelvin
+  float temperatureK = 1.0 / ( (1.0 / T0) + (1.0 / BETA) * log(resistance / R0) );
+  
+  // Conversion en Celsius
+  float temperatureC = temperatureK - 273.15;
+  Serial.print("Température : ");
+  Serial.println(temperatureC);
+  return temperatureC;
 }
 
-bool check_fire(){
-  // Lecture obligatoire pour mettre à jour la température
-  if(read_temperature() > TEMP_TRESHOLD){
-    Serial.println("true");
-    return true;
-  }
-  Serial.println("false");
-  return false;
-}
+// --- Fonction pour détecter baisse de température ---
+bool detect_drop_temp() {
+  float tempNow = readTemperature();
 
-bool r_check_fire(){
-   if(millis() - timer_read_temp > DELAY_TEMP){
-    timer_read_temp = millis();
-    status_sensor = thermocouple.read();
+  Serial.print(" last Température : ");
+  Serial.println(lastTemp);
 
-    if (status_sensor == STATUS_OK) {
-      tempC = thermocouple.getCelsius();
-      Serial.println("Température : " + String(tempC) + " °C");
-      
-      if(tempC > TEMP_TRESHOLD){
-        Serial.println("true");
-        return true;
-      }
-    }
-    Serial.println("Erreur capteur : code "  + String(status_sensor));
+  // Première mesure : on l'accepte toujours comme "false"
+  if (lastTemp == FIRST_SESSION_TEMP) {
+    lastTemp = tempNow;
     return false;
   }
- 
-}
 
-bool check_fire_test(){
-  // Lecture obligatoire pour mettre à jour la température
-  float temp1 = map(analogRead(A6),0,1024,0,130);
-  if(temp1 > TEMP_TRESHOLD){
-    Serial.println(temp1);
+  // Si la température baisse par rapport à la précédente -> true
+  if (tempNow <= lastTemp) {
+    lastTemp = tempNow;
     return true;
   }
-  Serial.println("false");
+
+  // Sinon (stable ou hausse) -> true
+  lastTemp = tempNow;
   return false;
 }
 
