@@ -11,7 +11,7 @@ MAX_GAIN = 100
 MIN_WB = 2800
 MAX_WB = 6500
 # Camera configuration
-threshold = 80  #60-80 is a good value for the threshold to convert the image to black and white. value 0-255 (higher values will make the image darker)
+threshold = 180  #60-80 is a good value for the threshold to convert the image to black and white. value 0-255 (higher values will make the image darker)
 empty_image_threshold = 0.15 # if the percentage of black pixels in the image is less than this value, the image is considered empty (0-1)
 empty_captures_before_idle = 3  # if this many empty images are taken in a row, the camera will go to idle mode
 crop_percentage = [90,95]  # the percentage of the image that WILL STAY after cropping the sides (the first value is the percentage of the width, the second value is the percentage of the height)

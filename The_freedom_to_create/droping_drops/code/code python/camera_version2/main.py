@@ -16,11 +16,11 @@ import json
 # Initialisation des réglages manuels
 def set_manual_controls(exposure, wb_temp, gain):
     # 1. Passer en mode manuel pour exposition et white balance
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_auto=1")  # 1 = Manual Mode
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature_auto=0")
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=auto_exposure=1")  # 1 = Manual Mode
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_automatic=0")
 
     # 2. Appliquer les réglages
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_absolute={exposure}")
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_time_absolute={exposure}")
     os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature={wb_temp}")
     os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
 
@@ -261,7 +261,7 @@ config = load_config()
 exposure = config["exposure"]
 wb_temp = config["wb_temp"]
 gain = config["gain"]
-
+set_manual_controls(exposure, wb_temp, gain)
 running = True  # True if the program is running
 while(running):
 

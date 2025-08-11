@@ -17,7 +17,6 @@ void setup() {
   delay(100);                                      // Give time to establish connection
   wdt_enable(WDTO_4S);   
   //setZeroCurent();                          // Enable watchdog timer with 2-second timeout
-  //thermocouple.begin();
   readTemperature();
   Serial.println("init");
 }
@@ -75,7 +74,10 @@ void loop() {
       time_new_session = millis();      // Track session time
       Serial.println("the spark has been activated");
     }
-
+    if (millis() - lastReadTemp >= DELAY_TEMP) {
+      lastReadTemp = millis();
+      readTemperature();
+    }
     //read_temperature();
     // If no fire detected after spark, turn off current
     if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false){
