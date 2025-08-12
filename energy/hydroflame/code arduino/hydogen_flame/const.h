@@ -79,7 +79,7 @@ const int16_t DELAY_FILL_WATER = 1000;//in ms
 const int16_t DELAY_AFTER_FILL_WATER = 100;//in ms
 
 //////////// FIRE ///////////
-const int FIRE_TIME = 15000;
+const int FIRE_TIME = 10000;
 const float BETA = 6224;            // Constante Beta du NTC (à adapter à ton capteur)
 const float R_SERIE = 9218.0;      // Résistance fixe en série (10k par exemple)
 const int  DELAY_TEMP = 1000;

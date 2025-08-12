@@ -78,21 +78,20 @@ float readTemperature() {
 bool detect_drop_temp() {
   float tempNow = readTemperature();
 
-  Serial.print(" last Température : ");
-  Serial.println(lastTemp);
-
   // Première mesure : on l'accepte toujours comme "false"
   if (lastTemp == FIRST_SESSION_TEMP) {
     lastTemp = tempNow;
     return false;
   }
+  Serial.print("delta Température : ");
+  Serial.println(tempNow - lastTemp);
 
   // Si la température baisse par rapport à la précédente -> true
   if (tempNow <= lastTemp) {
     lastTemp = tempNow;
     return true;
   }
-
+  
   // Sinon (stable ou hausse) -> true
   lastTemp = tempNow;
   return false;

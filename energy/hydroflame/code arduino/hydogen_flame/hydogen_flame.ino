@@ -74,10 +74,7 @@ void loop() {
       time_new_session = millis();      // Track session time
       Serial.println("the spark has been activated");
     }
-    if (millis() - lastReadTemp >= DELAY_TEMP) {
-      lastReadTemp = millis();
-      readTemperature();
-    }
+    
     //read_temperature();
     // If no fire detected after spark, turn off current
     if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false){
@@ -87,6 +84,12 @@ void loop() {
           Serial.println("reset session because no fire");
           reset_session();
         }
+      }
+    }
+    else{
+      if (millis() - lastReadTemp >= DELAY_TEMP) {
+        lastReadTemp = millis();
+        readTemperature();
       }
     } 
 
