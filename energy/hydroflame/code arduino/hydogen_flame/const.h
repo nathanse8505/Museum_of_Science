@@ -61,18 +61,6 @@ const int16_t DELAY_FAN_ON = 200;
 const int16_t DELAY_FAN_OFF = 10;
 bool flag_ready_fan = false;
 
-//////////////  CURRENT //////////
-const float READ_TO_CURRENT = 0.02639;  // A/bit, (5000mV/(1024*185m))       4mV/bit / 185mV/A
-const int16_t ZERO_CURRENT_READ = 512; //2.5 Volt sensor zero current output
-const int16_t CURRENT_SYSTEM = 2;
-const int16_t ITERATION = 100;
-int32_t total_offset_sensor = 0;
-int16_t offset_sensor = 0;
-int16_t current_sensor = 0;  // value read from sensor
-float current_value = 0;        // calculated current [A]
-float ZeroCurrentSensor = 0;
-const int32_t MEASURE_INTERVAL_TIME = 50;  // ms measure interval 
-
 //////////// WATER ///////////
 const int16_t NO_DETECTION = 300;//in bit resolution
 const int16_t DELAY_FILL_WATER = 1000;//in ms
@@ -99,6 +87,9 @@ const int DELAY_AFTER_ON = 500;//ms
 //////////////////////////////////
 
 
-
-
+////////current INA////////
+#define I2C_ADDRESS 0x40
+const int16_t CURRENT_SYSTEM = 5;
+const int32_t CURRENT_INTERVAL_TIME = 500;  // ms measure interval 
+long time_read_current = 0;
 #endif

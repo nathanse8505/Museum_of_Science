@@ -2,7 +2,9 @@
 #define basic_routine
 #include "const.h"
 #include <avr/wdt.h>
-#include "MAX6675.h"
+#include <INA226_WE.h>
+
+INA226_WE ina226 = INA226_WE(I2C_ADDRESS);
 
 //MAX6675 thermocouple(THERMOCS, THERMOD , THERMOCLK);
 //#include <MovingAverage.h>  // see https://github.com/careyi3/MovingAverage
@@ -17,31 +19,10 @@ void TURN_ON_CURRENT(){
    delay(DELAY_AFTER_ON);
 }
 
-void setZeroCurent(){   
-    for (int i = 0; i < ITERATION; i++){
-      offset_sensor = analogRead(CURRENT_INPUT_IO);
-      if(offset_sensor <= 10 || offset_sensor >= 1000){
-          Serial.println("error reading");
-          i--;
-          continue;
-      }
-      total_offset_sensor += offset_sensor;
-    }
-
-    ZeroCurrentSensor = (float) total_offset_sensor / ITERATION;
-    Serial.print("the zero current offset in bit is:" + String(ZeroCurrentSensor));
-}
-
-float getcurrent(){
-  current_sensor = analogRead(CURRENT_INPUT_IO);
-  current_value = (current_sensor - ZeroCurrentSensor) * READ_TO_CURRENT;
-  delay(MEASURE_INTERVAL_TIME);
-  return current_value;
-}
 
 bool check_current(){
-  
-  if (getcurrent() > CURRENT_SYSTEM){
+  ina226.readAndClearFlags();
+  if (ina226.getCurrent_A() > CURRENT_SYSTEM){
     return true;
   }
   return false;
