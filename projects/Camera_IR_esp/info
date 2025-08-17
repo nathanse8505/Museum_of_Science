@@ -4,7 +4,7 @@
   "name": "Camera_IR_esp",
   "content": "",
   "created_at": "2025-07-06 21:06:43",
-  "updated_at": "2025-07-28 01:25:19",
+  "updated_at": "2025-08-18 02:45:20",
   "stick": "",
   "documents": [
     {
@@ -14,11 +14,11 @@
       "docType": "1",
       "master": "",
       "thumb": "/images/thumb-default.png",
-      "updateTime": 1753655060,
+      "updateTime": 1755471675,
       "createTime": 1752006540,
       "histories": [],
       "created_at": "2025-07-08 23:29:00",
-      "updated_at": "2025-07-28 01:24:20",
+      "updated_at": "2025-08-18 02:01:15",
       "BOM": [
         [
           "Value",
@@ -306,8 +306,8 @@
         "f367c9043b9d696814add546ab641d32": 3,
         "48b415e9bcfe1ccc6e0592491d7bb6b2": 1,
         "2a539fa542fe4dcf8aa715f674f091cd": 1,
-        "66ec796c82c54ce3a197a235f76c93a6": 1,
-        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "66ec796c82c54ce3a197a235f76c93a6": 1
       }
     },
     {
@@ -329,11 +329,11 @@
         "84f1ed3c8ee94504833047c26b4d21a2": 3,
         "e2c307bc2a8d4381a6ae5d94eb862a32": 5,
         "5304eb2b87a945debf431931d498d92a": 1,
-        "30b695453134446790baaf4945a6642d": 1,
         "91621233907c4d1081fc72da014dc153": 1,
         "89243c15a2974ba08305eced8ca2c9d4": 1,
         "1337670005c6484c999f9b4c272ee9fe": 1,
-        "6096354dbd164d9da7a0d578cee46115": 1
+        "6096354dbd164d9da7a0d578cee46115": 1,
+        "30b695453134446790baaf4945a6642d": 1
       },
       "BOM": [
         [
@@ -584,11 +584,11 @@
           }
         ]
       ],
-      "updateTime": 1753655119,
+      "updateTime": 1755474320,
       "createTime": 1753311309,
       "histories": [],
       "created_at": "2025-07-24 01:55:09",
-      "updated_at": "2025-07-28 01:25:19"
+      "updated_at": "2025-08-18 02:45:20"
     }
   ],
   "sort": [
@@ -598,5 +598,5 @@
   "title": "Camera_IR_esp",
   "foldername": "Camera_IR_esp",
   "schfilename": "Camera_IR.json",
-  "schfilemtime": 1753655060907
+  "schfilemtime": 1755471675347
 }
