@@ -1,13 +1,11 @@
 import os
 import serial
-from typing import List
 from datetime import datetime
 os.environ["OPENCV_LOG_LEVEL"]="SILENT" # to suppress OpenCV warnings and errors
 os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide" # to suppress Pygame welcome message
 import cv2
 import time
 import pygame
-import numpy as np
 from pygame.locals import *
 from consts import *
 import random
@@ -25,11 +23,10 @@ def set_manual_controls(exposure, wb_temp, gain):
     os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
 
 
-
-
 # Callback pour les sliders
 def nothing(x):
     pass
+
 
 def load_config():
     if os.path.exists(CONFIG_FILE):
@@ -53,15 +50,18 @@ def save_config(exposure, wb_temp, gain):
     print("Configuration sauvegardée :", config)
 
 # display message on screen with the current status of the camera and the arduino, used when the camera mode is off
-def msg_on_screen():
-    global font, screen, screen_width, screen_height, font_size, found_arduino, camera_working, threshold
+
+def msg_on_screen(screen, camera_working, found_arduino,threshold, exposure, wb_temp, gain):
     text0 = "Press P to start/stop camera mode"
     text1 = "Press RIGHT/LEFT to change threshold for black and white filter"
     text2 = "threshold: " + str(threshold)
-    text3 = "----------------------------------------------------------------------"
-    text4 = "Arduino not found" if not found_arduino else "Arduino found"
-    text5 = "Camera is connected" if camera_working else "Camera is NOT connected - reconnect the camera and press P to start"
-    text = [text0, text1, text2, text3, text4, text5]
+    text3 = "exposure: " + str(exposure)
+    text4 = "white balance temperature: " + str(wb_temp)
+    text5 = "gain: " + str(gain)
+    text6 = "----------------------------------------------------------------------"
+    text7 = "Arduino not found" if not found_arduino else "Arduino found"
+    text8 = "Camera is connected" if camera_working else "Camera is NOT connected - reconnect the camera and press P to start"
+    text = [text0, text1, text2, text3, text4, text5, text6, text7,text8]
     y_position = screen_height // 2 - len(text) * font_size // 2
     for line in text:
         text_surface = font.render(line, True, (255, 255, 255))
@@ -321,11 +321,11 @@ while(running):
                 print(f"gain: {gain}")
                 set_manual_controls(exposure, wb_temp, gain)
             elif event.key == K_w:
-                wb_temp = max(min(wb_temp + 40,MAX_WB),MIN_WB)
+                wb_temp = max(min(wb_temp + 40, MAX_WB), MIN_WB)
                 print(f"wb_temp: {wb_temp}")
                 set_manual_controls(exposure, wb_temp, gain)
-            elif event.key == K_e:
-                wb_temp = max(min(wb_temp - 40,MAX_WB),MIN_WB)
+            elif event.key == K_a:
+                wb_temp = max(min(wb_temp - 40, MAX_WB), MIN_WB)
                 print(f"wb_temp: {wb_temp}")
                 set_manual_controls(exposure, wb_temp, gain)
             elif event.key == K_s:
@@ -461,7 +461,7 @@ while(running):
             arduino_done = True  # the arduino is done processing the image and ready to receive the next image
     elif not camera_on:  # if the camera mode is off, display the messages on the screen
         screen.fill((0, 0, 0))
-        msg_on_screen()
+        msg_on_screen(screen, camera_working, found_arduino, threshold, exposure, wb_temp, gain)
         pygame.display.flip()
 
 # closing the program....

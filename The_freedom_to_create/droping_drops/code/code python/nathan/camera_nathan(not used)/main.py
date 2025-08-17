@@ -34,7 +34,7 @@ def main():
     exposure = config["exposure"]
     wb_temp = config["wb_temp"]
     gain = config["gain"]
-
+    set_manual_controls(exposure, wb_temp, gain)
     while not camera_working:
         camera_working, cap = camera_init()
 
@@ -83,16 +83,25 @@ def main():
                     gain = max(min(gain + 2,MAX_GAIN),MIN_GAIN)
                     print(f"gain: {gain}")
                     set_manual_controls(exposure, wb_temp, gain)
+                elif event.key == K_w:
+                    wb_temp = max(min(wb_temp + 40 ,MAX_WB), MIN_WB)
+                    print(f"white balance temperature: {wb_temp}")
+                    set_manual_controls(exposure, wb_temp, gain)
+                elif event.key == K_a:
+                    wb_temp = max(min(wb_temp - 40, MAX_WB), MIN_WB)
+                    print(f"white balance temperature: {wb_temp}")
+                    set_manual_controls(exposure, wb_temp, gain)
                 elif event.key == K_s:
                     save_config(exposure, wb_temp, gain)
                 elif event.key == K_p:
+                    camera_on = not camera_on
+                    print(f"Camera is {'on' if camera_on else 'off'}")
                     if not camera_working:
                         camera_working, cap = camera_init()
                         if not camera_working:
                             continue
-                    camera_on = not camera_on
-                    print(f"Camera is {'on' if camera_on else 'off'}")
                     last_capture = time.time()
+
 
 
         if not send_parameters and found_arduino:
@@ -103,7 +112,7 @@ def main():
         ################################### P information ################################
         if not camera_on:
             screen.fill((0, 0, 0))
-            msg_on_screen(screen, camera_working, found_arduino,threshold)
+            msg_on_screen(screen, camera_working, found_arduino, threshold, exposure, wb_temp, gain)
             pygame.display.flip()
         ###################################  part 2   ####################################
         ##################################  camera working ###############################

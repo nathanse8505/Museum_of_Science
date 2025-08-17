@@ -2,14 +2,13 @@
 Filename: image_processing.py
 Purpose: functions for the Droping Drops UI
 """
-import os
+
 import cv2
 from const import *
 import time
 import numpy as np
 from datetime import datetime
 import pygame
-import subprocess
 import json
 
 
@@ -20,7 +19,7 @@ def main_process(cap, screen, camera_working, log_arduino, threshold, logger):
         return None, False, None, None # continuer à la prochaine boucle si erreur
 
     # Configurer l'image (redimensionnement, flip, rotation…)
-    #img = config_cam(img)
+    img = config_cam(img)
 
     # 2. Traitement de l’image
     byte_list, black_percentage, B_W_image = process_image(img, log_arduino, logger, threshold)
@@ -43,7 +42,6 @@ def camera_init():
         cap = cv2.VideoCapture(camera_index)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
-
         #min_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         #max_exposure = cap.get(cv2.CAP_PROP_EXPOSURE)
         #print(f"Valeur d'exposition actuelle : {min_exposure}")
@@ -63,20 +61,19 @@ def camera_init():
 # Initialisation des réglages manuels
 def set_manual_controls(exposure, wb_temp, gain):
     # 1. Passer en mode manuel pour exposition et white balance
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_auto=1")  # 1 = Manual Mode
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature_auto=0")
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=auto_exposure=1")  # 1 = Manual Mode
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_automatic=0")
 
     # 2. Appliquer les réglages
-    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_absolute={exposure}")
+    os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=exposure_time_absolute={exposure}")
     os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=white_balance_temperature={wb_temp}")
     os.system(f"v4l2-ctl -d {DEVICE} --set-ctrl=gain={gain}")
-
-
 
 
 # Callback pour les sliders
 def nothing(x):
     pass
+
 
 def load_config():
     if os.path.exists(CONFIG_FILE):
@@ -88,6 +85,7 @@ def load_config():
             except Exception as e:
                 print("Erreur lecture config:", e)
     return {"exposure": 157, "wb_temp": 4600, "gain": 0}
+
 
 def save_config(exposure, wb_temp, gain):
     config = {
@@ -112,18 +110,22 @@ def take_pic(cap, camera_working):
 def config_cam(img):
     #img = cropped_img(img)
     img = cv2.flip(img, 1)  # flip the image vertically (the camera is upside down)
-    #img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
     # img = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
     return img
 
-def msg_on_screen(screen, camera_working, found_arduino,threshold):
+
+def msg_on_screen(screen, camera_working, found_arduino,threshold, exposure, wb_temp, gain):
     text0 = "Press P to start/stop camera mode"
     text1 = "Press RIGHT/LEFT to change threshold for black and white filter"
     text2 = "threshold: " + str(threshold)
-    text3 = "----------------------------------------------------------------------"
-    text4 = "Arduino not found" if not found_arduino else "Arduino found"
-    text5 = "Camera is connected" if camera_working else "Camera is NOT connected - reconnect the camera and press P to start"
-    text = [text0, text1, text2, text3, text4, text5]
+    text3 = "exposure: " + str(exposure)
+    text4 = "white balance temperature: " + str(wb_temp)
+    text5 = "gain: " + str(gain)
+    text6 = "----------------------------------------------------------------------"
+    text7 = "Arduino not found" if not found_arduino else "Arduino found"
+    text8 = "Camera is connected" if camera_working else "Camera is NOT connected - reconnect the camera and press P to start"
+    text = [text0, text1, text2, text3, text4, text5, text6, text7,text8]
     y_position = screen_height // 2 - len(text) * font_size // 2
     for line in text:
         text_surface = font.render(line, True, (255, 255, 255))
