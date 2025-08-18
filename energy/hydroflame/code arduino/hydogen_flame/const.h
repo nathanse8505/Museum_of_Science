@@ -46,7 +46,7 @@ int32_t time_start_hydro = 0;
 int32_t time_new_session = 0;
 const uint32_t HYGROGEN_TIME = 10000;
 const uint32_t SESSION_TIME =60000;
-const uint32_t ACTIVATION_TIME = 10000;
+const uint32_t ACTIVATION_TIME = 12000;
 
 
 //////SPARK //////
@@ -76,6 +76,7 @@ const float R0 = 96400.0;           // Résistance du NTC à 25°C
 float lastTemp = -1000.0;           // Valeur initiale impossible pour forcer la première lecture de la temperature
 const float FIRST_SESSION_TEMP = -1000.0;
 long lastReadTemp = 0;
+bool first_temp =true;
 
 /////////button ignition//////////
 bool check_ignit = LOW;

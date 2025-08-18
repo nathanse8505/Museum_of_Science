@@ -19,8 +19,8 @@ void setup() {
   
   readTemperature();
 
-  ina226.init();
-  ina226.setResistorRange(0.002,80); // choose resistor 5 mOhm and gain range up to 10 A
+  //ina226.init();
+  //ina226.setResistorRange(0.002,80); // choose resistor 5 mOhm and gain range up to 10 A
 
   Serial.println("init");
 }
@@ -69,17 +69,18 @@ void loop() {
 
     // If no current detected after first press, turn off system
     
-    if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
+    /*if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
       time_read_current = millis();
       if(check_current() == false && flag_first_press == true){
         reset_session();
       }
-    }
+    }*/
     // If enough hydrogen time passed and spark is ready, activate spark
     if ((millis() - time_start_hydro) > HYGROGEN_TIME  && ready_flag_fire) {
       SPARK_ON();                       // Spark ignition
       ready_flag_fire = false;          // No more sparks until reset
       time_new_session = millis();      // Track session time
+      first_temp = true;
       Serial.println("the spark has been activated");
     }
     
