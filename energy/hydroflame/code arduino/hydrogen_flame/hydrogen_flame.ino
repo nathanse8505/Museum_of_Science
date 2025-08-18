@@ -20,7 +20,7 @@ void setup() {
   readTemperature();
   Wire.begin();
   ina226.init();
-  ina226.setResistorRange(0.00215,20); // choose resistor 5 mOhm and gain range up to 10 A
+  ina226.setResistorRange(0.00215,15); // choose resistor 5 mOhm and gain range up to 10 A
 
   Serial.println("init");
 }
