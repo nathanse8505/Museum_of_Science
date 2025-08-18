@@ -18,9 +18,9 @@ void setup() {
   wdt_enable(WDTO_4S);   
   
   readTemperature();
-
-  //ina226.init();
-  //ina226.setResistorRange(0.002,80); // choose resistor 5 mOhm and gain range up to 10 A
+  Wire.begin();
+  ina226.init();
+  ina226.setResistorRange(0.00215,20); // choose resistor 5 mOhm and gain range up to 10 A
 
   Serial.println("init");
 }
@@ -69,12 +69,13 @@ void loop() {
 
     // If no current detected after first press, turn off system
     
-    /*if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
+    if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
       time_read_current = millis();
-      if(check_current() == false && flag_first_press == true){
+      if(current_valid() == false && flag_first_press == true){
         reset_session();
       }
-    }*/
+    }   
+
     // If enough hydrogen time passed and spark is ready, activate spark
     if ((millis() - time_start_hydro) > HYGROGEN_TIME  && ready_flag_fire) {
       SPARK_ON();                       // Spark ignition
@@ -89,6 +90,7 @@ void loop() {
     if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false){
       if (millis() - lastReadTemp >= DELAY_TEMP) {
         lastReadTemp = millis();
+        current_valid();
         if(detect_drop_temp()){
           Serial.println("reset session because no fire");
           reset_session();
@@ -99,6 +101,7 @@ void loop() {
       if (millis() - lastReadTemp >= DELAY_TEMP) {
         lastReadTemp = millis();
         readTemperature();
+        current_valid();
       }
     } 
 

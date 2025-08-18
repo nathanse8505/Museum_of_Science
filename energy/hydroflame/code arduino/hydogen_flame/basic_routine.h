@@ -20,12 +20,15 @@ void TURN_ON_CURRENT(){
 }
 
 
-bool check_current(){
+bool current_valid(){
   ina226.readAndClearFlags();
-  if (ina226.getCurrent_A() > CURRENT_SYSTEM){
-    return true;
+  float current = ina226.getCurrent_A();
+  Serial.println("\nCurrent : " + String(current) + "A");
+  Serial.println("Voltage : " + String(ina226.getBusVoltage_V()) + "V\n");
+  if (current < CURRENT_SYSTEM){
+    return false;
   }
-  return false;
+  return true;
 }
 
 
@@ -65,7 +68,7 @@ bool detect_drop_temp() {
     first_temp = false;
     return false;
   }
-  Serial.print("delta Température : ");
+  Serial.print("\ndelta Température : ");
   Serial.println(tempNow - lastTemp);
 
   // Si la température baisse par rapport à la précédente -> true

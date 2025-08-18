@@ -70,7 +70,7 @@ void setup() {
      current range is up to 10.0 A
      default was 100 mOhm and about 1.3 A
   */
-  ina226.setResistorRange(0.002,80); // choose resistor 5 mOhm and gain range up to 10 A
+  ina226.setResistorRange(0.0021,20); // choose resistor 5 mOhm and gain range up to 10 A
   
   /* If the current values delivered by the INA226 differ by a constant factor
      from values obtained with calibrated equipment you can define a correction factor.
@@ -91,17 +91,17 @@ void loop() {
   float power_mW = 0.0; 
 
   ina226.readAndClearFlags();
-  //shuntVoltage_mV = ina226.getShuntVoltage_mV();
-  //busVoltage_V = ina226.getBusVoltage_V();
+  shuntVoltage_mV = ina226.getShuntVoltage_mV();
+  busVoltage_V = ina226.getBusVoltage_V();
   current_mA = ina226.getCurrent_A();
-  //power_mW = ina226.getBusPower();
-  //loadVoltage_V  = busVoltage_V + (shuntVoltage_mV/1000);
+  power_mW = ina226.getBusPower();
+  loadVoltage_V  = busVoltage_V + (shuntVoltage_mV/1000);
   
-  //Serial.print("Shunt Voltage [mV]: "); Serial.println(shuntVoltage_mV);
-  //Serial.print("Bus Voltage [V]: "); Serial.println(busVoltage_V);
-  //Serial.print("Load Voltage [V]: "); Serial.println(loadVoltage_V);
+  Serial.print("Shunt Voltage [mV]: "); Serial.println(shuntVoltage_mV);
+  Serial.print("Bus Voltage [V]: "); Serial.println(busVoltage_V);
+  Serial.print("Load Voltage [V]: "); Serial.println(loadVoltage_V);
   Serial.print("Current[A]: "); Serial.println(current_mA);
-  //Serial.print("Bus Power [mW]: "); Serial.println(power_mW);
+  Serial.print("Bus Power [mW]: "); Serial.println(power_mW);
   if(!ina226.overflow){
     Serial.println("Values OK - no overflow");
   }
@@ -110,5 +110,5 @@ void loop() {
   }
   Serial.println();
   
-  delay(500);
+  delay(1000);
 }

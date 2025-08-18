@@ -91,6 +91,6 @@ const int DELAY_AFTER_ON = 500;//ms
 ////////current INA////////
 #define I2C_ADDRESS 0x40
 const int16_t CURRENT_SYSTEM = 5;
-const int32_t CURRENT_INTERVAL_TIME = 500;  // ms measure interval 
+const int32_t CURRENT_INTERVAL_TIME = 1000;  // ms measure interval 
 long time_read_current = 0;
 #endif
