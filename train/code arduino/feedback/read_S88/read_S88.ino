@@ -32,9 +32,10 @@ s88 câble 6 fils (vue standard)
 #include <Arduino.h>
 
 // ====== PARAMÈTRES ======
-const uint8_t PS_PIN   = 3;     // Sortie PS
-const uint8_t CLK_PIN  = 2;     // Sortie CLOCK
-const uint8_t DATA_PIN = 12;    // Entrée DATA (depuis le module S88)
+const uint8_t PS_PIN   = A6;     // Sortie PS
+const uint8_t CLK_PIN  = A5;     // Sortie CLOCK
+const uint8_t GND      = A4;     // Sortie CLOCK
+const uint8_t DATA_PIN = A3;    // Entrée DATA (depuis le module S88)
 
 const uint8_t  BITS_PER_MODULE = 16;
 const uint8_t  NUM_MODULES     = 1;      // <-- Mets 1, 2, 3... selon tes modules
@@ -149,9 +150,11 @@ void dumpS88()
 void setup()
 {
   pinMode(PS_PIN,  OUTPUT);
+  pinMode(GND,  OUTPUT);
   pinMode(CLK_PIN, OUTPUT);
   pinMode(DATA_PIN, INPUT_PULLUP);  // souvent open-collector côté module; pull-up utile
 
+  digitalWrite(GND, LOW);
   digitalWrite(PS_PIN, LOW);
   digitalWrite(CLK_PIN, LOW);
 
