@@ -1,3 +1,4 @@
+
 /*
   S88 MASTER (remplace la centrale ECoS)
   - Génère PS (LOAD/LATCH) et CLOCK
@@ -32,13 +33,13 @@ s88 câble 6 fils (vue standard)
 #include <Arduino.h>
 
 // ====== PARAMÈTRES ======
-const uint8_t PS_PIN   = A6;     // Sortie PS
-const uint8_t CLK_PIN  = A5;     // Sortie CLOCK
-const uint8_t GND      = A4;     // Sortie CLOCK
-const uint8_t DATA_PIN = A3;    // Entrée DATA (depuis le module S88)
+const uint8_t PS_PIN   = 5;     // Sortie PS
+const uint8_t CLK_PIN  = 4;     // Sortie CLOCK
+const uint8_t RESET    = 2;     // Sortie CLOCK
+const uint8_t DATA_PIN = 3;    // Entrée DATA (depuis le module S88)
 
 const uint8_t  BITS_PER_MODULE = 16;
-const uint8_t  NUM_MODULES     = 1;      // <-- Mets 1, 2, 3... selon tes modules
+const uint8_t  NUM_MODULES     = 2;      // <-- Mets 1, 2, 3... selon tes modules
 const uint16_t TOTAL_BITS      = NUM_MODULES * BITS_PER_MODULE;
 
 // Temporisations (µs) — commence large, puis réduis
@@ -48,7 +49,7 @@ const uint16_t T_HIGH_US  = 50;  // CLOCK haut
 const uint16_t T_LOW_US   = 50;  // CLOCK bas
 
 // Si tes modules sortent des niveaux inversés, mets à true
-const bool INVERT_DATA = false;
+const bool INVERT_DATA = true;
 
 // ====== STOCKAGE ======
 uint16_t moduleBits[NUM_MODULES];  // 16 bits par module
@@ -150,11 +151,11 @@ void dumpS88()
 void setup()
 {
   pinMode(PS_PIN,  OUTPUT);
-  pinMode(GND,  OUTPUT);
+  pinMode(RESET,  OUTPUT);
   pinMode(CLK_PIN, OUTPUT);
   pinMode(DATA_PIN, INPUT_PULLUP);  // souvent open-collector côté module; pull-up utile
 
-  digitalWrite(GND, LOW);
+  digitalWrite(RESET, LOW);
   digitalWrite(PS_PIN, LOW);
   digitalWrite(CLK_PIN, LOW);
 
