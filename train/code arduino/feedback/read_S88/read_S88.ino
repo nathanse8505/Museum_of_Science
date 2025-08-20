@@ -34,7 +34,7 @@ s88 câble 6 fils (vue standard)
 
 // ====== PARAMÈTRES ======
 const uint8_t PS_PIN   = 5;     // Sortie PS
-const uint8_t CLK_PIN  = 4;     // Sortie CLOCK
+const uint8_t CLK_PIN  = 8;     // Sortie CLOCK
 const uint8_t RESET    = 2;     // Sortie CLOCK
 const uint8_t DATA_PIN = 3;    // Entrée DATA (depuis le module S88)
 
@@ -43,13 +43,13 @@ const uint8_t  NUM_MODULES     = 2;      // <-- Mets 1, 2, 3... selon tes module
 const uint16_t TOTAL_BITS      = NUM_MODULES * BITS_PER_MODULE;
 
 // Temporisations (µs) — commence large, puis réduis
-const uint16_t T_PS_US    = 50;  // largeur d’impulsion PS
-const uint16_t T_SETUP_US = 50;  // tps entre PS et 1ère lecture
-const uint16_t T_HIGH_US  = 50;  // CLOCK haut
-const uint16_t T_LOW_US   = 50;  // CLOCK bas
+const uint16_t T_PS_US    = 2;  // largeur d’impulsion PS
+const uint16_t T_SETUP_US = 1;  // tps entre PS et 1ère lecture
+const uint16_t T_HIGH_US  = 1;  // CLOCK haut
+const uint16_t T_LOW_US   = 1;  // CLOCK bas
 
 // Si tes modules sortent des niveaux inversés, mets à true
-const bool INVERT_DATA = true;
+const bool INVERT_DATA = false;
 
 // ====== STOCKAGE ======
 uint16_t moduleBits[NUM_MODULES];  // 16 bits par module
@@ -58,20 +58,24 @@ uint16_t moduleBits[NUM_MODULES];  // 16 bits par module
 inline void pulsePS()
 {
   digitalWrite(PS_PIN, HIGH);
-  delayMicroseconds(T_PS_US);
+  delay(T_PS_US);
   digitalWrite(PS_PIN, LOW);
+  delay(1);
+  digitalWrite(RESET, HIGH);
+  delay(T_PS_US);
+  digitalWrite(RESET, LOW);
 }
 
 inline void clockHigh()
 {
   digitalWrite(CLK_PIN, HIGH);
-  delayMicroseconds(T_HIGH_US);
+  delay(T_HIGH_US);
 }
 
 inline void clockLow()
 {
   digitalWrite(CLK_PIN, LOW);
-  delayMicroseconds(T_LOW_US);
+  delay(T_LOW_US);
 }
 
 inline uint8_t readDataBitRaw()
@@ -153,7 +157,7 @@ void setup()
   pinMode(PS_PIN,  OUTPUT);
   pinMode(RESET,  OUTPUT);
   pinMode(CLK_PIN, OUTPUT);
-  pinMode(DATA_PIN, INPUT_PULLUP);  // souvent open-collector côté module; pull-up utile
+  pinMode(DATA_PIN, INPUT);  // souvent open-collector côté module; pull-up utile
 
   digitalWrite(RESET, LOW);
   digitalWrite(PS_PIN, LOW);
@@ -174,5 +178,5 @@ void loop()
   // (bit 0 = entrée 1, bit 1 = entrée 2, ... bit 15 = entrée 16)
   // Tu peux traiter moduleBits[] ici…
 
-  delay(200);
+  delay(500);
 }
