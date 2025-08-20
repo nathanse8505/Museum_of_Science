@@ -22,12 +22,12 @@
 /*
 s88 câble 6 fils (vue standard)
 
- 1 : DATA   <-- données modules vers centrale
- 2 : GND    -- masse
- 3 : CLOCK  <-- impulsions centrale
- 4 : PS     <-- latch centrale
- 5 : RESET  (option, pas toujours câblé)
- 6 : +5 V   -- alimentation logique
+ 1 : GND    -- masse blue wire
+ 2 : CLOCK  <-- impulsions centrale
+ 3 : PS     <-- latch centrale
+ 4 : RESET  (option, pas toujours câblé)
+ 5 : +5 V   -- alimentation logique
+ 6 : DATA   <-- données modules vers centrale
 */
 
 #include <Arduino.h>
@@ -43,10 +43,11 @@ const uint8_t  NUM_MODULES     = 2;      // <-- Mets 1, 2, 3... selon tes module
 const uint16_t TOTAL_BITS      = NUM_MODULES * BITS_PER_MODULE;
 
 // Temporisations (µs) — commence large, puis réduis
-const uint16_t T_PS_US    = 2;  // largeur d’impulsion PS
+const uint16_t T_PS_US    =650;  // largeur d’impulsion PS
+const uint16_t T_RESET_US    =230;  // largeur d’impulsion PS
 const uint16_t T_SETUP_US = 1;  // tps entre PS et 1ère lecture
-const uint16_t T_HIGH_US  = 1;  // CLOCK haut
-const uint16_t T_LOW_US   = 1;  // CLOCK bas
+const uint16_t T_HIGH_US  = 312;  // CLOCK haut
+const uint16_t T_LOW_US   = 16;  // CLOCK bas
 
 // Si tes modules sortent des niveaux inversés, mets à true
 const bool INVERT_DATA = false;
@@ -58,24 +59,24 @@ uint16_t moduleBits[NUM_MODULES];  // 16 bits par module
 inline void pulsePS()
 {
   digitalWrite(PS_PIN, HIGH);
-  delay(T_PS_US);
+  delayMicroseconds(T_PS_US);
   digitalWrite(PS_PIN, LOW);
-  delay(1);
+  delayMicroseconds(100);
   digitalWrite(RESET, HIGH);
-  delay(T_PS_US);
+  delayMicroseconds(T_RESET_US);
   digitalWrite(RESET, LOW);
 }
 
 inline void clockHigh()
 {
   digitalWrite(CLK_PIN, HIGH);
-  delay(T_HIGH_US);
+  delayMicroseconds(T_HIGH_US);
 }
 
 inline void clockLow()
 {
   digitalWrite(CLK_PIN, LOW);
-  delay(T_LOW_US);
+  delayMicroseconds(T_LOW_US);
 }
 
 inline uint8_t readDataBitRaw()
