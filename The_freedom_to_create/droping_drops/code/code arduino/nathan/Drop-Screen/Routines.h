@@ -77,7 +77,7 @@ bool check_drawing() {
       return true;
     // drawing depth is the depth of the image - reapet for the neccesary amout of layers
     for (int i = 0; i < drawing_depth; i++)
-        image_to_valves(row_in_drawing, cassette_drawing%2 + i%2);
+        image_to_valves(row_in_drawing, (cassette_drawing & 1) == 1);
     digitalWrite(SR_data_pin, LOW);
     for (int i = 0; i < cassette_drawing * image_w; i++)
       pulse_io(SR_clk_pin);

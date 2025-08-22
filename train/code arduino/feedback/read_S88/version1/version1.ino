@@ -3,9 +3,8 @@
 // ====== PINS ======
 const uint8_t PS_PIN   = 5;   // PS / LOAD
 const uint8_t CLK_PIN  = 4;   // CLOCK
-const uint8_t RST_PIN  = 2;   // RESET
 const uint8_t DATA_PIN = 3;   // DATA (modules -> Arduino)
-
+const uint8_t RST_PIN  = 2;   // RESET
 // ====== PARAMÈTRES ======
 const uint8_t  BITS_PER_MODULE = 16;
 const uint8_t  NUM_MODULES     = 2;
@@ -41,7 +40,7 @@ uint8_t regularClockPulse_andSample() {
   // échantillonnage au milieu du HIGH (DATA stable)
   delayMicroseconds(T_CLK_HIGH / 2);
   uint8_t v = readDataBitRaw();
-  delayMicroseconds(T_CLK_HIGH - (T_CLK_HIGH / 2));
+  delayMicroseconds(T_CLK_HIGH / 2);
   clockLowBlocking();
   return v;
 }
