@@ -1,0 +1,39 @@
+2025-08-25 19:17:52 - Starting HydroFlame UI (no pygame)
+2025-08-25 19:17:52 - Found Arduino! port: COM3
+2025-08-25 19:17:52 - Connected to COM3
+2025-08-25 19:17:54 - init
+2025-08-25 19:18:10 - THE FAN IS OFF
+2025-08-25 19:18:10 - the hydro start
+2025-08-25 19:18:11 - Current : -0.00A
+2025-08-25 19:18:11 - Voltage : 0.37V
+2025-08-25 19:18:11 - reset session because no current
+2025-08-25 19:18:28 - THE FAN IS OFF
+2025-08-25 19:18:28 - the hydro start
+2025-08-25 19:18:29 - Current : -0.00A
+2025-08-25 19:18:29 - Voltage : 0.35V
+2025-08-25 19:18:29 - reset session because no current
+2025-08-25 19:18:45 - THE FAN IS OFF
+2025-08-25 19:18:46 - the hydro start
+2025-08-25 19:18:47 - Current : 13.44A
+2025-08-25 19:18:47 - Voltage : 13.13V
+2025-08-25 19:18:58 - the spark has been activated
+2025-08-25 19:19:03 - First Température : 30.33
+2025-08-25 19:19:49 - Last Température : 45.80
+2025-08-25 19:19:49 - delta Température : 15.48
+2025-08-25 19:19:49 - end session
+2025-08-25 19:19:49 - THE FAN IS ON
+2025-08-25 19:20:05 - THE FAN IS OFF
+2025-08-25 19:20:05 - the hydro start
+2025-08-25 19:20:06 - Current : 13.37A
+2025-08-25 19:20:06 - Voltage : 13.13V
+2025-08-25 19:20:18 - the spark has been activated
+2025-08-25 19:20:23 - First Température : 36.62
+2025-08-25 19:21:08 - Last Température : 49.54
+2025-08-25 19:21:08 - delta Température : 12.92
+2025-08-25 19:21:08 - end session
+2025-08-25 19:21:24 - THE FAN IS OFF
+2025-08-25 19:21:25 - the hydro start
+2025-08-25 19:21:26 - Error reading from serial, Arduino probably disconnected
+2025-08-25 19:21:26 - Arduino disconnected... Going to default settings
+2025-08-25 19:21:26 - Trying to reconnect to Arduino...
+2025-08-25 19:21:26 - Error: Arduino not found

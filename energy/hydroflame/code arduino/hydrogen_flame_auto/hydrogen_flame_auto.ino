@@ -17,10 +17,10 @@ void setup() {
   delay(100);                                      // Give time to establish connection
   wdt_enable(WDTO_4S);   
   
-  readTemperature();
+  //readTemperature();
   Wire.begin();
   ina226.init();
-  ina226.setResistorRange(0.002,20); // choose resistor 5 mOhm and gain range up to 10 A
+  ina226.setResistorRange(0.00215,20); // choose resistor 5 mOhm and gain range up to 10 A
 
   Serial.println("init");
 }
@@ -30,7 +30,7 @@ void loop() {
   wdt_reset();
 
   // Check if ignition button is pressed
-  buttonPressed = PRESS_BUTTON_IGNITION();
+  buttonPressed = true;
 
 
   // After some time, move on to hydrogen and ignition phase
@@ -39,7 +39,7 @@ void loop() {
     // If it's the first entry into this phase
     if(flag_new_session){
       DEACTIVE_FAN(); 
-
+      Serial.println("THE FAN IS OFF");
       // Wait until the water tank is full
       while(check_water_level() == false){
         wdt_reset();
@@ -50,8 +50,8 @@ void loop() {
       digitalWrite(LED_ACTIVATION, HIGH);  // Turn on activation LED  
       flag_ready_fan = false;                   // Turn off fan
       flag_new_session = false;             // new Session ready
-      Serial.println("we can push the button");
-      Serial.println("led activated");
+      //Serial.println("we can push the button");
+      //Serial.println("led activated");
       Serial.println();
     }
 
@@ -63,7 +63,7 @@ void loop() {
       time_read_current = time_start_hydro; // Start current timer
       flag_first_press = true;            // Mark ignition as pressed
       ready_flag_fire = true;             // Ready to spark
-      Serial.println("button has been pressed");
+      //Serial.println("button has been pressed");
       Serial.println("the hydro start");
     }
 
@@ -72,6 +72,7 @@ void loop() {
     if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
       time_read_current = millis();
       if(current_valid() == false && flag_first_press == true){
+        Serial.println("reset session because no current");
         reset_session();
       }
     }   
@@ -90,23 +91,29 @@ void loop() {
     if (millis() - time_new_session > FIRE_TIME && flag_first_press == true && ready_flag_fire == false){
       if (millis() - lastReadTemp >= DELAY_TEMP) {
         lastReadTemp = millis();
-        current_valid();
+        //current_valid();
         if(detect_drop_temp()){
           Serial.println("reset session because no fire");
           reset_session();
         }
       }
     }
-    else{
+    /*else{
       if (millis() - lastReadTemp >= DELAY_TEMP) {
         lastReadTemp = millis();
         readTemperature();
         current_valid();
       }
-    } 
+    } */
 
     // If session timeout reached after spark, shut down and reset
     if (millis() - time_new_session > SESSION_TIME && flag_first_press == true && ready_flag_fire == false){
+      average_current = 0;
+      read = 0;
+      first_time_delta = true;
+      first_time_current = true;
+      detect_drop_temp();//to read the DELTA TEMPERATURE and the TEMPERATURE
+      first_time_temp = true;
       Serial.println("end session");
       reset_session();
       flag_ready_fan = true;
@@ -117,7 +124,7 @@ void loop() {
   // If it's a new session, activate the fan
   if(flag_ready_fan){
      ACTIVE_FAN();
-     //Serial.println("active fan");
+     
   }
 
 }

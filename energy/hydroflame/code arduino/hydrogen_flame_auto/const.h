@@ -58,7 +58,7 @@ bool ready_flag_fire = false;
 
 //////// FAN /////////
 const int16_t DELAY_FAN_ON = 200;
-const int16_t DELAY_FAN_OFF = 10;
+const int16_t DELAY_FAN_OFF = 1000;
 bool flag_ready_fan = false;
 
 //////////// WATER ///////////
@@ -77,7 +77,8 @@ float lastTemp = -1000.0;           // Valeur initiale impossible pour forcer la
 const float FIRST_SESSION_TEMP = -1000.0;
 long lastReadTemp = 0;
 bool first_temp =true;
-
+bool first_time_delta = false;
+bool first_time_temp = true;
 /////////button ignition//////////
 bool check_ignit = LOW;
 bool buttonPressed;
@@ -93,4 +94,9 @@ const int DELAY_AFTER_ON = 500;//ms
 const int16_t CURRENT_SYSTEM = 5;
 const int32_t CURRENT_INTERVAL_TIME = 1000;  // ms measure interval 
 long time_read_current = 0;
+bool first_time_current = true;
+const int NUM_OF_READ = 1;
+int read = 0;
+float average_current = 0;
+
 #endif
