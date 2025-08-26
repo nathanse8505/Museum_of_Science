@@ -58,13 +58,13 @@ bool ready_flag_fire = false;
 
 //////// FAN /////////
 const int16_t DELAY_FAN_ON = 200;
-const int16_t DELAY_FAN_OFF = 1000;
+const int16_t DELAY_FAN_OFF = 2000;
 bool flag_ready_fan = false;
 
 //////////// WATER ///////////
 const int16_t NO_DETECTION = 300;//in bit resolution
 const int16_t DELAY_FILL_WATER = 1000;//in ms
-const int16_t DELAY_AFTER_FILL_WATER = 100;//in ms
+const int16_t DELAY_AFTER_FILL_WATER = 500;//in ms
 
 //////////// FIRE ///////////
 const int FIRE_TIME = 5000;

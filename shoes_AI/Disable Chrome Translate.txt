@@ -1,0 +1,6 @@
+sudo mkdir -p /etc/opt/chrome/policies/managed
+cat << 'JSON' | sudo tee /etc/opt/chrome/policies/managed/disable_translate.json > /dev/null
+{
+  "TranslateEnabled": false
+}
+JSON
