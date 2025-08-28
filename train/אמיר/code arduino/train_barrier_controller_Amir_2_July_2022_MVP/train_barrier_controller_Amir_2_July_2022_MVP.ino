@@ -13,7 +13,7 @@
 // see J:\Bloomfield\Exhibits\היסטוריה לקראת שלושים שנה למוזיאון\רכבת שמעון\פיתוח מחסום נתנאל יוני 2022
 
 //
-const int Sample_Time = 100; // ms time between measure 
+const int Sample_Time = 2; // ms time between measure 
 #define   SEGMENT_1_SENSOR_PIN    A0//14 // A0 (see https://github.com/arduino/ArduinoCore-avr/blob/master/variants/standard/pins_arduino.h#L56-L72)
 #define   SEGMENT_1_BARRIER_PIN   9
 #define   SEGMENT_2_SENSOR_PIN    A1//15  //A1
