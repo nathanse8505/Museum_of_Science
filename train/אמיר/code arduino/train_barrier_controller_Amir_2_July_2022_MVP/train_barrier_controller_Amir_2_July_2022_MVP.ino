@@ -59,7 +59,7 @@ void setup() {
     openBarrier(i);
   }
 
-  closeBarrier(0);
+  closeBarrier(2);
 }
 
 void closeBarrier(int segmentIndex)
@@ -111,7 +111,7 @@ void handleTrainDetected(int segmentIndex)
 }
 
 void loop() {
-  delay(Sample_Time) ;
+ // delay(Sample_Time) ;
 //  Serial.println("================");
 //   int tttt = digitalRead(14);
 //   Serial.println(tttt);
