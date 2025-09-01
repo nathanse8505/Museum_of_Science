@@ -91,6 +91,8 @@ const int DELAY_AFTER_ON = 500;//ms
 
 ////////current INA////////
 #define I2C_ADDRESS 0x40
+const float R_SHUNT_OHMS = 0.00215f;    // ex: 2 mΩ
+const float I_RANGE_A    = 20.0f;      // ex: tu veux mesurer jusqu’à ~10 A
 const int16_t CURRENT_SYSTEM = 5;
 const int32_t CURRENT_INTERVAL_TIME = 1000;  // ms measure interval 
 long time_read_current = 0;

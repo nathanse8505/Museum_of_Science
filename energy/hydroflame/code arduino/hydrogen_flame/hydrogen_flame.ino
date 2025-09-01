@@ -19,7 +19,9 @@ void setup() {
   
   readTemperature();
   Wire.begin();
-  ina226.init();
+  if(!ina226.init()){
+     Serial.println("No communication with the current sensor");
+  }
   ina226.setResistorRange(0.002,20); // choose resistor 5 mOhm and gain range up to 10 A
 
   Serial.println("init");

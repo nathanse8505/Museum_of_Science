@@ -9,6 +9,15 @@ INA226_WE ina226 = INA226_WE(I2C_ADDRESS);
 //MAX6675 thermocouple(THERMOCS, THERMOD , THERMOCLK);
 //#include <MovingAverage.h>  // see https://github.com/careyi3/MovingAverage
 //MovingAverage filter(MOVING_AVG_LENGTH);  // define/use the movinge average object
+bool init_current_sensor(){
+  Wire.begin();
+  if(!ina226.init()){
+     Serial.println("No communication with the current sensor");
+     return false;
+  }
+  ina226.setResistorRange(R_SHUNT_OHMS,I_RANGE_A); // choose resistor 5 mOhm and gain range up to 10 A
+  return true;
+}
 
 void TURN_OFF_CURRENT(){
    digitalWrite(RELAY_TURN_ON_OFF_IO, LOW);
@@ -20,9 +29,14 @@ void TURN_ON_CURRENT(){
 }
 
 
-bool current_valid(){
+int current_valid(){
   ina226.readAndClearFlags();
   float current = ina226.getCurrent_A();
+
+  if (ina226.getI2cErrorCode() != 0) {
+      return 0;
+      delay(200);
+    }
   read++;
   //Serial.println("read : " + String(read));
   //Serial.println("first_time_current : " + String(first_time_current));
@@ -37,9 +51,9 @@ bool current_valid(){
   }
   
   if (current < CURRENT_SYSTEM){
-    return false;
+    return 1;
   }
-  return true;
+  return 2;
 }
 
 
@@ -89,7 +103,7 @@ bool detect_drop_temp() {
     Serial.println(tempNow - lastTemp);
   }
   // Si la température baisse par rapport à la précédente -> true
-  if (tempNow < lastTemp) {
+  if (tempNow <= lastTemp) {
     lastTemp = tempNow;
     return true;
   }

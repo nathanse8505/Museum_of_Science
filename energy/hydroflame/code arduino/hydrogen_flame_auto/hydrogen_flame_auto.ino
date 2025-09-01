@@ -15,14 +15,16 @@ void setup() {
 
   Serial.begin(BAUDRATE);                          // Start serial communication
   delay(100);                                      // Give time to establish connection
-  wdt_enable(WDTO_4S);   
+   
   
   //readTemperature();
-  Wire.begin();
-  ina226.init();
-  ina226.setResistorRange(0.00215,20); // choose resistor 5 mOhm and gain range up to 10 A
+  if(!init_current_sensor()){
+    Serial.println("reset the arduino");
+    while(1);
+  }
 
   Serial.println("init");
+  wdt_enable(WDTO_4S);  
 }
 
 void loop() {
@@ -71,9 +73,18 @@ void loop() {
     
     if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
       time_read_current = millis();
-      if(current_valid() == false && flag_first_press == true){
-        Serial.println("reset session because no current");
+      if(current_valid() != 2 && flag_first_press == true){
         reset_session();
+        if(current_valid() == 0){
+          Serial.println("reset session because No communication with the current sensor");
+          Serial.println("reset the arduino");
+          while(1);
+        }
+        if(current_valid() == 1){
+          Serial.println("reset session because no current");
+        }
+        
+        
       }
     }   
 
