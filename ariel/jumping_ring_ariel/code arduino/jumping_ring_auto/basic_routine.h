@@ -27,14 +27,18 @@
 #define BAUDRATE (115200)
 ////////////  I/O   ////////////
 #define BUTTON_IO       2
-#define LED_ACTIVATION  3
-#define RELAY_IO        7  // relay active contactor 
+#define LED_ACTIVATION  4
+#define MODE_IO         7  // relay active contactor 
+#define RELAY_IO        11  // relay active contactor 
+
+////////button mode ///////
+const bool MANUAL = false;
 // global vars
 int32_t time_start = 0;
 int32_t time_new_session = 0;
 bool flag_new_session = true;
 
-const uint32_t ACTIVATION_TIME = 10000;
+const uint32_t ACTIVATION_TIME = 30000;
 const uint32_t TIME_RELAY_ON =2000;
 
 /////////button ignition//////////

@@ -4,6 +4,7 @@
 void setup() {
   // Configure pin modes
   pinMode(BUTTON_IO, INPUT_PULLUP);  // Ignition button (active LOW)
+  pinMode(MODE_IO, INPUT_PULLUP);  // Ignition button (active LOW)
   pinMode(LED_ACTIVATION, OUTPUT);   // Activation indicator LED
   pinMode(RELAY_IO, OUTPUT);         // relay control Contactor Coil
 
@@ -18,9 +19,16 @@ void loop() {
   wdt_reset();
 
   // Check if ignition button is pressed
-  //buttonPressed = true;
-  buttonPressed = PRESS_BUTTON_IGNITION();
-
+  if(digitalRead(MODE_IO) == MANUAL){
+    buttonPressed = PRESS_BUTTON_IGNITION();
+  }
+  else{
+    buttonPressed = true;
+  }
+  
+  //
+   
+  
 
   // After some time, move on to ignition phase
   if ((millis() - time_start) > ACTIVATION_TIME) {
@@ -44,6 +52,10 @@ void loop() {
       Serial.println("button has been pressed");
       Serial.println("the ring jumping");
     }
+     /*else if (buttonPressed && flag_first_press) {
+      Serial.println("button has been pressed");
+      Serial.println("no action");
+    }*/
     
     if (millis() - time_new_session > TIME_RELAY_ON && flag_first_press){
       digitalWrite(RELAY_IO, LOW);
@@ -51,5 +63,9 @@ void loop() {
     }
     delay(1);
   }
+  /*else if(buttonPressed) {
+      Serial.println("button has been pressed");
+      Serial.println("no action");
+    }*/
 
 }
