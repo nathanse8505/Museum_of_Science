@@ -1,0 +1,253 @@
+/*
+   Deluxe Menu Data File
+   Created by Deluxe Tuner v2.0
+   http://deluxe-menu.com
+*/
+
+
+// -- Deluxe Tuner Style Names
+var itemStylesNames=["Top Item",];
+var menuStylesNames=["Top Menu","Submenu",];
+// -- End of Deluxe Tuner Style Names
+
+//--- Common
+var isHorizontal=1;
+var smColumns=1;
+var smOrientation=0;
+var smViewType=0;
+var dmRTL=0;
+var pressedItem=-2;
+var itemCursor="default";
+var itemTarget="_top";
+var statusString="";
+var blankImage="hoofdmenu.files/blank.gif";
+
+//--- Registratie floodland.nl
+var key="157b1222exid";
+
+//--- Dimensions
+var menuWidth="0";
+var menuHeight="";
+var smWidth="";
+var smHeight="";
+
+//--- Positioning
+var absolutePos=0;
+var posX="30";
+var posY="110";
+var topDX=0;
+var topDY=0;
+var DX=0;
+var DY=0;
+
+//--- Font
+var fontStyle="12px Arial";
+var fontColor=["#FFFFFF","#ffffff"];
+var fontDecoration=["none","none"];
+var fontColorDisabled="#AAAAAA";
+
+//--- Appearance
+var menuBackColor="";
+var menuBackImage="";
+var menuBackRepeat="repeat";
+var menuBorderColor="#000000";
+var menuBorderWidth=0;
+var menuBorderStyle="none";
+
+//--- Item Appearance
+var itemBackColor=["#666666","#999999"];
+var itemBackImage=["",""];
+var itemBorderWidth=0;
+var itemBorderColor=["#c0e0FF","#80A0FF"];
+var itemBorderStyle=["solid","solid"];
+var itemSpacing=0;
+var itemPadding="2";
+var itemAlignTop="left";
+var itemAlign="left";
+var subMenuAlign="left";
+
+//--- Icons
+var iconTopWidth=16;
+var iconTopHeight=16;
+var iconWidth=16;
+var iconHeight=16;
+var arrowWidth=7;
+var arrowHeight=7;
+var arrowImageMain=["",""];
+var arrowImageSub=["hoofdmenu.files/arr_white_2.gif","hoofdmenu.files/arr_white_2.gif"];
+
+//--- Separators
+var separatorImage="hoofdmenu.files/sep_black.gif";
+var separatorWidth="100%";
+var separatorHeight="3";
+var separatorAlignment="center";
+var separatorVImage="hoofdmenu.files/sep_white.gif";
+var separatorVWidth="21";
+var separatorVHeight="16";
+var separatorPadding="0px";
+
+//--- Floatable Menu
+var floatable=1;
+var floatIterations=5;
+var floatableX=1;
+var floatableY=1;
+
+//--- Movable Menu
+var movable=0;
+var moveWidth=12;
+var moveHeight=18;
+var moveColor="#AAFFFF";
+var moveImage="";
+var moveCursor="move";
+var smMovable=0;
+var closeBtnW=11;
+var closeBtnH=11;
+var closeBtn="";
+
+//--- Transitional Effects & Filters
+var transparency="90";
+var transition=30;
+var transOptions="maxSquare=10";
+var transDuration=400;
+var transDuration2=200;
+var shadowLen=0;
+var shadowColor="#616161";
+var shadowTop=0;
+
+//--- CSS Support (CSS-based Menu)
+var cssStyle=0;
+var cssSubmenu="";
+var cssItem=["",""];
+var cssItemText=["",""];
+
+//--- Advanced
+var dmObjectsCheck=0;
+var saveNavigationPath=1;
+var showByClick=0;
+var noWrap=1;
+var pathPrefix_img="";
+var pathPrefix_link="";
+var smShowPause=200;
+var smHidePause=500;
+var smSmartScroll=1;
+var smHideOnClick=1;
+var dm_writeAll=0;
+
+//--- AJAX-like Technology
+var dmAJAX=0;
+var dmAJAXCount=0;
+
+//--- Dynamic Menu
+var dynamic=0;
+
+//--- Keystrokes Support
+var keystrokes=1;
+var dm_focus=1;
+var dm_actKey=113;
+
+var itemStyles = [
+    ["itemBackColor=#333333,#666666"],
+];
+var menuStyles = [
+    ["menuBorderWidth=3","menuBorderStyle=double","menuBorderColor=#000000"],
+    ["smWidth=175"],
+];
+
+var menuItems = [
+
+    ["Home","index_en.htm", , , , "_top", "0", "-1", , ],
+    ["-","", , , , , , , , ],
+    ["Projects","", , , , , "0", , , ],
+        ["| Project Waldberg (1:87) ","", , , , , , "1", , ],
+            ["|| Description ","wberg_beschrijving_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Layout plan ","wberg_sporenplan_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Technical ","wberg_techniek_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Photos ","wberg_foto_en_1.htm", , , , "_top", , "1", , ],
+        ["| De Bakkerij (H0+0) ","", , , , , , , , ],
+            ["|| Description ","bak_beschrijving_en_1.htm", , , , "_top", , "1", , ],
+            ["|| History ","bak_geschiedenis_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Photos (1:87) ","bak_foto_en_1.htm", , , , "_top", , "1", , ],
+			["|| Photos (1:43.5) ","bak_foto_en_2.htm", , , , "_top", , "1", , ],
+        ["| De Lage Zij (1:87) ","", , , , , , , , ],
+            ["|| Description ","lzij_beschrijving_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Layout plan ","lzij_sporenplan_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Technical ","lzij_techniek_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Photos ","lzij_foto_en_1.htm", , , , "_top", , "1", , ],
+        ["| Buitenlust (1:43.5) ","", , , , , , , , ],
+			["|| Description ","blust_beschrijving_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Layout plan ","blust_sporenplan_en_1.htm", , , , "_top", , "1", , ],
+			["|| Building reports ","blust_bouwverslag_en_1.htm", , , , "_top", , "1", , ],
+			["|| Press coverage ","blust_pers_en_1.htm", , , , "_top", , "1", , ],
+		["|&nbsp;Brave the seas (1:87)&nbsp;","bttr_botter_en_1.htm", , , , "_top", , "1", , ],
+		["|&nbsp;An ode to the scale modeler (1:22,5)&nbsp;","om_ode_en_1.htm", , , , "_top", , "1", , ],
+	["-","", , , , , , , , ],
+	["Tips & tricks","", , , , , "0", , , ],
+		["| Layout building (H0) ","", , , , , , "1", , ],
+            ["|| Hidden solenoid ","info_verborgen_wisselspoel_en_1.htm", , , , "_top", , "1", , ],
+			["|| Actuators with memory wire ","info_wissel_geheugendraad_en_1.htm", , , , "_top", , "1", , ],			
+			["|| Ballasting track ","info_rails_ballasten_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Operating wires ","info_trekdraden_db_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Simple road crossings 3-rail ","info_simpele overwegen_en_1.htm", , , , "_top", , "1", , ],
+		["| Layout building (0) ","", , , , , , "1", , ],
+			["|| Universal module connector ","info_module_connector_en_1.htm", , , , "_top", , "1", , ],
+        ["| Landscaping ","", , , , , , "1", , ],
+            ["|| Weathering with pastels ","info_vervuilen_krijt_en_1.htm", , , , "_top", , "1", , ],
+            ["|| Creating rocks ","info_rotsen_maken_en_1.htm", , , , "_top", , "1", , ],
+			["|| Green fingers ","info_groene_vingers_en_1.htm", , , , "_top", , "1", , ],
+			["|| Simple foliage trees ","info_loofbomen_maken_en_1.htm", , , , "_top", , "1", , ],
+			["|| Signs and signals ","info_opschriften_borden_en_1.htm", , , , "_top", , "1", , ],			
+	["-","", , , , , , , , ],
+    ["Digital","", , , , , "0", , , ],
+        ["| Theory and practice ","", , , , , , "1", , ],
+			["|| Decoder kits ","info_decoder_bouwpakketten_en_1.htm", , , , "_top", , "1", , ],
+        	["|| The turntable ","info_draaischijf_en_1.htm", , , , "_top", , "1", , ],
+        	["|| Braking module ","info_afremmodule_en_1.htm", , , , "_top", , "1", , ],
+			["|| BMD16N ","info_bmd16n_en_1.htm", , , , "_top", , "1", , ],
+			["|| BMD16N-SD ","info_bmd16n_sd_en_1.htm", , , , "_top", , "1", , ],
+			["|| S88-N cabling ","info_s88_kabels_en_1.htm", , , , "_top", , "1", , ],
+			["|| More power ","info_meer_vermogen_en_1.htm", , , , "_top", , "1", , ],
+			["|| Digital blocking system ","info_digitaal_bloksysteem_en_1.htm", , , , "_top", , "1", , ],
+			["|| Wiring for reversing loops and wyes ","info_keerlus_en_1.htm", , , , "_top", , "1", , ],
+			["|| Reversing loops and wyes with Arduino ","info_arduino_keerlus_en_1.htm", , , , "_top", , "1", , ],
+		["| LocoNet ","", , , , , , "1", , ],
+			["|| LocoNet basics ","info_lol_met_loconet_en_1.htm", , , , "_top", , "1", , ],
+			["|| The LocoHub ","info_locohub_en_1.htm", , , , "_top", , "1", , ],
+			["|| More power for LocoNet ","info_locohubsupply_en_1.htm", , , , "_top", , "1", , ],
+			["|| LocoNet Tester ","info_locotest_en_1.htm", , , , "_top", , "1", , ],
+    ["-","", , , , , , , , ],
+	["Build yourself","", , , , , "0", , , ],
+        ["| Big power supply ","info_grote_voeding_en_1.htm", , , , "_top", , "1", , ],
+		["| Funny running light ","info_leuk_looplicht_en_1.htm", , , , "_top", , "1", , ],
+		["| IR detector ","info_lichtsluis_en_1.htm", , , , "_top", , "1", , ],
+        ["| Universal 78xx power supply ","info_78xx_en_1.htm", , , , "_top", , "1", , ],
+		["| All it can eat LED ","info_allesetende_led_en_1.htm", , , , "_top", , "1", , ],
+		["| Resin castings ","info_giethars_en_1.htm", , , , "_top", , "1", , ],
+		["| Dutch semaphores in H0 ","info_ns_armseinen_en_1.htm", , , , "_top", , "1", , ],
+		["| Dutch semaphores in O scale ","info_armseinen_in_0_en_1.htm", , , , "_top", , "1", , ],
+		["| Donnerbüchse cab car ","info_donderbus_en_1.htm", , , , "_top", , "1", , ],
+		["| Simple marker light ","info_sluitlicht_en_1.htm", , , , "_top", , "1", , ],
+		["| Homemade camera car ","info_zelfbouw_videowagen_en_1.htm", , , , "_top", , "1", , ],
+		["| NS 162 in 1:43,5 ","info_ns162_en_1.htm", , , , "_top", , "1", , ],
+		["| RGBW LED controller with LocoNet and DCC ","info_arduino_rgbw_en.htm", , , , "_top", , "1", , ],
+		["| The LocoBox ","info_locobox_en_1.htm", , , , "_top", , "1", , ],
+		["| The LocoBed ","info_locobed_en_1.htm", , , , "_top", , "1", , ],
+		["| Track cleaning car in O scale ","info_poetswagen_en_1.htm", , , , "_top", , "1", , ],
+		["| Simple DAISY II Wireless charger ","info_daisy_lader_en_1.htm", , , , "_top", , "1", , ],
+	["-","", , , , , , , , ],
+    ["Shop","", , , , , "0", , , ],
+        ["| Order form ","shop.php?taal=en", , , , "_top", , "1", , ],
+    ["-","", , , , , , , , ],
+    ["Links ","", , , , , "0", , , ],
+        ["| Hobbyists ","links_hobbyisten_en_1.htm", , , , "_top", , "1", , ],
+        ["| Clubs ","links_clubs_en_1.htm", , , , "_top", , "1", , ],
+        ["| Manufacturers ","links_fabrikanten_en_1.htm", , , , "_top", , "1", , ],
+        ["| Digital ","links_digitaal_en_1.htm", , , , "_top", , "1", , ],
+        ["| Software ","links_programma_en_1.htm", , , , "_top", , "1", , ],
+		["| Shops ","links_winkels_en_1.htm", , , , "_top", , "1", , ],
+        ["| Magazines ","links_tijdschriften_en_1.htm", , , , "_top", , "1", , ],
+        ["| Real trains ","links_grootbedrijf_en_1.htm", , , , "_top", , "1", , ],
+	["-","", , , , , , , , ],
+	["Nederlands","index.htm", , , , "_top", "0", "-1", , ],		
+];
+
+dm_init();
