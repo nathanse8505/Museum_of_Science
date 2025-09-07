@@ -1,0 +1,486 @@
+2025-08-31 15:59:42 - your horsepower is: 0.02
+2025-08-31 16:00:26 - your horsepower is: 0.01
+2025-08-31 16:00:38 - your horsepower is: 0.02
+2025-08-31 16:00:50 - your horsepower is: 0.02
+2025-08-31 16:01:56 - your horsepower is: 0.02
+2025-08-31 16:05:46 - your horsepower is: 0.02
+2025-08-31 16:05:56 - your horsepower is: 0.03
+2025-08-31 16:06:05 - your horsepower is: 0.06
+2025-08-31 16:06:26 - your horsepower is: 0.02
+2025-08-31 16:57:43 - reset Arduino
+2025-08-31 16:58:26 - your horsepower is: 0.03
+2025-08-31 16:58:47 - your horsepower is: 0.02
+2025-08-31 17:01:04 - your horsepower is: 0.06
+2025-08-31 17:01:15 - your horsepower is: 0.02
+2025-08-31 17:01:26 - your horsepower is: 0.02
+2025-08-31 17:37:09 - your horsepower is: 0.02
+2025-08-31 17:37:36 - your horsepower is: 0.02
+2025-08-31 17:37:45 - your horsepower is: 0.05
+2025-08-31 17:37:54 - your horsepower is: 0.08
+2025-08-31 17:38:07 - your horsepower is: 0.01
+2025-08-31 17:38:31 - your horsepower is: 0.02
+2025-08-31 17:38:42 - your horsepower is: 0.02
+2025-08-31 17:43:42 - your horsepower is: 0.02
+2025-08-31 18:04:46 - your horsepower is: 0.01
+2025-08-31 18:04:56 - your horsepower is: 0.02
+2025-08-31 18:05:13 - your horsepower is: 0.02
+2025-09-01 09:57:11 - Starting Horse Power UI
+2025-09-01 09:57:11 - Found Arduino! port: /dev/ttyUSB0
+2025-09-01 09:57:11 - Connected to /dev/ttyUSB0
+2025-09-01 09:57:12 - reset Arduino
+2025-09-01 10:57:25 - reset Arduino
+2025-09-01 11:57:42 - reset Arduino
+2025-09-01 12:47:16 - your horsepower is: 0.02
+2025-09-01 12:47:29 - your horsepower is: 0.12
+2025-09-01 12:57:55 - reset Arduino
+2025-09-01 13:06:29 - your horsepower is: 0.02
+2025-09-01 13:06:39 - your horsepower is: 0.04
+2025-09-01 13:06:56 - your horsepower is: 0.04
+2025-09-01 13:58:07 - reset Arduino
+2025-09-01 14:14:59 - your horsepower is: 0.02
+2025-09-01 14:15:13 - your horsepower is: 0.03
+2025-09-01 14:40:16 - your horsepower is: 0.02
+2025-09-01 14:40:26 - your horsepower is: 0.02
+2025-09-01 14:53:09 - your horsepower is: 0.25
+2025-09-01 14:53:23 - your horsepower is: 0.07
+2025-09-01 14:53:43 - your horsepower is: 0.04
+2025-09-01 14:54:12 - your horsepower is: 0.07
+2025-09-01 14:55:14 - your horsepower is: 0.02
+2025-09-01 14:55:27 - your horsepower is: 0.25
+2025-09-01 14:58:22 - reset Arduino
+2025-09-01 15:58:36 - reset Arduino
+2025-09-01 16:45:30 - your horsepower is: 0.02
+2025-09-01 16:58:48 - reset Arduino
+2025-09-01 17:59:01 - reset Arduino
+2025-09-02 09:39:11 - Starting Horse Power UI
+2025-09-02 09:39:11 - Found Arduino! port: /dev/ttyUSB0
+2025-09-02 09:39:11 - Connected to /dev/ttyUSB0
+2025-09-02 09:39:12 - reset Arduino
+2025-09-02 10:39:23 - reset Arduino
+2025-09-02 11:39:36 - reset Arduino
+2025-09-02 12:18:35 - your horsepower is: 0.02
+2025-09-02 12:18:41 - your language is: english
+2025-09-02 12:18:43 - your language is: arabic
+2025-09-02 12:18:45 - your language is: hebrew
+2025-09-02 12:18:50 - your horsepower is: 0.03
+2025-09-02 12:19:00 - your horsepower is: 0.03
+2025-09-02 12:19:16 - your horsepower is: 0.04
+2025-09-02 12:19:24 - your horsepower is: 0.18
+2025-09-02 12:19:36 - your horsepower is: 0.02
+2025-09-02 12:19:45 - your horsepower is: 0.14
+2025-09-02 12:19:54 - your horsepower is: 0.07
+2025-09-02 12:20:02 - your horsepower is: 0.08
+2025-09-02 12:39:51 - reset Arduino
+2025-09-02 13:10:46 - your language is: english
+2025-09-02 13:10:55 - your language is: arabic
+2025-09-02 13:40:05 - reset Arduino
+2025-09-02 13:40:05 - your language is: hebrew
+2025-09-02 14:00:53 - your language is: english
+2025-09-02 14:00:57 - your horsepower is: 0.02
+2025-09-02 14:01:14 - your horsepower is: 0.02
+2025-09-02 14:03:18 - your horsepower is: 0.03
+2025-09-02 14:03:22 - your language is: hebrew
+2025-09-02 14:03:28 - reset Arduino
+2025-09-02 15:03:43 - reset Arduino
+2025-09-02 16:03:56 - reset Arduino
+2025-09-02 16:57:19 - your horsepower is: 0.01
+2025-09-02 17:04:07 - reset Arduino
+2025-09-02 17:05:59 - your horsepower is: 0.04
+2025-09-02 17:06:13 - your horsepower is: 0.18
+2025-09-02 17:06:22 - your horsepower is: 0.21
+2025-09-03 09:49:45 - Starting Horse Power UI
+2025-09-03 09:49:45 - Found Arduino! port: /dev/ttyUSB0
+2025-09-03 09:49:45 - Connected to /dev/ttyUSB0
+2025-09-03 09:49:46 - reset Arduino
+2025-09-03 10:21:37 - your horsepower is: 0.25
+2025-09-03 10:21:46 - reset Arduino
+2025-09-03 10:21:58 - your horsepower is: 0.02
+2025-09-03 10:22:06 - reset Arduino
+2025-09-03 10:22:27 - your horsepower is: 0.13
+2025-09-03 10:22:36 - your horsepower is: 0.15
+2025-09-03 10:22:48 - your horsepower is: 0.02
+2025-09-03 10:22:57 - your horsepower is: 0.12
+2025-09-03 10:49:57 - reset Arduino
+2025-09-03 10:52:38 - your horsepower is: 0.03
+2025-09-03 10:52:51 - your horsepower is: 0.02
+2025-09-03 11:09:30 - your horsepower is: 0.02
+2025-09-03 11:09:40 - your horsepower is: 0.02
+2025-09-03 11:10:51 - your language is: english
+2025-09-03 11:10:51 - your language is: arabic
+2025-09-03 11:11:22 - your horsepower is: 0.05
+2025-09-03 11:11:38 - your horsepower is: 0.02
+2025-09-03 11:50:08 - reset Arduino
+2025-09-03 11:50:08 - your language is: hebrew
+2025-09-03 12:13:58 - your horsepower is: 0.06
+2025-09-03 12:14:09 - your horsepower is: 0.06
+2025-09-03 12:50:20 - reset Arduino
+2025-09-03 12:57:09 - reset Arduino
+2025-09-03 13:50:31 - reset Arduino
+2025-09-03 14:50:43 - reset Arduino
+2025-09-03 14:59:27 - your horsepower is: 0.02
+2025-09-03 14:59:38 - your horsepower is: 0.02
+2025-09-03 14:59:52 - your horsepower is: 0.18
+2025-09-03 15:00:45 - your horsepower is: 0.08
+2025-09-03 15:00:55 - your horsepower is: 0.05
+2025-09-03 15:01:04 - your horsepower is: 0.1
+2025-09-03 15:01:13 - your horsepower is: 0.06
+2025-09-03 15:01:21 - your horsepower is: 0.06
+2025-09-03 15:01:45 - your horsepower is: 0.04
+2025-09-03 15:03:23 - your horsepower is: 0.02
+2025-09-03 15:03:32 - your horsepower is: 0.03
+2025-09-03 15:03:41 - your horsepower is: 0.1
+2025-09-03 15:03:50 - your horsepower is: 0.07
+2025-09-03 15:03:59 - your horsepower is: 0.07
+2025-09-03 15:04:08 - your horsepower is: 0.1
+2025-09-03 15:10:25 - your horsepower is: 0.02
+2025-09-03 15:10:49 - your horsepower is: 0.08
+2025-09-03 15:11:08 - your horsepower is: 0.02
+2025-09-03 15:11:18 - your horsepower is: 0.07
+2025-09-03 15:16:47 - your horsepower is: 0.02
+2025-09-03 15:17:13 - your horsepower is: 0.05
+2025-09-03 15:50:57 - reset Arduino
+2025-09-03 16:38:58 - your horsepower is: 0.07
+2025-09-03 16:39:17 - your horsepower is: 0.06
+2025-09-03 16:43:20 - your horsepower is: 0.02
+2025-09-03 16:43:50 - your language is: english
+2025-09-03 16:45:12 - your horsepower is: 0.03
+2025-09-03 16:45:35 - your horsepower is: 0.02
+2025-09-03 16:51:09 - reset Arduino
+2025-09-03 16:51:09 - your language is: hebrew
+2025-09-03 17:51:20 - reset Arduino
+2025-09-04 08:20:31 - Starting Horse Power UI
+2025-09-04 08:20:31 - Found Arduino! port: /dev/ttyUSB0
+2025-09-04 08:20:31 - Connected to /dev/ttyUSB0
+2025-09-04 08:20:33 - reset Arduino
+2025-09-04 09:20:43 - reset Arduino
+2025-09-04 10:20:55 - reset Arduino
+2025-09-04 10:35:20 - your horsepower is: 0.04
+2025-09-04 11:11:55 - your language is: english
+2025-09-04 11:11:56 - your language is: arabic
+2025-09-04 11:11:56 - your language is: hebrew
+2025-09-04 11:12:20 - your horsepower is: 0.01
+2025-09-04 11:12:30 - your horsepower is: 0.07
+2025-09-04 11:12:45 - your language is: english
+2025-09-04 11:12:48 - your horsepower is: 0.04
+2025-09-04 11:12:48 - your language is: arabic
+2025-09-04 11:12:54 - your language is: hebrew
+2025-09-04 11:12:59 - your horsepower is: 0.02
+2025-09-04 11:21:06 - reset Arduino
+2025-09-04 11:56:22 - your language is: english
+2025-09-04 11:56:23 - your language is: arabic
+2025-09-04 11:56:23 - your language is: hebrew
+2025-09-04 11:56:23 - your language is: english
+2025-09-04 12:03:42 - your horsepower is: 0.02
+2025-09-04 12:05:09 - your horsepower is: 0.01
+2025-09-04 12:14:29 - your horsepower is: 0.03
+2025-09-04 12:16:55 - your language is: arabic
+2025-09-04 12:16:56 - your language is: hebrew
+2025-09-04 12:16:57 - your language is: english
+2025-09-04 12:21:17 - reset Arduino
+2025-09-04 12:21:17 - your language is: hebrew
+2025-09-04 12:28:55 - your language is: english
+2025-09-04 12:28:56 - your language is: arabic
+2025-09-04 12:28:56 - your language is: hebrew
+2025-09-04 12:28:57 - your language is: english
+2025-09-04 12:28:57 - your language is: arabic
+2025-09-04 12:33:52 - your language is: hebrew
+2025-09-04 12:35:25 - your horsepower is: 0.02
+2025-09-04 12:35:34 - your horsepower is: 0.06
+2025-09-04 12:35:41 - your horsepower is: 0.25
+2025-09-04 12:38:23 - your horsepower is: 0.06
+2025-09-04 12:42:22 - your horsepower is: 0.06
+2025-09-04 12:42:31 - your horsepower is: 0.05
+2025-09-04 12:42:40 - your horsepower is: 0.17
+2025-09-04 12:42:51 - your horsepower is: 0.02
+2025-09-04 12:43:04 - your horsepower is: 0.02
+2025-09-04 12:43:12 - your horsepower is: 0.02
+2025-09-04 12:43:22 - your horsepower is: 0.04
+2025-09-04 12:43:32 - your horsepower is: 0.03
+2025-09-04 12:54:09 - your horsepower is: 0.05
+2025-09-04 12:54:23 - your horsepower is: 0.05
+2025-09-04 12:57:22 - your horsepower is: 0.01
+2025-09-04 13:43:25 - reset Arduino
+2025-09-04 13:55:01 - your horsepower is: 0.05
+2025-09-04 13:55:11 - your horsepower is: 0.04
+2025-09-04 13:56:50 - your horsepower is: 0.06
+2025-09-04 14:43:36 - reset Arduino
+2025-09-04 15:20:28 - your horsepower is: 0.14
+2025-09-04 15:20:38 - your horsepower is: 0.05
+2025-09-04 15:29:27 - your horsepower is: 0.02
+2025-09-04 15:29:40 - your horsepower is: 0.05
+2025-09-04 15:29:51 - your horsepower is: 0.02
+2025-09-04 15:30:09 - your horsepower is: 0.02
+2025-09-04 15:30:17 - your horsepower is: 0.09
+2025-09-04 15:43:50 - reset Arduino
+2025-09-04 15:52:08 - your horsepower is: 0.08
+2025-09-04 15:52:25 - your horsepower is: 0.02
+2025-09-04 15:52:49 - your horsepower is: 0.1
+2025-09-04 16:17:24 - your horsepower is: 0.13
+2025-09-04 16:17:42 - your horsepower is: 0.08
+2025-09-04 16:26:41 - reset Arduino
+2025-09-04 16:27:01 - your horsepower is: 0.18
+2025-09-04 16:27:05 - your language is: english
+2025-09-04 16:27:07 - your language is: arabic
+2025-09-04 16:27:07 - your language is: hebrew
+2025-09-04 16:27:08 - your language is: english
+2025-09-04 16:27:28 - your horsepower is: 0.02
+2025-09-04 16:27:48 - your horsepower is: 0.01
+2025-09-04 16:28:36 - reset Arduino
+2025-09-04 16:28:53 - your horsepower is: 0.02
+2025-09-04 16:29:12 - your language is: hebrew
+2025-09-04 16:29:28 - your horsepower is: 0.1
+2025-09-04 17:29:23 - reset Arduino
+2025-09-05 08:01:58 - Starting Horse Power UI
+2025-09-05 08:01:58 - Found Arduino! port: /dev/ttyUSB0
+2025-09-05 08:01:58 - Connected to /dev/ttyUSB0
+2025-09-05 08:01:59 - reset Arduino
+2025-09-05 09:02:10 - reset Arduino
+2025-09-05 09:15:37 - your language is: english
+2025-09-05 09:15:39 - your language is: arabic
+2025-09-05 09:15:40 - your language is: hebrew
+2025-09-05 09:15:49 - your language is: english
+2025-09-05 09:53:22 - your horsepower is: 0.02
+2025-09-05 09:55:11 - your language is: arabic
+2025-09-05 09:55:20 - your language is: hebrew
+2025-09-05 09:55:43 - your horsepower is: 0.1
+2025-09-05 09:55:54 - your horsepower is: 0.02
+2025-09-05 09:56:06 - your horsepower is: 0.02
+2025-09-05 09:56:20 - your horsepower is: 0.02
+2025-09-05 10:02:22 - reset Arduino
+2025-09-05 11:02:33 - reset Arduino
+2025-09-05 12:02:49 - reset Arduino
+2025-09-06 09:26:41 - Starting Horse Power UI
+2025-09-06 09:26:41 - Found Arduino! port: /dev/ttyUSB0
+2025-09-06 09:26:41 - Connected to /dev/ttyUSB0
+2025-09-06 09:26:43 - reset Arduino
+2025-09-06 10:09:17 - your horsepower is: 0.02
+2025-09-06 10:14:42 - your language is: english
+2025-09-06 10:19:48 - your horsepower is: 0.04
+2025-09-06 10:20:05 - your horsepower is: 0.02
+2025-09-06 10:20:20 - your horsepower is: 0.02
+2025-09-06 10:22:59 - your horsepower is: 0.02
+2025-09-06 10:23:11 - your horsepower is: 0.02
+2025-09-06 10:23:21 - your horsepower is: 0.02
+2025-09-06 10:23:35 - your horsepower is: 0.01
+2025-09-06 10:26:57 - reset Arduino
+2025-09-06 10:26:57 - your language is: hebrew
+2025-09-06 10:36:49 - your horsepower is: 0.02
+2025-09-06 10:37:05 - your horsepower is: 0.02
+2025-09-06 10:37:22 - your horsepower is: 0.02
+2025-09-06 10:37:36 - your horsepower is: 0.14
+2025-09-06 10:59:50 - your horsepower is: 0.02
+2025-09-06 11:14:12 - your language is: english
+2025-09-06 11:15:42 - your horsepower is: 0.1
+2025-09-06 11:15:47 - your language is: arabic
+2025-09-06 11:15:49 - your language is: hebrew
+2025-09-06 11:15:56 - your horsepower is: 0.02
+2025-09-06 11:16:09 - your horsepower is: 0.05
+2025-09-06 11:16:21 - your horsepower is: 0.08
+2025-09-06 11:17:09 - your horsepower is: 0.14
+2025-09-06 11:18:14 - your horsepower is: 0.03
+2025-09-06 11:18:24 - your horsepower is: 0.06
+2025-09-06 11:18:34 - your horsepower is: 0.05
+2025-09-06 11:20:54 - your horsepower is: 0.12
+2025-09-06 11:22:05 - your horsepower is: 0.03
+2025-09-06 11:22:38 - your horsepower is: 0.04
+2025-09-06 11:25:24 - your horsepower is: 0.07
+2025-09-06 11:25:43 - your horsepower is: 0.07
+2025-09-06 11:26:17 - your horsepower is: 0.02
+2025-09-06 11:27:11 - reset Arduino
+2025-09-06 11:33:33 - your language is: english
+2025-09-06 11:33:36 - your language is: arabic
+2025-09-06 11:33:57 - your language is: hebrew
+2025-09-06 11:34:02 - your horsepower is: 0.01
+2025-09-06 11:34:05 - your language is: english
+2025-09-06 11:34:16 - your language is: arabic
+2025-09-06 11:34:22 - your language is: hebrew
+2025-09-06 11:34:42 - your horsepower is: 0.03
+2025-09-06 11:34:50 - your horsepower is: 0.21
+2025-09-06 11:34:59 - your horsepower is: 0.15
+2025-09-06 11:35:14 - your horsepower is: 0.12
+2025-09-06 11:37:48 - your horsepower is: 0.06
+2025-09-06 11:39:12 - your horsepower is: 0.03
+2025-09-06 11:39:32 - your horsepower is: 0.25
+2025-09-06 11:39:40 - your horsepower is: 0.25
+2025-09-06 11:40:34 - your horsepower is: 0.05
+2025-09-06 11:40:44 - your horsepower is: 0.03
+2025-09-06 11:40:54 - your horsepower is: 0.03
+2025-09-06 11:43:30 - your language is: english
+2025-09-06 11:43:30 - your language is: arabic
+2025-09-06 11:43:34 - your language is: hebrew
+2025-09-06 11:43:36 - your language is: english
+2025-09-06 11:43:46 - your horsepower is: 0.03
+2025-09-06 11:48:12 - your horsepower is: 0.1
+2025-09-06 11:48:20 - your horsepower is: 0.09
+2025-09-06 11:49:11 - your horsepower is: 0.02
+2025-09-06 11:49:34 - your horsepower is: 0.03
+2025-09-06 11:49:49 - your horsepower is: 0.02
+2025-09-06 11:50:31 - your horsepower is: 0.05
+2025-09-06 11:50:44 - reset Arduino
+2025-09-06 11:50:59 - your horsepower is: 0.25
+2025-09-06 11:51:16 - reset Arduino
+2025-09-06 11:51:33 - your horsepower is: 0.02
+2025-09-06 11:52:14 - your horsepower is: 0.01
+2025-09-06 11:52:29 - reset Arduino
+2025-09-06 11:54:41 - your horsepower is: 0.02
+2025-09-06 11:55:00 - your language is: hebrew
+2025-09-06 11:55:00 - reset Arduino
+2025-09-06 11:55:16 - your horsepower is: 0.02
+2025-09-06 11:58:05 - your language is: english
+2025-09-06 11:58:06 - your language is: arabic
+2025-09-06 11:58:22 - your language is: hebrew
+2025-09-06 11:58:27 - your horsepower is: 0.02
+2025-09-06 11:58:41 - your horsepower is: 0.03
+2025-09-06 11:58:46 - reset Arduino
+2025-09-06 12:00:38 - your horsepower is: 0.02
+2025-09-06 12:01:21 - your language is: english
+2025-09-06 12:06:17 - your language is: arabic
+2025-09-06 12:06:22 - your horsepower is: 0.04
+2025-09-06 12:07:15 - your horsepower is: 0.04
+2025-09-06 12:10:29 - your horsepower is: 0.09
+2025-09-06 12:10:52 - your horsepower is: 0.03
+2025-09-06 12:10:54 - your language is: hebrew
+2025-09-06 12:10:55 - your language is: english
+2025-09-06 12:10:56 - your language is: arabic
+2025-09-06 12:10:56 - your language is: hebrew
+2025-09-06 12:11:10 - your horsepower is: 0.13
+2025-09-06 12:11:33 - your horsepower is: 0.08
+2025-09-06 12:11:51 - your horsepower is: 0.01
+2025-09-06 12:11:51 - reset Arduino
+2025-09-06 12:12:04 - your horsepower is: 0.02
+2025-09-06 12:12:27 - your horsepower is: 0.01
+2025-09-06 12:16:43 - your horsepower is: 0.04
+2025-09-06 12:16:57 - your horsepower is: 0.08
+2025-09-06 12:17:11 - your horsepower is: 0.02
+2025-09-06 12:17:29 - your horsepower is: 0.31
+2025-09-06 12:17:40 - your horsepower is: 0.02
+2025-09-06 12:17:50 - your horsepower is: 0.03
+2025-09-06 12:18:05 - your horsepower is: 0.13
+2025-09-06 12:18:35 - your horsepower is: 0.02
+2025-09-06 12:18:44 - your horsepower is: 0.04
+2025-09-06 12:48:00 - your horsepower is: 0.05
+2025-09-06 12:53:58 - your horsepower is: 0.09
+2025-09-06 12:54:07 - your horsepower is: 0.06
+2025-09-06 12:54:16 - your horsepower is: 0.25
+2025-09-06 12:54:27 - your horsepower is: 0.03
+2025-09-06 12:54:41 - your horsepower is: 0.02
+2025-09-06 12:54:57 - your horsepower is: 0.03
+2025-09-06 12:55:16 - your horsepower is: 0.01
+2025-09-06 12:55:26 - your horsepower is: 0.03
+2025-09-06 13:01:08 - reset Arduino
+2025-09-06 13:02:23 - your horsepower is: 0.06
+2025-09-06 13:02:38 - your horsepower is: 0.31
+2025-09-06 13:08:21 - reset Arduino
+2025-09-06 13:08:28 - your horsepower is: 0.15
+2025-09-06 13:08:44 - your horsepower is: 0.06
+2025-09-06 13:09:17 - your horsepower is: 0.14
+2025-09-06 13:09:46 - your horsepower is: 0.01
+2025-09-06 13:17:01 - your horsepower is: 0.02
+2025-09-06 13:17:09 - your horsepower is: 0.07
+2025-09-06 13:17:15 - your language is: english
+2025-09-06 13:23:02 - your horsepower is: 0.02
+2025-09-06 13:24:37 - your horsepower is: 0.02
+2025-09-06 13:27:01 - your horsepower is: 0.03
+2025-09-06 13:27:13 - your horsepower is: 0.02
+2025-09-06 13:30:01 - your horsepower is: 0.07
+2025-09-06 13:30:14 - reset Arduino
+2025-09-06 13:30:23 - your horsepower is: 0.03
+2025-09-06 13:30:37 - your horsepower is: 0.03
+2025-09-06 13:30:47 - your horsepower is: 0.02
+2025-09-06 13:30:48 - your language is: arabic
+2025-09-06 13:30:50 - your language is: hebrew
+2025-09-06 13:30:58 - your horsepower is: 0.02
+2025-09-06 13:31:07 - your horsepower is: 0.05
+2025-09-06 13:32:28 - your horsepower is: 0.15
+2025-09-06 13:32:40 - your horsepower is: 0.01
+2025-09-06 13:32:54 - your horsepower is: 0.18
+2025-09-06 13:33:08 - your horsepower is: 0.06
+2025-09-06 13:33:22 - reset Arduino
+2025-09-06 13:33:31 - your horsepower is: 0.02
+2025-09-06 13:40:37 - your horsepower is: 0.01
+2025-09-06 13:40:53 - your horsepower is: 0.06
+2025-09-06 13:41:15 - your horsepower is: 0.01
+2025-09-06 13:42:17 - your horsepower is: 0.02
+2025-09-06 13:42:34 - your horsepower is: 0.02
+2025-09-06 13:42:47 - your horsepower is: 0.02
+2025-09-06 13:47:49 - your horsepower is: 0.02
+2025-09-06 13:49:23 - your horsepower is: 0.01
+2025-09-06 13:49:49 - your horsepower is: 0.03
+2025-09-06 13:53:16 - your horsepower is: 0.02
+2025-09-06 13:55:42 - your horsepower is: 0.04
+2025-09-06 13:56:04 - your language is: english
+2025-09-06 13:56:05 - your language is: arabic
+2025-09-06 13:57:15 - your language is: hebrew
+2025-09-06 13:57:21 - your language is: english
+2025-09-06 13:57:24 - your horsepower is: 0.06
+2025-09-06 13:57:24 - your language is: arabic
+2025-09-06 13:57:26 - your language is: hebrew
+2025-09-06 13:57:28 - your language is: english
+2025-09-06 13:57:29 - your language is: arabic
+2025-09-06 13:57:30 - your language is: hebrew
+2025-09-06 13:57:31 - your language is: english
+2025-09-06 13:57:39 - your horsepower is: 0.03
+2025-09-06 13:57:51 - your horsepower is: 0.01
+2025-09-06 14:01:32 - your horsepower is: 0.05
+2025-09-06 14:04:18 - your horsepower is: 0.05
+2025-09-06 14:18:01 - reset Arduino
+2025-09-06 14:18:10 - your horsepower is: 0.03
+2025-09-06 14:18:18 - your horsepower is: 0.21
+2025-09-06 14:18:22 - your language is: hebrew
+2025-09-06 14:18:26 - your horsepower is: 0.02
+2025-09-06 14:18:33 - your language is: english
+2025-09-06 14:18:37 - your horsepower is: 0.02
+2025-09-06 14:19:24 - your horsepower is: 0.02
+2025-09-06 14:30:50 - your language is: arabic
+2025-09-06 14:31:04 - your horsepower is: 0.04
+2025-09-06 14:38:01 - your horsepower is: 0.03
+2025-09-06 14:38:24 - your horsepower is: 0.02
+2025-09-06 14:40:10 - your horsepower is: 0.21
+2025-09-06 14:40:24 - your horsepower is: 0.07
+2025-09-06 14:40:38 - your horsepower is: 0.02
+2025-09-06 14:40:51 - your horsepower is: 0.14
+2025-09-06 14:41:16 - your horsepower is: 0.02
+2025-09-06 14:41:36 - your language is: hebrew
+2025-09-06 14:41:36 - reset Arduino
+2025-09-06 14:43:07 - your horsepower is: 0.05
+2025-09-06 14:43:39 - your horsepower is: 0.03
+2025-09-06 14:44:04 - reset Arduino
+2025-09-06 14:46:30 - your horsepower is: 0.25
+2025-09-06 14:46:56 - your horsepower is: 0.07
+2025-09-06 14:47:12 - your horsepower is: 0.02
+2025-09-06 14:47:25 - your horsepower is: 0.12
+2025-09-06 14:51:30 - your horsepower is: 0.02
+2025-09-06 14:51:59 - reset Arduino
+2025-09-06 15:18:06 - your horsepower is: 0.02
+2025-09-06 15:18:22 - your horsepower is: 0.03
+2025-09-06 15:18:33 - your horsepower is: 0.02
+2025-09-06 15:18:45 - your horsepower is: 0.04
+2025-09-06 15:19:27 - your horsepower is: 0.09
+2025-09-06 15:19:37 - your horsepower is: 0.03
+2025-09-06 15:24:03 - your horsepower is: 0.02
+2025-09-06 15:24:11 - your horsepower is: 0.06
+2025-09-06 15:24:27 - your horsepower is: 0.25
+2025-09-06 15:24:37 - your horsepower is: 0.03
+2025-09-06 15:24:54 - your horsepower is: 0.05
+2025-09-06 15:25:14 - your horsepower is: 0.03
+2025-09-06 15:25:31 - your horsepower is: 0.16
+2025-09-06 15:25:42 - your horsepower is: 0.06
+2025-09-06 15:26:00 - your horsepower is: 0.03
+2025-09-06 15:26:09 - your horsepower is: 0.1
+2025-09-06 15:26:17 - your horsepower is: 0.02
+2025-09-06 15:40:08 - your horsepower is: 0.02
+2025-09-06 15:52:33 - your horsepower is: 0.02
+2025-09-06 15:52:45 - your horsepower is: 0.07
+2025-09-06 15:53:40 - your horsepower is: 0.03
+2025-09-07 08:17:26 - Starting Horse Power UI
+2025-09-07 08:17:26 - Found Arduino! port: /dev/ttyUSB0
+2025-09-07 08:17:26 - Connected to /dev/ttyUSB0
+2025-09-07 08:17:27 - reset Arduino
+2025-09-07 09:17:41 - reset Arduino
+2025-09-07 10:17:56 - reset Arduino
+2025-09-07 11:17:02 - your horsepower is: 0.08
+2025-09-07 11:18:12 - reset Arduino
+2025-09-07 11:24:09 - your horsepower is: 0.15
+2025-09-07 12:18:26 - reset Arduino
+2025-09-07 13:18:38 - reset Arduino
+2025-09-07 14:18:49 - reset Arduino

@@ -11,7 +11,7 @@ void setup() {
   Serial.begin(BAUDRATE);            // Start serial communication
 
   Serial.println("init");
-  wdt_enable(WDTO_4S);  
+  wdt_enable(WDTO_2S);  
 }
 
 void loop() {
