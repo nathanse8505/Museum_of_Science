@@ -14,11 +14,11 @@ const uint8_t PIN_EN    = 8;   // EN
 
 // --- Paramètres moteur ---
 const int STEPS_PER_REV = 200;  // pas par tour du moteur (full step)
-const int RPM           = 50; // vitesse cible
-const int MICROSTEPS    = 2;   // 1,2,4,8,16 (micro-stepping)
+const int RPM           = 200; // vitesse cible
+const int MICROSTEPS    = 4;   // 1,2,4,8,16 (micro-stepping)
 
 // --- Timing ---
-const uint8_t STEP_PULSE_US = 3; // largeur d’impulsion STEP (>=1us)
+const uint8_t STEP_PULSE_US  = 3; // largeur d’impulsion STEP (>=1us)
 unsigned long stepIntervalUs = 0;
 unsigned long lastStepUs     = 0;
 
