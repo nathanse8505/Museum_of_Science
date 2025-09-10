@@ -14,12 +14,12 @@
 
 //
 const int Sample_Time = 2; // ms time between measure 
-#define   SEGMENT_1_SENSOR_PIN    A0//14 // A0 (see https://github.com/arduino/ArduinoCore-avr/blob/master/variants/standard/pins_arduino.h#L56-L72)
-#define   SEGMENT_1_BARRIER_PIN   9
-#define   SEGMENT_2_SENSOR_PIN    A1//15  //A1
-#define   SEGMENT_2_BARRIER_PIN   8
-#define   SEGMENT_3_SENSOR_PIN    A2//16  //A2
-#define   SEGMENT_3_BARRIER_PIN   7
+#define   SEGMENT_1_SENSOR_PIN    A1//14 // A0 (see https://github.com/arduino/ArduinoCore-avr/blob/master/variants/standard/pins_arduino.h#L56-L72)
+#define   SEGMENT_1_BARRIER_PIN   8
+#define   SEGMENT_2_SENSOR_PIN    A2//15  //A1
+#define   SEGMENT_2_BARRIER_PIN   7
+#define   SEGMENT_3_SENSOR_PIN    A3//16  //A2
+#define   SEGMENT_3_BARRIER_PIN   6
 
 
 // do we get a HIGH/ LOW when a sensor detects a train
@@ -59,7 +59,7 @@ void setup() {
     openBarrier(i);
   }
 
-  closeBarrier(2);
+  closeBarrier(0);
 }
 
 void closeBarrier(int segmentIndex)
@@ -115,16 +115,11 @@ void loop() {
 //  Serial.println("================");
 //   int tttt = digitalRead(14);
 //   Serial.println(tttt);
-
-
-  
-  for (int i = 0; i < numOfSegments; i++) 
-{
-   int sensorPin = sensorPins[i];
-   int barrierCurrentState = digitalRead(sensorPin);
-   int prevBarrierPin = barrierPins[getPreviuosSegment(i)];
-  if (barrierCurrentState == trainDetectionSignal) 
-  {
+for (int i = 0; i < numOfSegments; i++) {
+  int sensorPin = sensorPins[i];
+  int barrierCurrentState = digitalRead(sensorPin);
+  int prevBarrierPin = barrierPins[getPreviuosSegment(i)];
+  if (barrierCurrentState == trainDetectionSignal) {
     //closeBarrier(i);
     //openBarrier(getPreviuosSegment(i));  
     openBarrier(i);
