@@ -32,7 +32,8 @@ void loop() {
   wdt_reset();
 
   // Check if ignition button is pressed
-  buttonPressed = true;
+  //buttonPressed = true;
+  buttonPressed =PRESS_BUTTON_IGNITION();
 
 
   // After some time, move on to hydrogen and ignition phase

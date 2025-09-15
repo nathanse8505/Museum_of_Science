@@ -9,8 +9,8 @@ const uint8_t PIN_EN    = 8;   // EN
 /////////////PIN_SLEEP 5V;   // SLEEP
 
 // --- Boutons (INPUT_PULLUP : appui = LOW) ---
-#define BUTTON_CLOCKWISE     2
-#define BUTTON_COUNTERCLOCK  3
+#define BUTTON_CLOCKWISE     A0
+#define BUTTON_COUNTERCLOCK  A1
 
 // --- Paramètres moteur ---
 const int STEPS_PER_REV = 200;  // pas par tour du moteur (full step)
