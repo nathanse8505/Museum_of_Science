@@ -1,0 +1,10 @@
+Summary from 2025-08-01 00:00:00 to 2025-08-31 23:59:59 (31 days)
+Log data time range: 2025-08-01 08:37:52 to 2025-08-31 17:37:45 (31 days)
+
+Total Flames reached:: 388
+Average Flames reached: per day: 12.52
+
+---
+UI restarts between 09:30 and 18:00: 4
+Arduino disconnections between 09:30 and 18:00: 0
+Error parsing data: 0

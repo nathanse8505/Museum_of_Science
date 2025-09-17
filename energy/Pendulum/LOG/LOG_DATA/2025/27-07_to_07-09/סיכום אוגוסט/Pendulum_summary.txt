@@ -1,0 +1,10 @@
+Summary from 2025-07-27 to 2025-09-07 (43 days)
+Log data time range: 2025-07-27 to 2025-09-03 (39 days)
+
+Total MOTOR activated: 14109
+Total MOTOR NO ACTION: 145474
+Total actions: 159583
+
+Average MOTOR activated per day: 371.29
+Average  MOTOR NO ACTION per day: 3828.26
+Average total actions per day: 4199.55

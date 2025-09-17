@@ -1,0 +1,10 @@
+Summary from 2025-07-27 to 2025-09-07 (43 days)
+Log data time range: 2025-07-27 to 2025-09-06 (42 days)
+
+UV activated: 6662
+Total SW off: 228137
+Total actions: 234799
+
+Average UV activated per day: 162.49
+Average SW off per day: 5564.32
+Average total actions per day: 5726.80
