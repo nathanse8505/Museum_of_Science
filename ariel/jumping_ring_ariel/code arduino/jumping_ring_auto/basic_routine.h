@@ -32,7 +32,7 @@
 #define RELAY_IO        11  // relay active contactor 
 
 ////////button mode ///////
-const bool MANUAL = false;
+const bool MANUAL = true;
 // global vars
 int32_t time_start = 0;
 int32_t time_new_session = 0;
