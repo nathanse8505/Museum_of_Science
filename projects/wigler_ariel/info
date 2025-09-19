@@ -1,0 +1,157 @@
+{
+  "uuid": "13814f0a963ffba4b1845a7b620d9405",
+  "path": "Offline/wigler_ariel",
+  "name": "wigler_ariel",
+  "content": "",
+  "created_at": "2025-09-19 13:40:54",
+  "updated_at": "2025-09-19 14:11:52",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "471363e1984a073fb29b71e2c44d0480",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "b21f460f337c435d854d954092ca6a03": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "230bc382ca0246f58f622947b27c87e1": 3,
+        "506a2f49fd5af7690094a86e81a44ebe": 2,
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "e4d7e9dc5ae7495bbb79165693badf2f": 1,
+        "154b66255b01a09bf1c88bb1ea89be78": 2,
+        "b6d6c5c03f064b08b573b09b0b4a0455": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "100nF",
+          2,
+          "C0603",
+          "C1,C2",
+          {
+            "Manufacturer Part": "CC0603KRX7R9BB104",
+            "Manufacturer": "YAGEO(国巨)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C14663"
+          }
+        ],
+        [
+          "B+",
+          1,
+          "CONN-TH_KF2510-2A",
+          "D7",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "B-",
+          1,
+          "CONN-TH_KF2510-2A",
+          "D8",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "Manufacturer Part": "DC005-2.0MM",
+            "Manufacturer": "SOFNG",
+            "Supplier": "LCSC",
+            "Supplier Part": "C111567"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C124408"
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "A4988",
+          1,
+          "DIP-16_L20.3-W15.2-P2.54_LS12.7_A4988",
+          "U1",
+          {
+            "Manufacturer Part": "A4988",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900168373"
+          }
+        ],
+        [
+          "XH2.54-LI-4P",
+          1,
+          "CONN-TH_4P-P2.54-XH2.54-LI-4P",
+          "U2",
+          {
+            "Manufacturer Part": "XH2.54-LI-4P",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900008626"
+          }
+        ],
+        [
+          "78L09",
+          1,
+          "SOT-89-3_L4.5-W2.5-P1.50-LS4.0-BR",
+          "U3",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "CBI(创基)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2875177"
+          }
+        ]
+      ],
+      "updateTime": 1758280312,
+      "createTime": 1758278455,
+      "histories": [],
+      "created_at": "2025-09-19 13:40:55",
+      "updated_at": "2025-09-19 14:11:52"
+    }
+  ],
+  "sort": [],
+  "title": "wigler_ariel",
+  "foldername": "wigler_ariel",
+  "schfilename": "wigler_ariel.json",
+  "schfilemtime": 1758280312813
+}

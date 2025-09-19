@@ -32,6 +32,8 @@
   "b8fe13d91dd6afa3a60508d65c401762": "Hysteresis",
   "c8c429b4eecfcf121bc17bc2a4f816fe": "Hysteresis\\Hysteresis.json?Hysteresis",
   "b54848086454ee220af2a0bb2744ba92": "Hysteresis\\PCB_Hysteresis.json",
+  "514186386082484afc2d5ee6fefb206e": "jumping_ring_ariel",
+  "c558b575ae4cea06fda8fc7318ab8cd4": "jumping_ring_ariel\\jumping_ring_ariel.json?Sheet_1",
   "ed6569236dfe84426a9c182284f19a9c": "Led_Driver_Flashlight",
   "e84efdecba2947426ed92c306bceed47": "Led_Driver_Flashlight\\Led_Driver_Flashlight.json?Led_Driver_Flashlight",
   "e60bdc56c720ba7e6ef1b90d1313a65b": "Led_Driver_Flashlight\\PCB_Led_Driver_Flashlight.json",
@@ -70,5 +72,7 @@
   "c91e8a64bf3a8fa50486d8ec21cf0032": "Train_Barrierx7_OPTO\\PCB_Train_Barrierx7_Opto.json",
   "dc588d8bb3d091d6e54a9e604a9024f6": "Water_Counter_Nathan_Amir",
   "51d895b924e265bd4133450218b4f5c7": "Water_Counter_Nathan_Amir\\Water_Counter_Nathan_Amir.json?Sheet_1",
-  "dbe6fad7a4be9aebce91534019035a3a": "Water_Counter_Nathan_Amir\\PCB_Water_Counter_Nathan_Amir.json"
+  "dbe6fad7a4be9aebce91534019035a3a": "Water_Counter_Nathan_Amir\\PCB_Water_Counter_Nathan_Amir.json",
+  "13814f0a963ffba4b1845a7b620d9405": "wigler_ariel",
+  "471363e1984a073fb29b71e2c44d0480": "wigler_ariel\\wigler_ariel.json?Sheet_1"
 }

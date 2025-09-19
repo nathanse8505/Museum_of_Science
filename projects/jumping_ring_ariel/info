@@ -1,0 +1,104 @@
+{
+  "uuid": "514186386082484afc2d5ee6fefb206e",
+  "path": "Offline/jumping_ring_ariel",
+  "name": "jumping_ring_ariel",
+  "content": "",
+  "created_at": "2025-09-19 13:27:22",
+  "updated_at": "2025-09-19 13:37:46",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "c558b575ae4cea06fda8fc7318ab8cd4",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "506a2f49fd5af7690094a86e81a44ebe": 4,
+        "597701dbde98d3183fe5df5fb870ec57": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "B-",
+          3,
+          "CONN-TH_KF2510-2A",
+          "D1,D2,D8",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "B+",
+          1,
+          "CONN-TH_KF2510-2A",
+          "D7",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "1K",
+          1,
+          "R0603",
+          "ERL1",
+          {
+            "Manufacturer Part": "0603WAF1001T5E",
+            "Manufacturer": "UniOhm",
+            "Supplier": "LCSC",
+            "Supplier Part": "C21190"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C124408"
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ]
+      ],
+      "updateTime": 1758278266,
+      "createTime": 1758277643,
+      "histories": [],
+      "created_at": "2025-09-19 13:27:23",
+      "updated_at": "2025-09-19 13:37:46"
+    }
+  ],
+  "sort": [],
+  "title": "jumping_ring_ariel",
+  "foldername": "jumping_ring_ariel",
+  "schfilename": "jumping_ring_ariel.json",
+  "schfilemtime": 1758278266480
+}
