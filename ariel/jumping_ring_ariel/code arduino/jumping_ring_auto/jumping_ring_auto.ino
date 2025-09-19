@@ -25,11 +25,6 @@ void loop() {
   else{
     buttonPressed = true;
   }
-  
-  //
-   
-  
-
   // After some time, move on to ignition phase
   if ((millis() - time_start) > ACTIVATION_TIME) {
     
