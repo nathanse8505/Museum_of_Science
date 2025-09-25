@@ -33,7 +33,7 @@ int32_t time_new_session = 0;
 const uint32_t ACTIVATION_TIME = 5000;
 const uint16_t DELAY_LED = 2000;
 const uint16_t DELAY_SMOKE = 100;
-const uint16_t TIME_END_SESSION = 15000;
+const uint16_t TIME_END_SESSION = 30000;
 /////////button ignition//////////
 bool check_ignit = LOW;
 bool buttonPressed;
@@ -63,8 +63,8 @@ void reset_session() {
   time_start = millis();
 }
 
-void ACTIVE_SMOKE(int delay_mode){
-  for(int i =0;i<2;i++){
+void SMOKE(int delay_mode,int iteration){
+  for(int i =0;i<iteration;i++){
         // Activer → OUTPUT + LOW
         pinMode(SMOKE_IO, OUTPUT);
         digitalWrite(SMOKE_IO, LOW);
@@ -74,17 +74,6 @@ void ACTIVE_SMOKE(int delay_mode){
         pinMode(SMOKE_IO, INPUT);
         delay(500);
     }
-}
-
-void SMOKE_OFF(int delay_mode){
-        // Activer → OUTPUT + LOW
-        pinMode(SMOKE_IO, OUTPUT);
-        digitalWrite(SMOKE_IO, LOW);
-        delay(delay_mode);
-
-        // Désactiver → INPUT (High-Z)
-        pinMode(SMOKE_IO, INPUT);
-        delay(500);
 }
 
 
@@ -114,8 +103,8 @@ void loop() {
 
     // On first button press (ignition)
     if (buttonPressed && flag_first_press == false) {
-      ACTIVE_SMOKE(DELAY_LED);
-      ACTIVE_SMOKE(DELAY_SMOKE);
+      SMOKE(DELAY_LED,2);
+      SMOKE(DELAY_SMOKE,1);
 
       flag_first_press = true;            // Mark ignition as pressed
       time_new_session = millis();
@@ -126,8 +115,8 @@ void loop() {
 
     if (millis() - time_new_session > TIME_END_SESSION && flag_first_press){
       Serial.println("enter");
-      SMOKE_OFF(DELAY_LED);
-      SMOKE_OFF(DELAY_SMOKE);
+      SMOKE(DELAY_LED,1);
+      SMOKE(DELAY_SMOKE,2);
       reset_session();
     }
   }
