@@ -24,7 +24,7 @@ void setup() {
   }
 
   Serial.println("init");
-  wdt_enable(WDTO_4S);  
+  wdt_enable(WDTO_2S);  
 }
 
 void loop() {
@@ -74,14 +74,15 @@ void loop() {
     
     if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
       time_read_current = millis();
-      if(current_valid() != 2 && flag_first_press == true){
+      current_flag = current_valid();
+      if(current_flag != 2 && flag_first_press == true){
         reset_session();
-        if(current_valid() == 0){
+        if(current_flag == 0){
           Serial.println("reset session because No communication with the current sensor");
           Serial.println("reset the arduino");
           while(1);
         }
-        if(current_valid() == 1){
+        if(current_flag == 1){
           Serial.println("reset session because no current");
         }
         

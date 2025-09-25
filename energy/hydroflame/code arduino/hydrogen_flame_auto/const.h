@@ -100,5 +100,6 @@ bool first_time_current = true;
 const int NUM_OF_READ = 1;
 int read = 0;
 float average_current = 0;
+int current_flag;
 
 #endif

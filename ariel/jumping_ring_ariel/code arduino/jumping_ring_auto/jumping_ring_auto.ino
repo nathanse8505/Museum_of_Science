@@ -47,10 +47,7 @@ void loop() {
       Serial.println("button has been pressed");
       Serial.println("the ring jumping");
     }
-     /*else if (buttonPressed && flag_first_press) {
-      Serial.println("button has been pressed");
-      Serial.println("no action");
-    }*/
+
     
     if (millis() - time_new_session > TIME_RELAY_ON && flag_first_press){
       digitalWrite(RELAY_IO, LOW);
@@ -58,9 +55,6 @@ void loop() {
     }
     delay(1);
   }
-  /*else if(buttonPressed) {
-      Serial.println("button has been pressed");
-      Serial.println("no action");
-    }*/
+
 
 }

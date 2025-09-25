@@ -1,0 +1,406 @@
+{
+  "uuid": "243090cb422e82f5f7166d634f512df2",
+  "path": "Offline/Shield_WDT",
+  "name": "Shield_WDT",
+  "content": "Amir versiopn to Shield V4 plus control imput pluse laser driver",
+  "created_at": "2025-09-20 14:34:08",
+  "updated_at": "2025-09-25 12:04:00",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "97188471c1297be149832d39b7c4f46f",
+      "title": "Shield_WDT",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "212e4e7ac253e44d17caceb02663d93c": 5,
+        "3e0f6070d4fced362a88119254c2f83a": 1,
+        "5a9ec2085ad6436d86701332d4451b76": 2,
+        "fee3186e847b42ecb0244c6d4d6aaef8": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 1,
+        "eda3af0dd4f3457ca763df30e3ac5d73": 2,
+        "9bc5d46e2bd4176ac7c3958f1aa86225": 6,
+        "506a2f49fd5af7690094a86e81a44ebe": 8,
+        "597701dbde98d3183fe5df5fb870ec57": 14,
+        "2136fccdbd134a5a9a82366e6666fe20": 1,
+        "0806368f73e1232ca543f14a515367b4": 1,
+        "f80e29816fd30bb295222fb4f47bcc25": 4,
+        "353ff04a8071d3e6740fa5273965e20c": 4,
+        "8698f55d2b05489c9b6d911e7a0aaab0": 4,
+        "0ff01222262b4c72a9968486f0c6b064": 6,
+        "69fd5a82791443b7ac845fb743df0516": 1,
+        "230bc382ca0246f58f622947b27c87e1": 6,
+        "eaa76950fd7343a1953943ee7b9978d3": 4,
+        "7809ed3ba7c24a14936ce2a66b37ccdb": 2,
+        "ba950eeb23764b3ea5edbd5f2f3fcc71": 1,
+        "329fb04660644583ab717ceeb3716211": 1,
+        "b9804cc65f04eb8a3f2b4055e02f5143": 4,
+        "2f5c8276f8d64010877a8d3bb97697b8": 1,
+        "4e4ca1048d134c5eacee58c69d9bf11c": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "BUZZER-12X9",
+          1,
+          "BUZ-TH_BD12.0-P7.60-D0.6-FD",
+          "BUZZER1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C9900016920"
+          }
+        ],
+        [
+          "10uF",
+          3,
+          "CAP-SMD_L3.2-W1.6-RD-C7171",
+          "C1,CCM,DCM",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "Kyocera AVX",
+            "Supplier": "LCSC",
+            "Supplier Part": "C7171"
+          }
+        ],
+        [
+          "100uF",
+          1,
+          "CAP-TH_BD6.3-P2.50-D1.0-FD",
+          "C2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "CX(承兴)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C19504"
+          }
+        ],
+        [
+          "KF2510-2A",
+          8,
+          "CONN-TH_KF2510-2A",
+          "CCON,DCON,GCON,HCON,OUT_5,OUT_6,OUT_10,OUT_11",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "1K",
+          14,
+          "R0603",
+          "CRG,CRL,DRG,DRL,GRG,GRL,HRG,HRL,RU_A0,RU_A1,RU_A2,RU_A3,RU_D2,RU_D3",
+          {
+            "Manufacturer Part": "0603WAF1001T5E",
+            "Manufacturer": "UniOhm",
+            "Supplier": "LCSC",
+            "Supplier Part": "C21190"
+          }
+        ],
+        [
+          "1N5819WS",
+          4,
+          "SOD-323_L1.8-W1.3-LS2.5-RD",
+          "D5,D6,D10,D11",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "Hottech(合科泰)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C191023"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "Manufacturer Part": "DC005-2.0MM",
+            "Manufacturer": "SOFNG",
+            "Supplier": "LCSC",
+            "Supplier Part": "C111567"
+          }
+        ],
+        [
+          "SMBJ5352B-MS",
+          1,
+          "SMB_L4.3-W3.6-LS5.4-RD",
+          "DZ",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "MSKSEMI(美森科)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C18547759"
+          }
+        ],
+        [
+          "10uFPWM",
+          2,
+          "CAP-SMD_L3.2-W1.6-RD-C7171",
+          "GCM,HCM",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "HDR-F-2.54_1x4",
+          4,
+          "HDR-F-2.54_1X4",
+          "H1,H2,H3,TO_MOTOR",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C225501"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x15",
+          2,
+          "HDR-F-2.54_1X15",
+          "H4,H5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C124408"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x8",
+          2,
+          "HDR-F-2.54_1X8",
+          "H7,H8",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C225505"
+          }
+        ],
+        [
+          "FK2510",
+          6,
+          "CONN-TH_3P-P2.00_KF2510_3A",
+          "IN_A0,IN_A1,IN_A2,IN_A3,IN_D2,IN_D3",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "Arduino_Nano_Header",
+          1,
+          "DIP-30_L43.18-W15.24-ARDUINONANO",
+          "J2",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "KT-0603R",
+          1,
+          "LED0603-RD",
+          "LED1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "KENTO",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2286"
+          }
+        ],
+        [
+          "0603White light_C2290",
+          4,
+          "LED0603-R-RD_WHITE",
+          "LED5,LED6,LED10,LED11",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "KENTO",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2290"
+          }
+        ],
+        [
+          "OLED_1_3_NO_HOLES",
+          1,
+          "OLED_1_3_NO_HOLES",
+          "OLED",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "长柄旋转电位器",
+          2,
+          "RES-ADJ-TH_RV09",
+          "PA6,PA7",
+          {
+            "Manufacturer Part": "长柄旋转电位器",
+            "Manufacturer": "null",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2874842"
+          }
+        ],
+        [
+          "AO3400A",
+          4,
+          "SOT-23-3_L2.9-W1.3-P1.90-LS2.4-BR",
+          "Q5,Q6,Q10,Q11",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "AOS",
+            "Supplier": "LCSC",
+            "Supplier Part": "C20917"
+          }
+        ],
+        [
+          "10kΩ",
+          1,
+          "R0603",
+          "RL12V",
+          {
+            "Manufacturer Part": "0603WAF1002T5E",
+            "Manufacturer": "UNI-ROYAL(厚声)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C25804"
+          }
+        ],
+        [
+          "0Ω",
+          4,
+          "R0402",
+          "R_RESET,R_S0,R_S1,R_S2",
+          {
+            "Manufacturer Part": "0402WGF0000TCE",
+            "Manufacturer": "UniOhm",
+            "Supplier": "LCSC",
+            "Supplier Part": "C17168"
+          }
+        ],
+        [
+          "HDR-F-2.54_1x6",
+          1,
+          "HDR-F-2.54_1X6",
+          "TO_TOF",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C40877"
+          }
+        ],
+        [
+          "TVSS5VCES-02GP-J",
+          6,
+          "SOD-523_L1.2-W0.8-LS1.6-BI",
+          "TVS_A0,TVS_A1,TVS_A2,TVS_A3,TVS_D2,TVS_D3",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "SINO-IC(光宇睿芯)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C355254"
+          }
+        ],
+        [
+          "A4988",
+          1,
+          "A4988",
+          "U1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "MAX6369KA+T",
+          1,
+          "SOT-23-8_L3.0-W1.7-P0.65-LS2.8-TL",
+          "WDT",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "ADI(亚德诺)/MAXIM(美信)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C128613"
+          }
+        ]
+      ],
+      "updateTime": 1758791040,
+      "createTime": 1695395333,
+      "histories": [],
+      "created_at": "2023-09-22 18:08:53",
+      "updated_at": "2025-09-25 12:04:00"
+    },
+    {
+      "uuid": "0f67287503b686cdb74df1556550cc0e",
+      "title": "PCB_Shield_WDT",
+      "filename": "PCB_Shield_WDT.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "21473b495b6340c992965357d5701779": 4,
+        "7335dfa67b564d7988d09a073a20aa42": 1,
+        "fafd024f554e426eb74cf4a204aa88b0": 4,
+        "8d109b56a6d945349da413d30d171b15": 1,
+        "dd3cfd4941c4479cb7f2c598e6fde06c": 4,
+        "44f4239726ed4ebd893f67f419e4b55b": 1,
+        "af16510a196f45a3b2eecfb1ed8360c1": 4,
+        "98de716523d04f20a577f5e7c7e71f1d": 6,
+        "5d29fecd512e40a5a5c3960877c709f4": 1,
+        "2550b1556b6546148b9e97fc95a93d31": 6,
+        "76a028e0363649388f2a2e340a157455": 2,
+        "398691f1f785460098bbe5ee6590333c": 15,
+        "83d2c26c897548478611a7b637e39735": 6,
+        "abb601d2f8aa4e1fbca19a237a6a8542": 1,
+        "9ba63133985d42cda948c6301d2bf7d5": 8,
+        "08842a68e5644655bc648513ffbbbdbb": 2,
+        "bade90667a6e4731855e9a223387b8a6": 4,
+        "e86d43893d914130bd34765c00ed5f63": 1,
+        "29b657b818a84e4ea7b685b79368b530": 5,
+        "4937126739894c52921de221c4760bbc": 1,
+        "1a9b494b74c34d3b879eb7f824b3824d": 1,
+        "1337670005c6484c999f9b4c272ee9fe": 1,
+        "bce4bcfcccfb42a296f7a392ab0b7199": 2,
+        "0476c63fa99e4a998187e5a274bdf1f1": 1
+      },
+      "BOM": [],
+      "updateTime": 1758409614,
+      "createTime": 1695396402,
+      "histories": [],
+      "created_at": "2023-09-22 18:26:42",
+      "updated_at": "2025-09-21 02:06:54"
+    }
+  ],
+  "sort": [],
+  "title": "Shield_WDT",
+  "foldername": "Shield_WDT",
+  "schfilename": "Shield_WDT.json",
+  "schfilemtime": 1758791040210
+}
