@@ -31,20 +31,16 @@ const int barrierCloseSignal = LOW;
 const int sensorPins [] = {SEGMENT_1_SENSOR_PIN, SEGMENT_2_SENSOR_PIN, SEGMENT_3_SENSOR_PIN};
 const int barrierPins [] = {SEGMENT_1_BARRIER_PIN, SEGMENT_2_BARRIER_PIN, SEGMENT_3_BARRIER_PIN};
 
-//const int sensorPins [] = {SEGMENT_2_SENSOR_PIN, SEGMENT_3_SENSOR_PIN};
-//const int barrierPins [] = {SEGMENT_2_BARRIER_PIN, SEGMENT_3_BARRIER_PIN};
 const int numOfSegments = sizeof(sensorPins)/sizeof(sensorPins[0]);
 
 void setup() {
   Serial.begin(115200);
-  if (trainDetectionSignal == LOW)
-  {
+  if (trainDetectionSignal == LOW){
       pinMode(SEGMENT_1_SENSOR_PIN, INPUT_PULLUP);
       pinMode(SEGMENT_2_SENSOR_PIN, INPUT_PULLUP);
       pinMode(SEGMENT_3_SENSOR_PIN, INPUT_PULLUP);
   }
-  else // signal gets HIGH when we detect, need an external pulldown / pulldown in sensor
-  {
+  else {// signal gets HIGH when we detect, need an external pulldown / pulldown in sensor
       pinMode(SEGMENT_1_SENSOR_PIN, INPUT);
       pinMode(SEGMENT_2_SENSOR_PIN, INPUT);
       pinMode(SEGMENT_3_SENSOR_PIN, INPUT);
@@ -71,16 +67,4 @@ void loop() {
   }
 
 }
-  /*
-  for (int i = 0; i < numOfSegments; i++) 
-  {
-      int sensorPin = sensorPins[i];
-      int pinState = digitalRead(sensorPin);
-      
-      if (pinState == trainDetectionSignal)
-      {
-          handleTrainDetected(i);
-      }
-  }
-}
-*/
+
