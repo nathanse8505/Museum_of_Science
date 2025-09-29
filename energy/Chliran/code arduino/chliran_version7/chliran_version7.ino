@@ -1,8 +1,7 @@
 #include "FONCTION_and_CONST.h"
-//File logFile;
 
 void setup() {
-  Serial.begin(Bauderate);
+  Serial.begin(BAUDERATE);
 
   // Initialize output pins for shift register
   pinMode(Data_Serial, OUTPUT);
@@ -10,21 +9,7 @@ void setup() {
   pinMode(LatchPin, OUTPUT);
   pinMode(Output_Enable, OUTPUT);
 
-  //pinMode(LED_SD_CARD, OUTPUT);
-
-   while (!Serial);  // Wait for Serial Monitor to be ready
-    
-    // Initialize the SD card
-    Serial.println("Initializing SD card...");
-    if (!SD.begin(CHIPSELECT)) {
-        Serial.println("SD card initialization failed!");
-        //digitalWrite(LED_SD_CARD, HIGH);
-    } else {
-        Serial.println("SD card successfully initialized.");
-        //digitalWrite(LED_SD_CARD, LOW);
-    }
-
-  
+  pinMode(LED_SD_CARD, OUTPUT);
 
   // Initialize input pins for switches with internal pull-up resistors
   pinMode(SW1, INPUT_PULLUP);
@@ -33,6 +18,17 @@ void setup() {
   pinMode(SW4, INPUT_PULLUP);
   pinMode(SW5, INPUT_PULLUP);
 
+  while (!Serial);  // Wait for Serial Monitor to be ready
+
+  // Initialize the SD card
+  Serial.println("Initializing SD card...");
+  if (!SD.begin(CHIPSELECT)) {
+      Serial.println("SD card initialization failed!");
+      //digitalWrite(LED_SD_CARD, HIGH);
+  } else {
+      Serial.println("SD card successfully initialized.");
+      //digitalWrite(LED_SD_CARD, LOW);
+  }
   // Initialize shift register and switch states
   init_shift_register();
   init_switch_state();
@@ -75,21 +71,17 @@ void loop() {
     //Serial.println("index_switch: " + String(index_switch));
   }else{
     ////////////////////LOG RELEASE BUTTON/////////////////////
-  if (checkStates[index_switch] == HIGH) {
-      checkStates[index_switch] = LOW;
-      logMessage = "SW" + String(index_switch + 1) + " ;has been released";
-      logEvent(logMessage.c_str());
-      Serial.println(logMessage.c_str());     
-  }
+    if (checkStates[index_switch] == HIGH) {
+        checkStates[index_switch] = LOW;
+        logMessage = "SW" + String(index_switch + 1) + " ;has been released";
+        logEvent(logMessage.c_str());
+        Serial.println(logMessage.c_str());     
+    }
   ///////////////////////////////////////////////////////////
-
     if(millis() - timer_on > TIME_LED_ON){
       out_data = LED_ON_SW(out_data,index_switch);
     }
-
   }
-
-
   index_switch=(index_switch + 1) % NUMBER_OF_SWITCH;
 
   if(out_data == 65536 -1){

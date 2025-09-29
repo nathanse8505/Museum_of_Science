@@ -27,15 +27,20 @@
  *            MOSI D11-|       |-3.3V to SDcard  
  *            MISO D12-|       |-D13  SCK
  *                      --USB-- 
- *===================================================       
+ *=====================================================       
  */
 
 // Pin definitions for shift register
-#define LatchPin 4        // ST_CP: Storage register input
-#define ClockPin 5        // SH_CP: Shift register clock input
-#define Data_Serial 2     // DS: Serial data input
+#define LatchPin      4   // ST_CP: Storage register input
+#define ClockPin      5   // SH_CP: Shift register clock input
+#define Data_Serial   2   // DS: Serial data input
 #define Output_Enable 3   // OE: Output enable (active LOW)
-#define LED_SD_CARD 8
+// Pin definitions for SD CARD
+#define LED_SD_CARD  8
+#define CHIPSELECT   10
+//#define MOSI 11
+//#define MISO 12
+//#define SCK 13
 
 // Pin definitions for switches
 #define SW1 A2 
@@ -44,16 +49,14 @@
 #define SW4 A0
 #define SW5 A1
 
-//SD card
-#define CHIPSELECT 10
 
-extern const int32_t Bauderate;
+
+extern const int32_t BAUDERATE;
 // Array of switch pins for easy iteration
 extern const int SWITCH_PINS[];//add SW5
 extern const int NUMBER_OF_SWITCH;
 
 // Timing constants (in milliseconds)
-extern const int16_t BOUNCE_TIME;        // Debounce delay for switches
 extern const unsigned long  TIME_LED_ON;       // Duration LED stays on
 extern const int16_t DELAY_AFTER_ON;  // Delay after shifting LED position
 extern const unsigned long SET_DAY;
@@ -67,19 +70,14 @@ extern int index_switch;                   // Current switch index in sequence
 extern bool checkStates[] ;  // Array for switch debounce states
 extern String logMessage ;
 
-
-
-void init_shift_register();
-void init_switch_state();
-bool PRESS_BUTTON(uint8_t switchNumber);
-void RESET_ALL(int data);
-int LED_ON_UV(int data,int i);
-int LED_ON_SW(int data,int i);
 void logEvent(const char* message);
 void LOG_PRESS_BUTTON(uint8_t switchNumber);
-
-
-
+void init_shift_register();
+void init_switch_state();
+void RESET_ALL(int data);
+bool PRESS_BUTTON(uint8_t switchNumber);
+int  LED_ON_UV(int data,int i);
+int  LED_ON_SW(int data,int i);
 
 
 #endif
