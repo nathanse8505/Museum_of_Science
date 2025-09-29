@@ -3,21 +3,28 @@
 
 void setup() {
   Serial.begin(Bauderate);
-   while (!Serial);  // Wait for Serial Monitor to be ready
-    
-    // Initialize the SD card
-    Serial.println("Initializing SD card...");
-    if (!SD.begin(CHIPSELECT)) {
-        Serial.println("SD card initialization failed!");
-    } else {
-        Serial.println("SD card successfully initialized.");
-    }
 
   // Initialize output pins for shift register
   pinMode(Data_Serial, OUTPUT);
   pinMode(ClockPin, OUTPUT);
   pinMode(LatchPin, OUTPUT);
   pinMode(Output_Enable, OUTPUT);
+
+  //pinMode(LED_SD_CARD, OUTPUT);
+
+   while (!Serial);  // Wait for Serial Monitor to be ready
+    
+    // Initialize the SD card
+    Serial.println("Initializing SD card...");
+    if (!SD.begin(CHIPSELECT)) {
+        Serial.println("SD card initialization failed!");
+        //digitalWrite(LED_SD_CARD, HIGH);
+    } else {
+        Serial.println("SD card successfully initialized.");
+        //digitalWrite(LED_SD_CARD, LOW);
+    }
+
+  
 
   // Initialize input pins for switches with internal pull-up resistors
   pinMode(SW1, INPUT_PULLUP);
@@ -60,7 +67,7 @@ void loop() {
     // Shift LED to next position 
     if(index_switch < NUMBER_OF_SWITCH){
       out_data = LED_ON_UV(out_data,index_switch);
-      Serial.println("Led SW" + String(index_switch + 1) + " ;has activate");
+      //Serial.println("Led SW" + String(index_switch + 1) + " ;has activate");
     }
     timer_on = millis();    
     // Debug information

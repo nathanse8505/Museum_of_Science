@@ -35,11 +35,12 @@
 #define ClockPin 5        // SH_CP: Shift register clock input
 #define Data_Serial 2     // DS: Serial data input
 #define Output_Enable 3   // OE: Output enable (active LOW)
+#define LED_SD_CARD 8
 
 // Pin definitions for switches
 #define SW1 A2 
-#define SW2 11
-#define SW3 12
+#define SW2 A4
+#define SW3 A3
 #define SW4 A0
 #define SW5 A1
 
