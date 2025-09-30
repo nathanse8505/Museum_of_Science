@@ -19,7 +19,7 @@ void loop() {
     FILL_WATER();
     #ifdef TEST
       Serial.println(analogRead(SENSOR_WATER_IO));    
-      delay(100);
+      delay(1000);
     #endif
   }
    digitalWrite(LED_BUILTIN, LOW);
