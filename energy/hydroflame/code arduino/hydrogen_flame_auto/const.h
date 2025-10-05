@@ -46,7 +46,7 @@ int32_t time_start_hydro = 0;
 int32_t time_new_session = 0;
 const uint32_t HYGROGEN_TIME = 10000;
 const uint32_t SESSION_TIME =50000;
-const uint32_t ACTIVATION_TIME = 15000;
+const uint32_t ACTIVATION_TIME = 2000;
 
 
 //////SPARK //////
@@ -62,9 +62,9 @@ const int16_t DELAY_FAN_OFF = 2000;
 bool flag_ready_fan = false;
 
 //////////// WATER ///////////
-const int16_t NO_DETECTION = 300;//in bit resolution
-const int16_t DELAY_FILL_WATER = 1000;//in ms
-const int16_t DELAY_AFTER_FILL_WATER = 500;//in ms
+const int16_t NO_DETECTION = 900;//in bit resolution
+const int16_t DELAY_FILL_WATER = 500;//in ms
+const int16_t DELAY_AFTER_FILL_WATER = 1000;//in ms
 
 //////////// FIRE ///////////
 const int FIRE_TIME = 5000;

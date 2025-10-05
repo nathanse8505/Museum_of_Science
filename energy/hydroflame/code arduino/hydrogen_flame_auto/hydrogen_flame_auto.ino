@@ -24,7 +24,7 @@ void setup() {
   }
 
   Serial.println("init");
-  wdt_enable(WDTO_2S);  
+  wdt_enable(WDTO_4S);  
 }
 
 void loop() {
@@ -44,7 +44,7 @@ void loop() {
       DEACTIVE_FAN(); 
       Serial.println("THE FAN IS OFF");
       // Wait until the water tank is full
-      while(check_water_level() == false){
+      while(check_water_level_new() == false){
         wdt_reset();
         FILL_WATER();
         Serial.println("fill water");

@@ -7,7 +7,7 @@
 
 
 bool check_water_level(){
-  if (analogRead(SENSOR_WATER_IO) <=300){
+  if (analogRead(SENSOR_WATER_IO) > 800){
     return false;
   }
   return true;

@@ -30,9 +30,9 @@
 
 
 //////////// WATER ///////////
-const int16_t DELAY_FILL_WATER = 1000;
-const int16_t DELAY_AFTER_FILL_WATER = 100;
-
+const int16_t DELAY_FILL_WATER = 500;
+const int16_t DELAY_AFTER_FILL_WATER = 1000;
+const bool NO_DETECTION = false;
 
 
 #endif

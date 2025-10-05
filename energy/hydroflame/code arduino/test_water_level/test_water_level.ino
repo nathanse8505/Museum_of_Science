@@ -14,19 +14,21 @@ void setup() {
 void loop() {
 
   // Wait until the water tank is full
-  while(check_water_level() == false){
+  while(check_water_level() == NO_DETECTION){
     digitalWrite(LED_BUILTIN, HIGH);
     FILL_WATER();
     #ifdef TEST
       Serial.println(analogRead(SENSOR_WATER_IO));    
-      delay(1000);
-    #endif
+      delay(10);
+    #endif 
   }
    digitalWrite(LED_BUILTIN, LOW);
-   
+  
   #ifdef TEST
+  if(check_water_level() == !NO_DETECTION){
     Serial.println(analogRead(SENSOR_WATER_IO));    
-    delay(100);
+    delay(10);
+  }
   #endif
 
 }

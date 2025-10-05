@@ -64,6 +64,14 @@ bool check_water_level(){
   return true;
 }
 
+bool check_water_level_new(){
+  Serial.println(analogRead(SENSOR_WATER_IO));
+  if (analogRead(SENSOR_WATER_IO) >= NO_DETECTION){
+    return false;
+  }
+  return true;
+}
+
 
 
 // --- Fonction pour lire la température depuis un NTC ---
