@@ -24,10 +24,10 @@ void setup() {
   Serial.println("Initializing SD card...");
   if (!SD.begin(CHIPSELECT)) {
       Serial.println("SD card initialization failed!");
-      digitalWrite(LED_SD_CARD, HIGH);
+      //digitalWrite(LED_SD_CARD, HIGH);
   } else {
       Serial.println("SD card successfully initialized.");
-      digitalWrite(LED_SD_CARD, LOW);
+      //digitalWrite(LED_SD_CARD, LOW);
   }
   // Initialize shift register and switch states
   init_shift_register();

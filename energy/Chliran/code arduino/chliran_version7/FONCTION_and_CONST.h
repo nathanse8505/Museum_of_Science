@@ -31,23 +31,23 @@
  */
 
 // Pin definitions for shift register
-#define LatchPin      4   // ST_CP: Storage register input
-#define ClockPin      5   // SH_CP: Shift register clock input
-#define Data_Serial   2   // DS: Serial data input
-#define Output_Enable 3   // OE: Output enable (active LOW)
+#define LatchPin      2 //test 4   // ST_CP: Storage register input
+#define ClockPin      3 //test 5   // SH_CP: Shift register clock input
+#define Data_Serial   4 //test 2   // DS: Serial data input
+#define Output_Enable 5 //test 3   // OE: Output enable (active LOW)
 // Pin definitions for SD CARD
-#define LED_SD_CARD  8
+#define LED_SD_CARD  11//test 8-----
 #define CHIPSELECT   10
 //#define MOSI 11
 //#define MISO 12
 //#define SCK 13
 
 // Pin definitions for switches
-#define SW1 A2 
-#define SW2 A4
-#define SW3 A3
-#define SW4 A0
-#define SW5 A1
+#define SW1 6//test A2 
+#define SW2 7//test A4
+#define SW3 8//test A3
+#define SW4 9//test A0
+#define SW5 A0//testA1
 
 
 
