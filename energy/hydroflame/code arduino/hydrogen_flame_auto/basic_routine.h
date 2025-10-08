@@ -65,7 +65,7 @@ bool check_water_level(){
 }
 
 bool check_water_level_new(){
-  Serial.println(analogRead(SENSOR_WATER_IO));
+  //Serial.println(analogRead(SENSOR_WATER_IO));
   if (analogRead(SENSOR_WATER_IO) >= NO_DETECTION){
     return false;
   }
@@ -183,7 +183,7 @@ void reset_session() {
   read = 0;
   average_current = 0;
   first_time_current = true;
-
+  first_time_temp = true;
   flag_first_press = false;
   flag_new_session = true;
   time_start = millis();

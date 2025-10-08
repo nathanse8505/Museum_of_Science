@@ -53,8 +53,8 @@ void loop() {
       digitalWrite(LED_ACTIVATION, HIGH);  // Turn on activation LED  
       flag_ready_fan = false;                   // Turn off fan
       flag_new_session = false;             // new Session ready
-      //Serial.println("we can push the button");
-      //Serial.println("led activated");
+      Serial.println("we can push the button");
+      Serial.println("led activated");
       Serial.println();
     }
 
@@ -73,8 +73,8 @@ void loop() {
     // If no current detected after first press, turn off system
     
     if ((millis() - time_read_current) >  CURRENT_INTERVAL_TIME  && ready_flag_fire) {
-      time_read_current = millis();
-      current_flag = current_valid();
+      time_read_current = millis();//timer to read current every CURRENT_INTERVAL_TIME
+      current_flag = current_valid();//check and print current
       if(current_flag != 2 && flag_first_press == true){
         reset_session();
         if(current_flag == 0){
@@ -126,7 +126,6 @@ void loop() {
       first_time_delta = true;
       first_time_current = true;
       detect_drop_temp();//to read the DELTA TEMPERATURE and the TEMPERATURE
-      first_time_temp = true;
       Serial.println("end session");
       reset_session();
       flag_ready_fan = true;
