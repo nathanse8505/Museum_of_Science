@@ -1,6 +1,6 @@
 #ifndef FONCTION
 #define FONCTION
-
+//#define TEST
 #include "Arduino.h"
 #include "stdint.h"
 #include <math.h>
@@ -49,7 +49,25 @@
 #define SW4 9//test A0
 #define SW5 A0//testA1
 
+#ifdef TEST
+  #define LatchPin      4 //test 4   // ST_CP: Storage register input
+  #define ClockPin      5 //test 5   // SH_CP: Shift register clock input
+  #define Data_Serial   2 //test 2   // DS: Serial data input
+  #define Output_Enable 3 //test 3   // OE: Output enable (active LOW)
+  // Pin definitions for SD CARD
+  #define LED_SD_CARD  8//test 8-----
+  #define CHIPSELECT   10
+  //#define MOSI 11
+  //#define MISO 12
+  //#define SCK 13
 
+  // Pin definitions for switches
+  #define SW1 A2//test A2 
+  #define SW2 A4//test A4
+  #define SW3 A3//test A3
+  #define SW4 A0//test A0
+  #define SW5 A1//testA1
+#endif
 
 extern const int32_t BAUDERATE;
 // Array of switch pins for easy iteration

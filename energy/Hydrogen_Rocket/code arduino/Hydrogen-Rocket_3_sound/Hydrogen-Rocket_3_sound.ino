@@ -55,7 +55,7 @@ void loop() {
       }
     }
     if (PRESS_BUTTON_IGNITION() && check_charge()) {  // button pressed
-      ready_sound = true;
+      //ready_sound = true;
       SPARK();
     }
 
