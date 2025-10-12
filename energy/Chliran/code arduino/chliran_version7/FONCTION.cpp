@@ -45,7 +45,7 @@ int LED_ON_UV(int data,int i){
    return data;
 }
 int LED_ON_SW(int data,int i){ 
-   data |= (1 << index_data_led_sw[i] );
+   data |= (1 << index_data_led_sw[i]);
    data &= ~(1 << index_data_led_uv[i]);
    // Send 16 bits in two 8-bit chunks
    shiftOut(Data_Serial, ClockPin, MSBFIRST, (data >> 8)); 

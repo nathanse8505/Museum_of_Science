@@ -65,7 +65,9 @@ void loop() {
       out_data = LED_ON_UV(out_data,index_switch);
       //Serial.println("Led SW" + String(index_switch + 1) + " ;has activate");
     }
-    timer_on = millis();    
+    //timer_on =  millis();
+    timer_on_SW[index_switch] = millis();
+        
     // Debug information
     //Serial.println("out data: " + String(out_data));
     //Serial.println("index_switch: " + String(index_switch));
@@ -78,7 +80,7 @@ void loop() {
         Serial.println(logMessage.c_str());     
     }
   ///////////////////////////////////////////////////////////
-    if(millis() - timer_on > TIME_LED_ON){
+    if(millis() -timer_on_SW[index_switch] > TIME_LED_ON){
       out_data = LED_ON_SW(out_data,index_switch);
     }
   }

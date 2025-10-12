@@ -70,7 +70,15 @@ bool PRESS_BUTTON_LANG() {
 }
 
 
-
+void SPARK(){
+  for(int i = 0; i < NUM_OF_SPARK; i++){//ignite - turn on spark 3 times
+  digitalWrite(SPARK_IO, HIGH);  // ignite - turn on spark
+  delay(SPARK_TIME);
+  digitalWrite(SPARK_IO, LOW);  // turn off spark
+  delay(SPARK_SPACE_TIME);
+  reset_watchdog();
+  }
+}
 void ignite(){
   /*
    * ignite after ignition button was pressed
@@ -80,13 +88,7 @@ digitalWrite(HYDROGEN_VALVE_IO, HIGH);  // close valve
 delay(DELAY_BETWEEN_VALVE_AND_SPARK);  // wait
 reset_charge();
 reset_watchdog();
-for(int i = 0; i < NUM_OF_SPARK; i++){//ignite - turn on spark 3 times
-  digitalWrite(SPARK_IO, HIGH);  // ignite - turn on spark
-  delay(SPARK_TIME);
-  digitalWrite(SPARK_IO, LOW);  // turn off spark
-  delay(SPARK_SPACE_TIME);
-  reset_watchdog();
-}
+SPARK();
 delay(DELAY_AFTER_SPARK);  // wait
 digitalWrite(HYDROGEN_VALVE_IO, LOW);  // open valve
 reset_watchdog();

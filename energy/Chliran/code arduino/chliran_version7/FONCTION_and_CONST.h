@@ -60,7 +60,8 @@ extern const int NUMBER_OF_SWITCH;
 extern const unsigned long  TIME_LED_ON;       // Duration LED stays on
 extern const int16_t DELAY_AFTER_ON;  // Delay after shifting LED position
 extern const unsigned long SET_DAY;
-extern unsigned long timer_on;
+//extern unsigned long timer_on;
+extern unsigned long timer_on_SW[];
 extern unsigned long time_log;
 extern const int16_t index_data_led_uv[];
 extern const int16_t index_data_led_sw[];
