@@ -2,7 +2,6 @@
 #define basic_routine
 
 #include <Arduino.h>
-#include <avr/wdt.h>
 
 /*
 *=================Arduino Nano pinout==================
@@ -26,10 +25,11 @@
  */
 #define BAUDRATE (115200)
 ////////////  I/O   ////////////
-#define BUTTON_IO       2
-#define LED_ACTIVATION  4
-#define MODE_IO         7  // relay active contactor 
+#define BUTTON_IO       A0
+#define LED_ACTIVATION  10
+#define MODE_IO         A2  // Manual/AUTO system 
 #define RELAY_IO        11  // relay active contactor 
+#define WDI             12  // pin to reset watchdog 
 
 ////////button mode ///////
 const bool MANUAL = true;
@@ -48,10 +48,16 @@ bool flag_first_press = false;
 const int16_t BOUNCE_TIME = 100;//ms 
 //////////////////////////////////
 
+void PULSE_WDT_RST(){
+   digitalWrite(WDI, HIGH);        // the ring jump
+   delay(1);
+   digitalWrite(WDI, LOW);   // Turn off activation LED
+   delay(1);
+}
 
 
 bool PRESS_BUTTON_IGNITION() {
-   wdt_reset();//reset the watchdog
+  PULSE_WDT_RST();//reset the watchdog
   // Check if the button is pressed
   if (digitalRead(BUTTON_IO) == LOW && check_ignit == LOW) {
      //Serial.println("press :");
@@ -73,7 +79,6 @@ void reset_session() {
   flag_new_session = true;
   time_start = millis();
 }
-
 
 
 #endif

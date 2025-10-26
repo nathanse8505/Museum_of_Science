@@ -7,16 +7,17 @@ void setup() {
   pinMode(MODE_IO, INPUT_PULLUP);  // Ignition button (active LOW)
   pinMode(LED_ACTIVATION, OUTPUT);   // Activation indicator LED
   pinMode(RELAY_IO, OUTPUT);         // relay control Contactor Coil
+   pinMode(WDI, OUTPUT);         // relay control Contactor Coil
 
   Serial.begin(BAUDRATE);            // Start serial communication
 
   Serial.println("init");
-  wdt_enable(WDTO_2S);  
+   
 }
 
 void loop() {
 
-  wdt_reset();
+  PULSE_WDT_RST();
 
   // Check if ignition button is pressed
   if(digitalRead(MODE_IO) == MANUAL){
