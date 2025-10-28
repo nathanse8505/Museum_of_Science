@@ -1,0 +1,21 @@
+Summary from 2025-08-01 00:00:00 to 2025-08-31 23:59:59 (31 days)
+Log data time range: 2025-08-01 08:37:45 to 2025-08-31 17:37:49 (31 days)
+
+Total Rocket ignited: 11257
+Total english language: 4429
+Total hebrew language: 4255
+Total arabic language: 4310
+Total language changes: 12994
+
+Average Rocket ignited per day: 363.13
+Average english language per day: 142.87
+Average hebrew language per day: 137.26
+Average arabic language per day: 139.03
+Average total language changes per day: 419.16
+
+Good runs: 11257 / 24251 (46.42%)
+
+---
+UI restarts between 09:30 and 18:00: 4
+Arduino disconnections between 09:30 and 18:00: 1
+Error parsing data: 0
