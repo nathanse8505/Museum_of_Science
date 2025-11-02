@@ -13,7 +13,7 @@
  *  ignition button D2-|       |-A7  
  *   LED_ACTIVATION D3-|       |-A6  
  *                  D4-|       |-A5 
- *            RELAY D5-|       |-A4 
+ *            SSR D5-|       |-A4 
  *                  D6-|       |-A3
  *                  D7-|       |-A2   
  *                  D8-|       |-A1   
@@ -28,7 +28,7 @@
 #define BUTTON_IO       A0
 #define LED_ACTIVATION  10
 #define MODE_IO         A2  // Manual/AUTO system 
-#define RELAY_IO        11  // relay active contactor 
+#define SSR_IO        11  // relay active contactor 
 #define WDI             12  // pin to reset watchdog 
 
 ////////button mode ///////

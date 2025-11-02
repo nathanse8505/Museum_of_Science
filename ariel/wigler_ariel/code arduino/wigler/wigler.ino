@@ -1,35 +1,56 @@
 #include <Arduino.h>
 
-// --- Broches A4988 ---
-const uint8_t PIN_STEP  = 6;   // STEP
-const uint8_t PIN_DIR   = 7;   // DIR
-const uint8_t PIN_EN    = 8;   // EN
+// --- Button Inputs (using INPUT_PULLUP: pressed = LOW) ---
+#define BUTTON_CLOCKWISE     A0  // Button for clockwise rotation
+#define BUTTON_COUNTERCLOCK  A1  // Button for counterclockwise rotation
+// --- A4988 Driver Pins ---
+#define PIN_STEP  = 6;   // STEP pin (sends step pulses to the driver)
+#define PIN_DIR   = 7;   // DIR pin (controls the rotation direction)
+#define PIN_EN    = 8;   // EN pin (enables/disables the driver)
 
-//////////////PIN_RST  5V;   // RST
-/////////////PIN_SLEEP 5V;   // SLEEP
+// RST and SLEEP pins are permanently connected to 5V
+// const uint8_t PIN_RST = 5V;
+// const uint8_t PIN_SLEEP = 5V;
 
-// --- Boutons (INPUT_PULLUP : appui = LOW) ---
-#define BUTTON_CLOCKWISE     A0
-#define BUTTON_COUNTERCLOCK  A1
+/*
+*        ==========Arduino Nano pinout============== 
+ *                      _______
+ *                 TXD-|       |-Vin 
+ *                 RXD-|       |-Gnd  
+ *                 RST-|       |-RST
+ *                 GND-|       |-+5V
+ *                  D2-|       |-A7  
+ *                  D3-|       |-A6  
+ *                  D4-|       |-A5 
+ *                  D5-|       |-A4 
+ *        PIN_STEP  D6-|       |-A3
+ *         PIN_DIR  D7-|       |-A2
+ *          PIN_EN  D8-|       |-A1 BUTTON_COUNTERCLOCK
+ *                  D9-|       |-A0 BUTTON_CLOCKWISE
+ *                 D10-|       |-Ref
+ *                 D11-|       |-3.3V   
+ *                 D12-|       |-D13
+ *                      --USB--        
+ */
 
-// --- Paramètres moteur ---
-const int STEPS_PER_REV = 200;  // pas par tour du moteur (full step)
-const int RPM           = 200; // vitesse cible
-const int MICROSTEPS    = 4;   // 1,2,4,8,16 (micro-stepping)
 
-// --- Timing ---
-const uint8_t STEP_PULSE_US  = 3; // largeur d’impulsion STEP (>=1us)
-unsigned long stepIntervalUs = 0;
-unsigned long lastStepUs     = 0;
+// --- Stepper Motor Parameters ---
+const int STEPS_PER_REV = 200;  // Number of steps per revolution (in full step mode)
+const int RPM           = 50;   // Target speed in revolutions per minute
+const int MICROSTEPS    = 16;   // Microstepping setting: 1, 2, 4, 8, or 16
+
+// --- Timing Parameters ---
+const uint8_t STEP_PULSE_US  = 3; // STEP pulse width in microseconds (≥1 µs)
+unsigned long stepIntervalUs = 0; // Time between two steps (in microseconds)
+unsigned long lastStepUs     = 0; // Timestamp of the last step (in microseconds)
 
 
-
-// Recalcule l’intervalle entre deux pas en fonction de RPM & microsteps
-void updateStepInterval(){
+// Calculates the time interval between two steps based on RPM and microstepping
+void updateStepInterval() {
   // steps/s = RPM * (STEPS_PER_REV * MICROSTEPS) / 60
-  // période (us) = 1e6 / steps/s
+  // period (µs) = 1e6 / steps/s
   double stepsPerSecond = (double)RPM * (double)STEPS_PER_REV * (double)MICROSTEPS / 60.0;
-  if (stepsPerSecond < 1.0) stepsPerSecond = 1.0;
+  if (stepsPerSecond < 1.0) stepsPerSecond = 1.0;  // Avoid division by zero
   stepIntervalUs = (unsigned long)(1000000.0 / stepsPerSecond);
 }
 
@@ -46,35 +67,34 @@ void setup() {
   digitalWrite(PIN_DIR,   LOW);
 
   updateStepInterval();
-  Serial.println("init");
+  Serial.println("Stepper initialized");
 }
 
-void doOneStep(){
-  // impulsion STEP
+// Generates one STEP pulse
+void doOneStep() {
   digitalWrite(PIN_STEP, HIGH);
   delayMicroseconds(STEP_PULSE_US);
   digitalWrite(PIN_STEP, LOW);
 }
 
 void loop() {
-  // Lecture boutons (appui = LOW)
+  // Read button states (pressed = LOW)
   bool cwPressed  = (digitalRead(BUTTON_CLOCKWISE)    == LOW);
   bool ccwPressed = (digitalRead(BUTTON_COUNTERCLOCK) == LOW);
   
-  // Si un seul des deux est appuyé → on tourne
+  // Determine direction: only one button at a time should control the motion
   bool moveCW  = cwPressed  && !ccwPressed;
   bool moveCCW = ccwPressed && !cwPressed;
 
   if (moveCW || moveCCW) {
-
-    // Choix du sens (inverse si besoin selon ton câblage)
+    // Set rotation direction (invert HIGH/LOW if wiring reversed)
     digitalWrite(PIN_DIR, moveCW ? HIGH : LOW);
 
-    // Génére des pas au bon débit sans bloquer
+    // Generate steps at the correct frequency without blocking
     if (micros() - lastStepUs >= stepIntervalUs) {
       doOneStep();
       lastStepUs = micros();
     }
   }
-  // (inutile d’ajouter un delay si la fréquence de pas est réglée par micros())
+  // No delay() needed; step timing is controlled by micros()
 }

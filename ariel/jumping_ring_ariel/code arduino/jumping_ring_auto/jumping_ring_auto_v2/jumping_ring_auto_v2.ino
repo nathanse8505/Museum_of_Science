@@ -6,8 +6,8 @@ void setup() {
   pinMode(BUTTON_IO, INPUT_PULLUP);  // Ignition button (active LOW)
   pinMode(MODE_IO, INPUT_PULLUP);  // Ignition button (active LOW)
   pinMode(LED_ACTIVATION, OUTPUT);   // Activation indicator LED
-  pinMode(RELAY_IO, OUTPUT);         // relay control Contactor Coil
-   pinMode(WDI, OUTPUT);         // relay control Contactor Coil
+  pinMode(SSR_IO, OUTPUT);         // relay control Contactor Coil
+  pinMode(WDI, OUTPUT);         // relay control Contactor Coil
 
   Serial.begin(BAUDRATE);            // Start serial communication
 
@@ -42,7 +42,7 @@ void loop() {
     // On first button press (ignition)
     if (buttonPressed && flag_first_press == false) {
       digitalWrite(LED_ACTIVATION, LOW);   // Turn off activation LED
-      digitalWrite(RELAY_IO, HIGH);        // the ring jump
+      digitalWrite(SSR_IO, HIGH);        // the ring jump
       flag_first_press = true;            // Mark ignition as pressed
       time_new_session = millis();
       Serial.println("button has been pressed");
@@ -51,7 +51,7 @@ void loop() {
 
     
     if (millis() - time_new_session > TIME_RELAY_ON && flag_first_press){
-      digitalWrite(RELAY_IO, LOW);
+      digitalWrite(SSR_IO, LOW);
       reset_session();
     }
     delay(1);
