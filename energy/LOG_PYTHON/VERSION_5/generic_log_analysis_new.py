@@ -207,7 +207,14 @@ def write_summary_to_file(data_dict, interval, start_dt, end_dt, filename):
     arduino_disconnect_count = data_dict.get("arduino_disconnect_count", 0)
     arduino_parse_error_count = data_dict.get("Error parsing data", 0)
 
-    total_intervals = len(set().union(*[d.keys() for d in counters.values()]))
+    if interval == "day":
+        total_intervals = (end_dt.date() - start_dt.date()).days + 1
+    elif interval == "hour":
+        delta = end_dt - start_dt
+        total_intervals = int(delta.total_seconds() // 3600) + 1
+    else:
+        total_intervals = 1  # fallback
+
 
     ring_total = total(counters.get(project_name, defaultdict(int)))
     eng_total = total(counters.get("Language: English", defaultdict(int)))

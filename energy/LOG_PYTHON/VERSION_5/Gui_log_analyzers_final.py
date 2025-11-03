@@ -54,7 +54,7 @@ class LogAnalyzerGUI:
         ttk.Label(self.root, text="Log File(s):").grid(row=0, column=0, sticky="w", **padding)
         self.log_file_path_label = ttk.Label(self.root, text="No file selected", width=50)
         self.log_file_path_label.grid(row=0, column=1, columnspan=2, sticky="w", **padding)
-        ttk.Button(self.root, text="Browse...", command=self.browse_file).grid(row=0, column=3, **padding)
+        ttk.Button(self.root, text="Browse...", command=self.browse_file).grid(row=0, column=2, **padding)
 
         # dates
         ttk.Label(self.root, text="Start Date:").grid(row=1, column=0, sticky="w", **padding)
@@ -239,8 +239,8 @@ class LogAnalyzerGUI:
         start_dt = self.last_start_dt
         end_dt = self.last_end_dt
 
-        start_md = start_dt.strftime("%m_%d")
-        end_md = end_dt.strftime("%m_%d")
+        start_md = start_dt.strftime("%d_%m")
+        end_md = end_dt.strftime("%d_%m")
 
         # 1. choisir le dossier parent
         parent_dir = filedialog.askdirectory(
