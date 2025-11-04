@@ -221,9 +221,6 @@ def get_logger():
     return logger
 
 
-
-
-
 def log_horsepower(logger, horsepower, check_horse_power, language, previous_language):
     if check_horse_power and horsepower != 0 and horsepower < MAX_HORSEPOWER:
         # print(f"your horsepower is: {horsepower} in {deltatime} second")
