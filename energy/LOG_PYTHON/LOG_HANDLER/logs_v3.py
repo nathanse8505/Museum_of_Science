@@ -217,9 +217,3 @@ def get_logger():
 
     return logger
 
-
-# --- Test rapide (tu peux enlever si inutile) ---
-if __name__ == "__main__":
-    logger = get_logger()
-    for i in range(30000):
-        logger.info("oooo")

@@ -1,6 +1,6 @@
 import logging
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, LOG_FOLDER,BACKUP_COUNT,SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD,dic_lang
+from consts import MAX_SIZE_PER_LOG_FILE, LOG_FOLDER,BACKUP_COUNT
 import re
 from datetime import datetime
 
@@ -138,21 +138,4 @@ def get_logger():
         logger.addHandler(date_handler)
 
     return logger
-
-
-
-
-def log_air_pressure(logger, pressure_value, check_pressure_value, language, previous_language):
-    if check_pressure_value and pressure_value >= SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD:
-        # print(f"your horsepower is: {horsepower} in {deltatime} second")
-        logger.info(f"The Bottle flew!")
-        check_pressure_value = False
-    elif pressure_value < SWITCH_TO_MEASURE_SCREEN_PRESSURE_THRESHOLD:
-        check_pressure_value = True
-
-    if language != previous_language:
-        logger.info(f"your language is: {dic_lang.get(language)}")
-        previous_language = language
-    return check_pressure_value, previous_language
-
 

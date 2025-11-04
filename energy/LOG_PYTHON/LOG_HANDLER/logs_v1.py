@@ -1,11 +1,11 @@
 """
 Filename: logs.py
-Purpose: Logging functions for the Horse Power UI
+Purpose: Logging functions for the Air Pressure UI
 """
 import logging
 from logging.handlers import RotatingFileHandler
 import os
-from consts import MAX_SIZE_PER_LOG_FILE, BACKUP_COUNT, LOG_FOLDER, dic_lang , MAX_HORSEPOWER
+from consts import MAX_SIZE_PER_LOG_FILE,LOG_FOLDER,BACKUP_COUNT
 
 
 def get_logger():
@@ -30,20 +30,3 @@ def get_logger():
 
     logger = logging.getLogger()  # get the logger
     return logger
-
-
-def log_horsepower(logger, horsepower, check_horse_power, language, previous_language):
-    if check_horse_power and horsepower != 0 and horsepower < MAX_HORSEPOWER:
-        # print(f"your horsepower is: {horsepower} in {deltatime} second")
-        logger.info(f"your horsepower is: {horsepower}")
-        check_horse_power = False
-    elif check_horse_power and horsepower == MAX_HORSEPOWER:
-        logger.info(f"reset Arduino")
-        check_horse_power = False
-    elif horsepower == 0:#reset measuremnt
-        check_horse_power = True
-
-    if language != previous_language:
-        logger.info(f"your language is: {dic_lang.get(language)}")
-        previous_language = language
-    return check_horse_power, previous_language
