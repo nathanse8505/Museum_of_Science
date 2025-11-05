@@ -99,7 +99,7 @@ const float  HYST_MM     = 15.0f; // hysteresis band (mm) around minDistance
 
 // filter dynamics (used in getFilteredDistance)
 const float MAX_STEP        = 300.0f;  // mm per loop max step
-const float  IIR_ALPHA      = 0.85f;  // was 0.5 → much less smoothing
+const float IIR_ALPHA      = 0.85f;  // was 0.5 → much less smoothing
 const float BETA = 0.02f;  // slow update
 
 
