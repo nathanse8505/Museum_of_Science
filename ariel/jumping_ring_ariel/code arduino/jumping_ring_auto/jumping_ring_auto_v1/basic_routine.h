@@ -48,7 +48,7 @@ int32_t time_start = 0;
 int32_t time_new_session = 0;
 bool flag_new_session = true;
 
-const uint32_t ACTIVATION_TIME = 5000;
+const uint32_t ACTIVATION_TIME = 2000;
 const uint32_t TIME_RELAY_ON =2000;
 
 /////////button ignition//////////
