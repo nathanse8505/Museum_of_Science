@@ -4,9 +4,9 @@
 #define BUTTON_CLOCKWISE     A0  // Button for clockwise rotation
 #define BUTTON_COUNTERCLOCK  A1  // Button for counterclockwise rotation
 // --- A4988 Driver Pins ---
-#define PIN_STEP  = 6;   // STEP pin (sends step pulses to the driver)
-#define PIN_DIR   = 7;   // DIR pin (controls the rotation direction)
-#define PIN_EN    = 8;   // EN pin (enables/disables the driver)
+#define PIN_STEP   6   // STEP pin (sends step pulses to the driver)
+#define PIN_DIR    7   // DIR pin (controls the rotation direction)
+#define PIN_EN     8   // EN pin (enables/disables the driver)
 
 // RST and SLEEP pins are permanently connected to 5V
 // const uint8_t PIN_RST = 5V;
