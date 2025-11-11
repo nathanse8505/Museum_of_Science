@@ -1,0 +1,449 @@
+/* -------------------------------------------------- */
+/* Herdefinitie van standaard tags */
+/* -------------------------------------------------- */
+
+body {
+	background-color: #222222;
+	margin: 0 auto;
+}
+
+img {
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+table {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 1px dotted #666666;
+	margin: 0px;
+}
+
+pre {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+
+a:link {
+	color: #000099; 
+	text-decoration: none;
+}
+
+a:visited {
+	color: #CC0000;
+	text-decoration: none
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+a.naviblokje:link {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a.naviblokje:visited {
+	color: #CCCCCC;
+	text-decoration: none;
+}
+
+a.naviblokje:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+/* -------------------------------------------------- */
+/* Tekst tags */
+/* -------------------------------------------------- */
+
+p.homekopregel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 32px;
+	font-weight: normal;
+	color: #333333;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	padding-top: 15px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+p.homekopregelwit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 32px;
+	font-weight: normal;
+	color: #FFFFFF;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	padding-top: 15px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	position: absolute;
+	top: 3px;
+	left: -14px;
+}
+
+p.paginakopregel {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: normal;
+	color: #000000;
+	margin: 0px;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+
+p.paginasubkop {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #000000;
+	margin: 0px;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+
+p.paginatekst { /* platte tekst op de pagina */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+
+p.paginatekstrood { /* platte tekst op de pagina voor bijv. foutmedlingen*/
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #DD0000;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+
+p.paginaplaatje { /* plaatje in de tekst */
+	padding: 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 7px;
+	margin-left: 0px;
+}
+
+p.paginadatering { /* datering onderaan artikelen */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+
+p.paginanavitekst { /* tekst voor de subnavigatie voor de vervolgpagina's bovenin de rechter kolom */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	text-align: right;
+}
+
+p.naviblokjekop { /* kopregel voor naviblokje */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	margin: 0px;
+	font-weight: normal;
+	background-color: #333333;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+}
+
+p.naviblokjetekst { /* tekst voor naviblokje */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	margin: 0px;
+	font-weight: normal;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+p.infoblokjekop { /* kop voor de infoblokjes */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	margin: 0px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+p.infoblokjetekst { /* tekst voor de infoblokjes */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	margin: 0px;
+	font-weight: normal;
+	padding-top: 2px;
+	padding-right: 5px;
+	padding-bottom: 2px;
+	padding-left: 5px;
+}
+
+/* -------------------------------------------------- */
+/* DIV tags */
+/* -------------------------------------------------- */
+
+/* de basispagina */
+div.basis {
+	width:950px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:left;
+	padding: 0px;
+	margin-top: 0px;
+}
+
+div.paginablad {
+	background-color: #FFFFFF;
+	position:absolute;
+	width:950px;
+	margin: 0;
+	padding: 0px;
+	display:inline;
+}
+
+div.aimplaatje {
+	margin: 0px;
+	padding: 0px;
+	height: 78px;
+	width: 950px;
+	background-image: url(plaatjes/kopstuk.png);
+}
+
+div.aimplaatje_en {
+	margin: 0px;
+	padding: 0px;
+	height: 78px;
+	width: 950px;
+	background-image: url(plaatjes/kopstuk_en.png);
+}
+
+div.hoofdmenu {
+	background-color: #333333;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 210px;
+	margin: 0px;
+}
+
+div.onderrand {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+	padding: 0px;
+	width: 910px;
+	position:relative;
+	float:left;
+	text-align: center;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+
+/* speciaal voor de homepage/beginpagina */
+
+div.hometitelsectie {
+	width: 950px;
+	margin: 0px;
+	padding: 0px;
+	height: 400px;
+	position: relative;
+}
+
+
+/* de brede linker/midden kolom voor de inhoud */
+
+div.inhoudskolom {
+	padding: 0px;
+	width: 650px;
+	position:relative;
+	float: left;
+	display: inline;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+
+div.halvekolomlinks {
+	padding: 0px;
+	margin: 0px;
+	width: 315px;
+	position:relative;
+	float: left;
+}
+
+div.halvekolomrechts {
+	padding: 0px;
+	margin: 0px;
+	width: 315px;
+	position:relative;
+	float: right;
+}
+
+
+/* kaders voor de smalle rechter kolom (rechts naast de inhoudskolom) */
+
+div.rechterkolom {
+	padding: 0px;
+	width: 240px;
+	position:relative;
+	float:right;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	display: inline;
+}
+
+div.paginanaviblokje { /* blokje voor de subnavigatie voor de vervolgpagina's */
+	padding: 0px;
+	position:relative;
+	float: right;
+	width: 240px;
+	margin-top: 13px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 13px;
+}
+
+div.naviblokje { 	/* o.a. voor highlights */
+	width: 238px;
+	position:relative;
+	float:right;
+	margin-bottom: 20px;
+	border: 1px solid #333333;
+	background-color: #666666;
+	padding: 0px;
+}
+
+div.projectlogoblokje { /* blokje voor bijvoorbeeld het project logo */
+	padding: 0px;
+	position:relative;
+	float: right;
+	width: 238px;
+	margin-bottom: 20px;
+	height: 142px;
+	border: 1px solid #000000;
+	overflow: hidden;
+}
+
+
+div.infoblokjeboven {	/* voor tips. aanbiedingen, e.d. */
+	width: 238px;
+	position:relative;
+	float:right;
+	margin: 0px;
+	padding: 0px;
+	background-image: url(plaatjes/haak1.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: none;
+	border-left-style: dotted;
+	border-top-color: #666666;
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #666666;
+}
+
+div.infoblokjeonder {	/* onderste helft v.h. blokje */
+	width: 238px;
+	position:relative;
+	float:right;
+	margin-bottom: 20px;
+	background-image: url(plaatjes/haak2.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-top-color: #666666;
+	border-right-color: #666666;
+	border-bottom-color: #666666;
+	border-left-color: #666666;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+
+div.schaalblokje { /* voor schaalaanduiding */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 100px;
+	color: #FFFFFF;
+	background-color: #999999;
+	text-align: center;
+	height: 128px;
+	width: 238px;
+	position: relative;
+	float:right;
+	margin-bottom: 20px;
+	padding: 0px;
+	line-height: 130px;
+	border: 1px solid #999999;
+}
+
+div.bannerblokje { /* blokje voor plaatjes e.d. */
+	padding: 0px;
+	position:relative;
+	float: right;
+	width: 240px;
+	margin-bottom: 20px;
+	text-align: center;
+}
