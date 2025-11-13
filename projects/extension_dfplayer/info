@@ -1,0 +1,79 @@
+{
+  "uuid": "50b210550b0d10a1648afd1f0615c2a8",
+  "path": "Offline/extension_dfplayer",
+  "name": "extension_dfplayer",
+  "content": "",
+  "created_at": "2025-11-14 01:29:57",
+  "updated_at": "2025-11-14 01:29:57",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "398b284cbf8f29c999761a00337ea5f9",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "5964f5c00a14401ea690aa7afe38379f": 1,
+        "597701dbde98d3183fe5df5fb870ec57": 1,
+        "506a2f49fd5af7690094a86e81a44ebe": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "D_OUT8",
+          1,
+          "CONN-TH_KF2510-2A",
+          "ECON1",
+          {
+            "Manufacturer Part": "KF2510-2A",
+            "Manufacturer": "BOOMELE",
+            "Supplier": "LCSC",
+            "Supplier Part": "C27543"
+          }
+        ],
+        [
+          "Q",
+          1,
+          "SOT-23-3_L2.9-W1.3-P0.95-LS2.4-BR",
+          "EQ1",
+          {
+            "Manufacturer Part": "AO3400",
+            "Manufacturer": "ElecSuper(静芯微）",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5224189"
+          }
+        ],
+        [
+          "1K",
+          1,
+          "R0603",
+          "ERL1",
+          {
+            "Manufacturer Part": "0603WAF1001T5E",
+            "Manufacturer": "UniOhm",
+            "Supplier": "LCSC",
+            "Supplier Part": "C21190"
+          }
+        ]
+      ],
+      "updateTime": 1763076597,
+      "createTime": 1763076597,
+      "histories": [],
+      "created_at": "2025-11-14 01:29:57",
+      "updated_at": "2025-11-14 01:29:57"
+    }
+  ],
+  "sort": [],
+  "title": "extension_dfplayer",
+  "foldername": "extension_dfplayer",
+  "schfilename": "extension_dfplayer.json",
+  "schfilemtime": 1763076597739
+}
