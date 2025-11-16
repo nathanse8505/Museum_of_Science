@@ -45,7 +45,7 @@ int32_t time_start = 0;
 int32_t time_start_hydro = 0;
 int32_t time_new_session = 0;
 const uint32_t HYGROGEN_TIME = 10000;
-const uint32_t SESSION_TIME =50000;
+const uint32_t SESSION_TIME =60000;
 const uint32_t ACTIVATION_TIME = 15000;
 
 
