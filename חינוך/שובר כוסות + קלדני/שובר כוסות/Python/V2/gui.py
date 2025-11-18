@@ -455,7 +455,7 @@ class Gui():
         self.in_chladni = False
         self.in_ruben = False
         
-        self.time=0#####################################################################################################################S
+        self.time=0
         self.first_peak = 0
         self.second_peak = 0
         self.first_peak_button_text = ''
@@ -507,16 +507,46 @@ class Gui():
         self.sweep_step_counter = 0
         self.sweep_center_freq = 0
 
+        # ----- Fenêtre de fréquence pour l'affichage (par défaut : MIN à MAX) -----
+        self.view_window_size = config.MAX_USED_FREQUENCY - config.MIN_USED_FREQUENCY
+        self.view_min_freq = config.MIN_USED_FREQUENCY
+        self.view_max_freq = config.MAX_USED_FREQUENCY
+
         self.main_loop()                                        # start the main loop of the gui
 
+    def set_view_window_center(self, center_freq):
+        """
+        Centre l'affichage sur center_freq avec une fenêtre fixe (WINDOW_SIZE).
+        Respecte MIN_USED_FREQUENCY et MAX_USED_FREQUENCY.
+        """
+        half = config.WINDOW_SIZE / 2.0
 
-    
+        # fenêtre proposée
+        min_f = center_freq - half
+        max_f = center_freq + half
+
+        # clamp bas
+        if min_f < config.MIN_USED_FREQUENCY:
+            min_f = config.MIN_USED_FREQUENCY
+            max_f = min_f + config.WINDOW_SIZE
+
+        # clamp haut
+        if max_f > config.MAX_USED_FREQUENCY:
+            max_f = config.MAX_USED_FREQUENCY
+            min_f = max_f - config.WINDOW_SIZE
+
+        self.view_min_freq = min_f
+        self.view_max_freq = max_f
+
+        # debug
+        print(f"[VIEW] centered on {center_freq:.1f} Hz → window = [{min_f:.1f}, {max_f:.1f}]")
+
     def draw(self):
         '''
         this method handles all the drawing to the screen. it is executed on every iteration of the main loop (should be
         ~60 frames per second).
         '''
-        #get data necessary for the drawing
+        # get data necessary for the drawing
         if not self.is_playing:
             self.first_peak = self.sampler.get_peak_fft()[0][0]
             self.second_peak = self.sampler.get_peak_fft()[0][1]
@@ -534,32 +564,70 @@ class Gui():
         else:
             self.top_buttons[3].text = "Play"
             self.top_buttons[3].color = LIGHT_GREEN
+
         if self.sampler.has_new_fft():
             self.freq_line, self.fft_data = self.sampler.get_fft_data()
             self.freq_line, self.fft_peak_data = self.sampler.get_peak_waveform()
-        
-        #draw display background
+
+        # --------- Application de la fenêtre de fréquence pour l'affichage ---------
+        window_freq_line = self.freq_line
+        window_fft_data = self.fft_data
+        window_fft_peak_data = self.fft_peak_data
+
+        if (self.freq_line is not None and
+                self.fft_data is not None and
+                len(self.freq_line) > 0 and
+                len(self.freq_line) == len(self.fft_data)):
+
+            xf = []
+            y1 = []
+            y2 = [] if (self.fft_peak_data is not None) else None
+
+            for i, f in enumerate(self.freq_line):
+                if self.view_min_freq <= f <= self.view_max_freq:
+                    xf.append(f)
+                    y1.append(self.fft_data[i])
+                    if y2 is not None and i < len(self.fft_peak_data):
+                        y2.append(self.fft_peak_data[i])
+
+            # Utiliser les listes filtrées uniquement si on a quelque chose
+            if len(xf) > 0:
+                window_freq_line = xf
+                window_fft_data = y1
+                window_fft_peak_data = y2
+
+        # draw display background
         self.canvas.fill(GRAY)
-        
-        #draw the elements that are shared between different demonstrations (glass, chladni, tube)
+
+        # draw the elements that are shared between different demonstrations (glass, chladni, tube)
         for button in self.top_buttons:
             button.draw(self.canvas)
 
         self.volume_scroll.draw(self.canvas)
         self.freq_controller.draw(self.canvas)
 
-        #draw the elements that are unique to the glass demonstration
+        # draw the elements that are unique to the glass demonstration
         if self.in_glass:
             for button in self.glass_buttons:
-                button.draw(self.canvas) 
+                button.draw(self.canvas)
+            # --- force freq marker inside window ---
+            if not (self.view_min_freq <= self.interface.freq <= self.view_max_freq):
+                # centre la fréquence pour être compatible avec draw_freq_marker
+                self.interface.setFreq((self.view_min_freq + self.view_max_freq) / 2)
+
             if not self.is_playing:
-                self.plotter.draw(self.canvas, self.interface.freq, self.freq_line, self.fft_data, self.fft_peak_data)
-            
-        #draw the elements that are unique to the chladni plate demonstration        
+                self.plotter.draw(
+                    self.canvas,
+                    self.interface.freq,  # freq absolue
+                    window_freq_line,  # x filtré
+                    window_fft_data,
+                    window_fft_peak_data
+                )
+        #draw the elements that are unique to the chladni plate demonstration
         elif self.in_chladni:
             for button in self.chladni_buttons:
                 button.draw(self.canvas)
-        
+
         #draw the elements that are unique to the ruben's tube demonstration
         elif self.in_ruben:
             for button in self.ruben_buttons:
@@ -583,6 +651,7 @@ class Gui():
         this method is binded to the first peak button
         '''
         self.interface.setFreq(self.first_peak)
+        self.set_view_window_center(self.first_peak)
         
     def set_second_peak(self):
         ''' 

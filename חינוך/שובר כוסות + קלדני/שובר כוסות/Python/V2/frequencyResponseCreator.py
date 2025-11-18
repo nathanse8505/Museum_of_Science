@@ -33,7 +33,6 @@ class FrequencySampler(object):
         self.sound_raw_signal = []
         #self.recorded_response = numpy.empty(CHUNK * self.signal_length, dtype=numpy.int16)
         self.raw_recorded_data = 'b'
-        #self.raw_recorded_data = ''
 
     def _create_signal(self, freq):
         self.sound_signal = []
@@ -58,17 +57,6 @@ class FrequencySampler(object):
         print('threads started')
         recorder_thread.join()
         player_thread.join()
-    #
-    # def start_play_record(self, freq):
-    #     self._create_signal(freq=freq)
-    #     recorder_thread = threading.Thread(target=self.record)
-    #     player_thread = threading.Thread(target=self.play)
-    #     recorder_thread.start()
-    #     time.sleep(0.1)
-    #     player_thread.start()
-    #     print ('threads started')
-    #     recorder_thread.join()
-    #     player_thread.join()
 
     def record(self):
         for i in range(self.signal_length):
@@ -84,9 +72,9 @@ class FrequencySampler(object):
         print ('{}, player ended'.format(time.time()))
 
     def get_recorded_response(self):
-        #data = numpy.fromstring(self.raw_recorded_data, dtype=numpy.int16)
         data = numpy.frombuffer(self.raw_recorded_data, dtype=numpy.int16)
         return data.tolist()
+
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt

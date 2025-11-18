@@ -246,17 +246,17 @@ class Player():
         - canal 0 : sinus audio (fréquence self.freq, amplitude self.vol)
         - canal 1 : signal stroboscopique carré basé sur (freq + FREQ_SHIFT)
         """
-        t = self.last_val
+        n = self.last_val
         output_wave = []
 
         for _ in range(CHUNK):
-            t += 1
+            n += 1
 
             # adaptation de la fréquence quand l'interface change
             if (math.fabs(self.freq - self.interface.freq) >= 0.1 and
-                    math.fabs(math.sin(2 * math.pi * self.freq * t / FS)) > MIN_VALUE_TO_ALLOW_CHANGE):
+                    math.fabs(math.sin(2 * math.pi * self.freq * n / FS)) > MIN_VALUE_TO_ALLOW_CHANGE):
                 print("freq change , self- {} , interface- {}".format(self.freq, self.interface.freq))
-                t = int(t * self.freq / self.interface.freq)
+                n = int(n * self.freq / self.interface.freq)
                 self.freq = self.interface.freq
 
             # ramping du volume
@@ -270,12 +270,12 @@ class Player():
                     self.vol = self.interface.vol
 
             # sinus audio
-            audio_sine = self.vol * math.sin(2 * math.pi * self.freq * t / FS)
+            audio_sine = self.vol * math.sin(2 * math.pi * self.freq * n / FS)
 
-            # --- strobe : carré dérivé d'un sinus à freq + FREQ_SHIFT ---
-            phase = 2 * math.pi * (self.freq + FREQ_SHIFT) * t / FS
+            # --- strobe : square dérivate by sinus with frequence (freq + FREQ_SHIFT) ---
+            phase = 2 * math.pi * (self.freq + FREQ_SHIFT) * n / FS
             s_val = math.sin(phase)
-            # même logique que ta version Python 2 : +0.5 / -0.5 suivant la phase
+
             if 0 <= s_val <= 0.5:
                 strobe_square = 0.5
             else:
@@ -283,7 +283,7 @@ class Player():
 
             output_wave.append([audio_sine, strobe_square])
 
-        self.last_val = t
+        self.last_val = n
         return numpy.array(output_wave)
 
 

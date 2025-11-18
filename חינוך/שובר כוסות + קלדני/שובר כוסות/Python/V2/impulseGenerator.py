@@ -2,7 +2,6 @@ __author__ = 'nfreiman'
 import pyaudio
 import numpy
 import time
-from scipy import signal
 from scipy.signal.windows import gaussian
 CHUNK = 1024
 FS = 44100

@@ -1,14 +1,9 @@
 
 #### FFT sampler configurations ####
-# Fenêtre locale (zoom)
-WINDOW_DELTA = 200   # largeur totale (par défaut 200 Hz)
-
-# Fenêtre globale (pour slider 2)
-GLOBAL_MIN_FREQ = 200
-GLOBAL_MAX_FREQ = 1500
-
-MIN_USED_FREQUENCY = 500
-MAX_USED_FREQUENCY = 650
+# # Fenêtre locale (zoom)
+WINDOW_SIZE = 400   # largeur totale (par défaut 200 Hz)
+MIN_USED_FREQUENCY = 200
+MAX_USED_FREQUENCY = 1500
 DELTA_FREQ_FOR_MAXIMA = 7  # minimal allowed distance (in Hz) of the second maxima from the first one
 
 VOLUME_MAXIMUM = 1          # maximal volume (when the volume bar is dragged to its end), should be value between 0 to 1, enough to break the glass, but not to violate the current/power limitations
