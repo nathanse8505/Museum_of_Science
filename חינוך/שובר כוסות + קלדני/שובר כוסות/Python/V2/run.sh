@@ -16,6 +16,10 @@ LOG_FILE="$APP_DIR/sounddemo.log"
 SLEEP_SECONDS=5                        # Delay before restart if crash occurs
 QUIT_FILE="$APP_DIR/quit.flag"         # File created when "q" is pressed
 
+# Cameras (each supervised individuellement)
+CAM1="/dev/video0"
+CAM2="/dev/video2"
+
 echo "============================================" >> "$LOG_FILE"
 echo "Sound Demonstration Autostart (XP → Linux)" >> "$LOG_FILE"
 echo "Started on: $(date)" >> "$LOG_FILE"
@@ -29,7 +33,46 @@ cd "$APP_DIR" || {
 # Optional: activate virtual environment
 # source ~/.venvs/sounddemo/bin/activate
 
-# --- MAIN LOOP ---
+# --- FONCTIONS POUR SURVEILLER LES CAMERAS ---
+
+start_cam1_loop() {
+    while true; do
+        # Arrêt propre si quit.flag existe
+        if [ -f "$QUIT_FILE" ]; then
+            break
+        fi
+
+        # Config caméra 1 (on ignore l'erreur si v4l2-ctl absent)
+        v4l2-ctl --device="$CAM1" --set-fmt-video=width=640,height=480,pixelformat=MJPG --set-parm=30 2>/dev/null || true
+
+        guvcview --device="$CAM1" --gui=none
+        # Quand la fenêtre se ferme (X ou crash), on boucle et on la relance
+        sleep 1
+    done
+}
+
+start_cam2_loop() {
+    while true; do
+        if [ -f "$QUIT_FILE" ]; then
+            break
+        fi
+
+        v4l2-ctl --device="$CAM2" --set-fmt-video=width=640,height=480,pixelformat=MJPG --set-parm=30 2>/dev/null || true
+
+        guvcview --device="$CAM2" --gui=none
+        sleep 1
+    done
+}
+
+# Lancer les deux boucles caméras en arrière-plan
+start_cam1_loop &
+CAM1_SUP_PID=$!
+
+start_cam2_loop &
+CAM2_SUP_PID=$!
+
+# --- MAIN LOOP POUR LE PYTHON ---
+
 while true; do
     if [ -f "$QUIT_FILE" ]; then
         echo "[$(date)] Quit flag detected, exiting loop." >> "$LOG_FILE"
@@ -48,10 +91,12 @@ while true; do
         break
     fi
 
-    echo "[$(date)] Program exited (code $EXIT_CODE), restarting in $SLEEP_SECONDS sec..." >> "$LOG_FILE"
+    echo "[$(date)] init.py exited (code $EXIT_CODE), restarting in $SLEEP_SECONDS sec..." >> "$LOG_FILE"
     sleep $SLEEP_SECONDS
 done
 
+# Quand on sort de la boucle principale, on stoppe aussi les caméras
+kill "$CAM1_SUP_PID" "$CAM2_SUP_PID" 2>/dev/null || true
+
 echo "[$(date)] run.sh terminated cleanly." >> "$LOG_FILE"
 exit 0
-

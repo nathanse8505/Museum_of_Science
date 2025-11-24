@@ -51,6 +51,7 @@ int current_valid(){
   }
   
   if (current < CURRENT_SYSTEM){
+    Serial.println("enter");
     return 1;
   }
   return 2;

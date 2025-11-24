@@ -48,7 +48,7 @@ int32_t time_new_session = 0;
 
 const uint32_t ACTIVATION_TIME       = 15000; //time between end-new session (fan is active)
 const uint32_t CURRENT_INTERVAL_TIME = 1000;  // after this time we check the current 
-const uint32_t HYGROGEN_TIME         = 10000; //after this time we active the spark
+const uint32_t HYGROGEN_TIME         = 15000; //after this time we active the spark
 const uint32_t FIRE_TEMP_TIME        = 5000; //after this time we calculate the temperare of the flame
 const uint32_t SESSION_TIME          = 60000;//time between spark and end of the session
 
@@ -98,7 +98,7 @@ const int16_t BOUNCE_TIME = 100;//ms
 const int ERROR_CURRENT_DELAY = 2000;
 const float R_SHUNT_OHMS = 0.00215f;    // ex: 2 mΩ
 const float I_RANGE_A    = 20.0f;      // ex: tu veux mesurer jusqu’à ~10 A
-const int16_t CURRENT_SYSTEM = 4;
+const float CURRENT_SYSTEM = 3.5;
 long time_read_current = 0;
 bool first_time_current = true;
 const int NUM_OF_READ = 1;
