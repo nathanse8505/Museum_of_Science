@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Switch Camera
+Exec=/home/mada/Documents/break_glass/code_python/V2/switch_cam.sh
+Terminal=false
+Icon=video-camera
+Comment=Switch between CAM1 and CAM2 instantly
+Categories=Utility;
