@@ -20,11 +20,11 @@ bool init_current_sensor(){
 }
 
 void TURN_OFF_CURRENT(){
-   digitalWrite(RELAY_TURN_ON_OFF_IO, LOW);
+   digitalWrite(TURN_ON_OFF_CURRENT_IO, LOW);
 }
 
 void TURN_ON_CURRENT(){
-   digitalWrite(RELAY_TURN_ON_OFF_IO, HIGH);
+   digitalWrite(TURN_ON_OFF_CURRENT_IO, HIGH);
    delay(DELAY_AFTER_ON);
 }
 
@@ -126,9 +126,9 @@ bool detect_drop_temp() {
 
 
 void FILL_WATER(){
-  digitalWrite(RELAY_VALVE_WATER_IO, HIGH);
+  digitalWrite(VALVE_WATER_IO, HIGH);
   delay(DELAY_FILL_WATER);
-  digitalWrite(RELAY_VALVE_WATER_IO, LOW);
+  digitalWrite(VALVE_WATER_IO, LOW);
   delay(DELAY_AFTER_FILL_WATER);
 }
 
@@ -195,9 +195,9 @@ void reset_session() {
 }
 
 void BLINK_LED_STATE(uint32_t DELAY){
-  digitalWrite(LED_ACTIVATION, HIGH);   // Turn on
+  digitalWrite(LED_BUTTON_IO, HIGH);   // Turn on
   delay(DELAY);
-  digitalWrite(LED_ACTIVATION, LOW);   // Turn off activation LED
+  digitalWrite(LED_BUTTON_IO, LOW);   // Turn off activation LED
   delay(DELAY);
 }
 

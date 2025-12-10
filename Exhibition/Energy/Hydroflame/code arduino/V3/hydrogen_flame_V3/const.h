@@ -4,43 +4,38 @@
 
 /*
 *==========Arduino Nano pinout====== 
- *                      _______
- *                 TXD-|       |-Vin 
- *                 RXD-|       |-Gnd  
- *                 RST-|       |-RST
- *                 GND-|       |-+5V  
- * ignition button  D2-|       |-A7  current input pot(not used)
- *                  D3-|       |-A6  input pot (not used)
- *     SPARK output D4-|       |-A5 
- *  RELAY_VALVE_IO  D5-|       |-A4 
- *RELAY_TURN_ON_OFF D6-|       |-A3   SENSOR_WATER_IO
- *          FAN_IO  D7-|       |-A2   SENSOR_FIRE_IO
- *  LED_ACTIVATION  D8-|       |-A1   
- *                  D9-|       |-A0   Current sensor ACS712T-05
- *                 D10-|       |-Ref
- *                 D11-|       |-3.3V   
- *         Buzzer  D12-|       |-D13
- *                      --USB--        
+ *                            _______
+ *                       TXD-|       |-Vin 
+ *                       RXD-|       |-Gnd  
+ *                       RST-|       |-RST
+ *                       GND-|       |-+5V  
+ *    IGNITION_BUTTON_IO  D2-|       |-A7  
+ *         LED_BUTTON_IO  D3-|       |-A6  
+ *                        D4-|       |-A5   SCL current sensor (INA226)
+ *                        D5-|       |-A4   SDA current sensor (INA226)
+ *                        D6-|       |-A3   SENSOR_WATER_IO
+ *TURN_ON_OFF_CURRENT_IO  D7-|       |-A2   NTC_PIN (100kohm) connected to 10kohm PULLUP
+ *                FAN_IO  D8-|       |-A1   
+ *        VALVE_WATER_IO  D9-|       |-A0   
+ *              SPARK_IO D10-|       |-Ref
+ *                       D11-|       |-3.3V   
+ *                       D12-|       |-D13
+ *                            --USB--        
  */
 #define BAUDRATE (115200)
 ////////////  I/O   ////////////
 #define SENSOR_PRESSURE_HYDRO_IO  A1  // 
-#define NTC_PIN                   A2  // Pin du NTC 
-#define SENSOR_WATER_IO           A3  // 
-#define STOP_TIME_POT             A7
+#define NTC_PIN                   A2  //+5V --- R_SERIE (fixe) --- A2 --- NTC --- GND
+#define SENSOR_WATER_IO           A3  //  
+//CURRENT_SENSOR                  A4,A5 for SCL SDA
 
-#define IGNITION_BUTTON_IO   2
-#define LED_ACTIVATION       3
-#define RELAY_TURN_ON_OFF_IO 7
-#define FAN_IO               8
-#define RELAY_VALVE_WATER_IO 9
-#define SPARK_IO             10
+#define IGNITION_BUTTON_IO       2  
+#define LED_BUTTON_IO            3
+#define TURN_ON_OFF_CURRENT_IO   7  //The current is switched by a transistor that drives a 220 V SSR, which turns on the 12V power supply.”
+#define FAN_IO                   8  //The FAN is switched by a transistor
+#define VALVE_WATER_IO           9  //The VALVE is switched by a transistor
+#define SPARK_IO                 10 //The SPARK is switched by a transistor
 
-
-//#define THERMOD   A1   // SO (MISO)
-//#define THERMOCS  12   // CS
-//#define THERMOCLK A2   // SCK
-#define CURRENT_INPUT_IO  A0  // current sensor 
 // global vars
 int32_t time_start = 0;
 int32_t time_start_hydro = 0;

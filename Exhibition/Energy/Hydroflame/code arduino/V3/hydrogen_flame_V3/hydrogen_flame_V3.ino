@@ -4,16 +4,16 @@
 
 void setup() {
   // Configure pin modes
-  pinMode(CURRENT_INPUT_IO, INPUT);                // Current sensor input
+  pinMode(NTC_PIN, INPUT);       // Ignition button (active LOW)
   pinMode(IGNITION_BUTTON_IO, INPUT_PULLUP);       // Ignition button (active LOW)
   pinMode(SENSOR_PRESSURE_HYDRO_IO, INPUT_PULLUP); // Ignition button (active LOW)
   pinMode(SENSOR_WATER_IO, INPUT_PULLUP);          // Water level sensor
 
   pinMode(SPARK_IO, OUTPUT);                       // Spark output
-  pinMode(RELAY_TURN_ON_OFF_IO, OUTPUT);           // Power relay
+  pinMode(TURN_ON_OFF_CURRENT_IO, OUTPUT);           // Power relay
   pinMode(FAN_IO, OUTPUT);                         // Fan relay
-  pinMode(LED_ACTIVATION, OUTPUT);                 // Activation indicator LED
-  pinMode(RELAY_VALVE_WATER_IO, OUTPUT);            // Water valve control
+  pinMode(LED_BUTTON_IO, OUTPUT);                 // Activation indicator LED
+  pinMode(VALVE_WATER_IO, OUTPUT);            // Water valve control
 
   Serial.begin(BAUDRATE);                          // Start serial communication
   delay(100);                                      // Give time to establish connection
@@ -59,7 +59,7 @@ void loop() {
         }
       }
 
-      digitalWrite(LED_ACTIVATION, HIGH);  // Turn on activation LED  
+      digitalWrite(LED_BUTTON_IO, HIGH);  // Turn on activation LED  
       flag_ready_fan = false;                   // Turn off fan
       flag_new_session = false;             // new Session ready
       counter_fill_water = 0;
@@ -70,7 +70,7 @@ void loop() {
 
     // On first button press (ignition)
     if (buttonPressed && flag_first_press == false) {
-      digitalWrite(LED_ACTIVATION, LOW);   // Turn off activation LED
+      digitalWrite(LED_BUTTON_IO, LOW);   // Turn off activation LED
       TURN_ON_CURRENT();                   // Start hydrogen generation
       time_start_hydro = millis();         // Start hydrogen timer
       time_read_current = time_start_hydro; // Start current timer
