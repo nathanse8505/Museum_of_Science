@@ -1,0 +1,241 @@
+{
+  "uuid": "6c1ee838190a640db52073e983d26df1",
+  "path": "Offline/FAN_CONTROLER",
+  "name": "FAN_CONTROLER",
+  "content": "fan controler for wind energy activity Nov 2025",
+  "created_at": "2025-11-24 18:13:30",
+  "updated_at": "2025-11-24 20:22:10",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "ba4dd2fe0499d36dfa372ee9f74698ab",
+      "title": "Sheet_1",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "daa3cf3493c84fa3b0b6a6d427d23f0b": 1,
+        "003fe3adfe4a4410941ebbcb2dfa1760": 1,
+        "8bc69ef9fedb4b7ca2064eccf3f37cd2": 1,
+        "eb859b95857eb549dcd060c0a776a8f7": 1,
+        "41e9dad1efefa6a674dcabbf67896953": 1,
+        "eda3af0dd4f3457ca763df30e3ac5d73": 1,
+        "b210af5a1436310a86e8b108e2e5a90b": 1,
+        "588dac9f81df8f83843513972963b454": 1,
+        "597701dbde98d3183fe5df5fb870ec57": 1,
+        "d19afd66eee0b7f6751eec8bbbf6b843": 1,
+        "212e4e7ac253e44d17caceb02663d93c": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "220nF",
+          1,
+          "C0603",
+          "C1",
+          {
+            "BOM_Manufacturer Part": "CL10B224KA8NNNC",
+            "puuid": "f8151fdc728a41ebbc304e11d39e5437",
+            "uuid": "eb859b95857eb549dcd060c0a776a8f7",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SAMSUNG(三星)",
+            "BOM_Supplier Part": "C21120",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "4700uF",
+          1,
+          "CAP-TH_BD12.5-P5.00-D0.6-FD",
+          "C2",
+          {
+            "BOM_Manufacturer Part": "KM478M016J25RR0VH2FP0",
+            "puuid": "646b2bc75eb7468ebc6c9b1c5395cda9",
+            "uuid": "41e9dad1efefa6a674dcabbf67896953",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Chengx(承兴)",
+            "BOM_Supplier Part": "C29884",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "10uF",
+          1,
+          "CAP-SMD_L3.2-W1.6-RD-C7171",
+          "C3",
+          {
+            "BOM_Manufacturer Part": "TAJA106K016RNJ",
+            "puuid": "29b657b818a84e4ea7b685b79368b530",
+            "uuid": "212e4e7ac253e44d17caceb02663d93c",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "Kyocera AVX",
+            "BOM_Supplier Part": "C7171",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "KF2510-4AGW-GW",
+          1,
+          "CONN-TH_4P-P2.54_CAX_KF2510-4AGW-GW",
+          "CN1",
+          {
+            "BOM_Manufacturer Part": "KF2510-4AGW-GW",
+            "puuid": "6fd854c5b0624478b6da09c7afb5b891",
+            "uuid": "003fe3adfe4a4410941ebbcb2dfa1760",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "CAX(创都)",
+            "BOM_Supplier Part": "C722747",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "DC",
+          1,
+          "DC-IN-TH_DC005",
+          "DC1",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "SOFNG",
+            "BOM_Manufacturer Part": "DC005-2.0MM",
+            "BOM_Supplier Part": "C111567",
+            "puuid": "1337670005c6484c999f9b4c272ee9fe",
+            "uuid": "daa3cf3493c84fa3b0b6a6d427d23f0b"
+          }
+        ],
+        [
+          "NC",
+          1,
+          "R0603",
+          "NC",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Manufacturer Part": "0603WAF1002T5E",
+            "BOM_Supplier Part": "C25804",
+            "BOM_JLCPCB Part Class": "Basic Part",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "b210af5a1436310a86e8b108e2e5a90b"
+          }
+        ],
+        [
+          "POT_1K",
+          1,
+          "RES-ADJ-TH_RV09",
+          "POT_2",
+          {
+            "BOM_Supplier": "LCSC",
+            "BOM_Supplier Part": "C2874842",
+            "BOM_Manufacturer": "null",
+            "BOM_Manufacturer Part": "长柄旋转电位器",
+            "BOM_JLCPCB Part Class": "Extended Part",
+            "puuid": "08842a68e5644655bc648513ffbbbdbb",
+            "uuid": "eda3af0dd4f3457ca763df30e3ac5d73"
+          }
+        ],
+        [
+          "470Ω",
+          1,
+          "R0603",
+          "R1",
+          {
+            "BOM_Manufacturer Part": "0603WAF4700T5E",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "d19afd66eee0b7f6751eec8bbbf6b843",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Supplier Part": "C23179",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "1kΩ",
+          1,
+          "R0603",
+          "R3",
+          {
+            "BOM_Manufacturer Part": "0603WAF1001T5E",
+            "puuid": "398691f1f785460098bbe5ee6590333c",
+            "uuid": "597701dbde98d3183fe5df5fb870ec57",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "UNI-ROYAL(厚声)",
+            "BOM_Supplier Part": "C21190",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ],
+        [
+          "TR_1K",
+          1,
+          "RES-ADJ-TH_3296W",
+          "TR2",
+          {
+            "BOM_Manufacturer Part": "3296W-1-202LF",
+            "puuid": "5e404972447a403ca43a83aeb15e254e",
+            "uuid": "8bc69ef9fedb4b7ca2064eccf3f37cd2",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "JIERR(捷而瑞)",
+            "BOM_Supplier Part": "C49190458",
+            "BOM_JLCPCB Part Class": "Extended Part"
+          }
+        ],
+        [
+          "AMS1117-3.3",
+          1,
+          "SOT-223-3_L6.5-W3.4-P2.30-LS7.0-BR",
+          "U2",
+          {
+            "BOM_Manufacturer Part": "AMS1117-3.3",
+            "puuid": "02ae667aca734971be8a5f58143dd564",
+            "uuid": "588dac9f81df8f83843513972963b454",
+            "BOM_Supplier": "LCSC",
+            "BOM_Manufacturer": "AMS",
+            "BOM_Supplier Part": "C6186",
+            "BOM_JLCPCB Part Class": "Basic Part"
+          }
+        ]
+      ],
+      "updateTime": 1764005512,
+      "createTime": 1763063098,
+      "histories": [],
+      "created_at": "2025-11-13 21:44:58",
+      "updated_at": "2025-11-24 19:31:52"
+    },
+    {
+      "uuid": "48945c86bc9cbbd77f387c364d1ec763",
+      "title": "PCB_FAN_CONTROLER",
+      "filename": "PCB_FAN_CONTROLER.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "29b657b818a84e4ea7b685b79368b530": 1,
+        "398691f1f785460098bbe5ee6590333c": 3,
+        "02ae667aca734971be8a5f58143dd564": 1,
+        "08842a68e5644655bc648513ffbbbdbb": 1,
+        "5e404972447a403ca43a83aeb15e254e": 1,
+        "f8151fdc728a41ebbc304e11d39e5437": 1,
+        "646b2bc75eb7468ebc6c9b1c5395cda9": 1,
+        "6fd854c5b0624478b6da09c7afb5b891": 1,
+        "1337670005c6484c999f9b4c272ee9fe": 1
+      },
+      "BOM": [],
+      "updateTime": 1764008530,
+      "createTime": 1763079395,
+      "histories": [],
+      "created_at": "2025-11-14 02:16:35",
+      "updated_at": "2025-11-24 20:22:10"
+    }
+  ],
+  "sort": [],
+  "title": "FAN_CONTROLER",
+  "foldername": "FAN_CONTROLER",
+  "schfilename": "FAN_CONTROLER_LDO.json",
+  "schfilemtime": 1764005512720
+}
